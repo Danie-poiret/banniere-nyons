@@ -23,7 +23,7 @@ jobs:
           test -f pont-upload.ready
           test -d _pont_upload
           cat _pont_upload/part-*.b64 | base64 -d > pont-roman.zip
-          echo '95b2e976247ea8b54931f00e9a9b3e674c43a60054a99b1c1e37163acac15357  pont-roman.zip' | sha256sum -c -
+          echo 'b21e5674f6d97ae3f56a2dc39154032b0f1ca5512f9749666eb419a15508baf6  pont-roman.zip' | sha256sum -c -
           unzip -t pont-roman.zip
 
       - name: Installer les 12 photos
@@ -40,57 +40,34 @@ jobs:
           python - <<'PY'
           from pathlib import Path
           import re
-
           page = Path('vivreanyons-test/que-faire-nyons/Pont-Roman-de-Nyons/index.html')
           html = page.read_text(encoding='utf-8')
           base = '/banniere-nyons/vivreanyons-test/assets/pont-roman/'
-
-          # Remplacer les images Google Sites, dans leur ordre d'apparition.
           pattern = re.compile(r'(<img[^>]+src=")https://lh3\.googleusercontent\.com/[^"]+("[^>]*>)')
           n = 0
-          def repl(match):
+          def repl(m):
               global n
               n += 1
-              if n <= 12:
-                  return match.group(1) + f'{base}pont-{n:02d}.jpg' + match.group(2)
-              return match.group(0)
+              return m.group(1) + f'{base}pont-{min(n,12):02d}.jpg' + m.group(2) if n <= 12 else m.group(0)
           html = pattern.sub(repl, html)
-
-          # Convertir toute ancienne tentative locale vers les JPG définitifs.
-          html = re.sub(
-              r'/banniere-nyons/vivreanyons-test/assets/pont-roman/pont-(\d{2})\.(?:png|webp|jpeg)',
-              lambda m: f'{base}pont-{m.group(1)}.jpg',
-              html,
-              flags=re.I,
-          )
-
-          # Compléter la série si certaines photos n'étaient pas référencées dans la copie HTML.
-          missing = []
-          for i in range(1, 13):
-              src = f'{base}pont-{i:02d}.jpg'
+          html = re.sub(r'/banniere-nyons/vivreanyons-test/assets/pont-roman/pont-(\d{2})\.(?:png|webp|jpeg)', lambda m: f'{base}pont-{m.group(1)}.jpg', html, flags=re.I)
+          missing=[]
+          for i in range(1,13):
+              src=f'{base}pont-{i:02d}.jpg'
               if src not in html:
-                  missing.append(
-                      f'<figure><img src="{src}" alt="Pont Roman de Nyons — photo {i}" loading="lazy"></figure>'
-                  )
+                  missing.append(f'<figure><img src="{src}" alt="Pont Roman de Nyons — photo {i}" loading="lazy"></figure>')
           if missing:
-              gallery = '<div class="photo-stack">' + ''.join(missing) + '</div>'
-              html = html.replace('</main>', gallery + '</main>', 1)
-
-          page.write_text(html, encoding='utf-8')
-          print(f'Images Google Sites remplacées : {n}')
-          print(f'Photos ajoutées pour compléter la série : {len(missing)}')
+              html=html.replace('</main>','<div class="photo-stack">'+''.join(missing)+'</div></main>',1)
+          page.write_text(html,encoding='utf-8')
           PY
 
-      - name: Vérifier le résultat
+      - name: Vérifier et publier
         run: |
           set -euo pipefail
           PAGE='vivreanyons-test/que-faire-nyons/Pont-Roman-de-Nyons/index.html'
           test "$(find vivreanyons-test/assets/pont-roman -type f -name 'pont-*.jpg' | wc -l)" -eq 12
           ! grep -q 'lh3.googleusercontent.com' "$PAGE"
           for n in $(seq -w 1 12); do grep -q "pont-$n.jpg" "$PAGE"; done
-
-      - name: Nettoyer et publier
-        run: |
           rm -rf _pont_upload pont-upload.ready pont-roman.zip
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
