@@ -1,0 +1,76 @@
+name: Importer photos Pont Roman
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/import-pont-images.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  import-images:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Installer Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Installer dépendances
+        run: pip install requests beautifulsoup4
+
+      - name: Télécharger les photos Google Sites et les rendre locales
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import re, requests
+
+          page = Path('vivreanyons-test/que-faire-nyons/Pont-Roman-de-Nyons/index.html')
+          html = page.read_text(encoding='utf-8')
+          urls = re.findall(r'<img[^>]+src="(https://lh3\.googleusercontent\.com/[^"]+)"', html)
+          if not urls:
+              raise SystemExit('Aucune image Google Sites trouvée dans la page test.')
+
+          out = Path('vivreanyons-test/assets/pont-roman')
+          out.mkdir(parents=True, exist_ok=True)
+          headers = {
+              'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/136 Safari/537.36',
+              'Referer': 'https://www.vivreanyons.fr/que-faire-nyons/Pont-Roman-de-Nyons'
+          }
+
+          replacements = {}
+          for i, url in enumerate(urls, 1):
+              r = requests.get(url, headers=headers, timeout=30)
+              print(i, r.status_code, r.headers.get('content-type'), len(r.content))
+              r.raise_for_status()
+              ctype = (r.headers.get('content-type') or '').lower()
+              ext = '.png' if 'png' in ctype else '.webp' if 'webp' in ctype else '.jpg'
+              path = out / f'pont-{i:02d}{ext}'
+              path.write_bytes(r.content)
+              replacements[url] = f'/banniere-nyons/vivreanyons-test/assets/pont-roman/{path.name}'
+
+          for old, new in replacements.items():
+              html = html.replace(old, new)
+          page.write_text(html, encoding='utf-8')
+          print(f'{len(replacements)} image(s) téléchargée(s) et rendue(s) locale(s).')
+          PY
+
+      - name: Vérifier les images
+        run: |
+          test -d vivreanyons-test/assets/pont-roman
+          test "$(find vivreanyons-test/assets/pont-roman -type f | wc -l)" -ge 11
+          ! grep -q 'lh3.googleusercontent.com' vivreanyons-test/que-faire-nyons/Pont-Roman-de-Nyons/index.html
+
+      - name: Commit
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add vivreanyons-test/assets/pont-roman vivreanyons-test/que-faire-nyons/Pont-Roman-de-Nyons/index.html
+          git commit -m "Importer les photos du Pont Roman dans GitHub" || exit 0
+          git push
