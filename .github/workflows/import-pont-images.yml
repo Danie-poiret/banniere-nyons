@@ -4,7 +4,7 @@ on:
   push:
     branches: [main]
     paths:
-      - '.github/workflows/import-pont-images.yml'
+      - 'pont-roman.zip'
   workflow_dispatch:
 
 permissions:
@@ -17,62 +17,82 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Installer Python
-        uses: actions/setup-python@v5
-        with:
-          python-version: '3.12'
+      - name: Vérifier le ZIP
+        run: |
+          test -f pont-roman.zip
+          unzip -t pont-roman.zip
 
-      - name: Installer dépendances
-        run: pip install requests
+      - name: Installer les 12 photos
+        run: |
+          set -e
+          OUT='vivreanyons-test/assets/pont-roman'
+          rm -rf "$OUT"
+          mkdir -p "$OUT"
+          unzip -j -o pont-roman.zip -d "$OUT"
+          test "$(find "$OUT" -type f -name 'pont-*.jpg' | wc -l)" -eq 12
 
-      - name: Télécharger les photos Google Sites et les rendre locales
+      - name: Corriger la page Pont Roman
         run: |
           python - <<'PY'
           from pathlib import Path
-          from urllib.parse import unquote
-          import re, requests
+          import re
 
           page = Path('vivreanyons-test/que-faire-nyons/Pont-Roman-de-Nyons/index.html')
           html = page.read_text(encoding='utf-8')
-          urls = re.findall(r'<img[^>]+src="(https://lh3\.googleusercontent\.com/[^"]+)"', html)
-          if not urls:
-              raise SystemExit('Aucune image Google Sites trouvée dans la page test.')
+          base = '/banniere-nyons/vivreanyons-test/assets/pont-roman/'
 
-          out = Path('vivreanyons-test/assets/pont-roman')
-          out.mkdir(parents=True, exist_ok=True)
-          headers = {
-              'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/136 Safari/537.36',
-              'Referer': 'https://www.vivreanyons.fr/que-faire-nyons/Pont-Roman-de-Nyons'
-          }
+          pattern = re.compile(r'(<img[^>]+src=")https://lh3\.googleusercontent\.com/[^"]+("[^>]*>)')
+          n = 0
 
-          replacements = {}
-          for i, old_url in enumerate(urls, 1):
-              url = unquote(old_url)
-              r = requests.get(url, headers=headers, timeout=30)
-              print(i, url[-20:], r.status_code, r.headers.get('content-type'), len(r.content))
-              r.raise_for_status()
-              ctype = (r.headers.get('content-type') or '').lower()
-              ext = '.png' if 'png' in ctype else '.webp' if 'webp' in ctype else '.jpg'
-              path = out / f'pont-{i:02d}{ext}'
-              path.write_bytes(r.content)
-              replacements[old_url] = f'/banniere-nyons/vivreanyons-test/assets/pont-roman/{path.name}'
+          def repl(match):
+              global n
+              n += 1
+              if n <= 12:
+                  return match.group(1) + f'{base}pont-{n:02d}.jpg' + match.group(2)
+              return match.group(0)
 
-          for old, new in replacements.items():
-              html = html.replace(old, new)
+          html = pattern.sub(repl, html)
+
+          # Si une ancienne tentative locale en PNG existe, la basculer vers les JPG définitifs.
+          html = re.sub(
+              r'/banniere-nyons/vivreanyons-test/assets/pont-roman/pont-(\d{2})\.(?:png|webp|jpeg)',
+              lambda m: f'{base}pont-{m.group(1)}.jpg',
+              html,
+              flags=re.I,
+          )
+
+          # Ajouter les photos qui ne sont pas encore référencées dans la page.
+          missing = []
+          for i in range(1, 13):
+              src = f'{base}pont-{i:02d}.jpg'
+              if src not in html:
+                  missing.append(
+                      f'<figure><img src="{src}" alt="Pont Roman de Nyons — photo {i}" loading="lazy"></figure>'
+                  )
+
+          if missing:
+              gallery = '<div class="photo-stack">' + ''.join(missing) + '</div>'
+              marker = '</main>'
+              html = html.replace(marker, gallery + marker, 1)
+
           page.write_text(html, encoding='utf-8')
-          print(f'{len(replacements)} image(s) téléchargée(s) et rendue(s) locale(s).')
+          print(f'Images Google Sites remplacées : {n}')
+          print(f'Photos ajoutées pour compléter la série : {len(missing)}')
           PY
 
-      - name: Vérifier les images
+      - name: Vérifier le résultat
         run: |
-          test -d vivreanyons-test/assets/pont-roman
-          test "$(find vivreanyons-test/assets/pont-roman -type f | wc -l)" -ge 11
-          ! grep -q 'lh3.googleusercontent.com' vivreanyons-test/que-faire-nyons/Pont-Roman-de-Nyons/index.html
+          PAGE='vivreanyons-test/que-faire-nyons/Pont-Roman-de-Nyons/index.html'
+          test "$(find vivreanyons-test/assets/pont-roman -type f -name 'pont-*.jpg' | wc -l)" -eq 12
+          ! grep -q 'lh3.googleusercontent.com' "$PAGE"
+          grep -q 'pont-01.jpg' "$PAGE"
+          grep -q 'pont-12.jpg' "$PAGE"
 
-      - name: Commit
+      - name: Nettoyer et publier
         run: |
+          rm -f pont-roman.zip
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add vivreanyons-test/assets/pont-roman vivreanyons-test/que-faire-nyons/Pont-Roman-de-Nyons/index.html
-          git commit -m "Importer les photos du Pont Roman dans GitHub" || exit 0
+          git add -A
+          git commit -m "Installer les 12 vraies photos du Pont Roman" || exit 0
           git push
