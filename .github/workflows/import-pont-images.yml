@@ -23,12 +23,13 @@ jobs:
           python-version: '3.12'
 
       - name: Installer dépendances
-        run: pip install requests beautifulsoup4
+        run: pip install requests
 
       - name: Télécharger les photos Google Sites et les rendre locales
         run: |
           python - <<'PY'
           from pathlib import Path
+          from urllib.parse import unquote
           import re, requests
 
           page = Path('vivreanyons-test/que-faire-nyons/Pont-Roman-de-Nyons/index.html')
@@ -45,15 +46,16 @@ jobs:
           }
 
           replacements = {}
-          for i, url in enumerate(urls, 1):
+          for i, old_url in enumerate(urls, 1):
+              url = unquote(old_url)
               r = requests.get(url, headers=headers, timeout=30)
-              print(i, r.status_code, r.headers.get('content-type'), len(r.content))
+              print(i, url[-20:], r.status_code, r.headers.get('content-type'), len(r.content))
               r.raise_for_status()
               ctype = (r.headers.get('content-type') or '').lower()
               ext = '.png' if 'png' in ctype else '.webp' if 'webp' in ctype else '.jpg'
               path = out / f'pont-{i:02d}{ext}'
               path.write_bytes(r.content)
-              replacements[url] = f'/banniere-nyons/vivreanyons-test/assets/pont-roman/{path.name}'
+              replacements[old_url] = f'/banniere-nyons/vivreanyons-test/assets/pont-roman/{path.name}'
 
           for old, new in replacements.items():
               html = html.replace(old, new)
