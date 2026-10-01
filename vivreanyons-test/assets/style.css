@@ -124,3 +124,13 @@ main{padding:36px 20px}
   .feature-layout.has-sidebar>.feature-media,.feature-layout.has-sidebar>.feature-story{grid-column:1;grid-row:auto}
 }
 @media(max-width:620px){.right-sidebar{grid-template-columns:1fr}}
+
+/* Original illustrations recovered from Google Sites. */
+.page-photo{margin:0 0 24px;background:var(--paper);border:1px solid var(--line);border-radius:18px;overflow:hidden;box-shadow:var(--shadow)}
+.page-photo img{display:block;width:100%;height:auto;max-height:none;object-fit:contain}
+.page-photo figcaption{padding:10px 14px;color:var(--muted);font-size:.9rem;line-height:1.4}
+.feature-media>.page-photo{margin-bottom:20px}
+.feature-story h2{color:var(--olive);line-height:1.2;margin-top:38px}
+.feature-story h3{line-height:1.25;margin-top:28px}
+.feature-story>h2:first-child{margin-top:0}
+.wrap>.page-photo{max-width:780px;margin-bottom:30px}
