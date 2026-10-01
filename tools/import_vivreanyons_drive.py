@@ -304,7 +304,7 @@ def nav_html() -> str:
         f'<header><nav class="nav"><a class="brand" href="{SITE_ROOT}/">🌿 Vivre à Nyons ?</a>'
         '<div class="navlinks">'
         f'<a href="{SITE_ROOT}/que-faire-nyons/">Que faire</a>'
-        f'<a href="{SITE_ROOT}/que-faire-autour-de-nyons/">Autour</a>'
+        f'<a href="{SITE_ROOT}/a-faire-autour-de-Nyons/">Autour</a>'
         f'<a href="{SITE_ROOT}/restaurants-de-nyons/">Restaurants</a>'
         f'<a href="{SITE_ROOT}/toutes-les-pages/">Toutes les pages</a>'
         '<a href="https://agenda.vivreanyons.fr/">Agenda</a>'
@@ -323,7 +323,8 @@ def agenda_html() -> str:
 
 def page_document(page: dict, destination: str, category: str) -> str:
     label, emoji = CATEGORY_LABELS.get(category.split("/")[0], ("Vivre à Nyons", "🌿"))
-    canonical = f"{LIVE_ROOT}/{destination}"
+    canonical_destination = page.get("canonical_destination", destination)
+    canonical = f"{LIVE_ROOT}/{canonical_destination}"
     meta = description(page["intro"], page["title"])
     intro = html_std.escape(page["intro"])
     return f'''<!doctype html>
