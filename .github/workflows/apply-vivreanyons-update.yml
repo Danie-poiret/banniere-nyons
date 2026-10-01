@@ -1,0 +1,27 @@
+name: Appliquer la mise a jour VivreAnyons
+
+on:
+  push:
+    paths:
+      - vivreanyons-publication.zip
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  apply-update:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Recuperer le depot
+        uses: actions/checkout@v4
+      - name: Deployer les fichiers prepares
+        run: |
+          unzip -o vivreanyons-publication.zip
+          rm vivreanyons-publication.zip
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -m "Publier le site Vivre a Nyons complet"
+          git push
