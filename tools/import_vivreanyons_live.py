@@ -701,12 +701,216 @@ def faq_questions(destination: str, topic: str, has_practical: bool) -> list[str
     ]
 
 
+def natural_join(items: list[str]) -> str:
+    if not items:
+        return ""
+    if len(items) == 1:
+        return items[0]
+    return ", ".join(items[:-1]) + f" et {items[-1]}"
+
+
+def faq_fact_labels(destination: str, text: str, topic: str) -> list[str]:
+    """Repère des faits simples afin de rédiger une FAQ nouvelle sans rien inventer."""
+    category = destination.split("/", 1)[0]
+    groups: dict[str, list[tuple[str, str]]] = {
+        "restaurants-de-nyons": [
+            (r"\b(?:sushis?|makis?|sashimis?)\b", "les spécialités japonaises"),
+            (r"\bsaumon\b", "le saumon"),
+            (r"\bburgers?\b", "les burgers"),
+            (r"\bbagels?\b", "les bagels"),
+            (r"\bbrochettes?\b", "les brochettes"),
+            (r"\b(?:pizza|pizzas)\b", "les pizzas"),
+            (r"\b(?:thaï|thai|thaïlandaise?)\b", "la cuisine thaïlandaise"),
+            (r"\bcrêpes?\b", "les crêpes"),
+            (r"\b(?:vegan|végétal|végétarien)\w*\b", "la cuisine végétale"),
+            (r"\b(?:desserts?|gâteaux?|cake)\b", "les desserts"),
+            (r"\b(?:produits? frais|fraîcheur)\b", "la fraîcheur des produits"),
+            (r"\b(?:fait maison|faits maison|maison)\b", "les préparations maison"),
+            (r"\b(?:accueil|gentillesse|sourire)\w*\b", "la qualité de l’accueil"),
+        ],
+        "ou-dormir-a-nyons": [
+            (r"\bhôtel\b", "l’hébergement hôtelier"),
+            (r"\b(?:camping|camping-car)\b", "le camping"),
+            (r"\b(?:gîte|chambre d.hôtes)\b", "les hébergements indépendants"),
+            (r"\bpiscine\b", "la piscine"),
+            (r"\b(?:jardin|terrasse)\b", "les espaces extérieurs"),
+            (r"\bparking\b", "le stationnement"),
+            (r"\bpetit.déjeuner\b", "le petit-déjeuner"),
+            (r"\b(?:animaux|chien|chat)\b", "l’accueil des animaux"),
+        ],
+        "a-faire-autour-de-Nyons": [
+            (r"\b(?:vignes?|vins?|cave|terroir)\b", "les vignes et le terroir"),
+            (r"\b(?:église|chapelle|château|remparts?|patrimoine)\b", "le patrimoine"),
+            (r"\b(?:randonnée|rando|sentier|balade)\b", "les balades"),
+            (r"\b(?:panorama|vue|paysage)\b", "les paysages"),
+            (r"\b(?:piscine|baignade|parc aquatique)\b", "la baignade"),
+            (r"\bmarché\b", "le marché"),
+        ],
+        "que-faire-nyons": [
+            (r"\b(?:visite|découverte|atelier)\b", "la visite"),
+            (r"\b(?:fabrication|savoir-faire|artisan)\w*\b", "le savoir-faire local"),
+            (r"\b(?:église|pont|patrimoine|histoire)\b", "le patrimoine de Nyons"),
+            (r"\b(?:randonnée|sentier|balade)\b", "la promenade"),
+            (r"\b(?:enfants?|famille)\b", "la découverte en famille"),
+            (r"\b(?:boutique|produits?|savons?)\b", "les produits proposés"),
+        ],
+        "infos-pratiques-nyons": [
+            (r"\b(?:parking|stationnement|navette)\b", "le stationnement"),
+            (r"\b(?:santé|médecin|clinique|ambulance)\b", "les services de santé"),
+            (r"\b(?:école|formation)\b", "la formation"),
+            (r"\b(?:association|bénévole)\w*\b", "la vie associative"),
+            (r"\b(?:commerce|boutique|marché)\b", "les commerces"),
+            (r"\b(?:baignade|rivière|eygues)\b", "les bords de l’Eygues"),
+            (r"\bwifi\b", "l’accès au Wi-Fi"),
+            (r"\b(?:jardin|parcelle)\w*\b", "les jardins"),
+        ],
+        "produits-du-terroir": [
+            (r"\b(?:olive|tanche)\w*\b", "les olives de Nyons"),
+            (r"\btanche\b", "la variété Tanche"),
+            (r"\bAOP\b", "la reconnaissance AOP"),
+            (r"\bhuile d.olive\b", "l’huile d’olive"),
+            (r"\bpicodon\b", "le picodon"),
+            (r"\blavande\b", "la lavande"),
+            (r"\babricots?\b", "les abricots"),
+            (r"\btilleul\b", "le tilleul des Baronnies"),
+            (r"\btapenade\b", "la tapenade"),
+            (r"\btruffe\b", "la truffe"),
+            (r"\b(?:récolte|cueillette)\b", "la récolte"),
+            (r"\b(?:recette|cuisine|dégustation)\w*\b", "les usages gourmands"),
+        ],
+        "randonnee-nyons": [
+            (r"\b(?:randonnée|sentier|marche)\b", "le parcours à pied"),
+            (r"\b(?:vue|panorama|paysage)\b", "les paysages"),
+            (r"\b(?:dénivelé|montée|descente)\b", "le relief"),
+        ],
+        "video-nyons": [
+            (r"\b(?:histoire|autrefois|ancien|mémoire)\w*\b", "la mémoire locale"),
+            (r"\b(?:rue|place|quartier)\b", "les lieux de Nyons"),
+            (r"\b(?:témoignage|souvenir)\w*\b", "les souvenirs nyonsais"),
+            (r"\b(?:service|gendarmerie|gare|piscine)\b", "l’évolution des services"),
+        ],
+        "Histoire-Geo": [
+            (r"\b(?:histoire|siècle|époque)\b", "l’histoire locale"),
+            (r"\b(?:patrimoine|monument|bâtiment)\b", "le patrimoine"),
+            (r"\b(?:mémoire|souvenir|témoignage)\w*\b", "la mémoire des habitants"),
+        ],
+    }
+    mapping = groups.get(category, [
+        (r"\b(?:histoire|patrimoine)\b", "l’histoire du lieu"),
+        (r"\b(?:visite|découverte)\b", "la découverte"),
+        (r"\b(?:vue|paysage|nature)\b", "le cadre naturel"),
+        (r"\b(?:conseil|pratique|accès)\b", "les conseils pratiques"),
+    ])
+    found: list[str] = []
+    for pattern, label in mapping:
+        occurrences = len(re.findall(pattern, text, re.I))
+        central_to_title = bool(re.search(pattern, topic, re.I))
+        if (occurrences >= 2 or central_to_title) and label not in found:
+            found.append(label)
+    return found
+
+
+def extract_contact_details(paragraphs: list[str]) -> tuple[str, str]:
+    joined = " ".join(re.sub(r"\s+", " ", paragraph).strip() for paragraph in paragraphs)
+    address = ""
+    phone = ""
+    match = re.search(
+        r"\bAdresse\s*:\s*(.+?)(?=\s+(?:Téléphone|Tél\.?|Horaires?|E-?mail|Site|Accès)\s*:|$)",
+        joined,
+        re.I,
+    )
+    if match:
+        address = match.group(1).strip(" .;,–—")
+        if len(address) > 150:
+            address = ""
+    match = re.search(r"\b(?:Téléphone|Tél\.?)\s*:\s*([+\d][\d .-]{8,20})", joined, re.I)
+    if match:
+        phone = re.sub(r"\s+", " ", match.group(1)).strip(" .;,–—")
+    return address, phone
+
+
+def original_faq_answers(destination: str, topic: str, paragraphs: list[str]) -> list[str]:
+    """Crée trois réponses originales à partir de faits détectés dans la fiche."""
+    category = destination.split("/", 1)[0]
+    corpus = " ".join(paragraphs)
+    facts = faq_fact_labels(destination, corpus, topic)
+    address, phone = extract_contact_details(paragraphs)
+
+    if destination == "restaurants-de-nyons/o-sushi-nyons":
+        return [
+            "Ô Sushi est une adresse nyonsaise consacrée aux spécialités japonaises. La fiche met surtout en avant la fraîcheur du poisson, des portions généreuses et un accueil simple et chaleureux.",
+            "Les plateaux peuvent réunir riz, saumon, sashimis et makis. Le choix se fait parmi les préparations fraîches visibles dans la vitrine, selon ce qui a été réalisé pour la journée.",
+            "L’établissement est indiqué au 65 place de la Libération à Nyons. Le numéro mentionné dans la fiche est le 06 27 83 46 39.",
+        ]
+
+    introductions = {
+        "restaurants-de-nyons": f"La fiche présente {topic} comme une adresse gourmande de Nyons.",
+        "ou-dormir-a-nyons": f"La fiche rassemble les éléments utiles pour envisager un séjour à {topic}.",
+        "a-faire-autour-de-Nyons": f"La fiche propose de découvrir {topic} depuis Nyons.",
+        "que-faire-nyons": f"La fiche explique ce que l’on peut découvrir autour de {topic} à Nyons.",
+        "infos-pratiques-nyons": f"La fiche réunit les renseignements essentiels concernant {topic}.",
+        "produits-du-terroir": f"La fiche replace {topic} parmi les saveurs et savoir-faire du Nyonsais.",
+        "randonnee-nyons": f"La fiche aide à préparer la découverte de {topic} à pied.",
+        "video-nyons": f"La fiche utilise {topic} pour raconter une facette de la mémoire nyonsaise.",
+        "Histoire-Geo": f"La fiche éclaire l’histoire de {topic} dans son contexte local.",
+    }
+    first = introductions.get(category, f"La fiche présente {topic} et son intérêt pour découvrir Nyons ou ses alentours.")
+    if facts:
+        first += f" Elle met principalement en avant {facts[0]}."
+    else:
+        first += " Elle synthétise les éléments locaux disponibles pour répondre aux principales questions des visiteurs."
+
+    remaining = facts[1:3]
+    if remaining:
+        fact_text = remaining[0] if len(remaining) == 1 else f"{remaining[0]}, ainsi que {remaining[1]}"
+        second = f"Le texte développe aussi {fact_text}. Cette synthèse aide à comprendre ce qui distingue {topic}."
+    else:
+        fallback_second = {
+            "produits-du-terroir": f"Le texte explique la place de {topic} dans le terroir et les savoir-faire du Nyonsais.",
+            "video-nyons": f"Le récit relie {topic} aux lieux, aux souvenirs et aux transformations de Nyons.",
+            "Histoire-Geo": f"Le récit replace {topic} dans la chronologie, la mémoire locale et le patrimoine de la région.",
+        }
+        second = fallback_second.get(
+            category,
+            f"Le texte apporte un éclairage local sur {topic} en reformulant les éléments réellement présents dans l’article.",
+        )
+
+    practical_parts = []
+    if address:
+        practical_parts.append(f"L’adresse indiquée est {address}")
+    if phone:
+        practical_parts.append(f"le numéro mentionné est le {phone}")
+    if practical_parts:
+        practical = natural_join(practical_parts)
+        practical = practical[0].upper() + practical[1:] + "."
+        if address and not phone:
+            practical += " Il reste utile de vérifier les conditions d’accès avant le déplacement."
+        elif phone and not address:
+            practical = f"Pour obtenir les renseignements pratiques, {practical[0].lower() + practical[1:]} Les horaires peuvent évoluer."
+    elif len(facts) > 3:
+        extra = facts[3:5]
+        fact_text = extra[0] if len(extra) == 1 else f"{extra[0]}, ainsi que {extra[1]}"
+        practical = f"La fiche évoque également {fact_text}, ce qui complète la présentation de {topic}."
+    elif category in {"video-nyons", "Histoire-Geo", "produits-du-terroir"}:
+        documentary_endings = {
+            "produits-du-terroir": f"Le point essentiel est le lien entre {topic}, le terroir et les producteurs ou savoir-faire locaux.",
+            "video-nyons": f"Cette page complète le récit de {topic} en le reliant à l’évolution de Nyons.",
+            "Histoire-Geo": f"Cette page permet de replacer {topic} dans la mémoire et le patrimoine de la région.",
+        }
+        practical = documentary_endings[category]
+    else:
+        practical = (
+            f"Avant de vous déplacer pour {topic}, vérifiez les horaires et les conditions d’accès, "
+            "car ces renseignements peuvent changer."
+        )
+    return [first, second, practical]
+
+
 def enrich_articles(site_dir: Path) -> tuple[int, int, int]:
     """Ajoute un H2 et une FAQ uniquement quand ils sont absents."""
     h2_added = 0
     semantic_h2_added = 0
     faq_added = 0
-    history_words = re.compile(r"\b(histoire|siècle|année|autrefois|époque|patrimoine|mémoire)\b", re.I)
 
     for target in site_dir.rglob("index.html"):
         document = html.parse(str(target))
@@ -754,9 +958,9 @@ def enrich_articles(site_dir: Path) -> tuple[int, int, int]:
             )
             continue
 
+        all_paragraphs = [clean_text(node) for node in article.xpath(".//p") if clean_text(node)]
         paragraphs = []
-        for node in article.xpath(".//p"):
-            text = clean_text(node)
+        for text in all_paragraphs:
             if len(text) >= 70 and not text.startswith(BOILERPLATE_PREFIXES):
                 paragraphs.append(text)
         hero_intro = document.xpath('//section[contains(@class,"hero")]//p[1]')
@@ -765,17 +969,17 @@ def enrich_articles(site_dir: Path) -> tuple[int, int, int]:
         if not paragraphs:
             paragraphs.append(f"Cette fiche présente {topic} et les informations disponibles sur ce sujet.")
 
-        first = paragraphs[0]
-        middle_candidates = [p for p in paragraphs[1:] if history_words.search(p)] or paragraphs[1:]
-        middle = middle_candidates[0] if middle_candidates else first
-        practical_candidates = []
-        for keyword in ("adresse", "horaire", "tarif", "prix", "parking", "accès", "réserver", "réservation", "ouvert", "ouverture", "venir", "conseil"):
-            match = next((p for p in paragraphs if re.search(rf"\b{keyword}\b", p, re.I)), None)
-            if match:
-                practical_candidates.append(match)
-                break
-        last = practical_candidates[0] if practical_candidates else paragraphs[-1]
-        answers = [first, middle, last]
+        practical_candidates = [
+            paragraph
+            for paragraph in all_paragraphs
+            if re.search(
+                r"\b(?:Adresse|Téléphone|Tél\.?|Horaires?|Tarifs?|Accès)\s*:"
+                r"|\b(?:parking|stationnement|réserver|réservation|ouvert|ouverture)\b",
+                paragraph,
+                re.I,
+            )
+        ][:1]
+        answers = original_faq_answers(destination, topic, all_paragraphs or paragraphs)
 
         faq = html.Element("section", {"class": "faq generated-faq"})
         faq_title = etree.SubElement(faq, "h2")
@@ -785,7 +989,7 @@ def enrich_articles(site_dir: Path) -> tuple[int, int, int]:
             q = etree.SubElement(qa, "h3")
             q.text = question
             a = etree.SubElement(qa, "p")
-            a.text = compact_answer(answer)
+            a.text = answer
 
         container = article.getparent()
         agendas = container.xpath('./section[contains(concat(" ", normalize-space(@class), " "), " agenda ")]')
