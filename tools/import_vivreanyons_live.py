@@ -273,6 +273,35 @@ def category_for(destination: str) -> str:
     return destination.rsplit("/", 1)[0] if "/" in destination else "autres"
 
 
+def position_videos_left(site_dir: Path) -> None:
+    """Place les vidéos des anciennes fiches conservées dans la colonne média."""
+    for target in site_dir.rglob("index.html"):
+        document = html.parse(str(target))
+        articles = document.xpath(
+            '//main/div[contains(concat(" ", normalize-space(@class), " "), " content ")]/article'
+            '[.//div[contains(concat(" ", normalize-space(@class), " "), " video ")]]'
+        )
+        if not articles:
+            continue
+        article = articles[0]
+        container = article.getparent()
+        videos = article.xpath(
+            './/div[contains(concat(" ", normalize-space(@class), " "), " video ")]'
+        )
+        if not videos:
+            continue
+        media = html.Element("aside", {"class": "feature-media"})
+        for video in videos:
+            media.append(video)
+        container.attrib["class"] = "wrap feature-layout"
+        article.attrib["class"] = "feature-story"
+        container.insert(container.index(article), media)
+        target.write_text(
+            html.tostring(document, encoding="unicode", method="html", doctype="<!doctype html>"),
+            encoding="utf-8",
+        )
+
+
 def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--repo", type=Path, required=True)
@@ -408,6 +437,8 @@ def main() -> None:
         updated = header_pattern.sub(nav_html(), current, count=1)
         if updated != current:
             target.write_text(updated, encoding="utf-8")
+
+    position_videos_left(site_dir)
 
     print(f"URL découvertes : {len(urls)}")
     print(f"Rubriques détectées : {len(category_sources) - 1}")

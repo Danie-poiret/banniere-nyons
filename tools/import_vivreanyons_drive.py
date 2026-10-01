@@ -345,6 +345,21 @@ def page_document(page: dict, destination: str, category: str) -> str:
     canonical = f"{LIVE_ROOT}/{canonical_destination}"
     meta = description(page["intro"], page["title"])
     intro = html_std.escape(page["intro"])
+    content = page["content"]
+    video_blocks = re.findall(r'<div class="video">.*?</div>', content, flags=re.S)
+    if video_blocks:
+        story = re.sub(r'<div class="video">.*?</div>', "", content, flags=re.S).strip()
+        main_content = (
+            '<main><div class="wrap feature-layout">'
+            f'<aside class="feature-media">{"".join(video_blocks)}</aside>'
+            f'<article class="feature-story">{story}</article>'
+            f'{agenda_html()}</div></main>'
+        )
+    else:
+        main_content = (
+            '<main><div class="wrap content"><article>'
+            f'{content}</article>{agenda_html()}</div></main>'
+        )
     return f'''<!doctype html>
 <html lang="fr">
 <head>
@@ -360,11 +375,7 @@ def page_document(page: dict, destination: str, category: str) -> str:
   <div class="testbar">🧪 PILOTE — le texte et les vidéos d’abord, une photo sera ajoutée lors de la passe finale</div>
   {nav_html()}
   <section class="hero"><div class="inner"><span class="badge">{emoji} {html_std.escape(label)}</span><h1>{html_std.escape(page["title"])}</h1><p>{intro}</p></div></section>
-  <main><div class="wrap content"><article>
-      {page["content"]}
-    </article>
-    {agenda_html()}
-  </div></main>
+  {main_content}
   <footer class="footer"><div class="wrap"><strong>Vivre à Nyons ?</strong><span>contact@vivreanyons.fr · © 2025 VivreAnyons.fr</span><a href="{canonical}">Comparer avec la page actuelle</a></div></footer>
   <script src="{SITE_ROOT}/assets/agenda.js"></script>
 </body>
