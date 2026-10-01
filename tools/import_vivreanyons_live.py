@@ -378,10 +378,19 @@ def main() -> None:
 
     home_cards = []
     for category, cards in category_cards.items():
-        if "/" in category:
+        if "/" in category or category == "autres":
             continue
         label, emoji = label_for(category)
         home_cards.append((category, f"{emoji} {label}", f"{len(cards)} fiche{'s' if len(cards) > 1 else ''} dans cette rubrique."))
+    for page in pages:
+        if "/" not in page["destination"]:
+            home_cards.append(
+                (
+                    page["destination"],
+                    f"📷 {page['title']}",
+                    description(page["intro"], page["title"]),
+                )
+            )
     home_cards.append(("toutes-les-pages", "📚 Toutes les pages", f"{len(pages)} fiches classées par titre."))
     (site_dir / "index.html").write_text(
         index_document(
