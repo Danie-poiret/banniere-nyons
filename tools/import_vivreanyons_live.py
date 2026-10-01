@@ -1034,6 +1034,105 @@ def position_videos_left(site_dir: Path) -> None:
         )
 
 
+def sidebar_html() -> str:
+    """Navigation latérale inspirée des bons guides locaux, avec nos propres liens."""
+    sections = [
+        (
+            "Plein air",
+            [
+                ("Randonnées", f"{SITE_ROOT}/randonnee-nyons/"),
+                ("Baignade dans l’Eygues", f"{SITE_ROOT}/infos-pratiques-nyons/lieux-de-baignade-de-nyons/"),
+                ("Pétanque", f"{SITE_ROOT}/infos-pratiques-nyons/petanque-nyons/"),
+                ("Bike Park", f"{SITE_ROOT}/que-faire-nyons/bike-park-nyons/"),
+                ("Jardin des Arômes", f"{SITE_ROOT}/que-faire-nyons/Jardin-des-Aromes/"),
+            ],
+        ),
+        (
+            "Culture",
+            [
+                ("Vieilles ruelles", f"{SITE_ROOT}/que-faire-nyons/Vieilles-ruelles-de-Nyons/"),
+                ("Tour Randonne", f"{SITE_ROOT}/que-faire-nyons/Tour-Randonne/"),
+                ("Pont Roman", f"{SITE_ROOT}/que-faire-nyons/Pont-Roman-de-Nyons/"),
+                ("Histoire et mémoire", f"{SITE_ROOT}/Histoire-Geo/"),
+                ("Vidéos de Nyons", f"{SITE_ROOT}/video-nyons/"),
+            ],
+        ),
+        (
+            "Gastronomie",
+            [
+                ("Marché de Nyons", f"{SITE_ROOT}/infos-pratiques-nyons/marche-nyons-touristes/"),
+                ("Huile d’olive de Nyons", f"{SITE_ROOT}/produits-du-terroir/Huile-olive-de-Nyons/"),
+                ("Produits du terroir", f"{SITE_ROOT}/produits-du-terroir/"),
+                ("Restaurants", f"{SITE_ROOT}/restaurants-de-nyons/"),
+            ],
+        ),
+        (
+            "Alentours",
+            [
+                ("Tous les villages", f"{SITE_ROOT}/a-faire-autour-de-Nyons/"),
+                ("Vinsobres", f"{SITE_ROOT}/a-faire-autour-de-Nyons/vinsobres/"),
+                ("Mirabel-aux-Baronnies", f"{SITE_ROOT}/a-faire-autour-de-Nyons/Mirabel-aux-Baronnies/"),
+                ("Les Pilles", f"{SITE_ROOT}/a-faire-autour-de-Nyons/pilles/"),
+                ("Sahune", f"{SITE_ROOT}/a-faire-autour-de-Nyons/sahune/"),
+            ],
+        ),
+        (
+            "Les rendez-vous",
+            [
+                ("Agenda de Nyons", "https://agenda.vivreanyons.fr/"),
+                ("Le Corso fleuri", f"{SITE_ROOT}/evenements-nyons/corso-nyons/"),
+                ("Les 8 jours de pétanque", f"{SITE_ROOT}/evenements-nyons/8-jours-de-petanque-de-Nyons/"),
+                ("Les Olivades", f"{SITE_ROOT}/evenements-nyons/les-olivades-a-nyons/"),
+                ("Fête de l’Olive piquée", f"{SITE_ROOT}/evenements-nyons/fete-de-olive-piquee/"),
+            ],
+        ),
+    ]
+    cards = []
+    for title, links in sections:
+        link_html = "".join(
+            f'<a href="{html_std.escape(url, quote=True)}">{html_std.escape(label)}</a>'
+            for label, url in links
+        )
+        cards.append(
+            '<section class="side-card">'
+            f'<div class="side-title">{html_std.escape(title)}</div>'
+            f'<nav class="side-links" aria-label="{html_std.escape(title, quote=True)}">{link_html}</nav>'
+            '</section>'
+        )
+    return '<aside class="right-sidebar" aria-label="Découvrir Vivre à Nyons">' + "".join(cards) + "</aside>"
+
+
+def add_right_sidebars(site_dir: Path) -> int:
+    """Ajoute les menus de découverte à droite de chaque fiche de contenu."""
+    updated = 0
+    for target in site_dir.rglob("index.html"):
+        document = html.parse(str(target))
+        articles = document.xpath(
+            '//main//article[contains(concat(" ", normalize-space(@class), " "), " feature-story ")]'
+            ' | //main/div[contains(concat(" ", normalize-space(@class), " "), " content ")]/article'
+            ' | //main//article[contains(concat(" ", normalize-space(@class), " "), " pont-story ")]'
+        )
+        if not articles:
+            continue
+        container = articles[0].getparent()
+        if container is None:
+            continue
+        for old in container.xpath('./aside[contains(concat(" ", normalize-space(@class), " "), " right-sidebar ")]'):
+            container.remove(old)
+        classes = container.attrib.get("class", "").split()
+        if "has-sidebar" not in classes:
+            classes.append("has-sidebar")
+        container.attrib["class"] = " ".join(classes)
+        sidebar = html.fragment_fromstring(sidebar_html(), create_parent=False)
+        container.insert(container.index(articles[0]) + 1, sidebar)
+        target.write_text(
+            html.tostring(document, encoding="unicode", method="html", doctype="<!doctype html>"),
+            encoding="utf-8",
+        )
+        updated += 1
+    return updated
+
+
 def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--repo", type=Path, required=True)
@@ -1185,6 +1284,7 @@ def main() -> None:
     position_videos_left(site_dir)
     synchronized_titles = synchronize_original_titles(site_dir, downloaded)
     h2_added, semantic_h2_added, faq_added = enrich_articles(site_dir)
+    sidebars_added = add_right_sidebars(site_dir)
 
     print(f"URL découvertes : {len(urls)}")
     print(f"Rubriques détectées : {len(category_sources) - 1}")
@@ -1195,6 +1295,7 @@ def main() -> None:
     print(f"H2 ajoutés : {h2_added}")
     print(f"H2 sémantiques ajoutés : {semantic_h2_added}")
     print(f"FAQ ajoutées : {faq_added}")
+    print(f"Menus latéraux ajoutés : {sidebars_added}")
     print(f"Échecs : {len(failures)}")
     if failures:
         print("\n".join(failures))
