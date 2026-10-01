@@ -18,7 +18,7 @@ from pathlib import Path
 from urllib.parse import urldefrag, urljoin, urlparse
 from urllib.request import Request, urlopen
 
-from lxml import html
+from lxml import etree, html
 
 from import_vivreanyons_drive import (
     CATEGORY_LABELS,
@@ -58,10 +58,13 @@ PRESERVED_DESTINATIONS = {
 
 # Quelques anciennes URL aboutissent à une fiche validée dont le chemin pilote
 # est déjà différent. On évite ainsi de recréer un doublon.
-SOURCE_TO_PRESERVED = {
-    "infos-pratiques-nyons/Baignade-dans-Eygues-Nyons": "que-faire-nyons/Baignade-dans-Eygues-Nyons",
-    "que-faire-nyons/Tour-Randonne": "que-faire-nyons/Tour-Randonne-Nyons",
-    "video-nyons/place-buffaven-nyons": "que-faire-nyons/place-buffaven-nyons",
+SOURCE_TO_PRESERVED: dict[str, str] = {}
+
+# Deux fiches mises en forme manuellement restent proposées comme raccourcis,
+# en plus des URL originales qui sont désormais toutes conservées.
+PRESERVED_ALIASES = {
+    "que-faire-nyons/Baignade-dans-Eygues-Nyons": "infos-pratiques-nyons/Baignade-dans-Eygues-Nyons",
+    "que-faire-nyons/place-buffaven-nyons": "video-nyons/place-buffaven-nyons",
 }
 
 BOILERPLATE_PREFIXES = (
@@ -168,10 +171,6 @@ def extract_page(raw: bytes, source: str, url_map: dict[str, str]) -> dict:
     first_h1 = h1_positions[0]
     second_h1 = h1_positions[1] if len(h1_positions) > 1 else first_h1
     title = clean_text(blocks[first_h1])
-    if len(h1_positions) > 1:
-        article_title = clean_text(blocks[second_h1])
-        if article_title and len(article_title) > len(title) / 2:
-            title = article_title
 
     intro = ""
     intro_index: int | None = None
@@ -273,6 +272,227 @@ def category_for(destination: str) -> str:
     return destination.rsplit("/", 1)[0] if "/" in destination else "autres"
 
 
+def synchronize_original_titles(site_dir: Path, downloaded: dict[str, bytes]) -> int:
+    """Recopie le premier H1 de chaque page Google Sites dans le pilote."""
+    updated_count = 0
+    for source, raw in downloaded.items():
+        destination = destination_for(source)
+        target = site_dir / destination / "index.html"
+        if not target.exists():
+            continue
+        original = html.fromstring(raw)
+        original_h1 = original.xpath("//h1")
+        if not original_h1:
+            continue
+        title = clean_text(original_h1[0])
+        if not title:
+            continue
+        document = html.parse(str(target))
+        target_h1 = document.xpath("//h1[1]")
+        title_nodes = document.xpath("//title")
+        canonical = document.xpath('//link[@rel="canonical"]')
+        if not target_h1:
+            continue
+        target_h1[0].clear()
+        target_h1[0].text = title
+        if title_nodes:
+            title_nodes[0].text = f"{title} — pilote"
+        if canonical:
+            canonical[0].attrib["href"] = f"{LIVE_ROOT}/{source}"
+        target.write_text(
+            html.tostring(document, encoding="unicode", method="html", doctype="<!doctype html>"),
+            encoding="utf-8",
+        )
+        updated_count += 1
+
+    # Les deux raccourcis manuels pointent vers la vraie page source.
+    for alias, source in PRESERVED_ALIASES.items():
+        target = site_dir / alias / "index.html"
+        if not target.exists():
+            continue
+        document = html.parse(str(target))
+        canonical = document.xpath('//link[@rel="canonical"]')
+        if canonical:
+            canonical[0].attrib["href"] = f"{LIVE_ROOT}/{source}"
+            target.write_text(
+                html.tostring(document, encoding="unicode", method="html", doctype="<!doctype html>"),
+                encoding="utf-8",
+            )
+    return updated_count
+
+
+def short_topic(title: str) -> str:
+    parts = re.split(r"\s*[:–—|]\s*", title)
+    generic_prefixes = {"vidéo", "video", "photo", "photos", "image", "images"}
+    if len(parts) > 1 and parts[0].strip().casefold() in generic_prefixes:
+        topic = parts[1].strip(" ?.! ")
+    else:
+        topic = parts[0].strip(" ?.! ")
+    words = topic.split()
+    if len(words) > 12:
+        topic = " ".join(words[:12])
+    return topic or title
+
+
+def generated_h2(destination: str, topic: str) -> str:
+    category = destination.split("/", 1)[0]
+    if category == "restaurants-de-nyons":
+        return f"Découvrir {topic}"
+    if category == "ou-dormir-a-nyons":
+        return f"Séjourner à {topic}"
+    if category in {"video-nyons", "Histoire-Geo"}:
+        return f"Histoire et mémoire : {topic}"
+    if category == "infos-pratiques-nyons":
+        return f"Ce qu’il faut savoir sur {topic}"
+    if category == "evenements-nyons":
+        return f"Tout savoir sur {topic}"
+    if category == "questions-utiles-nyons":
+        return f"Les réponses utiles sur {topic}"
+    if category in {"nyons-image-1", "photos2", "photos-nyons-3", "photos-4"}:
+        return "Nyons en images"
+    return f"Découvrir {topic}"
+
+
+def compact_answer(text: str, limit: int = 430) -> str:
+    clean = re.sub(r"\s+", " ", text).strip()
+    if len(clean) <= limit:
+        return clean
+    sentences = re.split(r"(?<=[.!?])\s+", clean)
+    kept: list[str] = []
+    for sentence in sentences:
+        candidate = " ".join(kept + [sentence])
+        if len(candidate) > limit and kept:
+            break
+        kept.append(sentence)
+        if len(candidate) >= limit * 0.65:
+            break
+    answer = " ".join(kept).strip()
+    if not answer:
+        answer = clean[:limit].rsplit(" ", 1)[0].rstrip(" ,;:") + "…"
+    return answer
+
+
+def faq_questions(destination: str, topic: str, has_practical: bool) -> list[str]:
+    category = destination.split("/", 1)[0]
+    middle = {
+        "restaurants-de-nyons": f"Que peut-on découvrir chez « {topic} » ?",
+        "ou-dormir-a-nyons": f"Pourquoi choisir « {topic} » pour un séjour ?",
+        "video-nyons": f"Quelle histoire locale est liée à « {topic} » ?",
+        "Histoire-Geo": f"Quelle histoire locale est liée à « {topic} » ?",
+        "infos-pratiques-nyons": f"Quel détail pratique faut-il retenir sur « {topic} » ?",
+        "evenements-nyons": f"Comment profiter de « {topic} » ?",
+        "produits-du-terroir": f"Qu’est-ce qui caractérise « {topic} » ?",
+        "randonnee-nyons": f"Que découvre-t-on pendant « {topic} » ?",
+    }.get(category, f"Pourquoi découvrir « {topic} » ?")
+    last = (
+        f"Quelle information pratique retenir sur « {topic} » ?"
+        if has_practical
+        else f"Quel autre détail ressort de l’article sur « {topic} » ?"
+    )
+    return [
+        f"Que faut-il savoir sur « {topic} » ?",
+        middle,
+        last,
+    ]
+
+
+def enrich_articles(site_dir: Path) -> tuple[int, int]:
+    """Ajoute un H2 et une FAQ uniquement quand ils sont absents."""
+    h2_added = 0
+    faq_added = 0
+    history_words = re.compile(r"\b(histoire|siècle|année|autrefois|époque|patrimoine|mémoire)\b", re.I)
+
+    for target in site_dir.rglob("index.html"):
+        document = html.parse(str(target))
+        articles = document.xpath(
+            '//main//article[contains(concat(" ", normalize-space(@class), " "), " feature-story ")]'
+            ' | //main/div[contains(concat(" ", normalize-space(@class), " "), " content ")]/article'
+            ' | //main//article[contains(concat(" ", normalize-space(@class), " "), " pont-story ")]'
+        )
+        if not articles:
+            continue
+        article = articles[0]
+        h1 = document.xpath("//h1[1]")
+        if not h1:
+            continue
+        title = clean_text(h1[0])
+        topic = short_topic(title)
+        destination = str(target.parent.relative_to(site_dir)).replace("\\", "/")
+
+        if not article.xpath(".//h2"):
+            heading = html.Element("h2", {"class": "generated-h2"})
+            heading.text = generated_h2(destination, topic)
+            article.insert(0, heading)
+            h2_added += 1
+
+        # Les FAQ générées sont recalculées à chaque passe pour suivre un titre
+        # corrigé, tandis que les FAQ rédigées manuellement restent intactes.
+        previous_generated = document.xpath(
+            '//section[contains(concat(" ", normalize-space(@class), " "), " generated-faq ")]'
+        )
+        for previous in previous_generated:
+            parent = previous.getparent()
+            if parent is not None:
+                parent.remove(previous)
+
+        faq_exists = document.xpath(
+            '//*[contains(concat(" ", normalize-space(@class), " "), " faq ")]'
+        )
+        h2_labels = " ".join(clean_text(node).lower() for node in document.xpath("//h2"))
+        if faq_exists or "questions fréquentes" in h2_labels or re.search(r"\bfaq\b", h2_labels):
+            target.write_text(
+                html.tostring(document, encoding="unicode", method="html", doctype="<!doctype html>"),
+                encoding="utf-8",
+            )
+            continue
+
+        paragraphs = []
+        for node in article.xpath(".//p"):
+            text = clean_text(node)
+            if len(text) >= 70 and not text.startswith(BOILERPLATE_PREFIXES):
+                paragraphs.append(text)
+        hero_intro = document.xpath('//section[contains(@class,"hero")]//p[1]')
+        if not paragraphs and hero_intro:
+            paragraphs.append(clean_text(hero_intro[0]))
+        if not paragraphs:
+            paragraphs.append(f"Cette fiche présente {topic} et les informations disponibles sur ce sujet.")
+
+        first = paragraphs[0]
+        middle_candidates = [p for p in paragraphs[1:] if history_words.search(p)] or paragraphs[1:]
+        middle = middle_candidates[0] if middle_candidates else first
+        practical_candidates = []
+        for keyword in ("adresse", "horaire", "tarif", "prix", "parking", "accès", "réserver", "réservation", "ouvert", "ouverture", "venir", "conseil"):
+            match = next((p for p in paragraphs if re.search(rf"\b{keyword}\b", p, re.I)), None)
+            if match:
+                practical_candidates.append(match)
+                break
+        last = practical_candidates[0] if practical_candidates else paragraphs[-1]
+        answers = [first, middle, last]
+
+        faq = html.Element("section", {"class": "faq generated-faq"})
+        faq_title = etree.SubElement(faq, "h2")
+        faq_title.text = f"Questions fréquentes sur {topic}"
+        for question, answer in zip(faq_questions(destination, topic, bool(practical_candidates)), answers):
+            qa = etree.SubElement(faq, "div", {"class": "qa"})
+            q = etree.SubElement(qa, "h3")
+            q.text = question
+            a = etree.SubElement(qa, "p")
+            a.text = compact_answer(answer)
+
+        container = article.getparent()
+        agendas = container.xpath('./section[contains(concat(" ", normalize-space(@class), " "), " agenda ")]')
+        if agendas:
+            container.insert(container.index(agendas[0]), faq)
+        else:
+            container.append(faq)
+        faq_added += 1
+        target.write_text(
+            html.tostring(document, encoding="unicode", method="html", doctype="<!doctype html>"),
+            encoding="utf-8",
+        )
+    return h2_added, faq_added
+
+
 def position_videos_left(site_dir: Path) -> None:
     """Place les vidéos des anciennes fiches conservées dans la colonne média."""
     for target in site_dir.rglob("index.html"):
@@ -342,7 +562,12 @@ def main() -> None:
         destination = destination_for(source)
         target = site_dir / destination / "index.html"
         if destination in PRESERVED_DESTINATIONS and target.exists():
-            pages.append(read_existing_page(target, destination))
+            preserved = read_existing_page(target, destination)
+            original = html.fromstring(downloaded[source])
+            original_h1 = original.xpath("//h1")
+            if original_h1:
+                preserved["title"] = clean_text(original_h1[0])
+            pages.append(preserved)
             continue
         try:
             page = extract_page(downloaded[source], source, url_map)
@@ -359,6 +584,13 @@ def main() -> None:
     for destination, title, intro in EXTRA_EXISTING:
         if destination not in known_destinations:
             pages.append({"destination": destination, "title": title, "intro": intro, "existing": True, "videos": 0})
+            known_destinations.add(destination)
+
+    for destination in PRESERVED_ALIASES:
+        target = site_dir / destination / "index.html"
+        if destination not in known_destinations and target.exists():
+            pages.append(read_existing_page(target, destination))
+            known_destinations.add(destination)
 
     category_cards: dict[str, list[tuple[str, str, str]]] = {}
     for page in pages:
@@ -439,12 +671,17 @@ def main() -> None:
             target.write_text(updated, encoding="utf-8")
 
     position_videos_left(site_dir)
+    synchronized_titles = synchronize_original_titles(site_dir, downloaded)
+    h2_added, faq_added = enrich_articles(site_dir)
 
     print(f"URL découvertes : {len(urls)}")
     print(f"Rubriques détectées : {len(category_sources) - 1}")
     print(f"Fiches téléchargées : {len(downloaded)}")
     print(f"Fiches publiées dans le pilote : {len(pages)}")
     print(f"Vidéos conservées : {sum(int(page.get('videos', 0)) for page in pages)}")
+    print(f"Titres synchronisés avec l’original : {synchronized_titles}")
+    print(f"H2 ajoutés : {h2_added}")
+    print(f"FAQ ajoutées : {faq_added}")
     print(f"Échecs : {len(failures)}")
     if failures:
         print("\n".join(failures))
