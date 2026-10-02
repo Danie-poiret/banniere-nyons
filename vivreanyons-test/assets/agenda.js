@@ -143,4 +143,67 @@ document.addEventListener('DOMContentLoaded',()=>{simplifyPontRomanPhotos();load
   if(sidebar){inline.classList.add('has-desktop-contents');sidebar.prepend(contents(false));}
 })();
 
-
+/* Optional embedded services remain blocked until the visitor chooses them. */
+(function installPrivacyChoices(){
+  if(!document.body || document.querySelector('[data-privacy-panel]'))return;
+  const KEY='vivreanyons:privacy:v1',VERSION=1;
+  const script=document.currentScript;
+  const policyUrl=script?new URL('../cookies/',script.src).href:'/cookies/';
+  const frames=[...document.querySelectorAll('iframe[data-privacy-category][data-src]')];
+  let choice=null,lastFocus=null;
+  try{
+    const saved=JSON.parse(localStorage.getItem(KEY));
+    if(saved&&saved.version===VERSION&&typeof saved.videos==='boolean'&&typeof saved.maps==='boolean'&&Number.isFinite(saved.expires)&&saved.expires>Date.now())choice=saved;
+  }catch(error){}
+  const panel=document.createElement('section');panel.className='privacy-panel';panel.dataset.privacyPanel='';
+  panel.setAttribute('role','dialog');panel.setAttribute('aria-labelledby','privacy-title');
+  panel.innerHTML='<h2 id="privacy-title">Votre choix pour les cookies</h2><p>Le site reste accessible sans les services externes. Les vidéos YouTube et les cartes peuvent transmettre des informations de connexion à leurs fournisseurs et utiliser des cookies ou autres traceurs. Vous choisissez de les autoriser ou non.</p><p class="privacy-information"><a href="'+policyUrl+'">En savoir plus sur les cookies</a></p><div class="privacy-actions"><button type="button" data-privacy-action="accept">Accepter</button><button type="button" data-privacy-action="reject">Refuser</button><button type="button" data-privacy-action="configure" aria-expanded="false" aria-controls="privacy-options">Paramétrer</button></div><form id="privacy-options" class="privacy-options" hidden><label><input type="checkbox" name="videos"> <span><strong>Vidéos YouTube</strong><br>Autoriser le lecteur vidéo de Google / YouTube et ses traceurs éventuels.</span></label><label><input type="checkbox" name="maps"> <span><strong>Cartes interactives</strong><br>Autoriser Google Maps et la carte des sports avec ses fonds OpenStreetMap et ressources externes.</span></label><p>Le stockage de votre choix est nécessaire pour le mémoriser pendant six mois. Il reste dans votre navigateur.</p><div class="privacy-actions"><button type="submit">Enregistrer mes choix</button><button type="button" data-privacy-action="cancel">Annuler</button></div></form>';
+  document.body.append(panel);
+  const options=panel.querySelector('form'),videos=options.elements.videos,maps=options.elements.maps;
+  const configure=panel.querySelector('[data-privacy-action="configure"]');
+  function apply(){
+    frames.forEach(frame=>{
+      const allowed=!!(choice&&choice[frame.dataset.privacyCategory]);
+      const placeholder=frame.previousElementSibling;
+      frame.hidden=!allowed;
+      if(placeholder&&placeholder.matches('[data-privacy-placeholder]'))placeholder.hidden=allowed;
+      if(allowed){if(frame.getAttribute('src')!==frame.dataset.src)frame.setAttribute('src',frame.dataset.src);}
+      else if(frame.hasAttribute('src'))frame.removeAttribute('src');
+    });
+  }
+  function setChoice(allowVideos,allowMaps){
+    const expiry=new Date();expiry.setMonth(expiry.getMonth()+6);
+    choice={version:VERSION,videos:allowVideos,maps:allowMaps,expires:expiry.getTime()};
+    try{localStorage.setItem(KEY,JSON.stringify(choice));}catch(error){}
+    apply();panel.hidden=true;options.hidden=true;configure.setAttribute('aria-expanded','false');
+    if(lastFocus&&lastFocus.isConnected)lastFocus.focus();
+  }
+  function show(settings=false,category=null){
+    lastFocus=document.activeElement;panel.hidden=false;
+    videos.checked=!!(choice&&choice.videos);maps.checked=!!(choice&&choice.maps);
+    options.hidden=!settings;configure.setAttribute('aria-expanded',String(settings));
+    const focus=category==='videos'?videos:category==='maps'?maps:settings?videos:panel.querySelector('button');
+    focus.focus({preventScroll:true});
+  }
+  panel.querySelector('[data-privacy-action="accept"]').addEventListener('click',()=>setChoice(true,true));
+  panel.querySelector('[data-privacy-action="reject"]').addEventListener('click',()=>setChoice(false,false));
+  configure.addEventListener('click',()=>{options.hidden=!options.hidden;configure.setAttribute('aria-expanded',String(!options.hidden));if(!options.hidden)videos.focus();});
+  options.addEventListener('submit',event=>{event.preventDefault();setChoice(videos.checked,maps.checked);});
+  panel.querySelector('[data-privacy-action="cancel"]').addEventListener('click',()=>{if(choice){panel.hidden=true;lastFocus?.focus();}else{options.hidden=true;configure.setAttribute('aria-expanded','false');}});
+  panel.addEventListener('keydown',event=>{if(event.key==='Escape'){event.preventDefault();if(choice){panel.hidden=true;lastFocus?.focus();}else setChoice(false,false);}});
+  document.querySelectorAll('[data-privacy-placeholder] button').forEach(button=>button.addEventListener('click',()=>show(true,button.closest('[data-privacy-placeholder]').dataset.privacyPlaceholder)));
+  document.querySelectorAll('[data-open-privacy]').forEach(button=>button.addEventListener('click',()=>show(true)));
+  const footer=document.querySelector('footer .wrap');
+  if(footer){
+    const p=document.createElement('p');p.className='privacy-footer';
+    const button=document.createElement('button');button.type='button';button.className='privacy-manage';button.textContent='Gérer mes cookies';button.addEventListener('click',()=>show(true));
+    const link=document.createElement('a');link.href=policyUrl;link.textContent='Cookies et confidentialité';
+    p.append(button,document.createTextNode(' · '),link);footer.append(p);
+  }
+  window.addEventListener('storage',event=>{
+    if(event.key!==KEY)return;
+    try{const saved=JSON.parse(event.newValue);choice=saved&&saved.version===VERSION&&typeof saved.videos==='boolean'&&typeof saved.maps==='boolean'&&Number.isFinite(saved.expires)&&saved.expires>Date.now()?saved:null;}catch(error){choice=null;}
+    apply();panel.hidden=!!choice;
+  });
+  apply();panel.hidden=!!choice;
+})();
