@@ -133,11 +133,10 @@ document.addEventListener('DOMContentLoaded',()=>{simplifyPontRomanPhotos();load
   });
   function contents(inline){
     const nav=document.createElement('nav');nav.className='article-contents side-card'+(inline?' toc-inline':' toc-sidebar');nav.setAttribute('aria-label','Sommaire de la fiche');nav.setAttribute('data-article-contents','');
-    const details=document.createElement('details');details.open=!inline;
-    const summary=document.createElement('summary');summary.textContent='Dans cette fiche';details.append(summary);
+    const title=document.createElement('p');title.className='contents-title';title.textContent='Dans cette fiche';nav.append(title);
     const list=document.createElement('ul');list.className='contents-links';
     entries.forEach(h=>{const item=document.createElement('li');if(h.tagName==='H3')item.className='contents-subsection';const a=document.createElement('a');a.href='#'+encodeURIComponent(h.id);a.textContent=h.textContent.trim();item.append(a);list.append(item);});
-    details.append(list);nav.append(details);return nav;
+    nav.append(list);return nav;
   }
   const sidebar=layout.querySelector(':scope > .right-sidebar');
   const inline=contents(true);article.prepend(inline);

@@ -155,8 +155,8 @@ main{padding:36px 20px}
 @media(max-width:600px){.nav{gap:12px;flex-wrap:wrap}.navlinks{margin-left:0;width:100%;gap:12px}.nav-brand-group{max-width:100%}}
 
 /* Article section menu, with a compact version above the text on narrow screens. */
-.article-contents summary{font-size:.94rem;font-weight:800;color:var(--olive);cursor:pointer}
-.contents-links{list-style:none;padding:0;margin:10px 0 0;max-height:320px;overflow:auto;scrollbar-width:thin}
+.article-contents .contents-title{margin:0;font-size:.94rem;font-weight:800;color:var(--olive)}
+.contents-links{list-style:none;padding:0;margin:10px 0 0}
 .contents-links li{margin:0;border-bottom:1px solid var(--line)}
 .contents-links li:last-child{border-bottom:0}
 .contents-links a{display:block;padding:8px 0;font-size:.88rem;font-weight:650;line-height:1.35;text-decoration:none;overflow-wrap:anywhere}
@@ -167,6 +167,6 @@ main{padding:36px 20px}
 .toc-inline{margin:0 0 22px}
 .toc-inline.has-desktop-contents{display:none}
 @media(max-width:960px){.toc-sidebar{display:none}.toc-inline.has-desktop-contents{display:block}}
-@media(max-width:620px){.article-section-anchor{scroll-margin-top:190px}.contents-links{max-height:260px}}
+@media(max-width:620px){.article-section-anchor{scroll-margin-top:190px}}
 
 
