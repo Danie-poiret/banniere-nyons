@@ -191,3 +191,18 @@ iframe[data-privacy-category][hidden],.privacy-placeholder[hidden],.privacy-pane
 .privacy-manage{font:inherit;padding:0;background:none;border:0;color:inherit;text-decoration:underline;text-underline-offset:3px;cursor:pointer}
 .privacy-footer{font-size:.85rem;font-weight:400}
 @media(max-width:620px){.privacy-panel{bottom:10px;width:calc(100% - 20px);padding:18px}.privacy-actions>button{min-width:95px;padding:10px 8px}.privacy-placeholder{padding:18px}.video>.privacy-placeholder{padding:10px;gap:7px}.video>.privacy-placeholder p{font-size:.82rem}.privacy-placeholder button{padding:8px 10px}}
+
+/* Compact lodging strip above the main navigation, responsive on small screens. */
+.lodging-banner{background:#263a2b;color:#fffdf8;border-bottom:3px solid #d9b671;font-size:.86rem;line-height:1.45}
+.lodging-banner-inner{max-width:1120px;margin:auto;padding:10px 20px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+.lodging-banner p{margin:0;display:flex;flex-wrap:wrap;gap:3px 12px;align-items:center}
+.lodging-banner strong{font-size:.8rem;letter-spacing:.015em}
+.lodging-banner p span{color:#f1e7d3}
+.lodging-banner-actions{display:flex;align-items:center;gap:10px;flex-shrink:0}
+.lodging-banner a{color:#fffdf8;text-decoration:none;font-weight:750;border-radius:7px;padding:7px 10px;white-space:nowrap}
+.lodging-banner .lodging-see{background:#f1e7d3;color:#263a2b}
+.lodging-banner .lodging-whatsapp{border:1px solid #899f83}
+.lodging-banner a:hover{background:#fffdf8;color:#263a2b}
+.lodging-banner a:focus-visible{outline:3px solid #edc781;outline-offset:3px}
+@media(max-width:850px){.lodging-banner-inner{flex-wrap:wrap;gap:8px}.lodging-banner p{width:100%}}
+@media(max-width:420px){.lodging-banner-inner{padding:10px 14px}.lodging-banner p{display:block}.lodging-banner p span{display:block;margin-top:4px}.lodging-banner-actions{gap:6px;flex-wrap:wrap}.lodging-banner a{font-size:.8rem;padding:7px 8px}}
