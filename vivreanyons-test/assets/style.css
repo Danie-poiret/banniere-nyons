@@ -140,3 +140,33 @@ main{padding:36px 20px}
 .site-banner a:focus-visible{outline:3px solid var(--terra);outline-offset:5px}
 .site-banner img{aspect-ratio:3/1;object-fit:contain}
 @media(max-width:620px){.site-banner a{border-radius:9px}}
+
+/* Contact and Facebook links on every page. */
+.nav-brand-group{display:flex;flex-direction:column;align-items:flex-start;gap:3px;flex-shrink:0}
+.facebook-follow{display:inline-flex;align-items:center;gap:7px;font-size:.82rem;font-weight:700;text-decoration:none;color:#1754a0;white-space:nowrap}
+.facebook-follow svg{flex-shrink:0}
+.facebook-follow:hover span{text-decoration:underline}
+.facebook-follow:focus-visible{outline:2px solid #1877f2;outline-offset:4px;border-radius:3px}
+.footer .site-footer-content{display:block;line-height:1.7}
+.site-footer-content p{margin:0 0 12px}
+.site-footer-content p:last-child{margin-bottom:0}
+.site-footer-content a{overflow-wrap:anywhere}
+.site-footer-content .footer-comparison{font-size:.85rem;font-weight:400}
+@media(max-width:600px){.nav{gap:12px;flex-wrap:wrap}.navlinks{margin-left:0;width:100%;gap:12px}.nav-brand-group{max-width:100%}}
+
+/* Article section menu, with a compact version above the text on narrow screens. */
+.article-contents summary{font-size:.94rem;font-weight:800;color:var(--olive);cursor:pointer}
+.contents-links{list-style:none;padding:0;margin:10px 0 0;max-height:320px;overflow:auto;scrollbar-width:thin}
+.contents-links li{margin:0;border-bottom:1px solid var(--line)}
+.contents-links li:last-child{border-bottom:0}
+.contents-links a{display:block;padding:8px 0;font-size:.88rem;font-weight:650;line-height:1.35;text-decoration:none;overflow-wrap:anywhere}
+.contents-links a:hover,.contents-links a:focus-visible{color:var(--terra);text-decoration:underline}
+.contents-subsection{padding-left:12px}
+.contents-subsection a{font-size:.83rem;font-weight:450}
+.article-section-anchor{scroll-margin-top:150px}
+.toc-inline{margin:0 0 22px}
+.toc-inline.has-desktop-contents{display:none}
+@media(max-width:960px){.toc-sidebar{display:none}.toc-inline.has-desktop-contents{display:block}}
+@media(max-width:620px){.article-section-anchor{scroll-margin-top:190px}.contents-links{max-height:260px}}
+
+

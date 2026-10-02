@@ -1,3 +1,25 @@
+/* Shared contact and social links requested by the site owner. */
+(function installNyonsContact(){
+  const nav=document.querySelector('.nav'),brand=nav&&nav.querySelector('.brand');
+  if(brand&&!nav.querySelector('[data-nyons-follow]')){
+    const group=document.createElement('div');
+    group.className='nav-brand-group';brand.before(group);group.append(brand);
+    const follow=document.createElement('a');
+    follow.className='facebook-follow';follow.setAttribute('data-nyons-follow','');
+    follow.href='https://www.facebook.com/groups/nyonsaujourdhui';
+    follow.target='_blank';follow.rel='noopener noreferrer';
+    follow.innerHTML='<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="12" fill="#1877f2"/><path fill="#fff" d="M13.6 20v-7.3h2.5l.4-2.8h-2.9V8.1c0-.8.2-1.4 1.5-1.4h1.5V4.2c-.3 0-1.2-.2-2.2-.2-2.2 0-3.7 1.3-3.7 3.8v2.1H8.2v2.8h2.5V20z"/></svg><span>Me suivre sur Facebook</span>';
+    group.append(follow);
+  }
+  const footer=document.querySelector('footer.footer');
+  if(footer){
+    const comparison=footer.querySelector('a[href*="vivreanyons.fr"]');
+    const content=document.createElement('div');content.className='wrap site-footer-content';
+    content.innerHTML='<p><strong>Me contacter <a href="mailto:contact@vivreanyons.fr">contact@vivreanyons.fr</a></strong></p><p><strong>© 2025 VivreAnyons.fr | Votre guide de la vie à Nyons, entre oliveraies centenaires, <a href="https://www.vivreanyons.fr/a-faire-autour-de-Nyons/marches-provencaux">marché provençal</a> et patrimoine authentique.</strong></p><p><strong>Suivez-nous : <a href="https://www.facebook.com/groups/nyonsaujourdhui" target="_blank" rel="noopener noreferrer">Facebook Nyons</a> - <a href="https://www.facebook.com/tresorsdenyons" target="_blank" rel="noopener noreferrer">Nyons</a> - <a href="https://agenda.vivreanyons.fr/semaines/">agenda nyons</a> - <a href="https://agenda.vivreanyons.fr/">Que faire à Nyons</a> - <a href="https://drome.vivreanyons.fr/evenements/">Agenda Drôme</a></strong></p>';
+    if(comparison){const p=document.createElement('p');p.className='footer-comparison';p.append(comparison);content.append(p);}
+    footer.replaceChildren(content);
+  }
+})();
 /* Banner supplied by the site owner; shown below the green page heading. */
 (function installNyonsBanner(){
   const hero=document.querySelector('body > .hero');
@@ -13,7 +35,7 @@
   link.rel='sponsored noopener noreferrer';
   link.title='Voir ma sélection de livres anciens sur Nyons';
   const image=document.createElement('img');
-  image.src='/banniere-nyons/4a38de5a-17d3-4110-8843-2bd16cebd7db.png';
+  image.src='/banniere-nyons/vivreanyons-test/assets/nyons-livres-banner.webp';
   image.alt='Vieux livres sur Nyons que je recommande : histoire, souvenirs et cartes postales anciennes. Voir ma sélection sur Amazon.';
   image.width=2172;
   image.height=724;
@@ -55,16 +77,33 @@ function agendaSummary(summary){
   const text=String(summary||'Retrouvez les informations pratiques sur la fiche événement.').split('Abonnement aux informations de la ville de Nyons')[0].replace(/\s+1 2 3 4 5.*$/,'').trim();
   return text.length>240?text.slice(0,237).trimEnd()+'…':text;
 }
+function agendaEventSlug(event){
+  const title=String(event.title||'').normalize('NFKD').replace(/[\u0300-\u036f]/g,'').replace(/[^\x00-\x7F]/g,'').toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-+|-+$/g,'').slice(0,82).replace(/-+$/g,'')||'evenement';
+  return title+'-'+event.start_date;
+}
+function agendaEventUrl(event,published){
+  const local='https://agenda.vivreanyons.fr/evenements/'+agendaEventSlug(event)+'/';
+  if(published&&published.has(local))return local;
+  return 'https://agenda.vivreanyons.fr/';
+}
+async function agendaPublishedUrls(){
+  try{
+    const response=await fetch('https://raw.githubusercontent.com/Danie-poiret/agenda-nyons/main/sitemap.xml',{cache:'no-store'});
+    if(!response.ok)return null;
+    const xml=new DOMParser().parseFromString(await response.text(),'application/xml');
+    return new Set([...xml.getElementsByTagName('loc')].map(el=>el.textContent.trim()).filter(url=>url.startsWith('https://agenda.vivreanyons.fr/evenements/')));
+  }catch(error){return null;}
+}
 async function loadAgenda(){
   const roots=[...document.querySelectorAll('[data-agenda]')];if(!roots.length)return;
   try{
-    const response=await fetch(AGENDA_DATA,{cache:'no-store'});if(!response.ok)throw new Error('agenda');
+    const [response,published]=await Promise.all([fetch(AGENDA_DATA,{cache:'no-store'}),agendaPublishedUrls()]);if(!response.ok)throw new Error('agenda');
     const data=await response.json();
     roots.forEach(root=>{
       const events=selectAgendaEvents(data.events);
       if(!events.length){root.innerHTML='<p>Aucun événement à venir pour le moment.</p>';return;}
       root.innerHTML=events.map(event=>{
-        const url=`https://agenda.vivreanyons.fr/evenements/${slugify(event.title)}-${event.start_date}/`;
+        const url=agendaEventUrl(event,published);
         return `<article class="event"><div class="event-date">${fmtDate(event.start_date)}${event.end_date&&event.end_date!==event.start_date?' → '+fmtDate(event.end_date):''}</div><h3>${agendaEscape(event.title)}</h3><p>${agendaEscape(agendaSummary(event.summary))}</p><a href="${url}">Voir la fiche agenda →</a></article>`;
       }).join('');
     });
@@ -78,3 +117,31 @@ function simplifyPontRomanPhotos(){
   [...document.querySelectorAll('main p')].forEach(p=>{if(p.textContent.includes('Image improbable : une autruche'))p.remove()});
 }
 document.addEventListener('DOMContentLoaded',()=>{simplifyPontRomanPhotos();loadAgenda()});
+/* Navigation by article section on every detailed page. */
+(function installArticleContents(){
+  const article=document.querySelector('main article.feature-story, main .content > article:not(.card)');
+  if(!article || article.querySelector('[data-article-contents]')) return;
+  const headings=[...article.querySelectorAll('h2,h3')];
+  const layout=article.parentElement;
+  const faq=layout.querySelector(':scope > .faq h2');
+  if(faq) headings.push(faq);
+  const entries=headings.filter(h=>h.textContent.trim());
+  if(!entries.length)return;
+  entries.forEach((h,index)=>{
+    if(!h.id){const stem=h.textContent.normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'').slice(0,80)||'paragraphe';let id='section-'+stem,n=2;while(document.getElementById(id))id='section-'+stem+'-'+n++;h.id=id;}
+    h.classList.add('article-section-anchor');
+  });
+  function contents(inline){
+    const nav=document.createElement('nav');nav.className='article-contents side-card'+(inline?' toc-inline':' toc-sidebar');nav.setAttribute('aria-label','Sommaire de la fiche');nav.setAttribute('data-article-contents','');
+    const details=document.createElement('details');details.open=!inline;
+    const summary=document.createElement('summary');summary.textContent='Dans cette fiche';details.append(summary);
+    const list=document.createElement('ul');list.className='contents-links';
+    entries.forEach(h=>{const item=document.createElement('li');if(h.tagName==='H3')item.className='contents-subsection';const a=document.createElement('a');a.href='#'+encodeURIComponent(h.id);a.textContent=h.textContent.trim();item.append(a);list.append(item);});
+    details.append(list);nav.append(details);return nav;
+  }
+  const sidebar=layout.querySelector(':scope > .right-sidebar');
+  const inline=contents(true);article.prepend(inline);
+  if(sidebar){inline.classList.add('has-desktop-contents');sidebar.prepend(contents(false));}
+})();
+
+
