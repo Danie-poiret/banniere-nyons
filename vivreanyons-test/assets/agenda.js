@@ -111,8 +111,6 @@ async function loadAgenda(){
 }
 function simplifyPontRomanPhotos(){
   if(!location.pathname.includes('/Pont-Roman-de-Nyons'))return;
-  const figures=[...document.querySelectorAll('main figure')];
-  figures.slice(2).forEach(f=>f.remove());
   document.querySelectorAll('main .photo-stack').forEach(stack=>{if(!stack.querySelector('figure'))stack.remove()});
   [...document.querySelectorAll('main p')].forEach(p=>{if(p.textContent.includes('Image improbable : une autruche'))p.remove()});
 }
