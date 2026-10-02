@@ -141,7 +141,7 @@ function selectDromeEvents(items,now=new Date(),page=location.pathname){
   if(!candidates.length)return [];
   const day=Math.floor(Date.parse(today+'T00:00:00Z')/86400000);
   // Rotation guarantees a different trio on consecutive days when the pool has >3 outings.
-  const start=day%candidates.length;
+  const start=(day*3)%candidates.length;
   return Array.from({length:Math.min(3,candidates.length)},(_,index)=>candidates[(start+index)%candidates.length]);
 }
 function renderAgendaEvent(event,url,drome=false){
