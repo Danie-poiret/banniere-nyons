@@ -94,21 +94,91 @@ async function agendaPublishedUrls(){
     return new Set([...xml.getElementsByTagName('loc')].map(el=>el.textContent.trim()).filter(url=>url.startsWith('https://agenda.vivreanyons.fr/evenements/')));
   }catch(error){return null;}
 }
+const DROME_DATA='https://raw.githubusercontent.com/Danie-poiret/drome-provencale/main/agenda.json';
+const DROME_INDEX='https://raw.githubusercontent.com/Danie-poiret/drome-provencale/main/evenements/index.html';
+function agendaDailyRandom(seed){
+  let value=2166136261;
+  for(const char of seed){value^=char.charCodeAt(0);value=Math.imul(value,16777619);}
+  return ()=>{value+=0x6D2B79F5;let t=value;t=Math.imul(t^(t>>>15),t|1);t^=t+Math.imul(t^(t>>>7),t|61);return ((t^(t>>>14))>>>0)/4294967296;};
+}
+function agendaDromeKey(title,commune){return slugify(title)+'|'+slugify(commune);}
+async function loadDromeEvents(){
+  const responses=await Promise.all([fetch(DROME_DATA,{cache:'no-store'}),fetch(DROME_INDEX,{cache:'no-store'})]);
+  if(responses.some(response=>!response.ok))throw new Error('agenda Drôme');
+  const [data,source]=await Promise.all([responses[0].json(),responses[1].text()]);
+  const page=new DOMParser().parseFromString(source,'text/html'),published=new Map();
+  page.querySelectorAll('.village-section').forEach(section=>{
+    const commune=section.getAttribute('data-village');
+    section.querySelectorAll('a.card[href]').forEach(card=>{
+      const title=card.querySelector('strong')?.textContent.trim();
+      const url=card.getAttribute('href');
+      if(!title||!/^https:\/\/drome\.vivreanyons\.fr\/evenements\/[^/?#]+\/$/.test(url||''))return;
+      const key=agendaDromeKey(title,commune);
+      if(!published.has(key))published.set(key,[]);
+      published.get(key).push(url);
+    });
+  });
+  return (data.events||[]).map(event=>{
+    const urls=published.get(agendaDromeKey(event.title,event.commune))||[];
+    const url=urls.find(url=>url.includes('-'+event.start_date+'/')||url.includes('-'+event.start_date+'-'));
+    return {...event,published_url:url};
+  }).filter(event=>event.published_url);
+}
+function selectDromeEvents(items,now=new Date(),page=location.pathname){
+  const today=agendaToday(now),until=agendaSixMonthsAfter(today),seen=new Set();
+  const pool=(items||[]).filter(event=>{
+    if(!event?.published_url||!event.title||!/^\d{4}-\d{2}-\d{2}$/.test(event.start_date||''))return false;
+    if((event.end_date||event.start_date)<today||event.start_date>until||seen.has(event.published_url))return false;
+    seen.add(event.published_url);return true;
+  });
+  const distance=event=>typeof event.distance_from_nyons_km==='number'&&Number.isFinite(event.distance_from_nyons_km)&&event.distance_from_nyons_km>=0?event.distance_from_nyons_km:Infinity;
+  const near=pool.filter(event=>distance(event)<=30);
+  // Nearby outings form the daily pool; expand only when there are fewer than three.
+  const candidates=near.length>=3?near:near.concat(pool.filter(event=>distance(event)>30).sort((a,b)=>distance(a)-distance(b)).slice(0,3-near.length));
+  const random=agendaDailyRandom('drome|'+page);
+  candidates.sort((a,b)=>a.published_url.localeCompare(b.published_url));
+  for(let i=candidates.length-1;i>0;i--){const j=Math.floor(random()*(i+1));[candidates[i],candidates[j]]=[candidates[j],candidates[i]];}
+  if(!candidates.length)return [];
+  const day=Math.floor(Date.parse(today+'T00:00:00Z')/86400000);
+  // Rotation guarantees a different trio on consecutive days when the pool has >3 outings.
+  const start=day%candidates.length;
+  return Array.from({length:Math.min(3,candidates.length)},(_,index)=>candidates[(start+index)%candidates.length]);
+}
+function renderAgendaEvent(event,url,drome=false){
+  const summary=drome?event.description:event.summary;
+  const place=drome?`<p class="event-place">📍 ${agendaEscape(event.commune)}</p>`:'';
+  return `<article class="event${drome?' event-drome':''}"><div class="event-date">${fmtDate(event.start_date)}${event.end_date&&event.end_date!==event.start_date?' → '+fmtDate(event.end_date):''}</div><h3><a href="${agendaEscape(url)}">${agendaEscape(event.title)}</a></h3>${place}<p>${agendaEscape(agendaSummary(summary))}</p></article>`;
+}
 async function loadAgenda(){
   const roots=[...document.querySelectorAll('[data-agenda]')];if(!roots.length)return;
-  try{
-    const [response,published]=await Promise.all([fetch(AGENDA_DATA,{cache:'no-store'}),agendaPublishedUrls()]);if(!response.ok)throw new Error('agenda');
-    const data=await response.json();
-    roots.forEach(root=>{
+  const [nyons,drome]=await Promise.allSettled([
+    Promise.all([fetch(AGENDA_DATA,{cache:'no-store'}).then(response=>{if(!response.ok)throw new Error('agenda');return response.json();}),agendaPublishedUrls()]),
+    loadDromeEvents()
+  ]);
+  roots.forEach(root=>{
+    let content='';
+    if(nyons.status==='fulfilled'){
+      const [data,published]=nyons.value;
       const events=selectAgendaEvents(data.events);
-      if(!events.length){root.innerHTML='<p>Aucun événement à venir pour le moment.</p>';return;}
-      root.innerHTML=events.map(event=>{
-        const url=agendaEventUrl(event,published);
-        return `<article class="event"><div class="event-date">${fmtDate(event.start_date)}${event.end_date&&event.end_date!==event.start_date?' → '+fmtDate(event.end_date):''}</div><h3>${agendaEscape(event.title)}</h3><p>${agendaEscape(agendaSummary(event.summary))}</p><a href="${url}">Voir la fiche agenda →</a></article>`;
-      }).join('');
-    });
-  }catch(error){roots.forEach(root=>{root.innerHTML='<p>Les prochains événements sont disponibles sur <a href="https://agenda.vivreanyons.fr/">agenda.vivreanyons.fr</a>.</p>';});}
+      content=events.map(event=>renderAgendaEvent(event,agendaEventUrl(event,published))).join('')||'<p>Aucun événement à venir pour le moment.</p>';
+    }else content='<p>Les prochains événements sont disponibles sur <a href="https://agenda.vivreanyons.fr/">agenda.vivreanyons.fr</a>.</p>';
+    content+='<h3 class="agenda-drome-heading">À découvrir près de Nyons <a href="https://drome.vivreanyons.fr/evenements/">Agenda Drôme →</a></h3>';
+    if(drome.status==='fulfilled'){
+      const events=selectDromeEvents(drome.value);
+      content+=events.map(event=>renderAgendaEvent(event,event.published_url,true)).join('')||'<p>Retrouvez les prochaines sorties dans l’<a href="https://drome.vivreanyons.fr/evenements/">agenda Drôme</a>.</p>';
+    }else content+='<p>Retrouvez les sorties dans l’<a href="https://drome.vivreanyons.fr/evenements/">agenda Drôme</a>.</p>';
+    root.innerHTML=content;
+  });
 }
+let agendaRenderedDay=agendaToday();
+function refreshDailyAgenda(){
+  const today=agendaToday();
+  if(today!==agendaRenderedDay){agendaRenderedDay=today;loadAgenda();}
+}
+// Refresh even if a visitor keeps the page open across the date change in France.
+setInterval(refreshDailyAgenda,60000);
+document.addEventListener('visibilitychange',()=>{if(!document.hidden)refreshDailyAgenda();});
+
 function simplifyPontRomanPhotos(){
   if(!location.pathname.includes('/Pont-Roman-de-Nyons'))return;
   document.querySelectorAll('main .photo-stack').forEach(stack=>{if(!stack.querySelector('figure'))stack.remove()});

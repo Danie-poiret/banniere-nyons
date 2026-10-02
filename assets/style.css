@@ -209,3 +209,10 @@ iframe[data-privacy-category][hidden],.privacy-placeholder[hidden],.privacy-pane
 
 /* Complete original fiche photographs: preserve every image without cropping. */
 .restored-fiche-photos img{max-height:none;object-fit:contain}
+
+/* Agenda links and daily nearby Drôme outings. */
+.event h3 a{color:var(--ink);text-decoration:underline;text-decoration-color:var(--terra);text-underline-offset:3px}
+.event h3 a:hover{color:var(--terra)}
+.agenda-drome-heading{grid-column:1/-1;margin:18px 0 0;font-size:1.2rem}
+.agenda-drome-heading a{display:inline-block;font-size:.9rem;margin-left:12px}
+.event .event-place{margin:8px 0 0;font-weight:750;color:var(--olive)}
