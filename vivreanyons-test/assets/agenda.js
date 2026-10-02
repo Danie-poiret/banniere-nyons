@@ -1,3 +1,9 @@
+/* Home link label shared by every page. */
+(function labelNyonsHome(){
+  document.querySelectorAll('header .navlinks a').forEach(link=>{
+    if(link.textContent.trim()==='Accueil') link.textContent='Nyons accueil';
+  });
+})();
 /* Shared contact and social links requested by the site owner. */
 (function installNyonsContact(){
   const nav=document.querySelector('.nav'),brand=nav&&nav.querySelector('.brand');
