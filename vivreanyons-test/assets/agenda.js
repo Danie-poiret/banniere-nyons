@@ -1,3 +1,29 @@
+/* Banner supplied by the site owner; shown below the green page heading. */
+(function installNyonsBanner(){
+  const hero=document.querySelector('body > .hero');
+  if(!hero || document.querySelector('[data-nyons-banner]')) return;
+  const banner=document.createElement('aside');
+  banner.className='site-banner';
+  banner.setAttribute('data-nyons-banner','');
+  banner.setAttribute('aria-label','Sélection de vieux livres sur Nyons');
+  banner.style.cssText='width:min(1120px,92%);margin:24px auto 0';
+  const link=document.createElement('a');
+  link.href='https://amzn.to/3VzucHH';
+  link.target='_blank';
+  link.rel='sponsored noopener noreferrer';
+  link.title='Voir ma sélection de livres anciens sur Nyons';
+  const image=document.createElement('img');
+  image.src='/banniere-nyons/4a38de5a-17d3-4110-8843-2bd16cebd7db.png';
+  image.alt='Vieux livres sur Nyons que je recommande : histoire, souvenirs et cartes postales anciennes. Voir ma sélection sur Amazon.';
+  image.width=2172;
+  image.height=724;
+  image.loading='lazy';
+  image.decoding='async';
+  image.style.cssText='display:block;width:100%;height:auto';
+  link.append(image);
+  banner.append(link);
+  hero.insertAdjacentElement('afterend',banner);
+})();
 const AGENDA_DATA='https://raw.githubusercontent.com/Danie-poiret/agenda-nyons/main/agenda.json';
 function slugify(s){return (s||'').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase().replace(/['’]/g,'-').replace(/[^a-z0-9]+/g,'-').replace(/^-+|-+$/g,'').replace(/-+/g,'-')}
 function fmtDate(s){if(!s)return'';const [y,m,d]=s.split('-').map(Number);return new Intl.DateTimeFormat('fr-FR',{day:'numeric',month:'long'}).format(new Date(y,m-1,d))}
