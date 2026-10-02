@@ -1,0 +1,8 @@
+/* Coordonnées propres à chaque fiche de restaurant. */
+.restaurant-contact-card h2{font-size:.78rem;line-height:1.4}
+.restaurant-contact-card .contact-name{font-weight:800;font-size:1rem;line-height:1.4;margin:0 0 10px;color:var(--olive)}
+.restaurant-contact-card address{font-style:normal;font-size:.92rem;line-height:1.5;margin:0 0 14px;overflow-wrap:anywhere}
+.restaurant-contact-card .contact-phone{display:block;padding:10px 9px;border-radius:9px;background:var(--olive);color:white;font-size:.94rem;font-weight:800;text-align:center;text-decoration:none}
+.restaurant-contact-card .contact-phone:hover,.restaurant-contact-card .contact-phone:focus-visible{background:var(--terra)}
+.restaurant-contact-card .contact-source{display:inline-block;margin-top:12px;font-size:.78rem;color:var(--muted)}
+.restaurant-contact-card .contact-note{font-size:.85rem;line-height:1.5;color:var(--terra);margin:8px 0}
