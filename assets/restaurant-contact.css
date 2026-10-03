@@ -5,3 +5,6 @@
 .restaurant-contact-card .contact-phone{display:block;padding:10px 9px;border-radius:9px;background:var(--olive);color:white;font-size:.94rem;font-weight:800;text-align:center;text-decoration:none}
 .restaurant-contact-card .contact-phone:hover,.restaurant-contact-card .contact-phone:focus-visible{background:var(--terra)}
 .restaurant-contact-card .contact-note{font-size:.85rem;line-height:1.5;color:var(--terra);margin:8px 0}
+
+.restaurant-contact-card .contact-directions{display:block;margin-top:10px;padding:10px 9px;border:1px solid var(--olive);border-radius:9px;color:var(--olive);font-size:.94rem;font-weight:800;line-height:1.4;text-align:center;text-decoration:none;overflow-wrap:anywhere}
+.restaurant-contact-card .contact-directions:hover,.restaurant-contact-card .contact-directions:focus-visible{background:var(--olive);color:white}
