@@ -19,3 +19,9 @@ HTML so that it also works without JavaScript and is visible to search engines.
 Keep the existing site navigation, banners, cookie controls and footer intact.
 Verify the featured title links to the new article and the photo loads after
 deployment. Do not substitute an old article just because its content was edited.
+
+
+## Préférence éditoriale enregistrée le 4 octobre 2026
+
+Pour les articles de Vivre à Nyons, conserver les avis utiles et les intégrer naturellement au texte, sans les noms de leurs auteurs et sans indiquer leur provenance (Google, commentaires, plateforme ou personne). Reformuler fidèlement les appréciations et les réserves ; ne pas inventer de témoignage ni de visite personnelle. Les liens vers les sources officielles restent possibles pour les coordonnées, horaires, tarifs et autres renseignements pratiques.
+
