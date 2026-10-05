@@ -34,3 +34,6 @@ Pour les articles de Vivre à Nyons, conserver les avis utiles et les intégrer 
 - Reformuler sans recopier de longs passages, sans inventer une visite, un client, un chantier, une note, un consensus ou une promesse de résultat. Une recommandation brève reste une appréciation brève.
 - Exemple de ton : « Le travail de Faure est apprécié pour son sérieux. Morin plaît pour son efficacité et son contact sympathique. Reste à demander un vrai créneau : un artisan peut être bon et avoir son planning rempli. »
 
+## Écriture concrète — complément enregistré le 5 octobre 2026
+
+Pour reformuler les appréciations fournies, observer les mots simples, les détails du quotidien et le rythme des phrases. Donner la priorité aux éléments précis qui rendent un lieu agréable ou moins pratique : table et bancs, propreté, ombre, accueil, explications, accès et disponibilité. Varier les longueurs de phrases sans fabriquer de fautes ni de tournures familières systématiques. Ne pas transformer une attention occasionnelle en prestation garantie, ni un cas isolé en règle générale. Aucun style ne garantit un résultat SEO ou l’indétectabilité d’un texte assisté.
