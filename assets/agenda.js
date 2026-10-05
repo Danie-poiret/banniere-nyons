@@ -4,6 +4,23 @@
     if(link.textContent.trim()==='Accueil') link.textContent='Nyons accueil';
   });
 })();
+/* Direct links shared by the site navigation. */
+(function installNyonsMenuShortcuts(){
+  const menu=document.querySelector('header .navlinks');
+  if(!menu) return;
+  const sections=menu.querySelector('.rubriques');
+  [
+    {key:'brocantes',label:'Brocantes',url:'https://www.vivreanyons.fr/evenements-nyons/Brocantes--Vides-greniers-Nyons/'},
+    {key:'cinema',label:'Programme cinéma',url:'https://www.vivreanyons.fr/infos-pratiques-nyons/cinema-nyons/'}
+  ].forEach(item=>{
+    let link=[...menu.children].find(child=>child.tagName==='A'&&(child.getAttribute('data-nyons-shortcut')===item.key||child.href===item.url));
+    if(!link) link=document.createElement('a');
+    link.setAttribute('data-nyons-shortcut',item.key);
+    link.href=item.url;
+    link.textContent=item.label;
+    menu.insertBefore(link,sections);
+  });
+})();
 /* Shared contact and social links requested by the site owner. */
 (function installNyonsContact(){
   const nav=document.querySelector('.nav'),brand=nav&&nav.querySelector('.brand');
