@@ -37,3 +37,8 @@ Pour les articles de Vivre à Nyons, conserver les avis utiles et les intégrer 
 ## Écriture concrète — complément enregistré le 5 octobre 2026
 
 Pour reformuler les appréciations fournies, observer les mots simples, les détails du quotidien et le rythme des phrases. Donner la priorité aux éléments précis qui rendent un lieu agréable ou moins pratique : table et bancs, propreté, ombre, accueil, explications, accès et disponibilité. Varier les longueurs de phrases sans fabriquer de fautes ni de tournures familières systématiques. Ne pas transformer une attention occasionnelle en prestation garantie, ni un cas isolé en règle générale. Aucun style ne garantit un résultat SEO ou l’indétectabilité d’un texte assisté.
+
+
+## Maillage interne — préférence du 5 octobre 2026
+
+Pour chaque nouvel article, choisir des liens internes directement utiles au sujet et varier les destinations. Ne mettre qu’une seule occurrence de chaque destination dans le corps de l’article. Éviter de renvoyer systématiquement aux arcades ou au marché de Nyons lorsqu’ils n’apportent rien au sujet. Cette règle concerne le texte éditorial, pas la navigation commune du site.
