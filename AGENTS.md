@@ -42,3 +42,7 @@ Pour reformuler les appréciations fournies, observer les mots simples, les dét
 ## Maillage interne — préférence du 5 octobre 2026
 
 Pour chaque nouvel article, choisir des liens internes directement utiles au sujet et varier les destinations. Ne mettre qu’une seule occurrence de chaque destination dans le corps de l’article. Éviter de renvoyer systématiquement aux arcades ou au marché de Nyons lorsqu’ils n’apportent rien au sujet. Cette règle concerne le texte éditorial, pas la navigation commune du site.
+
+## Lien du marché de Nyons — préférence du 6 octobre 2026
+
+Pour un lien intitulé « Marché de Nyons », utiliser la fiche `/que-faire-nyons/Marche-de-Nyons/` (https://www.vivreanyons.fr/que-faire-nyons/Marche-de-Nyons/). Adapter uniquement le préfixe aux versions de test. Conserver les liens vers les autres articles lorsqu’ils concernent un sujet distinct.
