@@ -11,7 +11,8 @@
   const sections=menu.querySelector('.rubriques');
   [
     {key:'brocantes',label:'Brocantes',url:'https://www.vivreanyons.fr/evenements-nyons/Brocantes--Vides-greniers-Nyons/'},
-    {key:'cinema',label:'Programme cinéma',url:'https://www.vivreanyons.fr/infos-pratiques-nyons/cinema-nyons/'}
+    {key:'cinema',label:'Programme cinéma',url:'https://www.vivreanyons.fr/infos-pratiques-nyons/cinema-nyons/'},
+    {key:'pharmacie-garde',label:'Pharmacie de garde',url:'https://www.vivreanyons.fr/infos-pratiques-nyons/pharmacie-de-garde-nyons/'}
   ].forEach(item=>{
     let link=[...menu.children].find(child=>child.tagName==='A'&&(child.getAttribute('data-nyons-shortcut')===item.key||child.href===item.url));
     if(!link) link=document.createElement('a');
