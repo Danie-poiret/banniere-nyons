@@ -46,3 +46,7 @@ Pour chaque nouvel article, choisir des liens internes directement utiles au suj
 ## Lien du marché de Nyons — préférence du 6 octobre 2026
 
 Pour un lien intitulé « Marché de Nyons », utiliser la fiche `/que-faire-nyons/Marche-de-Nyons/` (https://www.vivreanyons.fr/que-faire-nyons/Marche-de-Nyons/). Adapter uniquement le préfixe aux versions de test. Conserver les liens vers les autres articles lorsqu’ils concernent un sujet distinct.
+
+## Nom de la Brasserie de la Place — correction du 6 octobre 2026
+
+Dans la fiche de la Brasserie de la Place à Nyons, ne pas présenter « Café de la Bourse » comme un autre nom de cet établissement. Le nom demandé par le propriétaire du site est « Brasserie de la Place ».
