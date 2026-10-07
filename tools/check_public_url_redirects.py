@@ -8,6 +8,8 @@ from urllib.request import Request, HTTPRedirectHandler, build_opener
 from urllib.error import HTTPError
 
 URLS = [
+"https://www.vivreanyons.fr/Auvergne-Rhone-Alpes/Drome/Piscine-de-Pierrelatte/",
+"https://www.vivreanyons.fr/evenements-nyons/",
 "https://www.vivreanyons.fr/Provence-Alpes-Cote-dAzur/Auvergne-Rhone-Alpes/Drome/Piscine-de-Pierrelatte",
 "https://www.vivreanyons.fr/evenements-",
 "https://www.vivreanyons.fr/naLogImpressions",
