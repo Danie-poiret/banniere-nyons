@@ -8,6 +8,11 @@ from urllib.request import Request, HTTPRedirectHandler, build_opener
 from urllib.error import HTTPError
 
 URLS = [
+"https://www.vivreanyons.fr/sante-nyons/laboratoire-nyons/",
+"https://www.vivreanyons.fr/assets/photos/laboratoire-nyons/prise-de-sang-au-laboratoire.png",
+"https://www.vivreanyons.fr/assets/photos/laboratoire-nyons/tubes-et-resultats-analyses.png",
+"https://www.vivreanyons.fr/assets/photos/laboratoire-nyons/prelevement-sanguin-et-tubes.png",
+
 "https://www.vivreanyons.fr/sante-nyons/",
 "https://www.vivreanyons.fr/infos-pratiques-nyons/Alzheimer-Nyons/",
 "https://www.vivreanyons.fr/infos-pratiques-nyons/nyons-sante/",
@@ -87,11 +92,21 @@ def check(url):
             result["hearingPhotosLinked"] = re.findall(r'<img[^>]+src="([^"]*assets/photos/audioprothesiste-nyons/[^"]+)"', source)
             result["svgRoot"] = "<svg" in source
             result["headings"] = re.findall(r"<h1[^>]*>(.*?)</h1>", source, re.S)
+        if url == "https://www.vivreanyons.fr/":
+            result["latestLaboratoryArticle"] = 'data-latest-article="/sante-nyons/laboratoire-nyons/"' in source
+            result["laboratoryHomepagePhoto"] = "/assets/photos/laboratoire-nyons/prise-de-sang-au-laboratoire.png" in source
+        if "/sante-nyons/laboratoire-nyons/" in url:
+            result["labPhone"] = 'href="tel:+33475262677"' in source
+            result["labAddress"] = "26 avenue Paul Laurens" in source
+            result["labPhotos"] = re.findall(r'<img[^>]+src="([^"]*assets/photos/laboratoire-nyons/[^"]+)"', source)
+            result["hbA1cQualification"] = "ne nécessite pas, à elle seule, d’être à jeun" in source
+            result["editorialHeadings"] = len(re.findall(r"<h2", source))
         if url == "https://www.vivreanyons.fr/sante-nyons/":
+            result["laboratoryLinked"] = 'href="/sante-nyons/laboratoire-nyons/"' in source
             result["alzheimerLinked"] = 'href="/infos-pratiques-nyons/Alzheimer-Nyons/"' in source
             result["alzheimerNavigation"] = 'href="#memoire-aidants"' in source
             result["alzheimerSection"] = 'id="memoire-aidants"' in source
-            result["healthItems22"] = '"numberOfItems":22' in source
+            result["healthItems23"] = '"numberOfItems":23' in source
         if "Alzheimer-Nyons" in url:
             result["healthBackLink"] = "data-health-back-link" in source
             result["originalPhoto"] = "/assets/photos/7e9287ac607cf945800d.webp" in source
