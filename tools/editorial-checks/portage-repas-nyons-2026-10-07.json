@@ -1,0 +1,76 @@
+{
+  "date": "2026-10-07",
+  "url": "https://www.vivreanyons.fr/infos-pratiques-nyons/portage-repas-nyons/",
+  "author": "Papy Chris",
+  "editorialSections": 11,
+  "questionsReponses": 7,
+  "sources": [
+    {
+      "url": "https://www.nyons.com/vivre-nyons/actions-sociales-et-sante/ccas/",
+      "title": "Ville de Nyons — CCAS",
+      "description": "Bénéficiaires, jours et horaires de livraison, accueil du CCAS et bilan 2025."
+    },
+    {
+      "url": "https://www.nyons.com/download_file/view/5279",
+      "title": "CCAS de Nyons — Formulaire « Repas à domicile » (PDF)",
+      "description": "Tarifs affichés de 8,50 € et 10 €, justificatifs, organisation des repas et délai de modification de 48 heures."
+    },
+    {
+      "url": "https://www.nyons.com/download_file/1875/223",
+      "title": "Ville de Nyons — Documentation seniors du CCAS (PDF)",
+      "description": "Composition des repas et possibilité de financement partiel par l’APA."
+    },
+    {
+      "url": "https://dora.inclusion.gouv.fr/services/centre-communal-dact-jebw-portage-de-repas-a-d",
+      "title": "DORA — Service de portage du CCAS de Nyons",
+      "description": "Fiche du service indiquant des tarifs de 8,80 € et 10,30 €, à confronter au formulaire municipal."
+    },
+    {
+      "url": "https://www.service-public.gouv.fr/particuliers/vosdroits/F10009",
+      "title": "Service Public — Allocation personnalisée d’autonomie",
+      "description": "Conditions de l’APA et dépenses pouvant figurer dans un plan d’aide à domicile."
+    },
+    {
+      "url": "https://www.service-public.gouv.fr/particuliers/vosdroits/F248",
+      "title": "Service Public — Aides au portage des repas",
+      "description": "Principes des aides financières et démarches auprès du CCAS."
+    }
+  ],
+  "photos": [
+    {
+      "index": 0,
+      "name": "repas-servi-a-domicile.png",
+      "alt": "Une personne en tenue rose apporte un plat à une femme âgée assise à une table.",
+      "caption": "Un repas et un passage régulier peuvent faciliter le quotidien à domicile. Photo d’illustration.",
+      "width": 220,
+      "height": 190
+    },
+    {
+      "index": 1,
+      "name": "tournee-livraison-repas.png",
+      "alt": "Une livreuse prend des plateaux-repas à l’arrière d’un véhicule de livraison blanc.",
+      "caption": "Une tournée de livraison de repas à domicile. Photo d’illustration.",
+      "width": 152,
+      "height": 156
+    },
+    {
+      "index": 2,
+      "name": "plateau-repas-senior.png",
+      "alt": "Un plateau-repas avec des fruits et un plat est présenté à un homme âgé assis à table.",
+      "caption": "Le portage permet de recevoir un repas complet sans avoir à le préparer. Photo d’illustration.",
+      "width": 182,
+      "height": 147
+    }
+  ],
+  "qualifications": [
+    "Texte fourni conservé, suppression du titre répété et de la présentation du choix SEO.",
+    "Tarifs divergents : PDF municipal 8,50/10 euros, DORA CCAS 8,80/10,30 euros ; aucun montant annoncé comme garanti pour 2026.",
+    "Seuil PDF 1,10 fois SMIC : ne pas calculer ni présumer brut/net ; CCAS doit préciser les revenus retenus.",
+    "Repas doublé prévu samedi pour dimanche et veille de jour férié ; pas de livraison dominicale garantie.",
+    "APA conditionnelle selon plan d’aide, GIR 1 à 4 et autres conditions ; pas de promesse de prise en charge du prix complet du repas.",
+    "Chiffres 2025 confirmés par page CCAS : 15 506 repas, moyenne 66 bénéficiaires. Ne pas confondre moyenne calendaire et tournées.",
+    "Trois photos d’illustration ; véhicule et personnes non attribués au CCAS de Nyons.",
+    "Anciennes fiches et leurs URLs conservées."
+  ],
+  "healthItems": 26
+}
