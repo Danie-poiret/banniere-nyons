@@ -2,7 +2,7 @@
   "date": "2026-10-07",
   "url": "https://www.vivreanyons.fr/sante-nyons/maison-de-sante-nyons/",
   "author": "Papy Chris",
-  "editorialSections": 13,
+  "editorialSections": 14,
   "professionalContacts": 8,
   "input": "Commentaires collés par l’utilisateur et présentation municipale récupérée en ligne. Pièce jointe locale non lisible : ne pas prétendre l’avoir lue.",
   "sources": [
@@ -64,5 +64,38 @@
       "answer": "Il ne faut pas le supposer : la Maison de Santé Émile Lisbonne est distincte de l’hôpital et de la maison médicale de garde. Appelez le cabinet pour connaître son organisation. En cas d’urgence médicale, appelez le 15."
     }
   ],
-  "readerQuestionsPreserved": true
+  "readerQuestionsPreserved": true,
+  "visibleSources": [
+    {
+      "url": "https://www.nyons.com/vivre-nyons/actions-sociales-et-sante/sante/",
+      "title": "Ville de Nyons — Santé et Maison de Santé Émile Lisbonne",
+      "description": "Présentation municipale, professionnels et coordonnées référencés."
+    },
+    {
+      "url": "https://dromeamenagementhabitat.fr/wp-content/uploads/2021/07/Fiche_Op_maison_de_sante_nyons.pdf",
+      "title": "Drôme Aménagement Habitat — Présentation du bâtiment",
+      "description": "Organisation des locaux et accessibilité prévues lors de la création."
+    },
+    {
+      "url": "https://www.maiia.com/pedicure-podologue/26110-nyons/teisseyre-isabelle",
+      "title": "Maiia — Isabelle Teisseyre, pédicure-podologue",
+      "description": "Adresse et modalités de consultation, notamment pour les soins de pédicurie."
+    },
+    {
+      "url": "https://www.doctolib.fr/psychologue/nyons/eleonore-michel",
+      "title": "Doctolib — Éléonore Michel, psychologue",
+      "description": "Adresse de consultation affichée avenue Jules Bernard."
+    },
+    {
+      "url": "https://www.nyons.com/vivre-nyons/transports/transports-collectifs/",
+      "title": "Ville de Nyons — Transports collectifs et guide 2026 du NyonsBus",
+      "description": "Plan, horaires et informations pour préparer le déplacement."
+    },
+    {
+      "url": "https://www.bienveo.fr/offre/NYONS%20-Local%20professionnel%20de%20sant%C3%A9/Nyons_-_Local_sante-5308366",
+      "title": "Drôme Aménagement Habitat sur Bienveo — Local professionnel de santé",
+      "description": "Offre de location d’un cabinet dans la Maison de Santé ; conditions à confirmer auprès du bailleur."
+    }
+  ],
+  "visibleSourcesRequestedByUser": true
 }
