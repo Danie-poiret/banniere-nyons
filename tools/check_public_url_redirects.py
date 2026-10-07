@@ -8,6 +8,9 @@ from urllib.request import Request, HTTPRedirectHandler, build_opener
 from urllib.error import HTTPError
 
 URLS = [
+"https://www.vivreanyons.fr/sante-nyons/audioprothesiste-nyons/",
+"https://www.vivreanyons.fr/assets/illustrations/audioprothesiste-nyons.svg",
+"https://www.vivreanyons.fr/",
 "https://www.vivreanyons.fr/Auvergne-Rhone-Alpes/Drome/Piscine-de-Pierrelatte/",
 "https://www.vivreanyons.fr/evenements-nyons/",
 "https://www.vivreanyons.fr/Provence-Alpes-Cote-dAzur/Auvergne-Rhone-Alpes/Drome/Piscine-de-Pierrelatte",
@@ -65,6 +68,11 @@ def check(url):
         page = Page()
         page.feed(source)
         result.update({"canonicals": page.canonicals, "robots": page.robots, "metaRefresh": page.refresh})
+        if "audioprothesiste-nyons" in url or url == "https://www.vivreanyons.fr/":
+            result["hearingArticleLinked"] = "/sante-nyons/audioprothesiste-nyons/" in source
+            result["hearingImageLinked"] = "/assets/illustrations/audioprothesiste-nyons.svg" in source
+            result["svgRoot"] = "<svg" in source
+            result["headings"] = re.findall(r"<h1[^>]*>(.*?)</h1>", source, re.S)
         if page.refresh:
             match = re.search(r"^\s*0\s*;\s*url\s*=\s*(.+?)\s*$", page.refresh, re.I)
             if match:
