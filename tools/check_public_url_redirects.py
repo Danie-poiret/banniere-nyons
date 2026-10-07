@@ -9,7 +9,9 @@ from urllib.error import HTTPError
 
 URLS = [
 "https://www.vivreanyons.fr/sante-nyons/audioprothesiste-nyons/",
-"https://www.vivreanyons.fr/assets/illustrations/audioprothesiste-nyons.svg",
+"https://www.vivreanyons.fr/assets/photos/audioprothesiste-nyons/appareil-auditif-contour-oreille.png",
+"https://www.vivreanyons.fr/assets/photos/audioprothesiste-nyons/examen-oreille-otoscope.png",
+"https://www.vivreanyons.fr/assets/photos/audioprothesiste-nyons/mise-en-place-aide-auditive.png",
 "https://www.vivreanyons.fr/",
 "https://www.vivreanyons.fr/Auvergne-Rhone-Alpes/Drome/Piscine-de-Pierrelatte/",
 "https://www.vivreanyons.fr/evenements-nyons/",
@@ -64,13 +66,20 @@ def check(url):
                 "xRobotsTag": response.headers.get("X-Robots-Tag"),
                 "contentType": response.headers.get("Content-Type"),
             })
-            source = response.read(2000000).decode("utf-8", errors="replace")
+            data = response.read(2000000)
+            if response.headers.get("Content-Type", "").startswith("image/png"):
+                result["pngSignature"] = data[:8] == b"\x89PNG\r\n\x1a\n"
+                result["width"] = int.from_bytes(data[16:20], "big")
+                result["height"] = int.from_bytes(data[20:24], "big")
+                return result
+            source = data.decode("utf-8", errors="replace")
         page = Page()
         page.feed(source)
         result.update({"canonicals": page.canonicals, "robots": page.robots, "metaRefresh": page.refresh})
         if "audioprothesiste-nyons" in url or url == "https://www.vivreanyons.fr/":
             result["hearingArticleLinked"] = "/sante-nyons/audioprothesiste-nyons/" in source
-            result["hearingImageLinked"] = "/assets/illustrations/audioprothesiste-nyons.svg" in source
+            result["hearingImageLinked"] = "/assets/photos/audioprothesiste-nyons/appareil-auditif-contour-oreille.png" in source
+            result["hearingPhotosLinked"] = re.findall(r'<img[^>]+src="([^"]*assets/photos/audioprothesiste-nyons/[^"]+)"', source)
             result["svgRoot"] = "<svg" in source
             result["headings"] = re.findall(r"<h1[^>]*>(.*?)</h1>", source, re.S)
         if page.refresh:
