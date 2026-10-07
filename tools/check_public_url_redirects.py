@@ -1,4 +1,4 @@
-"""Read-only checks of the public URLs reported by Search Console."""
+"""Read-only checks of public URLs, including the newly published hearing article."""
 from concurrent.futures import ThreadPoolExecutor
 from html.parser import HTMLParser
 import json
