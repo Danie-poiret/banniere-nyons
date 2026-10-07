@@ -50,3 +50,10 @@ Pour un lien intitulé « Marché de Nyons », utiliser la fiche `/que-faire-nyo
 ## Nom de la Brasserie de la Place — correction du 6 octobre 2026
 
 Dans la fiche de la Brasserie de la Place à Nyons, ne pas présenter « Café de la Bourse » comme un autre nom de cet établissement. Le nom demandé par le propriétaire du site est « Brasserie de la Place ».
+
+
+## Questions et réponses — préférence du 7 octobre 2026
+
+Conserver un bloc « Questions / réponses » dans les fiches et nouveaux articles, avec des réponses pratiques correspondant aux informations vérifiées. Les questions adressées aux lecteurs peuvent rester en plus ; elles ne remplacent pas ce bloc. Ne pas supprimer les questions et réponses lors d’une mise à jour.
+
+Ajouter en fin de fiche une section « Sources et liens utiles ». Conserver les liens de discussion locale expressément fournis par l’utilisateur, en distinguant ces échanges des sources officielles pour les renseignements pratiques. Les noms des auteurs des commentaires n’ont pas à apparaître dans le texte de l’article.

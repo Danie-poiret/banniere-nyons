@@ -8,6 +8,12 @@ from urllib.request import Request, HTTPRedirectHandler, build_opener
 from urllib.error import HTTPError
 
 URLS = [
+"https://www.vivreanyons.fr/assets/photos/maison-de-sante-nyons/maison-de-sante-nyons-vue-ensemble.png",
+"https://www.vivreanyons.fr/assets/photos/maison-de-sante-nyons/maison-de-sante-nyons-facade.png",
+"https://www.vivreanyons.fr/vivreanyons-test/assets/photos/maison-de-sante-nyons/maison-de-sante-nyons-vue-ensemble.png",
+"https://www.vivreanyons.fr/vivreanyons-test/assets/photos/maison-de-sante-nyons/maison-de-sante-nyons-facade.png",
+"https://www.vivreanyons.fr/banniere-nyons/vivreanyons-test/assets/photos/maison-de-sante-nyons/maison-de-sante-nyons-vue-ensemble.png",
+"https://www.vivreanyons.fr/banniere-nyons/vivreanyons-test/assets/photos/maison-de-sante-nyons/maison-de-sante-nyons-facade.png",
 "https://www.vivreanyons.fr/sante-nyons/maison-de-sante-nyons/",
 "https://www.vivreanyons.fr/assets/photos/668de5d6a91a56f4b265.webp",
 "https://www.vivreanyons.fr/vivreanyons-test/sante-nyons/maison-de-sante-nyons/",
@@ -123,7 +129,7 @@ def check(url):
             result["headings"] = re.findall(r"<h1[^>]*>(.*?)</h1>", source, re.S)
         if url == "https://www.vivreanyons.fr/":
             result["latestMaisonSanteArticle"] = 'data-latest-article="/sante-nyons/maison-de-sante-nyons/"' in source
-            result["maisonSanteHomepagePhoto"] = "/assets/photos/668de5d6a91a56f4b265.webp" in source
+            result["maisonSanteHomepagePhoto"] = "/assets/photos/maison-de-sante-nyons/maison-de-sante-nyons-vue-ensemble.png" in source
         if "/sante-nyons/laboratoire-nyons/" in url:
             result["labPhone"] = 'href="tel:+33475262677"' in source
             result["labAddress"] = "26 avenue Paul Laurens" in source
@@ -162,7 +168,7 @@ def check(url):
             result["updated"] = 'datetime="2026-10-07"' in source
         if url in ["https://www.vivreanyons.fr/","https://www.vivreanyons.fr/vivreanyons-test/","https://www.vivreanyons.fr/banniere-nyons/vivreanyons-test/"]:
             result["maisonSanteFeatured"] = bool(re.search(r'data-latest-article="[^"]*sante-nyons/maison-de-sante-nyons/"', source))
-            result["maisonSanteHomepagePhoto"] = "assets/photos/668de5d6a91a56f4b265.webp" in source
+            result["maisonSanteHomepagePhoto"] = "assets/photos/maison-de-sante-nyons/maison-de-sante-nyons-vue-ensemble.png" in source
         if url in ["https://www.vivreanyons.fr/sante-nyons/","https://www.vivreanyons.fr/vivreanyons-test/sante-nyons/","https://www.vivreanyons.fr/banniere-nyons/vivreanyons-test/sante-nyons/"]:
             result["radiologyLinked"] = bool(re.search(r'href="[^"]*sante-nyons/radiologie-nyons/"', source))
             result["healthItems25"] = '"numberOfItems":25' in source
@@ -188,7 +194,18 @@ def check(url):
             result["rentCausalityQualified"] = "ne permet pas de mesurer les départs de praticiens ni d’en attribuer la cause aux loyers" in source
             result["papyTone"] = "Le conseil de Papy" in source
             result["noSocialNames"] = all(name not in source for name in ["Luca Giuliani", "Liliane Sauceau", "Danielle Nicolas", "Nyons : 5 élus"])
-            result["photoCaption"] = "Photo d’illustration." in source
+            result["contactCards"] = len(re.findall(r'class="msp-contact"', source))
+            result["contactPhoneLine"] = "white-space:nowrap" in source and 'class="msp-contact-phone"' in source
+            result["contactsTableRemoved"] = "msp-table-wrap" not in source and "<table" not in source
+            result["faqVisible"] = 'id="faq-maison-sante"' in source and len(re.findall(r'<div class="qa">', source)) == 5
+            result["faqSchema"] = '"@type":"FAQPage"' in source
+            result["sourcesVisible"] = 'id="sources-maison-sante"' in source and "Sources et liens utiles" in source
+            result["localDiscussionSource"] = "https://www.facebook.com/groups/nyonsaujourdhui/posts/1223967436583187/" in source
+            result["sevenSources"] = source.count('target="_blank" rel="noopener noreferrer"') >= 7
+            result["readerQuestionsPreserved"] = "Et vous, comment cela se passe-t-il ?" in source
+            result["photoCaptions"] = len(re.findall(r"<figcaption>", source))
+            result["photos"] = re.findall(r'<img[^>]+src="([^"]*assets/photos/maison-de-sante-nyons/[^"]+)"', source)
+            result["oldIllustrationRemoved"] = "assets/photos/668de5d6a91a56f4b265.webp" not in source
             result["headings"] = re.findall(r"<h1[^>]*>(.*?)</h1>", source, re.S)
             result["editorialHeadings"] = len(re.findall(r"<h2", source))
             result["publishDate"] = '"datePublished":"2026-10-07"' in source
