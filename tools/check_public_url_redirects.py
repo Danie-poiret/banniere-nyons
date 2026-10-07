@@ -8,6 +8,7 @@ from urllib.request import Request, HTTPRedirectHandler, build_opener
 from urllib.error import HTTPError
 
 URLS = [
+"https://www.vivreanyons.fr/questions-utiles-nyons/Dentiste-Nyons/",
 "https://www.vivreanyons.fr/sante-nyons/audioprothesiste-nyons/",
 "https://www.vivreanyons.fr/assets/photos/audioprothesiste-nyons/appareil-auditif-contour-oreille.png",
 "https://www.vivreanyons.fr/assets/photos/audioprothesiste-nyons/examen-oreille-otoscope.png",
@@ -76,12 +77,19 @@ def check(url):
         page = Page()
         page.feed(source)
         result.update({"canonicals": page.canonicals, "robots": page.robots, "metaRefresh": page.refresh})
-        if "audioprothesiste-nyons" in url or url == "https://www.vivreanyons.fr/":
+        if "audioprothesiste-nyons" in url or "Dentiste-Nyons" in url or url == "https://www.vivreanyons.fr/":
             result["hearingArticleLinked"] = "/sante-nyons/audioprothesiste-nyons/" in source
             result["hearingImageLinked"] = "/assets/photos/audioprothesiste-nyons/appareil-auditif-contour-oreille.png" in source
             result["hearingPhotosLinked"] = re.findall(r'<img[^>]+src="([^"]*assets/photos/audioprothesiste-nyons/[^"]+)"', source)
             result["svgRoot"] = "<svg" in source
             result["headings"] = re.findall(r"<h1[^>]*>(.*?)</h1>", source, re.S)
+        if "Dentiste-Nyons" in url:
+            result["dentistDirectoryLinked"] = 'href="/infos-pratiques-nyons/dentistes-nyons/"' in source
+            result["consultation23"] = "<strong>23 €</strong>" in source
+            result["repayment1380"] = "<strong>13,80 €</strong>" in source
+            result["mtDents"] = "M’T dents tous les ans !" in source
+            result["photoPreserved"] = "/assets/photos/a4856b24e55c3e43021b.webp" in source
+            result["updated"] = 'datetime="2026-10-07"' in source
         if page.refresh:
             match = re.search(r"^\s*0\s*;\s*url\s*=\s*(.+?)\s*$", page.refresh, re.I)
             if match:
