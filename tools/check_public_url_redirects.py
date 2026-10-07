@@ -1,4 +1,4 @@
-"""Read-only checks of public URLs and the radiology article with its three photos."""
+"""Read-only checks of public URLs and the Maison de Santé article."""
 from concurrent.futures import ThreadPoolExecutor
 from html.parser import HTMLParser
 import json
@@ -8,6 +8,12 @@ from urllib.request import Request, HTTPRedirectHandler, build_opener
 from urllib.error import HTTPError
 
 URLS = [
+"https://www.vivreanyons.fr/sante-nyons/maison-de-sante-nyons/",
+"https://www.vivreanyons.fr/assets/photos/668de5d6a91a56f4b265.webp",
+"https://www.vivreanyons.fr/vivreanyons-test/sante-nyons/maison-de-sante-nyons/",
+"https://www.vivreanyons.fr/vivreanyons-test/assets/photos/668de5d6a91a56f4b265.webp",
+"https://www.vivreanyons.fr/banniere-nyons/vivreanyons-test/sante-nyons/maison-de-sante-nyons/",
+"https://www.vivreanyons.fr/banniere-nyons/vivreanyons-test/assets/photos/668de5d6a91a56f4b265.webp",
 "https://www.vivreanyons.fr/sante-nyons/radiologie-nyons/",
 "https://www.vivreanyons.fr/assets/photos/radiologie-nyons/radiographies-os-et-thorax.png",
 "https://www.vivreanyons.fr/assets/photos/radiologie-nyons/lecture-radiographie-thorax.png",
@@ -98,6 +104,13 @@ def check(url):
                 result["width"] = int.from_bytes(data[16:20], "big")
                 result["height"] = int.from_bytes(data[20:24], "big")
                 return result
+            if response.headers.get("Content-Type", "").startswith("image/webp"):
+                result["webpSignature"] = data[:4] == b"RIFF" and data[8:12] == b"WEBP"
+                result["bytes"] = len(data)
+                if data[12:16] == b"VP8 ":
+                    result["width"] = int.from_bytes(data[26:28], "little") & 16383
+                    result["height"] = int.from_bytes(data[28:30], "little") & 16383
+                return result
             source = data.decode("utf-8", errors="replace")
         page = Page()
         page.feed(source)
@@ -109,8 +122,8 @@ def check(url):
             result["svgRoot"] = "<svg" in source
             result["headings"] = re.findall(r"<h1[^>]*>(.*?)</h1>", source, re.S)
         if url == "https://www.vivreanyons.fr/":
-            result["latestRadiologyArticle"] = 'data-latest-article="/sante-nyons/radiologie-nyons/"' in source
-            result["radiologyHomepagePhoto"] = "/assets/photos/radiologie-nyons/radiographies-os-et-thorax.png" in source
+            result["latestMaisonSanteArticle"] = 'data-latest-article="/sante-nyons/maison-de-sante-nyons/"' in source
+            result["maisonSanteHomepagePhoto"] = "/assets/photos/668de5d6a91a56f4b265.webp" in source
         if "/sante-nyons/laboratoire-nyons/" in url:
             result["labPhone"] = 'href="tel:+33475262677"' in source
             result["labAddress"] = "26 avenue Paul Laurens" in source
@@ -122,7 +135,7 @@ def check(url):
             result["alzheimerLinked"] = 'href="/infos-pratiques-nyons/Alzheimer-Nyons/"' in source
             result["alzheimerNavigation"] = 'href="#memoire-aidants"' in source
             result["alzheimerSection"] = 'id="memoire-aidants"' in source
-            result["healthItems24"] = '"numberOfItems":24' in source
+            result["healthItems25"] = '"numberOfItems":25' in source
         if "Alzheimer-Nyons" in url:
             result["healthBackLink"] = "data-health-back-link" in source
             result["originalPhoto"] = "/assets/photos/7e9287ac607cf945800d.webp" in source
@@ -148,11 +161,11 @@ def check(url):
             result["photoPreserved"] = "/assets/photos/a4856b24e55c3e43021b.webp" in source
             result["updated"] = 'datetime="2026-10-07"' in source
         if url in ["https://www.vivreanyons.fr/","https://www.vivreanyons.fr/vivreanyons-test/","https://www.vivreanyons.fr/banniere-nyons/vivreanyons-test/"]:
-            result["radiologyFeatured"] = bool(re.search(r'data-latest-article="[^"]*sante-nyons/radiologie-nyons/"', source))
-            result["radiologyHomepagePhoto"] = "assets/photos/radiologie-nyons/radiographies-os-et-thorax.png" in source
+            result["maisonSanteFeatured"] = bool(re.search(r'data-latest-article="[^"]*sante-nyons/maison-de-sante-nyons/"', source))
+            result["maisonSanteHomepagePhoto"] = "assets/photos/668de5d6a91a56f4b265.webp" in source
         if url in ["https://www.vivreanyons.fr/sante-nyons/","https://www.vivreanyons.fr/vivreanyons-test/sante-nyons/","https://www.vivreanyons.fr/banniere-nyons/vivreanyons-test/sante-nyons/"]:
             result["radiologyLinked"] = bool(re.search(r'href="[^"]*sante-nyons/radiologie-nyons/"', source))
-            result["healthItems24"] = '"numberOfItems":24' in source
+            result["healthItems25"] = '"numberOfItems":25' in source
             result["alzheimerPresent"] = "Alzheimer-Nyons/" in source and 'id="memoire-aidants"' in source
         if "/sante-nyons/radiologie-nyons/" in url:
             result["radioPhone"] = 'href="tel:+33475265200"' in source and 'href="tel:+33475265276"' in source
@@ -164,6 +177,20 @@ def check(url):
             result["appointment"] = "<strong>sur rendez-vous</strong>" in source
             result["equipmentQualified"] = "ne mentionnent ni scanner ni IRM sur le site de Nyons" in source
             result["papyPreserved"] = "Le petit conseil de Papy avant votre rendez-vous" in source
+            result["publishDate"] = '"datePublished":"2026-10-07"' in source
+        if url in ["https://www.vivreanyons.fr/sante-nyons/","https://www.vivreanyons.fr/vivreanyons-test/sante-nyons/","https://www.vivreanyons.fr/banniere-nyons/vivreanyons-test/sante-nyons/"]:
+            result["maisonSanteLinked"] = bool(re.search(r'href="[^"]*sante-nyons/maison-de-sante-nyons/"', source))
+        if "/sante-nyons/maison-de-sante-nyons/" in url:
+            result["address"] = "21 rue Émile Lisbonne" in source
+            result["phoneContacts"] = all('href="tel:' + phone + '"' in source for phone in ["+33487120003","+33475260833","+33475262442","+33475268502","+33767175054","+33955184952","+33475270022","+33475460597"])
+            result["psychologistAddressQualified"] = "10 avenue Jules Bernard à Nyons" in source and "plutôt que de vous rendre automatiquement rue Émile Lisbonne" in source
+            result["podologistCareQualified"] = "les soins de pédicurie sont annoncés pour les patients déjà connus" in source
+            result["rentCausalityQualified"] = "ne permet pas de mesurer les départs de praticiens ni d’en attribuer la cause aux loyers" in source
+            result["papyTone"] = "Le conseil de Papy" in source
+            result["noSocialNames"] = all(name not in source for name in ["Luca Giuliani", "Liliane Sauceau", "Danielle Nicolas", "Nyons : 5 élus"])
+            result["photoCaption"] = "Photo d’illustration." in source
+            result["headings"] = re.findall(r"<h1[^>]*>(.*?)</h1>", source, re.S)
+            result["editorialHeadings"] = len(re.findall(r"<h2", source))
             result["publishDate"] = '"datePublished":"2026-10-07"' in source
         if page.refresh:
             match = re.search(r"^\s*0\s*;\s*url\s*=\s*(.+?)\s*$", page.refresh, re.I)
