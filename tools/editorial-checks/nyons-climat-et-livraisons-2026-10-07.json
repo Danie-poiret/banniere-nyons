@@ -1,0 +1,47 @@
+{
+  "checkedOn": "2026-10-07",
+  "existingUrlsPreserved": [
+    "https://www.vivreanyons.fr/infos-pratiques-nyons/nyons-sante/",
+    "https://www.vivreanyons.fr/infos-pratiques-nyons/services-de-livraison-nyons/"
+  ],
+  "originalImagesPreserved": true,
+  "publicationDates": "No original datePublished in either article; none invented.",
+  "climate": {
+    "sources": [
+      "https://www.nyons.com/download_file/view/3910/1917",
+      "https://www.academie-medecine.fr/09-09-sur-la-demande-de-classement-de-la-commune-de-nyons-drome-en-station-climatique/",
+      "https://www.atmo-auvergnerhonealpes.fr/air-commune/Ville/26220/previsions",
+      "https://www.atmo-auvergnerhonealpes.fr/article/les-pollens-0",
+      "https://www.ameli.fr/assure/sante/themes/arthrose-genou/vivre-arthrose-genou",
+      "https://www.ameli.fr/assure/sante/themes/insomnie-adulte/vivre-insomnie",
+      "https://www.santepubliquefrance.fr/les-actualites/les-fortes-chaleurs-nous-concernent-tous-adoptons-les-bons-reflexes"
+    ],
+    "changes": [
+      "Sunlight, Pontias, landscape and Papy tone preserved",
+      "Unsupported cures, blanket clean-air guarantees and guaranteed cool nights removed",
+      "2009 climatic classification opinion identified as historical evidence rather than treatment trial",
+      "Atmo Nyons air-quality and pollen forecasts; arthrosis appropriate activity, sleep routines and heat guidance"
+    ]
+  },
+  "delivery": {
+    "sources": [
+      "https://www.nyons.com/vivre-nyons/actions-sociales-et-sante/ccas/",
+      "https://www.cc-bdp.fr/les-services/action-sociale/portage-des-repas-hautes-baronnies/",
+      "https://www.intermarche.com/magasins/10155/nyons-26110/infos-pratiques",
+      "https://www.magasins-u.com/magasin/superu-nyons",
+      "https://www.service-public.gouv.fr/particuliers/vosdroits/F248",
+      "https://www.ubereats.com/fr",
+      "https://deliveroo.fr/"
+    ],
+    "changes": [
+      "CCAS eligible residents and temporary help; Monday–Saturday 07:30–11:30 confirmed",
+      "CCAS +33475265027 and ccas@nyons.com confirmed",
+      "Intermarché Nyons 31 avenue de Venterol +33475261968 advertises delivery; check address and fees",
+      "Super U +33475260121 retained as enquiry contact; delivery not confirmed, not promised",
+      "CCBDP restricted geographical sector Monday/Wednesday/Friday +33475269075 confirmed",
+      "Old unverifiable €8.80–€10.30 tariff replaced by current-price enquiry and conditional aid information",
+      "Platform availability to be checked with exact address; no invented blanket closure",
+      "All four illustrations preserved with accurate alts and captions"
+    ]
+  }
+}
