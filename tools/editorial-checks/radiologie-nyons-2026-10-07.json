@@ -1,0 +1,45 @@
+{
+  "date": "2026-10-07",
+  "url": "https://www.vivreanyons.fr/sante-nyons/radiologie-nyons/",
+  "userText": "Conservé, hors doublons et corrections factuelles limitées.",
+  "editorialSections": 16,
+  "photos": [
+    {
+      "filename": "radiographies-os-et-thorax.png",
+      "width": 256,
+      "height": 268,
+      "alt": "Mosaïque de radiographies montrant le crâne, le thorax, des articulations, une main et des pieds.",
+      "caption": "La radiographie permet notamment d’examiner les os, les articulations et le thorax. Photo d’illustration."
+    },
+    {
+      "filename": "lecture-radiographie-thorax.png",
+      "width": 272,
+      "height": 193,
+      "alt": "Deux mains tenant un cliché de radiographie du thorax face à la lumière.",
+      "caption": "Les images doivent être interprétées et accompagnées d’un compte rendu. Photo d’illustration."
+    },
+    {
+      "filename": "images-cerebrales-ecran.png",
+      "width": 203,
+      "height": 220,
+      "alt": "Écran affichant plusieurs images médicales du cerveau devant une salle d’examen vitrée.",
+      "caption": "Radiographie, scanner et IRM sont des examens différents. Photo d’illustration."
+    }
+  ],
+  "sources": [
+    "https://www.nyons.com/annuaire/hopital-local/",
+    "https://etablissements.fhf.fr/annuaire/service/structure586-establishment-service49962",
+    "https://etablissements.fhf.fr/annuaire/establishment/structure586-establishment4396",
+    "https://www.ameli.fr/assure/remboursements/rembourse/tableau-recapitulatif-taux-remboursement",
+    "https://www.ameli.fr/assure/remboursements/reste-charge/participation-forfaitaire-2-euros",
+    "https://www.ameli.fr/assure/sante/themes/fracture-du-poignet-chez-l-adulte/fracture-du-poignet-de-l-adulte-symptomes-et-diagnostic",
+    "https://www.ameli.fr/assure/sante/examen/imagerie-medicale/deroulement-irm"
+  ],
+  "qualifications": [
+    "Annuaire FHF daté du 15 mars 2022 : standard en premier contact, horaires et contacts directs à confirmer.",
+    "Scanner et IRM non répertoriés : aucune garantie actuelle d’absence d’équipement.",
+    "Examen précis à confirmer au service.",
+    "Suppression de la référence NGAP 2025 inadaptée à la radiologie hospitalière générale.",
+    "Remboursement selon tarif de référence et situation ; participation forfaitaire si applicable."
+  ]
+}
