@@ -8,6 +8,11 @@ from urllib.request import Request, HTTPRedirectHandler, build_opener
 from urllib.error import HTTPError
 
 URLS = [
+"https://www.vivreanyons.fr/que-faire-nyons/les-vieux-moulins/",
+"https://www.vivreanyons.fr/vivreanyons-test/que-faire-nyons/les-vieux-moulins/",
+"https://www.vivreanyons.fr/banniere-nyons/vivreanyons-test/que-faire-nyons/les-vieux-moulins/",
+"https://www.vivreanyons.fr/assets/photos/fiche-2038b7f67c32d62b528b.webp",
+"https://www.vivreanyons.fr/assets/photos/fiche-21a4b36d1f94e4afe471.webp",
 "https://www.vivreanyons.fr/infos-pratiques-nyons/portage-repas-nyons/",
 "https://www.vivreanyons.fr/assets/photos/portage-repas-nyons/repas-servi-a-domicile.png",
 "https://www.vivreanyons.fr/assets/photos/portage-repas-nyons/tournee-livraison-repas.png",
@@ -249,6 +254,27 @@ def check(url):
             result["portageLinked"] = "data-portage-repas-card" in source and "portage-repas-nyons/" in source
         if url in ["https://www.vivreanyons.fr/infos-pratiques-nyons/","https://www.vivreanyons.fr/toutes-les-pages/","https://www.vivreanyons.fr/vivreanyons-test/infos-pratiques-nyons/","https://www.vivreanyons.fr/vivreanyons-test/toutes-les-pages/","https://www.vivreanyons.fr/banniere-nyons/vivreanyons-test/infos-pratiques-nyons/","https://www.vivreanyons.fr/banniere-nyons/vivreanyons-test/toutes-les-pages/"]:
             result["portageLinked"] = "data-portage-repas-card" in source and "portage-repas-nyons/" in source
+        if url.endswith("/que-faire-nyons/les-vieux-moulins/"):
+            result["infoAdded"] = 'data-vieux-moulins-infos="2026-10-07"' in source
+            result["address"] = "4 promenade de la Digue, 26110 Nyons" in source
+            result["currentContact"] = 'href="tel:+33673871145"' in source and "lesvieuxmoulins.nyons@gmail.com" in source
+            result["visitDuration"] = "30 à 45 minutes" in source
+            result["childrenTariff2026"] = "5 € à partir de 10 ans" in source and "gratuité pour les enfants de moins de 10 ans" in source
+            result["guidedBooking"] = "visites guidées uniquement sur rendez-vous" in source
+            result["historicDates"] = "moulin de 1780" in source and "jusqu’en 1952" in source
+            result["originalPhotos"] = all(photo in source for photo in ["fiche-2038b7f67c32d62b528b.webp", "fiche-21a4b36d1f94e4afe471.webp"])
+            result["photoDimensions"] = 'width="1280" height="883"' in source and 'width="853" height="1280"' in source
+            result["faqCount"] = len(re.findall(r'<div class="qa">', source))
+            result["faqSchema"] = '"@type":"FAQPage"' in source
+            result["noInventedPublicationDate"] = "datePublished" not in source
+            result["readerQuestions"] = "Avez-vous déjà visité Les Vieux Moulins ou êtes-vous passé devant sans jamais descendre ?" in source
+            article = re.search(r'<article class="feature-story">.*?</article>', source, re.S).group(0)
+            article = re.sub(r'<section class="mills-practical".*?</section>', "", article, flags=re.S)
+            original_text = re.sub(r"\s+", " ", re.sub(r"<[^>]*>", "", article)).strip()
+            text_hash = 2166136261
+            for char in original_text:
+                text_hash = ((text_hash ^ ord(char)) * 16777619) & 0xffffffff
+            result["originalTextPreserved"] = format(text_hash, "08x") == "fa1d138f"
         if page.refresh:
             match = re.search(r"^\s*0\s*;\s*url\s*=\s*(.+?)\s*$", page.refresh, re.I)
             if match:
