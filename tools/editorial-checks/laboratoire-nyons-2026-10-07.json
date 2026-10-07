@@ -1,0 +1,54 @@
+{
+  "checkedOn": "2026-10-07",
+  "article": "https://www.vivreanyons.fr/sante-nyons/laboratoire-nyons/",
+  "newArticle": true,
+  "preserved": "Full user plan, everyday examples, Papy tone, all laboratory-test sections and closing questions.",
+  "corrections": [
+    "Metadata preamble and source-methodology section excluded from reader content; glued headings repaired; missing red-result heading restored",
+    "HbA1c does not require fasting by itself; fasting may apply to other tests on same order",
+    "Opening and sampling hours distinguished; local appointment conditions to confirm",
+    "No-prescription billing qualified by Mon test IST exception",
+    "Home sampling arranged locally, prescription and possible travel-charge qualification",
+    "INR interpretation, medicines and results referred to agreed clinician instructions"
+  ],
+  "photos": [
+    {
+      "file": "assets/photos/laboratoire-nyons/prise-de-sang-au-laboratoire.png",
+      "width": 115,
+      "height": 135,
+      "alt": "Professionnelle portant des gants bleus effectuant une prise de sang au bras d’une patiente.",
+      "caption": "Une prise de sang se prépare selon les examens prescrits. Photo d’illustration."
+    },
+    {
+      "file": "assets/photos/laboratoire-nyons/tubes-et-resultats-analyses.png",
+      "width": 251,
+      "height": 157,
+      "alt": "Tube de prélèvement sanguin à bouchon rouge posé sur une feuille de résultats d’analyses.",
+      "caption": "Les résultats se lisent avec le médecin ou le biologiste, dans leur contexte. Photo d’illustration."
+    },
+    {
+      "file": "assets/photos/laboratoire-nyons/prelevement-sanguin-et-tubes.png",
+      "width": 200,
+      "height": 180,
+      "alt": "Prélèvement sanguin au pli du coude par une professionnelle portant des gants, avec des tubes au premier plan.",
+      "caption": "Le prélèvement peut aussi être organisé à domicile, selon les modalités du service. Photo d’illustration."
+    }
+  ],
+  "sources": [
+    "https://www.synlab.fr/trouver-un-laboratoire/",
+    "https://www.vdr.synlab.fr/laboratoire/nousconnaitre/noslaboratoires.aspx",
+    "https://www.synlab.fr/synlab-rhone-alpes/patient/faq-patients/",
+    "https://www.synlab.fr/patient/a-propos-des-analyses-medicales/",
+    "https://www.synlab.fr/patient/prelevement-a-domicile/",
+    "https://www.synlab.fr/patient/avant-de-venir/",
+    "https://www.ameli.fr/assure/sante/examen/analyse/lire-resultats-prise-sang",
+    "https://www.ameli.fr/assure/sante/themes/diabete-adulte/diabete-suivi/analyses-sang-urines",
+    "https://www.ameli.fr/assure/sante/assurance-maladie/comment-reduire-mon-risque-cardiovasculaire/mieux-prevenir-le-risque-cardiovasculaire/les-examens-pour-explorer-le-risque-cardiovasculaire/le-bilan-lipidique",
+    "https://www.ameli.fr/assure/sante/themes/hypothyroidie/symptomes-diagnostic-evolution",
+    "https://www.ameli.fr/laboratoire-danalyses-medicales/exercice-liberal/memos/dosage-vitamine",
+    "https://www.ameli.fr/assure/sante/medicaments/comprendre-les-differents-medicaments/anticoagulants",
+    "https://www.ameli.fr/assure/sante/examen/analyse/preparer-ecbu-lire-resultats",
+    "https://www.ameli.fr/assure/sante/assurance-maladie/comment-reduire-mon-risque-cardiovasculaire/mieux-prevenir-le-risque-cardiovasculaire/les-examens-pour-explorer-le-risque-cardiovasculaire/le-bilan-renal",
+    "https://www.ameli.fr/assure/sante/themes/mst-ist/depistage"
+  ]
+}
