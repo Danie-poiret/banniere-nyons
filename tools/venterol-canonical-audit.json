@@ -1,0 +1,26 @@
+{
+  "canonical": "https://www.vivreanyons.fr/a-faire-autour-de-Nyons/village-de-venterol/",
+  "date": "2026-10-07",
+  "redirectType": "HTML meta refresh 0 seconds, treated as permanent by Google",
+  "sourcePath": "/que-faire-autour-de-nyons/village-de-venterol/",
+  "redirectPages": [
+    "que-faire-autour-de-nyons/village-de-venterol/index.html",
+    "vivreanyons-test/que-faire-autour-de-nyons/village-de-venterol/index.html",
+    "banniere-nyons/vivreanyons-test/que-faire-autour-de-nyons/village-de-venterol/index.html"
+  ],
+  "rewrittenLinks": 3,
+  "duplicateCardsRemoved": 0,
+  "sitemapEntriesRemoved": 1,
+  "changedFiles": [
+    "banniere-nyons/vivreanyons-test/que-faire-autour-de-nyons/index.html",
+    "banniere-nyons/vivreanyons-test/que-faire-autour-de-nyons/village-de-venterol/index.html",
+    "que-faire-autour-de-nyons/index.html",
+    "que-faire-autour-de-nyons/village-de-venterol/index.html",
+    "sitemap.xml",
+    "vivreanyons-test/que-faire-autour-de-nyons/index.html",
+    "vivreanyons-test/que-faire-autour-de-nyons/village-de-venterol/index.html"
+  ],
+  "mainArticleAndPhotosPreserved": true,
+  "mainCanonicalAndPublicationDatesPreserved": true,
+  "reference": "https://developers.google.com/search/docs/crawling-indexing/301-redirects"
+}
