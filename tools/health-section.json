@@ -1,0 +1,151 @@
+{
+  "categorySlug": "sante-nyons/",
+  "title": "Santé à Nyons",
+  "date": "2026-10-07",
+  "sections": [
+    {
+      "id": "soins",
+      "title": "Médecins, dentistes et soins",
+      "intro": "Les adresses pour une consultation ou un examen.",
+      "items": [
+        [
+          "infos-pratiques-nyons/medecin-nyons/",
+          "Médecins à Nyons : adresses et rendez-vous",
+          "Cabinets, Maison de Santé, ORSAC, médecin traitant et modalités de consultation."
+        ],
+        [
+          "infos-pratiques-nyons/dentistes-nyons/",
+          "Dentistes à Nyons : adresses et rendez-vous",
+          "Les praticiens référencés, les coordonnées des cabinets et les démarches pour un rendez-vous."
+        ],
+        [
+          "questions-utiles-nyons/Dentiste-Nyons/",
+          "Dentiste à Nyons : tarifs et questions pratiques",
+          "Les repères sur les rendez-vous, les tarifs et la prise en charge des soins dentaires."
+        ],
+        [
+          "infos-pratiques-nyons/hopital-nyons/",
+          "Hôpital de Nyons",
+          "Services, examens et contacts pour préparer une venue à l’hôpital."
+        ]
+      ]
+    },
+    {
+      "id": "pharmacies-urgences",
+      "title": "Pharmacies et urgences",
+      "intro": "Retrouver les fiches utiles pour une garde, un médicament ou une demande de soins urgente.",
+      "items": [
+        [
+          "infos-pratiques-nyons/pharmacie-de-garde-nyons/",
+          "Pharmacie de garde à Nyons",
+          "Les démarches pour trouver la pharmacie qui assure la garde et préparer ton déplacement."
+        ],
+        [
+          "infos-pratiques-nyons/pharmacie-nyons/",
+          "Pharmacies de Nyons",
+          "Les adresses des pharmacies de la ville et les renseignements pratiques."
+        ],
+        [
+          "infos-pratiques-nyons/pharmacie-des-plantes-nyons/",
+          "Pharmacie des Plantes à Nyons",
+          "Présentation de la pharmacie et repères pour la contacter."
+        ],
+        [
+          "infos-pratiques-nyons/Urgences-a-Nyons/",
+          "Urgences à Nyons",
+          "Comprendre l’organisation locale des soins urgents et savoir vers qui s’orienter."
+        ]
+      ]
+    },
+    {
+      "id": "acces-soins",
+      "title": "L’accès aux soins à Nyons",
+      "intro": "Les structures et les questions que se posent les habitants.",
+      "items": [
+        [
+          "infos-pratiques-nyons/sante-nyons/",
+          "L’accès aux soins à Nyons",
+          "Maison de Santé, rendez-vous et difficultés rencontrées pour accéder aux soins."
+        ],
+        [
+          "infos-pratiques-nyons/Sante-Nyons-en-2026/",
+          "Santé à Nyons : quels professionnels manquent ?",
+          "Les repères sur la présence des professionnels de santé et les besoins locaux."
+        ]
+      ]
+    },
+    {
+      "id": "prevention",
+      "title": "Prévention et cadre de vie",
+      "intro": "Des fiches sur les conditions de vie et les périodes de forte chaleur.",
+      "items": [
+        [
+          "infos-pratiques-nyons/nyons-chaleur/",
+          "Faire face à la chaleur à Nyons",
+          "Les idées et repères pratiques pour organiser la journée lorsqu’il fait très chaud."
+        ],
+        [
+          "infos-pratiques-nyons/nyons-sante/",
+          "Climat de Nyons et santé",
+          "La fiche consacrée au climat nyonsais et à son lien avec le cadre de vie."
+        ]
+      ]
+    },
+    {
+      "id": "accompagnement",
+      "title": "Aides, démarches et accompagnement",
+      "intro": "Pour se faire accompagner dans les démarches et les difficultés du quotidien.",
+      "items": [
+        [
+          "infos-pratiques-nyons/ccas-nyons/",
+          "CCAS de Nyons",
+          "Les aides et l’accompagnement proposés par le Centre communal d’action sociale."
+        ],
+        [
+          "infos-pratiques-nyons/demarches-administratives-nyons/",
+          "Ameli, carte Vitale et démarches à Nyons",
+          "Les interlocuteurs pour l’Assurance maladie, les aides et les autres démarches administratives."
+        ],
+        [
+          "infos-pratiques-nyons/services-de-livraison-nyons/",
+          "Repas et courses livrés à domicile",
+          "Les services utiles lorsqu’on ne peut pas facilement se déplacer."
+        ],
+        [
+          "infos-pratiques-nyons/croix-rouge/",
+          "Croix-Rouge à Nyons",
+          "Les activités de solidarité et les possibilités d’aide dans la ville."
+        ]
+      ]
+    },
+    {
+      "id": "animaux",
+      "title": "Santé des animaux",
+      "intro": "Les fiches utiles pour prendre soin d’un chien ou d’un chat.",
+      "items": [
+        [
+          "infos-pratiques-nyons/chiens-chats-nyons/",
+          "Chiens et chats à Nyons",
+          "Vétérinaire, urgences, garde, toilettage, adoption et animal perdu."
+        ],
+        [
+          "infos-pratiques-nyons/veterinaire-nyons/",
+          "Vétérinaire à Nyons",
+          "La fiche consacrée à la clinique vétérinaire du Nyonsais."
+        ]
+      ]
+    },
+    {
+      "id": "histoire",
+      "title": "Histoire de la santé",
+      "intro": "Un regard sur les projets anciens et l’histoire locale.",
+      "items": [
+        [
+          "Histoire-Geo/nyons-station-thermale/",
+          "Le projet de station thermale à Nyons",
+          "L’histoire d’un projet thermal et climatique qui a marqué les ambitions de la ville."
+        ]
+      ]
+    }
+  ]
+}
