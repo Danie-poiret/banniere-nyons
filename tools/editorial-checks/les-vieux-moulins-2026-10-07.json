@@ -1,0 +1,55 @@
+{
+  "date": "2026-10-07",
+  "url": "https://www.vivreanyons.fr/que-faire-nyons/les-vieux-moulins/",
+  "request": "Garder le texte et ajouter des informations.",
+  "checks": [
+    {
+      "path": "que-faire-nyons/les-vieux-moulins/index.html",
+      "originalTextPreserved": true,
+      "photosUnchanged": true,
+      "oldFAQPreserved": true,
+      "faq": 6,
+      "titleUnchanged": true,
+      "noNewPublicationDate": true,
+      "newSections": 5
+    },
+    {
+      "path": "vivreanyons-test/que-faire-nyons/les-vieux-moulins/index.html",
+      "originalTextPreserved": true,
+      "photosUnchanged": true,
+      "oldFAQPreserved": true,
+      "faq": 6,
+      "titleUnchanged": true,
+      "noNewPublicationDate": true,
+      "newSections": 5
+    },
+    {
+      "path": "banniere-nyons/vivreanyons-test/que-faire-nyons/les-vieux-moulins/index.html",
+      "originalTextPreserved": true,
+      "photosUnchanged": true,
+      "oldFAQPreserved": true,
+      "faq": 6,
+      "titleUnchanged": true,
+      "noNewPublicationDate": true,
+      "newSections": 5
+    }
+  ],
+  "addedSections": 5,
+  "addedQuestions": 5,
+  "sources": [
+    "https://www.lesvieuxmoulins.com/infos.html",
+    "https://www.lesvieuxmoulins.com/moulin-huile-nyons.html",
+    "https://www.moulinsdefrance.org/fiches-moulins/les-vieux-moulins-a-huile-nyons/",
+    "https://www.nyons.com/decouvrir-nyons/patrimoine/musees/"
+  ],
+  "addedFacts": [
+    "Contact officiel 06 73 87 11 45 ; 4 promenade de la Digue ; lesvieuxmoulins.nyons@gmail.com.",
+    "2026 : 5 euros à partir de 10 ans, gratuit en dessous, selon fiche FFAM.",
+    "Visite libre documentée sans RDV pendant ouverture ; guidée et groupes sur réservation.",
+    "Durée indicative 30–45 min.",
+    "Moulin de 1780 ; moulin à eau du XIXe actif jusqu’en 1952 ; installations ne fonctionnent plus aujourd’hui.",
+    "Horaires actuels à confirmer auprès du musée ; aucune promesse d’accessibilité totale.",
+    "Photos, titre, URL et texte initial conservés. Sources existantes rendues cliquables.",
+    "WebPage dateModified seulement ; aucune datePublished inventée ; dernier nouvel article reste portage de repas."
+  ]
+}
