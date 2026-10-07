@@ -1,0 +1,22 @@
+{
+  "date": "2026-10-07",
+  "redirects": {
+    "Provence-Alpes-Cote-dAzur/Auvergne-Rhone-Alpes/Drome/Piscine-de-Pierrelatte/": "Auvergne-Rhone-Alpes/Drome/Piscine-de-Pierrelatte/",
+    "evenements-/": "evenements-nyons/"
+  },
+  "redirectType": "Instant HTML meta refresh",
+  "changedFiles": [
+    "Provence-Alpes-Cote-dAzur/Auvergne-Rhone-Alpes/Drome/Piscine-de-Pierrelatte/index.html",
+    "banniere-nyons/vivreanyons-test/Provence-Alpes-Cote-dAzur/Auvergne-Rhone-Alpes/Drome/Piscine-de-Pierrelatte/index.html",
+    "banniere-nyons/vivreanyons-test/evenements-/index.html",
+    "evenements-/index.html",
+    "vivreanyons-test/Provence-Alpes-Cote-dAzur/Auvergne-Rhone-Alpes/Drome/Piscine-de-Pierrelatte/index.html",
+    "vivreanyons-test/evenements-/index.html"
+  ],
+  "linksRewritten": 0,
+  "sitemapEntriesRemoved": 0,
+  "technicalUrl": "/naLogImpressions",
+  "technicalUrlReferencedBySite": false,
+  "technicalUrlHandling": "No content replacement exists; preserve real 404",
+  "existingDestinationPagesPreserved": true
+}
