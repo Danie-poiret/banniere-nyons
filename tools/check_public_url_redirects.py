@@ -1,4 +1,4 @@
-"""Read-only checks of public URLs and the Maison de Santé article."""
+"""Read-only checks of the meal-delivery article, photographs and site links."""
 from concurrent.futures import ThreadPoolExecutor
 from html.parser import HTMLParser
 import json
@@ -8,6 +8,24 @@ from urllib.request import Request, HTTPRedirectHandler, build_opener
 from urllib.error import HTTPError
 
 URLS = [
+"https://www.vivreanyons.fr/infos-pratiques-nyons/portage-repas-nyons/",
+"https://www.vivreanyons.fr/assets/photos/portage-repas-nyons/repas-servi-a-domicile.png",
+"https://www.vivreanyons.fr/assets/photos/portage-repas-nyons/tournee-livraison-repas.png",
+"https://www.vivreanyons.fr/assets/photos/portage-repas-nyons/plateau-repas-senior.png",
+"https://www.vivreanyons.fr/infos-pratiques-nyons/",
+"https://www.vivreanyons.fr/toutes-les-pages/",
+"https://www.vivreanyons.fr/vivreanyons-test/infos-pratiques-nyons/portage-repas-nyons/",
+"https://www.vivreanyons.fr/vivreanyons-test/assets/photos/portage-repas-nyons/repas-servi-a-domicile.png",
+"https://www.vivreanyons.fr/vivreanyons-test/assets/photos/portage-repas-nyons/tournee-livraison-repas.png",
+"https://www.vivreanyons.fr/vivreanyons-test/assets/photos/portage-repas-nyons/plateau-repas-senior.png",
+"https://www.vivreanyons.fr/vivreanyons-test/infos-pratiques-nyons/",
+"https://www.vivreanyons.fr/vivreanyons-test/toutes-les-pages/",
+"https://www.vivreanyons.fr/banniere-nyons/vivreanyons-test/infos-pratiques-nyons/portage-repas-nyons/",
+"https://www.vivreanyons.fr/banniere-nyons/vivreanyons-test/assets/photos/portage-repas-nyons/repas-servi-a-domicile.png",
+"https://www.vivreanyons.fr/banniere-nyons/vivreanyons-test/assets/photos/portage-repas-nyons/tournee-livraison-repas.png",
+"https://www.vivreanyons.fr/banniere-nyons/vivreanyons-test/assets/photos/portage-repas-nyons/plateau-repas-senior.png",
+"https://www.vivreanyons.fr/banniere-nyons/vivreanyons-test/infos-pratiques-nyons/",
+"https://www.vivreanyons.fr/banniere-nyons/vivreanyons-test/toutes-les-pages/",
 "https://www.vivreanyons.fr/assets/photos/maison-de-sante-nyons/maison-de-sante-nyons-vue-ensemble.png",
 "https://www.vivreanyons.fr/assets/photos/maison-de-sante-nyons/maison-de-sante-nyons-facade.png",
 "https://www.vivreanyons.fr/vivreanyons-test/assets/photos/maison-de-sante-nyons/maison-de-sante-nyons-vue-ensemble.png",
@@ -128,8 +146,8 @@ def check(url):
             result["svgRoot"] = "<svg" in source
             result["headings"] = re.findall(r"<h1[^>]*>(.*?)</h1>", source, re.S)
         if url == "https://www.vivreanyons.fr/":
-            result["latestMaisonSanteArticle"] = 'data-latest-article="/sante-nyons/maison-de-sante-nyons/"' in source
-            result["maisonSanteHomepagePhoto"] = "/assets/photos/maison-de-sante-nyons/maison-de-sante-nyons-vue-ensemble.png" in source
+            result["latestPortageArticle"] = 'data-latest-article="/infos-pratiques-nyons/portage-repas-nyons/"' in source
+            result["portageHomepagePhoto"] = "/assets/photos/portage-repas-nyons/repas-servi-a-domicile.png" in source
         if "/sante-nyons/laboratoire-nyons/" in url:
             result["labPhone"] = 'href="tel:+33475262677"' in source
             result["labAddress"] = "26 avenue Paul Laurens" in source
@@ -141,7 +159,7 @@ def check(url):
             result["alzheimerLinked"] = 'href="/infos-pratiques-nyons/Alzheimer-Nyons/"' in source
             result["alzheimerNavigation"] = 'href="#memoire-aidants"' in source
             result["alzheimerSection"] = 'id="memoire-aidants"' in source
-            result["healthItems25"] = '"numberOfItems":25' in source
+            result["healthItems26"] = '"numberOfItems":26' in source
         if "Alzheimer-Nyons" in url:
             result["healthBackLink"] = "data-health-back-link" in source
             result["originalPhoto"] = "/assets/photos/7e9287ac607cf945800d.webp" in source
@@ -167,11 +185,11 @@ def check(url):
             result["photoPreserved"] = "/assets/photos/a4856b24e55c3e43021b.webp" in source
             result["updated"] = 'datetime="2026-10-07"' in source
         if url in ["https://www.vivreanyons.fr/","https://www.vivreanyons.fr/vivreanyons-test/","https://www.vivreanyons.fr/banniere-nyons/vivreanyons-test/"]:
-            result["maisonSanteFeatured"] = bool(re.search(r'data-latest-article="[^"]*sante-nyons/maison-de-sante-nyons/"', source))
-            result["maisonSanteHomepagePhoto"] = "assets/photos/maison-de-sante-nyons/maison-de-sante-nyons-vue-ensemble.png" in source
+            result["portageFeatured"] = bool(re.search(r'data-latest-article="[^"]*infos-pratiques-nyons/portage-repas-nyons/"', source))
+            result["portageHomepagePhoto"] = "assets/photos/portage-repas-nyons/repas-servi-a-domicile.png" in source
         if url in ["https://www.vivreanyons.fr/sante-nyons/","https://www.vivreanyons.fr/vivreanyons-test/sante-nyons/","https://www.vivreanyons.fr/banniere-nyons/vivreanyons-test/sante-nyons/"]:
             result["radiologyLinked"] = bool(re.search(r'href="[^"]*sante-nyons/radiologie-nyons/"', source))
-            result["healthItems25"] = '"numberOfItems":25' in source
+            result["healthItems26"] = '"numberOfItems":26' in source
             result["alzheimerPresent"] = "Alzheimer-Nyons/" in source and 'id="memoire-aidants"' in source
         if "/sante-nyons/radiologie-nyons/" in url:
             result["radioPhone"] = 'href="tel:+33475265200"' in source and 'href="tel:+33475265276"' in source
@@ -209,6 +227,28 @@ def check(url):
             result["headings"] = re.findall(r"<h1[^>]*>(.*?)</h1>", source, re.S)
             result["editorialHeadings"] = len(re.findall(r"<h2", source))
             result["publishDate"] = '"datePublished":"2026-10-07"' in source
+        if "/infos-pratiques-nyons/portage-repas-nyons/" in url:
+            result["ccasContact"] = 'href="tel:+33475265027"' in source and "ccas@nyons.com" in source
+            result["deliveryHours"] = "7 h 30 et 11 h 30" in source and "du lundi au samedi" in source
+            result["publishedPricesQualified"] = all(text in source for text in ["8,50 € le repas", "10 € le repas", "8,80 € ou 10,30 €", "Confirmez le prix actuellement applicable"])
+            result["thresholdQualified"] = "revenus pris en compte et le seuil applicable" in source
+            result["delay48Hours"] = "48 heures à l’avance" in source
+            result["apaConditional"] = "Cette aide n’est pas automatique" in source and "GIR 1 à 4" in source
+            result["statistics2025"] = all(text in source for text in ["2025", "15 506", "66 bénéficiaires"])
+            result["sundayArrangement"] = "repas doublé le samedi pour le dimanche" in source
+            result["photos"] = re.findall(r'<img[^>]+src="([^"]*assets/photos/portage-repas-nyons/[^"]+)"', source)
+            result["photoCaptions"] = len(re.findall(r"<figcaption>", source))
+            result["faqVisible"] = 'id="questions"' in source and source.count('<div class="qa">') == 7
+            result["faqSchema"] = '"@type":"FAQPage"' in source
+            result["sourcesVisible"] = "Sources et liens utiles" in source and 'class="meal-sources"' in source
+            result["sourcesCount"] = len(re.findall(r"<li>", re.search(r'<section class="meal-sources".*?</section>', source, re.S).group(0))) if 'class="meal-sources"' in source else 0
+            result["readerQuestions"] = "Et vous, connaissiez-vous ce service ?" in source
+            result["publishDate"] = '"datePublished":"2026-10-07"' in source
+            result["headings"] = re.findall(r"<h1[^>]*>(.*?)</h1>", source, re.S)
+        if url in ["https://www.vivreanyons.fr/sante-nyons/","https://www.vivreanyons.fr/vivreanyons-test/sante-nyons/","https://www.vivreanyons.fr/banniere-nyons/vivreanyons-test/sante-nyons/"]:
+            result["portageLinked"] = "data-portage-repas-card" in source and "portage-repas-nyons/" in source
+        if url in ["https://www.vivreanyons.fr/infos-pratiques-nyons/","https://www.vivreanyons.fr/toutes-les-pages/","https://www.vivreanyons.fr/vivreanyons-test/infos-pratiques-nyons/","https://www.vivreanyons.fr/vivreanyons-test/toutes-les-pages/","https://www.vivreanyons.fr/banniere-nyons/vivreanyons-test/infos-pratiques-nyons/","https://www.vivreanyons.fr/banniere-nyons/vivreanyons-test/toutes-les-pages/"]:
+            result["portageLinked"] = "data-portage-repas-card" in source and "portage-repas-nyons/" in source
         if page.refresh:
             match = re.search(r"^\s*0\s*;\s*url\s*=\s*(.+?)\s*$", page.refresh, re.I)
             if match:
