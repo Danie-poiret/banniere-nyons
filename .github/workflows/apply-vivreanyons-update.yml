@@ -20,6 +20,8 @@ jobs:
         run: |
           unzip -o vivreanyons-publication.zip
           rm vivreanyons-publication.zip
+          python tools/consolidate_venterol_urls.py
+          python tools/consolidate_venterol_urls.py
           python tools/update_health_section.py
           python tools/update_latest_article.py
           git config user.name "github-actions[bot]"
