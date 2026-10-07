@@ -85,6 +85,18 @@
       ]
     },
     {
+      "id": "memoire-aidants",
+      "title": "Alzheimer et soutien aux aidants",
+      "intro": "Les interlocuteurs pour accompagner un proche et trouver des solutions de répit.",
+      "items": [
+        [
+          "infos-pratiques-nyons/Alzheimer-Nyons/",
+          "Alzheimer à Nyons : ESA à domicile et aides pour les proches",
+          "ESA à domicile, accueil de jour, Halte Relais et accompagnement des proches aidants : retrouver les aides à Nyons."
+        ]
+      ]
+    },
+    {
       "id": "prevention",
       "title": "Prévention et cadre de vie",
       "intro": "Des fiches sur les conditions de vie et les périodes de forte chaleur.",

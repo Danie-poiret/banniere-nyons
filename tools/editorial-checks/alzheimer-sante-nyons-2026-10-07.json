@@ -1,0 +1,10 @@
+{
+  "date": "2026-10-07",
+  "issue": "Existing Alzheimer fiche omitted from health-section manifest and hub.",
+  "resolution": "Add dedicated Alzheimer et soutien aux aidants section, navigation anchor and card in all three health hubs; helper applies existing health presentation/backlink to original fiche.",
+  "existingUrl": "https://www.vivreanyons.fr/infos-pratiques-nyons/Alzheimer-Nyons/",
+  "articleBodyPreserved": true,
+  "imagePreserved": true,
+  "healthItems": 22,
+  "healthSections": 8
+}
