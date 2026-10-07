@@ -1,4 +1,4 @@
-"""Read-only checks of public URLs, including the newly published hearing article."""
+"""Read-only checks of public URLs and the radiology article with its three photos."""
 from concurrent.futures import ThreadPoolExecutor
 from html.parser import HTMLParser
 import json
@@ -8,6 +8,22 @@ from urllib.request import Request, HTTPRedirectHandler, build_opener
 from urllib.error import HTTPError
 
 URLS = [
+"https://www.vivreanyons.fr/sante-nyons/radiologie-nyons/",
+"https://www.vivreanyons.fr/assets/photos/radiologie-nyons/radiographies-os-et-thorax.png",
+"https://www.vivreanyons.fr/assets/photos/radiologie-nyons/lecture-radiographie-thorax.png",
+"https://www.vivreanyons.fr/assets/photos/radiologie-nyons/images-cerebrales-ecran.png",
+"https://www.vivreanyons.fr/vivreanyons-test/sante-nyons/radiologie-nyons/",
+"https://www.vivreanyons.fr/vivreanyons-test/assets/photos/radiologie-nyons/radiographies-os-et-thorax.png",
+"https://www.vivreanyons.fr/vivreanyons-test/assets/photos/radiologie-nyons/lecture-radiographie-thorax.png",
+"https://www.vivreanyons.fr/vivreanyons-test/assets/photos/radiologie-nyons/images-cerebrales-ecran.png",
+"https://www.vivreanyons.fr/vivreanyons-test/",
+"https://www.vivreanyons.fr/vivreanyons-test/sante-nyons/",
+"https://www.vivreanyons.fr/banniere-nyons/vivreanyons-test/sante-nyons/radiologie-nyons/",
+"https://www.vivreanyons.fr/banniere-nyons/vivreanyons-test/assets/photos/radiologie-nyons/radiographies-os-et-thorax.png",
+"https://www.vivreanyons.fr/banniere-nyons/vivreanyons-test/assets/photos/radiologie-nyons/lecture-radiographie-thorax.png",
+"https://www.vivreanyons.fr/banniere-nyons/vivreanyons-test/assets/photos/radiologie-nyons/images-cerebrales-ecran.png",
+"https://www.vivreanyons.fr/banniere-nyons/vivreanyons-test/",
+"https://www.vivreanyons.fr/banniere-nyons/vivreanyons-test/sante-nyons/",
 "https://www.vivreanyons.fr/sante-nyons/laboratoire-nyons/",
 "https://www.vivreanyons.fr/assets/photos/laboratoire-nyons/prise-de-sang-au-laboratoire.png",
 "https://www.vivreanyons.fr/assets/photos/laboratoire-nyons/tubes-et-resultats-analyses.png",
@@ -93,8 +109,8 @@ def check(url):
             result["svgRoot"] = "<svg" in source
             result["headings"] = re.findall(r"<h1[^>]*>(.*?)</h1>", source, re.S)
         if url == "https://www.vivreanyons.fr/":
-            result["latestLaboratoryArticle"] = 'data-latest-article="/sante-nyons/laboratoire-nyons/"' in source
-            result["laboratoryHomepagePhoto"] = "/assets/photos/laboratoire-nyons/prise-de-sang-au-laboratoire.png" in source
+            result["latestRadiologyArticle"] = 'data-latest-article="/sante-nyons/radiologie-nyons/"' in source
+            result["radiologyHomepagePhoto"] = "/assets/photos/radiologie-nyons/radiographies-os-et-thorax.png" in source
         if "/sante-nyons/laboratoire-nyons/" in url:
             result["labPhone"] = 'href="tel:+33475262677"' in source
             result["labAddress"] = "26 avenue Paul Laurens" in source
@@ -106,7 +122,7 @@ def check(url):
             result["alzheimerLinked"] = 'href="/infos-pratiques-nyons/Alzheimer-Nyons/"' in source
             result["alzheimerNavigation"] = 'href="#memoire-aidants"' in source
             result["alzheimerSection"] = 'id="memoire-aidants"' in source
-            result["healthItems23"] = '"numberOfItems":23' in source
+            result["healthItems24"] = '"numberOfItems":24' in source
         if "Alzheimer-Nyons" in url:
             result["healthBackLink"] = "data-health-back-link" in source
             result["originalPhoto"] = "/assets/photos/7e9287ac607cf945800d.webp" in source
@@ -131,6 +147,24 @@ def check(url):
             result["mtDents"] = "M’T dents tous les ans !" in source
             result["photoPreserved"] = "/assets/photos/a4856b24e55c3e43021b.webp" in source
             result["updated"] = 'datetime="2026-10-07"' in source
+        if url in ["https://www.vivreanyons.fr/","https://www.vivreanyons.fr/vivreanyons-test/","https://www.vivreanyons.fr/banniere-nyons/vivreanyons-test/"]:
+            result["radiologyFeatured"] = bool(re.search(r'data-latest-article="[^"]*sante-nyons/radiologie-nyons/"', source))
+            result["radiologyHomepagePhoto"] = "assets/photos/radiologie-nyons/radiographies-os-et-thorax.png" in source
+        if url in ["https://www.vivreanyons.fr/sante-nyons/","https://www.vivreanyons.fr/vivreanyons-test/sante-nyons/","https://www.vivreanyons.fr/banniere-nyons/vivreanyons-test/sante-nyons/"]:
+            result["radiologyLinked"] = bool(re.search(r'href="[^"]*sante-nyons/radiologie-nyons/"', source))
+            result["healthItems24"] = '"numberOfItems":24' in source
+            result["alzheimerPresent"] = "Alzheimer-Nyons/" in source and 'id="memoire-aidants"' in source
+        if "/sante-nyons/radiologie-nyons/" in url:
+            result["radioPhone"] = 'href="tel:+33475265200"' in source and 'href="tel:+33475265276"' in source
+            result["radioAddress"] = "11 avenue Jules Bernard" in source
+            result["radioPhotos"] = re.findall(r'<img[^>]+src="([^"]*assets/photos/radiologie-nyons/[^"]+)"', source)
+            result["photoCaptions"] = len(re.findall(r"<figcaption>", source))
+            result["headings"] = re.findall(r"<h1[^>]*>(.*?)</h1>", source, re.S)
+            result["editorialHeadings"] = len(re.findall(r"<h2", source))
+            result["appointment"] = "<strong>sur rendez-vous</strong>" in source
+            result["equipmentQualified"] = "ne mentionnent ni scanner ni IRM sur le site de Nyons" in source
+            result["papyPreserved"] = "Le petit conseil de Papy avant votre rendez-vous" in source
+            result["publishDate"] = '"datePublished":"2026-10-07"' in source
         if page.refresh:
             match = re.search(r"^\s*0\s*;\s*url\s*=\s*(.+?)\s*$", page.refresh, re.I)
             if match:
