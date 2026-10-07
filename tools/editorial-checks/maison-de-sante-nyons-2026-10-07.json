@@ -4,13 +4,6 @@
   "author": "Papy Chris",
   "editorialSections": 12,
   "professionalContacts": 8,
-  "photo": {
-    "path": "assets/photos/668de5d6a91a56f4b265.webp",
-    "width": 276,
-    "height": 155,
-    "alt": "Professionnel de santé en blouse tenant un stéthoscope vert.",
-    "caption": "Des cabinets réunis dans un même lieu : les rendez-vous restent à organiser avec chaque professionnel. Photo d’illustration."
-  },
   "input": "Commentaires collés par l’utilisateur et présentation municipale récupérée en ligne. Pièce jointe locale non lisible : ne pas prétendre l’avoir lue.",
   "sources": [
     "https://www.nyons.com/vivre-nyons/actions-sociales-et-sante/sante/",
@@ -29,5 +22,23 @@
     "Pas de chiffre de loyer en raison d’affichages HT/TTC incohérents ; absence de causalité démontrée entre loyers et départs.",
     "Exclure attaques personnelles, plaisanteries sur psychologue et allégation générale de dermatologues préférant l’esthétique.",
     "Aucune modification des URLs ou textes des anciennes fiches."
+  ],
+  "photos": [
+    {
+      "path": "assets/photos/maison-de-sante-nyons/maison-de-sante-nyons-vue-ensemble.png",
+      "width": 261,
+      "height": 235,
+      "alt": "Vue d’ensemble de la Maison de Santé Émile Lisbonne à Nyons, derrière le portail et les panneaux d’information.",
+      "caption": "Maison de Santé Émile Lisbonne, 21 rue Émile Lisbonne à Nyons.",
+      "providedBy": "user"
+    },
+    {
+      "path": "assets/photos/maison-de-sante-nyons/maison-de-sante-nyons-facade.png",
+      "width": 223,
+      "height": 203,
+      "alt": "Façade de la Maison de Santé Émile Lisbonne à Nyons, avec son nom et les brise-soleil.",
+      "caption": "Le nom Émile Lisbonne apparaît sur la façade : un repère pour une première visite.",
+      "providedBy": "user"
+    }
   ]
 }
