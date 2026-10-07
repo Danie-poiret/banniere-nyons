@@ -1,0 +1,17 @@
+name: Vérifier les redirections publiques
+on:
+  push:
+    paths:
+      - tools/check_public_url_redirects.py
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  verify-public-urls:
+    runs-on: ubuntu-latest
+    timeout-minutes: 4
+    steps:
+      - name: Récupérer le dépôt
+        uses: actions/checkout@v4
+      - name: Vérifier les URL sans modifier le site
+        run: python tools/check_public_url_redirects.py
