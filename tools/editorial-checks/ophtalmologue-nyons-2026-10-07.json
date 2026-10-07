@@ -1,0 +1,47 @@
+{
+  "article": "https://www.vivreanyons.fr/sante-nyons/ophtalmologue-nyons/",
+  "checked": "2026-10-07",
+  "editing": "Texte fourni par le propriétaire ; doublons supprimés, titres rétablis, coordonnées vérifiées et formulation prudente sur le cabinet référencé.",
+  "checks": [
+    {
+      "url": "https://www.guide-vue.fr/annuaire-ophtalmologiste/nyons/bertrand-pierre",
+      "result": "29 avenue Henri Rochier ; 04 75 26 43 10. Référencement seulement, activité et accueil à confirmer."
+    },
+    {
+      "url": "https://www.temeoo.fr/cabinets/nyons",
+      "result": "10 avenue Jules Bernard ; 06 77 69 30 62 ; Julia Leveau Papas ; téléophtalmologie de 6 à 49 ans avec suivi antérieur selon la tranche d’âge."
+    },
+    {
+      "url": "https://www.maiia.com/orthoptiste/26110-nyons/leveau-julia",
+      "result": "Bilans adultes/enfants, rééducation, amblyopie, rétinopathie diabétique et renouvellement de lunettes référencés."
+    },
+    {
+      "url": "https://www.ameli.fr/assure/sante/themes/glaucome/symptomes-diagnostic",
+      "result": "Repères médicaux consultés pour contrôler le texte fourni."
+    },
+    {
+      "url": "https://www.ameli.fr/assure/sante/themes/dmla/symptomes-diagnostic",
+      "result": "Repères médicaux consultés pour contrôler le texte fourni."
+    },
+    {
+      "url": "https://www.ameli.fr/assure/sante/themes/cataracte/symptomes-diagnostic",
+      "result": "Repères médicaux consultés pour contrôler le texte fourni."
+    },
+    {
+      "url": "https://www.ameli.fr/assure/sante/themes/diabete-adulte/diabete-symptomes-evolution/complications-yeux-diabete",
+      "result": "Repères médicaux consultés pour contrôler le texte fourni."
+    },
+    {
+      "url": "https://www.ameli.fr/assure/sante/themes/secheresse-oculaire/definition-symptomes-causes",
+      "result": "Repères médicaux consultés pour contrôler le texte fourni."
+    },
+    {
+      "url": "https://www.ameli.fr/assure/sante/themes/myopie/sante-yeux-enfant",
+      "result": "Repères médicaux consultés pour contrôler le texte fourni."
+    },
+    {
+      "url": "https://www.ameli.fr/assure/sante/urgence/pathologies/decollement-retine",
+      "result": "Signes rétiniens d’alerte et nécessité d’un avis rapide."
+    }
+  ]
+}
