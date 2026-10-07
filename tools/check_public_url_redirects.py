@@ -8,6 +8,10 @@ from urllib.request import Request, HTTPRedirectHandler, build_opener
 from urllib.error import HTTPError
 
 URLS = [
+"https://www.vivreanyons.fr/sante-nyons/",
+"https://www.vivreanyons.fr/infos-pratiques-nyons/Alzheimer-Nyons/",
+"https://www.vivreanyons.fr/infos-pratiques-nyons/nyons-sante/",
+"https://www.vivreanyons.fr/infos-pratiques-nyons/services-de-livraison-nyons/",
 "https://www.vivreanyons.fr/questions-utiles-nyons/Dentiste-Nyons/",
 "https://www.vivreanyons.fr/sante-nyons/audioprothesiste-nyons/",
 "https://www.vivreanyons.fr/assets/photos/audioprothesiste-nyons/appareil-auditif-contour-oreille.png",
@@ -77,12 +81,34 @@ def check(url):
         page = Page()
         page.feed(source)
         result.update({"canonicals": page.canonicals, "robots": page.robots, "metaRefresh": page.refresh})
-        if "audioprothesiste-nyons" in url or "Dentiste-Nyons" in url or url == "https://www.vivreanyons.fr/":
+        if any(slug in url for slug in ["audioprothesiste-nyons", "Dentiste-Nyons", "nyons-sante", "services-de-livraison-nyons", "Alzheimer-Nyons", "sante-nyons/"]) or url == "https://www.vivreanyons.fr/":
             result["hearingArticleLinked"] = "/sante-nyons/audioprothesiste-nyons/" in source
             result["hearingImageLinked"] = "/assets/photos/audioprothesiste-nyons/appareil-auditif-contour-oreille.png" in source
             result["hearingPhotosLinked"] = re.findall(r'<img[^>]+src="([^"]*assets/photos/audioprothesiste-nyons/[^"]+)"', source)
             result["svgRoot"] = "<svg" in source
             result["headings"] = re.findall(r"<h1[^>]*>(.*?)</h1>", source, re.S)
+        if url == "https://www.vivreanyons.fr/sante-nyons/":
+            result["alzheimerLinked"] = 'href="/infos-pratiques-nyons/Alzheimer-Nyons/"' in source
+            result["alzheimerNavigation"] = 'href="#memoire-aidants"' in source
+            result["alzheimerSection"] = 'id="memoire-aidants"' in source
+            result["healthItems22"] = '"numberOfItems":22' in source
+        if "Alzheimer-Nyons" in url:
+            result["healthBackLink"] = "data-health-back-link" in source
+            result["originalPhoto"] = "/assets/photos/7e9287ac607cf945800d.webp" in source
+        if "/nyons-sante/" in url:
+            result["photos"] = re.findall(r'<img[^>]+src="([^"]+)"', source)
+            result["atmoLinked"] = "atmo-auvergnerhonealpes.fr/air-commune/Ville/26220/previsions" in source
+            result["pollens"] = "Les graminées, l’olivier ou l’ambroisie" in source
+            result["noCurePromise"] = all(text not in source for text in ["Ce n’est pas une impression", "L’air y est extrêmement propre", "réduisent quasiment tous"])
+            result["updated"] = 'datetime="2026-10-07"' in source
+        if "/services-de-livraison-nyons/" in url:
+            result["photos"] = re.findall(r'<img[^>]+src="([^"]+)"', source)
+            result["ccasContact"] = 'href="tel:+33475265027"' in source
+            result["intermarcheContact"] = 'href="tel:+33475261968"' in source
+            result["ccbdpContact"] = 'href="tel:+33475269075"' in source
+            result["hours"] = "entre 7 h 30 et 11 h 30" in source
+            result["oldTariffRemoved"] = all(text not in source for text in ["8,80", "10,30"])
+            result["updated"] = 'datetime="2026-10-07"' in source
         if "Dentiste-Nyons" in url:
             result["dentistDirectoryLinked"] = 'href="/infos-pratiques-nyons/dentistes-nyons/"' in source
             result["consultation23"] = "<strong>23 €</strong>" in source
