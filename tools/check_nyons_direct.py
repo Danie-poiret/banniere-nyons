@@ -29,6 +29,9 @@ def adapter_checks():
     rejected(lambda:collector.parse_river(stale))
     rejected(lambda:collector.parse_river(json.dumps(series).replace("V533401002","WRONG")))
     rejected(lambda:collector.parse_river(json.dumps(series).replace("2026-10-08T07","2026-10-09T07")))
+    assert collector.fire_path(["var url_data = '/static/26/import_data_carto/json/';"]) == "/static/26/import_data_carto/json/"
+    assert collector.fire_path(["const url_data = '/static/' + id + '/import_data_carto/json/';"]) == "/static/26/import_data_carto/json/"
+    rejected(lambda:collector.fire_path(["url_data = unsafe();"]))
     assert collector.parse_fire('{"massifs":{"267":[2,0]}}')["label"] == "Niveau jaune"
     rejected(lambda:collector.parse_fire('{"massifs":{"267":[0,0]}}'))
     rejected(lambda:collector.parse_fire('{"massifs":{"261":[2,0]}}'))

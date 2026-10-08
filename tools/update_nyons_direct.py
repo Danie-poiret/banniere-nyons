@@ -99,23 +99,11 @@ def parse_fire(body):
     if values[0] not in labels:
         raise ValueError("Niveau incendie non publié")
     return available(labels[values[0]], "Carte du jour · secteur Nyonsais. Vérifier aussi les arrêtés locaux.", end_day, date=today.isoformat(), source=FIRE)
-def fire():
-    page = request(FIRE)
-    if not re.search(r"<tr\s+id=['\"]267['\"][^>]*>\s*<td>.*?</td>\s*<td>Nyonsais</td>", page, re.S):
-        raise ValueError("Identifiant du massif non confirmé")
-    # Discover the public daily JSON path used by the official map; fail closed
-    # if its format changes. Never interpret the map's default level 0 as safe.
-    scripts = re.findall(r"<script[^>]+src=['\"]([^'\"]+)", page)
-    candidates = [page]
-    for src in scripts:
-        target = urljoin(FIRE, src)
-        if urlparse(target).hostname == "www.risque-prevention-incendie.fr" and ("maps_prev" in src or "massifs_prev" in src):
-            candidates.append(request(target))
-    match = next((m for s in candidates if (m:=re.search(r"(?:var |let |const )?url_data\\s*=\\s*([^;\\n]+)",s))), None)
+def fire_path(candidates):
+    match = next((m for s in candidates if (m:=re.search(r"(?:var |let |const )?url_data\s*=\s*([^;\n]+)",s))), None)
     if not match:
         raise ValueError("Chemin quotidien de la carte non identifiable")
-    # Accept only string literals and the known department variable; never eval
-    # remote JavaScript. The map may concatenate its department into this path.
+    # String literals and the confirmed department id only; never eval remote JS.
     parts = []
     for token in match[1].strip().split("+"):
         token = token.strip()
@@ -128,6 +116,21 @@ def fire():
     daily_base = "".join(parts)
     if "import_data" not in daily_base or not daily_base.endswith("/"):
         raise ValueError("Chemin quotidien de la carte incomplet")
+    return daily_base
+
+def fire():
+    page = request(FIRE)
+    if not re.search(r"<tr\s+id=['\"]267['\"][^>]*>\s*<td>.*?</td>\s*<td>Nyonsais</td>", page, re.S):
+        raise ValueError("Identifiant du massif non confirmé")
+    # Discover the public daily JSON path used by the official map; fail closed
+    # if its format changes. Never interpret the map's default level 0 as safe.
+    scripts = re.findall(r"<script[^>]+src=['\"]([^'\"]+)", page)
+    candidates = [page]
+    for src in scripts:
+        target = urljoin(FIRE, src)
+        if urlparse(target).hostname == "www.risque-prevention-incendie.fr" and ("maps_prev" in src or "massifs_prev" in src):
+            candidates.append(request(target))
+    daily_base = fire_path(candidates)
     target = urljoin(FIRE, daily_base+today.strftime("%Y%m%d")+".json")
     if urlparse(target).hostname != "www.risque-prevention-incendie.fr":
         raise ValueError("Source incendie inattendue")
