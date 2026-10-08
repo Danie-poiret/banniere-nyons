@@ -10,6 +10,7 @@
   if(!menu) return;
   const sections=menu.querySelector('.rubriques');
   [
+    {key:'hebergement',label:'Où dormir à Nyons ?',url:'https://www.vivreanyons.fr/ou-dormir-a-nyons/'},
     {key:'brocantes',label:'Brocantes',url:'https://www.vivreanyons.fr/evenements-nyons/Brocantes--Vides-greniers-Nyons/'},
     {key:'cinema',label:'Programme cinéma',url:'https://www.vivreanyons.fr/infos-pratiques-nyons/cinema-nyons/'},
     {key:'pharmacie-garde',label:'Pharmacie de garde',url:'https://www.vivreanyons.fr/infos-pratiques-nyons/pharmacie-de-garde-nyons/'}
@@ -249,13 +250,68 @@ document.addEventListener('DOMContentLoaded',()=>{simplifyPontRomanPhotos();load
     const saved=JSON.parse(localStorage.getItem(KEY));
     if(saved&&saved.version===VERSION&&typeof saved.videos==='boolean'&&typeof saved.maps==='boolean'&&Number.isFinite(saved.expires)&&saved.expires>Date.now())choice=saved;
   }catch(error){}
+  // One GA4 destination: the GT alias shown in Google is not configured twice.
+  const ANALYTICS_ID='G-X0T2SGWSWX';
+  const analyticsState={started:false,loaded:false,enabled:false,script:null};
+  const analyticsSite=/^(www\.)?vivreanyons\.fr$/.test(location.hostname)&&!/^\/(?:banniere-nyons\/)?vivreanyons-test(?:\/|$)/.test(location.pathname);
+  const deniedConsent={analytics_storage:'denied',ad_storage:'denied',ad_user_data:'denied',ad_personalization:'denied'};
+  function clearAnalyticsCookies(){
+    const names=['_ga','_ga_'+ANALYTICS_ID.slice(2).replace(/-/g,'_')];
+    const domains=['',location.hostname,'.'+location.hostname,'vivreanyons.fr','.vivreanyons.fr'];
+    names.forEach(name=>domains.forEach(domain=>{
+      document.cookie=name+'=; Max-Age=0; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/'+(domain?'; domain='+domain:'')+'; SameSite=Lax; Secure';
+    }));
+  }
+  function applyAnalytics(){
+    const allowed=analyticsSite&&!!(choice&&choice.analytics===true&&choice.expires>Date.now());
+    window['ga-disable-'+ANALYTICS_ID]=!allowed;
+    if(!allowed){
+      if(analyticsState.enabled&&typeof window.gtag==='function')window.gtag('consent','update',deniedConsent);
+      analyticsState.enabled=false;
+      if(analyticsState.script&&!analyticsState.loaded){analyticsState.script.remove();analyticsState.script=null;}
+      if(analyticsSite)clearAnalyticsCookies();
+      return;
+    }
+    if(analyticsState.enabled&&analyticsState.script)return;
+    window.dataLayer=window.dataLayer||[];
+    if(typeof window.gtag!=='function')window.gtag=function(){window.dataLayer.push(arguments);};
+    if(!analyticsState.started){
+      window.gtag('consent','default',deniedConsent);
+      window.gtag('consent','update',{...deniedConsent,analytics_storage:'granted'});
+      window.gtag('js',new Date());
+      let referrer='';
+      try{if(document.referrer)referrer=new URL(document.referrer).origin;}catch(error){}
+      window.gtag('config',ANALYTICS_ID,{
+        allow_google_signals:false,
+        allow_ad_personalization_signals:false,
+        cookie_domain:location.hostname,
+        cookie_path:'/',
+        cookie_expires:15552000,
+        cookie_update:false,
+        page_location:location.origin+location.pathname,
+        page_referrer:referrer
+      });
+      analyticsState.started=true;
+    }else if(!analyticsState.enabled)window.gtag('consent','update',{...deniedConsent,analytics_storage:'granted'});
+    analyticsState.enabled=true;
+    if(!analyticsState.loaded&&!analyticsState.script){
+      const tag=document.createElement('script');tag.async=true;
+      tag.dataset.nyonsAnalytics=ANALYTICS_ID;
+      tag.src='https://www.googletagmanager.com/gtag/js?id='+encodeURIComponent(ANALYTICS_ID);
+      tag.addEventListener('load',()=>{analyticsState.loaded=true;});
+      tag.addEventListener('error',()=>{tag.remove();analyticsState.script=null;});
+      analyticsState.script=tag;document.head.append(tag);
+    }
+  }
   const panel=document.createElement('section');panel.className='privacy-panel';panel.dataset.privacyPanel='';
   panel.setAttribute('role','dialog');panel.setAttribute('aria-labelledby','privacy-title');
-  panel.innerHTML='<h2 id="privacy-title">Votre choix pour les cookies</h2><p>Le site reste accessible sans les services externes. Les vidéos YouTube, les vidéos Facebook et les cartes peuvent transmettre des informations de connexion à leurs fournisseurs et utiliser des cookies ou autres traceurs. Vous choisissez de les autoriser ou non.</p><p class="privacy-information"><a href="'+policyUrl+'">En savoir plus sur les cookies</a></p><div class="privacy-actions"><button type="button" data-privacy-action="accept">Accepter</button><button type="button" data-privacy-action="reject">Refuser</button><button type="button" data-privacy-action="configure" aria-expanded="false" aria-controls="privacy-options">Paramétrer</button></div><form id="privacy-options" class="privacy-options" hidden><label><input type="checkbox" name="videos"> <span><strong>Vidéos YouTube</strong><br>Autoriser le lecteur vidéo de Google / YouTube et ses traceurs éventuels.</span></label><label><input type="checkbox" name="facebook"> <span><strong>Vidéos Facebook</strong><br>Autoriser le lecteur de Meta / Facebook et ses traceurs éventuels.</span></label><label><input type="checkbox" name="maps"> <span><strong>Cartes interactives</strong><br>Autoriser Google Maps et la carte des sports avec ses fonds OpenStreetMap et ressources externes.</span></label><p>Le stockage de votre choix est nécessaire pour le mémoriser pendant six mois. Il reste dans votre navigateur.</p><div class="privacy-actions"><button type="submit">Enregistrer mes choix</button><button type="button" data-privacy-action="cancel">Annuler</button></div></form>';
+  panel.innerHTML='<h2 id="privacy-title">Votre choix pour les cookies</h2><p>Le site reste accessible sans les services externes. Les vidéos YouTube, les vidéos Facebook et les cartes peuvent transmettre des informations de connexion à leurs fournisseurs et utiliser des cookies ou autres traceurs. La mesure d’audience Google Analytics est également facultative et démarre seulement si vous l’autorisez.</p><p class="privacy-information"><a href="'+policyUrl+'">En savoir plus sur les cookies</a></p><div class="privacy-actions"><button type="button" data-privacy-action="accept">Accepter</button><button type="button" data-privacy-action="reject">Refuser</button><button type="button" data-privacy-action="configure" aria-expanded="false" aria-controls="privacy-options">Paramétrer</button></div><form id="privacy-options" class="privacy-options" hidden><label><input type="checkbox" name="videos"> <span><strong>Vidéos YouTube</strong><br>Autoriser le lecteur vidéo de Google / YouTube et ses traceurs éventuels.</span></label><label><input type="checkbox" name="facebook"> <span><strong>Vidéos Facebook</strong><br>Autoriser le lecteur de Meta / Facebook et ses traceurs éventuels.</span></label><label><input type="checkbox" name="maps"> <span><strong>Cartes interactives</strong><br>Autoriser Google Maps et la carte des sports avec ses fonds OpenStreetMap et ressources externes.</span></label><label><input type="checkbox" name="analytics"> <span><strong>Mesure d’audience</strong><br>Autoriser Google Analytics pour mesurer les visites du site. Les options publicitaires restent désactivées.</span></label><p>Le stockage de votre choix est nécessaire pour le mémoriser pendant six mois. Il reste dans votre navigateur.</p><div class="privacy-actions"><button type="submit">Enregistrer mes choix</button><button type="button" data-privacy-action="cancel">Annuler</button></div></form>';
   document.body.append(panel);
-  const options=panel.querySelector('form'),videos=options.elements.videos,maps=options.elements.maps,facebook=options.elements.facebook;
+  const options=panel.querySelector('form'),videos=options.elements.videos,maps=options.elements.maps,facebook=options.elements.facebook,analytics=options.elements.analytics;
   const configure=panel.querySelector('[data-privacy-action="configure"]');
   function apply(){
+    videos.checked=!!(choice&&choice.videos);maps.checked=!!(choice&&choice.maps);facebook.checked=!!(choice&&choice.facebook);analytics.checked=!!(choice&&choice.analytics);
+    applyAnalytics();
     frames.forEach(frame=>{
       const allowed=!!(choice&&choice[frame.dataset.privacyCategory]);
       const placeholder=frame.previousElementSibling;
@@ -265,24 +321,24 @@ document.addEventListener('DOMContentLoaded',()=>{simplifyPontRomanPhotos();load
       else if(frame.hasAttribute('src'))frame.removeAttribute('src');
     });
   }
-  function setChoice(allowVideos,allowMaps,allowFacebook=false){
+  function setChoice(allowVideos,allowMaps,allowFacebook=false,allowAnalytics=false){
     const expiry=new Date();expiry.setMonth(expiry.getMonth()+6);
-    choice={version:VERSION,videos:allowVideos,maps:allowMaps,facebook:allowFacebook,expires:expiry.getTime()};
+    choice={version:VERSION,videos:allowVideos,maps:allowMaps,facebook:allowFacebook,analytics:allowAnalytics,expires:expiry.getTime()};
     try{localStorage.setItem(KEY,JSON.stringify(choice));}catch(error){}
     apply();panel.hidden=true;options.hidden=true;configure.setAttribute('aria-expanded','false');
     if(lastFocus&&lastFocus.isConnected)lastFocus.focus();
   }
   function show(settings=false,category=null){
     lastFocus=document.activeElement;panel.hidden=false;
-    videos.checked=!!(choice&&choice.videos);maps.checked=!!(choice&&choice.maps);facebook.checked=!!(choice&&choice.facebook);
+    videos.checked=!!(choice&&choice.videos);maps.checked=!!(choice&&choice.maps);facebook.checked=!!(choice&&choice.facebook);analytics.checked=!!(choice&&choice.analytics);
     options.hidden=!settings;configure.setAttribute('aria-expanded',String(settings));
-    const focus=category==='videos'?videos:category==='maps'?maps:category==='facebook'?facebook:settings?videos:panel.querySelector('button');
+    const focus=category==='videos'?videos:category==='maps'?maps:category==='facebook'?facebook:category==='analytics'?analytics:settings?videos:panel.querySelector('button');
     focus.focus({preventScroll:true});
   }
-  panel.querySelector('[data-privacy-action="accept"]').addEventListener('click',()=>setChoice(true,true,true));
+  panel.querySelector('[data-privacy-action="accept"]').addEventListener('click',()=>setChoice(true,true,true,true));
   panel.querySelector('[data-privacy-action="reject"]').addEventListener('click',()=>setChoice(false,false));
   configure.addEventListener('click',()=>{options.hidden=!options.hidden;configure.setAttribute('aria-expanded',String(!options.hidden));if(!options.hidden)videos.focus();});
-  options.addEventListener('submit',event=>{event.preventDefault();setChoice(videos.checked,maps.checked,facebook.checked);});
+  options.addEventListener('submit',event=>{event.preventDefault();setChoice(videos.checked,maps.checked,facebook.checked,analytics.checked);});
   panel.querySelector('[data-privacy-action="cancel"]').addEventListener('click',()=>{if(choice){panel.hidden=true;lastFocus?.focus();}else{options.hidden=true;configure.setAttribute('aria-expanded','false');}});
   panel.addEventListener('keydown',event=>{if(event.key==='Escape'){event.preventDefault();if(choice){panel.hidden=true;lastFocus?.focus();}else setChoice(false,false);}});
   document.querySelectorAll('[data-privacy-placeholder] button').forEach(button=>button.addEventListener('click',()=>show(true,button.closest('[data-privacy-placeholder]').dataset.privacyPlaceholder)));
@@ -295,11 +351,12 @@ document.addEventListener('DOMContentLoaded',()=>{simplifyPontRomanPhotos();load
     p.append(button,document.createTextNode(' · '),link);footer.append(p);
   }
   window.addEventListener('storage',event=>{
-    if(event.key!==KEY)return;
+    if(event.key!==KEY&&event.key!==null)return;
     try{const saved=JSON.parse(event.newValue);choice=saved&&saved.version===VERSION&&typeof saved.videos==='boolean'&&typeof saved.maps==='boolean'&&Number.isFinite(saved.expires)&&saved.expires>Date.now()?saved:null;}catch(error){choice=null;}
-    apply();panel.hidden=!!choice;
+    apply();panel.hidden=!!(choice&&typeof choice.analytics==='boolean');
   });
-  apply();panel.hidden=!!choice;
+  apply();panel.hidden=!!(choice&&typeof choice.analytics==='boolean');
+  setInterval(()=>{if(choice&&choice.expires<=Date.now()){choice=null;apply();panel.hidden=false;}},60000);
 })();
 
 /* Visitor-visible lodging message; excluded from search-result snippets. */
