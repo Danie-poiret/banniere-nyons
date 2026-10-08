@@ -2,12 +2,19 @@
 from concurrent.futures import ThreadPoolExecutor
 from html.parser import HTMLParser
 import json
+import time
 import re
 from urllib.parse import urljoin
 from urllib.request import Request, HTTPRedirectHandler, build_opener
 from urllib.error import HTTPError
 
 URLS = [
+"https://www.vivreanyons.fr/infos-pratiques-nyons/apa-nyons/",
+"https://www.vivreanyons.fr/assets/photos/apa-nyons/apa-a-domicile.png",
+"https://www.vivreanyons.fr/vivreanyons-test/infos-pratiques-nyons/apa-nyons/",
+"https://www.vivreanyons.fr/vivreanyons-test/assets/photos/apa-nyons/apa-a-domicile.png",
+"https://www.vivreanyons.fr/banniere-nyons/vivreanyons-test/infos-pratiques-nyons/apa-nyons/",
+"https://www.vivreanyons.fr/banniere-nyons/vivreanyons-test/assets/photos/apa-nyons/apa-a-domicile.png",
 "https://www.vivreanyons.fr/infos-pratiques-nyons/dechetterie-nyons/",
 "https://www.vivreanyons.fr/assets/photos/dechetterie-nyons/panneau-dechetterie.png",
 "https://www.vivreanyons.fr/assets/photos/dechetterie-nyons/bennes-de-tri.png",
@@ -169,6 +176,29 @@ def check(url):
             result["dechetClickableTitle"] = bool(re.search(r'<h2 id="new-article-title"><a[^>]+href="[^"]*/infos-pratiques-nyons/dechetterie-nyons/"', source))
         if url.endswith("/infos-pratiques-nyons/") or url.endswith("/toutes-les-pages/"):
             result["dechetIndexLinked"] = '/infos-pratiques-nyons/dechetterie-nyons/' in source
+        if "/infos-pratiques-nyons/apa-nyons/" in url:
+            result["apaEligibility"] = all(text in source for text in ["60 ans", "GIR 1 à GIR 4", "résider en France de façon stable et régulière"])
+            result["apaMeansClarified"] = "Il n’existe pas de plafond de ressources" in source and "participation financière" in source
+            result["apaCCAS"] = 'href="tel:+33475265027"' in source and "ccas@nyons.com" in source and "sur rendez-vous" in source
+            result["apaDepartment"] = 'href="tel:+33475797009"' in source and "dromesolidarites@ladrome.fr" in source
+            result["apaOfficialForm"] = "https://www.ladrome.fr/wp-content/uploads/2022/06/formulaire-aideautonomiepa-interactif-v4.pdf" in source
+            result["apaPhoto"] = re.findall(r'<img[^>]+src="([^"]*assets/photos/apa-nyons/[^"]+)"', source)
+            result["apaPhotoDimensions"] = 'width="260" height="242"' in source
+            result["apaFAQ"] = source.count('<div class="qa">') == 5 and "Questions / réponses" in source
+            result["apaFAQSchema"] = '"@type":"FAQPage"' in source
+            result["apaReaderQuestions"] = all(text in source for text in ["Avez-vous déjà constitué un dossier APA", "Les démarches vous ont-elles paru simples ?", "Et quel autre sujet aimeriez-vous"])
+            result["apaSources"] = "Sources et liens utiles" in source and "service-public.gouv.fr/particuliers/vosdroits/F10009" in source
+            result["apaDate"] = '"datePublished":"2026-10-08"' in source
+            result["apaNoDuplicateHeadings"] = re.findall(r"<h2[^>]*>(.*?)</h2>", source).count("Aide à domicile : que peut financer l’APA ?") == 1 and re.findall(r"<h2[^>]*>(.*?)</h2>", source).count("À retenir") == 1
+        if url in ["https://www.vivreanyons.fr/", "https://www.vivreanyons.fr/vivreanyons-test/", "https://www.vivreanyons.fr/banniere-nyons/vivreanyons-test/"]:
+            result["latestAPAArticle"] = 'data-latest-article="/infos-pratiques-nyons/apa-nyons/"' in source
+            result["apaHomepagePhoto"] = '/assets/photos/apa-nyons/apa-a-domicile.png' in source
+            result["apaClickableTitle"] = bool(re.search(r'<h2 id="new-article-title"><a[^>]+href="[^"]*/infos-pratiques-nyons/apa-nyons/"', source))
+        if url.endswith("/infos-pratiques-nyons/") or url.endswith("/toutes-les-pages/") or url.endswith("/sante-nyons/"):
+            result["apaIndexLinked"] = '/infos-pratiques-nyons/apa-nyons/' in source
+        if "/infos-pratiques-nyons/dechetterie-nyons/" in url:
+            result["dechetTables"] = source.count('<table class="dechet-table">') == 4
+            result["dechetMobileTables"] = ".dechet-table-wrap" in source and "overflow-x:auto" in source
         page = Page()
         page.feed(source)
         result.update({"canonicals": page.canonicals, "robots": page.robots, "metaRefresh": page.refresh})
@@ -312,6 +342,14 @@ def check(url):
     except Exception as error:
         result.update({"status": None, "chain": chain, "error": str(error)})
     return result
+
+for attempt in range(12):
+    ready_article = check("https://www.vivreanyons.fr/infos-pratiques-nyons/apa-nyons/")
+    ready_home = check("https://www.vivreanyons.fr/")
+    if ready_article.get("apaDate") and ready_home.get("latestAPAArticle"):
+        break
+    print("Waiting for the published APA article and homepage:", attempt + 1, flush=True)
+    time.sleep(10)
 
 with ThreadPoolExecutor(max_workers=4) as pool:
     results = list(pool.map(check, URLS))
