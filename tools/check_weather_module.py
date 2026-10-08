@@ -77,11 +77,13 @@ with sync_playwright() as p:
         bounds = module.bounding_box()
         assert bounds["x"] >= -1 and bounds["x"] + bounds["width"] <= width+1
         assert module.evaluate("(element) => element.scrollWidth <= element.clientWidth + 1")
-        for selector in (".weather-now",".weather-day",".weather-heading",".weather-footer"):
+        for selector in (".weather-now",".weather-day",".weather-heading>div",".weather-refresh",".weather-footer"):
             for element in module.locator(selector).all():
                 if not element.is_visible():
                     continue
                 box = element.bounding_box()
+                if box is None:
+                    continue
                 assert box["x"] >= bounds["x"]-1 and box["x"]+box["width"] <= bounds["x"]+bounds["width"]+1, (width,selector,box)
         if width in (1280,390):
             screenshot = module.screenshot(type="jpeg", quality=65, style="header { visibility: hidden !important; }")
