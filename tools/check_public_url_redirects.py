@@ -176,7 +176,9 @@ def check(url):
 for attempt in range(12):
     ready = check(BASE+"ou-dormir-a-nyons/villa-des-poete/")
     home = check(BASE)
-    if ready.get("villaUpdated") and home.get("latestEHPAD"):
+    mirror_ready = check(BASE+"vivreanyons-test/ou-dormir-a-nyons/villa-des-poete/")
+    second_mirror_ready = check(BASE+"banniere-nyons/vivreanyons-test/ou-dormir-a-nyons/villa-des-poete/")
+    if ready.get("villaUpdated") and home.get("latestEHPAD") and mirror_ready.get("villaCanonical") and second_mirror_ready.get("villaCanonical"):
         break
     print("Waiting for Villa des Poètes and preserved homepage", attempt+1, flush=True)
     time.sleep(10)
