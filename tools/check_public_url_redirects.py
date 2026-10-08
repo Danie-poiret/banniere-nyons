@@ -38,7 +38,14 @@ URLS = [
 "https://www.vivreanyons.fr/banniere-nyons/vivreanyons-test/infos-pratiques-nyons/plombier-nyons/",
 "https://www.vivreanyons.fr/assets/photos/plombier-nyons-meuble-sous-evier.webp",
 "https://www.vivreanyons.fr/assets/photos/plombier-nyons-siphon-raccordements.webp",
-"https://www.vivreanyons.fr/assets/photos/plombier-nyons-pose-robinetterie.webp"
+"https://www.vivreanyons.fr/assets/photos/plombier-nyons-pose-robinetterie.webp",
+"https://www.vivreanyons.fr/ou-dormir-a-nyons/villa-des-poete/",
+"https://www.vivreanyons.fr/ou-dormir-a-nyons/",
+"https://www.vivreanyons.fr/vivreanyons-test/ou-dormir-a-nyons/villa-des-poete/",
+"https://www.vivreanyons.fr/vivreanyons-test/ou-dormir-a-nyons/",
+"https://www.vivreanyons.fr/banniere-nyons/vivreanyons-test/ou-dormir-a-nyons/villa-des-poete/",
+"https://www.vivreanyons.fr/banniere-nyons/vivreanyons-test/ou-dormir-a-nyons/",
+"https://www.vivreanyons.fr/assets/photos/437f810cbd2d493dea6a.webp"
 ]
 TITLE = "Maison de retraite et EHPAD à Nyons : tarifs, places, Alzheimer et admission"
 class Page(HTMLParser):
@@ -90,6 +97,11 @@ def check(url):
             result["ashTariffDifference"] = all(t in source for t in ["93,62 €/jour","89,92 €/jour","tarif hébergement ASH diffère"])
             result["capacityQualified"] = "Ces indications ne concordent pas" in source and "76 places libres" in source
             result["aidsQualified"] = "récupérée, notamment sur la succession" in source and "cumulées sous conditions" in source
+            result["residenceClosed"] = "fermé définitivement à la fin du mois de juin 2025" in source and 'id="residence-pousterle-fermee"' in source
+            result["activeEHPADSeparate"] = "L’EHPAD reste référencé dans le portail national" in source
+            result["escapadeMoved"] = '<th scope="row">Escapade, soutien aux aidants</th><td>Moun Oustaou, 6 rue Ferdinand Vigne</td>' in source and "située à La Pousterle" not in source
+            result["mounContact"] = 'href="tel:+33475266565"' in source and "centre de ressources territorial" in source
+            result["municipalObsolescence"] = "Cette partie est obsolète" in source and "comprend également, séparément" not in source
             result["admission"] = "https://trajectoire.sante-ra.fr/" in source and "dossier national unique" in source
             result["readerQuestions"] = 'id="lecteurs"' in source and "Questions aux lecteurs" in source
             result["sources"] = "Sources et liens utiles" in source and "Informations vérifiées le 8 octobre 2026" in source
@@ -120,6 +132,31 @@ def check(url):
             result["plombierSources"] = "Sources et liens utiles" in source and "Questions aux lecteurs" in source
             result["plombierCanonical"] = page.canonicals == [BASE+"infos-pratiques-nyons/plombier-nyons/"]
             result["plombierMenus"] = 'data-nyons-shortcut="hebergement"' in source and 'data-weather-nav="direct"' in source and any("google-analytics-20261008-v1" in s for s in page.scripts)
+        if "/ou-dormir-a-nyons/villa-des-poete/" in url:
+            result["villaUpdated"] = 'data-villa-updated="2026-10-08"' in source
+            result["villaTitle"] = "<h1>Villa des Poètes à Nyons : avis, tarifs, piscine et réservation</h1>" in source and page.h1 == 1
+            graph = json.loads(re.search(r'<script type="application/ld\+json">(.*?)</script>',source,re.S).group(1))["@graph"]
+            article = next(g for g in graph if g["@type"]=="Article")
+            faq = next(g for g in graph if g["@type"]=="FAQPage")
+            result["villaNoInventedPublicationDate"] = "datePublished" not in source and article["dateModified"] == "2026-10-08"
+            result["villaFAQ8"] = len(faq["mainEntity"]) == 8 and source.count('<div class="qa">') == 8
+            result["villaOldFAQPreserved"] = all(t in source for t in ["La Villa des Poètes est-elle dans le centre de Nyons ?","La Villa des Poètes accueille-t-elle des séjours en hiver ?"])
+            result["villaTables3"] = source.count('<table class="villa-table">') == 3 and source.count('tabindex="0"') == 3
+            result["villaPhotoPreserved"] = "437f810cbd2d493dea6a.webp" in source and 'width="445" height="286"' in source and len(page.images) == 1
+            result["villaPriceGrid"] = all(t in source for t in ["80 €","90 €","95 €","0,80 €","25 €","10 %","50 %","30 %"])
+            result["villaRooms"] = all(t in source for t in ["La Bellissima","L’Azzurra","Le Cabanon","L’Estivale","Baignoire et WC","Du 1er mai au 30 septembre"])
+            result["villaPoolQualified"] = "11 × 5 mètres" in source and "piscine extérieure saisonnière" in source
+            result["villaDirectContacts"] = 'href="tel:+33645222205"' in source and 'href="mailto:info@lavilladespoetes.fr"' in source
+            result["villaPractical"] = all(t in source for t in ["17 h et 19 h","11 h","531 chemin de Bellevue","Les animaux ne sont pas acceptés","parking privé"])
+            result["villaRatingsDated"] = "9,2/10 pour 13 évaluations" in source and "4,9/5 pour 76 avis" in source and "8 octobre 2026" in source
+            result["villaReviewsPreserved"] = all(t in source for t in ["leur propreté et leur confort","sans être envahissants","dernier tronçon monte","je n’ai jamais dormi"])
+            result["villaClean"] = "Philippe" not in source and "Eric" not in source and "Lydia" not in source and "terrain de pétanque" not in source
+            result["villaSourcesAndReaders"] = "Sources et liens utiles" in source and "Questions aux lecteurs" in source
+            result["villaCanonical"] = page.canonicals == [BASE+"ou-dormir-a-nyons/villa-des-poete/"]
+            result["villaRobots"] = page.robots == (["noindex,nofollow"] if "/vivreanyons-test/" in url else ["index,follow"])
+            result["villaMenuAndScript"] = 'data-nyons-shortcut="hebergement"' in source and 'data-weather-nav="direct"' in source and any("google-analytics-20261008-v1" in s for s in page.scripts)
+        if url.endswith("/ou-dormir-a-nyons/") or url.endswith("/toutes-les-pages/"):
+            result["villaIndexUpdated"] = "Villa des Poètes à Nyons : avis, tarifs, piscine et réservation" in source and "chambres d’hôtes à 4 km du centre" in source
         if url.endswith("/sante-nyons/"):
             g = json.loads(re.search(r'<script type="application/ld\+json">(.*?)</script>',source,re.S).group(1))["@graph"]
             items = next(g for g in g if g["@type"]=="ItemList")
@@ -137,11 +174,11 @@ def check(url):
     return result
 
 for attempt in range(12):
-    ready = check(BASE+"infos-pratiques-nyons/plombier-nyons/")
+    ready = check(BASE+"ou-dormir-a-nyons/villa-des-poete/")
     home = check(BASE)
-    if ready.get("plombierUpdated") and home.get("latestEHPAD"):
+    if ready.get("villaUpdated") and home.get("latestEHPAD"):
         break
-    print("Waiting for the improved plumbing article and preserved homepage", attempt+1, flush=True)
+    print("Waiting for Villa des Poètes and preserved homepage", attempt+1, flush=True)
     time.sleep(10)
 with ThreadPoolExecutor(max_workers=4) as pool:
     results = list(pool.map(check, URLS))
