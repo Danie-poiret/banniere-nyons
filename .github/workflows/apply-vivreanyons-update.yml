@@ -34,7 +34,7 @@ jobs:
             node --check assets/agenda.js
             node --check vivreanyons-test/assets/agenda.js
             node --check banniere-nyons/vivreanyons-test/assets/agenda.js
-            if git diff --name-only -- assets/agenda.js vivreanyons-test/assets/agenda.js banniere-nyons/vivreanyons-test/assets/agenda.js tools/check_google_analytics.py | rg -q .; then
+            if ! git diff --quiet -- assets/agenda.js vivreanyons-test/assets/agenda.js banniere-nyons/vivreanyons-test/assets/agenda.js tools/check_google_analytics.py; then
               python -m pip install --quiet playwright
               python -m playwright install chromium
               python tools/check_google_analytics.py
