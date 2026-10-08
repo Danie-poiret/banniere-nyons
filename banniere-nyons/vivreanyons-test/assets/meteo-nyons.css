@@ -34,3 +34,29 @@
 @media(max-width:450px){.nyons-weather{padding:18px;scroll-margin-top:230px}.weather-heading{gap:10px;align-items:flex-start}.weather-refresh{padding:8px 10px;font-size:.88rem}.weather-now{padding:18px;gap:18px}.weather-current-main{gap:12px}.weather-current-icon{font-size:2.5rem}.weather-days{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.weather-day{padding:14px 10px}.weather-footer{gap:12px}}
 
 .weather-periods{display:flex;flex-wrap:wrap;gap:10px;margin:20px 0 0}.weather-periods button{font:inherit;font-weight:750;min-height:44px;padding:9px 16px;border:1px solid #abb89a;border-radius:9px;background:#f4f6ee;color:#39452d;cursor:pointer}.weather-periods button[aria-pressed="true"]{background:#39452d;border-color:#39452d;color:#fff}.weather-periods button:focus-visible{outline:3px solid #b8613f;outline-offset:3px}.weather-hourly{border:1px solid #e3dccd;border-radius:12px;padding:14px 16px}.weather-hourly summary{font-weight:700;cursor:pointer;min-height:34px}.weather-hourly summary:focus-visible{outline:3px solid #b8613f;outline-offset:3px}.weather-hourly .meteo-table-wrap{margin-bottom:0}.weather-heading h2 a{color:inherit;text-decoration:none}.weather-heading h2 a:hover{text-decoration:underline}
+
+/* Accueil : bandeau météo compact, prévisions détaillées sur la page dédiée. */
+.nyons-weather[data-weather-compact]{display:grid;grid-template-columns:auto minmax(0,1fr) auto;gap:7px 20px;padding:14px 18px;margin-bottom:26px;border-top:1px solid #dce2d1;border-radius:12px;background:#f3f5ed;box-shadow:none}
+[data-weather-compact] .weather-heading{display:contents}
+[data-weather-compact] .weather-heading>div{grid-column:1;grid-row:1}
+[data-weather-compact] .weather-heading .kicker{display:none}
+[data-weather-compact] .weather-heading h2{font-size:1.13rem;margin:0}
+[data-weather-compact] .weather-refresh{grid-column:3;grid-row:1;font-size:.8rem;padding:6px 10px;background:transparent}
+[data-weather-compact] [data-weather-content]{grid-column:2;grid-row:1;min-width:0}
+[data-weather-compact] .weather-now{display:flex;gap:18px;justify-content:center;padding:0;background:none;color:#39452d;border-radius:0}
+[data-weather-compact] .weather-current-main{gap:10px}
+[data-weather-compact] .weather-current-icon{font-size:1.8rem}
+[data-weather-compact] .weather-temp{font-size:1.6rem;line-height:1.15;letter-spacing:0}
+[data-weather-compact] .weather-condition{font-size:.86rem;margin:2px 0 0}
+[data-weather-compact] .weather-hour{display:none}
+[data-weather-compact] .weather-details{display:block;align-self:center}
+[data-weather-compact] .weather-details div:not(:first-child){display:none}
+[data-weather-compact] .weather-details dt{color:#596451;font-size:.75rem}
+[data-weather-compact] .weather-details dd{font-size:.87rem}
+[data-weather-compact] .weather-status{grid-column:1/-1;grid-row:2;font-size:.75rem;margin:0;min-height:1.4em}
+[data-weather-compact] .weather-days-heading,[data-weather-compact] .weather-days,[data-weather-compact] .weather-footnote{display:none}
+[data-weather-compact] .weather-footer{grid-column:1/-1;grid-row:3;border:0;padding:0;margin:0;font-size:.8rem;gap:8px 18px}
+[data-weather-compact] .weather-links a:not(:first-child){display:none}
+[data-weather-compact] .weather-credit{font-size:.75rem}
+[data-weather-compact] noscript{grid-column:1/-1}
+@media(max-width:700px){.nyons-weather[data-weather-compact]{grid-template-columns:minmax(0,1fr) auto;gap:9px 14px}[data-weather-compact] .weather-refresh{grid-column:2}[data-weather-compact] [data-weather-content]{grid-column:1/-1;grid-row:2}[data-weather-compact] .weather-now{justify-content:flex-start}[data-weather-compact] .weather-status{grid-row:3}[data-weather-compact] .weather-footer{grid-row:4}}

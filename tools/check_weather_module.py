@@ -17,7 +17,7 @@ for attempt in range(24):
     try:
         html = read(BASE + "/")
         forecast = json.loads(read(BASE + "/assets/meteo-nyons.json"))
-        if 'data-nyons-weather' in html and forecast.get("location") == "Nyons" and 'data-weather-extended' in read(BASE + '/meteo-nyons/'):
+        if 'data-nyons-weather' in html and forecast.get("location") == "Nyons" and 'data-weather-extended' in read(BASE + '/meteo-nyons/') and 'data-weather-compact' in html and 'pont-roman-nyons-ciel-bleu.png' in read(BASE + '/meteo-nyons/'):
             break
     except Exception:
         pass
@@ -64,6 +64,12 @@ with sync_playwright() as p:
     page.keyboard.press("Enter")
     page.wait_for_function("document.querySelector('[data-nyons-weather]').getAttribute('aria-busy') === 'false'")
     assert module.get_attribute("data-weather-state") == "ready"
+    assert module.get_attribute("data-weather-compact") == "true"
+    for route in ("/", "/infos-pratiques-nyons/", "/nyons-image-1/", "/que-faire-nyons/Pont-Roman-de-Nyons/", "/vivreanyons-test/infos-pratiques-nyons/", "/banniere-nyons/vivreanyons-test/infos-pratiques-nyons/"):
+        source = read(BASE + route)
+        prefix = "/banniere-nyons/vivreanyons-test" if route.startswith("/banniere-nyons/") else "/vivreanyons-test" if route.startswith("/vivreanyons-test/") else ""
+        assert '<a data-weather-nav="direct" href="' + prefix + '/meteo-nyons/"' in source
+
     images=[]
     for width in (1280,390,320):
         page.set_viewport_size({"width":width,"height":1100})
@@ -73,6 +79,8 @@ with sync_playwright() as p:
         assert module.evaluate("(element) => element.scrollWidth <= element.clientWidth + 1")
         for selector in (".weather-now",".weather-day",".weather-heading",".weather-footer"):
             for element in module.locator(selector).all():
+                if not element.is_visible():
+                    continue
                 box = element.bounding_box()
                 assert box["x"] >= bounds["x"]-1 and box["x"]+box["width"] <= bounds["x"]+bounds["width"]+1, (width,selector,box)
         if width in (1280,390):
@@ -126,7 +134,7 @@ with sync_playwright() as p:
     plain_page = plain.new_page()
     plain_page.goto(BASE + "/#meteo-nyons", wait_until="domcontentloaded")
     assert plain_page.locator(".nyons-weather noscript").is_visible()
-    assert plain_page.locator('.nyons-weather a[href*="meteofrance.com/previsions"]').is_visible()
+    assert plain_page.locator('.nyons-weather a[href="/meteo-nyons/"]').is_visible()
     assert not plain_page.locator("[data-weather-refresh]").is_visible()
 
     for prefix in ("", "/vivreanyons-test", "/banniere-nyons/vivreanyons-test"):
@@ -145,7 +153,7 @@ with sync_playwright() as p:
         assert 'href="' + prefix + '/meteo-nyons/"' in read(BASE + prefix + "/toutes-les-pages/")
     assert "<loc>https://www.vivreanyons.fr/meteo-nyons/</loc>" in read(BASE + "/sitemap.xml")
     detail_page = context.new_page()
-    detail_page.goto(BASE + "/meteo-nyons/", wait_until="domcontentloaded")
+    detail_page.goto(BASE + "/meteo-nyons/?photo=20261008", wait_until="domcontentloaded")
     detail_page.wait_for_selector('[data-weather-state="ready"]', timeout=25000)
     refuse = detail_page.get_by_role("button", name="Refuser", exact=True)
     if refuse.count() and refuse.first.is_visible():
@@ -167,9 +175,10 @@ with sync_playwright() as p:
     detail.locator(".weather-hourly summary").click()
     assert 1 <= detail.locator("[data-weather-hours] tr").count() <= 24
     assert "mm / 1 h" in detail.locator("[data-weather-hours]").inner_text()
-    photo = detail_page.locator(".meteo-landscape img").first
+    photo = detail_page.locator('img[src$="/assets/photos/meteo-nyons/pont-roman-nyons-ciel-bleu.png"]')
     photo.scroll_into_view_if_needed()
-    detail_page.wait_for_function("document.querySelector('.meteo-landscape img').naturalWidth > 0")
+    detail_page.wait_for_function("""document.querySelector('img[src$="/assets/photos/meteo-nyons/pont-roman-nyons-ciel-bleu.png"]').naturalWidth > 0""")
+    print("Photo météo fournie :", photo.evaluate("(image) => ({src:image.currentSrc,width:image.naturalWidth,height:image.naturalHeight})"), flush=True)
     assert photo.evaluate("(image) => image.naturalWidth === 495 && image.naturalHeight === 305")
     detail_page.set_viewport_size({"width":1280,"height":1000})
     detail.locator(".weather-hourly summary").click()
