@@ -9,6 +9,35 @@ from urllib.request import Request, HTTPRedirectHandler, build_opener
 from urllib.error import HTTPError
 
 URLS = [
+"https://www.vivreanyons.fr/que-faire-nyons/visiter-nyons/",
+"https://www.vivreanyons.fr/vivreanyons-test/que-faire-nyons/visiter-nyons/",
+"https://www.vivreanyons.fr/banniere-nyons/vivreanyons-test/que-faire-nyons/visiter-nyons/",
+"https://www.vivreanyons.fr/assets/photos/f7a321a0619c52debfdc.webp",
+"https://www.vivreanyons.fr/que-faire-nyons/Pont-Roman-de-Nyons/",
+"https://www.vivreanyons.fr/que-faire-nyons/Vieilles-ruelles-de-Nyons/",
+"https://www.vivreanyons.fr/que-faire-nyons/Place-des-Arcades-Nyons/",
+"https://www.vivreanyons.fr/que-faire-nyons/Tour-Randonne/",
+"https://www.vivreanyons.fr/que-faire-nyons/Marche-de-Nyons/",
+"https://www.vivreanyons.fr/que-faire-nyons/Jardin-des-Aromes/",
+"https://www.vivreanyons.fr/que-faire-nyons/promenade-de-la-digue-nyons/",
+"https://www.vivreanyons.fr/que-faire-nyons/le-sentier-des-oliviers-nyons/",
+"https://www.vivreanyons.fr/que-faire-nyons/Vignolis-Nyons/",
+"https://www.vivreanyons.fr/que-faire-nyons/Scourtinerie-de-Nyons/",
+"https://www.vivreanyons.fr/que-faire-nyons/Distillerie-Bleu-Provence-Nyons/",
+"https://www.vivreanyons.fr/que-faire-nyons/savonnerie-de-nyons/",
+"https://www.vivreanyons.fr/que-faire-nyons/les-vieux-moulins/",
+"https://www.vivreanyons.fr/produits-du-terroir/",
+"https://www.vivreanyons.fr/que-faire-nyons/Moulin-Dozol-Autrand-Nyons/",
+"https://www.vivreanyons.fr/infos-pratiques-nyons/Ouverture-Nyonsoleiado-2026/",
+"https://www.vivreanyons.fr/randonnee-nyons/",
+"https://www.vivreanyons.fr/que-faire-nyons/que-faire-a-nyons-ce-week-end/",
+"https://www.vivreanyons.fr/a-faire-autour-de-Nyons/",
+"https://www.vivreanyons.fr/a-faire-autour-de-Nyons/vinsobres/",
+"https://www.vivreanyons.fr/a-faire-autour-de-Nyons/Mirabel-aux-Baronnies/",
+"https://www.vivreanyons.fr/infos-pratiques-nyons/marche-vaison-la-romaine/",
+"https://www.vivreanyons.fr/infos-pratiques-nyons/marches-autour-nyons-50-km/",
+"https://www.vivreanyons.fr/meteo-nyons/",
+
 "https://www.vivreanyons.fr/que-faire-nyons/promenade-de-la-digue-nyons/",
 "https://www.vivreanyons.fr/assets/photos/894fb5e0cf722fa9c603.webp",
 "https://www.vivreanyons.fr/que-faire-nyons/",
@@ -225,6 +254,31 @@ def check(url):
             result["marketsOriginalPublicationDate"] = '"datePublished": "2026-10-06"' in source
             result["marketsUpdatedDate"] = '"dateModified": "2026-10-08"' in source
             result["marketsOriginalValreasSummary"] = 'id="valreas-en-detail"' in source
+        if "/que-faire-nyons/visiter-nyons/" in url:
+            result["visiterUpdated"] = 'data-visiter-updated="2026-10-08"' in source
+            result["visiterTitle"] = "Que faire à Nyons ? Top 15 des lieux, balades et activités à ne pas manquer" in source
+            result["visiterDescription"] = "Que faire à Nyons ? Découvrez 15 idées de visites et balades : Pont Roman, marché, oliviers, activités en famille, sorties gratuites et alentours." in source
+            result["visiterStops15"] = source.count('class="visit-stop"') == 15 and '15. Choisir une randonnée autour de Nyons' in source
+            result["visiterTables2"] = source.count('<table class="visit-table">') == 2
+            result["visiterResponsiveTables"] = "max-width:100%;overflow-x:auto" in source and 'tabindex="0"' in source
+            result["visiterPhotoPreserved"] = "/assets/photos/f7a321a0619c52debfdc.webp" in source and 'width="273" height="267"' in source
+            result["visiterVideosPreserved"] = all(video in source for video in ['data-src="https://www.youtube-nocookie.com/embed/K8E8kUOBNIw"', 'data-src="https://www.youtube-nocookie.com/embed/t05hGfcYyXI"']) and source.count('data-privacy-placeholder="videos"') == 2
+            result["visiterFAQ8"] = source.count('class="qa"') == 8 and "Questions / réponses" in source
+            result["visiterExistingFAQPreserved"] = all(q in source for q in ["Que faire à Nyons avec des enfants ?", "Où trouver les sorties prévues à Nyons aujourd’hui ?"])
+            result["visiterSchema"] = '"@type":"Article"' in source and '"@type":"FAQPage"' in source and '"numberOfItems":15' in source
+            result["visiterSeasonalQualified"] = "ces dates ne valent pas pour les saisons suivantes" in source and "23 mai au 30 août" in source
+            result["visiterNoInventedPublicationDate"] = "datePublished" not in source and '"dateModified":"2026-10-08"' in source
+            result["visiterUsefulSections"] = all(t in source for t in ["Que faire autour de Nyons ?", "Que faire à Nyons en famille ?", "Que faire quand il pleut ?", "Que faire à Nyons gratuitement ?", "Que faire à Nyons aujourd’hui ou ce week-end ?"])
+            result["visiterOldTextRemoved"] = all(t not in source for t in ["Rocher Garaux au départ de Nyons", "C’est mon rituel.", "les gamins plongent des rochers", "Toulourenc", "Je prends toujours une bouteille"])
+            result["visiterSources"] = "Sources et liens utiles" in source and "sentiers-decouverte" in source and "scourtinerie.com/en/nous-rendre-visite" in source
+            result["visiterReaderQuestions"] = "Et quelle idée ajouteriez-vous à ce Top 15 ?" in source
+            headings = re.findall(r"<h2[^>]*>(.*?)</h2>", source, re.S)
+            result["visiterNoDuplicateHeadings"] = len(headings) == len(set(headings))
+            article = re.search(r'<article class="feature-story"[^>]*>(.*?)</article>', source, re.S).group(1)
+            internal_links = re.findall(r'href="(/[^"]+)"', article)
+            result["visiterUniqueBodyLinks"] = len(internal_links) == len(set(internal_links))
+        if url.endswith("/que-faire-nyons/") or url.endswith("/toutes-les-pages/"):
+            result["visiterCardUpdated"] = "Que faire à Nyons ? Top 15 des lieux, balades et activités à ne pas manquer" in source and "Que faire à Nyons ? Découvrez 15 idées de visites et balades : Pont Roman, marché, oliviers, activités en famille, sorties gratuites et alentours." in source
         if "/que-faire-nyons/promenade-de-la-digue-nyons/" in url:
             result["digueUpdated"] = 'data-digue-updated="2026-10-08"' in source
             result["digueTitle"] = "Promenade de la Digue à Nyons : balade facile en famille au bord de l’Eygues" in source
@@ -510,11 +564,11 @@ def check(url):
     return result
 
 for attempt in range(12):
-    ready_article = check("https://www.vivreanyons.fr/que-faire-nyons/promenade-de-la-digue-nyons/")
+    ready_article = check("https://www.vivreanyons.fr/que-faire-nyons/visiter-nyons/")
     ready_home = check("https://www.vivreanyons.fr/")
-    if ready_article.get("digueUpdated") and ready_article.get("digueFAQ") and ready_home.get("latestTeleArticle"):
+    if ready_article.get("visiterUpdated") and ready_article.get("visiterFAQ8") and ready_home.get("latestTeleArticle"):
         break
-    print("Waiting for the updated Digue article and preserved homepage:", attempt + 1, flush=True)
+    print("Waiting for the updated Nyons Top 15 and preserved homepage:", attempt + 1, flush=True)
     time.sleep(10)
 
 with ThreadPoolExecutor(max_workers=4) as pool:
