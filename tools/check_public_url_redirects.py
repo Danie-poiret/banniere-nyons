@@ -1,4 +1,4 @@
-"""Read-only checks of the meal-delivery article, photographs and site links."""
+"""Read-only checks of published articles, photographs and site links."""
 from concurrent.futures import ThreadPoolExecutor
 from html.parser import HTMLParser
 import json
@@ -8,6 +8,15 @@ from urllib.request import Request, HTTPRedirectHandler, build_opener
 from urllib.error import HTTPError
 
 URLS = [
+"https://www.vivreanyons.fr/infos-pratiques-nyons/dechetterie-nyons/",
+"https://www.vivreanyons.fr/assets/photos/dechetterie-nyons/panneau-dechetterie.png",
+"https://www.vivreanyons.fr/assets/photos/dechetterie-nyons/bennes-de-tri.png",
+"https://www.vivreanyons.fr/vivreanyons-test/infos-pratiques-nyons/dechetterie-nyons/",
+"https://www.vivreanyons.fr/vivreanyons-test/assets/photos/dechetterie-nyons/panneau-dechetterie.png",
+"https://www.vivreanyons.fr/vivreanyons-test/assets/photos/dechetterie-nyons/bennes-de-tri.png",
+"https://www.vivreanyons.fr/banniere-nyons/vivreanyons-test/infos-pratiques-nyons/dechetterie-nyons/",
+"https://www.vivreanyons.fr/banniere-nyons/vivreanyons-test/assets/photos/dechetterie-nyons/panneau-dechetterie.png",
+"https://www.vivreanyons.fr/banniere-nyons/vivreanyons-test/assets/photos/dechetterie-nyons/bennes-de-tri.png",
 "https://www.vivreanyons.fr/que-faire-nyons/les-vieux-moulins/",
 "https://www.vivreanyons.fr/vivreanyons-test/que-faire-nyons/les-vieux-moulins/",
 "https://www.vivreanyons.fr/banniere-nyons/vivreanyons-test/que-faire-nyons/les-vieux-moulins/",
@@ -141,6 +150,25 @@ def check(url):
                     result["height"] = int.from_bytes(data[28:30], "little") & 16383
                 return result
             source = data.decode("utf-8", errors="replace")
+        if "/infos-pratiques-nyons/dechetterie-nyons/" in url:
+            result["dechetPhone"] = 'href="tel:+33772325527"' in source
+            result["dechetHours"] = all(text in source for text in ["9 h à 12 h", "14 h à 17 h", "15 septembre 2026"])
+            result["dechetAccess"] = "justificatif de domicile" in source and "1 m³ par jour" in source and "2 m³ par jour" in source
+            result["dechetPhotos"] = re.findall(r'<img[^>]+src="([^"]*assets/photos/dechetterie-nyons/[^"]+)"', source)
+            result["dechetDimensions"] = 'width="270" height="171"' in source and 'width="235" height="161"' in source
+            result["dechetFAQ"] = source.count('<div class="qa">') == 5 and 'Questions / réponses' in source
+            result["dechetFAQSchema"] = '"@type":"FAQPage"' in source
+            result["dechetReaderQuestions"] = all(text in source for text in ["Utilisez-vous régulièrement la déchetterie de Nyons ?", "Y a-t-il un type de déchet", "Et quels autres services pratiques"])
+            result["dechetSources"] = 'Sources et liens utiles' in source and 'https://www.cc-bdp.fr/les-services/gestion-des-dechets/decheteries/' in source
+            result["dechetPublicationDate"] = '"datePublished":"2026-10-08"' in source
+            result["dechetDuplicateHeadings"] = source.count("Quels sont les horaires de la déchetterie de Nyons ?") == 1 and source.count("Peut-on apporter des pneus à la déchetterie de Nyons ?") == 1
+            result["headings"] = re.findall(r"<h1[^>]*>(.*?)</h1>", source, re.S)
+        if url in ["https://www.vivreanyons.fr/", "https://www.vivreanyons.fr/vivreanyons-test/", "https://www.vivreanyons.fr/banniere-nyons/vivreanyons-test/"]:
+            result["latestDechetArticle"] = 'data-latest-article="/infos-pratiques-nyons/dechetterie-nyons/"' in source
+            result["dechetHomepagePhoto"] = '/assets/photos/dechetterie-nyons/panneau-dechetterie.png' in source
+            result["dechetClickableTitle"] = bool(re.search(r'<h2 id="new-article-title"><a[^>]+href="[^"]*/infos-pratiques-nyons/dechetterie-nyons/"', source))
+        if url.endswith("/infos-pratiques-nyons/") or url.endswith("/toutes-les-pages/"):
+            result["dechetIndexLinked"] = '/infos-pratiques-nyons/dechetterie-nyons/' in source
         page = Page()
         page.feed(source)
         result.update({"canonicals": page.canonicals, "robots": page.robots, "metaRefresh": page.refresh})
@@ -288,5 +316,5 @@ def check(url):
 with ThreadPoolExecutor(max_workers=4) as pool:
     results = list(pool.map(check, URLS))
 print("PUBLIC_URL_AUDIT_BEGIN")
-print(json.dumps({"checkedDate": "2026-10-07", "readOnly": True, "results": results}, ensure_ascii=False, indent=2))
+print(json.dumps({"checkedDate": "2026-10-08", "readOnly": True, "results": results}, ensure_ascii=False, indent=2))
 print("PUBLIC_URL_AUDIT_END")
