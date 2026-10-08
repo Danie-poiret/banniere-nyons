@@ -111,12 +111,27 @@ def fire():
         target = urljoin(FIRE, src)
         if urlparse(target).hostname == "www.risque-prevention-incendie.fr" and ("maps_prev" in src or "massifs_prev" in src):
             candidates.append(request(target))
-    match = next((m for s in candidates if (m:=re.search(r"(?:var |let |const )?url_data\s*=\s*['\"]([^'\"]+)['\"]",s))), None)
+    match = next((m for s in candidates if (m:=re.search(r"(?:var |let |const )?url_data\\s*=\\s*([^;\\n]+)",s))), None)
     if not match:
         raise ValueError("Chemin quotidien de la carte non identifiable")
-    target = urljoin(FIRE, match[1]+today.strftime("%Y%m%d")+".json")
+    # Accept only string literals and the known department variable; never eval
+    # remote JavaScript. The map may concatenate its department into this path.
+    parts = []
+    for token in match[1].strip().split("+"):
+        token = token.strip()
+        if token == "id":
+            parts.append("26")
+        elif len(token)>1 and token[0] in ("'", '"') and token[-1] == token[0]:
+            parts.append(token[1:-1])
+        else:
+            raise ValueError("Expression du chemin quotidien non reconnue")
+    daily_base = "".join(parts)
+    if "import_data" not in daily_base or not daily_base.endswith("/"):
+        raise ValueError("Chemin quotidien de la carte incomplet")
+    target = urljoin(FIRE, daily_base+today.strftime("%Y%m%d")+".json")
     if urlparse(target).hostname != "www.risque-prevention-incendie.fr":
         raise ValueError("Source incendie inattendue")
+    print("FIRE_JSON_SOURCE", target, flush=True)
     result = parse_fire(request(target)); result["dataSource"] = target
     return result
 
