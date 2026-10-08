@@ -1,0 +1,18 @@
+/* Bloc complémentaire, limité à la fiche météo. */
+.nyons-direct{min-width:0;margin:-12px 0 34px;padding:20px;border:1px solid var(--line,#e3dccd);border-radius:14px;background:var(--paper,#fffdf8);color:var(--ink,#303629)}
+.nyons-direct h2{margin:0 0 14px;font-size:1.1rem;line-height:1.3;letter-spacing:.04em;color:var(--olive,#39452d)}
+.nyons-direct-grid{display:grid;grid-template-columns:minmax(0,1fr);gap:10px;margin:0}
+.nyons-direct-card{min-width:0;padding:13px 14px;border:1px solid #dce2d1;border-radius:10px;background:#f3f5ed;overflow-wrap:anywhere}
+.nyons-direct-card dt{font-weight:750;font-size:.88rem;line-height:1.45}
+.nyons-direct-card dd{margin:7px 0 0}
+.nyons-direct-value{display:block;font-weight:750;font-size:.95rem;line-height:1.45;color:#39452d}
+.nyons-direct-card[data-state="unavailable"] .nyons-direct-value{font-weight:500;color:#596451}
+.nyons-direct-note,.nyons-direct-source{display:block;font-size:.78rem;line-height:1.5;margin-top:5px;color:#596451}
+.nyons-direct-source{margin-top:9px;text-underline-offset:3px}
+.nyons-direct a:focus-visible{outline:3px solid #b8613f;outline-offset:3px}
+.nyons-direct-updated,.nyons-direct-help{margin:12px 0 0;font-size:.77rem;line-height:1.5;color:#596451}
+.nyons-direct-help{margin-top:4px}
+.nyons-direct [hidden]{display:none!important}
+@media(min-width:520px){.nyons-direct-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(min-width:1000px){.nyons-direct-grid{grid-template-columns:repeat(5,minmax(0,1fr))}}
+@media(max-width:450px){.nyons-direct{padding:16px}}
