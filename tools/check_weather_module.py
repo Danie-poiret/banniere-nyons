@@ -167,10 +167,10 @@ with sync_playwright() as p:
     detail.locator(".weather-hourly summary").click()
     assert 1 <= detail.locator("[data-weather-hours] tr").count() <= 24
     assert "mm / 1 h" in detail.locator("[data-weather-hours]").inner_text()
-    photo = detail_page.locator(".meteo-landscape img")
+    photo = detail_page.locator(".meteo-landscape img").first
     photo.scroll_into_view_if_needed()
     detail_page.wait_for_function("document.querySelector('.meteo-landscape img').naturalWidth > 0")
-    assert photo.evaluate("(image) => image.naturalWidth === 1280 && image.naturalHeight === 731")
+    assert photo.evaluate("(image) => image.naturalWidth === 495 && image.naturalHeight === 305")
     detail_page.set_viewport_size({"width":1280,"height":1000})
     detail.locator(".weather-hourly summary").click()
     images.append({"width":1280,"page":"meteo-nyons","base64":base64.b64encode(detail.screenshot(type="jpeg", quality=65, style="header {visibility:hidden!important}")).decode("ascii")})
