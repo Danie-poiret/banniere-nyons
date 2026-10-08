@@ -186,3 +186,5 @@ print("Météo vérifiée : cinq jours, heure française, températures réelles
 print("WEATHER_SCREENSHOTS_BEGIN")
 print(json.dumps(images))
 print("WEATHER_SCREENSHOTS_END")
+
+# Vérification après publication de la page météo et des vues détaillées.
