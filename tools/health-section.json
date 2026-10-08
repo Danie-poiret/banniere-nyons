@@ -1,7 +1,7 @@
 {
   "categorySlug": "sante-nyons/",
   "title": "Santé à Nyons",
-  "date": "2026-10-07",
+  "date": "2026-10-08",
   "sections": [
     {
       "id": "soins",
@@ -157,6 +157,11 @@
           "infos-pratiques-nyons/croix-rouge/",
           "Croix-Rouge à Nyons",
           "Les activités de solidarité et les possibilités d’aide dans la ville."
+        ],
+        [
+          "infos-pratiques-nyons/apa-nyons/",
+          "APA à Nyons : dossier, conditions et aides pour rester chez soi",
+          "APA à Nyons : conditions dès 60 ans, GIR 1 à 4, dossier officiel, aide à domicile, téléassistance, reste à charge et accompagnement du CCAS au 04 75 26 50 27."
         ]
       ]
     },
