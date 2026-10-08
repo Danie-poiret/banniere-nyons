@@ -1,0 +1,25 @@
+name: Actualiser et vérifier Nyons en direct
+on:
+  push:
+    paths:
+      - tools/update_nyons_direct.py
+      - tools/check_nyons_direct.py
+      - assets/nyons-direct.*
+      - meteo-nyons/index.html
+      - .github/workflows/nyons-direct.yml
+  schedule:
+    - cron: '43 */3 * * *'
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: nyons-direct
+  cancel-in-progress: false
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - name: Vérifier les réponses officielles
+        run: python tools/update_nyons_direct.py
