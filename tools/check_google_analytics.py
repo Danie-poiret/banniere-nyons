@@ -38,6 +38,9 @@ checks=[]
 def check(name,condition):
     assert condition,name
     checks.append(name)
+if args.public:
+    google_library=read("https://www.googletagmanager.com/gtag/js?id="+ID)
+    check("Google tag library is available for the supplied measurement ID",len(google_library)>1000 and ID in google_library)
 def source_path(path):
     clean=unquote(path).lstrip("/")
     target=ROOT/clean
