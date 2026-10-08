@@ -9,6 +9,18 @@ from urllib.request import Request, HTTPRedirectHandler, build_opener
 from urllib.error import HTTPError
 
 URLS = [
+"https://www.vivreanyons.fr/sante-nyons/kinesitherapeute-nyons/",
+"https://www.vivreanyons.fr/assets/photos/kinesitherapeute-nyons/soins-du-dos.png",
+"https://www.vivreanyons.fr/assets/photos/kinesitherapeute-nyons/reeducation-genou.png",
+"https://www.vivreanyons.fr/assets/photos/kinesitherapeute-nyons/mobilisation-jambe.png",
+"https://www.vivreanyons.fr/vivreanyons-test/sante-nyons/kinesitherapeute-nyons/",
+"https://www.vivreanyons.fr/vivreanyons-test/assets/photos/kinesitherapeute-nyons/soins-du-dos.png",
+"https://www.vivreanyons.fr/vivreanyons-test/assets/photos/kinesitherapeute-nyons/reeducation-genou.png",
+"https://www.vivreanyons.fr/vivreanyons-test/assets/photos/kinesitherapeute-nyons/mobilisation-jambe.png",
+"https://www.vivreanyons.fr/banniere-nyons/vivreanyons-test/sante-nyons/kinesitherapeute-nyons/",
+"https://www.vivreanyons.fr/banniere-nyons/vivreanyons-test/assets/photos/kinesitherapeute-nyons/soins-du-dos.png",
+"https://www.vivreanyons.fr/banniere-nyons/vivreanyons-test/assets/photos/kinesitherapeute-nyons/reeducation-genou.png",
+"https://www.vivreanyons.fr/banniere-nyons/vivreanyons-test/assets/photos/kinesitherapeute-nyons/mobilisation-jambe.png",
 "https://www.vivreanyons.fr/infos-pratiques-nyons/apa-nyons/",
 "https://www.vivreanyons.fr/assets/photos/apa-nyons/apa-a-domicile.png",
 "https://www.vivreanyons.fr/vivreanyons-test/infos-pratiques-nyons/apa-nyons/",
@@ -202,6 +214,31 @@ def check(url):
         if "/infos-pratiques-nyons/apa-nyons/" in url:
             result["apaTables"] = source.count('<table class="apa-table">') == 4
             result["apaMobileTables"] = ".apa-table-wrap" in source and "overflow-x:auto" in source
+        if "/sante-nyons/kinesitherapeute-nyons/" in url:
+            result["kineTables"] = source.count('<table class="kine-table">') == 4
+            result["kineMobileTables"] = ".kine-table-wrap" in source and "overflow-x:auto" in source
+            result["kinePhotos"] = re.findall(r'<img[^>]+src="([^"]*assets/photos/kinesitherapeute-nyons/[^"]+)"', source)
+            result["kineDimensions"] = all(size in source for size in ['width="226" height="222"', 'width="206" height="180"', 'width="205" height="185"'])
+            result["kineCaptions"] = source.count("Photo d’illustration.") == 3
+            result["kineContacts"] = 'href="tel:+33767297759"' in source and 'href="tel:+33681538648"' in source
+            result["kineDomicileQualified"] = "médicalement justifiés" in source or "médicalement justifié" in source
+            result["kineAccessDirect"] = "huit séances" in source and "certaines structures" in source
+            result["kineReimbursement"] = "60 % de la base de remboursement" in source and "1 € par acte paramédical" in source
+            result["kineFranchiseQualified"] = "Elle n’est pas remboursée par la complémentaire santé." in source and "sauf exonération" in source
+            result["kineEmergency"] = 'href="tel:15"' in source and 'href="tel:112"' in source
+            result["kineFAQ"] = source.count('<div class="qa">') == 6 and "Questions / réponses" in source
+            result["kineFAQSchema"] = '"@type":"FAQPage"' in source
+            result["kineReaders"] = all(text in source for text in ["Avez-vous déjà eu des difficultés", "Avez-vous déjà bénéficié", "Et quel autre sujet pratique"])
+            result["kineSources"] = "Sources et liens utiles" in source and "legifrance.gouv.fr" in source and "ameli.fr" in source
+            result["kineDate"] = '"datePublished":"2026-10-08"' in source
+            result["kineNoPastedDuplicates"] = "Vous pouvez Vous pouvez" not in source and source.count("Kiné à domicile pour une personne âgée") == 1
+            result["headings"] = re.findall(r"<h1[^>]*>(.*?)</h1>", source, re.S)
+        if url in ["https://www.vivreanyons.fr/", "https://www.vivreanyons.fr/vivreanyons-test/", "https://www.vivreanyons.fr/banniere-nyons/vivreanyons-test/"]:
+            result["latestKineArticle"] = 'data-latest-article="/sante-nyons/kinesitherapeute-nyons/"' in source
+            result["kineHomepagePhoto"] = "/assets/photos/kinesitherapeute-nyons/soins-du-dos.png" in source
+            result["kineClickableTitle"] = bool(re.search(r'<h2 id="new-article-title"><a[^>]+href="[^"]*/sante-nyons/kinesitherapeute-nyons/"', source))
+        if url.endswith("/infos-pratiques-nyons/") or url.endswith("/toutes-les-pages/") or url.endswith("/sante-nyons/"):
+            result["kineIndexLinked"] = "/sante-nyons/kinesitherapeute-nyons/" in source
         page = Page()
         page.feed(source)
         result.update({"canonicals": page.canonicals, "robots": page.robots, "metaRefresh": page.refresh})
@@ -347,11 +384,11 @@ def check(url):
     return result
 
 for attempt in range(12):
-    ready_article = check("https://www.vivreanyons.fr/infos-pratiques-nyons/apa-nyons/")
+    ready_article = check("https://www.vivreanyons.fr/sante-nyons/kinesitherapeute-nyons/")
     ready_home = check("https://www.vivreanyons.fr/")
-    if ready_article.get("apaDate") and ready_article.get("apaTables") and ready_home.get("latestAPAArticle"):
+    if ready_article.get("kineDate") and ready_article.get("kineTables") and ready_home.get("latestKineArticle"):
         break
-    print("Waiting for the published APA article and homepage:", attempt + 1, flush=True)
+    print("Waiting for the published physiotherapy article and homepage:", attempt + 1, flush=True)
     time.sleep(10)
 
 with ThreadPoolExecutor(max_workers=4) as pool:
