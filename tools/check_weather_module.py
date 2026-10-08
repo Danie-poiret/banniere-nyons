@@ -188,3 +188,5 @@ print(json.dumps(images))
 print("WEATHER_SCREENSHOTS_END")
 
 # Vérification après publication de la page météo et des vues détaillées.
+
+# Vérification de la photographie du Pont Roman fournie par l’utilisateur.
