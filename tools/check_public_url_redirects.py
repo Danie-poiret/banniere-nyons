@@ -1,4 +1,4 @@
-"""Read-only verification of the EHPAD publication, images and navigation."""
+"""Read-only verification of the walking guide, photographs and site links."""
 from concurrent.futures import ThreadPoolExecutor
 from urllib.request import Request, urlopen
 from html.parser import HTMLParser
@@ -7,45 +7,47 @@ import json, re, time
 BASE = "https://www.vivreanyons.fr/"
 ARTICLE = BASE + "sante-nyons/ehpad-nyons/"
 URLS = [
-  "https://www.vivreanyons.fr/sante-nyons/ehpad-nyons/",
-  "https://www.vivreanyons.fr/sante-nyons/",
-  "https://www.vivreanyons.fr/infos-pratiques-nyons/",
+  "https://www.vivreanyons.fr/que-faire-nyons/nyons-que-voir/",
+  "https://www.vivreanyons.fr/que-faire-nyons/",
   "https://www.vivreanyons.fr/toutes-les-pages/",
-  "https://www.vivreanyons.fr/assets/photos/ehpad-nyons/jardin-et-batiment.png",
-  "https://www.vivreanyons.fr/assets/photos/ehpad-nyons/facade-et-balcons.png",
-  "https://www.vivreanyons.fr/vivreanyons-test/sante-nyons/ehpad-nyons/",
-  "https://www.vivreanyons.fr/vivreanyons-test/sante-nyons/",
-  "https://www.vivreanyons.fr/vivreanyons-test/infos-pratiques-nyons/",
+  "https://www.vivreanyons.fr/vivreanyons-test/que-faire-nyons/nyons-que-voir/",
+  "https://www.vivreanyons.fr/vivreanyons-test/que-faire-nyons/",
   "https://www.vivreanyons.fr/vivreanyons-test/toutes-les-pages/",
-  "https://www.vivreanyons.fr/vivreanyons-test/assets/photos/ehpad-nyons/jardin-et-batiment.png",
-  "https://www.vivreanyons.fr/vivreanyons-test/assets/photos/ehpad-nyons/facade-et-balcons.png",
-  "https://www.vivreanyons.fr/banniere-nyons/vivreanyons-test/sante-nyons/ehpad-nyons/",
-  "https://www.vivreanyons.fr/banniere-nyons/vivreanyons-test/sante-nyons/",
-  "https://www.vivreanyons.fr/banniere-nyons/vivreanyons-test/infos-pratiques-nyons/",
+  "https://www.vivreanyons.fr/banniere-nyons/vivreanyons-test/que-faire-nyons/nyons-que-voir/",
+  "https://www.vivreanyons.fr/banniere-nyons/vivreanyons-test/que-faire-nyons/",
   "https://www.vivreanyons.fr/banniere-nyons/vivreanyons-test/toutes-les-pages/",
-  "https://www.vivreanyons.fr/banniere-nyons/vivreanyons-test/assets/photos/ehpad-nyons/jardin-et-batiment.png",
-  "https://www.vivreanyons.fr/banniere-nyons/vivreanyons-test/assets/photos/ehpad-nyons/facade-et-balcons.png",
-  "https://www.vivreanyons.fr/",
-  "https://www.vivreanyons.fr/sitemap.xml",
-  "https://www.vivreanyons.fr/infos-pratiques-nyons/ccas-nyons/",
-  "https://www.vivreanyons.fr/infos-pratiques-nyons/apa-nyons/",
-  "https://www.vivreanyons.fr/infos-pratiques-nyons/Alzheimer-Nyons/",
-  "https://www.vivreanyons.fr/sante-nyons/teleassistance-nyons/",
-  "https://www.vivreanyons.fr/infos-pratiques-nyons/portage-repas-nyons/",
-  "https://www.vivreanyons.fr/sante-nyons/kinesitherapeute-nyons/",
-"https://www.vivreanyons.fr/infos-pratiques-nyons/plombier-nyons/",
-"https://www.vivreanyons.fr/vivreanyons-test/infos-pratiques-nyons/plombier-nyons/",
-"https://www.vivreanyons.fr/banniere-nyons/vivreanyons-test/infos-pratiques-nyons/plombier-nyons/",
-"https://www.vivreanyons.fr/assets/photos/plombier-nyons-meuble-sous-evier.webp",
-"https://www.vivreanyons.fr/assets/photos/plombier-nyons-siphon-raccordements.webp",
-"https://www.vivreanyons.fr/assets/photos/plombier-nyons-pose-robinetterie.webp",
-"https://www.vivreanyons.fr/ou-dormir-a-nyons/villa-des-poete/",
-"https://www.vivreanyons.fr/ou-dormir-a-nyons/",
-"https://www.vivreanyons.fr/vivreanyons-test/ou-dormir-a-nyons/villa-des-poete/",
-"https://www.vivreanyons.fr/vivreanyons-test/ou-dormir-a-nyons/",
-"https://www.vivreanyons.fr/banniere-nyons/vivreanyons-test/ou-dormir-a-nyons/villa-des-poete/",
-"https://www.vivreanyons.fr/banniere-nyons/vivreanyons-test/ou-dormir-a-nyons/",
-"https://www.vivreanyons.fr/assets/photos/437f810cbd2d493dea6a.webp"
+  "https://www.vivreanyons.fr/assets/photos/fiche-1c9db50f3723389be9a7.webp",
+  "https://www.vivreanyons.fr/assets/photos/fiche-621940e755ac20550d07.webp",
+  "https://www.vivreanyons.fr/assets/photos/fiche-090b7caf502dee4f0511.webp",
+  "https://www.vivreanyons.fr/assets/photos/fiche-07b2405d2738fa1ef481.webp",
+  "https://www.vivreanyons.fr/assets/photos/fiche-373f26f2d1ce85a43fa8.webp",
+  "https://www.vivreanyons.fr/assets/photos/fiche-7c7eaaf55cbdb6074646.webp",
+  "https://www.vivreanyons.fr/assets/photos/fiche-72bef6a46a62ceb4d9ab.webp",
+  "https://www.vivreanyons.fr/assets/photos/fiche-7257130523891e0393b9.webp",
+  "https://www.vivreanyons.fr/assets/photos/fiche-e46a5982c7c34d83db62.webp",
+  "https://www.vivreanyons.fr/que-faire-nyons/Pont-Roman-de-Nyons/",
+  "https://www.vivreanyons.fr/que-faire-nyons/centre-historique-de-nyons/",
+  "https://www.vivreanyons.fr/que-faire-nyons/Place-des-Arcades-Nyons/",
+  "https://www.vivreanyons.fr/que-faire-nyons/Tour-Randonne/",
+  "https://www.vivreanyons.fr/que-faire-nyons/eglise-Saint-Vincent/",
+  "https://www.vivreanyons.fr/que-faire-nyons/promenade-de-la-digue-nyons/",
+  "https://www.vivreanyons.fr/que-faire-nyons/Jardin-des-Aromes/",
+  "https://www.vivreanyons.fr/que-faire-nyons/Marche-de-Nyons/",
+  "https://www.vivreanyons.fr/que-faire-nyons/Scourtinerie-de-Nyons/",
+  "https://www.vivreanyons.fr/que-faire-nyons/Vignolis-Nyons/",
+  "https://www.vivreanyons.fr/que-faire-nyons/les-vieux-moulins/",
+  "https://www.vivreanyons.fr/que-faire-nyons/Maison-des-Huiles-dolive/",
+  "https://www.vivreanyons.fr/que-faire-nyons/le-sentier-des-oliviers-nyons/",
+  "https://www.vivreanyons.fr/infos-pratiques-nyons/eygues-nyons/",
+  "https://www.vivreanyons.fr/produits-du-terroir/",
+  "https://www.vivreanyons.fr/que-faire-nyons/nyons-avec-des-enfants/",
+  "https://www.vivreanyons.fr/que-faire-nyons/nyons-quand-il-pleut/",
+  "https://www.vivreanyons.fr/a-faire-autour-de-Nyons/vinsobres/",
+  "https://www.vivreanyons.fr/a-faire-autour-de-Nyons/Mirabel-aux-Baronnies/",
+  "https://www.vivreanyons.fr/a-faire-autour-de-Nyons/pilles/",
+  "https://www.vivreanyons.fr/a-faire-autour-de-Nyons/",
+  "https://www.vivreanyons.fr/meteo-nyons/",
+  "https://www.vivreanyons.fr/"
 ]
 TITLE = "Maison de retraite et EHPAD à Nyons : tarifs, places, Alzheimer et admission"
 class Page(HTMLParser):
@@ -157,6 +159,41 @@ def check(url):
             result["villaMenuAndScript"] = 'data-nyons-shortcut="hebergement"' in source and 'data-weather-nav="direct"' in source and any("google-analytics-20261008-v1" in s for s in page.scripts)
         if url.endswith("/ou-dormir-a-nyons/") or url.endswith("/toutes-les-pages/"):
             result["villaIndexUpdated"] = "Villa des Poètes à Nyons : avis, tarifs, piscine et réservation" in source and "chambres d’hôtes à 4 km du centre" in source
+        if "/que-faire-nyons/nyons-que-voir/" in url:
+            result["voirUpdated"] = 'data-voir-updated="2026-10-08"' in source
+            result["voirTitle"] = "<h1>Que voir à Nyons ? Les 15 incontournables à visiter à pied</h1>" in source and page.h1 == 1
+            result["voirSteps15"] = source.count('<section class="voir-stop"') == 15
+            result["voirNumbering"] = all(re.search(r"<h2>"+str(i)+r"\. ",source) for i in range(1,16))
+            result["voirSummary15"] = len(re.search(r'<ol class="voir-summary">(.*?)</ol>',source,re.S).group(1).split("<li>"))-1 == 15
+            result["voirTables2"] = source.count('<table class="voir-table">') == 2
+            result["voirResponsive"] = "max-width:100%;overflow-x:auto" in source and source.count('tabindex="0"') == 2 and ".voir-page .feature-story{min-width:0}" in source
+            graph = json.loads(re.search(r'<script type="application/ld\+json">(.*?)</script>',source,re.S).group(1))["@graph"]
+            article = next(g for g in graph if g["@type"]=="Article")
+            faq = next(g for g in graph if g["@type"]=="FAQPage")
+            items = next(g for g in graph if g["@type"]=="ItemList")
+            result["voirSchema15"] = items["numberOfItems"] == 15 and len(items["itemListElement"]) == 15
+            result["voirFAQ8"] = source.count('<div class="qa">') == 8 and len(faq["mainEntity"]) == 8
+            result["voirOldFAQPreserved"] = all(q in source for q in ["Que visiter à Nyons à pied ?","Que faire à Nyons quand il pleut ?"])
+            result["voirNoInventedPublicationDate"] = "datePublished" not in source and article["dateModified"] == "2026-10-08"
+            result["voirPhotos9"] = len(page.images) == 9 and len(article["image"]) == 9
+            expected_photos = [["assets/photos/fiche-1c9db50f3723389be9a7.webp",1280,853],["assets/photos/fiche-621940e755ac20550d07.webp",982,1024],["assets/photos/fiche-090b7caf502dee4f0511.webp",960,1280],["assets/photos/fiche-07b2405d2738fa1ef481.webp",960,1280],["assets/photos/fiche-373f26f2d1ce85a43fa8.webp",442,606],["assets/photos/fiche-7c7eaaf55cbdb6074646.webp",960,1280],["assets/photos/fiche-72bef6a46a62ceb4d9ab.webp",960,1280],["assets/photos/fiche-7257130523891e0393b9.webp",853,1280],["assets/photos/fiche-e46a5982c7c34d83db62.webp",896,1152]]
+            result["voirPhotoDimensions"] = all(any(i.get("src","").endswith(path) and int(i["width"])==w and int(i["height"])==h for i in page.images) for path,w,h in expected_photos)
+            prefix = "banniere-nyons/vivreanyons-test/" if "/banniere-nyons/" in url else ("vivreanyons-test/" if "/vivreanyons-test/" in url else "")
+            result["voirImagePaths"] = all(i["src"].startswith("/"+prefix+"assets/photos/") for i in page.images)
+            result["voirMetadata"] = 'property="og:title"' in source and 'property="og:image:width" content="1280"' in source
+            result["voirCanonical"] = page.canonicals == [BASE+"que-faire-nyons/nyons-que-voir/"]
+            result["voirRobots"] = page.robots == (["noindex,nofollow"] if prefix else ["index,follow"])
+            result["voirRoutes"] = all(t in source for t in ["Que voir si tu n’as que deux heures ?","Que visiter en une demi-journée ?","Nyons en 1 jour : le programme de Papy"])
+            result["voirOlivierTrail"] = "3,9 km, environ 1 h 30 et 110 mètres" in source
+            result["voirScourtQualified"] = "donation avec montant conseillé" in source and "modalités du musée rénové" in source
+            result["voirGuidedBooking"] = "visites guidées uniquement sur rendez-vous" in source
+            result["voirMaisonContactQualified"] = "ligne téléphonique en dérangement" in source and "contact@maisondeshuilesetolives.fr" in source
+            result["voirMarket"] = "chaque jeudi matin" in source and "dimanche matin de début mai à mi-septembre" in source
+            result["voirSourcesAndReaders"] = "Sources et liens utiles" in source and "Questions aux lecteurs" in source
+            result["voirClean"] = all(t not in source for t in ["Texte collé","Ta fiche actuelle","prête à coller","Je te remets une phrase"])
+            result["voirMenuAndScript"] = 'data-nyons-shortcut="hebergement"' in source and 'data-weather-nav="direct"' in source and any("google-analytics-20261008-v1" in s for s in page.scripts)
+        if url.endswith("/que-faire-nyons/") or url.endswith("/toutes-les-pages/"):
+            result["voirIndexUpdated"] = "Que voir à Nyons ? Les 15 incontournables à visiter à pied" in source and "15 incontournables et parcours pour 2 heures" in source
         if url.endswith("/sante-nyons/"):
             g = json.loads(re.search(r'<script type="application/ld\+json">(.*?)</script>',source,re.S).group(1))["@graph"]
             items = next(g for g in g if g["@type"]=="ItemList")
@@ -174,13 +211,12 @@ def check(url):
     return result
 
 for attempt in range(12):
-    ready = check(BASE+"ou-dormir-a-nyons/villa-des-poete/")
-    home = check(BASE)
-    mirror_ready = check(BASE+"vivreanyons-test/ou-dormir-a-nyons/villa-des-poete/")
-    second_mirror_ready = check(BASE+"banniere-nyons/vivreanyons-test/ou-dormir-a-nyons/villa-des-poete/")
-    if ready.get("villaUpdated") and home.get("latestEHPAD") and mirror_ready.get("villaCanonical") and second_mirror_ready.get("villaCanonical"):
+    ready = check(BASE+"que-faire-nyons/nyons-que-voir/")
+    mirror_ready = check(BASE+"vivreanyons-test/que-faire-nyons/nyons-que-voir/")
+    second_mirror_ready = check(BASE+"banniere-nyons/vivreanyons-test/que-faire-nyons/nyons-que-voir/")
+    if ready.get("voirUpdated") and mirror_ready.get("voirUpdated") and second_mirror_ready.get("voirUpdated"):
         break
-    print("Waiting for Villa des Poètes and preserved homepage", attempt+1, flush=True)
+    print("Waiting for the updated walking guide", attempt+1, flush=True)
     time.sleep(10)
 with ThreadPoolExecutor(max_workers=4) as pool:
     results = list(pool.map(check, URLS))
