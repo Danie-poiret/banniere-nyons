@@ -9,6 +9,9 @@ from urllib.request import Request, HTTPRedirectHandler, build_opener
 from urllib.error import HTTPError
 
 URLS = [
+"https://www.vivreanyons.fr/infos-pratiques-nyons/marches-autour-nyons-50-km/",
+"https://www.vivreanyons.fr/vivreanyons-test/infos-pratiques-nyons/marches-autour-nyons-50-km/",
+"https://www.vivreanyons.fr/banniere-nyons/vivreanyons-test/infos-pratiques-nyons/marches-autour-nyons-50-km/",
 "https://www.vivreanyons.fr/a-faire-autour-de-Nyons/",
 "https://www.vivreanyons.fr/vivreanyons-test/a-faire-autour-de-Nyons/",
 "https://www.vivreanyons.fr/banniere-nyons/vivreanyons-test/a-faire-autour-de-Nyons/",
@@ -190,6 +193,14 @@ def check(url):
                     result["height"] = int.from_bytes(data[28:30], "little") & 16383
                 return result
             source = data.decode("utf-8", errors="replace")
+        if "/infos-pratiques-nyons/marches-autour-nyons-50-km/" in url:
+            result["marketsVaisonSummary"] = 'id="vaison-en-detail"' in source and "450 exposants" in source
+            result["marketsVaisonLink"] = bool(re.search(r'<a href="[^"]*/infos-pratiques-nyons/marche-vaison-la-romaine/">Découvrir le marché de Vaison-la-Romaine', source))
+            result["marketsVaisonSingleLink"] = len(re.findall(r'href="[^"]*/infos-pratiques-nyons/marche-vaison-la-romaine/"', source)) == 1
+            result["marketsVaisonHours"] = "<strong>8 h 30–13 h</strong>" in source
+            result["marketsOriginalPublicationDate"] = '"datePublished": "2026-10-06"' in source
+            result["marketsUpdatedDate"] = '"dateModified": "2026-10-08"' in source
+            result["marketsOriginalValreasSummary"] = 'id="valreas-en-detail"' in source
         if "/infos-pratiques-nyons/dechetterie-nyons/" in url:
             result["dechetPhone"] = 'href="tel:+33772325527"' in source
             result["dechetHours"] = all(text in source for text in ["9 h à 12 h", "14 h à 17 h", "15 septembre 2026"])
@@ -431,7 +442,8 @@ def check(url):
 for attempt in range(12):
     ready_article = check("https://www.vivreanyons.fr/infos-pratiques-nyons/marche-vaison-la-romaine/")
     ready_home = check("https://www.vivreanyons.fr/")
-    if ready_article.get("vaisonDate") and ready_article.get("vaisonTables") and ready_home.get("latestVaisonArticle"):
+    ready_markets = check("https://www.vivreanyons.fr/infos-pratiques-nyons/marches-autour-nyons-50-km/")
+    if ready_article.get("vaisonDate") and ready_article.get("vaisonTables") and ready_home.get("latestVaisonArticle") and ready_markets.get("marketsVaisonSummary"):
         break
     print("Waiting for the published Vaison market article and homepage:", attempt + 1, flush=True)
     time.sleep(10)
