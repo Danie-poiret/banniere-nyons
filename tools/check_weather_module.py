@@ -17,7 +17,7 @@ for attempt in range(24):
     try:
         html = read(BASE + "/")
         forecast = json.loads(read(BASE + "/assets/meteo-nyons.json"))
-        if 'data-nyons-weather' in html and forecast.get("location") == "Nyons":
+        if 'data-nyons-weather' in html and forecast.get("location") == "Nyons" and 'data-weather-extended' in read(BASE + '/meteo-nyons/'):
             break
     except Exception:
         pass
@@ -33,7 +33,7 @@ assert len(forecast["timeseries"]) >= 20
 for prefix in ("", "/vivreanyons-test", "/banniere-nyons/vivreanyons-test"):
     source = read(BASE + prefix + "/")
     assert source.count("data-nyons-weather") == 1
-    assert 'data-latest-article="/infos-pratiques-nyons/marche-vaison-la-romaine/"' in source
+    assert 'data-latest-article=' in source and 'href="' + prefix + '/meteo-nyons/"' in source
     assert "nyons-weather" in read(BASE + prefix + "/assets/meteo-nyons.css")
     assert "Europe/Paris" in read(BASE + prefix + "/assets/meteo-nyons.js")
     assert json.loads(read(BASE + prefix + "/assets/meteo-nyons.json"))["provider"] == "MET Norway"
@@ -128,6 +128,59 @@ with sync_playwright() as p:
     assert plain_page.locator(".nyons-weather noscript").is_visible()
     assert plain_page.locator('.nyons-weather a[href*="meteofrance.com/previsions"]').is_visible()
     assert not plain_page.locator("[data-weather-refresh]").is_visible()
+
+    for prefix in ("", "/vivreanyons-test", "/banniere-nyons/vivreanyons-test"):
+        source = read(BASE + prefix + "/meteo-nyons/")
+        assert source.count("<h1>") == 1
+        assert "Météo à Nyons : aujourd’hui, demain, prévisions et climat toute l’année" in source
+        assert 'href="https://www.vivreanyons.fr/meteo-nyons/"' in source
+        assert '"datePublished":"2026-10-08"' in source
+        assert '"@type":"FAQPage"' in source and source.count('class="qa"') == 7
+        assert "Sources et liens utiles" in source and "Pontias" in source and "mistral" in source
+        assert "météo de Nyons à 15 jours" in source and "mois prochain" in source
+        assert "parfois incomplet" in source and "chiffres inventés" in source
+        assert 'data-weather-extended="true"' in source
+        assert source.count('<table class="meteo-table">') == 3
+        assert 'href="' + prefix + '/meteo-nyons/"' in read(BASE + prefix + "/infos-pratiques-nyons/")
+        assert 'href="' + prefix + '/meteo-nyons/"' in read(BASE + prefix + "/toutes-les-pages/")
+    assert "<loc>https://www.vivreanyons.fr/meteo-nyons/</loc>" in read(BASE + "/sitemap.xml")
+    detail_page = context.new_page()
+    detail_page.goto(BASE + "/meteo-nyons/", wait_until="domcontentloaded")
+    detail_page.wait_for_selector('[data-weather-state="ready"]', timeout=25000)
+    refuse = detail_page.get_by_role("button", name="Refuser", exact=True)
+    if refuse.count() and refuse.first.is_visible():
+        refuse.first.click()
+    detail = detail_page.locator("[data-nyons-weather]")
+    assert detail.locator(".weather-day").count() == 7
+    detail.locator('[data-weather-period="10"]').click()
+    assert 7 <= detail.locator(".weather-day").count() <= 10
+    assert detail.locator('[data-weather-period="10"]').get_attribute("aria-pressed") == "true"
+    assert "Dernier créneau disponible" in detail.locator("[data-weather-horizon]").inner_text()
+    detail.locator('[data-weather-period="weekend"]').click()
+    assert 1 <= detail.locator(".weather-day").count() <= 2
+    for element in detail.locator(".weather-day time").all():
+        date = datetime.fromisoformat(element.get_attribute("datetime"))
+        assert date.weekday() in (5, 6)
+    detail.locator('[data-weather-period="7"]').focus()
+    detail_page.keyboard.press("Enter")
+    assert detail.locator(".weather-day").count() == 7
+    detail.locator(".weather-hourly summary").click()
+    assert 1 <= detail.locator("[data-weather-hours] tr").count() <= 24
+    assert "mm / 1 h" in detail.locator("[data-weather-hours]").inner_text()
+    photo = detail_page.locator(".meteo-landscape img")
+    photo.scroll_into_view_if_needed()
+    detail_page.wait_for_function("document.querySelector('.meteo-landscape img').naturalWidth > 0")
+    assert photo.evaluate("(image) => image.naturalWidth === 1280 && image.naturalHeight === 731")
+    detail_page.set_viewport_size({"width":1280,"height":1000})
+    detail.locator(".weather-hourly summary").click()
+    images.append({"width":1280,"page":"meteo-nyons","base64":base64.b64encode(detail.screenshot(type="jpeg", quality=65, style="header {visibility:hidden!important}")).decode("ascii")})
+    for width in (390,320):
+        detail_page.set_viewport_size({"width":width,"height":1000})
+        detail_page.wait_for_timeout(150)
+        assert detail.evaluate("(element) => element.scrollWidth <= element.clientWidth + 1")
+        assert detail_page.evaluate("document.documentElement.scrollWidth <= window.innerWidth + 1")
+    print("Page météo Nyons vérifiée : SEO et liens, 7/10 jours, week-end, horaires, photo complète, FAQ, sitemap, mobile et accueil préservé.", flush=True)
+
     browser.close()
 print("Météo vérifiée : cinq jours, heure française, températures réelles du modèle, actualisation clavier, absence de débordement à 1280/390/320 px, panne et reprise, valeurs absentes, données périmées, accès sans JavaScript.", flush=True)
 print("WEATHER_SCREENSHOTS_BEGIN")

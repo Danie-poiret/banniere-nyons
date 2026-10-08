@@ -36,6 +36,90 @@
     if (text !== undefined) element.textContent = text;
     return element;
   }
+  const maximumDays = module.dataset.weatherExtended ? 10 : 5;
+  let selectedPeriod = module.dataset.weatherDays || '5';
+  let storedSeries=null, storedCurrent=null;
+  function renderDays(series,current) {
+    const now = Date.now();
+    const today = dayKey(new Date(now));
+    const base = new Date(today + 'T12:00:00Z');
+    const days = [];
+    for (let index=0; index<maximumDays; index++) {
+      const date = new Date(base.getTime()+index*86400000), key = dayKey(date);
+      const points = series.filter(item => dayKey(new Date(item.time))===key && (index!==0 || Date.parse(item.time)>=Date.parse(current.time)));
+      if (!points.length) continue;
+      const values=[], winds=[];
+      for (const item of points) {
+        const d=item.data.instant.details;
+        if (finite(d.air_temperature)) values.push(d.air_temperature);
+        if (finite(d.wind_speed)) winds.push(d.wind_speed);
+        const next=item.data.next_6_hours;
+        if (next && next.details && dayKey(new Date(Date.parse(item.time)+6*3600000))===key) {
+        if (finite(next.details.air_temperature_min)) values.push(next.details.air_temperature_min);
+        if (finite(next.details.air_temperature_max)) values.push(next.details.air_temperature_max);
+        }
+      }
+      const midday = points.reduce((best,item) => {
+        const distance = point => Math.abs(Number(hourNumber.format(new Date(point.time)))-12);
+        return distance(item)<distance(best) ? item : best;
+      });
+      const summary = midday.data.next_1_hours || midday.data.next_6_hours || midday.data.next_12_hours;
+      const [dayIcon,dayCondition]=condition(summary && summary.summary && summary.summary.symbol_code);
+      const li=node('li','weather-day');
+      const time=node('time','',index===0?'Aujourd’hui':index===1?'Demain':shortLabel.format(date)); time.dateTime=key;
+      li.append(time);
+      const image=node('span','weather-day-icon',dayIcon); image.setAttribute('aria-hidden','true'); li.append(image);
+      li.append(node('span','weather-day-condition',dayCondition));
+      li.append(node('span','weather-range',values.length?Math.round(Math.min(...values))+'° à '+Math.round(Math.max(...values))+'°':'—'));
+      li.append(node('span','weather-wind','Vent jusqu’à '+(winds.length?speed(Math.max(...winds)):'—')));
+      li.dataset.forecastDate=key;
+    days.push(li);
+    }
+    let shown=days;
+    if (selectedPeriod==='weekend') {
+      const weekday=base.getUTCDay();
+      const offset=weekday===0?-1:(6-weekday+7)%7;
+      const saturday=dayKey(new Date(base.getTime()+offset*86400000));
+      const sunday=dayKey(new Date(base.getTime()+(offset+1)*86400000));
+      shown=days.filter(item=>[saturday,sunday].includes(item.dataset.forecastDate));
+    } else shown=days.slice(0,Number(selectedPeriod));
+    if (!shown.length) throw new Error('Prévisions absentes');
+    find('days').replaceChildren(...shown);
+    const title=find('days-title');
+    if (title) title.textContent=selectedPeriod==='weekend'?'Météo à Nyons ce week-end':'Prévisions sur '+shown.length+' jours';
+    find('days').setAttribute('aria-label',selectedPeriod==='weekend'?'Prévisions du week-end':'Prévisions météo sur '+shown.length+' jours');
+    const note=find('horizon');
+    if (note) note.textContent='Dernier créneau disponible : '+dateLabel.format(new Date(series[series.length-1].time))+' à '+clock.format(new Date(series[series.length-1].time))+'. La dernière journée peut être partielle.';
+
+  }
+  function renderHourly(series,current) {
+    const body=find('hours');
+    if (!body) return;
+    const start=Date.parse(current.time);
+    const points=series.filter(item=>Date.parse(item.time)>=start && Date.parse(item.time)<start+24*3600000);
+    const rows=points.map(item=>{
+      const d=item.data.instant.details;
+      const period=item.data.next_1_hours || item.data.next_6_hours;
+      const [icon,label]=condition(period && period.summary && period.summary.symbol_code);
+      const row=node('tr','');
+      const th=node('th','',shortLabel.format(new Date(item.time))+' · '+clock.format(new Date(item.time)));th.scope='row';row.append(th);
+      row.append(node('td','',icon+' '+label));
+      row.append(node('td','',temperature(d.air_temperature)));
+      const rain=period && period.details && period.details.precipitation_amount;
+      row.append(node('td','',finite(rain)?number.format(rain)+' mm / '+(item.data.next_1_hours?'1 h':'6 h'):'—'));
+      row.append(node('td','',speed(d.wind_speed)));
+      return row;
+    });
+    body.replaceChildren(...rows);
+  }
+  for (const control of module.querySelectorAll('[data-weather-period]')) {
+    control.addEventListener('click',()=>{
+      if (!storedSeries) return;
+      selectedPeriod=control.dataset.weatherPeriod;
+      for (const other of module.querySelectorAll('[data-weather-period]')) other.setAttribute('aria-pressed',String(other===control));
+      renderDays(storedSeries,storedCurrent);
+    });
+  }
   let running = false, lastAttempt = 0;
   async function load() {
     if (running) return;
@@ -72,44 +156,14 @@
       const rain = period && period.details && period.details.precipitation_amount;
       find('rain-label').textContent = current.data.next_1_hours ? 'Pluie · prochaine heure' : 'Pluie · prochaines 6 h';
       find('rain').textContent = finite(rain) ? number.format(rain) + ' mm' : '—';
-      const today = dayKey(new Date(now));
-      const base = new Date(today + 'T12:00:00Z');
-      const days = [];
-      for (let index=0; index<5; index++) {
-        const date = new Date(base.getTime()+index*86400000), key = dayKey(date);
-        const points = series.filter(item => dayKey(new Date(item.time))===key && (index!==0 || Date.parse(item.time)>=Date.parse(current.time)));
-        if (!points.length) throw new Error('Journée manquante');
-        const values=[], winds=[];
-        for (const item of points) {
-          const d=item.data.instant.details;
-          if (finite(d.air_temperature)) values.push(d.air_temperature);
-          if (finite(d.wind_speed)) winds.push(d.wind_speed);
-          const next=item.data.next_6_hours;
-          if (next && next.details && dayKey(new Date(Date.parse(item.time)+6*3600000))===key) {
-            if (finite(next.details.air_temperature_min)) values.push(next.details.air_temperature_min);
-            if (finite(next.details.air_temperature_max)) values.push(next.details.air_temperature_max);
-          }
-        }
-        const midday = points.reduce((best,item) => {
-          const distance = point => Math.abs(Number(hourNumber.format(new Date(point.time)))-12);
-          return distance(item)<distance(best) ? item : best;
-        });
-        const summary = midday.data.next_1_hours || midday.data.next_6_hours || midday.data.next_12_hours;
-        const [dayIcon,dayCondition]=condition(summary && summary.summary && summary.summary.symbol_code);
-        const li=node('li','weather-day');
-        const time=node('time','',index===0?'Aujourd’hui':index===1?'Demain':shortLabel.format(date)); time.dateTime=key;
-        li.append(time);
-        const image=node('span','weather-day-icon',dayIcon); image.setAttribute('aria-hidden','true'); li.append(image);
-        li.append(node('span','weather-day-condition',dayCondition));
-        li.append(node('span','weather-range',values.length?Math.round(Math.min(...values))+'° à '+Math.round(Math.max(...values))+'°':'—'));
-        li.append(node('span','weather-wind','Vent jusqu’à '+(winds.length?speed(Math.max(...winds)):'—')));
-        days.push(li);
-      }
-      find('days').replaceChildren(...days);
+      storedSeries=series;storedCurrent=current;
+      renderDays(series,current);
+      renderHourly(series,current);
       content.hidden=false;
       status.textContent='Prévisions mises à jour le ' + dateLabel.format(new Date(updated)) + ' à ' + clock.format(new Date(updated)) + (now-collected>6*3600000?' · actualisation en attente':'');
       module.dataset.weatherState='ready';
     } catch (error) {
+      storedSeries=null;storedCurrent=null;
       content.hidden=true;
       status.textContent='La météo est momentanément indisponible. Réessaie ou consulte le bulletin Météo-France ci-dessous.';
       module.dataset.weatherState='error';
