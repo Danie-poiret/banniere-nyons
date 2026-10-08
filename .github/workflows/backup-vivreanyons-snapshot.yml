@@ -91,10 +91,193 @@ jobs:
           print(json.dumps(manifest, ensure_ascii=False))
           print("BACKUP_MANIFEST_END")
           PY
-      - name: Conserver le paquet de sauvegarde
+      - name: Preparer des volumes de transfert plus petits
+        shell: bash
+        run: |
+          python - <<'PY'
+          import hashlib, json
+          from pathlib import Path
+
+          package = Path("backup-package")
+          volumes = Path("backup-volumes")
+          volumes.mkdir(exist_ok=True)
+          manifest = json.loads((package / "MANIFESTE-SAUVEGARDE.json").read_text(encoding="utf-8"))
+          source = package / "vivreanyons-site-principal-2026-10-08.zip"
+          part_size = 20 * 1024 * 1024
+          parts = []
+          with source.open("rb") as stream:
+              index = 1
+              while True:
+                  data = stream.read(part_size)
+                  if not data:
+                      break
+                  filename = source.name + ".part" + str(index).zfill(3)
+                  (volumes / filename).write_bytes(data)
+                  parts.append({"filename": filename, "bytes": len(data), "sha256": hashlib.sha256(data).hexdigest()})
+                  index += 1
+          whole_digest = hashlib.sha256()
+          for item in parts:
+              whole_digest.update((volumes / item["filename"]).read_bytes())
+          expected = next(item["sha256"] for item in manifest["sites"] if item["repository"].endswith("banniere-nyons"))
+          assert whole_digest.hexdigest() == expected
+          manifest["main_archive_parts"] = parts
+          (volumes / "MANIFESTE-SAUVEGARDE.json").write_text(json.dumps(manifest, ensure_ascii=False, indent=2), encoding="utf-8")
+          (volumes / "vivreanyons-agenda-complet-2026-10-08.zip").write_bytes((package / "vivreanyons-agenda-complet-2026-10-08.zip").read_bytes())
+          guide = """SAUVEGARDE VIVRE A NYONS - 8 OCTOBRE 2026
+
+          Le site principal est sauvegarde en 14 volumes, pour faciliter le transfert.
+          Le dossier contient aussi l agenda complet, un manifeste et un outil de reconstitution.
+
+          RESTAURATION
+          1. Telecharger tous les fichiers ZIP du dossier de sauvegarde.
+          2. Extraire tous ces ZIP dans un seul dossier.
+          3. Executer RECONSTITUER-LA-SAUVEGARDE.py avec Python, ou demander de l aide pour cette etape.
+          4. L outil verifie chaque volume et recree vivreanyons-site-principal-2026-10-08.zip.
+          5. Cette archive et vivreanyons-agenda-complet-2026-10-08.zip contiennent les fichiers originaux.
+          La copie agenda-publie-2026-10-08.zip conserve aussi la version publiee de l agenda.
+
+          Cette sauvegarde ponctuelle couvre tous les fichiers suivis dans les deux depots, y compris les pages, images, programmes et configurations versionnees.
+          Les mots de passe, secrets, cles API externes, reglages DNS et historique Git ne sont pas inclus.
+          """
+          (volumes / "LISEZ-MOI-RESTAURATION.txt").write_text(guide.replace("14 volumes", str(len(parts)) + " volumes"), encoding="utf-8")
+          restore = '''from pathlib import Path
+          import hashlib, json
+          base = Path(__file__).resolve().parent
+          manifest = json.loads((base / "MANIFESTE-SAUVEGARDE.json").read_text(encoding="utf-8"))
+          target = base / "vivreanyons-site-principal-2026-10-08.zip"
+          temporary = base / (target.name + ".reconstitution")
+          if target.exists():
+              raise SystemExit("L archive existe deja. Aucun fichier n a ete remplace.")
+          total = hashlib.sha256()
+          try:
+              with temporary.open("wb") as output:
+                  for part in manifest["main_archive_parts"]:
+                      data = (base / part["filename"]).read_bytes()
+                      if len(data) != part["bytes"] or hashlib.sha256(data).hexdigest() != part["sha256"]:
+                          raise ValueError("Volume manquant ou altere : " + part["filename"])
+                      total.update(data)
+                      output.write(data)
+              expected = next(s["sha256"] for s in manifest["sites"] if s["repository"].endswith("banniere-nyons"))
+              if total.hexdigest() != expected:
+                  raise ValueError("Le controle global de l archive a echoue.")
+              temporary.rename(target)
+              print("Sauvegarde reconstituee et verifiee : " + str(target))
+          except Exception:
+              temporary.unlink(missing_ok=True)
+              raise
+          '''
+          (volumes / "RECONSTITUER-LA-SAUVEGARDE.py").write_text(restore, encoding="utf-8")
+          compile(restore, "RECONSTITUER-LA-SAUVEGARDE.py", "exec")
+          print("BACKUP_PARTS_BEGIN")
+          print(json.dumps(parts))
+          print("BACKUP_PARTS_END")
+          PY
+      - name: Conserver les informations de restauration et l agenda complet
         uses: actions/upload-artifact@v4
         with:
-          name: sauvegarde-vivreanyons-2026-10-08
-          path: backup-package/
+          name: sauvegarde-informations-agenda-2026-10-08
+          path: |
+            backup-volumes/MANIFESTE-SAUVEGARDE.json
+            backup-volumes/LISEZ-MOI-RESTAURATION.txt
+            backup-volumes/RECONSTITUER-LA-SAUVEGARDE.py
+            backup-volumes/vivreanyons-agenda-complet-2026-10-08.zip
+          if-no-files-found: error
+          retention-days: 90
+      - name: Conserver le volume 001
+        uses: actions/upload-artifact@v4
+        with:
+          name: sauvegarde-site-volume-001-2026-10-08
+          path: backup-volumes/vivreanyons-site-principal-2026-10-08.zip.part001
+          if-no-files-found: error
+          retention-days: 90
+      - name: Conserver le volume 002
+        uses: actions/upload-artifact@v4
+        with:
+          name: sauvegarde-site-volume-002-2026-10-08
+          path: backup-volumes/vivreanyons-site-principal-2026-10-08.zip.part002
+          if-no-files-found: error
+          retention-days: 90
+      - name: Conserver le volume 003
+        uses: actions/upload-artifact@v4
+        with:
+          name: sauvegarde-site-volume-003-2026-10-08
+          path: backup-volumes/vivreanyons-site-principal-2026-10-08.zip.part003
+          if-no-files-found: error
+          retention-days: 90
+      - name: Conserver le volume 004
+        uses: actions/upload-artifact@v4
+        with:
+          name: sauvegarde-site-volume-004-2026-10-08
+          path: backup-volumes/vivreanyons-site-principal-2026-10-08.zip.part004
+          if-no-files-found: error
+          retention-days: 90
+      - name: Conserver le volume 005
+        uses: actions/upload-artifact@v4
+        with:
+          name: sauvegarde-site-volume-005-2026-10-08
+          path: backup-volumes/vivreanyons-site-principal-2026-10-08.zip.part005
+          if-no-files-found: error
+          retention-days: 90
+      - name: Conserver le volume 006
+        uses: actions/upload-artifact@v4
+        with:
+          name: sauvegarde-site-volume-006-2026-10-08
+          path: backup-volumes/vivreanyons-site-principal-2026-10-08.zip.part006
+          if-no-files-found: error
+          retention-days: 90
+      - name: Conserver le volume 007
+        uses: actions/upload-artifact@v4
+        with:
+          name: sauvegarde-site-volume-007-2026-10-08
+          path: backup-volumes/vivreanyons-site-principal-2026-10-08.zip.part007
+          if-no-files-found: error
+          retention-days: 90
+      - name: Conserver le volume 008
+        uses: actions/upload-artifact@v4
+        with:
+          name: sauvegarde-site-volume-008-2026-10-08
+          path: backup-volumes/vivreanyons-site-principal-2026-10-08.zip.part008
+          if-no-files-found: error
+          retention-days: 90
+      - name: Conserver le volume 009
+        uses: actions/upload-artifact@v4
+        with:
+          name: sauvegarde-site-volume-009-2026-10-08
+          path: backup-volumes/vivreanyons-site-principal-2026-10-08.zip.part009
+          if-no-files-found: error
+          retention-days: 90
+      - name: Conserver le volume 010
+        uses: actions/upload-artifact@v4
+        with:
+          name: sauvegarde-site-volume-010-2026-10-08
+          path: backup-volumes/vivreanyons-site-principal-2026-10-08.zip.part010
+          if-no-files-found: error
+          retention-days: 90
+      - name: Conserver le volume 011
+        uses: actions/upload-artifact@v4
+        with:
+          name: sauvegarde-site-volume-011-2026-10-08
+          path: backup-volumes/vivreanyons-site-principal-2026-10-08.zip.part011
+          if-no-files-found: error
+          retention-days: 90
+      - name: Conserver le volume 012
+        uses: actions/upload-artifact@v4
+        with:
+          name: sauvegarde-site-volume-012-2026-10-08
+          path: backup-volumes/vivreanyons-site-principal-2026-10-08.zip.part012
+          if-no-files-found: error
+          retention-days: 90
+      - name: Conserver le volume 013
+        uses: actions/upload-artifact@v4
+        with:
+          name: sauvegarde-site-volume-013-2026-10-08
+          path: backup-volumes/vivreanyons-site-principal-2026-10-08.zip.part013
+          if-no-files-found: error
+          retention-days: 90
+      - name: Conserver le volume 014
+        uses: actions/upload-artifact@v4
+        with:
+          name: sauvegarde-site-volume-014-2026-10-08
+          path: backup-volumes/vivreanyons-site-principal-2026-10-08.zip.part014
           if-no-files-found: error
           retention-days: 90
