@@ -126,7 +126,7 @@ def check(url):
             result["healthList30"] = items["numberOfItems"] == 30 and len(items["itemListElement"]) == 30
             result["healthNewCard"] = "data-ehpad-card" in source and any(i["url"]==ARTICLE for i in items["itemListElement"])
         if url.endswith("/infos-pratiques-nyons/") or url.endswith("/toutes-les-pages/"):
-            result["plombierIndexTitle"] = "${load("plombierDraft").title}" in source
+            result["plombierIndexTitle"] = "Plombier à Nyons : dépannage, fuite d’eau, chauffe-eau et contacts" in source
             result["newCard"] = "data-ehpad-card" in source and "sante-nyons/ehpad-nyons/" in source
         if url == BASE:
             result["latestEHPAD"] = TITLE in source and "sante-nyons/ehpad-nyons/" in source
