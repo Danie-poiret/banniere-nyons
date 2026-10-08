@@ -9,6 +9,18 @@ from urllib.request import Request, HTTPRedirectHandler, build_opener
 from urllib.error import HTTPError
 
 URLS = [
+"https://www.vivreanyons.fr/sante-nyons/teleassistance-nyons/",
+"https://www.vivreanyons.fr/assets/photos/teleassistance-nyons/bouton-bracelet.png",
+"https://www.vivreanyons.fr/assets/photos/teleassistance-nyons/montre-sos.png",
+"https://www.vivreanyons.fr/assets/photos/teleassistance-nyons/pendentif-alerte.png",
+"https://www.vivreanyons.fr/vivreanyons-test/sante-nyons/teleassistance-nyons/",
+"https://www.vivreanyons.fr/vivreanyons-test/assets/photos/teleassistance-nyons/bouton-bracelet.png",
+"https://www.vivreanyons.fr/vivreanyons-test/assets/photos/teleassistance-nyons/montre-sos.png",
+"https://www.vivreanyons.fr/vivreanyons-test/assets/photos/teleassistance-nyons/pendentif-alerte.png",
+"https://www.vivreanyons.fr/banniere-nyons/vivreanyons-test/sante-nyons/teleassistance-nyons/",
+"https://www.vivreanyons.fr/banniere-nyons/vivreanyons-test/assets/photos/teleassistance-nyons/bouton-bracelet.png",
+"https://www.vivreanyons.fr/banniere-nyons/vivreanyons-test/assets/photos/teleassistance-nyons/montre-sos.png",
+"https://www.vivreanyons.fr/banniere-nyons/vivreanyons-test/assets/photos/teleassistance-nyons/pendentif-alerte.png",
 "https://www.vivreanyons.fr/infos-pratiques-nyons/marches-autour-nyons-50-km/",
 "https://www.vivreanyons.fr/vivreanyons-test/infos-pratiques-nyons/marches-autour-nyons-50-km/",
 "https://www.vivreanyons.fr/banniere-nyons/vivreanyons-test/infos-pratiques-nyons/marches-autour-nyons-50-km/",
@@ -204,6 +216,33 @@ def check(url):
             result["marketsOriginalPublicationDate"] = '"datePublished": "2026-10-06"' in source
             result["marketsUpdatedDate"] = '"dateModified": "2026-10-08"' in source
             result["marketsOriginalValreasSummary"] = 'id="valreas-en-detail"' in source
+        if "/sante-nyons/teleassistance-nyons/" in url:
+            result["teleTables"] = source.count('<table class="tele-table">') == 4
+            result["teleResponsive"] = "overflow-x:auto" in source and "max-width:100%" in source
+            result["telePhotos"] = re.findall(r'<img[^>]+src="([^"]*assets/photos/teleassistance-nyons/[^"]+)"', source)
+            result["teleDimensions"] = all(value in source for value in ['width="240" height="267"', 'width="272" height="278"', 'width="188" height="201"'])
+            result["teleTariffs"] = "8,27 € par mois" in source and "11,45 € par mois" in source and "8 octobre 2026" in source
+            result["teleDetectorQualified"] = "Aucun dispositif automatique ne garantit la détection de toutes les chutes." in source
+            result["teleAPAQualified"] = "prise en charge n’est pas automatique" in source
+            result["teleTaxQualified"] = all(text in source for text in ["50 %", "après déduction des aides", "La seule vente ou location", "attestation fiscale"])
+            result["teleCCAS"] = 'href="tel:+33475265027"' in source and 'href="mailto:ccas@nyons.com"' in source and "Sur rendez-vous" in source
+            result["teleMDA"] = 'href="tel:+33475797009"' in source and "fermé le jeudi après-midi" in source
+            result["teleFAQ"] = source.count('class="qa"') == 7 and "Questions / réponses" in source
+            result["teleFAQSchema"] = '"@type":"FAQPage"' in source
+            result["teleReaders"] = all(text in source for text in ["Avez-vous déjà installé une téléassistance", "simple bouton d’alerte", "Et quelle autre aide pour rester à domicile"])
+            result["teleSources"] = "Sources et liens utiles" in source and "service-public.gouv.fr/particuliers/vosdroits/F12" in source
+            result["teleDate"] = '"datePublished":"2026-10-08"' in source
+            result["teleDeviceImagesQualified"] = "Ce modèle n’est pas présenté comme le matériel fourni par Drôme Téléassistance." in source
+            headings = re.findall(r"<h2[^>]*>(.*?)</h2>", source, re.S)
+            result["teleNoDuplicateHeadings"] = len(headings) == len(set(headings))
+            result["teleHeaderWeather"] = 'data-weather-nav="direct"' in source and '/meteo-nyons/' in source
+        if url in ["https://www.vivreanyons.fr/", "https://www.vivreanyons.fr/vivreanyons-test/", "https://www.vivreanyons.fr/banniere-nyons/vivreanyons-test/"]:
+            result["latestTeleArticle"] = 'data-latest-article="/sante-nyons/teleassistance-nyons/"' in source
+            result["teleHomepagePhoto"] = '/assets/photos/teleassistance-nyons/bouton-bracelet.png' in source
+            result["teleClickableTitle"] = bool(re.search(r'<h2 id="new-article-title"><a[^>]+href="[^"]*/sante-nyons/teleassistance-nyons/"', source))
+            result["compactWeatherPreserved"] = 'data-weather-compact="true"' in source and 'data-weather-nav="direct"' in source
+        if url.endswith("/sante-nyons/") or url.endswith("/infos-pratiques-nyons/") or url.endswith("/toutes-les-pages/"):
+            result["teleIndexLinked"] = '/sante-nyons/teleassistance-nyons/' in source
         if "/infos-pratiques-nyons/dechetterie-nyons/" in url:
             result["dechetPhone"] = 'href="tel:+33772325527"' in source
             result["dechetHours"] = all(text in source for text in ["9 h à 12 h", "14 h à 17 h", "15 septembre 2026"])
@@ -443,12 +482,11 @@ def check(url):
     return result
 
 for attempt in range(12):
-    ready_article = check("https://www.vivreanyons.fr/infos-pratiques-nyons/marche-vaison-la-romaine/")
+    ready_article = check("https://www.vivreanyons.fr/sante-nyons/teleassistance-nyons/")
     ready_home = check("https://www.vivreanyons.fr/")
-    ready_markets = check("https://www.vivreanyons.fr/infos-pratiques-nyons/marches-autour-nyons-50-km/")
-    if ready_article.get("vaisonDate") and ready_article.get("vaisonTables") and ready_home.get("latestVaisonArticle") and ready_markets.get("marketsVaisonRowLinks"):
+    if ready_article.get("teleDate") and ready_article.get("teleTables") and ready_home.get("latestTeleArticle"):
         break
-    print("Waiting for the published Vaison market article and homepage:", attempt + 1, flush=True)
+    print("Waiting for the published teleassistance article and homepage:", attempt + 1, flush=True)
     time.sleep(10)
 
 with ThreadPoolExecutor(max_workers=4) as pool:
