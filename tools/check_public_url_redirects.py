@@ -9,6 +9,27 @@ from urllib.request import Request, HTTPRedirectHandler, build_opener
 from urllib.error import HTTPError
 
 URLS = [
+"https://www.vivreanyons.fr/a-faire-autour-de-Nyons/",
+"https://www.vivreanyons.fr/vivreanyons-test/a-faire-autour-de-Nyons/",
+"https://www.vivreanyons.fr/banniere-nyons/vivreanyons-test/a-faire-autour-de-Nyons/",
+"https://www.vivreanyons.fr/infos-pratiques-nyons/marche-vaison-la-romaine/",
+"https://www.vivreanyons.fr/assets/photos/marche-vaison-la-romaine/etal-marche.png",
+"https://www.vivreanyons.fr/assets/photos/marche-vaison-la-romaine/paniers-colores.png",
+"https://www.vivreanyons.fr/assets/photos/marche-vaison-la-romaine/allees-animees.png",
+"https://www.vivreanyons.fr/assets/photos/marche-vaison-la-romaine/vaisselle-marche.png",
+"https://www.vivreanyons.fr/assets/photos/marche-vaison-la-romaine/vaison-ville-haute.png",
+"https://www.vivreanyons.fr/vivreanyons-test/infos-pratiques-nyons/marche-vaison-la-romaine/",
+"https://www.vivreanyons.fr/vivreanyons-test/assets/photos/marche-vaison-la-romaine/etal-marche.png",
+"https://www.vivreanyons.fr/vivreanyons-test/assets/photos/marche-vaison-la-romaine/paniers-colores.png",
+"https://www.vivreanyons.fr/vivreanyons-test/assets/photos/marche-vaison-la-romaine/allees-animees.png",
+"https://www.vivreanyons.fr/vivreanyons-test/assets/photos/marche-vaison-la-romaine/vaisselle-marche.png",
+"https://www.vivreanyons.fr/vivreanyons-test/assets/photos/marche-vaison-la-romaine/vaison-ville-haute.png",
+"https://www.vivreanyons.fr/banniere-nyons/vivreanyons-test/infos-pratiques-nyons/marche-vaison-la-romaine/",
+"https://www.vivreanyons.fr/banniere-nyons/vivreanyons-test/assets/photos/marche-vaison-la-romaine/etal-marche.png",
+"https://www.vivreanyons.fr/banniere-nyons/vivreanyons-test/assets/photos/marche-vaison-la-romaine/paniers-colores.png",
+"https://www.vivreanyons.fr/banniere-nyons/vivreanyons-test/assets/photos/marche-vaison-la-romaine/allees-animees.png",
+"https://www.vivreanyons.fr/banniere-nyons/vivreanyons-test/assets/photos/marche-vaison-la-romaine/vaisselle-marche.png",
+"https://www.vivreanyons.fr/banniere-nyons/vivreanyons-test/assets/photos/marche-vaison-la-romaine/vaison-ville-haute.png",
 "https://www.vivreanyons.fr/sante-nyons/kinesitherapeute-nyons/",
 "https://www.vivreanyons.fr/assets/photos/kinesitherapeute-nyons/soins-du-dos.png",
 "https://www.vivreanyons.fr/assets/photos/kinesitherapeute-nyons/reeducation-genou.png",
@@ -239,6 +260,30 @@ def check(url):
             result["kineClickableTitle"] = bool(re.search(r'<h2 id="new-article-title"><a[^>]+href="[^"]*/sante-nyons/kinesitherapeute-nyons/"', source))
         if url.endswith("/infos-pratiques-nyons/") or url.endswith("/toutes-les-pages/") or url.endswith("/sante-nyons/"):
             result["kineIndexLinked"] = "/sante-nyons/kinesitherapeute-nyons/" in source
+        if "/infos-pratiques-nyons/marche-vaison-la-romaine/" in url:
+            result["vaisonTables"] = source.count('<table class="vaison-table">') == 3
+            result["vaisonMobileTables"] = ".vaison-table-wrap" in source and "overflow-x:auto" in source
+            result["vaisonPhotos"] = re.findall(r'<img[^>]+src="([^"]*assets/photos/marche-vaison-la-romaine/[^"]+)"', source)
+            result["vaisonDimensions"] = all(size in source for size in ['width="222" height="243"', 'width="298" height="285"', 'width="220" height="253"', 'width="251" height="238"', 'width="260" height="288"'])
+            result["vaisonHours"] = "8 h 30 à 13 h" in source and "7 h 30" in source
+            result["vaisonProducers"] = all(text in source for text in ["le mardi et le samedi de 8 h à 12 h", "Général-de-Gaulle", "contre-allée Burrus"])
+            result["vaisonHistory"] = all(text in source for text in ["1483", "1532", "450 exposants"])
+            result["vaisonParkingQualified"] = all(text in source for text in ["septembre 2024", "mai 2025", "zone bleue", "Pont Romain", "pas une promesse de places libres"])
+            result["vaisonContact"] = 'href="tel:+33490365000"' in source
+            result["vaisonFAQ"] = source.count('<div class="qa">') == 6 and "Questions / réponses" in source
+            result["vaisonFAQSchema"] = '"@type":"FAQPage"' in source
+            result["vaisonReaders"] = all(text in source for text in ["Vous connaissez le marché de Vaison-la-Romaine ?", "Vous le préférez", "trouver une place le mardi matin"])
+            result["vaisonSources"] = "Sources et liens utiles" in source and "provenceguide.com" in source and "vaison-la-romaine.com" in source
+            result["vaisonDate"] = '"datePublished":"2026-10-08"' in source
+            result["vaisonReviewProvenanceRemoved"] = all(text not in source for text in ["avis que tu m", "avis transmis", "MÉMOIRE LOCALE"])
+            result["vaisonNoDuplicateHeadings"] = re.findall(r"<h2[^>]*>(.*?)</h2>", source).count("Où se garer pour le marché ?") == 1 and re.findall(r"<h2[^>]*>(.*?)</h2>", source).count("Un marché touristique ? Oui… mais pas seulement") == 1
+            result["headings"] = re.findall(r"<h1[^>]*>(.*?)</h1>", source, re.S)
+        if url in ["https://www.vivreanyons.fr/", "https://www.vivreanyons.fr/vivreanyons-test/", "https://www.vivreanyons.fr/banniere-nyons/vivreanyons-test/"]:
+            result["latestVaisonArticle"] = 'data-latest-article="/infos-pratiques-nyons/marche-vaison-la-romaine/"' in source
+            result["vaisonHomepagePhoto"] = "/assets/photos/marche-vaison-la-romaine/etal-marche.png" in source
+            result["vaisonClickableTitle"] = bool(re.search(r'<h2 id="new-article-title"><a[^>]+href="[^"]*/infos-pratiques-nyons/marche-vaison-la-romaine/"', source))
+        if url.endswith("/infos-pratiques-nyons/") or url.endswith("/toutes-les-pages/") or url.endswith("/a-faire-autour-de-Nyons/"):
+            result["vaisonIndexLinked"] = "/infos-pratiques-nyons/marche-vaison-la-romaine/" in source
         page = Page()
         page.feed(source)
         result.update({"canonicals": page.canonicals, "robots": page.robots, "metaRefresh": page.refresh})
@@ -384,11 +429,11 @@ def check(url):
     return result
 
 for attempt in range(12):
-    ready_article = check("https://www.vivreanyons.fr/sante-nyons/kinesitherapeute-nyons/")
+    ready_article = check("https://www.vivreanyons.fr/infos-pratiques-nyons/marche-vaison-la-romaine/")
     ready_home = check("https://www.vivreanyons.fr/")
-    if ready_article.get("kineDate") and ready_article.get("kineTables") and ready_home.get("latestKineArticle"):
+    if ready_article.get("vaisonDate") and ready_article.get("vaisonTables") and ready_home.get("latestVaisonArticle"):
         break
-    print("Waiting for the published physiotherapy article and homepage:", attempt + 1, flush=True)
+    print("Waiting for the published Vaison market article and homepage:", attempt + 1, flush=True)
     time.sleep(10)
 
 with ThreadPoolExecutor(max_workers=4) as pool:
