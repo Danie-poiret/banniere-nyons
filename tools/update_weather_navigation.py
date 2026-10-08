@@ -21,7 +21,7 @@ for file in root.rglob("index.html"):
     direct = re.sub(r'<a\b[^>]*href="(?:[^"]*/meteo-nyons/|#meteo-nyons)"[^>]*>.*?</a>', "", direct, flags=re.S)
     current = ' aria-current="page"' if relative == prefix + "meteo-nyons/index.html" else ""
     link = '<a data-weather-nav="direct" href="' + href + '"' + current + '>Météo</a>'
-    health = re.search(r'<a\b[^>]*data-health-nav="direct"', direct)
+    health = re.search(r'<a\b[^>]*data-(?:nyons-today-nav|health-nav)="direct"', direct)
     if health:
         direct = direct[:health.start()] + link + direct[health.start():]
     elif separator:
