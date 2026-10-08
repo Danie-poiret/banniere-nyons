@@ -1,34 +1,30 @@
-"""Inspect public provider schemas before writing strict local adapters."""
 import json,re
 from urllib.request import Request,urlopen
-from urllib.parse import urljoin
-URLS={
+from datetime import datetime
+from zoneinfo import ZoneInfo
+def get(url):
+    return urlopen(Request(url,headers={"User-Agent":"VivreAnyons/1.0 contact@vivreanyons.fr"}),timeout=20).read().decode("utf-8")
+urls={
 "air":"https://www.atmo-auvergnerhonealpes.fr/air-commune/Ville/26220/indice-atmo",
 "widget":"https://api.atmo-aura.fr/pub/create-widget",
 "river":"https://www.vigicrues.gouv.fr/services/observations.json/?CdStationHydro=V533401002&GrdSerie=H&FormatDate=iso",
 "fire":"https://www.risque-prevention-incendie.fr/drome",
-"water":"https://api.vigieau.beta.gouv.fr/api/zones?commune=26220&profil=particulier",
-}
-for key,url in URLS.items():
+"massifs":"https://www.risque-prevention-incendie.fr/static/26/js/massifs_prev.js"}
+for key,url in urls.items():
     print("\nPROVIDER",key,flush=True)
     try:
-        with urlopen(Request(url,headers={"User-Agent":"VivreAnyons/1.0 contact@vivreanyons.fr"}),timeout=20) as r: body=r.read().decode("utf-8")
-        if key in ("water","river"):
-            data=json.loads(body)
-            if key=="water": print(json.dumps(data[:1] if isinstance(data,list) else data,ensure_ascii=False)[:12000])
-            else: print(body[:6000])
-        else:
-            scripts=re.findall(r'<script[^>]+src=["\']([^"\']+)',body)
-            print("SCRIPTS",scripts)
-            if key=="air":
-                index=body.find("Qualité de l"); print(body[max(0,index-500):index+10000])
-                print("SETTINGS",body[-10000:])
-            else:
-                print(body[:8000])
-                for src in scripts:
-                    if not ("static" in src or "pub/" in src) or any(x in src for x in ("jquery","leaflet","bootstrap","cookie","moment")): continue
-                    try:
-                        text=urlopen(urljoin(url,src),timeout=15).read().decode("utf-8")
-                        print("SCRIPT",src,text[:18000])
-                    except Exception as e: print(type(e).__name__,str(e)[:200])
-    except Exception as e: print(type(e).__name__,str(e)[:200])
+        b=get(url)
+        if key=="river":
+            s=json.loads(b)["Serie"]; print({k:v for k,v in s.items() if k!="ObssHydro"}); print(s["ObssHydro"][-3:])
+        elif key=="air":
+            from html.parser import HTMLParser
+            class Text(HTMLParser):
+                def handle_data(self,data):
+                    if data.strip(): self.bits.append(data.strip())
+            p=Text();p.bits=[];p.feed(b);t="\n".join(p.bits);i=t.find("Qualité de l'air à Nyons");print(t[i:i+3000])
+            for marker in ("indice-label", "c-indice", "date-update", "indice-date", "Données mises"):
+                i=b.find(marker);print(marker,b[max(0,i-300):i+1000])
+            print("HEAD JSON",b[:10000][-6000:])
+        elif key=="massifs":print(b[-10000:])
+        else:print(b[-16000:])
+    except Exception as e:print(type(e).__name__,str(e)[:200])
