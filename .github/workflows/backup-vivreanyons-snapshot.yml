@@ -1,0 +1,100 @@
+name: Sauvegarde ponctuelle VivreAnyons
+
+on:
+  push:
+    paths:
+      - .github/workflows/backup-vivreanyons-snapshot.yml
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  backup:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Recuperer le site principal a sa version sauvegardee
+        uses: actions/checkout@v4
+        with:
+          repository: Danie-poiret/banniere-nyons
+          ref: 7ec0b2af01bc9850ce5433cb40cbab0d1a10683a
+          path: snapshots/site-principal
+          persist-credentials: false
+      - name: Recuperer l agenda a sa version sauvegardee
+        uses: actions/checkout@v4
+        with:
+          repository: Danie-poiret/agenda-nyons
+          ref: 8081964188f37b134bd53b5a57e0ef82a716697f
+          path: snapshots/agenda
+          persist-credentials: false
+      - name: Creer et verifier les archives
+        shell: bash
+        run: |
+          python - <<'PY'
+          import hashlib, json, subprocess, zipfile
+          from pathlib import Path
+          from datetime import datetime
+          from zoneinfo import ZoneInfo
+
+          workspace = Path.cwd().resolve()
+          package = workspace / "backup-package"
+          package.mkdir(exist_ok=True)
+          entries = []
+          snapshots = [
+              ("site-principal", "banniere-nyons", "7ec0b2af01bc9850ce5433cb40cbab0d1a10683a", "vivreanyons-site-principal-2026-10-08.zip"),
+              ("agenda", "agenda-nyons", "8081964188f37b134bd53b5a57e0ef82a716697f", "vivreanyons-agenda-complet-2026-10-08.zip"),
+          ]
+          for directory, repository, expected_sha, filename in snapshots:
+              source = (workspace / "snapshots" / directory).resolve()
+              actual_sha = subprocess.check_output(["git", "-C", str(source), "rev-parse", "HEAD"], text=True).strip()
+              assert actual_sha == expected_sha, (actual_sha, expected_sha)
+              archive = package / filename
+              subprocess.run(["git", "-C", str(source), "archive", "--format=zip", "--output=" + str(archive), "HEAD"], check=True)
+              tracked = subprocess.check_output(["git", "-C", str(source), "ls-tree", "-r", "--name-only", "-z", "HEAD"]).decode("utf-8").split("\0")
+              tracked = {path for path in tracked if path}
+              with zipfile.ZipFile(archive) as zipped:
+                  assert zipped.testzip() is None, filename
+                  actual_files = {item.filename for item in zipped.infolist() if not item.is_dir()}
+                  assert actual_files == tracked, {"missing": sorted(tracked-actual_files), "extra": sorted(actual_files-tracked)}
+                  assert "index.html" in actual_files and "CNAME" in actual_files
+                  assert any(path.startswith(".github/workflows/") for path in actual_files)
+              with archive.open("rb") as stream:
+                  digest = hashlib.file_digest(stream, "sha256").hexdigest()
+              entries.append({"repository": "Danie-poiret/" + repository, "commit": expected_sha, "archive": filename, "file_count": len(tracked), "bytes": archive.stat().st_size, "sha256": digest})
+          guide = """SAUVEGARDE VIVRE A NYONS - 8 OCTOBRE 2026
+
+          Cette sauvegarde contient les deux sites dans leur etat au moment de la demande :
+          - vivreanyons-site-principal-2026-10-08.zip : vivreanyons.fr, ses pages, photos et scripts ;
+          - vivreanyons-agenda-complet-2026-10-08.zip : agenda.vivreanyons.fr, ses fiches, donnees, modeles et programmes de mise a jour.
+
+          POUR CONSERVER LA SAUVEGARDE
+          Gardez ce paquet ZIP sur votre Drive. Vous pouvez aussi en telecharger une copie sur votre ordinateur.
+
+          POUR RETROUVER LES FICHIERS
+          1. Decompressez le paquet principal dans un dossier neuf.
+          2. Ouvrez l archive du site principal ou celle de l agenda.
+          3. Les fichiers index.html, assets, CNAME et .github/workflows permettent de retrouver les pages et leur configuration versionnee.
+          4. Pour remettre un site en ligne, demandez une restauration depuis cette sauvegarde. Les formulaires et traitements utilisant des services externes peuvent demander leurs comptes et clefs d origine.
+
+          Le manifeste JSON donne la version exacte, le nombre de fichiers et la somme SHA-256 de chaque archive.
+          Toutes les archives internes ont ete verifiees : fichiers presents et controle d integrite ZIP.
+
+          PERIMETRE
+          Il s agit d une copie des fichiers suivis dans GitHub, pas de tout l historique Git.
+          Les mots de passe, secrets GitHub, cles API non presentes dans les depots, regles DNS et reglages des comptes externes ne sont pas exportes.
+          Il s agit d une sauvegarde ponctuelle du 8 octobre 2026, pas d une sauvegarde recurrente.
+          """
+          (package / "LISEZ-MOI-RESTAURATION.txt").write_text(guide, encoding="utf-8")
+          manifest = {"created_at_paris": datetime.now(ZoneInfo("Europe/Paris")).isoformat(), "type": "one-time complete tracked-file snapshots", "sites": entries}
+          (package / "MANIFESTE-SAUVEGARDE.json").write_text(json.dumps(manifest, ensure_ascii=False, indent=2), encoding="utf-8")
+          print("BACKUP_MANIFEST_BEGIN")
+          print(json.dumps(manifest, ensure_ascii=False))
+          print("BACKUP_MANIFEST_END")
+          PY
+      - name: Conserver le paquet de sauvegarde
+        uses: actions/upload-artifact@v4
+        with:
+          name: sauvegarde-vivreanyons-2026-10-08
+          path: backup-package/
+          if-no-files-found: error
+          retention-days: 90
