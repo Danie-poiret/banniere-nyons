@@ -199,6 +199,9 @@ def check(url):
         if "/infos-pratiques-nyons/dechetterie-nyons/" in url:
             result["dechetTables"] = source.count('<table class="dechet-table">') == 4
             result["dechetMobileTables"] = ".dechet-table-wrap" in source and "overflow-x:auto" in source
+        if "/infos-pratiques-nyons/apa-nyons/" in url:
+            result["apaTables"] = source.count('<table class="apa-table">') == 4
+            result["apaMobileTables"] = ".apa-table-wrap" in source and "overflow-x:auto" in source
         page = Page()
         page.feed(source)
         result.update({"canonicals": page.canonicals, "robots": page.robots, "metaRefresh": page.refresh})
@@ -346,7 +349,7 @@ def check(url):
 for attempt in range(12):
     ready_article = check("https://www.vivreanyons.fr/infos-pratiques-nyons/apa-nyons/")
     ready_home = check("https://www.vivreanyons.fr/")
-    if ready_article.get("apaDate") and ready_home.get("latestAPAArticle"):
+    if ready_article.get("apaDate") and ready_article.get("apaTables") and ready_home.get("latestAPAArticle"):
         break
     print("Waiting for the published APA article and homepage:", attempt + 1, flush=True)
     time.sleep(10)
