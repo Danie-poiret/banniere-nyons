@@ -9,6 +9,24 @@ from urllib.request import Request, HTTPRedirectHandler, build_opener
 from urllib.error import HTTPError
 
 URLS = [
+"https://www.vivreanyons.fr/que-faire-nyons/nyons-quand-il-pleut/",
+"https://www.vivreanyons.fr/vivreanyons-test/que-faire-nyons/nyons-quand-il-pleut/",
+"https://www.vivreanyons.fr/banniere-nyons/vivreanyons-test/que-faire-nyons/nyons-quand-il-pleut/",
+"https://www.vivreanyons.fr/assets/photos/de6357bb977d31437ff7.webp",
+"https://www.vivreanyons.fr/que-faire-nyons/Vignolis-Nyons/",
+"https://www.vivreanyons.fr/infos-pratiques-nyons/cinema-nyons/",
+"https://www.vivreanyons.fr/infos-pratiques-nyons/mediatheque-nyons/",
+"https://www.vivreanyons.fr/que-faire-nyons/Scourtinerie-de-Nyons/",
+"https://www.vivreanyons.fr/que-faire-nyons/Distillerie-Bleu-Provence-Nyons/",
+"https://www.vivreanyons.fr/que-faire-nyons/les-vieux-moulins/",
+"https://www.vivreanyons.fr/que-faire-nyons/Vinaigrerie-La-Para/",
+"https://www.vivreanyons.fr/que-faire-nyons/savonnerie-de-nyons/",
+"https://www.vivreanyons.fr/que-faire-nyons/Musee-Archeologie-Nyons/",
+"https://www.vivreanyons.fr/que-faire-nyons/nyons-avec-des-enfants/",
+"https://www.vivreanyons.fr/que-faire-nyons/Place-des-Arcades-Nyons/",
+"https://www.vivreanyons.fr/meteo-nyons/",
+"https://www.vivreanyons.fr/que-faire-nyons/visiter-nyons/",
+
 "https://www.vivreanyons.fr/que-faire-nyons/nyons-avec-des-enfants/",
 "https://www.vivreanyons.fr/vivreanyons-test/que-faire-nyons/nyons-avec-des-enfants/",
 "https://www.vivreanyons.fr/banniere-nyons/vivreanyons-test/que-faire-nyons/nyons-avec-des-enfants/",
@@ -276,6 +294,36 @@ def check(url):
             result["marketsOriginalPublicationDate"] = '"datePublished": "2026-10-06"' in source
             result["marketsUpdatedDate"] = '"dateModified": "2026-10-08"' in source
             result["marketsOriginalValreasSummary"] = 'id="valreas-en-detail"' in source
+        if "/que-faire-nyons/nyons-quand-il-pleut/" in url:
+            result["rainUpdated"] = 'data-rain-updated="2026-10-08"' in source
+            result["rainTitle"] = "Nyons quand il pleut : activités, visites et sorties à faire à l’abri" in source
+            result["rainDescription"] = "Que faire à Nyons quand il pleut ? Musées, cinéma, médiathèque, artisanat, activités avec les enfants et excursions autour de Nyons." in source
+            result["rainActivities8"] = source.count('class="rain-stop"') == 8 and "8. Faire une halte à la Savonnerie de Nyons" in source
+            result["rainTables3"] = source.count('<table class="rain-table">') == 3
+            result["rainResponsiveTables"] = "max-width:100%;overflow-x:auto" in source and 'tabindex="0"' in source
+            result["rainPhotoPreserved"] = "/assets/photos/de6357bb977d31437ff7.webp" in source and 'width="472" height="478"' in source
+            result["rainVideosPreserved"] = all(video in source for video in ['data-src="https://www.youtube-nocookie.com/embed/fRKHadeEGeg"', 'data-src="https://www.youtube-nocookie.com/embed/nzlNSiHUvm4"']) and source.count('data-privacy-placeholder="videos"') == 2
+            result["rainFAQ8"] = source.count('class="qa"') == 8 and "Questions / réponses" in source
+            result["rainExistingFAQPreserved"] = all(q in source for q in ["Que faire à Nyons quand il pleut ?", "Le Musée de l’Olivier est-il gratuit ?", "Comment connaître les séances de cinéma à Nyons aujourd’hui ?"])
+            result["rainSchema"] = '"@type":"Article"' in source and '"@type":"FAQPage"' in source and '"numberOfItems":8' in source
+            result["rainMuseumClosureQualified"] = "fermé temporairement" in source and "confirmation de réouverture" in source
+            result["rainWorkshopQualified"] = "Les ateliers ne se déroulent pas tous à l’intérieur" in source and "6–12 ans sur une terrasse" in source
+            result["rainScourtinerieQualified"] = "participation libre avec montant conseillé" in source
+            result["rainLaParaCurrentContact"] = all(t in source for t in ["40 promenade de la Digue", "11 h, du lundi au vendredi", 'href="tel:+33475261299"'])
+            result["rainMediatheque"] = "9 rue Albin-Vilhet" in source and 'href="tel:+33475264826"' in source
+            result["rainNoInventedPublicationDate"] = "datePublished" not in source and '"dateModified":"2026-10-08"' in source
+            result["rainUsefulSections"] = all(t in source for t in ["Que faire à Nyons avec des enfants quand il pleut ?", "Que faire gratuitement à Nyons par mauvais temps ?", "Que faire autour de Nyons quand il pleut ?", "Que faire à Nyons aujourd’hui ou ce week-end sous la pluie ?"])
+            result["rainOldClaimsRemoved"] = all(t not in source for t in ["Rare ...... Nyons sous pluie", "tout est couvert", "sans sortir le parapluie", "J’y vis, je connais mes refuges", "≤ 45 min", "on touche des outils"])
+            result["rainAccessQualified"] = "Ce n’est pas un parcours entièrement couvert" in source and "la montée et certains accès sont extérieurs" in source and "Les déplacements entre les espaces du parc sont extérieurs" in source
+            result["rainSources"] = "Sources et liens utiles" in source and "le-musee-de-la-scourtinerie-se-reinvente" in source and "www.lapara.fr/contactez-nous" in source
+            result["rainReaderQuestions"] = "Quelle est votre sortie préférée à Nyons quand il pleut ?" in source
+            headings = re.findall(r"<h2[^>]*>(.*?)</h2>", source, re.S)
+            result["rainNoDuplicateHeadings"] = len(headings) == len(set(headings))
+            article = re.search(r'<article class="feature-story"[^>]*>(.*?)</article>', source, re.S).group(1)
+            internal_links = re.findall(r'href="(/[^"]+)"', article)
+            result["rainUniqueBodyLinks"] = len(internal_links) == len(set(internal_links))
+        if url.endswith("/que-faire-nyons/") or url.endswith("/toutes-les-pages/"):
+            result["rainCardUpdated"] = "Nyons quand il pleut : activités, visites et sorties à faire à l’abri" in source and "Que faire à Nyons quand il pleut ? Musées, cinéma, médiathèque, artisanat, activités avec les enfants et excursions autour de Nyons." in source
         if "/que-faire-nyons/nyons-avec-des-enfants/" in url:
             result["familyUpdated"] = 'data-family-updated="2026-10-08"' in source
             result["familyTitle"] = "Nyons avec des enfants : 15 activités et sorties à faire en famille" in source
@@ -615,11 +663,11 @@ def check(url):
     return result
 
 for attempt in range(12):
-    ready_article = check("https://www.vivreanyons.fr/que-faire-nyons/nyons-avec-des-enfants/")
+    ready_article = check("https://www.vivreanyons.fr/que-faire-nyons/nyons-quand-il-pleut/")
     ready_home = check("https://www.vivreanyons.fr/")
-    if ready_article.get("familyUpdated") and ready_article.get("familyFAQ8") and ready_home.get("latestTeleArticle"):
+    if ready_article.get("rainUpdated") and ready_article.get("rainFAQ8") and ready_home.get("latestTeleArticle"):
         break
-    print("Waiting for the updated family article and preserved homepage:", attempt + 1, flush=True)
+    print("Waiting for the updated rainy-day article and preserved homepage:", attempt + 1, flush=True)
     time.sleep(10)
 
 with ThreadPoolExecutor(max_workers=4) as pool:
