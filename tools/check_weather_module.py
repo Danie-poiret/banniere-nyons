@@ -34,7 +34,7 @@ for prefix in ("", "/vivreanyons-test", "/banniere-nyons/vivreanyons-test"):
     source = read(BASE + prefix + "/")
     assert source.count("data-nyons-weather") == 1
     assert 'data-latest-article="/infos-pratiques-nyons/marche-vaison-la-romaine/"' in source
-    assert "meteo-nyons.css" in read(BASE + prefix + "/assets/meteo-nyons.css") or "nyons-weather" in read(BASE + prefix + "/assets/meteo-nyons.css")
+    assert "nyons-weather" in read(BASE + prefix + "/assets/meteo-nyons.css")
     assert "Europe/Paris" in read(BASE + prefix + "/assets/meteo-nyons.js")
     assert json.loads(read(BASE + prefix + "/assets/meteo-nyons.json"))["provider"] == "MET Norway"
 print("Météo publique : trois accueils, styles, scripts et prévisions accessibles.", flush=True)
@@ -48,6 +48,9 @@ with sync_playwright() as p:
     page.goto(BASE + "/#meteo-nyons", wait_until="domcontentloaded")
     module = page.locator("[data-nyons-weather]")
     page.wait_for_selector('[data-weather-state="ready"]', timeout=25000)
+    refuse = page.get_by_role("button", name="Refuser", exact=True)
+    if refuse.count() and refuse.first.is_visible():
+        refuse.first.click()
     assert module.locator(".weather-day").count() == 5
     assert "°C" in module.locator("[data-weather-temp]").inner_text()
     current = min(forecast["timeseries"], key=lambda point: abs(datetime.fromisoformat(point["time"].replace("Z","+00:00")).timestamp()-time.time()))
@@ -73,7 +76,7 @@ with sync_playwright() as p:
                 box = element.bounding_box()
                 assert box["x"] >= bounds["x"]-1 and box["x"]+box["width"] <= bounds["x"]+bounds["width"]+1, (width,selector,box)
         if width in (1280,390):
-            screenshot = module.screenshot(type="jpeg", quality=65)
+            screenshot = module.screenshot(type="jpeg", quality=65, style="header { visibility: hidden !important; }")
             images.append({"width":width,"base64":base64.b64encode(screenshot).decode("ascii")})
     assert not any("api.met.no" in url or "api.open-meteo" in url for url in weather_requests)
 
