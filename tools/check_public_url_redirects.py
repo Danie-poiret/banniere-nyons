@@ -9,6 +9,28 @@ from urllib.request import Request, HTTPRedirectHandler, build_opener
 from urllib.error import HTTPError
 
 URLS = [
+"https://www.vivreanyons.fr/que-faire-nyons/nyons-avec-des-enfants/",
+"https://www.vivreanyons.fr/vivreanyons-test/que-faire-nyons/nyons-avec-des-enfants/",
+"https://www.vivreanyons.fr/banniere-nyons/vivreanyons-test/que-faire-nyons/nyons-avec-des-enfants/",
+"https://www.vivreanyons.fr/assets/photos/1e06ee9c609f818f8145.webp",
+"https://www.vivreanyons.fr/infos-pratiques-nyons/Ouverture-Nyonsoleiado-2026/",
+"https://www.vivreanyons.fr/que-faire-nyons/promenade-de-la-digue-nyons/",
+"https://www.vivreanyons.fr/que-faire-nyons/Jardin-des-Aromes/",
+"https://www.vivreanyons.fr/que-faire-nyons/Pont-Roman-de-Nyons/",
+"https://www.vivreanyons.fr/que-faire-nyons/Tour-Randonne/",
+"https://www.vivreanyons.fr/que-faire-nyons/le-sentier-des-oliviers-nyons/",
+"https://www.vivreanyons.fr/que-faire-nyons/Vignolis-Nyons/",
+"https://www.vivreanyons.fr/que-faire-nyons/Scourtinerie-de-Nyons/",
+"https://www.vivreanyons.fr/que-faire-nyons/Distillerie-Bleu-Provence-Nyons/",
+"https://www.vivreanyons.fr/infos-pratiques-nyons/cinema-nyons/",
+"https://www.vivreanyons.fr/que-faire-nyons/les-barons-perches/",
+"https://www.vivreanyons.fr/meteo-nyons/",
+"https://www.vivreanyons.fr/que-faire-nyons/que-faire-a-nyons-ce-week-end/",
+"https://www.vivreanyons.fr/que-faire-nyons/Marche-de-Nyons/",
+"https://www.vivreanyons.fr/infos-pratiques-nyons/marche-vaison-la-romaine/",
+"https://www.vivreanyons.fr/a-faire-autour-de-Nyons/",
+"https://www.vivreanyons.fr/que-faire-nyons/visiter-nyons/",
+
 "https://www.vivreanyons.fr/que-faire-nyons/visiter-nyons/",
 "https://www.vivreanyons.fr/vivreanyons-test/que-faire-nyons/visiter-nyons/",
 "https://www.vivreanyons.fr/banniere-nyons/vivreanyons-test/que-faire-nyons/visiter-nyons/",
@@ -254,6 +276,35 @@ def check(url):
             result["marketsOriginalPublicationDate"] = '"datePublished": "2026-10-06"' in source
             result["marketsUpdatedDate"] = '"dateModified": "2026-10-08"' in source
             result["marketsOriginalValreasSummary"] = 'id="valreas-en-detail"' in source
+        if "/que-faire-nyons/nyons-avec-des-enfants/" in url:
+            result["familyUpdated"] = 'data-family-updated="2026-10-08"' in source
+            result["familyTitle"] = "Nyons avec des enfants : 15 activités et sorties à faire en famille" in source
+            result["familyDescription"] = "Que faire à Nyons avec des enfants ? 15 idées en famille : jeux, Digue, baignade, balades, ateliers, sorties gratuites, ados et activités quand il pleut." in source
+            result["familyStops15"] = source.count('class="family-stop"') == 15 and "15. Grimper aux Barons Perchés" in source
+            result["familyTables3"] = source.count('<table class="family-table">') == 3
+            result["familyResponsiveTables"] = "max-width:100%;overflow-x:auto" in source and 'tabindex="0"' in source
+            result["familyPhotoPreserved"] = "/assets/photos/1e06ee9c609f818f8145.webp" in source and 'width="407" height="559"' in source
+            result["familyVideosPreserved"] = all(video in source for video in ['data-src="https://www.youtube-nocookie.com/embed/Fz4pHMuLDu8"', 'data-src="https://www.youtube-nocookie.com/embed/TXxSv3BW2DU"', 'data-src="https://www.youtube-nocookie.com/embed/zfs-zv9wR74"']) and source.count('data-privacy-placeholder="videos"') == 3
+            result["familyFAQ8"] = source.count('class="qa"') == 8 and "Questions / réponses" in source
+            result["familyExistingFAQPreserved"] = all(q in source for q in ["Que faire à Nyons avec des enfants ?", "Le parc aquatique de Nyons propose-t-il des espaces pour les petits ?"])
+            result["familySchema"] = '"@type":"Article"' in source and '"@type":"FAQPage"' in source and '"numberOfItems":15' in source
+            result["familySeasonalQualified"] = "ces dates ne valent pas pour les saisons suivantes" in source and "23 mai au 30 août" in source
+            result["familyAgeInfoVerified"] = all(t in source for t in ["<strong>3–6 ans</strong>", "<strong>6–12 ans</strong>", "<strong>11–17 ans</strong>", "465 chemin des Guards", "1 avenue de Verdun", "06 07 90 37 76"])
+            result["familyGameFree"] = "jeu de piste gratuit pour les 4–12 ans" in source
+            result["familyWorkshopAge"] = "atelier de fabrication de savon annoncé pour les <strong>6–12 ans</strong>" in source
+            result["familyNoInventedPublicationDate"] = "datePublished" not in source and '"dateModified":"2026-10-08"' in source
+            result["familyUsefulSections"] = all(t in source for t in ["Quelles activités pour les ados à Nyons ?", "Que faire à Nyons avec des enfants quand il pleut ?", "Quelles activités gratuites faire avec des enfants à Nyons ?", "Que faire autour de Nyons avec des enfants ?", "Centres de loisirs à Nyons"])
+            result["familyIncorrectInfoRemoved"] = all(t not in source for t in ["plus de deux cents", "Tour-Randonne-Nyons/", "Contenu repris du site complet"])
+            result["familySources"] = "Sources et liens utiles" in source and "accueils-de-loisirs-3-6-ans" in source and "jeu-de-piste-balade-ludique" in source
+            result["familyReaderQuestions"] = "Quelle sortie plaît le plus à vos enfants à Nyons ?" in source
+            result["familyBathingQualified"] = "Les berges de l’Eygues ne constituent pas une baignade surveillée" in source
+            headings = re.findall(r"<h2[^>]*>(.*?)</h2>", source, re.S)
+            result["familyNoDuplicateHeadings"] = len(headings) == len(set(headings))
+            article = re.search(r'<article class="feature-story"[^>]*>(.*?)</article>', source, re.S).group(1)
+            internal_links = re.findall(r'href="(/[^"]+)"', article)
+            result["familyUniqueBodyLinks"] = len(internal_links) == len(set(internal_links))
+        if url.endswith("/que-faire-nyons/") or url.endswith("/toutes-les-pages/"):
+            result["familyCardUpdated"] = "Nyons avec des enfants : 15 activités et sorties à faire en famille" in source and "Que faire à Nyons avec des enfants ? 15 idées en famille : jeux, Digue, baignade, balades, ateliers, sorties gratuites, ados et activités quand il pleut." in source
         if "/que-faire-nyons/visiter-nyons/" in url:
             result["visiterUpdated"] = 'data-visiter-updated="2026-10-08"' in source
             result["visiterTitle"] = "Que faire à Nyons ? Top 15 des lieux, balades et activités à ne pas manquer" in source
@@ -564,11 +615,11 @@ def check(url):
     return result
 
 for attempt in range(12):
-    ready_article = check("https://www.vivreanyons.fr/que-faire-nyons/visiter-nyons/")
+    ready_article = check("https://www.vivreanyons.fr/que-faire-nyons/nyons-avec-des-enfants/")
     ready_home = check("https://www.vivreanyons.fr/")
-    if ready_article.get("visiterUpdated") and ready_article.get("visiterFAQ8") and ready_home.get("latestTeleArticle"):
+    if ready_article.get("familyUpdated") and ready_article.get("familyFAQ8") and ready_home.get("latestTeleArticle"):
         break
-    print("Waiting for the updated Nyons Top 15 and preserved homepage:", attempt + 1, flush=True)
+    print("Waiting for the updated family article and preserved homepage:", attempt + 1, flush=True)
     time.sleep(10)
 
 with ThreadPoolExecutor(max_workers=4) as pool:
