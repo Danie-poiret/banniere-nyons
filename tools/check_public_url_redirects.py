@@ -9,6 +9,15 @@ from urllib.request import Request, HTTPRedirectHandler, build_opener
 from urllib.error import HTTPError
 
 URLS = [
+"https://www.vivreanyons.fr/que-faire-nyons/promenade-de-la-digue-nyons/",
+"https://www.vivreanyons.fr/assets/photos/894fb5e0cf722fa9c603.webp",
+"https://www.vivreanyons.fr/que-faire-nyons/",
+"https://www.vivreanyons.fr/vivreanyons-test/que-faire-nyons/promenade-de-la-digue-nyons/",
+"https://www.vivreanyons.fr/vivreanyons-test/assets/photos/894fb5e0cf722fa9c603.webp",
+"https://www.vivreanyons.fr/vivreanyons-test/que-faire-nyons/",
+"https://www.vivreanyons.fr/banniere-nyons/vivreanyons-test/que-faire-nyons/promenade-de-la-digue-nyons/",
+"https://www.vivreanyons.fr/banniere-nyons/vivreanyons-test/assets/photos/894fb5e0cf722fa9c603.webp",
+"https://www.vivreanyons.fr/banniere-nyons/vivreanyons-test/que-faire-nyons/",
 "https://www.vivreanyons.fr/sante-nyons/teleassistance-nyons/",
 "https://www.vivreanyons.fr/assets/photos/teleassistance-nyons/bouton-bracelet.png",
 "https://www.vivreanyons.fr/assets/photos/teleassistance-nyons/montre-sos.png",
@@ -216,6 +225,25 @@ def check(url):
             result["marketsOriginalPublicationDate"] = '"datePublished": "2026-10-06"' in source
             result["marketsUpdatedDate"] = '"dateModified": "2026-10-08"' in source
             result["marketsOriginalValreasSummary"] = 'id="valreas-en-detail"' in source
+        if "/que-faire-nyons/promenade-de-la-digue-nyons/" in url:
+            result["digueUpdated"] = 'data-digue-updated="2026-10-08"' in source
+            result["digueTitle"] = "Promenade de la Digue à Nyons : balade facile en famille au bord de l’Eygues" in source
+            result["diguePhotoPreserved"] = '/assets/photos/894fb5e0cf722fa9c603.webp' in source and 'width="416" height="234"' in source
+            result["digueVideoPreserved"] = 'data-src="https://www.youtube-nocookie.com/embed/0xqG1XybPvI"' in source and 'data-privacy-category="videos"' in source and 'data-privacy-placeholder="videos"' in source
+            result["digueOldTextRemoved"] = not any(text in source for text in ["Mamie y va en claquettes", "3 minutes chrono", "J’y ai vu une bande de jeunes", "C’est le genre de balade qu’on fait en mode cool"])
+            result["digueEquipment"] = all(text in source for text in ["24 mètres sur 12", "square du 18 Juin", "1983", "plus de 180 espèces", "1990", "128 promenade de la Digue"])
+            result["digueParking"] = "45 places" in source and "18 emplacements" in source and "mentionne 22" in source and "capacité est donc à confirmer" in source
+            result["digueAccessibilityQualified"] = "varier selon le tronçon" in source and "garantie d’accessibilité" in source
+            result["digueFAQ"] = source.count('class="qa"') == 7 and "Questions / réponses" in source
+            result["digueExistingFAQPreserved"] = "Que peut-on voir près de la promenade de la Digue à Nyons ?" in source
+            result["digueFAQSchema"] = '"@type":"FAQPage"' in source
+            result["digueReaderQuestions"] = all(text in source for text in ["Vous vous promenez souvent sur la Digue ?", "Et quelle autre petite balade facile"])
+            result["digueSources"] = "Sources et liens utiles" in source and "dossier-de-plu-approuve" in source and "equipements-sportifs" in source
+            result["digueNoInventedPublicationDate"] = "datePublished" not in source and '"dateModified":"2026-10-08"' in source
+            headings = re.findall(r"<h2[^>]*>(.*?)</h2>", source, re.S)
+            result["digueNoDuplicateHeadings"] = len(headings) == len(set(headings))
+        if url.endswith("/que-faire-nyons/") or url.endswith("/toutes-les-pages/"):
+            result["digueCardUpdated"] = "Promenade de la Digue à Nyons : balade facile en famille au bord de l’Eygues" in source
         if "/sante-nyons/teleassistance-nyons/" in url:
             result["teleTables"] = source.count('<table class="tele-table">') == 4
             result["teleResponsive"] = "overflow-x:auto" in source and "max-width:100%" in source
@@ -482,11 +510,11 @@ def check(url):
     return result
 
 for attempt in range(12):
-    ready_article = check("https://www.vivreanyons.fr/sante-nyons/teleassistance-nyons/")
+    ready_article = check("https://www.vivreanyons.fr/que-faire-nyons/promenade-de-la-digue-nyons/")
     ready_home = check("https://www.vivreanyons.fr/")
-    if ready_article.get("teleDate") and ready_article.get("teleTables") and ready_home.get("latestTeleArticle"):
+    if ready_article.get("digueUpdated") and ready_article.get("digueFAQ") and ready_home.get("latestTeleArticle"):
         break
-    print("Waiting for the published teleassistance article and homepage:", attempt + 1, flush=True)
+    print("Waiting for the updated Digue article and preserved homepage:", attempt + 1, flush=True)
     time.sleep(10)
 
 with ThreadPoolExecutor(max_workers=4) as pool:
