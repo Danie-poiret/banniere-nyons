@@ -196,7 +196,10 @@ def check(url):
         if "/infos-pratiques-nyons/marches-autour-nyons-50-km/" in url:
             result["marketsVaisonSummary"] = 'id="vaison-en-detail"' in source and "450 exposants" in source
             result["marketsVaisonLink"] = bool(re.search(r'<a href="[^"]*/infos-pratiques-nyons/marche-vaison-la-romaine/">Découvrir le marché de Vaison-la-Romaine', source))
-            result["marketsVaisonSingleLink"] = len(re.findall(r'href="[^"]*/infos-pratiques-nyons/marche-vaison-la-romaine/"', source)) == 1
+            result["marketsVaisonLinkCount"] = len(re.findall(r'href="[^"]*/infos-pratiques-nyons/marche-vaison-la-romaine/"', source))
+            vaison_rows = [row for row in re.findall(r"<tr\b[^>]*>.*?</tr>", source, re.S) if '<th scope="row">Vaison-la-Romaine<' in row]
+            result["marketsVaisonRowLinks"] = len(vaison_rows) == 2 and all(re.search(r'<a class="market-source" href="[^"]*/infos-pratiques-nyons/marche-vaison-la-romaine/">Renseignements', row) for row in vaison_rows)
+            result["marketsVaisonTripLinks"] = len(vaison_rows) == 2 and all('https://www.bonnesroutes.com/distance/nyons/vaison-la-romaine/' in row for row in vaison_rows)
             result["marketsVaisonHours"] = "<strong>8 h 30–13 h</strong>" in source
             result["marketsOriginalPublicationDate"] = '"datePublished": "2026-10-06"' in source
             result["marketsUpdatedDate"] = '"dateModified": "2026-10-08"' in source
@@ -443,7 +446,7 @@ for attempt in range(12):
     ready_article = check("https://www.vivreanyons.fr/infos-pratiques-nyons/marche-vaison-la-romaine/")
     ready_home = check("https://www.vivreanyons.fr/")
     ready_markets = check("https://www.vivreanyons.fr/infos-pratiques-nyons/marches-autour-nyons-50-km/")
-    if ready_article.get("vaisonDate") and ready_article.get("vaisonTables") and ready_home.get("latestVaisonArticle") and ready_markets.get("marketsVaisonSummary"):
+    if ready_article.get("vaisonDate") and ready_article.get("vaisonTables") and ready_home.get("latestVaisonArticle") and ready_markets.get("marketsVaisonRowLinks"):
         break
     print("Waiting for the published Vaison market article and homepage:", attempt + 1, flush=True)
     time.sleep(10)
