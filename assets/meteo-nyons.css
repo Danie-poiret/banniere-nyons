@@ -1,0 +1,34 @@
+/* Météo Nyons : styles limités au module. */
+.nyons-weather{min-width:0;scroll-margin-top:160px;margin:0 0 34px;padding:26px;background:var(--paper,#fffdf8);border:1px solid var(--line,#e3dccd);border-top:4px solid #687452;border-radius:18px;box-shadow:var(--shadow,0 14px 34px #34392b1a)}
+.nyons-weather [hidden]{display:none!important}
+.weather-heading{display:flex;align-items:center;justify-content:space-between;gap:20px}
+.weather-heading h2{margin:5px 0;font-size:clamp(1.5rem,3vw,2rem);line-height:1.2;color:var(--olive,#39452d)}
+.weather-refresh{font:inherit;font-weight:750;min-height:44px;padding:9px 15px;border:1px solid #abb89a;border-radius:9px;color:#39452d;background:#f0f4e9;cursor:pointer}
+.weather-refresh:disabled{opacity:.65;cursor:wait}
+.nyons-weather a:focus-visible,.weather-refresh:focus-visible{outline:3px solid #b8613f;outline-offset:4px}
+.weather-status{margin:8px 0 20px;font-size:.9rem;color:#596451;min-height:1.5em}
+.weather-now{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:22px;align-items:center;padding:22px 24px;background:linear-gradient(115deg,#394b32,#61734d);color:#fffdf8;border-radius:14px}
+.weather-current-main{display:flex;gap:18px;align-items:center}
+.weather-current-icon{font-size:3rem;line-height:1}
+.weather-temp{font-size:clamp(2.4rem,5vw,3.6rem);font-weight:800;letter-spacing:-.04em;line-height:1.2}
+.weather-condition{font-size:1.05rem;font-weight:650;margin:4px 0}
+.weather-hour{font-size:.85rem;margin:4px 0;opacity:.92}
+.weather-details{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin:0}
+.weather-details div{min-width:0}
+.weather-details dt{font-size:.8rem;color:#f0eadc}
+.weather-details dd{font-size:1rem;font-weight:750;margin:0}
+.weather-days-heading{font-size:1.08rem;color:#39452d;margin:23px 0 12px}
+.weather-days{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:12px;padding:0;margin:0;list-style:none}
+.weather-day{min-width:0;padding:16px 10px;background:#f3f5ed;border:1px solid #dce2d1;border-radius:12px;text-align:center}
+.weather-day time{display:block;font-weight:800;font-size:.92rem}
+.weather-day-icon{display:block;font-size:1.9rem;line-height:1.3;margin:9px 0 6px}
+.weather-day-condition{min-height:2.8em;font-size:.85rem;line-height:1.4;display:block}
+.weather-range{display:block;margin:9px 0 0;font-size:1rem;color:#39452d;font-weight:750}
+.weather-wind{display:block;color:#596451;font-size:.8rem;margin-top:5px}
+.weather-footnote{font-size:.8rem;color:#596451;margin:12px 0 0;line-height:1.5}
+.weather-footer{display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;border-top:1px solid #e3dccd;margin-top:20px;padding-top:14px;font-size:.83rem}
+.weather-links{display:flex;flex-wrap:wrap;gap:10px 20px}
+.weather-credit{margin:0;color:#596451}
+.weather-credit a{color:inherit}
+@media(max-width:750px){.weather-days{grid-template-columns:repeat(3,minmax(0,1fr))}.weather-now{grid-template-columns:1fr}}
+@media(max-width:450px){.nyons-weather{padding:18px;scroll-margin-top:230px}.weather-heading{gap:10px;align-items:flex-start}.weather-refresh{padding:8px 10px;font-size:.88rem}.weather-now{padding:18px;gap:18px}.weather-current-main{gap:12px}.weather-current-icon{font-size:2.5rem}.weather-days{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.weather-day{padding:14px 10px}.weather-footer{gap:12px}}

@@ -1,0 +1,59 @@
+name: Actualiser et vérifier la météo de Nyons
+on:
+  push:
+    paths:
+      - assets/meteo-nyons.js
+      - assets/meteo-nyons.css
+      - tools/update_weather_data.py
+      - tools/check_weather_module.py
+      - .github/workflows/weather-nyons.yml
+  schedule:
+    - cron: '17 * * * *'
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: nyons-weather-data
+  cancel-in-progress: false
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - name: Récupérer les prévisions partagées de Nyons
+        run: python tools/update_weather_data.py
+      - name: Publier les données actualisées
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add assets/meteo-nyons.json vivreanyons-test/assets/meteo-nyons.json banniere-nyons/vivreanyons-test/assets/meteo-nyons.json
+          if ! git diff --cached --quiet; then
+            git commit -m "Actualiser les prévisions météo de Nyons"
+            for attempt in 1 2 3; do
+              git pull --rebase origin main
+              if git push origin main; then exit 0; fi
+            done
+            exit 1
+          fi
+  verify:
+    if: github.event_name != 'schedule'
+    needs: refresh
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - name: Vérifier la syntaxe du module
+        run: node --check assets/meteo-nyons.js
+      - name: Installer le navigateur de vérification
+        run: |
+          python -m pip install --quiet playwright
+          python -m playwright install chromium
+      - name: Vérifier la météo publique et l'affichage mobile
+        run: python tools/check_weather_module.py
