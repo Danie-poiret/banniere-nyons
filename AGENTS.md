@@ -57,3 +57,12 @@ Dans la fiche de la Brasserie de la Place à Nyons, ne pas présenter « Café d
 Conserver un bloc « Questions / réponses » dans les fiches et nouveaux articles, avec des réponses pratiques correspondant aux informations vérifiées. Les questions adressées aux lecteurs peuvent rester en plus ; elles ne remplacent pas ce bloc. Ne pas supprimer les questions et réponses lors d’une mise à jour.
 
 Ajouter en fin de fiche une section « Sources et liens utiles ». Conserver les liens de discussion locale expressément fournis par l’utilisateur, en distinguant ces échanges des sources officielles pour les renseignements pratiques. Les noms des auteurs des commentaires n’ont pas à apparaître dans le texte de l’article.
+
+
+## Règle de variation des liens internes — 8 octobre 2026
+
+- Varier les textes cliquables d’une fiche à l’autre selon leur contexte. Ne pas reprendre systématiquement le nom seul d’une destination ou la même formulation.
+- Employer des ancres naturelles et descriptives intégrées à la phrase : par exemple « visiter le marché de Nyons », « flâner entre les étals du jeudi » ou « préparer une sortie au marché avec les enfants », selon le sujet de la fiche.
+- Cette règle vaut pour tous les liens du texte éditorial : patrimoine, balades, marchés, activités, météo et services. Elle ne demande pas de renommer les menus communs.
+- Choisir des destinations réellement utiles au sujet, varier les destinations lorsque cela apporte une information pertinente et conserver une seule occurrence par destination dans le corps de l’article. Ne pas ajouter un lien artificiel uniquement pour varier.
+- Conserver les URL canoniques : toutes les formulations concernant le marché de Nyons renvoient à /que-faire-nyons/Marche-de-Nyons/ (avec le préfixe adapté aux versions de test).
