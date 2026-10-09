@@ -44,8 +44,10 @@ def inspect(url):
             article=next(x for x in graph if x["@type"]=="Article")
             faq=next(x for x in graph if x["@type"]=="FAQPage")
             photos=[x for x in p.images if "/infirmiere-domicile-nyons/" in x.get("src","")]
-            result.update(faq_questions=len(faq["mainEntity"]),visible_answers=s.count("<details><summary>"),photos=len(photos),published=article["datePublished"],sunday_rule="un jour sur deux pendant quinze jours" in s,reader_questions='id="questions-aux-lecteurs"' in s,sources='id="sources-et-liens-utiles"' in s,source_count=12 if s.count('<ul class="nurse-sources">')==1 and s.split('<ul class="nurse-sources">')[1].split("</ul>")[0].count("<li>")==12 else 0)
-            result["ok"]=(status==200 and final==url and p.canonical==BASE+SLUG and p.robots==("noindex,nofollow" if prefix else "index,follow") and len(faq["mainEntity"])==8 and s.count("<details><summary>")==8 and len(photos)==3 and article["datePublished"]=="2026-10-09" and result["sunday_rule"] and result["reader_questions"] and result["sources"] and result["source_count"]==12)
+            result.update(faq_questions=len(faq["mainEntity"]),visible_answers=s.count("<details><summary>"),photos=len(photos),published=article["datePublished"],sunday_rule="un jour sur deux pendant quinze jours" in s,reader_questions_removed='id="questions-aux-lecteurs"' not in s and "Avez-vous déjà eu besoin de soins infirmiers" not in s,sources='id="sources-et-liens-utiles"' in s,source_count=16 if s.count('<ul class="nurse-sources">')==1 and s.split('<ul class="nurse-sources">')[1].split("</ul>")[0].count("<li>")==16 else 0)
+            result["contact_frames"]=s.count('data-nurse-contact="')
+            result["contact_phones"]=all('href="tel:'+t+'"' in s for t in ["+33475266141","+33681650571","+33780456862","+33475270264","+33475262186"])
+            result["ok"]=(result["contact_frames"]==5 and result["contact_phones"] and status==200 and final==url and p.canonical==BASE+SLUG and p.robots==("noindex,nofollow" if prefix else "index,follow") and len(faq["mainEntity"])==8 and s.count("<details><summary>")==8 and len(photos)==3 and article["datePublished"]=="2026-10-09" and result["sunday_rule"] and result["reader_questions_removed"] and result["sources"] and result["source_count"]==16)
         elif url==BASE+prefix:
             match=re.search(r'<section class="new-article"[\s\S]*?</section>',s)
             card=match.group(0) if match else ""
