@@ -1,0 +1,73 @@
+{
+  "date": "2026-10-09",
+  "request": "Retirer les questions aux lecteurs ; ajouter des cadres et cinq infirmières à Nyons.",
+  "contacts": [
+    {
+      "name": "Amandine Gobin",
+      "address": "16 avenue de Verdun, 26110 Nyons",
+      "phone": "04 75 26 61 41",
+      "tel": "+33475266141",
+      "source": "https://www.pagesjaunes.fr/pros/60333302",
+      "note": "Coordonnées du cabinet affichées dans l’annuaire professionnel."
+    },
+    {
+      "name": "Armelle Comte",
+      "address": "La Palmeraie 3, 73 avenue Henri Rochier, 26110 Nyons",
+      "phone": "06 81 65 05 71",
+      "tel": "+33681650571",
+      "source": "https://www.pagesjaunes.fr/pros/63203101",
+      "note": "Cabinet et soins à domicile référencés dans l’annuaire professionnel."
+    },
+    {
+      "name": "Céline Berthier",
+      "address": "24 avenue de Méchernich, 26110 Nyons",
+      "phone": "07 80 45 68 62",
+      "tel": "+33780456862",
+      "source": "https://www.pagesjaunes.fr/pros/62634485",
+      "note": "Soins à domicile mentionnés dans la fiche professionnelle."
+    },
+    {
+      "name": "Jodie Charlet",
+      "address": "4 avenue Jules Bernard, 26110 Nyons",
+      "phone": "04 75 27 02 64",
+      "tel": "+33475270264",
+      "source": "https://agenda.direct/rendez-vous/jodie-charlet/nyons/10106037111",
+      "note": "Coordonnées du cabinet reprises du Répertoire partagé des professionnels de santé."
+    },
+    {
+      "name": "Sandrine Heitz",
+      "address": "4 avenue Jules Bernard, 26110 Nyons",
+      "phone": "04 75 26 21 86",
+      "tel": "+33475262186",
+      "source": "https://www.bottin.fr/fiche-locale/geiihejgddiededcfbh--soins-infirmiers-heitz-sandrine-et-grange-emmanuele--nyons.htm",
+      "note": "Numéro du cabinet « Heitz Sandrine et Grange Emmanuele » indiqué dans l’annuaire."
+    }
+  ],
+  "checks": [
+    {
+      "path": "sante-nyons/infirmiere-domicile-nyons/index.html",
+      "contacts": 5,
+      "reader_questions_removed": true,
+      "faq_retained": 8,
+      "photos_unchanged": true,
+      "header_footer_unchanged": true
+    },
+    {
+      "path": "vivreanyons-test/sante-nyons/infirmiere-domicile-nyons/index.html",
+      "contacts": 5,
+      "reader_questions_removed": true,
+      "faq_retained": 8,
+      "photos_unchanged": true,
+      "header_footer_unchanged": true
+    },
+    {
+      "path": "banniere-nyons/vivreanyons-test/sante-nyons/infirmiere-domicile-nyons/index.html",
+      "contacts": 5,
+      "reader_questions_removed": true,
+      "faq_retained": 8,
+      "photos_unchanged": true,
+      "header_footer_unchanged": true
+    }
+  ],
+  "source_count": 16
+}
