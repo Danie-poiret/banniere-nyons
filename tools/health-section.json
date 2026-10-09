@@ -1,7 +1,7 @@
 {
   "categorySlug": "sante-nyons/",
   "title": "Santé à Nyons",
-  "date": "2026-10-08",
+  "date": "2026-10-09",
   "sections": [
     {
       "id": "soins",
@@ -52,6 +52,11 @@
           "sante-nyons/kinesitherapeute-nyons/",
           "Kinésithérapeute à Nyons : kiné à domicile, rendez-vous et rééducation",
           "Kiné à Nyons : cabinets, contacts, rendez-vous, soins à domicile, rééducation du genou et du dos, ordonnance, accès direct et remboursement."
+        ],
+        [
+          "sante-nyons/infirmiere-domicile-nyons/",
+          "Infirmière à domicile à Nyons : soins et remboursement",
+          "Infirmière à domicile à Nyons : prise de sang, pansements, injections, perfusions, ordonnance, remboursement et soins après hospitalisation."
         ]
       ]
     },
@@ -211,3 +216,4 @@
     }
   ]
 }
+

@@ -1,0 +1,67 @@
+{
+  "date": "2026-10-09",
+  "url": "https://www.vivreanyons.fr/sante-nyons/infirmiere-domicile-nyons/",
+  "title": "Infirmière à domicile à Nyons : prise de sang, pansements, injections et soins",
+  "health_fiches": 31,
+  "faq_questions": 8,
+  "documentary_sources": 12,
+  "photos": [
+    {
+      "name": "examen-au-stethoscope.png",
+      "width": 203,
+      "height": 203
+    },
+    {
+      "name": "mesure-tension-a-domicile.png",
+      "width": 165,
+      "height": 140
+    },
+    {
+      "name": "accompagnement-patiente-agee.png",
+      "width": 170,
+      "height": 168
+    }
+  ],
+  "checks": [
+    {
+      "prefix": "",
+      "html": true,
+      "canonical": true,
+      "faq": 8,
+      "photographs": 3,
+      "internal_links_unique": true,
+      "health_index": true,
+      "all_pages_index": true,
+      "homepage": true
+    },
+    {
+      "prefix": "vivreanyons-test/",
+      "html": true,
+      "canonical": true,
+      "faq": 8,
+      "photographs": 3,
+      "internal_links_unique": true,
+      "health_index": true,
+      "all_pages_index": true,
+      "homepage": true
+    },
+    {
+      "prefix": "banniere-nyons/vivreanyons-test/",
+      "html": true,
+      "canonical": true,
+      "faq": 8,
+      "photographs": 3,
+      "internal_links_unique": true,
+      "health_index": true,
+      "all_pages_index": true,
+      "homepage": true
+    }
+  ],
+  "medical_clarifications": [
+    "Circulaire CIR-30/2024 : majoration possible pour un pansement un jour sur deux tombant un dimanche.",
+    "Prélèvement veineux isolé au domicile : mention à domicile.",
+    "Franchise : 1 euro par acte paramédical, plafond journalier de 4 euros ; plafond annuel global de 70 euros selon ameli le 29 septembre 2026.",
+    "Certaines vaccinations sont prescrites par les infirmiers habilités ; disponibilité locale à confirmer."
+  ],
+  "unpublished_platform_content": "Les libellés Blogger et hashtags Facebook ne sont pas publiés dans l’article."
+}
