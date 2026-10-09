@@ -1,228 +1,69 @@
-"""Read-only verification of the walking guide, photographs and site links."""
+"""Read-only live verification for the Nyons home nursing article and original photos."""
 from concurrent.futures import ThreadPoolExecutor
 from urllib.request import Request, urlopen
 from html.parser import HTMLParser
-import json, re, time
-
-BASE = "https://www.vivreanyons.fr/"
-ARTICLE = BASE + "sante-nyons/ehpad-nyons/"
-URLS = [
-  "https://www.vivreanyons.fr/que-faire-nyons/nyons-que-voir/",
-  "https://www.vivreanyons.fr/que-faire-nyons/",
-  "https://www.vivreanyons.fr/toutes-les-pages/",
-  "https://www.vivreanyons.fr/vivreanyons-test/que-faire-nyons/nyons-que-voir/",
-  "https://www.vivreanyons.fr/vivreanyons-test/que-faire-nyons/",
-  "https://www.vivreanyons.fr/vivreanyons-test/toutes-les-pages/",
-  "https://www.vivreanyons.fr/banniere-nyons/vivreanyons-test/que-faire-nyons/nyons-que-voir/",
-  "https://www.vivreanyons.fr/banniere-nyons/vivreanyons-test/que-faire-nyons/",
-  "https://www.vivreanyons.fr/banniere-nyons/vivreanyons-test/toutes-les-pages/",
-  "https://www.vivreanyons.fr/assets/photos/fiche-1c9db50f3723389be9a7.webp",
-  "https://www.vivreanyons.fr/assets/photos/fiche-621940e755ac20550d07.webp",
-  "https://www.vivreanyons.fr/assets/photos/fiche-090b7caf502dee4f0511.webp",
-  "https://www.vivreanyons.fr/assets/photos/fiche-07b2405d2738fa1ef481.webp",
-  "https://www.vivreanyons.fr/assets/photos/fiche-373f26f2d1ce85a43fa8.webp",
-  "https://www.vivreanyons.fr/assets/photos/fiche-7c7eaaf55cbdb6074646.webp",
-  "https://www.vivreanyons.fr/assets/photos/fiche-72bef6a46a62ceb4d9ab.webp",
-  "https://www.vivreanyons.fr/assets/photos/fiche-7257130523891e0393b9.webp",
-  "https://www.vivreanyons.fr/assets/photos/fiche-e46a5982c7c34d83db62.webp",
-  "https://www.vivreanyons.fr/que-faire-nyons/Pont-Roman-de-Nyons/",
-  "https://www.vivreanyons.fr/que-faire-nyons/centre-historique-de-nyons/",
-  "https://www.vivreanyons.fr/que-faire-nyons/Place-des-Arcades-Nyons/",
-  "https://www.vivreanyons.fr/que-faire-nyons/Tour-Randonne/",
-  "https://www.vivreanyons.fr/que-faire-nyons/eglise-Saint-Vincent/",
-  "https://www.vivreanyons.fr/que-faire-nyons/promenade-de-la-digue-nyons/",
-  "https://www.vivreanyons.fr/que-faire-nyons/Jardin-des-Aromes/",
-  "https://www.vivreanyons.fr/que-faire-nyons/Marche-de-Nyons/",
-  "https://www.vivreanyons.fr/que-faire-nyons/Scourtinerie-de-Nyons/",
-  "https://www.vivreanyons.fr/que-faire-nyons/Vignolis-Nyons/",
-  "https://www.vivreanyons.fr/que-faire-nyons/les-vieux-moulins/",
-  "https://www.vivreanyons.fr/que-faire-nyons/Maison-des-Huiles-dolive/",
-  "https://www.vivreanyons.fr/que-faire-nyons/le-sentier-des-oliviers-nyons/",
-  "https://www.vivreanyons.fr/infos-pratiques-nyons/eygues-nyons/",
-  "https://www.vivreanyons.fr/produits-du-terroir/",
-  "https://www.vivreanyons.fr/que-faire-nyons/nyons-avec-des-enfants/",
-  "https://www.vivreanyons.fr/que-faire-nyons/nyons-quand-il-pleut/",
-  "https://www.vivreanyons.fr/a-faire-autour-de-Nyons/vinsobres/",
-  "https://www.vivreanyons.fr/a-faire-autour-de-Nyons/Mirabel-aux-Baronnies/",
-  "https://www.vivreanyons.fr/a-faire-autour-de-Nyons/pilles/",
-  "https://www.vivreanyons.fr/a-faire-autour-de-Nyons/",
-  "https://www.vivreanyons.fr/meteo-nyons/",
-  "https://www.vivreanyons.fr/"
-]
-TITLE = "Maison de retraite et EHPAD à Nyons : tarifs, places, Alzheimer et admission"
-class Page(HTMLParser):
-    def __init__(self):
-        super().__init__()
-        self.canonicals, self.robots, self.h1, self.images, self.scripts = [], [], 0, [], []
-    def handle_starttag(self, tag, attrs):
-        attrs = dict(attrs)
-        if tag == "h1": self.h1 += 1
-        if tag == "link" and attrs.get("rel") == "canonical": self.canonicals.append(attrs.get("href"))
-        if tag == "meta" and attrs.get("name") == "robots": self.robots.append(attrs.get("content"))
-        if tag == "img": self.images.append(attrs)
-        if tag == "script" and attrs.get("src"): self.scripts.append(attrs["src"])
-
-def check(url):
-    result = {"requested": url}
+import json, re, struct
+BASE="https://www.vivreanyons.fr/"
+SLUG="sante-nyons/infirmiere-domicile-nyons/"
+PREFIXES=["","vivreanyons-test/","banniere-nyons/vivreanyons-test/"]
+PHOTOS={"examen-au-stethoscope.png":(203,203),"mesure-tension-a-domicile.png":(165,140),"accompagnement-patiente-agee.png":(170,168)}
+URLS=[]
+for prefix in PREFIXES:
+    URLS += [BASE+prefix+SLUG, BASE+prefix, BASE+prefix+"sante-nyons/", BASE+prefix+"toutes-les-pages/"]
+    URLS += [BASE+prefix+"assets/photos/infirmiere-domicile-nyons/"+p for p in PHOTOS]
+class Parse(HTMLParser):
+    def __init__(self,s):
+        super().__init__(convert_charrefs=True); self.canonical=None; self.robots=None; self.images=[]; self.scripts=[]; self.capture=False; self.buf=[]; self.feed(s)
+    def handle_starttag(self,t,a):
+        a=dict(a)
+        if t=="link" and a.get("rel")=="canonical": self.canonical=a.get("href")
+        if t=="meta" and a.get("name")=="robots": self.robots=a.get("content")
+        if t=="img": self.images.append(a)
+        if t=="script" and a.get("type")=="application/ld+json": self.capture=True; self.buf=[]
+    def handle_data(self,s):
+        if self.capture: self.buf.append(s)
+    def handle_endtag(self,t):
+        if t=="script" and self.capture:
+            self.scripts.append(json.loads("".join(self.buf))); self.capture=False
+def inspect(url):
     try:
-        with urlopen(Request(url, headers={"User-Agent":"VivreAnyons-Publication-Verification/1.0"}), timeout=25) as response:
-            data = response.read(2000000)
-            result.update(status=response.status, final=response.geturl(), contentType=response.headers.get("Content-Type"))
-        if data[:8] == b"\x89PNG\r\n\x1a\n":
-            result.update(pngSignature=True, width=int.from_bytes(data[16:20],"big"), height=int.from_bytes(data[20:24],"big"))
-            expected = (462,446) if "jardin-et-batiment" in url else (312,210)
-            result["correctDimensions"] = (result["width"],result["height"]) == expected
+        with urlopen(Request(url,headers={"User-Agent":"VivreAnyons-publication-check/1.0","Cache-Control":"no-cache"}),timeout=25) as r:
+            data=r.read(2500000); status=r.status; final=r.url
+        result={"url":url,"status":status,"final_url":final}
+        if url.endswith(".png"):
+            name=url.rsplit("/",1)[-1]; signature=data[:8]==b"\x89PNG\r\n\x1a\n"
+            dims=struct.unpack(">II",data[16:24]) if signature else None
+            result.update(png=signature,dimensions=list(dims) if dims else None)
+            result["ok"]=status==200 and final==url and dims==PHOTOS[name]
             return result
-        if data[:4] == b"RIFF" and data[8:12] == b"WEBP":
-            result["webpSignature"] = True
-            result["imageNotEmpty"] = len(data) > 100
-            return result
-        source = data.decode("utf-8")
-        if url.endswith("/sitemap.xml"):
-            result["newArticleLast"] = re.findall(r"<loc>(.*?)</loc>", source)[-1] == ARTICLE
-            return result
-        page = Page()
-        page.feed(source)
-        result.update(canonical=page.canonicals,robots=page.robots)
-        if "/sante-nyons/ehpad-nyons/" in url:
-            graph = json.loads(re.search(r'<script type="application/ld\+json">(.*?)</script>',source,re.S).group(1))["@graph"]
-            article = next(g for g in graph if g["@type"]=="Article")
-            faq = next(g for g in graph if g["@type"]=="FAQPage")
-            result["correctTitle"] = "<h1>"+TITLE+"</h1>" in source and page.h1 == 1
-            result["tables5"] = source.count('<table class="ehpad-table">') == 5
-            result["faq8"] = source.count('<div class="qa">') == 8 and len(faq["mainEntity"]) == 8
-            result["publicationDate"] = article["datePublished"] == "2026-10-08" and article["dateModified"] == "2026-10-08"
-            result["photos2"] = sum("assets/photos/ehpad-nyons/" in i.get("src","") for i in page.images) == 2 and len(article["image"]) == 2
-            result["imageMetadata"] = all(i.get("width") and i.get("height") and i.get("alt") for i in page.images if "/ehpad-nyons/" in i.get("src",""))
-            result["responsiveTables"] = "max-width:100%;overflow-x:auto" in source and source.count('tabindex="0"') == 5 and ".feature-story{min-width:0}" in source
-            result["datedPrices"] = all(t in source for t in ["2 362,20 €","2 421,60 €","29 avril 2026","25 juin 2025","30 jours"])
-            result["ashTariffDifference"] = all(t in source for t in ["93,62 €/jour","89,92 €/jour","tarif hébergement ASH diffère"])
-            result["capacityQualified"] = "Ces indications ne concordent pas" in source and "76 places libres" in source
-            result["aidsQualified"] = "récupérée, notamment sur la succession" in source and "cumulées sous conditions" in source
-            result["residenceClosed"] = "fermé définitivement à la fin du mois de juin 2025" in source and 'id="residence-pousterle-fermee"' in source
-            result["activeEHPADSeparate"] = "L’EHPAD reste référencé dans le portail national" in source
-            result["escapadeMoved"] = '<th scope="row">Escapade, soutien aux aidants</th><td>Moun Oustaou, 6 rue Ferdinand Vigne</td>' in source and "située à La Pousterle" not in source
-            result["mounContact"] = 'href="tel:+33475266565"' in source and "centre de ressources territorial" in source
-            result["municipalObsolescence"] = "Cette partie est obsolète" in source and "comprend également, séparément" not in source
-            result["admission"] = "https://trajectoire.sante-ra.fr/" in source and "dossier national unique" in source
-            result["readerQuestions"] = 'id="lecteurs"' in source and "Questions aux lecteurs" in source
-            result["sources"] = "Sources et liens utiles" in source and "Informations vérifiées le 8 octobre 2026" in source
-            result["canonicalCorrect"] = page.canonicals == [ARTICLE]
-            mirror = "/vivreanyons-test/" in url
-            result["robotsCorrect"] = page.robots == (["noindex,nofollow"] if mirror else ["index,follow"])
-            prefix = "banniere-nyons/vivreanyons-test/" if "/banniere-nyons/" in url else ("vivreanyons-test/" if mirror else "")
-            result["imagePaths"] = all(i.get("src","").startswith("/"+prefix+"assets/photos/ehpad-nyons/") for i in page.images if "ehpad-nyons" in i.get("src",""))
-            result["sharedMenuAndScript"] = 'data-nyons-shortcut="hebergement"' in source and 'data-weather-nav="direct"' in source and any("google-analytics-20261008-v1" in s for s in page.scripts)
-        if "/infos-pratiques-nyons/plombier-nyons/" in url:
-            result["plombierUpdated"] = 'data-plomberie-updated="2026-10-08"' in source
-            result["plombierTitle"] = "<h1>Plombier à Nyons : dépannage, fuite d’eau, chauffe-eau et contacts</h1>" in source and page.h1 == 1
-            result["plombierDates"] = '"datePublished":"2026-10-04"' in source and '"dateModified":"2026-10-08"' in source
-            result["plombierTables5"] = source.count('<div class="plomberie-table" role="region"') == 5
-            result["plombierFAQ12"] = source.count('<div class="qa">') == 12
-            schemas = [json.loads(s) for s in re.findall(r'<script type="application/ld\+json">(.*?)</script>', source, re.S)]
-            faq = next(s for s in schemas if s.get("@type")=="FAQPage")
-            result["plombierSchema12"] = len(faq["mainEntity"]) == 12
-            result["plombierPhotosPreserved"] = all(p in source for p in ["plombier-nyons-meuble-sous-evier.webp","plombier-nyons-siphon-raccordements.webp","plombier-nyons-pose-robinetterie.webp"])
-            result["plombierDimensions"] = all(t in source for t in ['width="235" height="182"','width="145" height="137"','width="165" height="113"'])
-            result["plombierContacts"] = all(n in source for n in ["04 75 26 00 08","04 75 26 11 12","06 40 11 55 64","04 75 26 01 81","07 69 11 82 77","04 75 26 03 50","04 75 27 74 01"])
-            result["plombierCallLinks"] = all(n in source for n in ['href="tel:+33475260008"','href="tel:+33640115564"','href="tel:+33475277401"'])
-            result["plombierSafety"] = "ne manipule pas les appareils, prises ou câbles" in source and "zone humide" in source
-            result["plombierDevis"] = "avant intervention dès le premier euro" in source and "ce ne sont pas des tarifs moyens à Nyons" in source
-            result["plombierOldAdvice"] = all(t in source for t in ["Remplacer un meuble sous évier","Filtre, antitartre ou traitement de l’eau","Faure est apprécié pour son sérieux","Morin plaît pour son efficacité"])
-            result["plombierFAQPreserved"] = all(q in source for q in ["Quels avis retenir pour choisir un artisan ?","Que préparer avant de faire remplacer le meuble ?","Peut-on appeler une entreprise des communes voisines ?"])
-            result["plombierClean"] = "Texte collé" not in source and "Ta fiche précédente" not in source
-            result["plombierSources"] = "Sources et liens utiles" in source and "Questions aux lecteurs" in source
-            result["plombierCanonical"] = page.canonicals == [BASE+"infos-pratiques-nyons/plombier-nyons/"]
-            result["plombierMenus"] = 'data-nyons-shortcut="hebergement"' in source and 'data-weather-nav="direct"' in source and any("google-analytics-20261008-v1" in s for s in page.scripts)
-        if "/ou-dormir-a-nyons/villa-des-poete/" in url:
-            result["villaUpdated"] = 'data-villa-updated="2026-10-08"' in source
-            result["villaTitle"] = "<h1>Villa des Poètes à Nyons : avis, tarifs, piscine et réservation</h1>" in source and page.h1 == 1
-            graph = json.loads(re.search(r'<script type="application/ld\+json">(.*?)</script>',source,re.S).group(1))["@graph"]
-            article = next(g for g in graph if g["@type"]=="Article")
-            faq = next(g for g in graph if g["@type"]=="FAQPage")
-            result["villaNoInventedPublicationDate"] = "datePublished" not in source and article["dateModified"] == "2026-10-08"
-            result["villaFAQ8"] = len(faq["mainEntity"]) == 8 and source.count('<div class="qa">') == 8
-            result["villaOldFAQPreserved"] = all(t in source for t in ["La Villa des Poètes est-elle dans le centre de Nyons ?","La Villa des Poètes accueille-t-elle des séjours en hiver ?"])
-            result["villaTables3"] = source.count('<table class="villa-table">') == 3 and source.count('tabindex="0"') == 3
-            result["villaPhotoPreserved"] = "437f810cbd2d493dea6a.webp" in source and 'width="445" height="286"' in source and len(page.images) == 1
-            result["villaPriceGrid"] = all(t in source for t in ["80 €","90 €","95 €","0,80 €","25 €","10 %","50 %","30 %"])
-            result["villaRooms"] = all(t in source for t in ["La Bellissima","L’Azzurra","Le Cabanon","L’Estivale","Baignoire et WC","Du 1er mai au 30 septembre"])
-            result["villaPoolQualified"] = "11 × 5 mètres" in source and "piscine extérieure saisonnière" in source
-            result["villaDirectContacts"] = 'href="tel:+33645222205"' in source and 'href="mailto:info@lavilladespoetes.fr"' in source
-            result["villaPractical"] = all(t in source for t in ["17 h et 19 h","11 h","531 chemin de Bellevue","Les animaux ne sont pas acceptés","parking privé"])
-            result["villaRatingsDated"] = "9,2/10 pour 13 évaluations" in source and "4,9/5 pour 76 avis" in source and "8 octobre 2026" in source
-            result["villaReviewsPreserved"] = all(t in source for t in ["leur propreté et leur confort","sans être envahissants","dernier tronçon monte","je n’ai jamais dormi"])
-            result["villaClean"] = "Philippe" not in source and "Eric" not in source and "Lydia" not in source and "terrain de pétanque" not in source
-            result["villaSourcesAndReaders"] = "Sources et liens utiles" in source and "Questions aux lecteurs" in source
-            result["villaCanonical"] = page.canonicals == [BASE+"ou-dormir-a-nyons/villa-des-poete/"]
-            result["villaRobots"] = page.robots == (["noindex,nofollow"] if "/vivreanyons-test/" in url else ["index,follow"])
-            result["villaMenuAndScript"] = 'data-nyons-shortcut="hebergement"' in source and 'data-weather-nav="direct"' in source and any("google-analytics-20261008-v1" in s for s in page.scripts)
-        if url.endswith("/ou-dormir-a-nyons/") or url.endswith("/toutes-les-pages/"):
-            result["villaIndexUpdated"] = "Villa des Poètes à Nyons : avis, tarifs, piscine et réservation" in source and "chambres d’hôtes à 4 km du centre" in source
-        if "/que-faire-nyons/nyons-que-voir/" in url:
-            result["voirUpdated"] = 'data-voir-updated="2026-10-08"' in source
-            result["voirTitle"] = "<h1>Que voir à Nyons ? Les 15 incontournables à visiter à pied</h1>" in source and page.h1 == 1
-            result["voirSteps15"] = source.count('<section class="voir-stop"') == 15
-            result["voirNumbering"] = all(re.search(r"<h2>"+str(i)+r"\. ",source) for i in range(1,16))
-            result["voirSummary15"] = len(re.search(r'<ol class="voir-summary">(.*?)</ol>',source,re.S).group(1).split("<li>"))-1 == 15
-            result["voirTables2"] = source.count('<table class="voir-table">') == 2
-            result["voirResponsive"] = "max-width:100%;overflow-x:auto" in source and source.count('tabindex="0"') == 2 and ".voir-page .feature-story{min-width:0}" in source
-            graph = json.loads(re.search(r'<script type="application/ld\+json">(.*?)</script>',source,re.S).group(1))["@graph"]
-            article = next(g for g in graph if g["@type"]=="Article")
-            faq = next(g for g in graph if g["@type"]=="FAQPage")
-            items = next(g for g in graph if g["@type"]=="ItemList")
-            result["voirSchema15"] = items["numberOfItems"] == 15 and len(items["itemListElement"]) == 15
-            result["voirFAQ8"] = source.count('<div class="qa">') == 8 and len(faq["mainEntity"]) == 8
-            result["voirOldFAQPreserved"] = all(q in source for q in ["Que visiter à Nyons à pied ?","Que faire à Nyons quand il pleut ?"])
-            result["voirNoInventedPublicationDate"] = "datePublished" not in source and article["dateModified"] == "2026-10-08"
-            result["voirPhotos9"] = len(page.images) == 9 and len(article["image"]) == 9
-            expected_photos = [["assets/photos/fiche-1c9db50f3723389be9a7.webp",1280,853],["assets/photos/fiche-621940e755ac20550d07.webp",982,1024],["assets/photos/fiche-090b7caf502dee4f0511.webp",960,1280],["assets/photos/fiche-07b2405d2738fa1ef481.webp",960,1280],["assets/photos/fiche-373f26f2d1ce85a43fa8.webp",442,606],["assets/photos/fiche-7c7eaaf55cbdb6074646.webp",960,1280],["assets/photos/fiche-72bef6a46a62ceb4d9ab.webp",960,1280],["assets/photos/fiche-7257130523891e0393b9.webp",853,1280],["assets/photos/fiche-e46a5982c7c34d83db62.webp",896,1152]]
-            result["voirPhotoDimensions"] = all(any(i.get("src","").endswith(path) and int(i["width"])==w and int(i["height"])==h for i in page.images) for path,w,h in expected_photos)
-            prefix = "banniere-nyons/vivreanyons-test/" if "/banniere-nyons/" in url else ("vivreanyons-test/" if "/vivreanyons-test/" in url else "")
-            result["voirImagePaths"] = all(i["src"].startswith("/"+prefix+"assets/photos/") for i in page.images)
-            result["voirMetadata"] = 'property="og:title"' in source and 'property="og:image:width" content="1280"' in source
-            result["voirCanonical"] = page.canonicals == [BASE+"que-faire-nyons/nyons-que-voir/"]
-            result["voirRobots"] = page.robots == (["noindex,nofollow"] if prefix else ["index,follow"])
-            result["voirRoutes"] = all(t in source for t in ["Que voir si tu n’as que deux heures ?","Que visiter en une demi-journée ?","Nyons en 1 jour : le programme de Papy"])
-            result["voirOlivierTrail"] = "3,9 km, environ 1 h 30 et 110 mètres" in source
-            result["voirScourtQualified"] = "donation avec montant conseillé" in source and "modalités du musée rénové" in source
-            result["voirGuidedBooking"] = "visites guidées uniquement sur rendez-vous" in source
-            result["voirMaisonContactQualified"] = "ligne téléphonique en dérangement" in source and "contact@maisondeshuilesetolives.fr" in source
-            result["voirMarket"] = "chaque jeudi matin" in source and "dimanche matin de début mai à mi-septembre" in source
-            result["voirSourcesAndReaders"] = "Sources et liens utiles" in source and "Questions aux lecteurs" in source
-            result["voirClean"] = all(t not in source for t in ["Texte collé","Ta fiche actuelle","prête à coller","Je te remets une phrase"])
-            result["voirMenuAndScript"] = 'data-nyons-shortcut="hebergement"' in source and 'data-weather-nav="direct"' in source and any("google-analytics-20261008-v1" in s for s in page.scripts)
-        if url.endswith("/que-faire-nyons/") or url.endswith("/toutes-les-pages/"):
-            result["voirIndexUpdated"] = "Que voir à Nyons ? Les 15 incontournables à visiter à pied" in source and "15 incontournables et parcours pour 2 heures" in source
-        if url.endswith("/sante-nyons/"):
-            g = json.loads(re.search(r'<script type="application/ld\+json">(.*?)</script>',source,re.S).group(1))["@graph"]
-            items = next(g for g in g if g["@type"]=="ItemList")
-            result["healthList30"] = items["numberOfItems"] == 30 and len(items["itemListElement"]) == 30
-            result["healthNewCard"] = "data-ehpad-card" in source and any(i["url"]==ARTICLE for i in items["itemListElement"])
-        if url.endswith("/infos-pratiques-nyons/") or url.endswith("/toutes-les-pages/"):
-            result["plombierIndexTitle"] = "Plombier à Nyons : dépannage, fuite d’eau, chauffe-eau et contacts" in source
-            result["newCard"] = "data-ehpad-card" in source and "sante-nyons/ehpad-nyons/" in source
-        if url == BASE:
-            result["latestEHPAD"] = TITLE in source and "sante-nyons/ehpad-nyons/" in source
-            result["weatherPreserved"] = "weather" in source and "meteo-nyons/" in source
-            result["lodgingMenuPreserved"] = 'data-nyons-shortcut="hebergement"' in source
-    except Exception as error:
-        result["error"] = str(error)
-    return result
-
-for attempt in range(12):
-    ready = check(BASE+"que-faire-nyons/nyons-que-voir/")
-    mirror_ready = check(BASE+"vivreanyons-test/que-faire-nyons/nyons-que-voir/")
-    second_mirror_ready = check(BASE+"banniere-nyons/vivreanyons-test/que-faire-nyons/nyons-que-voir/")
-    if ready.get("voirUpdated") and mirror_ready.get("voirUpdated") and second_mirror_ready.get("voirUpdated"):
-        break
-    print("Waiting for the updated walking guide", attempt+1, flush=True)
-    time.sleep(10)
-with ThreadPoolExecutor(max_workers=4) as pool:
-    results = list(pool.map(check, URLS))
-print("PUBLIC_URL_AUDIT_BEGIN")
-print(json.dumps({"checkedDate":"2026-10-08","readOnly":True,"results":results},ensure_ascii=False,indent=2))
-print("PUBLIC_URL_AUDIT_END")
-failures = [r for r in results if r.get("status") != 200 or r.get("error") or any(v is False for v in r.values())]
-if failures:
-    raise SystemExit("Public checks failed: "+json.dumps(failures,ensure_ascii=False))
+        s=data.decode("utf-8"); p=Parse(s)
+        result.update(canonical=p.canonical,robots=p.robots)
+        prefix=next((x for x in reversed(PREFIXES) if url.startswith(BASE+x)), "")
+        if url==BASE+prefix+SLUG:
+            graph=p.scripts[0]["@graph"]
+            article=next(x for x in graph if x["@type"]=="Article")
+            faq=next(x for x in graph if x["@type"]=="FAQPage")
+            photos=[x for x in p.images if "/infirmiere-domicile-nyons/" in x.get("src","")]
+            result.update(faq_questions=len(faq["mainEntity"]),visible_answers=s.count("<details><summary>"),photos=len(photos),published=article["datePublished"],sunday_rule="un jour sur deux pendant quinze jours" in s,reader_questions='id="questions-aux-lecteurs"' in s,sources='id="sources-et-liens-utiles"' in s,source_count=12 if s.count('<ul class="nurse-sources">')==1 and s.split('<ul class="nurse-sources">')[1].split("</ul>")[0].count("<li>")==12 else 0)
+            result["ok"]=(status==200 and final==url and p.canonical==BASE+SLUG and p.robots==("noindex,nofollow" if prefix else "index,follow") and len(faq["mainEntity"])==8 and s.count("<details><summary>")==8 and len(photos)==3 and article["datePublished"]=="2026-10-09" and result["sunday_rule"] and result["reader_questions"] and result["sources"] and result["source_count"]==12)
+        elif url==BASE+prefix:
+            match=re.search(r'<section class="new-article"[\s\S]*?</section>',s)
+            card=match.group(0) if match else ""
+            result.update(featured=('data-latest-article="/'+SLUG+'"' in card),image=('/'+prefix+'assets/photos/infirmiere-domicile-nyons/examen-au-stethoscope.png' in card),title_link=('href="/'+prefix+SLUG+'"' in card))
+            result["ok"]=status==200 and result["featured"] and result["image"] and result["title_link"]
+        else:
+            result["article_link"]='href="/'+prefix+SLUG+'"' in s
+            result["ok"]=status==200 and result["article_link"]
+            if url.endswith("sante-nyons/"):
+                result["alzheimer_preserved"]="memoire-aidants" in s and "Alzheimer-Nyons/" in s
+                result["ok"]=result["ok"] and result["alzheimer_preserved"]
+        return result
+    except Exception as e:
+        return {"url":url,"ok":False,"error":str(e)}
+def main():
+    with ThreadPoolExecutor(max_workers=4) as pool: results=list(pool.map(inspect,URLS))
+    print("PUBLIC_URL_AUDIT_BEGIN")
+    print(json.dumps({"article":BASE+SLUG,"success":all(x["ok"] for x in results),"results":results},ensure_ascii=True,indent=2))
+    print("PUBLIC_URL_AUDIT_END")
+    raise SystemExit(0 if all(x["ok"] for x in results) else 1)
+if __name__=="__main__": main()
