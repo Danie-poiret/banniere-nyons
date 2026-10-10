@@ -13,7 +13,7 @@ const page=fs.readFileSync('index.html','utf8');
 assert(page.indexOf('data-nyons-lodging')<page.indexOf('<header>'));
 assert(page.includes('https://www.lalezardierenyons.com/situation-contact'));assert(page.includes('https://wa.me/33632076124'));
 assert.equal((page.match(/class="home-latest-card"/g)||[]).length,5);
-assert(!page.includes('<p>Chargement…</p>'));assert(page.includes('data-nyons-weather'));
+assert(!page.includes('<p>Chargement…</p>'));assert(page.includes('data-nyons-weather'));assert(page.indexOf('data-nyons-weather')<page.indexOf('HOME_LATEST_START'));
 assert(page.includes('<h1>Vivre à Nyons, simplement.</h1>'));
 assert(page.includes('<title>Vivre à Nyons : guide local, sorties et bonnes adresses</title>'));
 assert(page.includes('href="https://www.vivreanyons.fr/"'));
