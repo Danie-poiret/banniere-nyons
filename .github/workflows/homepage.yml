@@ -1,0 +1,47 @@
+name: Actualiser uniquement l’accueil de Vivre à Nyons
+on:
+  push:
+    paths:
+      - '**/index.html'
+      - assets/home.js
+      - assets/home.css
+      - tools/update_homepage.py
+      - tools/update_latest_article.py
+      - .github/workflows/homepage.yml
+  schedule:
+    - cron: '47 */3 * * *'
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: vivreanyons-homepage
+  cancel-in-progress: false
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    timeout-minutes: 4
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - name: Vérifier le module de l’accueil
+        run: |
+          node --check assets/home.js
+          node tools/check_homepage.cjs
+      - name: Reprendre les articles et les données de l’agenda existant
+        run: python tools/update_homepage.py
+      - name: Confirmer le bandeau et les informations conservées
+        run: node tools/check_homepage.cjs
+      - name: Publier seulement l’accueil et son instantané
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add index.html assets/home-content.json
+          if ! git diff --cached --quiet; then
+            git commit -m "Actualiser uniquement les articles et événements de l’accueil"
+            for attempt in 1 2 3; do
+              git pull --rebase origin main
+              if git push origin main; then exit 0; fi
+            done
+            exit 1
+          fi

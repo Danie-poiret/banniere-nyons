@@ -78,6 +78,28 @@ def update(root):
             candidates.append((published, positions.get(path, -1), path, headline, description, photo))
     if not candidates:
         raise ValueError('No dated Article found; homepages were not changed.')
+    main = root / 'index.html'
+    main_source = main.read_text(encoding='utf-8')
+    if '<!-- HOME_LATEST_START -->' in main_source:
+        # The redesigned homepage is the only page authorized for this update.
+        cards = []
+        for published, _, path, headline, description, photo in sorted(candidates, key=lambda item: item[:3], reverse=True)[:5]:
+            if not photo:
+                raise ValueError('Missing article photograph: ' + path)
+            year, month, day = published[:10].split('-')
+            months = ['janvier', 'février', 'mars', 'avril', 'mai', 'juin', 'juillet', 'août', 'septembre', 'octobre', 'novembre', 'décembre']
+            date = f'{int(day)} {months[int(month)-1]} {year}'
+            escape = lambda value: html.escape(str(value), quote=True)
+            dimensions = ''.join(f' {key}="{escape(photo[key])}"' for key in ['width', 'height'] if key in photo)
+            brief = description if len(description) <= 180 else description[:179].rsplit(' ', 1)[0] + '…'
+            cards.append(f'<article class="home-latest-card"><a href="{escape(path)}"><img src="{escape(urlsplit(photo["src"]).path)}" alt="{escape(photo["alt"])}"{dimensions} loading="lazy" decoding="async"><div><time datetime="{escape(published[:10])}">{date}</time><h3>{escape(headline)}</h3><p>{escape(brief)}</p></div></a></article>')
+        block = '<section class="home-section" id="derniers-articles"><div class="home-section-head"><div><div class="kicker">À lire</div><h2>Les derniers articles de Papy</h2></div></div><div class="home-latest-grid" data-home-latest>' + ''.join(cards) + '</div></section>'
+        main_source, count = re.subn(r'<!-- HOME_LATEST_START -->.*?<!-- HOME_LATEST_END -->', lambda _: '<!-- HOME_LATEST_START -->' + block + '<!-- HOME_LATEST_END -->', main_source, count=1, flags=re.S)
+        if count != 1:
+            raise ValueError('Missing homepage latest article markers')
+        main.write_text(main_source, encoding='utf-8')
+        print('Refreshed the five published articles on the main homepage only.')
+        return
     published, _, path, headline, description, photo = max(candidates, key=lambda item: item[:3])
     if not photo:
         raise ValueError('Missing latest article image with alt: ' + path)
@@ -109,3 +131,4 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     parser.add_argument('--root', type=Path, default=Path(__file__).resolve().parents[1])
     update(parser.parse_args().root.resolve())
+
