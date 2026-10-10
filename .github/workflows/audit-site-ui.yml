@@ -1,0 +1,33 @@
+name: Mesurer la vitesse et vérifier le menu mobile
+on:
+  push:
+    paths:
+      - index.html
+      - assets/style.css
+      - assets/agenda.js
+      - tools/audit_site_ui.cjs
+      - .github/workflows/audit-site-ui.yml
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  browser-audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Installer les outils de mesure
+        run: |
+          npm install --prefix .audit-tools --no-save playwright lighthouse chrome-launcher
+          .audit-tools/node_modules/.bin/playwright install --with-deps chromium
+      - name: Vérifier le menu et mesurer les pages publiques
+        run: node tools/audit_site_ui.cjs
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: audit-mobile-et-performance
+          path: audit-output/
+          if-no-files-found: ignore

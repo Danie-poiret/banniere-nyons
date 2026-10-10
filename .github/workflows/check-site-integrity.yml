@@ -1,0 +1,28 @@
+name: Vérifier tous les liens et les sitemaps
+on:
+  push:
+    paths:
+      - '**/*.html'
+      - '**/*.css'
+      - '**/*.js'
+      - sitemap.xml
+      - robots.txt
+      - tools/check_site_integrity.py
+      - .github/workflows/check-site-integrity.yml
+  pull_request:
+    paths:
+      - '**/*.html'
+      - '**/*.css'
+      - '**/*.js'
+      - sitemap.xml
+      - tools/check_site_integrity.py
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  integrity:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - run: python tools/check_site_integrity.py
