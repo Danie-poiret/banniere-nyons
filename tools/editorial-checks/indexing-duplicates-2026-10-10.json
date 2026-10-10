@@ -1,0 +1,671 @@
+{
+  "date": "2026-10-10",
+  "canonicalURLs": [
+    "https://www.vivreanyons.fr/ou-dormir-a-nyons/capfun-de-nyons/",
+    "https://www.vivreanyons.fr/que-faire-nyons/spots-baignades-nyons/",
+    "https://www.vivreanyons.fr/restaurants-de-nyons/Restaurant-thai/",
+    "https://www.vivreanyons.fr/restaurants-de-nyons/berli-nyons/",
+    "https://www.vivreanyons.fr/que-faire-nyons/nyons-week-end/",
+    "https://www.vivreanyons.fr/que-faire-nyons/les-vieux-moulins/",
+    "https://www.vivreanyons.fr/restaurants-de-nyons/Restaurant-alicoque-Nyons/",
+    "https://www.vivreanyons.fr/a-faire-autour-de-Nyons/se-baigner-aubres/",
+    "https://www.vivreanyons.fr/a-faire-autour-de-Nyons/village-de-venterol/"
+  ],
+  "urlAttributesUpdated": 45,
+  "changedHTMLFiles": [
+    "banniere-nyons/vivreanyons-test/a-faire-autour-de-Nyons/se-baigner-aubres/index.html",
+    "banniere-nyons/vivreanyons-test/a-faire-autour-de-Nyons/village-de-venterol/index.html",
+    "banniere-nyons/vivreanyons-test/histoire-geo/Nyons-autrefois/index.html",
+    "banniere-nyons/vivreanyons-test/histoire-geo/savon-nyons/index.html",
+    "banniere-nyons/vivreanyons-test/ou-dormir-a-nyons/capfun-de-nyons/index.html",
+    "banniere-nyons/vivreanyons-test/que-faire-autour-de-nyons/vinsobres/index.html",
+    "banniere-nyons/vivreanyons-test/que-faire-nyons/les-vieux-moulins/index.html",
+    "banniere-nyons/vivreanyons-test/que-faire-nyons/nyons-week-end/index.html",
+    "banniere-nyons/vivreanyons-test/que-faire-nyons/spots-baignades-nyons/index.html",
+    "banniere-nyons/vivreanyons-test/restaurants-de-nyons/Restaurant-alicoque-Nyons/index.html",
+    "banniere-nyons/vivreanyons-test/restaurants-de-nyons/Restaurant-thai/index.html",
+    "banniere-nyons/vivreanyons-test/restaurants-de-nyons/berli-nyons/index.html",
+    "histoire-geo/Nyons-autrefois/index.html",
+    "histoire-geo/savon-nyons/index.html",
+    "que-faire-autour-de-nyons/vinsobres/index.html",
+    "vivreanyons-test/a-faire-autour-de-Nyons/se-baigner-aubres/index.html",
+    "vivreanyons-test/a-faire-autour-de-Nyons/village-de-venterol/index.html",
+    "vivreanyons-test/histoire-geo/Nyons-autrefois/index.html",
+    "vivreanyons-test/histoire-geo/savon-nyons/index.html",
+    "vivreanyons-test/ou-dormir-a-nyons/capfun-de-nyons/index.html",
+    "vivreanyons-test/que-faire-autour-de-nyons/vinsobres/index.html",
+    "vivreanyons-test/que-faire-nyons/les-vieux-moulins/index.html",
+    "vivreanyons-test/que-faire-nyons/nyons-week-end/index.html",
+    "vivreanyons-test/que-faire-nyons/spots-baignades-nyons/index.html",
+    "vivreanyons-test/restaurants-de-nyons/Restaurant-alicoque-Nyons/index.html",
+    "vivreanyons-test/restaurants-de-nyons/Restaurant-thai/index.html",
+    "vivreanyons-test/restaurants-de-nyons/berli-nyons/index.html"
+  ],
+  "allOtherHTMLPreservedByteForByte": true,
+  "changes": [
+    {
+      "file": "banniere-nyons/vivreanyons-test/a-faire-autour-de-Nyons/se-baigner-aubres/index.html",
+      "before": "https://www.vivreanyons.fr/a-faire-autour-de-Nyons/se-baigner-aubres",
+      "after": "https://www.vivreanyons.fr/a-faire-autour-de-Nyons/se-baigner-aubres/"
+    },
+    {
+      "file": "banniere-nyons/vivreanyons-test/a-faire-autour-de-Nyons/se-baigner-aubres/index.html",
+      "before": "https://www.vivreanyons.fr/a-faire-autour-de-Nyons/se-baigner-aubres",
+      "after": "https://www.vivreanyons.fr/a-faire-autour-de-Nyons/se-baigner-aubres/"
+    },
+    {
+      "file": "banniere-nyons/vivreanyons-test/a-faire-autour-de-Nyons/village-de-venterol/index.html",
+      "before": "https://www.vivreanyons.fr/a-faire-autour-de-Nyons/village-de-venterol",
+      "after": "https://www.vivreanyons.fr/a-faire-autour-de-Nyons/village-de-venterol/"
+    },
+    {
+      "file": "banniere-nyons/vivreanyons-test/a-faire-autour-de-Nyons/village-de-venterol/index.html",
+      "before": "https://www.vivreanyons.fr/a-faire-autour-de-Nyons/village-de-venterol",
+      "after": "https://www.vivreanyons.fr/a-faire-autour-de-Nyons/village-de-venterol/"
+    },
+    {
+      "file": "banniere-nyons/vivreanyons-test/histoire-geo/Nyons-autrefois/index.html",
+      "before": "https://www.vivreanyons.fr/que-faire-nyons/les-vieux-moulins",
+      "after": "https://www.vivreanyons.fr/que-faire-nyons/les-vieux-moulins/"
+    },
+    {
+      "file": "banniere-nyons/vivreanyons-test/histoire-geo/savon-nyons/index.html",
+      "before": "https://www.vivreanyons.fr/que-faire-nyons/les-vieux-moulins",
+      "after": "https://www.vivreanyons.fr/que-faire-nyons/les-vieux-moulins/"
+    },
+    {
+      "file": "banniere-nyons/vivreanyons-test/ou-dormir-a-nyons/capfun-de-nyons/index.html",
+      "before": "https://www.vivreanyons.fr/ou-dormir-a-nyons/capfun-de-nyons",
+      "after": "https://www.vivreanyons.fr/ou-dormir-a-nyons/capfun-de-nyons/"
+    },
+    {
+      "file": "banniere-nyons/vivreanyons-test/ou-dormir-a-nyons/capfun-de-nyons/index.html",
+      "before": "https://www.vivreanyons.fr/ou-dormir-a-nyons/capfun-de-nyons",
+      "after": "https://www.vivreanyons.fr/ou-dormir-a-nyons/capfun-de-nyons/"
+    },
+    {
+      "file": "banniere-nyons/vivreanyons-test/que-faire-autour-de-nyons/vinsobres/index.html",
+      "before": "https://www.vivreanyons.fr/ou-dormir-a-nyons/capfun-de-nyons",
+      "after": "https://www.vivreanyons.fr/ou-dormir-a-nyons/capfun-de-nyons/"
+    },
+    {
+      "file": "banniere-nyons/vivreanyons-test/que-faire-nyons/les-vieux-moulins/index.html",
+      "before": "https://www.vivreanyons.fr/que-faire-nyons/les-vieux-moulins",
+      "after": "https://www.vivreanyons.fr/que-faire-nyons/les-vieux-moulins/"
+    },
+    {
+      "file": "banniere-nyons/vivreanyons-test/que-faire-nyons/les-vieux-moulins/index.html",
+      "before": "https://www.vivreanyons.fr/que-faire-nyons/les-vieux-moulins",
+      "after": "https://www.vivreanyons.fr/que-faire-nyons/les-vieux-moulins/"
+    },
+    {
+      "file": "banniere-nyons/vivreanyons-test/que-faire-nyons/nyons-week-end/index.html",
+      "before": "https://www.vivreanyons.fr/que-faire-nyons/nyons-week-end",
+      "after": "https://www.vivreanyons.fr/que-faire-nyons/nyons-week-end/"
+    },
+    {
+      "file": "banniere-nyons/vivreanyons-test/que-faire-nyons/nyons-week-end/index.html",
+      "before": "https://www.vivreanyons.fr/que-faire-nyons/nyons-week-end",
+      "after": "https://www.vivreanyons.fr/que-faire-nyons/nyons-week-end/"
+    },
+    {
+      "file": "banniere-nyons/vivreanyons-test/que-faire-nyons/spots-baignades-nyons/index.html",
+      "before": "https://www.vivreanyons.fr/que-faire-nyons/spots-baignades-nyons",
+      "after": "https://www.vivreanyons.fr/que-faire-nyons/spots-baignades-nyons/"
+    },
+    {
+      "file": "banniere-nyons/vivreanyons-test/que-faire-nyons/spots-baignades-nyons/index.html",
+      "before": "https://www.vivreanyons.fr/que-faire-nyons/spots-baignades-nyons",
+      "after": "https://www.vivreanyons.fr/que-faire-nyons/spots-baignades-nyons/"
+    },
+    {
+      "file": "banniere-nyons/vivreanyons-test/restaurants-de-nyons/Restaurant-alicoque-Nyons/index.html",
+      "before": "https://www.vivreanyons.fr/restaurants-de-nyons/Restaurant-alicoque-Nyons",
+      "after": "https://www.vivreanyons.fr/restaurants-de-nyons/Restaurant-alicoque-Nyons/"
+    },
+    {
+      "file": "banniere-nyons/vivreanyons-test/restaurants-de-nyons/Restaurant-alicoque-Nyons/index.html",
+      "before": "https://www.vivreanyons.fr/restaurants-de-nyons/Restaurant-alicoque-Nyons",
+      "after": "https://www.vivreanyons.fr/restaurants-de-nyons/Restaurant-alicoque-Nyons/"
+    },
+    {
+      "file": "banniere-nyons/vivreanyons-test/restaurants-de-nyons/Restaurant-thai/index.html",
+      "before": "https://www.vivreanyons.fr/restaurants-de-nyons/Restaurant-thai",
+      "after": "https://www.vivreanyons.fr/restaurants-de-nyons/Restaurant-thai/"
+    },
+    {
+      "file": "banniere-nyons/vivreanyons-test/restaurants-de-nyons/Restaurant-thai/index.html",
+      "before": "https://www.vivreanyons.fr/restaurants-de-nyons/Restaurant-thai",
+      "after": "https://www.vivreanyons.fr/restaurants-de-nyons/Restaurant-thai/"
+    },
+    {
+      "file": "banniere-nyons/vivreanyons-test/restaurants-de-nyons/berli-nyons/index.html",
+      "before": "https://www.vivreanyons.fr/restaurants-de-nyons/berli-nyons",
+      "after": "https://www.vivreanyons.fr/restaurants-de-nyons/berli-nyons/"
+    },
+    {
+      "file": "banniere-nyons/vivreanyons-test/restaurants-de-nyons/berli-nyons/index.html",
+      "before": "https://www.vivreanyons.fr/restaurants-de-nyons/berli-nyons",
+      "after": "https://www.vivreanyons.fr/restaurants-de-nyons/berli-nyons/"
+    },
+    {
+      "file": "histoire-geo/Nyons-autrefois/index.html",
+      "before": "https://www.vivreanyons.fr/que-faire-nyons/les-vieux-moulins",
+      "after": "https://www.vivreanyons.fr/que-faire-nyons/les-vieux-moulins/"
+    },
+    {
+      "file": "histoire-geo/savon-nyons/index.html",
+      "before": "https://www.vivreanyons.fr/que-faire-nyons/les-vieux-moulins",
+      "after": "https://www.vivreanyons.fr/que-faire-nyons/les-vieux-moulins/"
+    },
+    {
+      "file": "que-faire-autour-de-nyons/vinsobres/index.html",
+      "before": "https://www.vivreanyons.fr/ou-dormir-a-nyons/capfun-de-nyons",
+      "after": "https://www.vivreanyons.fr/ou-dormir-a-nyons/capfun-de-nyons/"
+    },
+    {
+      "file": "vivreanyons-test/a-faire-autour-de-Nyons/se-baigner-aubres/index.html",
+      "before": "https://www.vivreanyons.fr/a-faire-autour-de-Nyons/se-baigner-aubres",
+      "after": "https://www.vivreanyons.fr/a-faire-autour-de-Nyons/se-baigner-aubres/"
+    },
+    {
+      "file": "vivreanyons-test/a-faire-autour-de-Nyons/se-baigner-aubres/index.html",
+      "before": "https://www.vivreanyons.fr/a-faire-autour-de-Nyons/se-baigner-aubres",
+      "after": "https://www.vivreanyons.fr/a-faire-autour-de-Nyons/se-baigner-aubres/"
+    },
+    {
+      "file": "vivreanyons-test/a-faire-autour-de-Nyons/village-de-venterol/index.html",
+      "before": "https://www.vivreanyons.fr/a-faire-autour-de-Nyons/village-de-venterol",
+      "after": "https://www.vivreanyons.fr/a-faire-autour-de-Nyons/village-de-venterol/"
+    },
+    {
+      "file": "vivreanyons-test/a-faire-autour-de-Nyons/village-de-venterol/index.html",
+      "before": "https://www.vivreanyons.fr/a-faire-autour-de-Nyons/village-de-venterol",
+      "after": "https://www.vivreanyons.fr/a-faire-autour-de-Nyons/village-de-venterol/"
+    },
+    {
+      "file": "vivreanyons-test/histoire-geo/Nyons-autrefois/index.html",
+      "before": "https://www.vivreanyons.fr/que-faire-nyons/les-vieux-moulins",
+      "after": "https://www.vivreanyons.fr/que-faire-nyons/les-vieux-moulins/"
+    },
+    {
+      "file": "vivreanyons-test/histoire-geo/savon-nyons/index.html",
+      "before": "https://www.vivreanyons.fr/que-faire-nyons/les-vieux-moulins",
+      "after": "https://www.vivreanyons.fr/que-faire-nyons/les-vieux-moulins/"
+    },
+    {
+      "file": "vivreanyons-test/ou-dormir-a-nyons/capfun-de-nyons/index.html",
+      "before": "https://www.vivreanyons.fr/ou-dormir-a-nyons/capfun-de-nyons",
+      "after": "https://www.vivreanyons.fr/ou-dormir-a-nyons/capfun-de-nyons/"
+    },
+    {
+      "file": "vivreanyons-test/ou-dormir-a-nyons/capfun-de-nyons/index.html",
+      "before": "https://www.vivreanyons.fr/ou-dormir-a-nyons/capfun-de-nyons",
+      "after": "https://www.vivreanyons.fr/ou-dormir-a-nyons/capfun-de-nyons/"
+    },
+    {
+      "file": "vivreanyons-test/que-faire-autour-de-nyons/vinsobres/index.html",
+      "before": "https://www.vivreanyons.fr/ou-dormir-a-nyons/capfun-de-nyons",
+      "after": "https://www.vivreanyons.fr/ou-dormir-a-nyons/capfun-de-nyons/"
+    },
+    {
+      "file": "vivreanyons-test/que-faire-nyons/les-vieux-moulins/index.html",
+      "before": "https://www.vivreanyons.fr/que-faire-nyons/les-vieux-moulins",
+      "after": "https://www.vivreanyons.fr/que-faire-nyons/les-vieux-moulins/"
+    },
+    {
+      "file": "vivreanyons-test/que-faire-nyons/les-vieux-moulins/index.html",
+      "before": "https://www.vivreanyons.fr/que-faire-nyons/les-vieux-moulins",
+      "after": "https://www.vivreanyons.fr/que-faire-nyons/les-vieux-moulins/"
+    },
+    {
+      "file": "vivreanyons-test/que-faire-nyons/nyons-week-end/index.html",
+      "before": "https://www.vivreanyons.fr/que-faire-nyons/nyons-week-end",
+      "after": "https://www.vivreanyons.fr/que-faire-nyons/nyons-week-end/"
+    },
+    {
+      "file": "vivreanyons-test/que-faire-nyons/nyons-week-end/index.html",
+      "before": "https://www.vivreanyons.fr/que-faire-nyons/nyons-week-end",
+      "after": "https://www.vivreanyons.fr/que-faire-nyons/nyons-week-end/"
+    },
+    {
+      "file": "vivreanyons-test/que-faire-nyons/spots-baignades-nyons/index.html",
+      "before": "https://www.vivreanyons.fr/que-faire-nyons/spots-baignades-nyons",
+      "after": "https://www.vivreanyons.fr/que-faire-nyons/spots-baignades-nyons/"
+    },
+    {
+      "file": "vivreanyons-test/que-faire-nyons/spots-baignades-nyons/index.html",
+      "before": "https://www.vivreanyons.fr/que-faire-nyons/spots-baignades-nyons",
+      "after": "https://www.vivreanyons.fr/que-faire-nyons/spots-baignades-nyons/"
+    },
+    {
+      "file": "vivreanyons-test/restaurants-de-nyons/Restaurant-alicoque-Nyons/index.html",
+      "before": "https://www.vivreanyons.fr/restaurants-de-nyons/Restaurant-alicoque-Nyons",
+      "after": "https://www.vivreanyons.fr/restaurants-de-nyons/Restaurant-alicoque-Nyons/"
+    },
+    {
+      "file": "vivreanyons-test/restaurants-de-nyons/Restaurant-alicoque-Nyons/index.html",
+      "before": "https://www.vivreanyons.fr/restaurants-de-nyons/Restaurant-alicoque-Nyons",
+      "after": "https://www.vivreanyons.fr/restaurants-de-nyons/Restaurant-alicoque-Nyons/"
+    },
+    {
+      "file": "vivreanyons-test/restaurants-de-nyons/Restaurant-thai/index.html",
+      "before": "https://www.vivreanyons.fr/restaurants-de-nyons/Restaurant-thai",
+      "after": "https://www.vivreanyons.fr/restaurants-de-nyons/Restaurant-thai/"
+    },
+    {
+      "file": "vivreanyons-test/restaurants-de-nyons/Restaurant-thai/index.html",
+      "before": "https://www.vivreanyons.fr/restaurants-de-nyons/Restaurant-thai",
+      "after": "https://www.vivreanyons.fr/restaurants-de-nyons/Restaurant-thai/"
+    },
+    {
+      "file": "vivreanyons-test/restaurants-de-nyons/berli-nyons/index.html",
+      "before": "https://www.vivreanyons.fr/restaurants-de-nyons/berli-nyons",
+      "after": "https://www.vivreanyons.fr/restaurants-de-nyons/berli-nyons/"
+    },
+    {
+      "file": "vivreanyons-test/restaurants-de-nyons/berli-nyons/index.html",
+      "before": "https://www.vivreanyons.fr/restaurants-de-nyons/berli-nyons",
+      "after": "https://www.vivreanyons.fr/restaurants-de-nyons/berli-nyons/"
+    }
+  ],
+  "liveBefore": [
+    {
+      "url": "https://www.vivreanyons.fr/ou-dormir-a-nyons/capfun-de-nyons/",
+      "chain": [
+        {
+          "url": "https://www.vivreanyons.fr/ou-dormir-a-nyons/capfun-de-nyons/",
+          "status": 200,
+          "location": null
+        }
+      ],
+      "final": "https://www.vivreanyons.fr/ou-dormir-a-nyons/capfun-de-nyons/",
+      "status": 200,
+      "canonical": [
+        "https://www.vivreanyons.fr/ou-dormir-a-nyons/capfun-de-nyons/"
+      ],
+      "robots": [
+        "index,follow"
+      ]
+    },
+    {
+      "url": "https://www.vivreanyons.fr/que-faire-nyons/spots-baignades-nyons/",
+      "chain": [
+        {
+          "url": "https://www.vivreanyons.fr/que-faire-nyons/spots-baignades-nyons/",
+          "status": 200,
+          "location": null
+        }
+      ],
+      "final": "https://www.vivreanyons.fr/que-faire-nyons/spots-baignades-nyons/",
+      "status": 200,
+      "canonical": [
+        "https://www.vivreanyons.fr/que-faire-nyons/spots-baignades-nyons/"
+      ],
+      "robots": [
+        "index,follow"
+      ]
+    },
+    {
+      "url": "https://www.vivreanyons.fr/restaurants-de-nyons/Restaurant-thai/",
+      "chain": [
+        {
+          "url": "https://www.vivreanyons.fr/restaurants-de-nyons/Restaurant-thai/",
+          "status": 200,
+          "location": null
+        }
+      ],
+      "final": "https://www.vivreanyons.fr/restaurants-de-nyons/Restaurant-thai/",
+      "status": 200,
+      "canonical": [
+        "https://www.vivreanyons.fr/restaurants-de-nyons/Restaurant-thai/"
+      ],
+      "robots": [
+        "index,follow"
+      ]
+    },
+    {
+      "url": "https://www.vivreanyons.fr/restaurants-de-nyons/berli-nyons/",
+      "chain": [
+        {
+          "url": "https://www.vivreanyons.fr/restaurants-de-nyons/berli-nyons/",
+          "status": 200,
+          "location": null
+        }
+      ],
+      "final": "https://www.vivreanyons.fr/restaurants-de-nyons/berli-nyons/",
+      "status": 200,
+      "canonical": [
+        "https://www.vivreanyons.fr/restaurants-de-nyons/berli-nyons/"
+      ],
+      "robots": [
+        "index,follow"
+      ]
+    },
+    {
+      "url": "https://www.vivreanyons.fr/que-faire-nyons/nyons-week-end/",
+      "chain": [
+        {
+          "url": "https://www.vivreanyons.fr/que-faire-nyons/nyons-week-end/",
+          "status": 200,
+          "location": null
+        }
+      ],
+      "final": "https://www.vivreanyons.fr/que-faire-nyons/nyons-week-end/",
+      "status": 200,
+      "canonical": [
+        "https://www.vivreanyons.fr/que-faire-nyons/nyons-week-end/"
+      ],
+      "robots": [
+        "index,follow"
+      ]
+    },
+    {
+      "url": "https://www.vivreanyons.fr/que-faire-nyons/les-vieux-moulins/",
+      "chain": [
+        {
+          "url": "https://www.vivreanyons.fr/que-faire-nyons/les-vieux-moulins/",
+          "status": 200,
+          "location": null
+        }
+      ],
+      "final": "https://www.vivreanyons.fr/que-faire-nyons/les-vieux-moulins/",
+      "status": 200,
+      "canonical": [
+        "https://www.vivreanyons.fr/que-faire-nyons/les-vieux-moulins/"
+      ],
+      "robots": [
+        "index,follow"
+      ]
+    },
+    {
+      "url": "https://www.vivreanyons.fr/restaurants-de-nyons/Restaurant-alicoque-Nyons/",
+      "chain": [
+        {
+          "url": "https://www.vivreanyons.fr/restaurants-de-nyons/Restaurant-alicoque-Nyons/",
+          "status": 200,
+          "location": null
+        }
+      ],
+      "final": "https://www.vivreanyons.fr/restaurants-de-nyons/Restaurant-alicoque-Nyons/",
+      "status": 200,
+      "canonical": [
+        "https://www.vivreanyons.fr/restaurants-de-nyons/Restaurant-alicoque-Nyons/"
+      ],
+      "robots": [
+        "index,follow"
+      ]
+    },
+    {
+      "url": "https://www.vivreanyons.fr/a-faire-autour-de-Nyons/se-baigner-aubres/",
+      "chain": [
+        {
+          "url": "https://www.vivreanyons.fr/a-faire-autour-de-Nyons/se-baigner-aubres/",
+          "status": 200,
+          "location": null
+        }
+      ],
+      "final": "https://www.vivreanyons.fr/a-faire-autour-de-Nyons/se-baigner-aubres/",
+      "status": 200,
+      "canonical": [
+        "https://www.vivreanyons.fr/a-faire-autour-de-Nyons/se-baigner-aubres/"
+      ],
+      "robots": [
+        "index,follow"
+      ]
+    },
+    {
+      "url": "https://www.vivreanyons.fr/a-faire-autour-de-Nyons/village-de-venterol/",
+      "chain": [
+        {
+          "url": "https://www.vivreanyons.fr/a-faire-autour-de-Nyons/village-de-venterol/",
+          "status": 200,
+          "location": null
+        }
+      ],
+      "final": "https://www.vivreanyons.fr/a-faire-autour-de-Nyons/village-de-venterol/",
+      "status": 200,
+      "canonical": [
+        "https://www.vivreanyons.fr/a-faire-autour-de-Nyons/village-de-venterol/"
+      ],
+      "robots": [
+        "index,follow"
+      ]
+    },
+    {
+      "url": "https://www.vivreanyons.fr/ou-dormir-a-nyons/capfun-de-nyons",
+      "chain": [
+        {
+          "url": "https://www.vivreanyons.fr/ou-dormir-a-nyons/capfun-de-nyons",
+          "status": 301,
+          "location": "https://www.vivreanyons.fr/ou-dormir-a-nyons/capfun-de-nyons/"
+        },
+        {
+          "url": "https://www.vivreanyons.fr/ou-dormir-a-nyons/capfun-de-nyons/",
+          "status": 200,
+          "location": null
+        }
+      ],
+      "final": "https://www.vivreanyons.fr/ou-dormir-a-nyons/capfun-de-nyons/",
+      "status": 200,
+      "canonical": [
+        "https://www.vivreanyons.fr/ou-dormir-a-nyons/capfun-de-nyons/"
+      ],
+      "robots": [
+        "index,follow"
+      ]
+    },
+    {
+      "url": "https://www.vivreanyons.fr/que-faire-nyons/spots-baignades-nyons",
+      "chain": [
+        {
+          "url": "https://www.vivreanyons.fr/que-faire-nyons/spots-baignades-nyons",
+          "status": 301,
+          "location": "https://www.vivreanyons.fr/que-faire-nyons/spots-baignades-nyons/"
+        },
+        {
+          "url": "https://www.vivreanyons.fr/que-faire-nyons/spots-baignades-nyons/",
+          "status": 200,
+          "location": null
+        }
+      ],
+      "final": "https://www.vivreanyons.fr/que-faire-nyons/spots-baignades-nyons/",
+      "status": 200,
+      "canonical": [
+        "https://www.vivreanyons.fr/que-faire-nyons/spots-baignades-nyons/"
+      ],
+      "robots": [
+        "index,follow"
+      ]
+    },
+    {
+      "url": "https://www.vivreanyons.fr/restaurants-de-nyons/Restaurant-thai",
+      "chain": [
+        {
+          "url": "https://www.vivreanyons.fr/restaurants-de-nyons/Restaurant-thai",
+          "status": 301,
+          "location": "https://www.vivreanyons.fr/restaurants-de-nyons/Restaurant-thai/"
+        },
+        {
+          "url": "https://www.vivreanyons.fr/restaurants-de-nyons/Restaurant-thai/",
+          "status": 200,
+          "location": null
+        }
+      ],
+      "final": "https://www.vivreanyons.fr/restaurants-de-nyons/Restaurant-thai/",
+      "status": 200,
+      "canonical": [
+        "https://www.vivreanyons.fr/restaurants-de-nyons/Restaurant-thai/"
+      ],
+      "robots": [
+        "index,follow"
+      ]
+    },
+    {
+      "url": "https://www.vivreanyons.fr/restaurants-de-nyons/berli-nyons",
+      "chain": [
+        {
+          "url": "https://www.vivreanyons.fr/restaurants-de-nyons/berli-nyons",
+          "status": 301,
+          "location": "https://www.vivreanyons.fr/restaurants-de-nyons/berli-nyons/"
+        },
+        {
+          "url": "https://www.vivreanyons.fr/restaurants-de-nyons/berli-nyons/",
+          "status": 200,
+          "location": null
+        }
+      ],
+      "final": "https://www.vivreanyons.fr/restaurants-de-nyons/berli-nyons/",
+      "status": 200,
+      "canonical": [
+        "https://www.vivreanyons.fr/restaurants-de-nyons/berli-nyons/"
+      ],
+      "robots": [
+        "index,follow"
+      ]
+    },
+    {
+      "url": "https://www.vivreanyons.fr/que-faire-nyons/nyons-week-end",
+      "chain": [
+        {
+          "url": "https://www.vivreanyons.fr/que-faire-nyons/nyons-week-end",
+          "status": 301,
+          "location": "https://www.vivreanyons.fr/que-faire-nyons/nyons-week-end/"
+        },
+        {
+          "url": "https://www.vivreanyons.fr/que-faire-nyons/nyons-week-end/",
+          "status": 200,
+          "location": null
+        }
+      ],
+      "final": "https://www.vivreanyons.fr/que-faire-nyons/nyons-week-end/",
+      "status": 200,
+      "canonical": [
+        "https://www.vivreanyons.fr/que-faire-nyons/nyons-week-end/"
+      ],
+      "robots": [
+        "index,follow"
+      ]
+    },
+    {
+      "url": "https://www.vivreanyons.fr/que-faire-nyons/les-vieux-moulins",
+      "chain": [
+        {
+          "url": "https://www.vivreanyons.fr/que-faire-nyons/les-vieux-moulins",
+          "status": 301,
+          "location": "https://www.vivreanyons.fr/que-faire-nyons/les-vieux-moulins/"
+        },
+        {
+          "url": "https://www.vivreanyons.fr/que-faire-nyons/les-vieux-moulins/",
+          "status": 200,
+          "location": null
+        }
+      ],
+      "final": "https://www.vivreanyons.fr/que-faire-nyons/les-vieux-moulins/",
+      "status": 200,
+      "canonical": [
+        "https://www.vivreanyons.fr/que-faire-nyons/les-vieux-moulins/"
+      ],
+      "robots": [
+        "index,follow"
+      ]
+    },
+    {
+      "url": "https://www.vivreanyons.fr/restaurants-de-nyons/Restaurant-alicoque-Nyons",
+      "chain": [
+        {
+          "url": "https://www.vivreanyons.fr/restaurants-de-nyons/Restaurant-alicoque-Nyons",
+          "status": 301,
+          "location": "https://www.vivreanyons.fr/restaurants-de-nyons/Restaurant-alicoque-Nyons/"
+        },
+        {
+          "url": "https://www.vivreanyons.fr/restaurants-de-nyons/Restaurant-alicoque-Nyons/",
+          "status": 200,
+          "location": null
+        }
+      ],
+      "final": "https://www.vivreanyons.fr/restaurants-de-nyons/Restaurant-alicoque-Nyons/",
+      "status": 200,
+      "canonical": [
+        "https://www.vivreanyons.fr/restaurants-de-nyons/Restaurant-alicoque-Nyons/"
+      ],
+      "robots": [
+        "index,follow"
+      ]
+    },
+    {
+      "url": "https://www.vivreanyons.fr/a-faire-autour-de-Nyons/se-baigner-aubres",
+      "chain": [
+        {
+          "url": "https://www.vivreanyons.fr/a-faire-autour-de-Nyons/se-baigner-aubres",
+          "status": 301,
+          "location": "https://www.vivreanyons.fr/a-faire-autour-de-Nyons/se-baigner-aubres/"
+        },
+        {
+          "url": "https://www.vivreanyons.fr/a-faire-autour-de-Nyons/se-baigner-aubres/",
+          "status": 200,
+          "location": null
+        }
+      ],
+      "final": "https://www.vivreanyons.fr/a-faire-autour-de-Nyons/se-baigner-aubres/",
+      "status": 200,
+      "canonical": [
+        "https://www.vivreanyons.fr/a-faire-autour-de-Nyons/se-baigner-aubres/"
+      ],
+      "robots": [
+        "index,follow"
+      ]
+    },
+    {
+      "url": "https://www.vivreanyons.fr/a-faire-autour-de-Nyons/village-de-venterol",
+      "chain": [
+        {
+          "url": "https://www.vivreanyons.fr/a-faire-autour-de-Nyons/village-de-venterol",
+          "status": 301,
+          "location": "https://www.vivreanyons.fr/a-faire-autour-de-Nyons/village-de-venterol/"
+        },
+        {
+          "url": "https://www.vivreanyons.fr/a-faire-autour-de-Nyons/village-de-venterol/",
+          "status": 200,
+          "location": null
+        }
+      ],
+      "final": "https://www.vivreanyons.fr/a-faire-autour-de-Nyons/village-de-venterol/",
+      "status": 200,
+      "canonical": [
+        "https://www.vivreanyons.fr/a-faire-autour-de-Nyons/village-de-venterol/"
+      ],
+      "robots": [
+        "index,follow"
+      ]
+    },
+    {
+      "url": "https://www.vivreanyons.fr/robots.txt",
+      "chain": [
+        {
+          "url": "https://www.vivreanyons.fr/robots.txt",
+          "status": 200,
+          "location": null
+        }
+      ],
+      "final": "https://www.vivreanyons.fr/robots.txt",
+      "status": 200,
+      "canonical": [],
+      "robots": []
+    },
+    {
+      "url": "https://www.vivreanyons.fr/sitemap.xml",
+      "chain": [
+        {
+          "url": "https://www.vivreanyons.fr/sitemap.xml",
+          "status": 200,
+          "location": null
+        }
+      ],
+      "final": "https://www.vivreanyons.fr/sitemap.xml",
+      "status": 200,
+      "canonical": [],
+      "robots": []
+    }
+  ]
+}
