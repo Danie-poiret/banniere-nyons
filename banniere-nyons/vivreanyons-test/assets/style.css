@@ -231,3 +231,7 @@ iframe[data-privacy-category][hidden],.privacy-placeholder[hidden],.privacy-pane
   .nav[data-mobile-ready] .rubriques summary{min-height:44px;padding:10px;border-radius:9px;background:var(--cream)}
   .nav[data-mobile-ready] .rubriques-menu{margin-top:8px;min-width:0}
 }
+
+/* Narrow article grids: allow long contact details to wrap without widening the page. */
+@media(max-width:860px){.feature-layout{grid-template-columns:minmax(0,1fr)}}
+@media(max-width:760px){.feature-layout.has-sidebar{grid-template-columns:minmax(0,1fr)}.feature-layout.has-sidebar>*{min-width:0}.feature-layout .feature-story,.feature-layout .faq,.feature-layout .note{overflow-wrap:anywhere}}
