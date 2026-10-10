@@ -49,22 +49,5 @@ jobs:
               if [ "$attempt" = 3 ]; then exit 1; fi
             done
           fi
-      - name: Préparer le site complet
-        uses: actions/upload-pages-artifact@v3
-        with:
-          path: .
-  deploy:
-    needs: refresh
-    runs-on: ubuntu-latest
-    timeout-minutes: 10
-    permissions:
-      contents: read
-      pages: write
-      id-token: write
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    steps:
-      - name: Publier les horaires actualisés
-        id: deployment
-        uses: actions/deploy-pages@v4
+      # This repository publishes main through its existing Pages build.
+      # The bot commit triggers that build; a second deployment would race it.
