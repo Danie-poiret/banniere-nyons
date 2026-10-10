@@ -26,8 +26,8 @@ async function main(){
      assert(open.scrollWidth<=width+1,'Open menu overflows');assert.deepEqual(open.links,initial.links,'Navigation links changed');
      await page.screenshot({path:path.join(out,(slug?'article-'+slug.split('/')[1]:'home')+'-'+width+'-menu.png'),fullPage:false});
      await page.keyboard.press('Escape');assert.equal(await toggle.getAttribute('aria-expanded'),'false');assert.equal(await toggle.evaluate(e=>e===document.activeElement),true);
-     await page.setViewportSize({width:1280,height:844});assert(!(await toggle.isVisible()));assert(await page.locator('#nyons-main-menu').isVisible());
-     await page.setViewportSize({width,height:844});assert.equal(await toggle.getAttribute('aria-expanded'),'false');
+     await page.setViewportSize({width:1280,height:844});await toggle.waitFor({state:'hidden'});assert(!(await toggle.isVisible()));assert(await page.locator('#nyons-main-menu').isVisible());
+     await page.setViewportSize({width,height:844});await toggle.waitFor({state:'visible'});assert.equal(await toggle.getAttribute('aria-expanded'),'false');
     }else{assert(!(await toggle.isVisible()));assert(await page.locator('#nyons-main-menu').isVisible());}
     await page.screenshot({path:path.join(out,(slug?'article-'+slug.split('/')[1]:'home')+'-'+width+'.png'),fullPage:false});
     checks.push({slug,width,headerHeight:initial.headerHeight,horizontalOverflow:false,allLinksPreserved:true});await context.close();
