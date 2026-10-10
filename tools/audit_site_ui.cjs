@@ -16,6 +16,11 @@ async function main(){
     await page.goto('http://127.0.0.1:8765/'+slug,{waitUntil:'networkidle',timeout:45000});
     const reject=page.locator('[data-privacy-action="reject"]');if(await reject.isVisible())await reject.click();
     const initial=await page.evaluate(()=>({width:innerWidth,scrollWidth:document.documentElement.scrollWidth,headerHeight:document.querySelector('header').getBoundingClientRect().height,links:[...document.querySelectorAll('header a')].map(a=>a.getAttribute('href'))}));
+    if(initial.scrollWidth>width+1){
+     const overflow=await page.evaluate(()=>[...document.querySelectorAll('body *')].filter(e=>{const r=e.getBoundingClientRect();return r.width>0&&(r.right>innerWidth+1||r.left<0);}).slice(0,20).map(e=>({tag:e.tagName,cls:e.className,rect:{left:e.getBoundingClientRect().left,width:e.getBoundingClientRect().width,right:e.getBoundingClientRect().right},text:e.textContent.trim().slice(0,90)})));
+     console.log('OVERFLOW_DIAGNOSTIC '+JSON.stringify({slug,width,initial,overflow}));
+     await page.screenshot({path:path.join(out,'overflow-'+width+'.png'),fullPage:false});
+    }
     assert(initial.scrollWidth<=width+1,'Horizontal overflow on '+slug+' at '+width);
     const toggle=page.locator('[data-mobile-menu-toggle]');
     if(width<=800){
