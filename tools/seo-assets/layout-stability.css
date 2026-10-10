@@ -1,0 +1,11 @@
+/* Reserve the banner's final geometry before the shared script inserts it. */
+@media(scripting:enabled){
+  body>.hero:not(:has(+.site-banner)){margin-bottom:calc(min(1120px,92%) / 3 + 25.3333px)}
+}
+/* Prepare the compact header at first paint; scripting:none retains the original links. */
+@media(scripting:enabled) and (max-width:800px){
+  header .nav:not([data-mobile-ready]){display:grid;grid-template-columns:minmax(0,1fr) auto;gap:10px;align-items:center;padding:12px 16px;min-height:80.33px}
+  header .nav:not([data-mobile-ready]) .navlinks{display:none}
+  header .nav:not([data-mobile-ready]) .brand{white-space:normal;overflow-wrap:anywhere}
+  header .nav:not([data-mobile-ready])::after{content:'Menu';display:block;min-height:44px;padding:9px 13px;border:1px solid var(--line);border-radius:10px;background:var(--paper);color:var(--olive);font-weight:800}
+}

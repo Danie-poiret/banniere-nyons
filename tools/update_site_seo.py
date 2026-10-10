@@ -32,7 +32,7 @@ def main():
     for prefix in PREFIXES:
         file=ROOT/(prefix+'index.html');before=file.read_text(encoding='utf-8');after=update_home(before,prefix)
         if after!=before: file.write_text(after,encoding='utf-8');changed+=1;home_changed=True
-        for suffix,marker,asset in [('assets/agenda.js','installNyonsMobileNavigation','mobile-navigation.js'),('assets/style.css','Compact mobile navigation','mobile-navigation.css'),('assets/style.css','Narrow article grids','narrow-article-grids.css')]:
+        for suffix,marker,asset in [('assets/agenda.js','installNyonsMobileNavigation','mobile-navigation.js'),('assets/style.css','Compact mobile navigation','mobile-navigation.css'),('assets/style.css','Narrow article grids','narrow-article-grids.css'),('assets/style.css','Reserve the banner','layout-stability.css')]:
             file=ROOT/(prefix+suffix);before=file.read_text(encoding='utf-8')
             addition=(ROOT/'tools/seo-assets'/asset).read_text(encoding='utf-8')
             if marker not in before: file.write_text(before.rstrip()+'\n\n'+addition,encoding='utf-8');changed+=1
