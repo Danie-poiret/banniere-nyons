@@ -53,7 +53,9 @@ async function main(){
  const jobs=[['home','https://www.vivreanyons.fr/','mobile'],['restaurants','https://www.vivreanyons.fr/restaurants-de-nyons/','mobile'],['health','https://www.vivreanyons.fr/sante-nyons/infirmiere-domicile-nyons/','mobile'],['agenda','https://agenda.vivreanyons.fr/','mobile'],['home','https://www.vivreanyons.fr/','desktop']];
  const results=[];
  for(const [name,url,profile] of jobs){
-  const chrome=await launch({chromePath:chromium.executablePath(),chromeFlags:['--headless=new','--disable-dev-shm-usage']});
+  // The disposable Actions worker has no user browser profile; match Playwright's CI launch.
+  const chromeFlags=['--headless=new','--disable-dev-shm-usage'];if(process.env.GITHUB_ACTIONS==='true')chromeFlags.push('--no-sandbox');
+  const chrome=await launch({chromePath:chromium.executablePath(),chromeFlags});
   try{
    const flags={port:chrome.port,output:['json','html'],onlyCategories:['performance'],logLevel:'error'};
    if(profile==='desktop'){flags.formFactor='desktop';flags.screenEmulation={mobile:false,width:1350,height:940,deviceScaleFactor:1,disabled:false};flags.throttling={rttMs:40,throughputKbps:10240,cpuSlowdownMultiplier:1};}
