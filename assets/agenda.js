@@ -361,6 +361,7 @@ document.addEventListener('DOMContentLoaded',()=>{simplifyPontRomanPhotos();load
 
 /* Visitor-visible lodging message; excluded from search-result snippets. */
 (function installNyonsLodging(){
+  if(location.pathname.toLowerCase().includes('/demande-sejour-lezardiere/'))return;
   if(!document.body || document.querySelector('[data-nyons-lodging]')) return;
   const banner=document.createElement('div');
   banner.className='lodging-banner';
