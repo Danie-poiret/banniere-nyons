@@ -47,31 +47,30 @@
     footer.replaceChildren(content);
   }
 })();
-/* Banner supplied by the site owner; shown below the green page heading. */
-(function installNyonsBanner(){
-  const hero=document.querySelector('body > .hero');
-  if(!hero || document.querySelector('[data-nyons-banner]')) return;
-  const banner=document.createElement('aside');
-  banner.className='site-banner';
-  banner.setAttribute('data-nyons-banner','');
-  banner.setAttribute('aria-label','Sélection de vieux livres sur Nyons');
-  banner.style.cssText='width:min(1120px,92%);margin:24px auto 0';
-  const link=document.createElement('a');
-  link.href='https://amzn.to/3VzucHH';
-  link.target='_blank';
-  link.rel='sponsored noopener noreferrer';
-  link.title='Voir ma sélection de livres anciens sur Nyons';
-  const image=document.createElement('img');
-  image.src='/banniere-nyons/vivreanyons-test/assets/nyons-livres-banner.webp';
-  image.alt='Vieux livres sur Nyons que je recommande : histoire, souvenirs et cartes postales anciennes. Voir ma sélection sur Amazon.';
-  image.width=2172;
-  image.height=724;
-  image.loading='lazy';
-  image.decoding='async';
-  image.style.cssText='display:block;width:100%;height:auto';
-  link.append(image);
-  banner.append(link);
-  hero.insertAdjacentElement('afterend',banner);
+/* Two shared partner cards below the heading, with La Lézardière first. */
+(function installNyonsPartnerCards(){
+  function install(){
+    if(document.querySelector('[data-nyons-partner-cards]'))return;
+    const anchor=document.querySelector('body > .hero')||document.querySelector('header');if(!anchor)return;
+    const canonical=document.querySelector('link[rel="canonical"]');
+    const path=(canonical?new URL(canonical.href,location.href).pathname:location.pathname).toLowerCase();
+    const omitLodging=path.includes('/la-lezardiere/')||path.includes('/demande-sejour-lezardiere/')||!!document.querySelector('[data-lezardiere-api]');
+    const group=document.createElement('div');group.className='nyons-partner-cards';group.dataset.nyonsPartnerCards='';group.setAttribute('data-nosnippet','');
+    const items=[];
+    if(!omitLodging)items.push({key:'lezardiere',label:'La Lézardière, adresse partenaire à Nyons',photo:'/assets/lezardiere/mini-villa.webp',alt:'La villa de La Lézardière et son jardin à Nyons',title:'☀️ UN SÉJOUR À NYONS ?',copy:'Papy Chris te recommande de découvrir La Lézardière !',href:'/demande-sejour-lezardiere/',cta:'Demander les disponibilités →',note:'Adresse partenaire de Vivre à Nyons'});
+    items.push({key:'livres',label:'Sélection de vieux livres sur Nyons',photo:'/assets/nyons-livres-mini.webp',alt:'Livres sur Nyons dans le visuel de la sélection de Papy Chris',title:'📚 VIEUX LIVRES SUR NYONS',copy:'Histoire, souvenirs, cartes postales anciennes… Découvre la sélection de Papy Chris.',href:'https://amzn.to/3VzucHH',cta:'Voir ma sélection de livres →',note:'La sélection de Papy Chris sur Amazon.fr'});
+    items.forEach(item=>{
+      const card=document.createElement('aside');card.className='nyons-partner-card';card.dataset.nyonsPartner=item.key;card.setAttribute('aria-label',item.label);
+      const photo=document.createElement('img');photo.src=item.photo;photo.alt=item.alt;photo.width=88;photo.height=88;photo.loading='lazy';photo.decoding='async';
+      const copy=document.createElement('div');copy.className='nyons-partner-copy';const p=document.createElement('p');const title=document.createElement('strong');title.textContent=item.title;p.append(title,document.createTextNode(' '+item.copy));
+      const link=document.createElement('a');link.href=item.href;link.textContent=item.cta;link.rel='sponsored';if(item.key==='livres'){link.target='_blank';link.rel+=' noopener noreferrer';}
+      const note=document.createElement('span');note.textContent=item.note;copy.append(p,link,note);card.append(photo,copy);group.append(card);
+    });
+    const style=document.createElement('style');style.dataset.nyonsPartnerStyle='';
+    style.textContent='.nyons-partner-cards{box-sizing:border-box;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));grid-auto-rows:1fr;gap:18px;width:min(1120px,92%);margin:24px auto 0}.nyons-partner-card{box-sizing:border-box;display:flex;align-items:center;gap:16px;min-width:0;min-height:150px;padding:18px;background:#f3f1e5;border:1px solid #dedecb;border-left:4px solid #768b5b;border-radius:12px;color:#344f38;font-family:system-ui,sans-serif}.nyons-partner-card>img{display:block;flex:0 0 88px;width:88px;height:88px;object-fit:cover;border-radius:9px}.nyons-partner-copy{min-width:0}.nyons-partner-copy p{margin:0 0 7px;font-size:14px;line-height:1.5}.nyons-partner-copy a{display:inline-block;color:#295646;font-size:14px;font-weight:750;text-decoration:underline;text-underline-offset:4px;padding:5px 0}.nyons-partner-copy a:focus-visible{outline:3px solid #668360;outline-offset:4px;border-radius:3px}.nyons-partner-copy span{display:block;margin-top:4px;font-size:11px;color:#63705d}@media(max-width:760px){.nyons-partner-cards{grid-template-columns:1fr;gap:14px}.nyons-partner-card{min-height:176px;padding:16px 14px;gap:14px}}';
+    document.head.append(style);anchor.after(group);
+  }
+  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',install,{once:true});else install();
 })();
 const AGENDA_DATA='https://raw.githubusercontent.com/Danie-poiret/agenda-nyons/main/agenda.json';
 function slugify(s){return (s||'').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase().replace(/['’]/g,'-').replace(/[^a-z0-9]+/g,'-').replace(/^-+|-+$/g,'').replace(/-+/g,'-')}
@@ -399,23 +398,4 @@ document.addEventListener('DOMContentLoaded',()=>{simplifyPontRomanPhotos();load
   function resize(){open=narrow.matches&&menu.contains(document.activeElement);display();}
   if(narrow.addEventListener)narrow.addEventListener('change',resize);else narrow.addListener(resize);
   display();
-})();
-
-/* One shared, lightweight partner card before the footer; no tracking or popup. */
-(function installLezardierePartnerCard(){
-  function install(){
-    const canonical=document.querySelector('link[rel="canonical"]');
-    const path=(canonical?new URL(canonical.href,location.href).pathname:location.pathname).toLowerCase();
-    if(path.includes('/la-lezardiere/')||path.includes('/demande-sejour-lezardiere/')||document.querySelector('[data-lezardiere-api],[data-lezardiere-partner-card]'))return;
-    const footer=document.querySelector('footer');if(!footer)return;
-    const card=document.createElement('aside');
-    card.className='lez-footer-card';card.dataset.lezardierePartnerCard='';
-    card.setAttribute('aria-label','La Lézardière, adresse partenaire à Nyons');
-    card.setAttribute('data-nosnippet','');
-    card.innerHTML='<img src="/assets/lezardiere/mini-villa.webp" alt="La villa de La Lézardière et son jardin à Nyons" width="88" height="88" loading="lazy" decoding="async"><div class="lez-footer-card-copy"><p><strong>☀️ UN SÉJOUR À NYONS ?</strong> Papy Chris te recommande de découvrir La Lézardière !</p><a href="/demande-sejour-lezardiere/" rel="sponsored">Demander les disponibilités →</a><span>Adresse partenaire de Vivre à Nyons</span></div>';
-    const style=document.createElement('style');style.dataset.lezardierePartnerStyle='';
-    style.textContent='.lez-footer-card{box-sizing:border-box;display:flex;align-items:center;gap:20px;width:min(1120px,92%);margin:28px auto;padding:18px 22px;background:#f3f1e5;border:1px solid #dedecb;border-left:4px solid #768b5b;border-radius:12px;color:#344f38;font-family:system-ui,sans-serif}.lez-footer-card>img{display:block;flex:0 0 88px;width:88px;height:88px;object-fit:cover;border-radius:9px}.lez-footer-card-copy{min-width:0}.lez-footer-card-copy p{margin:0 0 8px;font-size:15px;line-height:1.5}.lez-footer-card-copy a{display:inline-block;color:#295646;font-size:15px;font-weight:750;text-decoration:underline;text-underline-offset:4px;padding:5px 0}.lez-footer-card-copy a:focus-visible{outline:3px solid #668360;outline-offset:4px;border-radius:3px}.lez-footer-card-copy span{display:block;margin-top:5px;font-size:11px;color:#63705d}@media(max-width:540px){.lez-footer-card{gap:14px;padding:16px 14px;align-items:flex-start}.lez-footer-card-copy p,.lez-footer-card-copy a{font-size:14px}}';
-    document.head.append(style);footer.before(card);
-  }
-  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',install,{once:true});else install();
 })();
