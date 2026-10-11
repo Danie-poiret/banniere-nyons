@@ -11,7 +11,10 @@ assert.equal(api.stamp(new Date('2026-10-10T23:30:00Z')).slice(0,10),'2026-10-11
 assert.equal(api.season('2026-12-01'),'winter');assert.equal(api.esc('<script>'),'&lt;script&gt;');
 const page=fs.readFileSync('index.html','utf8');
 assert(page.indexOf('data-nyons-lodging')<page.indexOf('<header>'));
-assert(page.includes('https://www.lalezardierenyons.com/situation-contact'));assert(page.includes('https://wa.me/33632076124'));
+const lodging=page.match(/<aside[^>]+data-nyons-lodging[\s\S]*?<\/aside>/)[0];
+assert(lodging.includes('href="/demande-sejour-lezardiere/"'));
+assert(lodging.includes('☀️ Prépare ton séjour à Nyons →'));
+assert(!lodging.includes('wa.me/'));assert(!lodging.includes('06 32 07 61 24'));
 assert.equal((page.match(/class="home-latest-card"/g)||[]).length,5);
 assert(!page.includes('<p>Chargement…</p>'));assert(page.includes('data-nyons-weather'));assert(page.indexOf('data-nyons-weather')<page.indexOf('HOME_LATEST_START'));
 assert(page.includes('<h1>Vivre à Nyons, simplement.</h1>'));
