@@ -400,3 +400,22 @@ document.addEventListener('DOMContentLoaded',()=>{simplifyPontRomanPhotos();load
   if(narrow.addEventListener)narrow.addEventListener('change',resize);else narrow.addListener(resize);
   display();
 })();
+
+/* One shared, lightweight partner card before the footer; no tracking or popup. */
+(function installLezardierePartnerCard(){
+  function install(){
+    const canonical=document.querySelector('link[rel="canonical"]');
+    const path=(canonical?new URL(canonical.href,location.href).pathname:location.pathname).toLowerCase();
+    if(path.includes('/la-lezardiere/')||path.includes('/demande-sejour-lezardiere/')||document.querySelector('[data-lezardiere-api],[data-lezardiere-partner-card]'))return;
+    const footer=document.querySelector('footer');if(!footer)return;
+    const card=document.createElement('aside');
+    card.className='lez-footer-card';card.dataset.lezardierePartnerCard='';
+    card.setAttribute('aria-label','La Lézardière, adresse partenaire à Nyons');
+    card.setAttribute('data-nosnippet','');
+    card.innerHTML='<img src="/assets/lezardiere/mini-villa.webp" alt="La villa de La Lézardière et son jardin à Nyons" width="88" height="88" loading="lazy" decoding="async"><div class="lez-footer-card-copy"><p><strong>☀️ UN SÉJOUR À NYONS ?</strong> Papy Chris te recommande de découvrir La Lézardière !</p><a href="/demande-sejour-lezardiere/" rel="sponsored">Demander les disponibilités →</a><span>Adresse partenaire de Vivre à Nyons</span></div>';
+    const style=document.createElement('style');style.dataset.lezardierePartnerStyle='';
+    style.textContent='.lez-footer-card{box-sizing:border-box;display:flex;align-items:center;gap:20px;width:min(1120px,92%);margin:28px auto;padding:18px 22px;background:#f3f1e5;border:1px solid #dedecb;border-left:4px solid #768b5b;border-radius:12px;color:#344f38;font-family:system-ui,sans-serif}.lez-footer-card>img{display:block;flex:0 0 88px;width:88px;height:88px;object-fit:cover;border-radius:9px}.lez-footer-card-copy{min-width:0}.lez-footer-card-copy p{margin:0 0 8px;font-size:15px;line-height:1.5}.lez-footer-card-copy a{display:inline-block;color:#295646;font-size:15px;font-weight:750;text-decoration:underline;text-underline-offset:4px;padding:5px 0}.lez-footer-card-copy a:focus-visible{outline:3px solid #668360;outline-offset:4px;border-radius:3px}.lez-footer-card-copy span{display:block;margin-top:5px;font-size:11px;color:#63705d}@media(max-width:540px){.lez-footer-card{gap:14px;padding:16px 14px;align-items:flex-start}.lez-footer-card-copy p,.lez-footer-card-copy a{font-size:14px}}';
+    document.head.append(style);footer.before(card);
+  }
+  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',install,{once:true});else install();
+})();
