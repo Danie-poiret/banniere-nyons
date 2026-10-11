@@ -40,5 +40,6 @@
   svg.addEventListener('keydown',e=>{const delta=60;if(['+','=','-','ArrowLeft','ArrowRight','ArrowUp','ArrowDown'].includes(e.key)){e.preventDefault();if(e.key==='+'||e.key==='=')zoomBy(1.5);else if(e.key==='-')zoomBy(1/1.5);else{if(e.key==='ArrowLeft')view.x+=delta;if(e.key==='ArrowRight')view.x-=delta;if(e.key==='ArrowUp')view.y+=delta;if(e.key==='ArrowDown')view.y-=delta;render();}}});
   const normalize=s=>s.normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase();
   document.getElementById('village-search').addEventListener('input',e=>{const q=normalize(e.target.value.trim());let count=0;document.querySelectorAll('.village-card').forEach(c=>{c.hidden=!normalize(c.dataset.name).includes(q);if(!c.hidden)count++;});document.getElementById('search-empty').hidden=count>0;});
-  window.addEventListener('resize',render);render();
+  window.addEventListener('resize',render);
+  if(window.matchMedia('(max-width:600px)').matches)focusVillage(1,true);else render();
 })();
