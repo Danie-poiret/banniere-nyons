@@ -367,7 +367,7 @@ document.addEventListener('DOMContentLoaded',()=>{simplifyPontRomanPhotos();load
   banner.setAttribute('data-nosnippet','');
   banner.setAttribute('role','region');
   banner.setAttribute('aria-label','Le logement de Papy Chris à Nyons');
-  banner.innerHTML='<div class="lodging-banner-inner"><p><strong>🔥 STOP AUX MAUVAISES LOCATIONS À NYONS</strong><span>👉 Papy Chris t’a trouvé ton logement 👍</span></p><div class="lodging-banner-actions"><a class="lodging-see" href="https://www.lalezardierenyons.com/situation-contact" target="_blank" rel="sponsored noopener noreferrer">Voir ↗</a><a class="lodging-whatsapp" href="https://wa.me/33632076124" target="_blank" rel="noopener noreferrer"><span aria-hidden="true">📞</span> WhatsApp · 06 32 07 61 24</a></div></div>';
+  banner.innerHTML='<div class="lodging-banner-inner"><p><strong>🔥 STOP AUX MAUVAISES LOCATIONS À NYONS</strong><span>👉 Papy Chris t’a trouvé ton logement 👍</span></p><div class="lodging-banner-actions"><a class="lodging-see" href="/demande-sejour-lezardiere/" rel="sponsored">☀️ Prépare ton séjour à Nyons →</a></div></div>';
   document.body.prepend(banner);
 })();
 
