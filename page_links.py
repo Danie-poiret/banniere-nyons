@@ -49,14 +49,14 @@ def install(root=None, site=None):
     files = list(root.rglob('*.html')) + [p for p in root.rglob('agenda.js') if p.parent.name == 'assets']
     for path in sorted(files):
         if any(p.startswith('.') for p in path.relative_to(root).parts): continue
-        source=path.read_text(encoding='utf8');updated=normalize_html(source,site)
+        source=path.read_bytes().decode('utf8');updated=normalize_html(source,site)
         if source!=updated:
             assert normalize_html(updated,site)==updated, path
             before=TAG.sub(lambda m:HREF.sub('href="[LINK]"',m[0]),source)
             after=TAG.sub(lambda m:HREF.sub('href="[LINK]"',m[0]),updated)
             assert before==after, 'Seuls les href peuvent changer : '+str(path)
             links+=sum(a!=b for a,b in zip(HREF.findall(source),HREF.findall(updated)))
-            path.write_text(updated,encoding='utf8');count+=1
+            path.write_bytes(updated.encode('utf8'));count+=1
     print(f'{count} pages harmonisées, {links} liens corrigés. Aucune URL supprimée ; redirections inchangées.')
     return count
 
