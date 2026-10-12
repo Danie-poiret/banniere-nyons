@@ -66,3 +66,8 @@ Ajouter en fin de fiche une section « Sources et liens utiles ». Conserver les
 - Cette règle vaut pour tous les liens du texte éditorial : patrimoine, balades, marchés, activités, météo et services. Elle ne demande pas de renommer les menus communs.
 - Choisir des destinations réellement utiles au sujet, varier les destinations lorsque cela apporte une information pertinente et conserver une seule occurrence par destination dans le corps de l’article. Ne pas ajouter un lien artificiel uniquement pour varier.
 - Conserver les URL canoniques : toutes les formulations concernant le marché de Nyons renvoient à /que-faire-nyons/Marche-de-Nyons/ (avec le préfixe adapté aux versions de test).
+
+
+## URL des pages — règle du 12 octobre 2026
+
+Utiliser systématiquement les URL canoniques avec un slash final `/` pour tous les liens vers les pages de www.vivreanyons.fr, agenda.vivreanyons.fr et drome.vivreanyons.fr, dans le texte comme dans les menus et les nouvelles fiches. Conserver les paramètres et les ancres. Ne pas ajouter de slash après les noms de fichiers (images, PDF, CSS, JavaScript, calendriers, etc.). Conserver les redirections permanentes 301 des anciennes adresses sans slash vers les adresses avec slash, pour que les liens déjà présents sur le Web restent valides. Ne pas renommer les pages ni changer leur chemin.
