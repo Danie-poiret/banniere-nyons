@@ -1,0 +1,101 @@
+[
+  {
+    "id": "recollets",
+    "name": "Récollets / Grande Prairie",
+    "lat": 44.3588312294,
+    "lon": 5.1384747471,
+    "kind": "parking",
+    "info": "200 places — derrière le parc aquatique.",
+    "osm": "way/172012628"
+  },
+  {
+    "id": "buffaven",
+    "name": "Buffaven",
+    "lat": 44.3613530533,
+    "lon": 5.1402544067,
+    "kind": "parking",
+    "info": "73 places — devant la mairie. Indisponible lorsque la place est occupée par le marché.",
+    "osm": "way/171985975"
+  },
+  {
+    "id": "arcades",
+    "name": "Dr Bourdongle / Arcades",
+    "lat": 44.3604765,
+    "lon": 5.14055166,
+    "kind": "parking",
+    "info": "28 places — centre historique. Vérifier les restrictions de marché.",
+    "osm": "way/1151209921"
+  },
+  {
+    "id": "liberation",
+    "name": "Secteur de la Libération",
+    "lat": 44.3599641,
+    "lon": 5.1394462167,
+    "kind": "secteur",
+    "info": "Repère commun aux parkings Nord (40 places) et Sud (100 places).",
+    "osm": "way/123476561"
+  },
+  {
+    "id": "republique",
+    "name": "Secteur de la République",
+    "lat": 44.36097962,
+    "lon": 5.13700038,
+    "kind": "secteur",
+    "info": "Parking municipal : 65 places. Repère de la place, pas de l’entrée.",
+    "osm": "way/299210587"
+  },
+  {
+    "id": "digue",
+    "name": "Secteur de la Digue",
+    "lat": 44.3586797333,
+    "lon": 5.1405143667,
+    "kind": "secteur",
+    "info": "Deux espaces municipaux : côté distillerie (180 places) et bord de l’Eygues (170 places). Repère de la promenade.",
+    "osm": "way/1006726624"
+  },
+  {
+    "id": "pays",
+    "name": "Secteur Maison de Pays",
+    "lat": 44.3566073364,
+    "lon": 5.1352622636,
+    "kind": "secteur",
+    "info": "Parking municipal : 45 places. Repère du bâtiment.",
+    "osm": "way/72896976"
+  },
+  {
+    "id": "sports",
+    "name": "Secteur Maison des Sports",
+    "lat": 44.3571578375,
+    "lon": 5.1356423375,
+    "kind": "secteur",
+    "info": "Parking municipal : 82 places. Repère de l’allée des Sports.",
+    "osm": "way/172013424"
+  },
+  {
+    "id": "roullet",
+    "name": "Secteur Roullet / Chantemerle",
+    "lat": 44.3610846286,
+    "lon": 5.1325053714,
+    "kind": "secteur",
+    "info": "Parking municipal : 80 places. Repère rue Chantemerle, près de Vignolis.",
+    "osm": "way/149481713"
+  },
+  {
+    "id": "citadelle",
+    "name": "Secteur de la Citadelle",
+    "lat": 44.35916435,
+    "lon": 5.14361955,
+    "kind": "secteur",
+    "info": "Parking municipal : 70 places. Repère de la route de la Citadelle.",
+    "osm": "way/535614562"
+  },
+  {
+    "id": "campers",
+    "name": "Aire camping-cars de la Digue",
+    "lat": 44.35804952,
+    "lon": 5.1387665,
+    "kind": "camper",
+    "info": "Première heure gratuite, puis 10 € jusqu’à 24 h, taxe de séjour en supplément. Voir les tarifs dans l’encadré.",
+    "osm": "way/297859987"
+  }
+]
