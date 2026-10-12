@@ -46,7 +46,8 @@ def install(root=None, site=None):
         if host not in HOSTS: raise RuntimeError('Domaine inattendu : '+host)
         site='https://'+host+'/'
     count=0;links=0
-    for path in sorted(root.rglob('*.html')):
+    files = list(root.rglob('*.html')) + [p for p in root.rglob('agenda.js') if p.parent.name == 'assets']
+    for path in sorted(files):
         if any(p.startswith('.') for p in path.relative_to(root).parts): continue
         source=path.read_text(encoding='utf8');updated=normalize_html(source,site)
         if source!=updated:
