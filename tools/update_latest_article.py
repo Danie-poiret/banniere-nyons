@@ -87,7 +87,7 @@ def update(root):
     main = root / 'index.html'
     main_source = main.read_text(encoding='utf-8')
     # Remove the separate guide card: the owner requested the ordinary article list.
-    main_source = re.sub(r'<section class="home-section" id="emploi-nyons-accueil"[^>]*>.*?</section>\\s*', '', main_source, flags=re.S)
+    main_source = re.sub(r'<section class="home-section" id="emploi-nyons-accueil"[^>]*>.*?</section>\s*', '', main_source, flags=re.S)
     if '<!-- HOME_LATEST_START -->' in main_source:
         # The redesigned homepage is the only page authorized for this update.
         cards = []
