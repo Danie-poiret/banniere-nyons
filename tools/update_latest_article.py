@@ -1,7 +1,8 @@
 """Refresh the three homepages from the most recently published Article.
 
 Run before publishing any new article: python tools/update_latest_article.py
-Only datePublished determines recency; editing dateModified does not.
+Ordinary articles are ordered by datePublished. Explicit editorial selections
+may include an updated guide, labelled as updated without changing its publication date.
 """
 import argparse
 import html
@@ -53,6 +54,8 @@ def objects(value):
 def update(root):
     sitemap = ET.parse(root / 'sitemap.xml')
     positions = {urlsplit(e.text).path: i for i, e in enumerate(sitemap.iter('{http://www.sitemaps.org/schemas/sitemap/0.9}loc'))}
+    selection_file = root / 'tools/home-editorial-updates.json'
+    selected_updates = set(json.loads(selection_file.read_text(encoding='utf-8')).get('paths', [])) if selection_file.exists() else set()
     candidates = []
     for directory, subdirs, files in os.walk(root):
         subdirs[:] = [name for name in subdirs if name not in {'.git', '.github', 'assets', 'tools', 'vivreanyons-test', 'banniere-nyons', '_pont_upload'}]
@@ -66,6 +69,9 @@ def update(root):
             if not (kind == 'Article' or isinstance(kind, list) and 'Article' in kind):
                 continue
             published = item.get('datePublished', '')
+            selected_update = path in selected_updates
+            if selected_update:
+                published = item.get('dateModified', '')
             if not re.fullmatch(r'\d{4}-\d{2}-\d{2}(?:T.*)?', published):
                 continue
             headline, description = item.get('headline'), item.get('description')
@@ -75,20 +81,24 @@ def update(root):
             images = images if isinstance(images, list) else [images]
             image_paths = [urlsplit(image.get('url', '') if isinstance(image, dict) else image).path for image in images]
             photo = next((image for image in page.images if urlsplit(image.get('src', '')).path in image_paths and image.get('alt')), None)
-            candidates.append((published, positions.get(path, -1), path, headline, description, photo))
+            candidates.append((published, positions.get(path, -1), path, headline, description, photo, selected_update))
     if not candidates:
         raise ValueError('No dated Article found; homepages were not changed.')
     main = root / 'index.html'
     main_source = main.read_text(encoding='utf-8')
+    # Remove the separate guide card: the owner requested the ordinary article list.
+    main_source = re.sub(r'<section class="home-section" id="emploi-nyons-accueil"[^>]*>.*?</section>\\s*', '', main_source, flags=re.S)
     if '<!-- HOME_LATEST_START -->' in main_source:
         # The redesigned homepage is the only page authorized for this update.
         cards = []
-        for published, _, path, headline, description, photo in sorted(candidates, key=lambda item: item[:3], reverse=True)[:5]:
+        for published, _, path, headline, description, photo, selected_update in sorted(candidates, key=lambda item: (item[0][:10], item[6], item[:3]), reverse=True)[:5]:
             if not photo:
                 raise ValueError('Missing article photograph: ' + path)
             year, month, day = published[:10].split('-')
             months = ['janvier', 'février', 'mars', 'avril', 'mai', 'juin', 'juillet', 'août', 'septembre', 'octobre', 'novembre', 'décembre']
             date = f'{int(day)} {months[int(month)-1]} {year}'
+            if selected_update:
+                date = 'Mis à jour le ' + date
             escape = lambda value: html.escape(str(value), quote=True)
             dimensions = ''.join(f' {key}="{escape(photo[key])}"' for key in ['width', 'height'] if key in photo)
             brief = description if len(description) <= 180 else description[:179].rsplit(' ', 1)[0] + '…'
@@ -100,7 +110,7 @@ def update(root):
         main.write_text(main_source, encoding='utf-8')
         print('Refreshed the five published articles on the main homepage only.')
         return
-    published, _, path, headline, description, photo = max(candidates, key=lambda item: item[:3])
+    published, _, path, headline, description, photo, selected_update = max(candidates, key=lambda item: item[:3])
     if not photo:
         raise ValueError('Missing latest article image with alt: ' + path)
     year, month, day = published[:10].split('-')
