@@ -138,6 +138,9 @@ def update_fiche(source, prefix, slug):
     return result
 
 def add_category_card(source, prefix, homepage=False):
+    # The redesigned homepage already has its own health category card.
+    if homepage and '<!-- HOME_LATEST_START -->' in source and 'href="/sante-nyons/"' in source:
+        return source
     if 'data-health-category="card"' in source:
         return source
     heading = "🩺 Santé à Nyons"
