@@ -1,0 +1,18 @@
+{
+  "verifiedAt": "2026-10-12T16:31:39Z",
+  "method": "Browser: both URLs opened; rendered page content inspected",
+  "entries": [
+    {
+      "title": "Judo — Le Zen",
+      "url": "https://www.vivreanyons.fr/nyons-carte-interactive/sport--nyons/#club-judo-le-zen",
+      "source": "https://www.nyons.com/annuaire/le-zen/",
+      "evidence": "Municipal page: judo for leisure and competition; activity at L’Ile Verte, 1 avenue Frédéric Mistral. Same club and contact in existing local table.",
+      "anchorAdded": "club-judo-le-zen"
+    },
+    {
+      "title": "Clubs sportifs de Nyons — annuaire et carte",
+      "url": "https://www.vivreanyons.fr/nyons-carte-interactive/sport--nyons/#sports-directory-title",
+      "evidence": "Existing local HTML table has 42 rows with activities and contacts; listed keywords taken from the table."
+    }
+  ]
+}
