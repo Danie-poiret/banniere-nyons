@@ -27,6 +27,7 @@ jobs:
       - name: Vérifier le module de l’accueil
         run: |
           node --check assets/home.js
+          python tools/update_latest_article.py
           node tools/check_homepage.cjs
       - name: Reprendre les articles et les données de l’agenda existant
         run: python tools/update_homepage.py
