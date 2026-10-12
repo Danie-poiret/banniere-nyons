@@ -1,0 +1,297 @@
+{
+  "checkedAt": "2026-10-12",
+  "entries": [
+    {
+      "entry": "Tennis et padel — Tennis Club de Nyons",
+      "requestedURL": "https://www.drome-cestmanature.com/fiches/tennis-club-de-nyons/",
+      "status": 200,
+      "finalURL": "https://www.drome-cestmanature.com/fiches/tennis-club-de-nyons/",
+      "title": "Tennis Club de Nyons - La Drôme Tourisme",
+      "h1": "Tennis Club de Nyons",
+      "canonical": "https://www.drome-cestmanature.com/fiches/tennis-club-de-nyons/",
+      "verifiedAt": "2026-10-12T16:05:59.787349+00:00",
+      "contentCharacters": 5444
+    },
+    {
+      "entry": "Pétanque — Nyons Pétanque",
+      "requestedURL": "https://www.nyons-petanque.com/",
+      "status": 200,
+      "finalURL": "https://www.nyons-petanque.com/",
+      "title": "Nyons Pétanque - Club d'amateurs de Pétanque et Jeu Provençal",
+      "h1": "",
+      "canonical": "https://www.nyons-petanque.com/",
+      "verifiedAt": "2026-10-12T16:06:00.336470+00:00",
+      "contentCharacters": 1917
+    },
+    {
+      "entry": "Aquagym et natation — Akwamouv",
+      "requestedURL": "https://www.vivreanyons.fr/que-faire-nyons/Akwamouv-nyons/",
+      "status": 200,
+      "finalURL": "https://www.vivreanyons.fr/que-faire-nyons/Akwamouv-nyons/",
+      "title": "Akwamouv à Nyons : aquagym, aquabike, avis et tarifs",
+      "h1": "Akwamouv à Nyons : aquagym, aquabike, avis et tarifs",
+      "canonical": "https://www.vivreanyons.fr/que-faire-nyons/Akwamouv-nyons/",
+      "verifiedAt": "2026-10-12T16:05:58.934088+00:00",
+      "contentCharacters": 9430
+    },
+    {
+      "entry": "VTT — Bike Park de Nyons",
+      "requestedURL": "https://www.vivreanyons.fr/que-faire-nyons/bike-park-nyons/",
+      "status": 200,
+      "finalURL": "https://www.vivreanyons.fr/que-faire-nyons/bike-park-nyons/",
+      "title": "Bike Park de Nyons : pistes VTT, stages, avis et tarifs",
+      "h1": "Bike Park de Nyons : pistes VTT, stages, avis et tarifs",
+      "canonical": "https://www.vivreanyons.fr/que-faire-nyons/bike-park-nyons/",
+      "verifiedAt": "2026-10-12T16:05:58.926051+00:00",
+      "contentCharacters": 8061
+    },
+    {
+      "entry": "Course à pied et trail autour de Nyons",
+      "requestedURL": "https://www.vivreanyons.fr/que-faire-nyons/courir-a-nyons/",
+      "status": 200,
+      "finalURL": "https://www.vivreanyons.fr/que-faire-nyons/courir-a-nyons/",
+      "title": "Où courir à Nyons ? Parcours faciles, footing et trail autour de la ville",
+      "h1": "Où courir à Nyons ? Parcours faciles, footing et trail autour de la ville",
+      "canonical": "https://www.vivreanyons.fr/que-faire-nyons/courir-a-nyons/",
+      "verifiedAt": "2026-10-12T16:05:58.932078+00:00",
+      "contentCharacters": 10565
+    },
+    {
+      "entry": "Bouger sans voiture — équipements sportifs",
+      "requestedURL": "https://www.vivreanyons.fr/que-faire-nyons/bouger-sans-voiture/",
+      "status": 200,
+      "finalURL": "https://www.vivreanyons.fr/que-faire-nyons/bouger-sans-voiture/",
+      "title": "À Nyons, on peut bouger où sans voiture ? Les équipements sportifs !",
+      "h1": "À Nyons, on peut bouger où sans voiture ? Les équipements sportifs !",
+      "canonical": "https://www.vivreanyons.fr/que-faire-nyons/bouger-sans-voiture/",
+      "verifiedAt": "2026-10-12T16:05:58.926051+00:00",
+      "contentCharacters": 6141
+    },
+    {
+      "entry": "Promenade de la Digue — balade facile",
+      "requestedURL": "https://www.vivreanyons.fr/que-faire-nyons/promenade-de-la-digue-nyons/",
+      "status": 200,
+      "finalURL": "https://www.vivreanyons.fr/que-faire-nyons/promenade-de-la-digue-nyons/",
+      "title": "Promenade de la Digue à Nyons : balade facile en famille au bord de l’Eygues",
+      "h1": "Promenade de la Digue à Nyons : balade facile en famille au bord de l’Eygues",
+      "canonical": "https://www.vivreanyons.fr/que-faire-nyons/promenade-de-la-digue-nyons/",
+      "verifiedAt": "2026-10-12T16:05:59.196188+00:00",
+      "contentCharacters": 16547
+    },
+    {
+      "entry": "Jardin des Arômes",
+      "requestedURL": "https://www.vivreanyons.fr/que-faire-nyons/Jardin-des-Aromes/",
+      "status": 200,
+      "finalURL": "https://www.vivreanyons.fr/que-faire-nyons/Jardin-des-Aromes/",
+      "title": "Jardin des Arômes à Nyons : visite gratuite au bord de l’Eygues",
+      "h1": "Jardin des Arômes à Nyons : visite gratuite au bord de l’Eygues",
+      "canonical": "https://www.vivreanyons.fr/que-faire-nyons/Jardin-des-Aromes/",
+      "verifiedAt": "2026-10-12T16:05:59.192146+00:00",
+      "contentCharacters": 9899
+    },
+    {
+      "entry": "Sentier des Oliviers",
+      "requestedURL": "https://www.vivreanyons.fr/que-faire-nyons/le-sentier-des-oliviers-nyons/",
+      "status": 200,
+      "finalURL": "https://www.vivreanyons.fr/que-faire-nyons/le-sentier-des-oliviers-nyons/",
+      "title": "Le sentier des oliviers Nyons",
+      "h1": "Le sentier des oliviers Nyons",
+      "canonical": "https://www.vivreanyons.fr/que-faire-nyons/le-sentier-des-oliviers-nyons/",
+      "verifiedAt": "2026-10-12T16:05:59.166511+00:00",
+      "contentCharacters": 6276
+    },
+    {
+      "entry": "Randonnées autour de Nyons — départs et parkings",
+      "requestedURL": "https://www.vivreanyons.fr/que-faire-nyons/randonnees-autour-de-nyons-carte/",
+      "status": 200,
+      "finalURL": "https://www.vivreanyons.fr/que-faire-nyons/randonnees-autour-de-nyons-carte/",
+      "title": "Randonnées autour de Nyons : la carte des départs et parkings",
+      "h1": "Randonnées autour de Nyons : la carte des départs et parkings",
+      "canonical": "https://www.vivreanyons.fr/que-faire-nyons/randonnees-autour-de-nyons-carte/",
+      "verifiedAt": "2026-10-12T16:05:59.184113+00:00",
+      "contentCharacters": 5248
+    },
+    {
+      "entry": "Centre historique — visite à pied",
+      "requestedURL": "https://www.vivreanyons.fr/que-faire-nyons/centre-historique-de-nyons/",
+      "status": 200,
+      "finalURL": "https://www.vivreanyons.fr/que-faire-nyons/centre-historique-de-nyons/",
+      "title": "Centre historique de Nyons : balade à pied",
+      "h1": "Centre historique de Nyons : balade à pied",
+      "canonical": "https://www.vivreanyons.fr/que-faire-nyons/centre-historique-de-nyons/",
+      "verifiedAt": "2026-10-12T16:05:59.405911+00:00",
+      "contentCharacters": 10268
+    },
+    {
+      "entry": "Église Saint-Vincent",
+      "requestedURL": "https://www.vivreanyons.fr/que-faire-nyons/eglise-Saint-Vincent/",
+      "status": 200,
+      "finalURL": "https://www.vivreanyons.fr/que-faire-nyons/eglise-Saint-Vincent/",
+      "title": "Église Saint-Vincent Nyons",
+      "h1": "Église Saint-Vincent Nyons",
+      "canonical": "https://www.vivreanyons.fr/que-faire-nyons/eglise-Saint-Vincent/",
+      "verifiedAt": "2026-10-12T16:05:59.403902+00:00",
+      "contentCharacters": 7124
+    },
+    {
+      "entry": "Tour Randonne — Notre-Dame-de-Bon-Secours",
+      "requestedURL": "https://www.vivreanyons.fr/que-faire-nyons/Tour-Randonne-Nyons/",
+      "status": 200,
+      "finalURL": "https://www.vivreanyons.fr/que-faire-nyons/Tour-Randonne-Nyons/",
+      "title": "Tour Randonne à Nyons : la tour des Eustache et Notre-Dame de Bon-Secours",
+      "h1": "Tour Randonne à Nyons : la tour des Eustache et Notre-Dame de Bon-Secours",
+      "canonical": "https://www.vivreanyons.fr/que-faire-nyons/Tour-Randonne-Nyons/",
+      "verifiedAt": "2026-10-12T16:05:59.405911+00:00",
+      "contentCharacters": 10133
+    },
+    {
+      "entry": "Pont Roman de Nyons",
+      "requestedURL": "https://www.vivreanyons.fr/que-faire-nyons/Pont-Roman-de-Nyons/",
+      "status": 200,
+      "finalURL": "https://www.vivreanyons.fr/que-faire-nyons/Pont-Roman-de-Nyons/",
+      "title": "Pont Roman de Nyons : histoire, promenade et photos anciennes",
+      "h1": "Pont Roman de Nyons : histoire, promenade et photos anciennes",
+      "canonical": "https://www.vivreanyons.fr/que-faire-nyons/Pont-Roman-de-Nyons/",
+      "verifiedAt": "2026-10-12T16:05:59.424525+00:00",
+      "contentCharacters": 9466
+    },
+    {
+      "entry": "Cinéma L’Arlequin",
+      "requestedURL": "https://www.vivreanyons.fr/que-faire-nyons/arlequin-nyons-avis/",
+      "status": 200,
+      "finalURL": "https://www.vivreanyons.fr/que-faire-nyons/arlequin-nyons-avis/",
+      "title": "Cinéma L’Arlequin à Nyons : avis et conseils de Papy",
+      "h1": "Cinéma L’Arlequin à Nyons : avis et conseils de Papy",
+      "canonical": "https://www.vivreanyons.fr/que-faire-nyons/arlequin-nyons-avis/",
+      "verifiedAt": "2026-10-12T16:05:59.611089+00:00",
+      "contentCharacters": 11119
+    },
+    {
+      "entry": "Artistes et artisans d’art à Nyons",
+      "requestedURL": "https://www.vivreanyons.fr/que-faire-nyons/artistes-artisans-art-nyons/",
+      "status": 200,
+      "finalURL": "https://www.vivreanyons.fr/que-faire-nyons/artistes-artisans-art-nyons/",
+      "title": "Artistes et artisans d’art à Nyons : des ateliers à découvrir",
+      "h1": "Artistes et artisans d’art à Nyons : des ateliers à découvrir",
+      "canonical": "https://www.vivreanyons.fr/que-faire-nyons/artistes-artisans-art-nyons/",
+      "verifiedAt": "2026-10-12T16:05:59.675701+00:00",
+      "contentCharacters": 16009
+    },
+    {
+      "entry": "Théâtre L’Électron Libre",
+      "requestedURL": "https://www.vivreanyons.fr/que-faire-nyons/electron-nyons/",
+      "status": 200,
+      "finalURL": "https://www.vivreanyons.fr/que-faire-nyons/electron-nyons/",
+      "title": "Programme du théâtre L’Électron Libre à Nyons : scène locale, ateliers et sorties à ne pas manquer",
+      "h1": "Programme du théâtre L’Électron Libre à Nyons : scène locale, ateliers et sorties à ne pas manquer",
+      "canonical": "https://www.vivreanyons.fr/que-faire-nyons/electron-nyons/",
+      "verifiedAt": "2026-10-12T16:05:59.588881+00:00",
+      "contentCharacters": 6031
+    },
+    {
+      "entry": "Nyons avec des enfants — idées en famille",
+      "requestedURL": "https://www.vivreanyons.fr/que-faire-nyons/nyons-avec-des-enfants/",
+      "status": 200,
+      "finalURL": "https://www.vivreanyons.fr/que-faire-nyons/nyons-avec-des-enfants/",
+      "title": "Nyons avec des enfants : 15 activités et sorties à faire en famille",
+      "h1": "Nyons avec des enfants : 15 activités et sorties à faire en famille",
+      "canonical": "https://www.vivreanyons.fr/que-faire-nyons/nyons-avec-des-enfants/",
+      "verifiedAt": "2026-10-12T16:05:59.672679+00:00",
+      "contentCharacters": 20551
+    },
+    {
+      "entry": "Accrobranche — Les Barons Perchés",
+      "requestedURL": "https://www.vivreanyons.fr/que-faire-nyons/les-barons-perches/",
+      "status": 200,
+      "finalURL": "https://www.vivreanyons.fr/que-faire-nyons/les-barons-perches/",
+      "title": "Les Barons Perchés accrobranche à Nyons : est-ce que ça vaut le coup avec des enfants ?",
+      "h1": "Les Barons Perchés accrobranche à Nyons : est-ce que ça vaut le coup avec des enfants ?",
+      "canonical": "https://www.vivreanyons.fr/que-faire-nyons/les-barons-perches/",
+      "verifiedAt": "2026-10-12T16:05:59.832078+00:00",
+      "contentCharacters": 5065
+    },
+    {
+      "entry": "Piscine et parc aquatique Nyonsoleïado",
+      "requestedURL": "https://www.vivreanyons.fr/que-faire-nyons/parc-nyons-aquatique/",
+      "status": 200,
+      "finalURL": "https://www.vivreanyons.fr/que-faire-nyons/parc-nyons-aquatique/",
+      "title": "Piscine Nyonsoleïado : avis, bassins et journée en famille à Nyons",
+      "h1": "Piscine Nyonsoleïado : avis, bassins et journée en famille à Nyons",
+      "canonical": "https://www.vivreanyons.fr/que-faire-nyons/parc-nyons-aquatique/",
+      "verifiedAt": "2026-10-12T16:05:59.815987+00:00",
+      "contentCharacters": 8796
+    },
+    {
+      "entry": "Musée d’Archéologie et d’Histoire",
+      "requestedURL": "https://www.vivreanyons.fr/que-faire-nyons/Musee-Archeologie-Nyons/",
+      "status": 200,
+      "finalURL": "https://www.vivreanyons.fr/que-faire-nyons/Musee-Archeologie-Nyons/",
+      "title": "Musée d’Archéologie et d’Histoire de Nyons",
+      "h1": "Musée d’Archéologie et d’Histoire de Nyons",
+      "canonical": "https://www.vivreanyons.fr/que-faire-nyons/Musee-Archeologie-Nyons/",
+      "verifiedAt": "2026-10-12T16:05:59.870257+00:00",
+      "contentCharacters": 7815
+    },
+    {
+      "entry": "Vignolis — musée de l’Olivier",
+      "requestedURL": "https://www.vivreanyons.fr/que-faire-nyons/Vignolis-Nyons/",
+      "status": 200,
+      "finalURL": "https://www.vivreanyons.fr/que-faire-nyons/Vignolis-Nyons/",
+      "title": "Vignolis Nyons",
+      "h1": "Vignolis Nyons",
+      "canonical": "https://www.vivreanyons.fr/que-faire-nyons/Vignolis-Nyons/",
+      "verifiedAt": "2026-10-12T16:05:59.911177+00:00",
+      "contentCharacters": 7829
+    },
+    {
+      "entry": "Scourtinerie — musée et atelier",
+      "requestedURL": "https://www.vivreanyons.fr/que-faire-nyons/Scourtinerie-de-Nyons/",
+      "status": 200,
+      "finalURL": "https://www.vivreanyons.fr/que-faire-nyons/Scourtinerie-de-Nyons/",
+      "title": "Scourtinerie de Nyons : musée, atelier et scourtins en fibre de coco",
+      "h1": "Scourtinerie de Nyons : musée, atelier et scourtins en fibre de coco",
+      "canonical": "https://www.vivreanyons.fr/que-faire-nyons/Scourtinerie-de-Nyons/",
+      "verifiedAt": "2026-10-12T16:06:00.089386+00:00",
+      "contentCharacters": 12441
+    },
+    {
+      "entry": "Distillerie Bleu Provence",
+      "requestedURL": "https://www.vivreanyons.fr/que-faire-nyons/Distillerie-Bleu-Provence-Nyons/",
+      "status": 200,
+      "finalURL": "https://www.vivreanyons.fr/que-faire-nyons/Distillerie-Bleu-Provence-Nyons/",
+      "title": "Distillerie Bleu Provence à Nyons : visite, ateliers et horaires",
+      "h1": "Distillerie Bleu Provence à Nyons : visite, ateliers et horaires",
+      "canonical": "https://www.vivreanyons.fr/que-faire-nyons/Distillerie-Bleu-Provence-Nyons/",
+      "verifiedAt": "2026-10-12T16:06:00.087378+00:00",
+      "contentCharacters": 10513
+    },
+    {
+      "entry": "Marché de Nyons le jeudi",
+      "requestedURL": "https://www.vivreanyons.fr/que-faire-nyons/Marche-de-Nyons/",
+      "status": 200,
+      "finalURL": "https://www.vivreanyons.fr/que-faire-nyons/Marche-de-Nyons/",
+      "title": "Marché de Nyons le jeudi",
+      "h1": "Marché de Nyons le jeudi",
+      "canonical": "https://www.vivreanyons.fr/que-faire-nyons/Marche-de-Nyons/",
+      "verifiedAt": "2026-10-12T16:06:00.089386+00:00",
+      "contentCharacters": 14330
+    },
+    {
+      "entry": "Agenda — sorties et rendez-vous datés",
+      "requestedURL": "https://agenda.vivreanyons.fr/",
+      "status": 200,
+      "finalURL": "https://agenda.vivreanyons.fr/",
+      "title": "Agenda Nyons 2026 : sorties, événements et idées de week-end",
+      "h1": "AGENDA DE NYONS",
+      "canonical": "https://agenda.vivreanyons.fr/",
+      "verifiedAt": "2026-10-12T16:06:00.159716+00:00",
+      "contentCharacters": 4799
+    }
+  ],
+  "excluded": [
+    {
+      "url": "https://tcnyons.fr/",
+      "reason": "Site officiel en maintenance ; remplacé par la fiche de Drôme Tourisme."
+    }
+  ]
+}
