@@ -52,7 +52,7 @@
 (function loadNyonsPartnerCards(){
   if(document.querySelector('script[data-nyons-partner-loader]'))return;
   const script=document.createElement('script');script.dataset.nyonsPartnerLoader='';
-  script.src='https://www.vivreanyons.fr/assets/nyons-partner-banners.js?v=20261011-v1';script.async=true;document.head.append(script);
+  script.src='https://www.vivreanyons.fr/assets/nyons-partner-banners.js?v=20261013-stay-v1';script.async=true;document.head.append(script);
 })();
 const AGENDA_DATA='https://raw.githubusercontent.com/Danie-poiret/agenda-nyons/main/agenda.json';
 function slugify(s){return (s||'').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase().replace(/['’]/g,'-').replace(/[^a-z0-9]+/g,'-').replace(/^-+|-+$/g,'').replace(/-+/g,'-')}
