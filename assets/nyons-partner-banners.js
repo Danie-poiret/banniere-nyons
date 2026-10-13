@@ -8,7 +8,7 @@
     const anchor=heading||slot||legacy[0]||document.querySelector('body > .hero')||document.querySelector('main header,main .hero')||document.querySelector('main')||document.querySelector('header');if(!anchor)return;
     const canonical=document.querySelector('link[rel="canonical"]');
     const path=(canonical?new URL(canonical.href,location.href).pathname:location.pathname).toLowerCase();
-    const isStayFiche=path.startsWith('/ou-dormir-a-nyons/')&&!['/ou-dormir-a-nyons/','/ou-dormir-a-nyons/index.html'].includes(path);
+    const isStayFiche=path==='/ou-dormir-a-nyons'||path.startsWith('/ou-dormir-a-nyons/');
     const omitLodging=path.includes('/la-lezardiere/')||path.includes('/demande-sejour-lezardiere/')||!!document.querySelector('[data-lezardiere-api]');
     const group=document.createElement('div');group.className='nyons-partner-cards'+(isStayFiche?' nyons-partner-cards--stay':'');group.dataset.nyonsPartnerCards='';group.setAttribute('data-nosnippet','');
     const items=[];
