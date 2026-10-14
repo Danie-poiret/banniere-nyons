@@ -1,0 +1,74 @@
+{
+  "approved": "2026-10-14",
+  "scope": "www.vivreanyons.fr only; retain all secondary pages; no redirects",
+  "pairs": [
+    {
+      "source": "https://www.vivreanyons.fr/auvergne-rhone-alpes/drome/Piscine-du-Polygone-Valence/",
+      "target": "https://www.vivreanyons.fr/Auvergne-Rhone-Alpes/Drome/Piscine-du-Polygone-Valence/"
+    },
+    {
+      "source": "https://www.vivreanyons.fr/auvergne-rhone-alpes/rhone/Fosse-aux-Ours-Lyon/",
+      "target": "https://www.vivreanyons.fr/Auvergne-Rhone-Alpes/Rhone/Fosse-aux-Ours-Lyon/"
+    },
+    {
+      "source": "https://www.vivreanyons.fr/auvergne-rhone-alpes/drome/Les-Libellules-de-Valence-Sud/",
+      "target": "https://www.vivreanyons.fr/Auvergne-Rhone-Alpes/Drome/Les-Libellules-de-Valence-Sud/"
+    },
+    {
+      "source": "https://www.vivreanyons.fr/auvergne-rhone-alpes/rhone/TGV-Lyon/",
+      "target": "https://www.vivreanyons.fr/Auvergne-Rhone-Alpes/Rhone/TGV-Lyon/"
+    },
+    {
+      "source": "https://www.vivreanyons.fr/histoire-geo/10-anecdotes-Nyons/",
+      "target": "https://www.vivreanyons.fr/Histoire-Geo/10-anecdotes-Nyons/"
+    },
+    {
+      "source": "https://www.vivreanyons.fr/histoire-geo/Nyons-autrefois/",
+      "target": "https://www.vivreanyons.fr/Histoire-Geo/Nyons-autrefois/"
+    },
+    {
+      "source": "https://www.vivreanyons.fr/histoire-geo/eau-nyons/",
+      "target": "https://www.vivreanyons.fr/Histoire-Geo/eau-nyons/"
+    },
+    {
+      "source": "https://www.vivreanyons.fr/histoire-geo/nyons-la-belle-epoque/",
+      "target": "https://www.vivreanyons.fr/Histoire-Geo/nyons-la-belle-epoque/"
+    },
+    {
+      "source": "https://www.vivreanyons.fr/histoire-geo/savon-nyons/",
+      "target": "https://www.vivreanyons.fr/Histoire-Geo/savon-nyons/"
+    },
+    {
+      "source": "https://www.vivreanyons.fr/que-faire-autour-de-nyons/caves-nyons/",
+      "target": "https://www.vivreanyons.fr/a-faire-autour-de-Nyons/caves-nyons/"
+    },
+    {
+      "source": "https://www.vivreanyons.fr/que-faire-autour-de-nyons/roche-sur-le-buis/",
+      "target": "https://www.vivreanyons.fr/a-faire-autour-de-Nyons/roche-sur-le-buis/"
+    },
+    {
+      "source": "https://www.vivreanyons.fr/que-faire-autour-de-nyons/route-lavande/",
+      "target": "https://www.vivreanyons.fr/a-faire-autour-de-Nyons/route-lavande/"
+    },
+    {
+      "source": "https://www.vivreanyons.fr/que-faire-autour-de-nyons/sainte-euphemie/",
+      "target": "https://www.vivreanyons.fr/a-faire-autour-de-Nyons/sainte-euphemie/"
+    },
+    {
+      "source": "https://www.vivreanyons.fr/que-faire-autour-de-nyons/via-ferrata-de-buis-les-baronnies/",
+      "target": "https://www.vivreanyons.fr/a-faire-autour-de-Nyons/via-ferrata-de-buis-les-baronnies/"
+    },
+    {
+      "source": "https://www.vivreanyons.fr/que-faire-autour-de-nyons/vautours-remuzat/",
+      "target": "https://www.vivreanyons.fr/a-faire-autour-de-Nyons/vautours-remuzat/"
+    },
+    {
+      "source": "https://www.vivreanyons.fr/que-faire-autour-de-nyons/vinsobres/",
+      "target": "https://www.vivreanyons.fr/a-faire-autour-de-Nyons/vinsobres/"
+    },
+    {
+      "source": "https://www.vivreanyons.fr/histoire-de-nyons-en-video/transhumance-nyons/",
+      "target": "https://www.vivreanyons.fr/video-nyons/transhumance-nyons/"
+    }
+  ]
+}

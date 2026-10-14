@@ -56,6 +56,8 @@ def update(root):
     positions = {urlsplit(e.text).path: i for i, e in enumerate(sitemap.iter('{http://www.sitemaps.org/schemas/sitemap/0.9}loc'))}
     selection_file = root / 'tools/home-editorial-updates.json'
     selected_updates = set(json.loads(selection_file.read_text(encoding='utf-8')).get('paths', [])) if selection_file.exists() else set()
+    alias_file = root / 'tools/duplicate-canonical-map.json'
+    secondary_paths = {urlsplit(p['source']).path for p in json.loads(alias_file.read_text(encoding='utf-8'))['pairs']} if alias_file.exists() else set()
     candidates = []
     for directory, subdirs, files in os.walk(root):
         subdirs[:] = [name for name in subdirs if name not in {'.git', '.github', 'assets', 'tools', 'vivreanyons-test', 'banniere-nyons', '_pont_upload'}]
@@ -64,6 +66,8 @@ def update(root):
         file = Path(directory) / 'index.html'
         page = Page(file.read_text(encoding='utf-8'))
         path = '/' + file.parent.relative_to(root).as_posix() + '/'
+        if path in secondary_paths:
+            continue
         for item in objects(page.data):
             kind = item.get('@type')
             if not (kind == 'Article' or isinstance(kind, list) and 'Article' in kind):

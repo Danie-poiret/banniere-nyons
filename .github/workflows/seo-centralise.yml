@@ -3,7 +3,7 @@ on:
   workflow_dispatch:
   push:
     branches: [main]
-    paths: ['**/*.html', 'sitemap.xml', 'tools/harmonize_seo.py', 'tools/seo-policy.json', '.github/workflows/seo-centralise.yml']
+    paths: ['**/*.html', 'sitemap.xml', 'tools/harmonize_seo.py', 'tools/seo-policy.json', 'tools/consolidate_duplicate_urls.py', 'tools/duplicate-canonical-map.json', '.github/workflows/seo-centralise.yml']
   workflow_run:
     workflows: ['Appliquer la mise a jour VivreAnyons', 'Actualiser uniquement l’accueil de Vivre à Nyons', 'Actualiser uniquement les cartes du portail immobilier']
     types: [completed]
