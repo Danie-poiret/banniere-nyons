@@ -11,6 +11,7 @@
   const sections=menu.querySelector('.rubriques');
   [
     {key:'hebergement',label:'Où dormir à Nyons ?',url:'https://www.vivreanyons.fr/ou-dormir-a-nyons/'},
+    {key:'immobilier',label:'Immobilier',url:'https://www.vivreanyons.fr/infos-pratiques-nyons/immobilier-nyons/'},
     {key:'brocantes',label:'Brocantes',url:'https://www.vivreanyons.fr/evenements-nyons/Brocantes--Vides-greniers-Nyons/'},
     {key:'cinema',label:'Programme cinéma',url:'https://www.vivreanyons.fr/infos-pratiques-nyons/cinema-nyons/'},
     {key:'marches',label:'Marchés alentour',url:'https://www.vivreanyons.fr/infos-pratiques-nyons/marches-autour-nyons-50-km/'},
@@ -23,6 +24,14 @@
     link.textContent=item.label;
     menu.insertBefore(link,sections);
   });
+  const allSections=sections&&sections.querySelector('.rubriques-menu');
+  if(allSections&&!allSections.querySelector('a[data-nyons-shortcut="immobilier"]')){
+    const link=document.createElement('a');
+    link.dataset.nyonsShortcut='immobilier';
+    link.href='https://www.vivreanyons.fr/infos-pratiques-nyons/immobilier-nyons/';
+    link.textContent='Immobilier';
+    allSections.append(link);
+  }
 })();
 /* Shared contact and social links requested by the site owner. */
 (function installNyonsContact(){
