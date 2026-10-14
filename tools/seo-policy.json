@@ -1,0 +1,32 @@
+{
+  "scope": "pilot-only",
+  "pilot_urls": [
+    "https://www.vivreanyons.fr/que-faire-nyons/",
+    "https://www.vivreanyons.fr/Histoire-Geo/Transhumance-Nyons/",
+    "https://www.vivreanyons.fr/restaurants-de-nyons/plats-a-emporter-nyons/",
+    "https://www.vivreanyons.fr/ou-dormir-a-nyons/bastide-des-monges-Nyons/",
+    "https://www.vivreanyons.fr/evenements-nyons/trail-nyons-baronnies-2026/"
+  ],
+  "kinds": {"https://www.vivreanyons.fr/que-faire-nyons/": "collection"},
+  "verified_businesses": {
+    "https://www.vivreanyons.fr/restaurants-de-nyons/plats-a-emporter-nyons/": {
+      "@type": "Restaurant", "name": "Brasserie de la Place", "telephone": "+33426667028",
+      "address": {"@type": "PostalAddress", "streetAddress": "24 place de la Libération", "postalCode": "26110", "addressLocality": "Nyons", "addressCountry": "FR"},
+      "source": "https://www.drome-cestmanature.com/fiches/brasserie-de-la-place/", "checked": "2026-10-14"
+    },
+    "https://www.vivreanyons.fr/ou-dormir-a-nyons/bastide-des-monges-Nyons/": {
+      "@type": "Hotel", "name": "La Bastide des Monges", "telephone": "+33475269969", "url": "https://www.bastidedesmonges.fr/",
+      "address": {"@type": "PostalAddress", "streetAddress": "1905 route d’Orange", "postalCode": "26110", "addressLocality": "Nyons", "addressCountry": "FR"},
+      "source": "https://www.bastidedesmonges.fr/contact/", "checked": "2026-10-14"
+    }
+  },
+  "verified_events": {
+    "https://www.vivreanyons.fr/evenements-nyons/trail-nyons-baronnies-2026/": {
+      "@type": "SportsEvent", "name": "Trail de Nyons et Baronnies 2026", "startDate": "2026-10-17", "endDate": "2026-10-18",
+      "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode", "eventStatus": "https://schema.org/EventScheduled",
+      "location": {"@type": "Place", "name": "Place des Arcades", "address": {"@type": "PostalAddress", "streetAddress": "Place du Docteur-Bourdongle", "postalCode": "26110", "addressLocality": "Nyons", "addressCountry": "FR"}},
+      "organizer": {"@type": "Organization", "name": "Courir à Nyons", "url": "https://www.couriranyons.fr/"},
+      "source": "https://www.couriranyons.fr/trail-nyons-et-baronnies-tnb/flyer-programme-et-reglement/", "checked": "2026-10-14"
+    }
+  }
+}
