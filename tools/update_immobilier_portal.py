@@ -57,7 +57,7 @@ def collect(root,config):
         if e['url'] not in published or not f:raise ValueError('Missing curated article: '+e['url'])
         data=metadata(f.read_text(encoding='utf8'))
         if data.get('canonical')!=SITE+e['url'] or 'noindex' in data.get('robots','').lower():raise ValueError('Invalid curated article: '+e['url'])
-        result.append(dict(e));seen.add(e['url'])
+        result.append(dict(e,schema_title=data['title']));seen.add(e['url'])
     for u in urls:
         parsed=urlsplit(u);url=parsed.path
         if parsed.netloc!='www.vivreanyons.fr' or url in seen or url==config['portal']:continue
@@ -81,7 +81,12 @@ def render(source,entries,config):
         content='<div class="ip-grid">'+''.join(cards)+'</div>' if cards else ''
         source=re.sub(re.escape(block)+r'.*?'+re.escape(end),lambda m:block+content+end,source,flags=re.S)
     source=re.sub(r'(<span class="ip-count" data-portal-count>).*?(</span>)',lambda m:m[1]+str(len(entries))+m[2],source,flags=re.S)
-    itemlist={'@context':'https://schema.org','@type':'ItemList','@id':SITE+config['portal']+'#guides','name':'Guides immobiliers et pratiques de Vivre à Nyons','numberOfItems':len(entries),'itemListElement':[{'@type':'ListItem','position':n,'item':{'@type':'WebPage','@id':SITE+e['url'],'name':e['title'],'url':SITE+e['url']}} for n,e in enumerate(entries,1)]}
+    def schema_item(e):
+        name=e.get('schema_title',e['title'])
+        item={'@type':'WebPage','@id':SITE+e['url'],'name':name,'url':SITE+e['url']}
+        if name!=e['title']:item['alternateName']=e['title']
+        return item
+    itemlist={'@context':'https://schema.org','@type':'ItemList','@id':SITE+config['portal']+'#guides','name':'Guides immobiliers et pratiques de Vivre à Nyons','numberOfItems':len(entries),'itemListElement':[{'@type':'ListItem','position':n,'item':schema_item(e)} for n,e in enumerate(entries,1)]}
     source=re.sub(r'(<script id="immobilier-item-list" type="application/ld\+json">).*?(</script>)',lambda m:m[1]+json.dumps(itemlist,ensure_ascii=False)+m[2],source,flags=re.S)
     return source
 
