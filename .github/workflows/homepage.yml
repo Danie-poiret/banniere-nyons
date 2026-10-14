@@ -33,6 +33,10 @@ jobs:
         run: python tools/update_homepage.py
       - name: Confirmer le bandeau et les informations conservées
         run: node tools/check_homepage.cjs
+      - name: Compléter le SEO www après génération, avant publication
+        run: |
+          python tools/harmonize_seo.py --all --apply --stage
+          python tools/harmonize_seo.py --all --check
       - name: Publier seulement l’accueil et son instantané
         run: |
           git config user.name "github-actions[bot]"

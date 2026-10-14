@@ -25,6 +25,10 @@ jobs:
         run: |
           python tools/update_immobilier_portal.py
           python tools/update_immobilier_portal.py --check
+      - name: Compléter le SEO www après génération, avant publication
+        run: |
+          python tools/harmonize_seo.py --all --apply --stage
+          python tools/harmonize_seo.py --all --check
       - name: Publier seulement les cartes du portail existant
         run: |
           git config user.name "github-actions[bot]"
