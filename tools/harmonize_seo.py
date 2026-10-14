@@ -107,10 +107,13 @@ def optimize(source,url,config,catalog):
     if kind=='collection' and 'CollectionPage' not in types:
         page={'@type':'CollectionPage','@id':url,'url':url,'name':title,'description':description,'inLanguage':'fr-FR','isPartOf':{'@id':SITE+'/#website'},'publisher':{'@id':SITE+'/#organization'}}
         items=card_items(source,url,catalog)
-        if items:
+        if items and 'ItemList' not in types:
             page['mainEntity']={'@id':url+'#items'};graph.append({'@type':'ItemList','@id':url+'#items','numberOfItems':len(items),'itemListElement':items});changes.append('ItemList')
+        elif 'ItemList' in types:
+            existing_list=next(n for n in existing if n.get('@type')=='ItemList')
+            if existing_list.get('@id'):page['mainEntity']={'@id':existing_list['@id']}
         graph.append(page);changes.append('CollectionPage')
-    if 'BreadcrumbList' not in types:
+    if 'BreadcrumbList' not in types and url!=SITE+'/':
         crumbs=[{'@type':'ListItem','position':1,'name':'Accueil','item':SITE+'/'}]
         parts=urlsplit(url).path.strip('/').split('/')
         for n in range(1,len(parts)):
