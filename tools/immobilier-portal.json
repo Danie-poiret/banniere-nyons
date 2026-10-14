@@ -1,0 +1,178 @@
+{
+  "portal": "/infos-pratiques-nyons/immobilier-nyons/",
+  "images": {
+    "town": {
+      "src": "/assets/photos/e09fc83299ce75361d23.webp",
+      "alt": "Les habitations de Nyons, le Pont Roman et les collines",
+      "width": 787,
+      "height": 455
+    },
+    "tower": {
+      "src": "/assets/photos/5c4a1bac6f7146659e1b.webp",
+      "alt": "Maisons et tour en pierre dans le vieux Nyons",
+      "width": 447,
+      "height": 422
+    },
+    "agency": {
+      "src": "/assets/photos/agences-immobilieres-nyons/nyons-immobilier.webp",
+      "alt": "La vitrine de Nyons Immobilier, place de la Libération",
+      "width": 290,
+      "height": 206
+    },
+    "advice": {
+      "src": "/assets/photos/immobilier-portail/accompagnement.webp",
+      "alt": "Deux personnes consultent une tablette pour préparer leurs démarches",
+      "width": 172,
+      "height": 138
+    },
+    "work": {
+      "src": "/assets/photos/plombier-nyons-meuble-sous-evier.webp",
+      "alt": "Photo d’illustration d’une intervention sur les raccordements d’un logement",
+      "width": 235,
+      "height": 182
+    },
+    "waste": {
+      "src": "/assets/photos/immobilier-portail/tri-dechets.webp",
+      "alt": "Bennes de tri sur une plateforme extérieure",
+      "width": 235,
+      "height": 161
+    }
+  },
+  "entries": [
+    {
+      "url": "/infos-pratiques-nyons/Vivre-Nyons-avis-des-habitants/",
+      "group": "acheter",
+      "title": "Vivre à Nyons : les avis des habitants",
+      "description": "Le quotidien à l’année, les avantages et les réserves à connaître avant de choisir son logement.",
+      "image": "town"
+    },
+    {
+      "url": "/infos-pratiques-nyons/Vivre-a-Nyons-negatifs/",
+      "group": "acheter",
+      "title": "Les points à regarder avant d’acheter",
+      "description": "Les difficultés du quotidien évoquées par les habitants, pour préparer ses visites sans se limiter à la vue.",
+      "image": "tower"
+    },
+    {
+      "url": "/infos-pratiques-nyons/agences-immobilieres-nyons/",
+      "group": "agences",
+      "title": "Six agences immobilières à contacter",
+      "description": "Adresses, téléphones, vente, estimation, location et gestion : notre annuaire détaillé des professionnels.",
+      "image": "agency"
+    },
+    {
+      "url": "/ou-dormir-a-nyons/Location-Nyons/",
+      "group": "louer",
+      "title": "Trouver une location sans CDI",
+      "description": "Les difficultés d’un dossier locataire et les questions à poser pour une recherche de logement à l’année.",
+      "image": "town"
+    },
+    {
+      "url": "/infos-pratiques-nyons/cout-de-la-vie-nyons/",
+      "group": "louer",
+      "title": "Logement et coût de la vie",
+      "description": "Loyer, déplacements, petits revenus et aides : regarder ce qui reste réellement à la fin du mois.",
+      "image": "town"
+    },
+    {
+      "url": "/infos-pratiques-nyons/ccas-nyons/",
+      "group": "louer",
+      "title": "Le CCAS et les aides locales",
+      "description": "Un premier contact pour se faire orienter lorsque le budget, le logement ou les démarches deviennent difficiles.",
+      "image": "advice"
+    },
+    {
+      "url": "/infos-pratiques-nyons/emploi-saisonnier-nyons/",
+      "group": "louer",
+      "title": "Travailler et se loger pour la saison",
+      "description": "Emplois saisonniers, Maison Constantin et pistes de logement pour préparer sa venue dans le secteur.",
+      "image": "tower"
+    },
+    {
+      "url": "/infos-pratiques-nyons/Ou-habiter-a-Nyons/",
+      "group": "habiter",
+      "title": "Quel quartier choisir à Nyons ?",
+      "description": "Centre-ville, Eygues et hauteurs : les repères et préférences des habitants pour comparer les secteurs.",
+      "image": "tower"
+    },
+    {
+      "url": "/infos-pratiques-nyons/Vivre-a-Nyons/",
+      "group": "habiter",
+      "title": "Pourquoi venir vivre à Nyons ?",
+      "description": "Ce qui attire dans la ville, au-delà d’une belle annonce : lumière, oliviers, commerces et vie locale.",
+      "image": "town"
+    },
+    {
+      "url": "/randonnee-nyons/Villages-autour-de-Nyons/",
+      "group": "habiter",
+      "title": "Découvrir les villages voisins",
+      "description": "Quinze idées de villages à visiter pour découvrir les environs avant d’élargir sa recherche immobilière.",
+      "image": "town"
+    },
+    {
+      "url": "/infos-pratiques-nyons/installer-a-nyons/",
+      "group": "installer-renover",
+      "title": "Préparer son installation",
+      "description": "Les premiers repères des nouveaux arrivants pour organiser son quotidien une fois les cartons posés.",
+      "image": "town"
+    },
+    {
+      "url": "/infos-pratiques-nyons/ceder-nyons/",
+      "group": "installer-renover",
+      "title": "Rénover avec les conseils du CEDER",
+      "description": "France Rénov’, énergie et travaux : coordonnées, rendez-vous et documents à préparer avant son projet.",
+      "image": "work"
+    },
+    {
+      "url": "/infos-pratiques-nyons/demarches-administratives-nyons/",
+      "group": "installer-renover",
+      "title": "Les démarches et les bons contacts",
+      "description": "Mairie, France Services, CAF, logement et travaux : retrouver le service adapté à sa demande.",
+      "image": "advice"
+    },
+    {
+      "url": "/infos-pratiques-nyons/plombier-nyons/",
+      "group": "installer-renover",
+      "title": "Plomberie, dépannage et petits travaux",
+      "description": "Fuite, chauffe-eau, raccordements : contacts du secteur et conseils pour demander un devis détaillé.",
+      "image": "work"
+    },
+    {
+      "url": "/questions-utiles-nyons/Installateur-de-climatisation-Nyons/",
+      "group": "installer-renover",
+      "title": "Choisir un installateur de climatisation",
+      "description": "Des professionnels évoqués par les habitants et les points à comparer avant de demander une installation.",
+      "image": "tower"
+    },
+    {
+      "url": "/infos-pratiques-nyons/ou-se-garer-a-Nyons/",
+      "group": "installer-renover",
+      "title": "Se garer près de son futur logement",
+      "description": "Carte des parkings et conseils pratiques pour vérifier les accès avant une visite ou un déménagement.",
+      "image": "town"
+    },
+    {
+      "url": "/infos-pratiques-nyons/bus-nyons/",
+      "group": "installer-renover",
+      "title": "Les bus et les trajets du quotidien",
+      "description": "NyonsBus et lignes du secteur : vérifier les horaires et les déplacements depuis son futur quartier.",
+      "image": "tower"
+    },
+    {
+      "url": "/infos-pratiques-nyons/dechetterie-nyons/",
+      "group": "installer-renover",
+      "title": "Trier après des travaux ou un déménagement",
+      "description": "Horaires, adresse et déchets acceptés à la déchetterie : préparer son passage avant de charger la voiture.",
+      "image": "waste"
+    }
+  ],
+  "groups": [
+    "acheter",
+    "agences",
+    "louer",
+    "habiter",
+    "prix",
+    "vendre",
+    "installer-renover"
+  ]
+}

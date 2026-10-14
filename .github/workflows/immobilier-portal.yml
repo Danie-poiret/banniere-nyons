@@ -1,0 +1,40 @@
+name: Actualiser uniquement les cartes du portail immobilier
+on:
+  push:
+    paths:
+      - '**/index.html'
+      - sitemap.xml
+      - tools/update_immobilier_portal.py
+      - tools/immobilier-portal.json
+      - .github/workflows/immobilier-portal.yml
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: vivreanyons-immobilier-portal
+  cancel-in-progress: false
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    timeout-minutes: 4
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - name: Regrouper les articles immobiliers réellement publiés
+        run: |
+          python tools/update_immobilier_portal.py
+          python tools/update_immobilier_portal.py --check
+      - name: Publier seulement les cartes du portail existant
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add infos-pratiques-nyons/immobilier-nyons/index.html
+          if ! git diff --cached --quiet; then
+            git commit -m "Actualiser les guides du portail immobilier"
+            for attempt in 1 2 3; do
+              git pull --rebase origin main
+              if git push origin main; then exit 0; fi
+            done
+            exit 1
+          fi
