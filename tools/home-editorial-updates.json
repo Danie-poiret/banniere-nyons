@@ -1,5 +1,9 @@
 {
   "paths": [
     "/infos-pratiques-nyons/emploi-nyons/"
+  ],
+  "excluded_paths": [
+    "/Provence-Alpes-Cote-dAzur/Vaucluse/dames-de-france-avignon/",
+    "/Provence-Alpes-Cote-dAzur/Vaucluse/rue-republique-cavaillon-souvenirs/"
   ]
 }

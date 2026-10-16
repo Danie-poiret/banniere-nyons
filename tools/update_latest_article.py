@@ -55,7 +55,9 @@ def update(root):
     sitemap = ET.parse(root / 'sitemap.xml')
     positions = {urlsplit(e.text).path: i for i, e in enumerate(sitemap.iter('{http://www.sitemaps.org/schemas/sitemap/0.9}loc'))}
     selection_file = root / 'tools/home-editorial-updates.json'
-    selected_updates = set(json.loads(selection_file.read_text(encoding='utf-8')).get('paths', [])) if selection_file.exists() else set()
+    selection = json.loads(selection_file.read_text(encoding='utf-8')) if selection_file.exists() else {}
+    selected_updates = set(selection.get('paths', []))
+    excluded_paths = set(selection.get('excluded_paths', []))
     alias_file = root / 'tools/duplicate-canonical-map.json'
     secondary_paths = {urlsplit(p['source']).path for p in json.loads(alias_file.read_text(encoding='utf-8'))['pairs']} if alias_file.exists() else set()
     candidates = []
@@ -66,7 +68,7 @@ def update(root):
         file = Path(directory) / 'index.html'
         page = Page(file.read_text(encoding='utf-8'))
         path = '/' + file.parent.relative_to(root).as_posix() + '/'
-        if path in secondary_paths:
+        if path in secondary_paths or path in excluded_paths:
             continue
         for item in objects(page.data):
             kind = item.get('@type')
@@ -145,4 +147,5 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     parser.add_argument('--root', type=Path, default=Path(__file__).resolve().parents[1])
     update(parser.parse_args().root.resolve())
+
 
