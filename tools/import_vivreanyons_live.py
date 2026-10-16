@@ -1045,6 +1045,13 @@ def sidebar_html() -> str:
                 ("Pétanque", f"{SITE_ROOT}/infos-pratiques-nyons/petanque-nyons/"),
                 ("Bike Park", f"{SITE_ROOT}/que-faire-nyons/bike-park-nyons/"),
                 ("Jardin des Arômes", f"{SITE_ROOT}/que-faire-nyons/Jardin-des-Aromes/"),
+                ("Piscine de Nyons", f"{SITE_ROOT}/que-faire-nyons/parc-aquatique-nyons/"),
+            ],
+        ),
+        (
+            "Infos pratiques",
+            [
+                ("Ressourceries", f"{SITE_ROOT}/infos-pratiques-nyons/ressourceries-de-nyons/"),
             ],
         ),
         (

@@ -1,3 +1,36 @@
+/* Shared right-hand menus: swimming pool and reuse guide. */
+(function installNyonsSidebarLinks(){
+  const script=document.currentScript;
+  const siteRoot=script?new URL('../',script.src):new URL('/',location.href);
+  document.querySelectorAll('aside.right-sidebar').forEach(sidebar=>{
+    const hasLink=path=>[...sidebar.querySelectorAll('a[href]')].some(link=>new URL(link.href).pathname.endsWith('/'+path));
+    const addLink=(nav,label,path)=>{
+      if(!nav||hasLink(path))return;
+      const link=document.createElement('a');
+      link.href=new URL(path,siteRoot).href;
+      link.textContent=label;
+      nav.append(link);
+    };
+    let outdoors=sidebar.querySelector('nav.side-links[aria-label="Plein air"]');
+    if(outdoors)addLink(outdoors,'Piscine de Nyons','que-faire-nyons/parc-aquatique-nyons/');
+    const reusePath='infos-pratiques-nyons/ressourceries-de-nyons/';
+    if(hasLink(reusePath))return;
+    let practical=sidebar.querySelector('nav.side-links[aria-label="Infos pratiques"]');
+    if(!practical){
+      const card=document.createElement('section');
+      card.className='side-card';
+      const title=document.createElement('div');
+      title.className='side-title';title.textContent='Infos pratiques';
+      practical=document.createElement('nav');
+      practical.className='side-links';practical.setAttribute('aria-label','Infos pratiques');
+      card.append(title,practical);
+      const outdoorCard=outdoors&&outdoors.closest('.side-card');
+      if(outdoorCard)outdoorCard.after(card);else sidebar.append(card);
+    }
+    addLink(practical,'Ressourceries',reusePath);
+  });
+})();
+
 /* Home link label shared by every page. */
 (function labelNyonsHome(){
   document.querySelectorAll('header .navlinks a').forEach(link=>{
