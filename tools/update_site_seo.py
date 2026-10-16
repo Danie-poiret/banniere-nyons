@@ -15,7 +15,16 @@ def update_home(source,prefix):
     description='<meta name="description" content="'+DESCRIPTION+'">'
     source,n=re.subn(r'<meta\b[^>]*name=["\']description["\'][^>]*>',description,source,count=1)
     if n!=1: raise ValueError('Homepage description missing')
-    block='<script type="application/ld+json" data-home-schema>\n'+json.dumps(SCHEMA,ensure_ascii=False,indent=2)+'\n</script>'
+    schema=SCHEMA
+    if not prefix:
+        schema={**SCHEMA,'@graph':[
+            {**node,
+             'description':'Vivre à Nyons, guide indépendant consacré à Nyons et à la Drôme provençale : tourisme, vie locale, informations pratiques, patrimoine et mémoire du Sud.',
+             'about':{'@type':'City','name':'Nyons','address':{'@type':'PostalAddress','addressLocality':'Nyons','postalCode':'26110','addressRegion':'Auvergne-Rhône-Alpes','addressCountry':'FR'}}}
+            if node.get('@type')=='WebSite' else node
+            for node in SCHEMA['@graph']
+        ]}
+    block='<script type="application/ld+json" data-home-schema>\n'+json.dumps(schema,ensure_ascii=False,indent=2)+'\n</script>'
     if 'data-home-schema' in source:
         source=re.sub(r'<script\b[^>]*data-home-schema[^>]*>.*?</script>',lambda _:block,source,count=1,flags=re.S)
     else: source=source.replace('</head>',block+'\n</head>',1)
