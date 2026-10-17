@@ -71,3 +71,37 @@ Ajouter en fin de fiche une section « Sources et liens utiles ». Conserver les
 ## URL des pages — règle du 12 octobre 2026
 
 Utiliser systématiquement les URL canoniques avec un slash final `/` pour tous les liens vers les pages de www.vivreanyons.fr, agenda.vivreanyons.fr et drome.vivreanyons.fr, dans le texte comme dans les menus et les nouvelles fiches. Conserver les paramètres et les ancres. Ne pas ajouter de slash après les noms de fichiers (images, PDF, CSS, JavaScript, calendriers, etc.). Conserver les redirections permanentes 301 des anciennes adresses sans slash vers les adresses avec slash, pour que les liens déjà présents sur le Web restent valides. Ne pas renommer les pages ni changer leur chemin.
+
+## Consigne permanente — publication rapide des articles fournis — 17 octobre 2026
+
+Cette consigne s’applique aux articles transmis par l’utilisateur et déjà préparés dans ChatGPT (recherches historiques, rédaction en trois passes, témoignages, SEO et liens proposés). Pour ce mode de publication, elle prévaut sur les anciennes règles de ce fichier lorsqu’elles demandent de réécrire le texte ou de modifier d’autres pages. La mission est de publier fidèlement, sans recommencer la recherche, avec le minimum de crédits Work et d’opérations inutiles.
+
+### Ce qu’il ne faut pas faire
+
+- Ne pas refaire toutes les recherches historiques déjà effectuées.
+- Ne pas relancer une recherche Internet pour chaque paragraphe.
+- Ne pas réécrire l’article dans un autre style.
+- Ne pas résumer le texte et ne supprimer aucun détail intéressant.
+- Ne pas rechercher de nouveaux témoignages.
+- Ne pas refaire l’optimisation SEO déjà préparée.
+- Ne pas lancer d’audit général du site.
+
+### Ce qu’il faut faire
+
+1. Vérifier uniquement les cinq liens internes proposés et corriger ceux qui n’existent pas.
+2. Signaler toute erreur factuelle majeure ou affirmation manifestement douteuse, sans enquêter de nouveau sur tout l’article.
+3. Vérifier que la photographie est utilisable et correctement intégrée.
+4. Publier l’article complet dans la bonne rubrique, avec sa méta-description, son titre et son permalien.
+5. Intégrer les cinq témoignages fournis dans un seul encadré « Ce que vous racontez », en HTML indexable.
+6. Vérifier rapidement l’affichage sur ordinateur et mobile.
+7. Contrôler que l’URL publiée fonctionne.
+
+### Règles impératives
+
+- Conserver absolument tous les détails historiques, les noms, les dates, les anecdotes et les souvenirs.
+- Ne jamais modifier les autres pages, les redirections, les workflows GitHub ou le SEO global.
+- Si une information importante semble erronée, la signaler avant de modifier le fond de l’article.
+- Ne pas inventer un témoignage, un fait ou une autorisation d’utilisation de photo manquants.
+- À la fin, fournir simplement l’URL publiée, les éventuelles corrections indispensables et la confirmation du déploiement. Ne confirmer la publication qu’après vérification effective.
+
+Objectif : publication rapide, propre et fidèle au texte fourni, avec le minimum de crédits et d’opérations inutiles.
