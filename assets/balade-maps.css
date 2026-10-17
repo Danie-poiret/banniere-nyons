@@ -1,0 +1,24 @@
+.balade-map-section{margin:28px 0;padding:18px;border:1px solid #cbd4bd;background:#f6f7ef;border-radius:16px;min-width:0;scroll-margin-top:145px}
+.balade-map-section h2{margin-top:0!important;font-size:1.45rem;line-height:1.4}
+.balade-map-section p{font-size:.95rem;line-height:1.65}
+.balade-map-actions{display:flex;flex-wrap:wrap;gap:10px;margin:14px 0}
+.balade-map-actions button,.balade-map-point-button{font:inherit;font-weight:700;min-height:44px;border:1px solid #42643b;border-radius:8px;background:#42643b;color:#fff;padding:10px 14px;cursor:pointer}
+.balade-map-actions button:disabled{opacity:.7;cursor:wait}
+.balade-map-section button:focus-visible,.balade-map-canvas:focus-visible{outline:3px solid #996c24;outline-offset:4px}
+.balade-map-canvas{height:420px;width:100%;border-radius:10px;border:1px solid #b8c3aa;background:#e6ebdf;position:relative;z-index:0}
+.balade-map-section [hidden]{display:none!important}
+.balade-map-status{font-size:.85rem!important;color:#43583c}
+.balade-map-places{padding-left:1.4rem;margin:16px 0}
+.balade-map-places li{padding:8px 0;line-height:1.6}
+.balade-map-places strong,.balade-map-places span{display:block}
+.balade-map-places a{font-size:.9rem}
+.balade-map-point-button{display:block;font-size:.85rem;margin-top:7px;background:#fff;color:#35542f}
+.balade-map-icon{background:transparent;border:0}
+.balade-map-pin{display:flex;justify-content:center;align-items:center;width:32px;height:32px;border:2px solid #fff;border-radius:50%;background:#42643b;color:white;box-shadow:0 2px 6px #0005;font:800 14px/1 system-ui}
+.balade-map-popup{font:14px/1.5 system-ui;max-width:240px}
+.balade-map-popup strong{display:block;color:#304a2a}
+.balade-map-popup p{font-size:13px!important;margin:.6em 0!important}
+.balade-map-canvas .leaflet-control-attribution{font-size:10px;max-width:90%;line-height:1.4}
+.balade-map-sources{font-size:.82rem;line-height:1.6}
+.balade-map-sources summary{cursor:pointer;font-weight:650}
+@media(max-width:600px){.balade-map-section{padding:12px;scroll-margin-top:245px}.balade-map-canvas{height:360px}.balade-map-actions button{flex:1 1 160px}.balade-map-popup{max-width:200px}}
