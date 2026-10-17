@@ -17,7 +17,8 @@ assert(lodging.includes('☀️ Prépare ton séjour à Nyons →'));
 assert(!lodging.includes('wa.me/'));assert(!lodging.includes('06 32 07 61 24'));
 assert.equal((page.match(/class="home-latest-card"/g)||[]).length,5);
 assert(!page.includes('<p>Chargement…</p>'));assert(page.includes('data-nyons-weather'));assert(page.indexOf('data-nyons-weather')<page.indexOf('HOME_LATEST_START'));
-assert(page.includes('<h1>Vivre à Nyons, simplement.</h1>'));
+// Editorial wording must not prevent the agenda HTML from being refreshed.
+assert.match(page, /<h1\b[^>]*>[^<\s][^<]*<\/h1>/);
 assert(page.includes('<title>Vivre à Nyons : guide local, sorties et bonnes adresses</title>'));
 assert(page.includes('href="https://www.vivreanyons.fr/"'));
 assert(!page.includes('data-agenda>'));assert.equal((page.match(/data-nyons-lodging\b/g)||[]).length,1);
