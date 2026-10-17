@@ -84,7 +84,7 @@
     });
     if(!links.length)return;
     const link=document.createElement('a');
-    link.href='/memoire-de-france/';
+    link.href='https://www.vivreanyons.fr/memoire-de-france/';
     link.textContent='🇫🇷 Mémoire de France';
     links[0].replaceWith(link);
     links.slice(1).forEach(item=>item.remove());
