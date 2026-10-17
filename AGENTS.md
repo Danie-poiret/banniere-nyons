@@ -105,3 +105,7 @@ Cette consigne s’applique aux articles transmis par l’utilisateur et déjà 
 - À la fin, fournir simplement l’URL publiée, les éventuelles corrections indispensables et la confirmation du déploiement. Ne confirmer la publication qu’après vérification effective.
 
 Objectif : publication rapide, propre et fidèle au texte fourni, avec le minimum de crédits et d’opérations inutiles.
+
+## Sources cliquables — rappel permanent du 17 octobre 2026
+
+Dans chaque article publié, les sources documentaires citées doivent être de vrais liens HTML cliquables vers leurs pages précises, et non de simples noms de sites en texte brut. Reprendre les URL fournies ; lorsqu’elles manquent, retrouver et vérifier uniquement les destinations des sources déjà citées, sans recommencer les recherches de fond de l’article. Ne pas inventer d’URL. Une photographie ou un témoignage transmis sans adresse publique reste identifié comme document fourni ; ne pas fabriquer de lien ni d’attribution.
