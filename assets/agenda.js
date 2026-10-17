@@ -66,6 +66,31 @@
     allSections.append(link);
   }
 })();
+/* One national collection entry in Toutes les rubriques; keep Nyons links intact. */
+(function installMemoryOfFranceNavigation(){
+  const regions=new Set([
+    'auvergne-rhone-alpes','bourgogne-franche-comte','bretagne','centre-val-de-loire',
+    'corse','grand-est','hauts-de-france','ile-de-france','normandie',
+    'nouvelle-aquitaine','occitanie','pays-de-la-loire','provence-alpes-cote-dazur',
+    'guadeloupe','guyane','la-reunion','martinique','mayotte'
+  ]);
+  document.querySelectorAll('header .rubriques-menu').forEach(menu=>{
+    const links=[...menu.querySelectorAll('a[href]')].filter(link=>{
+      const url=new URL(link.getAttribute('href'),location.href);
+      if(url.origin!==location.origin&&url.origin!=='https://www.vivreanyons.fr')return false;
+      const path=url.pathname.replace(/^\/(?:banniere-nyons\/)?vivreanyons-test(?=\/)/,'')
+        .replace(/^\/|\/$/g,'').toLowerCase();
+      return regions.has(path)||path==='memoire-de-france'||link.hasAttribute('data-memory-region');
+    });
+    if(!links.length)return;
+    const link=document.createElement('a');
+    link.href='/memoire-de-france/';
+    link.textContent='🇫🇷 Mémoire de France';
+    links[0].replaceWith(link);
+    links.slice(1).forEach(item=>item.remove());
+  });
+})();
+
 /* Shared contact and social links requested by the site owner. */
 (function installNyonsContact(){
   const nav=document.querySelector('.nav'),brand=nav&&nav.querySelector('.brand');
