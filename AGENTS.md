@@ -109,3 +109,11 @@ Objectif : publication rapide, propre et fidèle au texte fourni, avec le minimu
 ## Sources cliquables — rappel permanent du 17 octobre 2026
 
 Dans chaque article publié, les sources documentaires citées doivent être de vrais liens HTML cliquables vers leurs pages précises, et non de simples noms de sites en texte brut. Reprendre les URL fournies ; lorsqu’elles manquent, retrouver et vérifier uniquement les destinations des sources déjà citées, sans recommencer les recherches de fond de l’article. Ne pas inventer d’URL. Une photographie ou un témoignage transmis sans adresse publique reste identifié comme document fourni ; ne pas fabriquer de lien ni d’attribution.
+
+## Accueil — nouveaux articles exclusivement consacrés à Nyons — 17 octobre 2026
+
+Règle permanente demandée par le propriétaire : dans le bloc des nouveaux / derniers articles de la page d’accueil, ne jamais afficher d’article consacré à une autre ville que Nyons. Cette règle s’applique aussi aux actualisations automatiques et aux sélections éditoriales manuelles, quelle que soit la date de publication.
+
+Les articles d’Avignon, Lyon, Marseille ou de toute autre commune restent dans leurs rubriques, sans entrer dans ce bloc de l’accueil. Une mention de Nyons dans le texte, une proximité géographique ou la signature « Vivre à Nyons » ne rendent pas un article extérieur admissible. Conserver uniquement les articles dont le sujet est Nyons ; laisser de côté les sujets ambigus jusqu’à leur vérification.
+
+Ne pas modifier les autres sections de l’accueil pour appliquer cette règle. La sélection est filtrée dans `tools/update_latest_article.py` ; ne jamais réintroduire une sélection globale par simple date. Vérifier ce critère avant toute publication ou actualisation du bloc.

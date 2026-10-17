@@ -11,7 +11,7 @@ import json
 import os
 from pathlib import Path
 import re
-from urllib.parse import urlsplit
+from urllib.parse import urlsplit, unquote
 import xml.etree.ElementTree as ET
 
 
@@ -51,6 +51,18 @@ def objects(value):
             yield from objects(child)
 
 
+def is_nyons_article(path, headline):
+    """Only identify the article's subject, never a Nyons mention in its body."""
+    if path.casefold().startswith(('/provence-alpes-cote-dazur/', '/auvergne-rhone-alpes/', '/a-faire-autour-de-nyons/', '/restaurants-autour-nyons/')):
+        return False
+    # A site's name at the end of a title is not the article's location.
+    subject = re.split(r'\s*[|–—]\s*Vivre\s+à\s+Nyons\b', html.unescape(headline), flags=re.I)[0]
+    if re.search(r'\b(?:autour|alentours|proximité|près|proche)\s+(?:de\s+)?Nyons\b', subject, re.I):
+        return False
+    slug = unquote(urlsplit(path).path.rstrip('/').rsplit('/', 1)[-1])
+    return bool(re.search(r'(?<![a-z])nyons(?:ais|aise|aises)?(?![a-z])', subject + ' ' + slug, re.I))
+
+
 def update(root):
     sitemap = ET.parse(root / 'sitemap.xml')
     positions = {urlsplit(e.text).path: i for i, e in enumerate(sitemap.iter('{http://www.sitemaps.org/schemas/sitemap/0.9}loc'))}
@@ -81,7 +93,7 @@ def update(root):
             if not re.fullmatch(r'\d{4}-\d{2}-\d{2}(?:T.*)?', published):
                 continue
             headline, description = item.get('headline'), item.get('description')
-            if not headline or not description:
+            if not headline or not description or not is_nyons_article(path, headline):
                 continue
             images = item.get('image', [])
             images = images if isinstance(images, list) else [images]
@@ -147,5 +159,3 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     parser.add_argument('--root', type=Path, default=Path(__file__).resolve().parents[1])
     update(parser.parse_args().root.resolve())
-
-
