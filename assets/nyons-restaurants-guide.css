@@ -1,0 +1,56 @@
+.food-guide .feature-layout.has-sidebar{grid-template-columns:minmax(0,1fr) 250px;gap:28px;max-width:1180px}
+.food-guide .feature-layout.has-sidebar>.feature-media{grid-column:1;grid-row:1;width:min(100%,420px);margin:0 auto}
+.food-guide .feature-layout.has-sidebar>.feature-story{grid-column:1;grid-row:2;line-height:1.8}
+.food-guide .feature-layout.has-sidebar>.right-sidebar{grid-column:2;grid-row:1/span 3}
+.food-guide .feature-layout.has-sidebar>.agenda{grid-column:1;grid-row:3}
+.food-guide .feature-story h2{margin:2.3em 0 .8em;line-height:1.3;scroll-margin-top:100px}
+.food-guide .feature-story h3{margin:1.7em 0 .65em;line-height:1.35}
+.food-guide .feature-story p{margin:.8em 0 1em}
+.food-guide .feature-story a{color:var(--olive);text-decoration:underline;text-underline-offset:3px}
+.food-guide .feature-story a:focus-visible,.food-guide button:focus-visible,.food-guide summary:focus-visible{outline:3px solid var(--terra);outline-offset:4px}
+.food-guide .food-choice-table{width:100%;overflow-x:auto;border:1px solid var(--line);border-radius:14px;margin:22px 0}
+.food-guide .food-choice-table table{border-collapse:collapse;width:100%;font-size:.96rem}
+.food-guide .food-choice-table th{background:var(--olive);color:#fff;text-align:left;line-height:1.4}
+.food-guide .food-choice-table th,.food-guide .food-choice-table td{padding:13px 15px;vertical-align:top;border-bottom:1px solid var(--line)}
+.food-guide .food-choice-table td:first-child{font-weight:650;width:42%}
+.food-guide .food-choice-table tr:nth-child(even){background:#f0ede3}
+.food-guide .food-choice-table tr:last-child td{border-bottom:0}
+.food-guide .food-map-section{clear:both;margin:30px 0 38px;padding:22px;background:#f5f3e9;border:1px solid var(--line);border-radius:16px}
+.food-guide .food-map-section>h2{margin:0 0 16px;font-size:1.65rem}
+.food-guide .food-map-toolbar,.food-guide .food-address-actions{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+.food-guide .food-map-section button{font:inherit;line-height:1.3;cursor:pointer;padding:10px 14px;border:1px solid var(--olive);border-radius:9px;color:var(--olive);background:white}
+.food-guide .food-map-section button:hover{background:#e5e9dc}
+.food-guide #food-map-status{font-size:.9rem;line-height:1.55;margin:13px 0}
+.food-guide #food-restaurants-map{height:430px;max-width:100%;border:1px solid #c8cebb;border-radius:12px;z-index:0;background:#e8e5dc}
+.food-guide .food-map-toolbar[hidden],.food-guide #food-restaurants-map[hidden],.food-guide [data-food-pin][hidden]{display:none!important}
+.food-guide .food-map-pin{display:flex;align-items:center;justify-content:center;width:24px;height:24px;background:#315438;border:2px solid white;border-radius:50%;color:white;font:700 12px/1 system-ui,sans-serif;box-shadow:0 1px 5px #0008}
+.food-guide .food-map-pin.is-uncertain{background:#9b592e}
+.food-guide .food-map-popup strong{display:block;color:#28472e;font-size:1rem;margin-bottom:7px}
+.food-guide .food-map-popup p{font-size:.9rem;line-height:1.45;margin:7px 0}
+.food-guide .food-map-popup a{display:block;padding:7px 0;line-height:1.4}
+.food-guide .leaflet-popup-content{max-width:250px}
+.food-guide .leaflet-control-attribution a{color:#235035}
+.food-guide .food-addresses{margin:20px 0 10px;background:white;border:1px solid var(--line);border-radius:10px;padding:15px 18px}
+.food-guide .food-addresses summary{font-weight:750;color:var(--olive);cursor:pointer;line-height:1.45}
+.food-guide .food-addresses ol{padding-left:24px}
+.food-guide .food-addresses li{padding:17px 0;border-bottom:1px solid var(--line)}
+.food-guide .food-addresses li:last-child{border:0}
+.food-guide .food-addresses address{font-style:normal;margin-top:5px}
+.food-guide .food-addresses li p{font-size:.9rem;line-height:1.5;margin:7px 0 12px}
+.food-guide .food-address-actions a{font-size:.9rem}
+.food-guide .food-map-credit{font-size:.78rem;line-height:1.55;color:var(--muted)}
+.food-guide .food-sources{margin-top:30px;border-top:1px solid var(--line)}
+@media(max-width:900px){
+ .food-guide .feature-layout.has-sidebar{grid-template-columns:minmax(0,1fr);gap:22px}
+ .food-guide .feature-layout.has-sidebar>.feature-media,.food-guide .feature-layout.has-sidebar>.feature-story,.food-guide .feature-layout.has-sidebar>.right-sidebar,.food-guide .feature-layout.has-sidebar>.agenda{grid-column:1;grid-row:auto}
+}
+@media(max-width:600px){
+ .food-guide .feature-story{font-size:1rem}
+ .food-guide .food-choice-table th,.food-guide .food-choice-table td{padding:10px 9px;font-size:.88rem;line-height:1.55}
+ .food-guide .food-map-section{padding:16px 12px}
+ .food-guide .food-map-section>h2{font-size:1.4rem}
+ .food-guide #food-restaurants-map{height:380px}
+ .food-guide .food-map-toolbar button{flex:1;font-size:.9rem;padding:11px 9px}
+ .food-guide .food-addresses{padding:14px 12px}
+ .food-guide .food-addresses ol{padding-left:20px}
+}
