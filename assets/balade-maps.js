@@ -48,7 +48,7 @@
         bounds=L.latLngBounds([]);
         if(data.route){
           const line=L.polyline(data.route,{color:'#426b37',weight:5,opacity:.9}).addTo(map);
-          line.bindTooltip('Tracé du GPX municipal des Bois de Lumière');bounds.extend(line.getBounds());
+          line.bindTooltip(data.routeLabel||'Tracé du GPX municipal des Bois de Lumière');bounds.extend(line.getBounds());
         }
         data.points.forEach((point,index)=>{
           const pin=document.createElement('span');pin.textContent=String(index+1);pin.className='balade-map-pin';
@@ -59,7 +59,7 @@
         L.control.scale({imperial:false}).addTo(map);fit();
         reset.hidden=false;load.hidden=true;
         section.querySelector('[data-map-intro]').hidden=true;
-        status.textContent=data.route?'Le tracé vert suit le GPX municipal. Le repère 1 indique le départ au col de la Croix.':'Cliquez sur un numéro pour découvrir le lieu. Les points sont des repères de localisation.';
+        status.textContent=data.route?(data.routeStatus||'Le tracé vert suit le GPX municipal. Le repère 1 indique le départ au col de la Croix.'):'Cliquez sur un numéro pour découvrir le lieu. Les points sont des repères de localisation.';
         tiles.on('tileerror',()=>{status.textContent='Le fond de carte est partiellement indisponible. Les repères et les liens ci-dessous restent utilisables.';});
         section.querySelectorAll('[data-map-point]').forEach(button=>{
           button.hidden=false;button.addEventListener('click',()=>{
@@ -76,4 +76,5 @@
     });
   });
 })();
+
 
