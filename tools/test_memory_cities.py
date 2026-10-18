@@ -28,7 +28,14 @@ def test():
     changed=set(git('diff','--name-only',BASE,'HEAD').decode().splitlines())
     assert not changed.intersection(protected),sorted(changed.intersection(protected))
     new_html=[p for p in changed if p.endswith('.html') and p not in oldpaths]
-    assert sorted(new_html)==sorted(c['path']+'/index.html' for c in config['cities'] if not c['existing'])
+    expected_cities={c['path']+'/index.html' for c in config['cities'] if not c['existing']}
+    def classify_new(paths):
+        assert expected_cities<=set(paths), 'A required city index is missing'
+        articles=set(paths)-expected_cities
+        for path in articles:
+            assert any(path.startswith(c['path']+'/') and len(path.split('/'))==5 for c in config['cities']), 'New HTML outside a city: '+path
+        return articles
+    new_articles=classify_new(new_html)
     counts=[]
     for c in config['cities']:
         page=html.fromstring((ROOT/(c['path']+'/index.html')).read_text(encoding='utf-8'))
@@ -45,6 +52,7 @@ def test():
         return '<!doctype html><html lang="fr"><head><title>Essai technique non publié</title><meta name="description" content="Récit technique réservé à la simulation."><link rel="canonical" href="'+address+'"><script type="application/ld+json">'+json.dumps({'@context':'https://schema.org','@type':'Article','headline':'Essai technique non publié','datePublished':'2026-10-18','url':address})+'</script></head><body><h1>Essai technique non publié</h1><main><img src="'+image+'" alt="Photographie existante utilisée pour le test" width="100" height="100"><p>Récit réservé au test local.</p></main></body></html>'
     target='Provence-Alpes-Cote-dAzur/Vaucluse/Avignon/place-de-l-horloge-essai/index.html'
     updates,future=m.prepare_article(ROOT,config,'avignon','place-de-l-horloge-essai',fixture(target))
+    assert classify_new(new_html+[target])==new_articles|{target}
     assert updates[target]==fixture(target)
     assert m.url(target) in updates['Provence-Alpes-Cote-dAzur/Vaucluse/Avignon/index.html']
     assert m.SITE+m.url(target) in updates['sitemap.xml']
@@ -61,7 +69,7 @@ def test():
     try:m.prepare_article(ROOT,config,'avignon','nouvel-article',fixture(target));raise AssertionError('Canonical mismatch accepted')
     except AssertionError as error:assert 'Canonical mismatch' in str(error)
     assert inventory()==before,'In-memory future-publication tests wrote files'
-    report={'base':BASE,'protected_html_unchanged':len(protected),'navigation_pages_changed':len(nav),'new_city_pages':len(new_html),
+    report={'base':BASE,'protected_html_unchanged':len(protected),'navigation_pages_changed':len(nav),'new_city_pages':len(expected_cities),'new_article_pages':len(new_articles),
             'runs':runs,'cities':counts,'future_article_routing':True,'future_city_first_article':True,'canonical_mismatch_refused':True,'path_traversal_refused':True,
             'public_deployment':False,'note':'Future articles are tested in memory only, not written or published.'}
     out=ROOT/'memory-city-evidence';out.mkdir(exist_ok=True)
