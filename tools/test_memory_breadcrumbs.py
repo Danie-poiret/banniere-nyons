@@ -2,6 +2,7 @@
 import json,re,subprocess,copy
 from pathlib import Path
 import memory_breadcrumbs as m
+from lxml import html as dom
 BASE='3957f61119cd1e91c78415772ac05470094004c9'
 def scrub(source):
     source=m.NAV.sub('',source)
@@ -22,9 +23,17 @@ def verify(sources,baseline,config):
         assert not m.validate(source,path,config),(path,m.validate(source,path,config))
         assert m.apply(source,path,config)==source,'Second correction differs: '+path
         if path in baseline:
-            assert scrub(source)==scrub(baseline[path]),'Changes outside breadcrumbs: '+path
-            old_main=re.search(r'<main\b.*?</main>',baseline[path],re.S)
-            assert old_main and re.search(r'<main\b.*?</main>',source,re.S)[0]==old_main[0],'Article/card content changed: '+path
+            if m.route(path,config)[1]:
+                assert scrub(source)==scrub(baseline[path]),'Changes outside breadcrumbs: '+path
+                old_main=re.search(r'<main\b.*?</main>',baseline[path],re.S)
+                assert old_main and re.search(r'<main\b.*?</main>',source,re.S)[0]==old_main[0],'Article content changed: '+path
+            else:
+                # Collection indexes gain authorized cards and city counters.
+                # Every old destination and old editorial card must survive.
+                old=dom.fromstring(baseline[path]);new=dom.fromstring(source)
+                assert set(old.xpath('//a/@href'))<=set(new.xpath('//a/@href')),'An index link disappeared: '+path
+                cards=lambda page:[dom.tostring(n,encoding='unicode',with_tail=False) for n in page.xpath('//main//article[contains(concat(" ",normalize-space(@class)," ")," card ")]')]
+                assert set(cards(old))<=set(cards(new)),'An existing index card changed: '+path
         checked.append(path)
     return checked
 def test(root=m.ROOT):
@@ -33,7 +42,10 @@ def test(root=m.ROOT):
     process=subprocess.Popen(['git','cat-file','--batch'],cwd=root,stdin=subprocess.PIPE,stdout=subprocess.PIPE)
     originals={}
     for p in paths:
-        process.stdin.write((BASE+':'+p+'\n').encode());process.stdin.flush();header=process.stdout.readline();assert b'missing' not in header
+        process.stdin.write((BASE+':'+p+'\n').encode());process.stdin.flush();header=process.stdout.readline()
+        if b'missing' in header:
+            assert m.route(p,config)[1] and p not in {r['path'] for c in config['cities'] for r in c['legacy']},'A legacy page is missing from the reference: '+p
+            continue
         size=int(header.split()[2]);originals[p]=process.stdout.read(size).decode();process.stdout.read(1)
     process.stdin.close();assert process.wait()==0
     checked=verify(sources,originals,config)
@@ -43,7 +55,7 @@ def test(root=m.ROOT):
     seo_cases=0
     for p in paths:
         url=m.SITE+'/'+p.removesuffix('index.html')
-        first,_=seo.optimize(originals[p],url,policy,catalog)
+        first,_=seo.optimize(originals.get(p,sources[p]),url,policy,catalog)
         assert not m.validate(first,p,config),('SEO regressed route',p)
         second,_=seo.optimize(first,url,policy,catalog)
         assert first==second,('Second SEO generation differs',p)
