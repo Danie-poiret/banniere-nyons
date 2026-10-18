@@ -1,6 +1,7 @@
 name: Actualiser et vérifier la météo de Nyons
 on:
   push:
+    branches: [main]
     paths:
       - assets/meteo-nyons.js
       - assets/meteo-nyons.css
@@ -17,6 +18,7 @@ concurrency:
   cancel-in-progress: false
 jobs:
   refresh:
+    if: github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
     timeout-minutes: 3
     steps:

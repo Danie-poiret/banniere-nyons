@@ -1,0 +1,66 @@
+name: Vérifier les carnets de Mémoire de France par ville
+on:
+  pull_request:
+    paths:
+      - '**/*.html'
+      - 'sitemap.xml'
+      - 'tools/*memory*'
+      - 'tools/templates/memory-city.html.tpl'
+      - '.github/workflows/**'
+  push:
+    branches: [main]
+    paths:
+      - 'Provence-Alpes-Cote-dAzur/**'
+      - 'Auvergne-Rhone-Alpes/**'
+      - 'Hauts-de-France/**'
+      - 'Histoire-Geo/**'
+      - 'memoire-de-france/**'
+      - 'sitemap.xml'
+      - 'tools/*memory*'
+      - 'tools/templates/memory-city.html.tpl'
+permissions:
+  contents: read
+jobs:
+  cities:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    env:
+      PLAYWRIGHT_BROWSERS_PATH: ${{ runner.temp }}/memory-browsers
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Installer les outils du contrôle
+        run: |
+          python -m pip install lxml
+          npm install --prefix .memory-tools --no-save playwright
+          .memory-tools/node_modules/.bin/playwright install --with-deps chromium
+      - name: Supprimer les destinations de publication
+        run: |
+          git remote remove origin
+          git config push.default nothing
+          mkdir -p .git/hooks
+          printf '#!/bin/sh\nexit 1\n' > .git/hooks/pre-push
+          chmod +x .git/hooks/pre-push
+      - name: Vérifier les villes hors réseau externe
+        run: |
+          sudo -n unshare --net -- env PATH="$PATH" PLAYWRIGHT_BROWSERS_PATH="$PLAYWRIGHT_BROWSERS_PATH" bash -euc '
+            ip link set lo up
+            export PYTHONDONTWRITEBYTECODE=1
+            python tools/test_memory_cities.py
+            python tools/check_site_integrity.py > memory-city-evidence/site-integrity.json
+            node tools/check_memory_cities.cjs
+          '
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: memory-cities-evidence
+          path: memory-city-evidence/
+          if-no-files-found: error

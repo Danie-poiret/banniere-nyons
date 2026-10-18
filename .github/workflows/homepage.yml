@@ -1,6 +1,7 @@
 name: Actualiser uniquement l’accueil de Vivre à Nyons
 on:
   push:
+    branches: [main]
     paths:
       - '**/index.html'
       - assets/home.js
@@ -18,6 +19,7 @@ concurrency:
   cancel-in-progress: false
 jobs:
   refresh:
+    if: github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
     timeout-minutes: 4
     steps:

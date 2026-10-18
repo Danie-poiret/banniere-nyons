@@ -1,6 +1,7 @@
 name: Actualiser les horaires de bus à Nyons
 on:
   push:
+    branches: [main]
     paths:
       - tools/update_bus_schedules.py
       - tools/check_bus_schedules.py
@@ -19,6 +20,7 @@ concurrency:
   cancel-in-progress: false
 jobs:
   refresh:
+    if: github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
     timeout-minutes: 8
     permissions:
