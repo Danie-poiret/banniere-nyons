@@ -11,6 +11,8 @@ permissions:
   contents: write
 jobs:
   normalize:
+    if: >-
+      github.ref == 'refs/heads/main' && (github.event_name != 'push' || !contains(github.event.head_commit.message, 'Memory-Cities-Only: true')) && (github.event_name != 'workflow_run' || !contains(github.event.workflow_run.head_commit.message, 'Memory-Cities-Only: true'))
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4

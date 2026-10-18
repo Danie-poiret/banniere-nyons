@@ -1,0 +1,588 @@
+{
+  "version": 1,
+  "cities": [
+    {
+      "id": "avignon",
+      "name": "Avignon",
+      "path": "Provence-Alpes-Cote-dAzur/Vaucluse/Avignon",
+      "department": "Vaucluse",
+      "region": "Provence-Alpes-Côte d’Azur",
+      "intro": "Une rame de tramway, une vitrine que l’on reconnaît, le nom d’une pâtisserie… L’Avignon d’autrefois se retrouve aussi dans ces petits détails. Je vous propose de remonter la rue de la République, de passer par Saint-Ruf et de feuilleter les souvenirs des commerces et des habitants. Chaque photographie ouvre une histoire différente, à lire à son rythme.",
+      "title": "Avignon autrefois : commerces, tramway et souvenirs",
+      "description": "Avignon autrefois avec Papy Chris : Dames de France, rue de la République, Saint-Ruf, anciennes pâtisseries et souvenirs des habitants.",
+      "existing": false,
+      "legacy": [
+        {
+          "path": "Provence-Alpes-Cote-dAzur/Vaucluse/Avenue-Saint-Ruf-Avignon/index.html",
+          "summary": "Un tramway traverse Saint-Ruf : arbres, maisons et commerces redessinent l’avenue d’autrefois."
+        },
+        {
+          "path": "Provence-Alpes-Cote-dAzur/Vaucluse/Epicerie-Parisienne-Avignon/index.html",
+          "summary": "La famille Lefrand, les caramels et la cave à vins font revivre cette adresse de la rue de la République."
+        },
+        {
+          "path": "Provence-Alpes-Cote-dAzur/Vaucluse/Gouas-avignon/index.html",
+          "summary": "Aillasse, Gouas et d’autres noms gourmands : une promenade dans les souvenirs des pâtisseries avignonnaises."
+        },
+        {
+          "path": "Provence-Alpes-Cote-dAzur/Vaucluse/Monument-du-Centenaire-Avignon/index.html",
+          "summary": "De la place de l’Horloge aux allées de l’Oulle, suivez le parcours du monument déplacé en 1975."
+        },
+        {
+          "path": "Provence-Alpes-Cote-dAzur/Vaucluse/Rue-de-la-Republique-Avignon/index.html",
+          "summary": "Voitures, vitrines et passants : les habitudes des années 1960 à 1980 se retrouvent rue de la République."
+        },
+        {
+          "path": "Provence-Alpes-Cote-dAzur/Vaucluse/avignon-autrefois-tramway-verrieres-commerces/index.html",
+          "summary": "Le tramway et les verrières révèlent une rue de la République peuplée de commerces aujourd’hui disparus."
+        },
+        {
+          "path": "Provence-Alpes-Cote-dAzur/Vaucluse/caserne-hautpoul-avignon-7e-genie/index.html",
+          "summary": "Le 7e génie et la caserne Hautpoul ouvrent un carnet de souvenirs autour du cours Jean-Jaurès."
+        },
+        {
+          "path": "Provence-Alpes-Cote-dAzur/Vaucluse/dames-de-france-avignon/index.html",
+          "summary": "Employés, ascenseur et vitrines de Noël : les Dames de France racontées par celles et ceux qui les ont connues."
+        }
+      ]
+    },
+    {
+      "id": "lyon",
+      "name": "Lyon",
+      "path": "Auvergne-Rhone-Alpes/Rhone/Lyon",
+      "department": "Rhône",
+      "region": "Auvergne-Rhône-Alpes",
+      "intro": "À Lyon, on peut suivre une pendule, un funiculaire ou le souvenir d’une grande brasserie. Les photographies de ces carnets font revenir des façades, des rendez-vous et des métiers. Prenez le temps de passer de Bellecour à la Guillotière : les histoires sont différentes, mais chacune garde un morceau de la ville.",
+      "title": "Lyon autrefois : quartiers, commerces et souvenirs",
+      "description": "Explorez le Lyon d’autrefois : Bellecour, Brasserie Georges, Palais de la Foire, funiculaires et souvenirs, avec leurs photographies anciennes.",
+      "existing": false,
+      "legacy": [
+        {
+          "path": "Auvergne-Rhone-Alpes/Rhone/Brasserie-Georges-Lyon/index.html",
+          "summary": "Près de Perrache, la Brasserie Georges et les voitures du cours de Verdun font revenir les années 1970."
+        },
+        {
+          "path": "Auvergne-Rhone-Alpes/Rhone/Ficelle-des-morts-Lyon/index.html",
+          "summary": "De Saint-Paul à Fourvière, une ancienne ligne de funiculaire raconte un autre visage des transports lyonnais."
+        },
+        {
+          "path": "Auvergne-Rhone-Alpes/Rhone/Fosse-aux-Ours-Lyon/index.html",
+          "summary": "Un rond-point, des jardins et des passages piétons : la Fosse aux Ours se retrouve dans les années 1960."
+        },
+        {
+          "path": "Auvergne-Rhone-Alpes/Rhone/Palais-de-la-Foire-Lyon/index.html",
+          "summary": "Des galeries de la Foire à la Cité internationale, suivez l’histoire et les souvenirs d’un bâtiment disparu."
+        },
+        {
+          "path": "Auvergne-Rhone-Alpes/Rhone/Passage-de-Argue-Lyon/index.html",
+          "summary": "Les petites boutiques du passage de l’Argue rouvrent un carnet de promenades dans le Lyon des années 1970."
+        },
+        {
+          "path": "Auvergne-Rhone-Alpes/Rhone/Place-Bellecour-Lyon/index.html",
+          "summary": "Promeneurs, arbres et statue de Louis XIV : une photographie de 1938 invite à regarder Bellecour autrement."
+        },
+        {
+          "path": "Auvergne-Rhone-Alpes/Rhone/Sapin-de-Noel-Lyon/index.html",
+          "summary": "Le grand sapin des Terreaux fait retrouver les sorties et les rendez-vous des fêtes de fin d’année."
+        },
+        {
+          "path": "Auvergne-Rhone-Alpes/Rhone/TGV-Lyon/index.html",
+          "summary": "Un TGV orange au milieu du boulevard des États-Unis : retour sur cette traversée du 27 mai 1981."
+        },
+        {
+          "path": "Auvergne-Rhone-Alpes/Rhone/Villa-Berliet-Lyon/index.html",
+          "summary": "À Montchat, la maison de Marius Berliet raconte son architecture, ses usages et les souvenirs de ses employés."
+        },
+        {
+          "path": "Auvergne-Rhone-Alpes/Rhone/gare-lyon-guillotiere-sernam/index.html",
+          "summary": "Les halles Sernam et les métiers du transport font revivre la gare de la Guillotière et ses cheminots."
+        },
+        {
+          "path": "Auvergne-Rhone-Alpes/Rhone/horloge-guignols-charvet-lyon/index.html",
+          "summary": "Automates et déménagements : suivez la pendule Charvet de son ancienne adresse jusqu’à Gadagne."
+        }
+      ]
+    },
+    {
+      "id": "valence",
+      "name": "Valence",
+      "path": "Auvergne-Rhone-Alpes/Drome/Valence",
+      "department": "Drôme",
+      "region": "Auvergne-Rhône-Alpes",
+      "intro": "À Valence, un boulevard, un plongeoir ou un costume de majorette peuvent réveiller toute une époque. On retrouve ici les boulistes, les sorties du soir, les rues du centre et les bords du Rhône. Je vous laisse ouvrir ces carnets comme on étale de vieilles photos sur la table : un détail en appelle un autre.",
+      "title": "Valence autrefois : rues, loisirs et souvenirs",
+      "description": "Valence en photographies : Champ de Mars, discothèque St James, majorettes, piscine du Polygone et souvenirs des rues et du Rhône.",
+      "existing": false,
+      "legacy": [
+        {
+          "path": "Auvergne-Rhone-Alpes/Drome/Champ-de-Mars-Valence/index.html",
+          "summary": "Sous les arbres du Champ de Mars, les parties de boules ramènent au Valence des années 1970."
+        },
+        {
+          "path": "Auvergne-Rhone-Alpes/Drome/Discotheque-St-James-Valence/index.html",
+          "summary": "Du Lido au Baccara, retrouvez les noms et les souvenirs des soirées boulevard d’Alsace."
+        },
+        {
+          "path": "Auvergne-Rhone-Alpes/Drome/Les-Libellules-de-Valence-Sud/index.html",
+          "summary": "Costumes, fanfares et voyages : les majorettes ont laissé leur empreinte dans les souvenirs valentinois."
+        },
+        {
+          "path": "Auvergne-Rhone-Alpes/Drome/Piscine-du-Polygone-Valence/index.html",
+          "summary": "Une photographie de 1991 fait retrouver le bassin couvert du Polygone et les habitudes des nageurs."
+        },
+        {
+          "path": "Auvergne-Rhone-Alpes/Drome/Valence-annees-1960-rhone-autoroute-a7/index.html",
+          "summary": "Basse-Ville, baignades et joutes : les bords du Rhône racontent les changements des années 1960."
+        },
+        {
+          "path": "Auvergne-Rhone-Alpes/Drome/Valence-en-1979/index.html",
+          "summary": "Librairie, vitrines et passages souterrains : retour dans les rues du centre de Valence en 1979."
+        }
+      ]
+    },
+    {
+      "id": "cavaillon",
+      "name": "Cavaillon",
+      "path": "Provence-Alpes-Cote-dAzur/Vaucluse/Cavaillon",
+      "department": "Vaucluse",
+      "region": "Provence-Alpes-Côte d’Azur",
+      "intro": "Il suffit parfois d’un nom de magasin pour retrouver une rue entière. À Cavaillon, les souvenirs de la rue de la République parlent de vitrines, de musique et de premières sorties. Voici le premier carnet de la ville ; les prochains viendront prendre place à ses côtés.",
+      "title": "Cavaillon autrefois : commerces et souvenirs de la rue de la République",
+      "description": "Retrouvez les commerces et les souvenirs de Cavaillon : rue de la République, anciennes boutiques et sorties d’autrefois, avec une photographie existante.",
+      "existing": false,
+      "legacy": [
+        {
+          "path": "Provence-Alpes-Cote-dAzur/Vaucluse/rue-republique-cavaillon-souvenirs/index.html",
+          "summary": "Discorama, Bata et les autres enseignes ramènent les promenades et les premières sorties de la rue piétonne."
+        }
+      ]
+    },
+    {
+      "id": "carpentras",
+      "name": "Carpentras",
+      "path": "Provence-Alpes-Cote-dAzur/Vaucluse/Carpentras",
+      "department": "Vaucluse",
+      "region": "Provence-Alpes-Côte d’Azur",
+      "intro": "À Carpentras, certaines façades gardent une place particulière dans les souvenirs des familles. L’ancienne maternité Moricelly en fait partie. Ce carnet rassemble les images et les récits déjà publiés sur la ville, en laissant à chaque histoire ses mots et son adresse.",
+      "title": "Carpentras autrefois : maternité Moricelly et souvenirs",
+      "description": "Carpentras autrefois : découvrez l’ancienne maternité Moricelly et les souvenirs des familles à travers le récit et la photographie déjà publiés.",
+      "existing": false,
+      "legacy": [
+        {
+          "path": "Provence-Alpes-Cote-dAzur/Vaucluse/maternite-Moricelly-Carpentras/index.html",
+          "summary": "Derrière les grilles de Moricelly, une ancienne photographie rappelle une adresse chère aux familles de Carpentras."
+        }
+      ]
+    },
+    {
+      "id": "orange",
+      "name": "Orange",
+      "path": "Provence-Alpes-Cote-dAzur/Vaucluse/Orange",
+      "department": "Vaucluse",
+      "region": "Provence-Alpes-Côte d’Azur",
+      "intro": "Les souvenirs d’Orange ne tiennent pas seulement dans les monuments. Ils passent aussi par les bassins, les plongeoirs et les journées d’été. Ouvrons ce premier carnet consacré aux anciennes piscines : une autre manière de regarder la ville et les loisirs d’autrefois.",
+      "title": "Orange autrefois : piscines et souvenirs d’été",
+      "description": "Les anciennes piscines d’Orange en images et en récits : l’Oasis, les Cèdres de Saint-Eutrope et les souvenirs des journées d’été.",
+      "existing": false,
+      "legacy": [
+        {
+          "path": "Provence-Alpes-Cote-dAzur/Vaucluse/Piscines-Orange/index.html",
+          "summary": "L’Oasis et les Cèdres de Saint-Eutrope font retrouver les bassins, les plongeoirs et les étés d’Orange."
+        }
+      ]
+    },
+    {
+      "id": "valreas",
+      "name": "Valréas",
+      "path": "Provence-Alpes-Cote-dAzur/Vaucluse/Valreas",
+      "department": "Vaucluse",
+      "region": "Provence-Alpes-Côte d’Azur",
+      "intro": "Un bassin, le bruit de l’eau et les vacances qui commencent : les piscines ont leur place dans la mémoire des villes. À Valréas, le premier récit de cette collection revient sur la piscine municipale. D’autres histoires pourront prolonger cette promenade sans effacer les anciennes.",
+      "title": "Valréas autrefois : la piscine et la mémoire des loisirs",
+      "description": "Un premier carnet sur Valréas : la piscine municipale ouverte en 1964, sa photographie et l’histoire des loisirs de la ville.",
+      "existing": false,
+      "legacy": [
+        {
+          "path": "Provence-Alpes-Cote-dAzur/Vaucluse/La-piscine-Valreas/index.html",
+          "summary": "La piscine ouverte en 1964 replace les baignades municipales dans l’histoire des loisirs de Valréas."
+        }
+      ]
+    },
+    {
+      "id": "grignan",
+      "name": "Grignan",
+      "path": "Auvergne-Rhone-Alpes/Drome/Grignan",
+      "department": "Drôme",
+      "region": "Auvergne-Rhône-Alpes",
+      "intro": "À Grignan, la silhouette du château se glisse jusque dans les souvenirs de baignade. Une ancienne carte postale suffit à rapprocher ce grand décor et les petits bonheurs de l’été. Ce premier carnet invite à regarder le village du côté de ses loisirs et de la vie quotidienne.",
+      "title": "Grignan autrefois : piscine, château et souvenirs d’été",
+      "description": "Grignan autrefois en photographie : la piscine municipale au pied du château et les souvenirs de baignade depuis les années 1960.",
+      "existing": false,
+      "legacy": [
+        {
+          "path": "Auvergne-Rhone-Alpes/Drome/Piscine-de-Grignan/index.html",
+          "summary": "Au pied du château, une carte postale fait revenir les bassins de Grignan et les baignades depuis 1965."
+        }
+      ]
+    },
+    {
+      "id": "pierrelatte",
+      "name": "Pierrelatte",
+      "path": "Auvergne-Rhone-Alpes/Drome/Pierrelatte",
+      "department": "Drôme",
+      "region": "Auvergne-Rhône-Alpes",
+      "intro": "Une carte postale de piscine fait parfois revenir plus de souvenirs qu’un long discours. À Pierrelatte, le stade nautique raconte une partie de ces étés passés au bord des bassins. Voici la porte d’entrée des récits de la ville, avec leurs photographies et leurs adresses conservées.",
+      "title": "Pierrelatte autrefois : stade nautique et souvenirs",
+      "description": "Retrouvez le stade nautique de Pierrelatte, son histoire depuis 1967 et les souvenirs de baignade autour d’une ancienne photographie.",
+      "existing": false,
+      "legacy": [
+        {
+          "path": "Auvergne-Rhone-Alpes/Drome/Piscine-de-Pierrelatte/index.html",
+          "summary": "Une vue du stade nautique raconte la naissance des bassins de Pierrelatte et les étés depuis 1967."
+        }
+      ]
+    },
+    {
+      "id": "venissieux",
+      "name": "Vénissieux",
+      "path": "Auvergne-Rhone-Alpes/Rhone/Venissieux",
+      "department": "Rhône",
+      "region": "Auvergne-Rhône-Alpes",
+      "intro": "Aux Minguettes, un match de football peut devenir un souvenir que l’on transmet longtemps. Le premier carnet de Vénissieux revient sur cette rencontre de 1991 et sur les noms que l’on retrouve sur les photographies. Une histoire de sport, mais aussi une page de la vie du quartier.",
+      "title": "Vénissieux autrefois : les Minguettes et les souvenirs du football",
+      "description": "Vénissieux et les Minguettes en 1991 : retrouvez le match avec Zidane, Platini et Luis Fernandez, sa photographie et les souvenirs du quartier.",
+      "existing": false,
+      "legacy": [
+        {
+          "path": "Auvergne-Rhone-Alpes/Rhone/zidane-minguettes-1991-platini-fernandez/index.html",
+          "summary": "Le match de 1991 réunit Zidane, Fernandez et Platini : une rencontre restée dans les souvenirs des Minguettes."
+        }
+      ]
+    },
+    {
+      "id": "nyons",
+      "name": "Nyons",
+      "path": "Auvergne-Rhone-Alpes/Drome/Nyons",
+      "department": "Drôme",
+      "region": "Auvergne-Rhône-Alpes",
+      "intro": "À Nyons, les souvenirs circulent entre le pont, les cafés, les écoles et les oliviers. Dans ces carnets, une vieille enseigne côtoie une histoire d’eau ou un souvenir d’enfance. Je les ai réunis ici pour que l’on puisse passer de l’un à l’autre, tout en gardant les récits de la rubrique Histoire et mémoire à leur place habituelle.",
+      "title": "Nyons autrefois : histoires, photographies et souvenirs",
+      "description": "Toutes les histoires de Nyons réunies par ville : commerces, cafés, écoles, oliviers et souvenirs, avec des liens vers les anciens articles conservés.",
+      "existing": false,
+      "legacy": [
+        {
+          "path": "Histoire-Geo/10-anecdotes-Nyons/index.html",
+          "summary": "Dix petites histoires invitent à regarder autrement les noms, les lieux et les habitudes de Nyons."
+        },
+        {
+          "path": "Histoire-Geo/1940-defaite-nyons/index.html",
+          "summary": "Le récit revient sur la défaite de 1940 et sur la peur qui s’installe dans la vie nyonsaise."
+        },
+        {
+          "path": "Histoire-Geo/Cafe-du-Pont-Nyons/index.html",
+          "summary": "Les patrons et les habitués du Café du Pont font revivre un bistrot du quotidien."
+        },
+        {
+          "path": "Histoire-Geo/Chateau-de-Chanteyrie-Nyons/index.html",
+          "summary": "De Gaulle et Vernejoul croisent l’histoire de Chanteyrie, une demeure bien connue des Nyonsais."
+        },
+        {
+          "path": "Histoire-Geo/Eygues-Aygues-ou-Aigues/index.html",
+          "summary": "Trois façons de nommer la rivière : un carnet pour retrouver les mots et l’histoire de l’Eygues."
+        },
+        {
+          "path": "Histoire-Geo/Nyons-autrefois/index.html",
+          "summary": "Les photographies et les traditions montrent une ville qui change tout en gardant ses repères."
+        },
+        {
+          "path": "Histoire-Geo/Nyons-le-Cafe-des-Autobus/index.html",
+          "summary": "Une ancienne enseigne de café fait remonter les souvenirs du temps des autobus."
+        },
+        {
+          "path": "Histoire-Geo/Place-du-Calvaire-Nyons/index.html",
+          "summary": "La place du Calvaire se raconte à travers son histoire et les souvenirs de ses habitants."
+        },
+        {
+          "path": "Histoire-Geo/Rene-Barjavel-Nyons/index.html",
+          "summary": "Une dédicace de René Barjavel devient le point de départ d’un carnet de souvenirs nyonsais."
+        },
+        {
+          "path": "Histoire-Geo/Transhumance-Nyons/index.html",
+          "summary": "Sur le pont Roman, la transhumance de 1967 fait retrouver une scène de la vie d’autrefois."
+        },
+        {
+          "path": "Histoire-Geo/cafes-nyons-autrefois/index.html",
+          "summary": "Chevaux, marchés et comptoirs : les anciens cafés racontent les rendez-vous du quotidien."
+        },
+        {
+          "path": "Histoire-Geo/chateau-de-meyne-nyons/index.html",
+          "summary": "Le parc disparu de Meyne reprend sa place dans les souvenirs des jeudis d’enfance."
+        },
+        {
+          "path": "Histoire-Geo/eau-nyons/index.html",
+          "summary": "Sources, fontaines et pénuries rappellent combien l’eau a compté dans la vie de Nyons."
+        },
+        {
+          "path": "Histoire-Geo/ecole-nyons/index.html",
+          "summary": "Discipline, respect et appréhensions : les souvenirs d’école font revenir les années 1940 à 1970."
+        },
+        {
+          "path": "Histoire-Geo/farceurs-quartier-pont-nyons/index.html",
+          "summary": "Zène, Chocolat et les plaisanteries du quartier du Pont retrouvent leur place dans la mémoire locale."
+        },
+        {
+          "path": "Histoire-Geo/felix-eysseric-nyons/index.html",
+          "summary": "La lavande et le nom d’Eysséric ouvrent un carnet consacré à un savoir-faire nyonsais."
+        },
+        {
+          "path": "Histoire-Geo/freddy-tondeur-nyons/index.html",
+          "summary": "Le parcours de Freddy Tondeur relie le grand reportage à son attachement aux oliviers de Nyons."
+        },
+        {
+          "path": "Histoire-Geo/histoire-cinema-nyons/index.html",
+          "summary": "Les salles et les séances font retrouver une autre façon de sortir et de se rencontrer à Nyons."
+        },
+        {
+          "path": "Histoire-Geo/histoire-du-marche-de-Nyons/index.html",
+          "summary": "Au fil des étals et des habitudes, le marché raconte une partie de la vie de la ville."
+        },
+        {
+          "path": "Histoire-Geo/histoire-olivier-nyons/index.html",
+          "summary": "Des origines de l’olivier aux traditions de l’huile, le récit suit un arbre indissociable du pays nyonsais."
+        },
+        {
+          "path": "Histoire-Geo/histoire-pompiers-nyons/index.html",
+          "summary": "Anciennes casernes et photographies retracent le parcours des pompiers de Nyons depuis 1842."
+        },
+        {
+          "path": "Histoire-Geo/la-ruelle-discotheque-nyons/index.html",
+          "summary": "Nanou, les escaliers et les photos de 1969 font revenir les soirées de La Ruelle."
+        },
+        {
+          "path": "Histoire-Geo/liberation-nyons-aout-1944/index.html",
+          "summary": "Les combats, la Résistance et les souvenirs des familles racontent la Libération de Nyons en août 1944."
+        },
+        {
+          "path": "Histoire-Geo/nyons-annees-1950-souvenirs/index.html",
+          "summary": "Jeux, cinémas et petits commerces redonnent des couleurs aux souvenirs des années 1950."
+        },
+        {
+          "path": "Histoire-Geo/nyons-en-1807/index.html",
+          "summary": "Une enquête de 1807 permet de suivre le canal, la maladrerie et la place de la soie."
+        },
+        {
+          "path": "Histoire-Geo/nyons-entre-deux-guerres/index.html",
+          "summary": "Entre les deux guerres, le récit suit les difficultés, les changements et les habitudes de la ville."
+        },
+        {
+          "path": "Histoire-Geo/nyons-et-arcades/index.html",
+          "summary": "Les arcades font retrouver la vie des commerces et des marchés au lendemain de la guerre."
+        },
+        {
+          "path": "Histoire-Geo/nyons-la-belle-epoque/index.html",
+          "summary": "La vie locale sous la Troisième République se retrouve au fil d’un carnet sur la Belle Époque."
+        },
+        {
+          "path": "Histoire-Geo/nyons-librairie-pinet-commerces-autrefois/index.html",
+          "summary": "La librairie Pinet et les autres enseignes réveillent les souvenirs des commerçants et de leurs clients."
+        },
+        {
+          "path": "Histoire-Geo/nyons-station-thermale/index.html",
+          "summary": "Le projet de station thermale ouvre une page moins connue de l’histoire de Nyons."
+        },
+        {
+          "path": "Histoire-Geo/nyons-vers-1900/index.html",
+          "summary": "Un pont, les rues et les ateliers d’une ancienne vue invitent à retrouver Nyons autour de 1900."
+        },
+        {
+          "path": "Histoire-Geo/savon-nyons/index.html",
+          "summary": "Le savon et la savonnerie racontent des gestes, des matières et un savoir-faire de Nyons."
+        }
+      ]
+    },
+    {
+      "id": "venterol",
+      "name": "Venterol",
+      "path": "Auvergne-Rhone-Alpes/Drome/Venterol",
+      "department": "Drôme",
+      "region": "Auvergne-Rhône-Alpes",
+      "intro": "À Venterol, les ruelles, le lavoir et les vieilles pierres donnent envie de ralentir. Le récit déjà publié suit le village au fil du temps et des souvenirs. Cette page permet de le retrouver dans les carnets de la Drôme, sans déplacer son adresse dans Histoire et mémoire.",
+      "title": "Venterol autrefois : village, lavoir et mémoire des ruelles",
+      "description": "Venterol dans les carnets de Papy Chris : histoire du village, lavoir, ruelles et photographies, avec un lien vers le récit d’origine.",
+      "existing": false,
+      "legacy": [
+        {
+          "path": "Histoire-Geo/venterol/index.html",
+          "summary": "Le temple, le lavoir et les ruelles accompagnent un récit du village et de ses transformations."
+        }
+      ]
+    },
+    {
+      "id": "lille",
+      "name": "Lille",
+      "path": "Hauts-de-France/Nord/Lille",
+      "department": "Nord",
+      "region": "Hauts-de-France",
+      "intro": "",
+      "title": "",
+      "description": "",
+      "existing": true,
+      "legacy": [
+        {
+          "path": "Hauts-de-France/Nord/Lille/bazar-wazemmes-lille-rue-gambetta/index.html",
+          "summary": ""
+        },
+        {
+          "path": "Hauts-de-France/Nord/Lille/cinema-mondial-wazemmes-place-verte/index.html",
+          "summary": ""
+        },
+        {
+          "path": "Hauts-de-France/Nord/Lille/jardin-enfants-pataugeoire-citadelle-lille/index.html",
+          "summary": ""
+        },
+        {
+          "path": "Hauts-de-France/Nord/Lille/patisserie-yanka-lille-rue-nationale/index.html",
+          "summary": ""
+        },
+        {
+          "path": "Hauts-de-France/Nord/Lille/tramway-505-lille-place-du-theatre/index.html",
+          "summary": ""
+        }
+      ]
+    },
+    {
+      "id": "marseille",
+      "name": "Marseille",
+      "path": "Provence-Alpes-Cote-dAzur/Bouches-du-Rhone/Marseille",
+      "department": "Bouches-du-Rhône",
+      "region": "Provence-Alpes-Côte d’Azur",
+      "intro": "",
+      "title": "",
+      "description": "",
+      "existing": true,
+      "legacy": [
+        {
+          "path": "Provence-Alpes-Cote-dAzur/Bouches-du-Rhone/Marseille/centre-bourse-marseille-1975-histoire/index.html",
+          "summary": ""
+        },
+        {
+          "path": "Provence-Alpes-Cote-dAzur/Bouches-du-Rhone/Marseille/marche-prado-marseille-1931/index.html",
+          "summary": ""
+        },
+        {
+          "path": "Provence-Alpes-Cote-dAzur/Bouches-du-Rhone/Marseille/plages-prado-marseille-histoire/index.html",
+          "summary": ""
+        }
+      ]
+    },
+    {
+      "id": "malo-les-bains",
+      "name": "Malo-les-Bains",
+      "path": "Hauts-de-France/Nord/Malo-les-Bains",
+      "department": "Nord",
+      "region": "Hauts-de-France",
+      "intro": "",
+      "title": "",
+      "description": "",
+      "existing": true,
+      "legacy": [
+        {
+          "path": "Hauts-de-France/Nord/Malo-les-Bains/avenue-de-la-mer-malo-les-bains-1958/index.html",
+          "summary": ""
+        }
+      ]
+    }
+  ],
+  "legacy_allowed_paths": [
+    "Auvergne-Rhone-Alpes/Drome/Champ-de-Mars-Valence/index.html",
+    "Auvergne-Rhone-Alpes/Drome/Discotheque-St-James-Valence/index.html",
+    "Auvergne-Rhone-Alpes/Drome/Lac-du-Pas-des-Ondes/index.html",
+    "Auvergne-Rhone-Alpes/Drome/Les-Libellules-de-Valence-Sud/index.html",
+    "Auvergne-Rhone-Alpes/Drome/Piscine-de-Grignan/index.html",
+    "Auvergne-Rhone-Alpes/Drome/Piscine-de-Pierrelatte/index.html",
+    "Auvergne-Rhone-Alpes/Drome/Piscine-du-Polygone-Valence/index.html",
+    "Auvergne-Rhone-Alpes/Drome/Valence-annees-1960-rhone-autoroute-a7/index.html",
+    "Auvergne-Rhone-Alpes/Drome/Valence-en-1979/index.html",
+    "Auvergne-Rhone-Alpes/Drome/index.html",
+    "Auvergne-Rhone-Alpes/Rhone/Brasserie-Georges-Lyon/index.html",
+    "Auvergne-Rhone-Alpes/Rhone/Ficelle-des-morts-Lyon/index.html",
+    "Auvergne-Rhone-Alpes/Rhone/Fosse-aux-Ours-Lyon/index.html",
+    "Auvergne-Rhone-Alpes/Rhone/Palais-de-la-Foire-Lyon/index.html",
+    "Auvergne-Rhone-Alpes/Rhone/Passage-de-Argue-Lyon/index.html",
+    "Auvergne-Rhone-Alpes/Rhone/Place-Bellecour-Lyon/index.html",
+    "Auvergne-Rhone-Alpes/Rhone/Sapin-de-Noel-Lyon/index.html",
+    "Auvergne-Rhone-Alpes/Rhone/TGV-Lyon/index.html",
+    "Auvergne-Rhone-Alpes/Rhone/Villa-Berliet-Lyon/index.html",
+    "Auvergne-Rhone-Alpes/Rhone/gare-lyon-guillotiere-sernam/index.html",
+    "Auvergne-Rhone-Alpes/Rhone/horloge-guignols-charvet-lyon/index.html",
+    "Auvergne-Rhone-Alpes/Rhone/index.html",
+    "Auvergne-Rhone-Alpes/Rhone/zidane-minguettes-1991-platini-fernandez/index.html",
+    "Auvergne-Rhone-Alpes/index.html",
+    "Hauts-de-France/Nord/Lille/bazar-wazemmes-lille-rue-gambetta/index.html",
+    "Hauts-de-France/Nord/Lille/cinema-mondial-wazemmes-place-verte/index.html",
+    "Hauts-de-France/Nord/Lille/index.html",
+    "Hauts-de-France/Nord/Lille/jardin-enfants-pataugeoire-citadelle-lille/index.html",
+    "Hauts-de-France/Nord/Lille/patisserie-yanka-lille-rue-nationale/index.html",
+    "Hauts-de-France/Nord/Lille/tramway-505-lille-place-du-theatre/index.html",
+    "Hauts-de-France/Nord/Malo-les-Bains/avenue-de-la-mer-malo-les-bains-1958/index.html",
+    "Hauts-de-France/Nord/Malo-les-Bains/index.html",
+    "Hauts-de-France/Nord/index.html",
+    "Hauts-de-France/index.html",
+    "Histoire-Geo/10-anecdotes-Nyons/index.html",
+    "Histoire-Geo/1940-defaite-nyons/index.html",
+    "Histoire-Geo/Cafe-du-Pont-Nyons/index.html",
+    "Histoire-Geo/Chateau-de-Chanteyrie-Nyons/index.html",
+    "Histoire-Geo/Eygues-Aygues-ou-Aigues/index.html",
+    "Histoire-Geo/Nyons-autrefois/index.html",
+    "Histoire-Geo/Nyons-le-Cafe-des-Autobus/index.html",
+    "Histoire-Geo/Place-du-Calvaire-Nyons/index.html",
+    "Histoire-Geo/Rene-Barjavel-Nyons/index.html",
+    "Histoire-Geo/Transhumance-Nyons/index.html",
+    "Histoire-Geo/cafes-nyons-autrefois/index.html",
+    "Histoire-Geo/chateau-de-meyne-nyons/index.html",
+    "Histoire-Geo/eau-nyons/index.html",
+    "Histoire-Geo/ecole-nyons/index.html",
+    "Histoire-Geo/farceurs-quartier-pont-nyons/index.html",
+    "Histoire-Geo/felix-eysseric-nyons/index.html",
+    "Histoire-Geo/freddy-tondeur-nyons/index.html",
+    "Histoire-Geo/histoire-cinema-nyons/index.html",
+    "Histoire-Geo/histoire-du-marche-de-Nyons/index.html",
+    "Histoire-Geo/histoire-olivier-nyons/index.html",
+    "Histoire-Geo/histoire-pompiers-nyons/index.html",
+    "Histoire-Geo/index.html",
+    "Histoire-Geo/la-cigale/index.html",
+    "Histoire-Geo/la-ruelle-discotheque-nyons/index.html",
+    "Histoire-Geo/liberation-nyons-aout-1944/index.html",
+    "Histoire-Geo/nyons-annees-1950-souvenirs/index.html",
+    "Histoire-Geo/nyons-en-1807/index.html",
+    "Histoire-Geo/nyons-entre-deux-guerres/index.html",
+    "Histoire-Geo/nyons-et-arcades/index.html",
+    "Histoire-Geo/nyons-la-belle-epoque/index.html",
+    "Histoire-Geo/nyons-librairie-pinet-commerces-autrefois/index.html",
+    "Histoire-Geo/nyons-station-thermale/index.html",
+    "Histoire-Geo/nyons-vers-1900/index.html",
+    "Histoire-Geo/savon-nyons/index.html",
+    "Histoire-Geo/venterol/index.html",
+    "Provence-Alpes-Cote-dAzur/Auvergne-Rhone-Alpes/Drome/Piscine-de-Pierrelatte/index.html",
+    "Provence-Alpes-Cote-dAzur/Bouches-du-Rhone/Marseille/centre-bourse-marseille-1975-histoire/index.html",
+    "Provence-Alpes-Cote-dAzur/Bouches-du-Rhone/Marseille/index.html",
+    "Provence-Alpes-Cote-dAzur/Bouches-du-Rhone/Marseille/marche-prado-marseille-1931/index.html",
+    "Provence-Alpes-Cote-dAzur/Bouches-du-Rhone/Marseille/plages-prado-marseille-histoire/index.html",
+    "Provence-Alpes-Cote-dAzur/Bouches-du-Rhone/index.html",
+    "Provence-Alpes-Cote-dAzur/Vaucluse/Avenue-Saint-Ruf-Avignon/index.html",
+    "Provence-Alpes-Cote-dAzur/Vaucluse/Epicerie-Parisienne-Avignon/index.html",
+    "Provence-Alpes-Cote-dAzur/Vaucluse/Gouas-avignon/index.html",
+    "Provence-Alpes-Cote-dAzur/Vaucluse/La-piscine-Valreas/index.html",
+    "Provence-Alpes-Cote-dAzur/Vaucluse/Monument-du-Centenaire-Avignon/index.html",
+    "Provence-Alpes-Cote-dAzur/Vaucluse/Piscines-Orange/index.html",
+    "Provence-Alpes-Cote-dAzur/Vaucluse/Que-faire-Avignon/index.html",
+    "Provence-Alpes-Cote-dAzur/Vaucluse/Rue-de-la-Republique-Avignon/index.html",
+    "Provence-Alpes-Cote-dAzur/Vaucluse/avignon-autrefois-tramway-verrieres-commerces/index.html",
+    "Provence-Alpes-Cote-dAzur/Vaucluse/caserne-hautpoul-avignon-7e-genie/index.html",
+    "Provence-Alpes-Cote-dAzur/Vaucluse/dames-de-france-avignon/index.html",
+    "Provence-Alpes-Cote-dAzur/Vaucluse/index.html",
+    "Provence-Alpes-Cote-dAzur/Vaucluse/maternite-Moricelly-Carpentras/index.html",
+    "Provence-Alpes-Cote-dAzur/Vaucluse/rue-republique-cavaillon-souvenirs/index.html",
+    "Provence-Alpes-Cote-dAzur/index.html"
+  ]
+}
