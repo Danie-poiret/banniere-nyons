@@ -60,6 +60,6 @@ def test(root=m.ROOT):
     corrupt=future_html.replace('<span aria-current="page">','<span>',1)
     assert m.validate(corrupt,future,config),'Missing current step was accepted'
     assert not m.validate(m.apply(corrupt,future,config),future,config)
-    report={'articles':sum(m.route(p,config)[1] for p in checked),'city_indexes':sum(not m.route(p,config)[1] for p in checked),'visible_schema_agreement':True,'old_editorial_bytes_preserved':True,'non_breadcrumb_schema_preserved':True,'seo_two_generations':seo_cases,'new_article_route':True,'aliases_untouched':True,'malformed_navigation_detected':True}
+    report={'articles':sum(m.route(p,config)[1] for p in checked),'city_indexes':sum(p==c['path']+'/index.html' for p in checked for c in config['cities']),'parent_indexes':sum(p in config.get('breadcrumb_parent_paths',[]) for p in checked),'visible_schema_agreement':True,'old_editorial_bytes_preserved':True,'non_breadcrumb_schema_preserved':True,'seo_two_generations':seo_cases,'new_article_route':True,'aliases_untouched':True,'malformed_navigation_detected':True}
     return report
 if __name__=='__main__':print(json.dumps(test(),ensure_ascii=False,indent=2))

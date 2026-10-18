@@ -176,6 +176,7 @@ def plan(root,config=None,extra=None):
                 name=re.escape(escape(c['name']))
                 pattern=r'(<a\b[^>]*href=")([^"]+)("[^>]*>\s*<strong>'+name+r'</strong>)'
                 generated=re.sub(pattern,lambda m:m[1]+'/'+c['path']+'/'+m[3],generated)
+        generated=memory_crumbs.apply(generated,path,config)
         if generated!=source:changes[path]=generated
     # A newly added historical Article must use a registered city directory.
     # Existing articles (including historical aliases) are frozen exceptions.
