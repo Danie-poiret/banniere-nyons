@@ -64,7 +64,8 @@ def test():
     target='Provence-Alpes-Cote-dAzur/Vaucluse/Avignon/place-de-l-horloge-essai/index.html'
     updates,future=m.prepare_article(ROOT,config,'avignon','place-de-l-horloge-essai',fixture(target))
     assert classify_new(new_html+[target])==new_articles|{target}
-    assert updates[target]==fixture(target)
+    assert updates[target]==m.memory_crumbs.apply(fixture(target),target,config)
+    assert not m.memory_crumbs.validate(updates[target],target,config)
     assert m.url(target) in updates['Provence-Alpes-Cote-dAzur/Vaucluse/Avignon/index.html']
     assert m.SITE+m.url(target) in updates['sitemap.xml']
     assert not set(updates).intersection(protected)
@@ -83,6 +84,8 @@ def test():
     report={'base':BASE,'protected_html_unchanged':len(protected)-len(modified_protected),'protected_html_modified_since_reference':sorted(modified_protected),'navigation_pages_changed':len(nav),'new_city_pages':len(expected_cities),'new_article_pages':len(new_articles),
             'runs':runs,'cities':counts,'future_article_routing':True,'future_city_first_article':True,'canonical_mismatch_refused':True,'path_traversal_refused':True,
             'public_deployment':False,'note':'Future articles are tested in memory only, not written or published.'}
+    from test_memory_breadcrumbs import test as test_breadcrumbs
+    report['breadcrumbs']=test_breadcrumbs(ROOT)
     out=ROOT/'memory-city-evidence';out.mkdir(exist_ok=True)
     (out/'results.json').write_text(json.dumps(report,ensure_ascii=False,indent=2),encoding='utf-8')
     print(json.dumps(report,ensure_ascii=False,indent=2))

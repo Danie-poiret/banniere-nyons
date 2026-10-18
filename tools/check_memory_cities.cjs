@@ -41,6 +41,19 @@ const server = http.createServer((req, res) => {
      canonical:document.querySelector('link[rel="canonical"]').href,
      fontSize:parseFloat(getComputedStyle(document.querySelector('main')).fontSize)
     }));
+
+    const routeCheck=await page.evaluate(()=>{
+      const nav=document.querySelector('nav[class*="breadcrumb"]');
+      const canonical=document.querySelector('link[rel="canonical"]').href;
+      const visible=[...nav.querySelectorAll('a')].map(a=>({name:a.textContent.trim(),url:new URL(a.getAttribute('href'),'https://www.vivreanyons.fr/').href}));
+      visible.push({name:nav.querySelector('[aria-current="page"]').textContent.trim(),url:canonical});
+      const nodes=v=>Array.isArray(v)?v.flatMap(nodes):(v&&typeof v==='object'?[v,...Object.values(v).flatMap(nodes)]:[]);
+      const crumbs=[...document.querySelectorAll('script[type="application/ld+json"]')].flatMap(s=>nodes(JSON.parse(s.textContent))).filter(n=>n['@type']==='BreadcrumbList');
+      const schema=crumbs.length===1?crumbs[0].itemListElement.map(n=>({name:n.name,url:typeof n.item==='object'?(n.item['@id']||n.item.url):n.item})):[];
+      return {visible,schema,count:crumbs.length,navFits:nav.getBoundingClientRect().right<=innerWidth+1&&nav.scrollWidth<=nav.clientWidth+1};
+    });
+    if(routeCheck.count!==1||!routeCheck.navFits||JSON.stringify(routeCheck.visible)!==JSON.stringify(routeCheck.schema)||routeCheck.visible[0].url!=='https://www.vivreanyons.fr/'||routeCheck.visible[1].url!=='https://www.vivreanyons.fr/memoire-de-france/')throw Error('Breadcrumb mismatch: '+JSON.stringify(routeCheck));
+
     if(state.h1!==1||state.overflow||state.brokenImages.length||!state.cards)throw Error(JSON.stringify({city:city.name,width,...state}));
     if(state.canonical!=='https://www.vivreanyons.fr/'+city.path+'/')throw Error('Wrong canonical');
     if(width===390){
@@ -57,6 +70,34 @@ const server = http.createServer((req, res) => {
     if(['avignon','lyon','nyons'].includes(city.id))await page.screenshot({path:path.join(out,city.id+'-'+width+'.png'),fullPage:city.id==='avignon'});
     results.push({city:city.name,width,...state});
    }
+
+   const examples=[
+    'Hauts-de-France/Nord/Lille/bains-lillois-piscine-autrefois/',
+    'Provence-Alpes-Cote-dAzur/Bouches-du-Rhone/Marseille/marche-prado-marseille-1931/',
+    'Provence-Alpes-Cote-dAzur/Vaucluse/caserne-hautpoul-avignon-7e-genie/',
+    'Histoire-Geo/freddy-tondeur-nyons/',
+    'Provence-Alpes-Cote-dAzur/Vaucluse/Avenue-Saint-Ruf-Avignon/'
+   ];
+   for(const story of examples){
+    await page.goto(base+'/'+story,{waitUntil:'networkidle'});
+
+    const routeCheck=await page.evaluate(()=>{
+      const nav=document.querySelector('nav[class*="breadcrumb"]');
+      const canonical=document.querySelector('link[rel="canonical"]').href;
+      const visible=[...nav.querySelectorAll('a')].map(a=>({name:a.textContent.trim(),url:new URL(a.getAttribute('href'),'https://www.vivreanyons.fr/').href}));
+      visible.push({name:nav.querySelector('[aria-current="page"]').textContent.trim(),url:canonical});
+      const nodes=v=>Array.isArray(v)?v.flatMap(nodes):(v&&typeof v==='object'?[v,...Object.values(v).flatMap(nodes)]:[]);
+      const crumbs=[...document.querySelectorAll('script[type="application/ld+json"]')].flatMap(s=>nodes(JSON.parse(s.textContent))).filter(n=>n['@type']==='BreadcrumbList');
+      const schema=crumbs.length===1?crumbs[0].itemListElement.map(n=>({name:n.name,url:typeof n.item==='object'?(n.item['@id']||n.item.url):n.item})):[];
+      return {visible,schema,count:crumbs.length,navFits:nav.getBoundingClientRect().right<=innerWidth+1&&nav.scrollWidth<=nav.clientWidth+1};
+    });
+    if(routeCheck.count!==1||!routeCheck.navFits||JSON.stringify(routeCheck.visible)!==JSON.stringify(routeCheck.schema)||routeCheck.visible[0].url!=='https://www.vivreanyons.fr/'||routeCheck.visible[1].url!=='https://www.vivreanyons.fr/memoire-de-france/')throw Error('Breadcrumb mismatch: '+JSON.stringify(routeCheck));
+
+    if(routeCheck.visible.length!==6)throw Error('Article needs six breadcrumb steps: '+story);
+    if(story.includes('freddy-tondeur'))await page.screenshot({path:path.join(out,'breadcrumb-nyons-'+width+'.png'),fullPage:false});
+    results.push({article:story,width,breadcrumb_steps:6,visible_schema_agreement:true,breadcrumb_fits:true});
+   }
+
    await context.close();
   }
   fs.writeFileSync(path.join(out,'browser-results.json'),JSON.stringify({network:'localhost only',pages:results},null,2));

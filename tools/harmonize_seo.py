@@ -10,6 +10,7 @@ import json,re,html,argparse,xml.etree.ElementTree as ET,hashlib,os,subprocess
 SITE='https://www.vivreanyons.fr'
 ROOT=Path(__file__).resolve().parents[1]
 MARKER='data-nyons-seo-auto="v1"'
+import memory_breadcrumbs as memory_crumbs
 def read_source(file):
     with file.open(encoding='utf8',newline='') as stream:return stream.read()
 def clean(s):return re.sub(r'\s+',' ',html.unescape(re.sub('<[^>]+>',' ',s))).strip()
@@ -67,6 +68,11 @@ def card_items(source,url,catalog):
                 result.append({'@type':'ListItem','position':len(result)+1,'item':{'@type':'WebPage','@id':dest,'url':dest,'name':name}});seen.add(dest);break
     return result
 def optimize(source,url,config,catalog):
+    before_crumbs=source
+    memory_config=memory_crumbs.registry(ROOT)
+    path=unquote(urlsplit(url).path).lstrip('/')+'index.html'
+    source=memory_crumbs.apply(source,path,memory_config)
+    crumb_changes=['memory_breadcrumbs'] if source!=before_crumbs else []
     original=source
     # Rebuild only this tool's own JSON-LD; all pre-existing blocks remain exact.
     source=re.sub(r'<script\b[^>]*'+re.escape(MARKER)+r'[^>]*>.*?</script>','',source,flags=re.S)
@@ -136,7 +142,7 @@ def optimize(source,url,config,catalog):
     assert Head(source).meta.get('description',[])==p.meta.get('description',[]), 'Description changed'
     assert source.split('</head>',1)[1]==original.split('</head>',1)[1], 'Body changed'
     assert Head(source).canonical==p.canonical, 'URL changed'
-    return source,changes
+    return source,crumb_changes+changes
 def main():
     parser=argparse.ArgumentParser();parser.add_argument('--apply',action='store_true');parser.add_argument('--stage',action='store_true');parser.add_argument('--check',action='store_true');parser.add_argument('--all',action='store_true');args=parser.parse_args()
     config=json.loads((ROOT/'tools/seo-policy.json').read_text(encoding='utf8'))

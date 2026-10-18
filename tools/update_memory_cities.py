@@ -8,6 +8,7 @@ import argparse, copy, html, json, re
 from urllib.parse import urlsplit, unquote
 import xml.etree.ElementTree as ET
 from lxml import html as dom
+import memory_breadcrumbs as memory_crumbs
 
 SITE='https://www.vivreanyons.fr'
 ROOT=Path(__file__).resolve().parents[1]
@@ -59,7 +60,7 @@ def json_script(data):
 
 def breadcrumbs(city):
     region,department,_=city['path'].split('/')
-    return [('Mémoire de France','/memoire-de-france/'),(city['region'],'/'+region+'/'),
+    return [('Accueil','/'),('Mémoire de France','/memoire-de-france/'),(city['region'],'/'+region+'/'),
             (city['department'],'/'+region+'/'+department+'/'),(city['name'],'/'+city['path']+'/')]
 
 def city_schema(city,articles):
@@ -74,7 +75,7 @@ def city_schema(city,articles):
 def city_page(root,city,articles):
     assert articles,'Refusing an empty city page'
     template=(root/'tools/templates/memory-city.html.tpl').read_text(encoding='utf-8')
-    crumbs=''.join('<li>'+('<span aria-current="page">'+escape(name)+'</span>' if i==3 else '<a href="'+escape(path)+'">'+escape(name)+'</a>')+'</li>' for i,(name,path) in enumerate(breadcrumbs(city)))
+    crumbs=''.join('<li>'+('<span aria-current="page">'+escape(name)+'</span>' if i==len(breadcrumbs(city))-1 else '<a href="'+escape(path)+'">'+escape(name)+'</a>')+'</li>' for i,(name,path) in enumerate(breadcrumbs(city)))
     values={'TITLE':escape(city['title']),'DESCRIPTION':escape(city['description']),'CANONICAL':escape(SITE+'/'+city['path']+'/'),
             'H1':escape(city['title']),'INTRO':escape(city['intro']),'CRUMBS':crumbs,
             'CITY':escape(city['name']),'COUNT':str(len(articles)),'CARDS':''.join(card(a,city) for a in articles),
@@ -201,6 +202,7 @@ def prepare_article(root,config,city_id,slug,source,definition=None):
     assert any(n.get('@type')=='Article' and n.get('datePublished') for n in nodes),'Prepared Article schema and original publication date required'
     # article() validates exact canonical, heading and existing local photograph.
     article(root,target,'',{target:source})
+    source=memory_crumbs.apply(source,target,config)
     updates,records=plan(root,config,{target:source})
     updates[target]=source
     if definition and not [c for c in json.loads((root/CONFIG).read_text(encoding='utf-8'))['cities'] if c['id']==city_id]:

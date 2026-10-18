@@ -20,10 +20,14 @@ class Parse(HTMLParser):
     def handle_endtag(self,t):
         if t=='script' and self.capture:self.scripts.append(''.join(self.buf));self.capture=False
 def inspect(files,sources,host):
+    import memory_breadcrumbs as memory_crumbs
+    memory_config=memory_crumbs.registry(ROOT)
     files=set(files);errors=[];parsed={};refs=0;schemas=0
     for path,source in sources.items():
         if not path.endswith('.html'):continue
         p=Parse(source);parsed[path]=p
+        if p.canonicals==['https://'+host+'/'+path.removesuffix('index.html')]:
+            errors.extend(path+': '+error for error in memory_crumbs.validate(source,path,memory_config))
         for script in p.scripts:
             try:json.loads(script);schemas+=1
             except json.JSONDecodeError as e:errors.append(f'{path}: invalid JSON-LD: {e}')
