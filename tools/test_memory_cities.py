@@ -26,7 +26,18 @@ def test():
     oldpaths=git('ls-tree','-r','--name-only',BASE).decode().splitlines()
     protected=[p for p in oldpaths if p.endswith('.html') and p not in nav]
     changed=set(git('diff','--name-only',BASE,'HEAD').decode().splitlines())
-    assert not changed.intersection(protected),sorted(changed.intersection(protected))
+    # Check URL/canonical permanence, while allowing later, explicitly edited
+    # article bodies. Generator immutability is checked by inventory() above.
+    modified_protected=changed.intersection(protected)
+    batch=subprocess.Popen(['git','cat-file','--batch'],cwd=ROOT,stdin=subprocess.PIPE,stdout=subprocess.PIPE)
+    for path in (p for p in oldpaths if p.endswith('.html')):
+        assert (ROOT/path).is_file(), 'An old URL disappeared: '+path
+        batch.stdin.write((BASE+':'+path+'\n').encode());batch.stdin.flush()
+        header=batch.stdout.readline();size=int(header.split()[2]);original=batch.stdout.read(size).decode('utf-8');batch.stdout.read(1)
+        old_canonical=html.fromstring(original).xpath('//link[@rel="canonical"]/@href')
+        current=html.fromstring((ROOT/path).read_text(encoding='utf-8')).xpath('//link[@rel="canonical"]/@href')
+        assert current==old_canonical,'An old canonical changed: '+path
+    batch.stdin.close();assert batch.wait()==0
     new_html=[p for p in changed if p.endswith('.html') and p not in oldpaths]
     expected_cities={c['path']+'/index.html' for c in config['cities'] if not c['existing']}
     def classify_new(paths):
@@ -69,7 +80,7 @@ def test():
     try:m.prepare_article(ROOT,config,'avignon','nouvel-article',fixture(target));raise AssertionError('Canonical mismatch accepted')
     except AssertionError as error:assert 'Canonical mismatch' in str(error)
     assert inventory()==before,'In-memory future-publication tests wrote files'
-    report={'base':BASE,'protected_html_unchanged':len(protected),'navigation_pages_changed':len(nav),'new_city_pages':len(expected_cities),'new_article_pages':len(new_articles),
+    report={'base':BASE,'protected_html_unchanged':len(protected)-len(modified_protected),'protected_html_modified_since_reference':sorted(modified_protected),'navigation_pages_changed':len(nav),'new_city_pages':len(expected_cities),'new_article_pages':len(new_articles),
             'runs':runs,'cities':counts,'future_article_routing':True,'future_city_first_article':True,'canonical_mismatch_refused':True,'path_traversal_refused':True,
             'public_deployment':False,'note':'Future articles are tested in memory only, not written or published.'}
     out=ROOT/'memory-city-evidence';out.mkdir(exist_ok=True)
