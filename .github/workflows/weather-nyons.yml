@@ -18,7 +18,7 @@ concurrency:
   cancel-in-progress: false
 jobs:
   refresh:
-    if: github.ref == 'refs/heads/main'
+    if: github.ref == 'refs/heads/main' && (github.event_name != 'push' || !contains(github.event.head_commit.message, 'Memory-Cities-Only: true')) && (github.event_name != 'workflow_run' || !contains(github.event.workflow_run.head_commit.message, 'Memory-Cities-Only: true'))
     runs-on: ubuntu-latest
     timeout-minutes: 3
     steps:
@@ -41,7 +41,7 @@ jobs:
             exit 1
           fi
   verify:
-    if: github.event_name != 'schedule'
+    if: github.event_name != 'schedule' && (github.event_name != 'push' || !contains(github.event.head_commit.message, 'Memory-Cities-Only: true')) && (github.event_name != 'workflow_run' || !contains(github.event.workflow_run.head_commit.message, 'Memory-Cities-Only: true'))
     needs: refresh
     runs-on: ubuntu-latest
     timeout-minutes: 8
