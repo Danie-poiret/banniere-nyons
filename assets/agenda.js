@@ -449,3 +449,15 @@ document.addEventListener('DOMContentLoaded',()=>{simplifyPontRomanPhotos();load
   if(narrow.addEventListener)narrow.addEventListener('change',resize);else narrow.addListener(resize);
   display();
 })();
+
+/* Historical photographs only: reuse the shared script without editing old articles. */
+(function loadMemoryPhotoViewer(){
+  const historicalRoots=new Set(['auvergne-rhone-alpes','bourgogne-franche-comte','bretagne','centre-val-de-loire','corse','grand-est','hauts-de-france','ile-de-france','normandie','nouvelle-aquitaine','occitanie','pays-de-la-loire','provence-alpes-cote-dazur','guadeloupe','guyane','la-reunion','martinique','mayotte','histoire-geo']);
+  const parts=location.pathname.split('/').filter(Boolean);
+  const historical=parts.some(part=>historicalRoots.has(part.toLowerCase()))||document.querySelector('.article-breadcrumb a[href*="/memoire-de-france/"]');
+  if(!historical||!document.querySelector('main .page-photo img,main article:not(.card) figure img,main .feature-media img')||document.querySelector('script[data-memory-viewer]'))return;
+  const shared=document.currentScript;
+  const script=document.createElement('script');script.setAttribute('data-memory-viewer','');
+  script.src=new URL('memory-photo-viewer.js?v=20261018-v1',shared.src).href;
+  document.body.append(script);
+})();

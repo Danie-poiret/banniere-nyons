@@ -1,0 +1,20 @@
+/* Loaded only for historical articles. Original photographs keep their layout. */
+[data-memory-photo]{cursor:zoom-in}
+[data-memory-photo]:focus-visible{outline:3px solid #899c61;outline-offset:4px}
+dialog.memory-photo-viewer{box-sizing:border-box;position:fixed;inset:0;margin:auto;padding:0;width:min(96vw,1600px);height:94vh;height:94dvh;max-width:none;max-height:none;border:1px solid #69735f;border-radius:12px;background:#172018;color:#fff;overflow:hidden;box-shadow:0 12px 60px #0009}
+dialog.memory-photo-viewer::backdrop{background:#000c}
+.memory-photo-viewer .mp-shell{height:100%;display:grid;grid-template-rows:auto minmax(0,1fr) auto}
+.memory-photo-viewer .mp-toolbar{display:flex;align-items:center;gap:8px;flex-wrap:wrap;padding:10px;background:#243327}
+.memory-photo-viewer .mp-counter{margin-right:auto;font:600 15px/1.4 system-ui,sans-serif}
+.memory-photo-viewer button,.memory-photo-viewer .mp-original{box-sizing:border-box;min-width:44px;min-height:44px;border:1px solid #aab99c;border-radius:6px;background:#fffdf4;color:#233324;padding:8px 12px;font:600 16px/1.2 system-ui,sans-serif;cursor:pointer;text-decoration:none}
+.memory-photo-viewer button:focus-visible,.memory-photo-viewer a:focus-visible{outline:3px solid #f6ce5b;outline-offset:2px}
+.memory-photo-viewer button:disabled{opacity:.45;cursor:default}
+.memory-photo-viewer [hidden]{display:none!important}
+.memory-photo-viewer .mp-stage{position:relative;overflow:hidden;touch-action:none;overscroll-behavior:contain;min-height:0;background:#101510;cursor:grab}
+.memory-photo-viewer .mp-stage:active{cursor:grabbing}
+.memory-photo-viewer .mp-image{position:absolute;left:50%;top:50%;max-width:none!important;max-height:none!important;margin:0!important;object-fit:contain;transform-origin:center;user-select:none;-webkit-user-drag:none;pointer-events:none;border:0;border-radius:0;box-shadow:none;opacity:0}
+.memory-photo-viewer .mp-image[data-loaded]{opacity:1}
+.memory-photo-viewer .mp-caption{padding:10px 14px;max-height:22vh;overflow:auto;font:15px/1.45 system-ui,sans-serif}
+.memory-photo-viewer .mp-caption p{margin:0 0 6px;color:#fff}
+.memory-photo-viewer .mp-help{font-size:13px;color:#d7e2cf}
+@media(max-width:600px){dialog.memory-photo-viewer{width:100vw;height:100vh;height:100dvh;border-radius:0;border:0}.memory-photo-viewer .mp-toolbar{gap:5px;padding:8px}.memory-photo-viewer button{padding:8px}.memory-photo-viewer .mp-counter{width:calc(100% - 60px);order:-2}.memory-photo-viewer .mp-close{order:-1}.memory-photo-viewer .mp-caption{max-height:23vh}.memory-photo-viewer .mp-original{font-size:14px}}
