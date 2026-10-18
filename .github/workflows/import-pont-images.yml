@@ -70,8 +70,10 @@ jobs:
           ! grep -q 'lh3.googleusercontent.com' "$PAGE"
           for n in $(seq -w 1 12); do grep -q "pont-$n.jpg" "$PAGE"; done
           rm -rf _pont_upload pont-upload.ready pont-roman.zip
+          python tools/test_cleanup_guard.py
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add -A
           git commit -m "Installer les 12 vraies photos du Pont Roman" || exit 0
+          python tools/test_cleanup_guard.py
           git push

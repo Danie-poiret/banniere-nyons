@@ -67,7 +67,7 @@ def refresh_homepage(fixture):
     module.refresh(ROOT, fixture)
 
 
-def main():
+def main(expected_counts=None):
     if sys.platform != 'linux' or os.environ.get('NYONS_CLEANUP_REHEARSAL') != '1':
         raise SystemExit('Requires explicitly isolated disposable Linux checkout')
     if command('git', 'remote').stdout.strip():
@@ -84,7 +84,7 @@ def main():
     for p in baseline:
         if p.endswith('.html'):
             counts['test2' if p.startswith(PREFIXES[1]) else 'test1' if p.startswith(PREFIXES[0]) else 'main'] += 1
-    if counts != {'main': 536, 'test1': 487, 'test2': 487}:
+    if counts != (expected_counts or {'main': 536, 'test1': 487, 'test2': 487}):
         raise SystemExit('Snapshot changed: '+str(counts))
     fixture = homepage_fixture()
     steps = [
@@ -104,7 +104,7 @@ def main():
     ]
     report = {'platform': sys.platform, 'network': 'isolated namespace', 'remotes': [],
               'baseline_html_counts': counts, 'runs': [],
-              'scope': 'Current generators only; no deletion, photo recovery, imports, live feeds, browser or deployment',
+              'scope': 'Existing generators; removal, import preflight and rollback are measured separately by the caller; no live feeds or publication',
               'frozen_homepage_time': '2026-10-18T12:00:00Z'}
     for generation in (1, 2):
         start = snapshot()
@@ -120,6 +120,11 @@ def main():
             else:
                 result = command('node' if name.endswith('.cjs') else sys.executable, 'tools/'+name, *args)
                 status, output = result.returncode, result.stdout+result.stderr
+            try:
+                load('test_cleanup_guard').check_tree(ROOT)
+            except Exception:
+                status = status or 1
+                output += '\n'+traceback.format_exc()
             item = {'script': name, 'args': args, 'exit': status,
                     'changed_files': changed(before, snapshot()), 'output': output}
             run['steps'].append(item)

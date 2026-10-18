@@ -5,12 +5,13 @@ on:
       - '.github/workflows/**'
       - 'tools/check_test_cleanup_safety.py'
       - 'tools/*.py'
+      - 'tools/test-cleanup-policy.json'
 permissions:
   contents: read
 jobs:
   rehearse:
     runs-on: ubuntu-latest
-    timeout-minutes: 20
+    timeout-minutes: 30
     steps:
       - uses: actions/checkout@v4
         with:
@@ -18,6 +19,8 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
+      - name: Install importer parser for offline preflight probes
+        run: python -m pip install lxml
       - name: Remove publication destinations and deny pushes
         run: |
           git remote remove origin
@@ -26,7 +29,7 @@ jobs:
           printf '#!/bin/sh\nexit 1\n' > .git/hooks/pre-push
           chmod +x .git/hooks/pre-push
       - name: Rehearse twice in a Linux network namespace
-        run: sudo -n unshare --net -- env PATH="$PATH" NYONS_CLEANUP_REHEARSAL=1 "$(command -v python)" tools/check_test_cleanup_safety.py
+        run: sudo -n unshare --net -- env PATH="$PATH" NYONS_CLEANUP_REHEARSAL=1 PYTHONDONTWRITEBYTECODE=1 "$(command -v python)" tools/rehearse_small_batch.py
       - uses: actions/upload-artifact@v4
         if: always()
         with:

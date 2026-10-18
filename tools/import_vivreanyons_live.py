@@ -15,6 +15,7 @@ import shutil
 import time
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from pathlib import Path
+from test_cleanup_guard import ensure_import_allowed
 from urllib.parse import urldefrag, urljoin, urlparse
 from urllib.request import Request, urlopen
 
@@ -1145,6 +1146,7 @@ def main() -> None:
     parser.add_argument("--repo", type=Path, required=True)
     parser.add_argument("--workers", type=int, default=8)
     args = parser.parse_args()
+    ensure_import_allowed(args.repo)
 
     site_dir = args.repo / "vivreanyons-test"
     for relative in STALE_GENERATED_DIRS:

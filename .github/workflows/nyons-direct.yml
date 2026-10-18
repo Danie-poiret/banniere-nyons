@@ -46,6 +46,7 @@ jobs:
         run: python tools/check_nyons_direct.py --local
       - name: Enregistrer le petit JSON partagé
         run: |
+          python tools/test_cleanup_guard.py
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add assets/nyons-direct.json
@@ -53,10 +54,13 @@ jobs:
             git commit -m "Actualiser les données officielles de Nyons en direct"
             for attempt in 1 2 3; do
               git pull --rebase origin main
+              python tools/test_cleanup_guard.py
               if git push origin main; then break; fi
               if [ "$attempt" = 3 ]; then exit 1; fi
             done
           fi
+      - name: Reject reintroduced test pages before packaging
+        run: python tools/test_cleanup_guard.py
       - name: Préparer le site statique complet
         uses: actions/upload-pages-artifact@v3
         with:

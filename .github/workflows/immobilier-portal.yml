@@ -33,6 +33,7 @@ jobs:
           python tools/harmonize_seo.py --all --check
       - name: Publier seulement les cartes du portail existant
         run: |
+          python tools/test_cleanup_guard.py
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add infos-pratiques-nyons/immobilier-nyons/index.html
@@ -40,6 +41,7 @@ jobs:
             git commit -m "Actualiser les guides du portail immobilier"
             for attempt in 1 2 3; do
               git pull --rebase origin main
+              python tools/test_cleanup_guard.py
               if git push origin main; then exit 0; fi
             done
             exit 1
