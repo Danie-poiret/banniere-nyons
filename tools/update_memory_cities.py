@@ -147,6 +147,19 @@ def plan(root,config=None,extra=None):
                 changes[target]=updated
         else:
             generated=city_page(root,city,articles)
+            if original:
+                # Preserve metadata added by the normal SEO pass between city
+                # generations. Never discard concurrent favicon/OG additions.
+                def metadata_key(tag):
+                    node=dom.fromstring(tag).xpath('self::meta|self::link|//meta|//link')[0]
+                    return (node.tag,node.get('name',node.get('property','')),node.get('rel',''),node.get('sizes',''),node.get('type',''))
+                head=generated.split('</head>',1)[0]
+                keys={metadata_key(tag) for tag in re.findall(r'<(?:meta|link)\b[^>]*>',head)}
+                extras=[]
+                for tag in re.findall(r'<(?:meta|link)\b[^>]*>',original.split('</head>',1)[0]):
+                    key=metadata_key(tag)
+                    if key not in keys:extras.append(tag);keys.add(key)
+                generated=generated.replace('</head>',''.join(extras)+'</head>',1)
             if generated!=original:changes[target]=generated
     # Append city navigation to existing parents. Their old links stay exact.
     parents={'memoire-de-france/index.html':records}

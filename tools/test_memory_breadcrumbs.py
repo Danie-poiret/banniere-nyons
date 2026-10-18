@@ -2,7 +2,7 @@
 import json,re,subprocess,copy
 from pathlib import Path
 import memory_breadcrumbs as m
-BASE='af15bd7ac2e89c603791b26727c7b5d730388945'
+BASE='3957f61119cd1e91c78415772ac05470094004c9'
 def scrub(source):
     source=m.NAV.sub('',source)
     source=re.sub(r'<style\b[^>]*data-memory-breadcrumb-style[^>]*>.*?</style>','',source,flags=re.S)
