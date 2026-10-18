@@ -25,7 +25,7 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 15
     env:
-      PLAYWRIGHT_BROWSERS_PATH: ${{ runner.temp }}/memory-browsers
+      PLAYWRIGHT_BROWSERS_PATH: /tmp/memory-cities-browsers
     steps:
       - uses: actions/checkout@v4
         with:
