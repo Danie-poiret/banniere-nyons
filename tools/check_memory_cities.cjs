@@ -40,10 +40,15 @@ const server = http.createServer((req, res) => {
     if(state.h1!==1||state.overflow||state.brokenImages.length||!state.cards)throw Error(JSON.stringify({city:city.name,width,...state}));
     if(state.canonical!=='https://www.vivreanyons.fr/'+city.path+'/')throw Error('Wrong canonical');
     if(width===390){
+     const toggle=page.locator('[data-mobile-menu-toggle]');
+     await toggle.click();
+     if(await toggle.getAttribute('aria-expanded')!=='true')throw Error('Mobile navigation did not expand');
      const menu=page.locator('details.rubriques');await menu.locator('summary').click();
      if(!await menu.getAttribute('open') && await menu.getAttribute('open')!=='' )throw Error('Mobile menu did not open');
      if(!await menu.locator('.rubriques-menu').isVisible())throw Error('Mobile menu hidden');
      await menu.locator('summary').click();
+     await page.keyboard.press('Escape');
+     if(await toggle.getAttribute('aria-expanded')!=='false')throw Error('Mobile navigation did not close');
     }
     if(['avignon','lyon','nyons'].includes(city.id))await page.screenshot({path:path.join(out,city.id+'-'+width+'.png'),fullPage:city.id==='avignon'});
     results.push({city:city.name,width,...state});
