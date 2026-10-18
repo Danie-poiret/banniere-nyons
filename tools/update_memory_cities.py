@@ -133,7 +133,15 @@ def plan(root,config=None,extra=None):
             if missing:
                 # Append only newly discovered stories; preserve the existing cards.
                 extra_cards='<section class="region-section"><h2>Autres histoires de '+escape(city['name'])+'</h2><div class="memory-grid">'+''.join(card(a,city) for a in missing)+'</div></section>'
-                updated=original.replace('</main>',extra_cards+'</main>',1)
+                if city.get('unified_card_grid'):
+                    # Existing cards stay byte-for-byte intact. New stories
+                    # enter the same grid before the end-of-page navigation.
+                    grids=list(re.finditer(r'<div\b[^>]*class=[\"\'][^\"\']*\bmemory-grid\b[^\"\']*[\"\'][^>]*>',original))
+                    assert len(grids)==1,'Unified city must have one article grid'
+                    at=grids[0].end()
+                    updated=original[:at]+''.join(card(a,city) for a in missing)+original[at:]
+                else:
+                    updated=original.replace('</main>',extra_cards+'</main>',1)
                 # Refresh only an existing generated ItemList, never canonicals.
                 pattern=r'(<script\b[^>]*data-nyons-seo-auto[^>]*>)(.*?)(</script>)'
                 def refresh(m):
@@ -141,6 +149,10 @@ def plan(root,config=None,extra=None):
                     for n in schema_nodes(data):
                         if n.get('@type')=='ItemList':
                             own=city_schema(city,articles)['@graph'][1]
+                            if city.get('unified_card_grid'):
+                                urls=dom.fromstring(updated).xpath('//main//article[contains(concat(" ",normalize-space(@class)," ")," card ")]//a/@href')
+                                by_url={entry['url']:entry for entry in own['itemListElement']}
+                                own['itemListElement']=[dict(by_url[SITE+u],position=i) for i,u in enumerate(urls,1)]
                             n['numberOfItems']=own['numberOfItems'];n['itemListElement']=own['itemListElement']
                     return m[1]+json_script(data)+m[3]
                 updated=re.sub(pattern,refresh,updated,flags=re.S)
