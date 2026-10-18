@@ -41,6 +41,7 @@ def strip_crumbs(value):
 def registry(root=ROOT):return json.loads((root/'tools/memory-cities.json').read_text(encoding='utf-8'))
 def route(path,config):
     for city in config['cities']:
+        if path in config.get('breadcrumb_parent_paths',[]) and path==city['path'].rsplit('/',1)[0]+'/index.html':return city,False
         if path==city['path']+'/index.html':return city,False
         if path in {r['path'] for r in city['legacy']}:return city,True
         if path.startswith(city['path']+'/') and len(path.split('/'))==5 and path.endswith('/index.html'):return city,True
@@ -50,6 +51,7 @@ def desired(path,source,config):
     if city is None:return []
     region,department,_=city['path'].split('/')
     items=[('Accueil',SITE+'/'),('Mémoire de France',SITE+'/memoire-de-france/'),(city['region'],SITE+'/'+region+'/'),(city['department'],SITE+'/'+region+'/'+department+'/'),(city['name'],SITE+'/'+city['path']+'/')]
+    if path in config.get('breadcrumb_parent_paths',[]) and path=='/'.join(city['path'].split('/')[:2])+'/index.html':return items[:4]
     if article:
         h=re.findall(r'<h1\b[^>]*>(.*?)</h1>',source,re.I|re.S)
         assert len(h)==1,'Exactly one H1 required: '+path
@@ -145,7 +147,7 @@ def apply(source,path,config=None):
     assert not validate(source,path,config),(path,validate(source,path,config))
     return source
 def scoped_paths(root,config):
-    paths=set()
+    paths=set(config.get('breadcrumb_parent_paths',[]))
     for c in config['cities']:
         paths.add(c['path']+'/index.html');paths.update(r['path'] for r in c['legacy'])
         folder=root/c['path']
