@@ -29,6 +29,10 @@ const server = http.createServer((req, res) => {
     if(response.status()!==200)throw Error('City page missing: '+city.name);
     await page.locator('main img').evaluateAll(images=>images.forEach(img=>img.loading='eager'));
     await page.waitForFunction(()=>[...document.querySelectorAll('main img')].every(img=>img.complete));
+    await page.locator('main img').evaluateAll(images=>Promise.all(images.map(img=>img.decode())));
+    for(const image of await page.locator('main img').all()){await image.scrollIntoViewIfNeeded();await page.waitForTimeout(40);}
+    await page.evaluate(()=>scrollTo(0,0));
+    await page.waitForTimeout(120);
     const state=await page.evaluate(()=>({
      h1:document.querySelectorAll('h1').length,
      overflow:document.documentElement.scrollWidth>innerWidth+1,
