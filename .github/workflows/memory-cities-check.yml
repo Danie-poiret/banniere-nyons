@@ -4,6 +4,7 @@ on:
     paths:
       - '**/*.html'
       - 'sitemap.xml'
+      - 'AGENTS.md'
       - 'tools/*memory*'
       - 'tools/templates/memory-city.html.tpl'
       - '.github/workflows/**'

@@ -117,3 +117,16 @@ Règle permanente demandée par le propriétaire : dans le bloc des nouveaux / d
 Les articles d’Avignon, Lyon, Marseille ou de toute autre commune restent dans leurs rubriques, sans entrer dans ce bloc de l’accueil. Une mention de Nyons dans le texte, une proximité géographique ou la signature « Vivre à Nyons » ne rendent pas un article extérieur admissible. Conserver uniquement les articles dont le sujet est Nyons ; laisser de côté les sujets ambigus jusqu’à leur vérification.
 
 Ne pas modifier les autres sections de l’accueil pour appliquer cette règle. La sélection est filtrée dans `tools/update_latest_article.py` ; ne jamais réintroduire une sélection globale par simple date. Vérifier ce critère avant toute publication ou actualisation du bloc.
+
+
+## Mémoire de France — classement par ville — 18 octobre 2026
+
+Cette règle concerne la préparation et la publication des récits historiques de Mémoire de France. Elle complète les règles de publication fidèle : ne pas refaire les recherches ni réécrire un article déjà préparé.
+
+- Conserver chaque ancien article à son URL exacte, avec son canonical. Ne pas déplacer, recopier intégralement ou rediriger les anciens récits, y compris Histoire-Geo et les anciennes versions de test.
+- Avant de créer une ville, consulter tools/memory-cities.json et les dossiers exacts. Réutiliser les index existants, notamment Lille, Marseille et Malo-les-Bains ; respecter la casse des régions, départements et villes.
+- Créer un nouveau récit directement sous Région/Département/Ville/slug/index.html. Pour Avignon : Provence-Alpes-Cote-dAzur/Vaucluse/Avignon/slug/index.html. Fournir le canonical final exact et la vraie date de publication dans le HTML préparé.
+- Utiliser tools/update_memory_cities.py --add-article ID_VILLE SLUG HTML_PREPARE, d’abord avec --plan-only, pour préparer simultanément le récit, sa carte, les index parents et le sitemap. Le HTML préparé reste hors du répertoire publié. Une nouvelle ville se définit avec --city-definition et son premier récit ; ne jamais créer de page vide.
+- Après la préparation, exécuter tools/update_memory_cities.py --check et les contrôles de liens / navigateur prévus par .github/workflows/memory-cities-check.yml. Deux générations doivent être stables. Consulter tools/MEMORY-CITIES.md pour le détail.
+- Une publication strictement limitée à Mémoire de France utilise le marqueur de commit Memory-Cities-Only: true, afin d’éviter les réécritures automatiques de l’accueil, de l’immobilier et du SEO global. Ne pas utiliser ce marqueur pour masquer des changements d’autres rubriques et ne pas lancer ces générateurs globaux pour une simple mise à jour des index de ville.
+- Publier seulement après les vérifications et l’autorisation applicable. Contrôler ensuite les URL exactes et les photographies. La PR de nettoyage n° 1 reste séparée et ne doit pas être fusionnée à cette occasion.
