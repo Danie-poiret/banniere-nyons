@@ -5,11 +5,13 @@
  const container=root.querySelector('#food-restaurants-map');
  const status=root.querySelector('#food-map-status');
  const escape=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
- const fail=()=>{container.hidden=true;status.textContent='La carte ne peut pas être chargée pour le moment. Ouvre la liste des 18 adresses ci-dessous : les fiches et les itinéraires restent utilisables.';};
+ let places=[];try{places=JSON.parse(root.querySelector('[data-food-places]').textContent);}catch(_){}
+ const count=places.length;
+ const fail=()=>{container.hidden=true;status.textContent='La carte ne peut pas être chargée pour le moment. Ouvre la liste des '+count+' adresses ci-dessous : les fiches et les itinéraires restent utilisables.';};
  if(!window.L){fail();return;}
  let map;
  try{
-  const places=JSON.parse(root.querySelector('[data-food-places]').textContent);
+  if(!count){fail();return;}
   container.hidden=false;
   map=window.L.map(container,{scrollWheelZoom:false,zoomControl:false,zoomAnimation:false,fadeAnimation:false,markerZoomAnimation:false}).setView([44.3606,5.1419],17);
   window.L.control.zoom({position:'bottomleft'}).addTo(map);
@@ -26,7 +28,7 @@
   }).on('tileerror',()=>{
    tileFailed=true;
    status.textContent='Le fond de carte est momentanément indisponible. Les repères, les adresses et les itinéraires de la liste restent accessibles.';
-  }).on('load',()=>{if(!tileFailed)status.textContent='18 repères disponibles. Clique sur un numéro ou utilise la liste des adresses. « Toutes les adresses » inclut les Laurons et Condorcet.';}).addTo(map);
+  }).on('load',()=>{if(!tileFailed)status.textContent=count+' repères disponibles. Clique sur un numéro ou utilise la liste des adresses.'+(places.some(p=>p.outside)?' « Toutes les adresses » inclut les Laurons et Condorcet.':'');}).addTo(map);
   const markers=new Map();
   places.forEach((place,index)=>{
    const destination=encodeURIComponent(place.name+', '+place.address);
@@ -51,6 +53,6 @@
    });
   });
   container.dataset.ready='true';
-  status.textContent='18 repères disponibles. Clique sur un numéro ou ouvre la liste des adresses. Les horaires ne sont pas vérifiés en temps réel.';
+  status.textContent=count+' repères disponibles. Clique sur un numéro ou ouvre la liste des adresses. Les horaires ne sont pas vérifiés en temps réel.';
  }catch(_){if(map)map.remove();fail();}
 })();
