@@ -1,6 +1,7 @@
 name: Actualiser uniquement les cartes du portail immobilier
 on:
   push:
+    branches: [main]
     paths:
       - '**/index.html'
       - sitemap.xml
@@ -15,6 +16,7 @@ concurrency:
   cancel-in-progress: false
 jobs:
   refresh:
+    if: github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
     timeout-minutes: 4
     steps:

@@ -2,6 +2,7 @@ name: Appliquer la mise a jour VivreAnyons
 
 on:
   push:
+    branches: [main]
     paths:
       - vivreanyons-publication.zip
   workflow_dispatch:
@@ -11,7 +12,7 @@ permissions:
 
 jobs:
   apply-update:
-    if: github.actor != 'github-actions[bot]'
+    if: github.ref == 'refs/heads/main' && (github.actor != 'github-actions[bot]')
     runs-on: ubuntu-latest
     steps:
       - name: Recuperer le depot
