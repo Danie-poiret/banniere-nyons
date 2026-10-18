@@ -12,6 +12,7 @@ import argparse
 import html as html_std
 import re
 from pathlib import Path
+from test_cleanup_guard import ensure_import_allowed
 from urllib.parse import parse_qs, unquote, urlparse
 
 from lxml import html
@@ -410,6 +411,7 @@ def main() -> None:
     parser.add_argument("--sources", type=Path, required=True)
     parser.add_argument("--repo", type=Path, required=True)
     args = parser.parse_args()
+    ensure_import_allowed(args.repo)
 
     sources = find_sources(args.sources)
     nav_source = sources.get("decouvrir-nyons.html") or next(iter(sources.values()))

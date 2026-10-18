@@ -1,6 +1,7 @@
 name: Actualiser uniquement l’accueil de Vivre à Nyons
 on:
   push:
+    branches: [main]
     paths:
       - '**/index.html'
       - assets/home.js
@@ -18,6 +19,7 @@ concurrency:
   cancel-in-progress: false
 jobs:
   refresh:
+    if: github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
     timeout-minutes: 4
     steps:
@@ -39,6 +41,7 @@ jobs:
           python tools/harmonize_seo.py --all --check
       - name: Publier seulement l’accueil et son instantané
         run: |
+          python tools/test_cleanup_guard.py
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add index.html assets/home-content.json
@@ -46,6 +49,7 @@ jobs:
             git commit -m "Actualiser uniquement les articles et événements de l’accueil"
             for attempt in 1 2 3; do
               git pull --rebase origin main
+              python tools/test_cleanup_guard.py
               if git push origin main; then exit 0; fi
             done
             exit 1

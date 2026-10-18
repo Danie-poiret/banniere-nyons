@@ -2,6 +2,7 @@ name: Appliquer la mise a jour VivreAnyons
 
 on:
   push:
+    branches: [main]
     paths:
       - vivreanyons-publication.zip
   workflow_dispatch:
@@ -11,14 +12,14 @@ permissions:
 
 jobs:
   apply-update:
-    if: github.actor != 'github-actions[bot]'
+    if: github.ref == 'refs/heads/main' && (github.actor != 'github-actions[bot]')
     runs-on: ubuntu-latest
     steps:
       - name: Recuperer le depot
         uses: actions/checkout@v4
       - name: Deployer les fichiers prepares
         run: |
-          unzip -o vivreanyons-publication.zip
+          python tools/test_cleanup_guard.py --extract vivreanyons-publication.zip
           rm vivreanyons-publication.zip
           python tools/consolidate_venterol_urls.py
           python tools/consolidate_venterol_urls.py
@@ -46,8 +47,10 @@ jobs:
           python tools/check_site_integrity.py
           python tools/harmonize_seo.py --all --apply --stage
           python tools/harmonize_seo.py --all --check
+          python tools/test_cleanup_guard.py
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add -A
           git commit -m "Publier le site Vivre a Nyons complet"
+          python tools/test_cleanup_guard.py
           git push

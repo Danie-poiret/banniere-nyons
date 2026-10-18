@@ -10,6 +10,7 @@ concurrency:
   cancel-in-progress: false
 jobs:
   restore:
+    if: github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
     timeout-minutes: 20
     steps:
@@ -24,8 +25,10 @@ jobs:
       - name: Enregistrer les fiches et les photos vérifiées
         run: |
           git diff --check
+          python tools/test_cleanup_guard.py
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
           git add assets vivreanyons-test banniere-nyons Auvergne-Rhone-Alpes Histoire-Geo Provence-Alpes-Cote-dAzur a-faire-autour-de-Nyons evenements-nyons infos-pratiques-nyons ou-dormir-a-nyons produits-du-terroir que-faire-autour-de-nyons que-faire-nyons randonnee-nyons restaurants-de-nyons
           git commit -m 'Restore 251 missing fiche photos with descriptive alt text'
+          python tools/test_cleanup_guard.py
           git push origin HEAD:main

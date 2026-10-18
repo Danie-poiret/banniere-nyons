@@ -1,0 +1,38 @@
+name: Rehearse test cleanup without publishing
+on:
+  pull_request:
+    paths:
+      - '.github/workflows/**'
+      - 'tools/check_test_cleanup_safety.py'
+      - 'tools/*.py'
+      - 'tools/test-cleanup-policy.json'
+permissions:
+  contents: read
+jobs:
+  rehearse:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install importer parser for offline preflight probes
+        run: python -m pip install lxml
+      - name: Remove publication destinations and deny pushes
+        run: |
+          git remote remove origin
+          git config push.default nothing
+          mkdir -p .git/hooks
+          printf '#!/bin/sh\nexit 1\n' > .git/hooks/pre-push
+          chmod +x .git/hooks/pre-push
+      - name: Rehearse twice in a Linux network namespace
+        run: sudo -n unshare --net -- env PATH="$PATH" NYONS_CLEANUP_REHEARSAL=1 PYTHONDONTWRITEBYTECODE=1 "$(command -v python)" tools/rehearse_small_batch.py
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: test-cleanup-rehearsal
+          path: cleanup-rehearsal/
+          if-no-files-found: error
