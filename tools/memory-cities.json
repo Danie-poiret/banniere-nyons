@@ -448,7 +448,8 @@
           "path": "Hauts-de-France/Nord/Lille/tramway-505-lille-place-du-theatre/index.html",
           "summary": ""
         }
-      ]
+      ],
+      "unified_card_grid": true
     },
     {
       "id": "marseille",

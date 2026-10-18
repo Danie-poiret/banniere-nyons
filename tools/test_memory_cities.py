@@ -80,6 +80,17 @@ def test():
     except AssertionError as error:assert 'Use a lowercase' in str(error)
     try:m.prepare_article(ROOT,config,'avignon','nouvel-article',fixture(target));raise AssertionError('Canonical mismatch accepted')
     except AssertionError as error:assert 'Canonical mismatch' in str(error)
+    # Future Lille stories join its single grid, ahead of the final links.
+    lille_target='Hauts-de-France/Nord/Lille/prochaine-histoire-essai/index.html'
+    lille_updates,_=m.prepare_article(ROOT,config,'lille','prochaine-histoire-essai',fixture(lille_target))
+    lille=html.fromstring(lille_updates['Hauts-de-France/Nord/Lille/index.html'])
+    grids=lille.xpath('//main//div[contains(concat(" ",normalize-space(@class)," ")," memory-grid ")]')
+    assert len(grids)==1
+    assert grids[0].xpath('./article//a/@href')[0]==m.url(lille_target)
+    old_lille=html.fromstring((ROOT/'Hauts-de-France/Nord/Lille/index.html').read_text(encoding='utf-8'))
+    assert len(grids[0].xpath('./article'))==len(old_lille.xpath('//main//article'))+1
+    assert lille.xpath('//main//section')[-1].get('class')=='region-end'
+    assert not lille.xpath('//h2[starts-with(.,"Autres histoires de Lille")]')
     assert inventory()==before,'In-memory future-publication tests wrote files'
     report={'base':BASE,'protected_html_unchanged':len(protected)-len(modified_protected),'protected_html_modified_since_reference':sorted(modified_protected),'navigation_pages_changed':len(nav),'new_city_pages':len(expected_cities),'new_article_pages':len(new_articles),
             'runs':runs,'cities':counts,'future_article_routing':True,'future_city_first_article':True,'canonical_mismatch_refused':True,'path_traversal_refused':True,
