@@ -54,5 +54,9 @@ def main():
             return node.replace('</url>','<lastmod>'+today+'</lastmod></url>')
         after=re.sub(r'<url>.*?</url>',home_entry,source,flags=re.S)
         if after!=source:file.write_text(after,encoding='utf-8');changed+=1
+    # ZIP updates run this pass before integrity checks. Repair only registered
+    # primary collection routes, never pilot pages, aliases or other content.
+    from memory_breadcrumbs import apply_all
+    changed += len(apply_all(ROOT))
     print(f'Site SEO and mobile navigation: {changed} files updated.')
 if __name__=='__main__': main()

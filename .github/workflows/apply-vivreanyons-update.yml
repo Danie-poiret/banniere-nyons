@@ -45,9 +45,11 @@ jobs:
           python tools/update_site_seo.py
           python tools/normalize_indexing_targets.py
           python tools/check_indexing_targets.py
+          python tools/memory_breadcrumbs.py --apply
           python tools/check_site_integrity.py
           python tools/harmonize_seo.py --all --apply --stage
           python tools/harmonize_seo.py --all --check
+          python tools/memory_breadcrumbs.py --check
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add -A

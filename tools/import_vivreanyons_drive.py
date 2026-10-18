@@ -15,6 +15,7 @@ from pathlib import Path
 from urllib.parse import parse_qs, unquote, urlparse
 
 from lxml import html
+import memory_breadcrumbs as memory_crumbs
 
 
 SITE_ROOT = "/banniere-nyons/vivreanyons-test"
@@ -359,7 +360,7 @@ def page_document(page: dict, destination: str, category: str) -> str:
             '<main><div class="wrap content"><article>'
             f'{content}</article>{agenda_html()}</div></main>'
         )
-    return f'''<!doctype html>
+    document = f'''<!doctype html>
 <html lang="fr">
 <head>
   <meta charset="utf-8">
@@ -380,6 +381,10 @@ def page_document(page: dict, destination: str, category: str) -> str:
 </body>
 </html>
 '''
+    # Live primary outputs use the city route; pilot/noindex exports and aliases
+    # remain unchanged. Both the Drive and live importer reuse this function.
+    path = destination.strip('/') + '/index.html'
+    return memory_crumbs.apply(document, path)
 
 
 def index_document(title: str, intro: str, cards: list[tuple[str, str, str]], badge: str) -> str:
