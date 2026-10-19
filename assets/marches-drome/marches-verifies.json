@@ -1,0 +1,536 @@
+{
+  "date_consultation": "2026-10-19",
+  "perimetre": "Sélection non exhaustive dans le département de la Drôme (26), du nord au sud.",
+  "geographie_source": "https://geo.api.gouv.fr/decoupage-administratif/communes",
+  "geographie_precision": "Les repères situent les communes. Ils ne représentent pas les étals ni un emplacement de marché précis.",
+  "limites": "Sources publiques consultées ; absence de vérification sur place. Horaires et saisons susceptibles de changer. Le CSV historique de 2025 est en cours de contrôle et n’est pas importé automatiquement.",
+  "marches": [
+    {
+      "id": "anneyron-marche-hebdomadaire-1",
+      "commune": "Anneyron",
+      "code_insee": "26010",
+      "codes_postaux": [
+        "26140"
+      ],
+      "departement": "26",
+      "nom": "Marché hebdomadaire",
+      "jours": [
+        "Mardi"
+      ],
+      "horaires": "8 h–12 h",
+      "lieu": "Place Camille-Gervais",
+      "periode": "Toute l’année",
+      "note": "",
+      "saisonnalite": "annuel",
+      "longitude": 4.8892,
+      "latitude": 45.2718,
+      "precision_geographique": "repère communal, pas emplacement exact du marché",
+      "source": "https://www.drome-cestmanature.com/fiches/marche-hebdomadaire-118/",
+      "organisme_source": "La Drôme Tourisme",
+      "date_consultation": "2026-10-19",
+      "statut": "Informations publiées par la mairie ou l’office de tourisme"
+    },
+    {
+      "id": "tain-l-hermitage-marche-hebdomadaire-2",
+      "commune": "Tain-l’Hermitage",
+      "code_insee": "26347",
+      "codes_postaux": [
+        "26600"
+      ],
+      "departement": "26",
+      "nom": "Marché hebdomadaire",
+      "jours": [
+        "Samedi"
+      ],
+      "horaires": "7 h–12 h",
+      "lieu": "Place du Taurobole",
+      "periode": "Toute l’année",
+      "note": "",
+      "saisonnalite": "annuel",
+      "longitude": 4.8488,
+      "latitude": 45.068,
+      "precision_geographique": "repère communal, pas emplacement exact du marché",
+      "source": "https://www.ville-tain.fr/fr/mon-quotidien/marche-et-commerces/marche-hebdomadaire/",
+      "organisme_source": "Ville de Tain-l’Hermitage",
+      "date_consultation": "2026-10-19",
+      "statut": "Informations publiées par la mairie ou l’office de tourisme"
+    },
+    {
+      "id": "romans-sur-isere-marche-hebdomadaire-3",
+      "commune": "Romans-sur-Isère",
+      "code_insee": "26281",
+      "codes_postaux": [
+        "26100"
+      ],
+      "departement": "26",
+      "nom": "Marché hebdomadaire",
+      "jours": [
+        "Mercredi",
+        "Samedi"
+      ],
+      "horaires": "6 h–13 h",
+      "lieu": "Place Hector-Berlioz, quartier la Monnaie",
+      "periode": "Toute l’année",
+      "note": "Fermeture exceptionnelle les 25 décembre et 1er janvier.",
+      "saisonnalite": "annuel",
+      "longitude": 5.0477,
+      "latitude": 45.0611,
+      "precision_geographique": "repère communal, pas emplacement exact du marché",
+      "source": "https://www.ville-romans.fr/vivre/commerce/marches",
+      "organisme_source": "Ville de Romans-sur-Isère",
+      "date_consultation": "2026-10-19",
+      "statut": "Informations publiées par la mairie ou l’office de tourisme"
+    },
+    {
+      "id": "romans-sur-isere-marche-hebdomadaire-4",
+      "commune": "Romans-sur-Isère",
+      "code_insee": "26281",
+      "codes_postaux": [
+        "26100"
+      ],
+      "departement": "26",
+      "nom": "Marché hebdomadaire",
+      "jours": [
+        "Jeudi"
+      ],
+      "horaires": "5 h–13 h",
+      "lieu": "Parking du centre commercial des Méannes",
+      "periode": "Toute l’année",
+      "note": "Marché alimentaire ; fermeture les 25 décembre et 1er janvier.",
+      "saisonnalite": "annuel",
+      "longitude": 5.0477,
+      "latitude": 45.0611,
+      "precision_geographique": "repère communal, pas emplacement exact du marché",
+      "source": "https://www.ville-romans.fr/vivre/commerce/marches",
+      "organisme_source": "Ville de Romans-sur-Isère",
+      "date_consultation": "2026-10-19",
+      "statut": "Informations publiées par la mairie ou l’office de tourisme"
+    },
+    {
+      "id": "romans-sur-isere-marche-hebdomadaire-5",
+      "commune": "Romans-sur-Isère",
+      "code_insee": "26281",
+      "codes_postaux": [
+        "26100"
+      ],
+      "departement": "26",
+      "nom": "Marché hebdomadaire",
+      "jours": [
+        "Vendredi"
+      ],
+      "horaires": "8 h 30–14 h",
+      "lieu": "Place Jules-Nadi",
+      "periode": "Toute l’année",
+      "note": "Fermeture exceptionnelle les 25 décembre et 1er janvier.",
+      "saisonnalite": "annuel",
+      "longitude": 5.0477,
+      "latitude": 45.0611,
+      "precision_geographique": "repère communal, pas emplacement exact du marché",
+      "source": "https://www.ville-romans.fr/vivre/commerce/marches",
+      "organisme_source": "Ville de Romans-sur-Isère",
+      "date_consultation": "2026-10-19",
+      "statut": "Informations publiées par la mairie ou l’office de tourisme"
+    },
+    {
+      "id": "romans-sur-isere-marche-hebdomadaire-6",
+      "commune": "Romans-sur-Isère",
+      "code_insee": "26281",
+      "codes_postaux": [
+        "26100"
+      ],
+      "departement": "26",
+      "nom": "Marché hebdomadaire",
+      "jours": [
+        "Dimanche"
+      ],
+      "horaires": "7 h–13 h",
+      "lieu": "Place Maurice-Faure",
+      "periode": "Toute l’année",
+      "note": "Marché alimentaire ; fermeture les 25 décembre et 1er janvier.",
+      "saisonnalite": "annuel",
+      "longitude": 5.0477,
+      "latitude": 45.0611,
+      "precision_geographique": "repère communal, pas emplacement exact du marché",
+      "source": "https://www.ville-romans.fr/vivre/commerce/marches",
+      "organisme_source": "Ville de Romans-sur-Isère",
+      "date_consultation": "2026-10-19",
+      "statut": "Informations publiées par la mairie ou l’office de tourisme"
+    },
+    {
+      "id": "valence-marche-hebdomadaire-7",
+      "commune": "Valence",
+      "code_insee": "26362",
+      "codes_postaux": [
+        "26000"
+      ],
+      "departement": "26",
+      "nom": "Marché hebdomadaire",
+      "jours": [
+        "Samedi"
+      ],
+      "horaires": "7 h–14 h",
+      "lieu": "Place des Clercs",
+      "periode": "Toute l’année",
+      "note": "",
+      "saisonnalite": "annuel",
+      "longitude": 4.9164,
+      "latitude": 44.9234,
+      "precision_geographique": "repère communal, pas emplacement exact du marché",
+      "source": "https://www.valence-romans-tourisme.com/fr/catalogue/detail/valence-2971053/marche-du-samedi-place-des-clercs-426595/",
+      "organisme_source": "Valence Romans Tourisme",
+      "date_consultation": "2026-10-19",
+      "statut": "Informations publiées par la mairie ou l’office de tourisme"
+    },
+    {
+      "id": "chatillon-saint-jean-marche-hebdomadaire-8",
+      "commune": "Châtillon-Saint-Jean",
+      "code_insee": "26087",
+      "codes_postaux": [
+        "26750"
+      ],
+      "departement": "26",
+      "nom": "Marché hebdomadaire",
+      "jours": [
+        "Mardi"
+      ],
+      "horaires": "16 h–18 h",
+      "lieu": "Marché couvert, 120 rue d’Octaveon",
+      "periode": "Du 1er mai au 31 janvier, selon la période affichée par l’office de tourisme",
+      "note": "Période traversant deux années ; confirmer avant de partir. Annulation possible par mauvais temps.",
+      "saisonnalite": "saisonnier",
+      "longitude": 5.1371,
+      "latitude": 45.0984,
+      "precision_geographique": "repère communal, pas emplacement exact du marché",
+      "source": "https://www.valence-romans-tourisme.com/fr/catalogue/detail/chatillon-saint-jean-3026062/marche-hebdomadaire-4807164/",
+      "organisme_source": "Valence Romans Tourisme",
+      "date_consultation": "2026-10-19",
+      "statut": "Informations publiées par la mairie ou l’office de tourisme"
+    },
+    {
+      "id": "peyrus-marche-de-producteurs-9",
+      "commune": "Peyrus",
+      "code_insee": "26232",
+      "codes_postaux": [
+        "26120"
+      ],
+      "departement": "26",
+      "nom": "Marché de producteurs",
+      "jours": [
+        "Samedi"
+      ],
+      "horaires": "8 h 30–12 h 30",
+      "lieu": "Place de la Mairie",
+      "periode": "Toute l’année",
+      "note": "",
+      "saisonnalite": "annuel",
+      "longitude": 5.1197,
+      "latitude": 44.9067,
+      "precision_geographique": "repère communal, pas emplacement exact du marché",
+      "source": "https://www.valence-romans-tourisme.com/fr/catalogue/detail/peyrus-2987457/marche-de-producteur-4673621/",
+      "organisme_source": "Valence Romans Tourisme",
+      "date_consultation": "2026-10-19",
+      "statut": "Informations publiées par la mairie ou l’office de tourisme"
+    },
+    {
+      "id": "chabeuil-marche-hebdomadaire-10",
+      "commune": "Chabeuil",
+      "code_insee": "26064",
+      "codes_postaux": [
+        "26120"
+      ],
+      "departement": "26",
+      "nom": "Marché hebdomadaire",
+      "jours": [
+        "Mardi"
+      ],
+      "horaires": "8 h–13 h",
+      "lieu": "Place du Général-de-Gaulle",
+      "periode": "Toute l’année",
+      "note": "",
+      "saisonnalite": "annuel",
+      "longitude": 5.0038,
+      "latitude": 44.9088,
+      "precision_geographique": "repère communal, pas emplacement exact du marché",
+      "source": "https://www.valence-romans-tourisme.com/fr/catalogue/detail/marche-hebdomadaire-5327821/",
+      "organisme_source": "Valence Romans Tourisme",
+      "date_consultation": "2026-10-19",
+      "statut": "Informations publiées par la mairie ou l’office de tourisme"
+    },
+    {
+      "id": "crest-marche-hebdomadaire-11",
+      "commune": "Crest",
+      "code_insee": "26108",
+      "codes_postaux": [
+        "26400"
+      ],
+      "departement": "26",
+      "nom": "Marché hebdomadaire",
+      "jours": [
+        "Mardi"
+      ],
+      "horaires": "8 h–13 h",
+      "lieu": "Place de la Halle-au-Blé, rue Général-Berlier et rue Maurice-Long",
+      "periode": "Toute l’année",
+      "note": "",
+      "saisonnalite": "annuel",
+      "longitude": 5.0211,
+      "latitude": 44.7311,
+      "precision_geographique": "repère communal, pas emplacement exact du marché",
+      "source": "https://www.mairie-crest.fr/decouvrir-me-divertir/marches",
+      "organisme_source": "Ville de Crest",
+      "date_consultation": "2026-10-19",
+      "statut": "Informations publiées par la mairie ou l’office de tourisme"
+    },
+    {
+      "id": "crest-marche-hebdomadaire-12",
+      "commune": "Crest",
+      "code_insee": "26108",
+      "codes_postaux": [
+        "26400"
+      ],
+      "departement": "26",
+      "nom": "Marché hebdomadaire",
+      "jours": [
+        "Samedi"
+      ],
+      "horaires": "8 h–13 h",
+      "lieu": "Rue de l’Hôtel-de-Ville, rue de la République et rue Archinard",
+      "periode": "Toute l’année",
+      "note": "",
+      "saisonnalite": "annuel",
+      "longitude": 5.0211,
+      "latitude": 44.7311,
+      "precision_geographique": "repère communal, pas emplacement exact du marché",
+      "source": "https://www.mairie-crest.fr/decouvrir-me-divertir/marches",
+      "organisme_source": "Ville de Crest",
+      "date_consultation": "2026-10-19",
+      "statut": "Informations publiées par la mairie ou l’office de tourisme"
+    },
+    {
+      "id": "die-marche-hebdomadaire-13",
+      "commune": "Die",
+      "code_insee": "26113",
+      "codes_postaux": [
+        "26150"
+      ],
+      "departement": "26",
+      "nom": "Marché hebdomadaire",
+      "jours": [
+        "Mercredi",
+        "Samedi"
+      ],
+      "horaires": "8 h–13 h",
+      "lieu": "Place de la République",
+      "periode": "Toute l’année",
+      "note": "",
+      "saisonnalite": "annuel",
+      "longitude": 5.3878,
+      "latitude": 44.7515,
+      "precision_geographique": "repère communal, pas emplacement exact du marché",
+      "source": "https://www.mairie-die.fr/au-quotidien/commerces-artisanat-marches/",
+      "organisme_source": "Ville de Die",
+      "date_consultation": "2026-10-19",
+      "statut": "Informations publiées par la mairie ou l’office de tourisme"
+    },
+    {
+      "id": "montelimar-marche-hebdomadaire-14",
+      "commune": "Montélimar",
+      "code_insee": "26198",
+      "codes_postaux": [
+        "26200"
+      ],
+      "departement": "26",
+      "nom": "Marché hebdomadaire",
+      "jours": [
+        "Mercredi"
+      ],
+      "horaires": "",
+      "lieu": "Place du Marché",
+      "periode": "Toute l’année",
+      "note": "La page municipale ne précise pas les heures.",
+      "saisonnalite": "annuel",
+      "longitude": 4.7454,
+      "latitude": 44.5545,
+      "precision_geographique": "repère communal, pas emplacement exact du marché",
+      "source": "https://www.montelimar.fr/vie-pratique/les-marches-de-montelimar/",
+      "organisme_source": "Ville de Montélimar",
+      "date_consultation": "2026-10-19",
+      "statut": "Informations publiées par la mairie ou l’office de tourisme"
+    },
+    {
+      "id": "montelimar-marche-hebdomadaire-15",
+      "commune": "Montélimar",
+      "code_insee": "26198",
+      "codes_postaux": [
+        "26200"
+      ],
+      "departement": "26",
+      "nom": "Marché hebdomadaire",
+      "jours": [
+        "Jeudi"
+      ],
+      "horaires": "",
+      "lieu": "Place Saint-James",
+      "periode": "Toute l’année",
+      "note": "La page municipale ne précise pas les heures.",
+      "saisonnalite": "annuel",
+      "longitude": 4.7454,
+      "latitude": 44.5545,
+      "precision_geographique": "repère communal, pas emplacement exact du marché",
+      "source": "https://www.montelimar.fr/vie-pratique/les-marches-de-montelimar/",
+      "organisme_source": "Ville de Montélimar",
+      "date_consultation": "2026-10-19",
+      "statut": "Informations publiées par la mairie ou l’office de tourisme"
+    },
+    {
+      "id": "montelimar-marche-hebdomadaire-16",
+      "commune": "Montélimar",
+      "code_insee": "26198",
+      "codes_postaux": [
+        "26200"
+      ],
+      "departement": "26",
+      "nom": "Marché hebdomadaire",
+      "jours": [
+        "Vendredi"
+      ],
+      "horaires": "",
+      "lieu": "Pracomtal",
+      "periode": "Toute l’année",
+      "note": "La page municipale ne précise pas les heures.",
+      "saisonnalite": "annuel",
+      "longitude": 4.7454,
+      "latitude": 44.5545,
+      "precision_geographique": "repère communal, pas emplacement exact du marché",
+      "source": "https://www.montelimar.fr/vie-pratique/les-marches-de-montelimar/",
+      "organisme_source": "Ville de Montélimar",
+      "date_consultation": "2026-10-19",
+      "statut": "Informations publiées par la mairie ou l’office de tourisme"
+    },
+    {
+      "id": "montelimar-marche-hebdomadaire-17",
+      "commune": "Montélimar",
+      "code_insee": "26198",
+      "codes_postaux": [
+        "26200"
+      ],
+      "departement": "26",
+      "nom": "Marché hebdomadaire",
+      "jours": [
+        "Samedi"
+      ],
+      "horaires": "",
+      "lieu": "Place de l’Hôtel-de-Ville et place du Marché ; place des Clercs en été",
+      "periode": "Toute l’année",
+      "note": "La page municipale ne précise pas les heures.",
+      "saisonnalite": "annuel",
+      "longitude": 4.7454,
+      "latitude": 44.5545,
+      "precision_geographique": "repère communal, pas emplacement exact du marché",
+      "source": "https://www.montelimar.fr/vie-pratique/les-marches-de-montelimar/",
+      "organisme_source": "Ville de Montélimar",
+      "date_consultation": "2026-10-19",
+      "statut": "Informations publiées par la mairie ou l’office de tourisme"
+    },
+    {
+      "id": "nyons-marche-hebdomadaire-18",
+      "commune": "Nyons",
+      "code_insee": "26220",
+      "codes_postaux": [
+        "26110"
+      ],
+      "departement": "26",
+      "nom": "Marché hebdomadaire",
+      "jours": [
+        "Jeudi"
+      ],
+      "horaires": "Le matin",
+      "lieu": "Centre-ville",
+      "periode": "Toute l’année",
+      "note": "Le jour est confirmé par la mairie ; cette source ne donne pas les heures de vente. La piétonnisation estivale correspond à un dispositif de circulation.",
+      "saisonnalite": "annuel",
+      "longitude": 5.1243,
+      "latitude": 44.3585,
+      "precision_geographique": "repère communal, pas emplacement exact du marché",
+      "source": "https://www.nyons.com/decouvrir-nyons/art-de-vivre/foires-et-marches/",
+      "organisme_source": "Ville de Nyons",
+      "date_consultation": "2026-10-19",
+      "statut": "Informations publiées par la mairie ou l’office de tourisme"
+    },
+    {
+      "id": "nyons-marche-provencal-19",
+      "commune": "Nyons",
+      "code_insee": "26220",
+      "codes_postaux": [
+        "26110"
+      ],
+      "departement": "26",
+      "nom": "Marché provençal",
+      "jours": [
+        "Dimanche"
+      ],
+      "horaires": "Le matin",
+      "lieu": "Centre historique et place de la Libération sud",
+      "periode": "Début mai à mi-septembre",
+      "note": "Saison terminée au 19 octobre 2026. Dates 2027 non confirmées.",
+      "saisonnalite": "saisonnier",
+      "longitude": 5.1243,
+      "latitude": 44.3585,
+      "precision_geographique": "repère communal, pas emplacement exact du marché",
+      "source": "https://www.nyons.com/decouvrir-nyons/art-de-vivre/foires-et-marches/",
+      "organisme_source": "Ville de Nyons",
+      "date_consultation": "2026-10-19",
+      "statut": "Informations publiées par la mairie ou l’office de tourisme"
+    },
+    {
+      "id": "buis-les-baronnies-marche-hebdomadaire-20",
+      "commune": "Buis-les-Baronnies",
+      "code_insee": "26063",
+      "codes_postaux": [
+        "26170"
+      ],
+      "departement": "26",
+      "nom": "Marché hebdomadaire",
+      "jours": [
+        "Mercredi"
+      ],
+      "horaires": "8 h 30–13 h 30",
+      "lieu": "Grande Rue, place aux Herbes, rue Notre-Dame-la-Brune et place des Arcades ; autres secteurs du centre",
+      "periode": "Toute l’année",
+      "note": "",
+      "saisonnalite": "annuel",
+      "longitude": 5.2811,
+      "latitude": 44.2714,
+      "precision_geographique": "repère communal, pas emplacement exact du marché",
+      "source": "https://www.buislesbaronnies.fr/economie-et-emploi/les-marches/",
+      "organisme_source": "Ville de Buis-les-Baronnies",
+      "date_consultation": "2026-10-19",
+      "statut": "Informations publiées par la mairie ou l’office de tourisme"
+    },
+    {
+      "id": "buis-les-baronnies-marche-de-producteurs-locaux-21",
+      "commune": "Buis-les-Baronnies",
+      "code_insee": "26063",
+      "codes_postaux": [
+        "26170"
+      ],
+      "departement": "26",
+      "nom": "Marché de producteurs locaux",
+      "jours": [
+        "Samedi"
+      ],
+      "horaires": "8 h 30–13 h 30",
+      "lieu": "Place des Arcades",
+      "periode": "Toute l’année",
+      "note": "",
+      "saisonnalite": "annuel",
+      "longitude": 5.2811,
+      "latitude": 44.2714,
+      "precision_geographique": "repère communal, pas emplacement exact du marché",
+      "source": "https://www.buislesbaronnies.fr/economie-et-emploi/les-marches/",
+      "organisme_source": "Ville de Buis-les-Baronnies",
+      "date_consultation": "2026-10-19",
+      "statut": "Informations publiées par la mairie ou l’office de tourisme"
+    }
+  ]
+}
