@@ -12,6 +12,7 @@ async function main(){
    const context=await browser.newContext({viewport:{width,height:900}});const page=await context.newPage();const failures=[];
    page.on('pageerror',e=>failures.push(e.message));page.on('response',r=>{if(r.url().startsWith('http://127.0.0.1:8766/')&&r.status()>=400)failures.push(r.url()+': '+r.status());});
    await page.goto(url,{waitUntil:'networkidle'});
+   const reject=page.locator('[data-privacy-action="reject"]');if(await reject.isVisible())await reject.click();
    assert((await page.evaluate(()=>document.documentElement.scrollWidth))<=width,'Overflow '+width);
    assert.equal(await page.locator('[data-autour-card]').count(),49);assert.equal(await page.locator('#autour-category option').count(),7);
    const hero=await page.locator('.ap-hero-visual').boundingBox(),heading=await page.locator('h1').boundingBox();assert(heading.y>=hero.y&&heading.y+heading.height<=hero.y+hero.height,'Hero title clipped');
@@ -45,3 +46,4 @@ async function main(){
  }finally{if(browser)await browser.close();server.kill();}
 }
 main().catch(e=>{console.error(e.stack||e);process.exitCode=1;});
+

@@ -19,7 +19,7 @@ on:
 permissions:
   contents: read
 concurrency:
-  group: autour-${{ github.ref }}
+  group: autour-${{ github.head_ref || github.ref_name }}
   cancel-in-progress: true
 jobs:
   verify:
@@ -85,3 +85,4 @@ jobs:
             git commit -m "Actualiser les sorties autour de Nyons" -m "Autour-Portal-Only: true"
             git push
           fi
+
