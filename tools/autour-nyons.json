@@ -1,0 +1,1042 @@
+{
+  "portal": "/a-faire-autour-de-Nyons/",
+  "checked_on": "2026-10-19",
+  "groups": [
+    {
+      "id": "villages",
+      "icon": "🏘️",
+      "label": "Villages perchés et villages de caractère",
+      "heading": "Les villages à découvrir près de Nyons",
+      "description": "Des ruelles, des places et des points de vue : choisissez un village et prenez le temps de le parcourir."
+    },
+    {
+      "id": "nature",
+      "icon": "🌿",
+      "label": "Randonnées, nature et paysages",
+      "heading": "Randonnées et paysages des Baronnies provençales",
+      "description": "Cartes, départs de balades, lavande et observation des vautours : préparez votre sortie selon le terrain et la météo."
+    },
+    {
+      "id": "terroir",
+      "icon": "🧺",
+      "label": "Marchés provençaux et terroir",
+      "heading": "Les marchés provençaux autour de Nyons",
+      "description": "Trouvez le bon jour de marché, puis prolongez la découverte du côté des producteurs et des savoir-faire."
+    },
+    {
+      "id": "fraicheur",
+      "icon": "💦",
+      "label": "Baignades et fraîcheur",
+      "heading": "Baignades et coins de fraîcheur",
+      "description": "Avant de chercher un point d’eau, renseignez-vous sur les accès, les interdictions et les conditions du jour."
+    },
+    {
+      "id": "famille",
+      "icon": "👨‍👩‍👧‍👦",
+      "label": "Sorties en famille et activités insolites",
+      "heading": "Que faire autour de Nyons avec des enfants ?",
+      "description": "Ateliers, animaux, ciel étoilé ou activités sportives : les conditions d’âge et d’accès se vérifient dans chaque fiche."
+    },
+    {
+      "id": "patrimoine",
+      "icon": "🏰",
+      "label": "Patrimoine, châteaux et visites",
+      "heading": "Châteaux, patrimoine et savoir-faire",
+      "description": "Des châteaux aux œuvres singulières, quelques visites pour changer de décor et regarder les détails."
+    }
+  ],
+  "entries": [
+    {
+      "url": "/nyons-carte-interactive/parc-baronnies-provencales/",
+      "title": "La carte des Baronnies provençales",
+      "description": "Situez les communes, le périmètre du parc et les guides avant de choisir votre itinéraire.",
+      "group": "nature",
+      "seasons": [
+        "printemps",
+        "ete",
+        "automne"
+      ],
+      "image": {
+        "src": "/assets/autour-nyons/nyons-hero-1440.webp",
+        "alt": "Nyons, le pont roman et les reliefs environnants.",
+        "width": 1440,
+        "height": 1080
+      },
+      "original_title": "Nyons et le Parc naturel régional des Baronnies provençales"
+    },
+    {
+      "url": "/infos-pratiques-nyons/marche-vaison-la-romaine/",
+      "title": "Le marché de Vaison-la-Romaine",
+      "description": "Retrouvez le marché du mardi, les emplacements et les conseils de stationnement dans le guide détaillé.",
+      "group": "terroir",
+      "seasons": [
+        "printemps",
+        "ete",
+        "automne",
+        "hiver"
+      ],
+      "image": {
+        "src": "/assets/autour-nyons/067ef00a32aaf5.webp",
+        "alt": "Des visiteurs devant un étal de produits alimentaires sous les parasols du marché.",
+        "width": 222,
+        "height": 243,
+        "original_src": "/assets/photos/marche-vaison-la-romaine/etal-marche.png"
+      },
+      "original_title": "Marché de Vaison-la-Romaine : jour, horaires, parking et producteurs locaux"
+    },
+    {
+      "url": "/infos-pratiques-nyons/marches-autour-nyons-50-km/",
+      "title": "43 marchés autour de Nyons",
+      "description": "Un guide classé par distance pour comparer les jours, les adresses et les périodes jusqu’à 50 km.",
+      "group": "terroir",
+      "seasons": [
+        "printemps",
+        "ete",
+        "automne",
+        "hiver"
+      ],
+      "image": {
+        "src": "/assets/autour-nyons/03080c6b1cb24c.webp",
+        "alt": "Étals de fruits et légumes du marché de Nyons, sous les parasols et les platanes.",
+        "width": 560,
+        "height": 315,
+        "original_src": "/assets/photos/restored-06434cdc1f7d758097f2.webp"
+      },
+      "original_title": "Les marchés autour de Nyons : du plus proche au plus loin, jusqu’à 50 km"
+    },
+    {
+      "url": "/a-faire-autour-de-Nyons/biscuiterie-provence-saint-maurice-sur-eygues/",
+      "title": "La Biscuiterie de Provence",
+      "description": "Un musée, des vues sur les ateliers et un parcours ludique à Saint-Maurice-sur-Eygues.",
+      "group": "famille",
+      "seasons": [
+        "printemps",
+        "ete",
+        "automne",
+        "hiver"
+      ],
+      "image": {
+        "src": "/assets/autour-nyons/28980e35d8a421.webp",
+        "alt": "Fresque de la Biscuiterie de Provence représentant un boulanger devant un four.",
+        "width": 560,
+        "height": 362,
+        "original_src": "/assets/photos/biscuiterie-provence/fresque-biscuiterie-provence.webp"
+      },
+      "original_title": "Biscuiterie de Provence à Saint-Maurice-sur-Eygues : une visite gourmande près de Nyons"
+    },
+    {
+      "url": "/a-faire-autour-de-Nyons/saint-may/",
+      "title": "Saint-May, au-dessus de l’Eygues",
+      "description": "Le village, son cimetière perché et les paysages de la vallée : une fiche pour préparer votre découverte.",
+      "group": "villages",
+      "seasons": [
+        "printemps",
+        "ete",
+        "automne",
+        "hiver"
+      ],
+      "image": {
+        "src": "/assets/autour-nyons/eac59d1891bacc.webp",
+        "alt": "Toits de tuiles et maisons du village de Saint-May, vus en hauteur au milieu des reliefs et des arbres.",
+        "width": 446,
+        "height": 415,
+        "original_src": "/assets/photos/saint-may-village.webp"
+      },
+      "original_title": "Saint-May : village perché, cimetière et vautours près de Nyons"
+    },
+    {
+      "url": "/a-faire-autour-de-Nyons/distilleries-de-lavande/",
+      "title": "Quatre distilleries de lavande",
+      "description": "Comparez les lieux et les modalités de visite avant de partir à la découverte de la distillation.",
+      "group": "terroir",
+      "seasons": [
+        "printemps",
+        "ete",
+        "automne",
+        "hiver"
+      ],
+      "image": {
+        "src": "/assets/autour-nyons/04596f9933d433.webp",
+        "alt": "Illustration — Avis et Itinéraire : 4 Distilleries de Lavande à Visiter en Famille",
+        "width": 496,
+        "height": 464,
+        "original_src": "/assets/photos/d4f4fd931ea598b70024.webp"
+      },
+      "original_title": "Avis et Itinéraire : 4 Distilleries de Lavande à Visiter en Famille"
+    },
+    {
+      "url": "/a-faire-autour-de-Nyons/se-baigner-au-pas-des-ondes/",
+      "title": "Le Pas des Ondes",
+      "description": "Le plan d’eau de Cornillon-sur-l’Oule : consultez les conditions d’accès et d’ouverture avant votre départ.",
+      "group": "fraicheur",
+      "seasons": [
+        "ete"
+      ],
+      "image": {
+        "src": "/assets/autour-nyons/090289192e1481.webp",
+        "alt": "Baigneurs dans le lac du Pas des Ondes, entouré de montagnes à Cornillon-sur-l’Oule.",
+        "width": 551,
+        "height": 700,
+        "original_src": "/assets/photos/restored-28fa65c60f4f051e1533.webp"
+      },
+      "original_title": "Baignade au Pas des Ondes : est-ce que ça vaut le coup ?"
+    },
+    {
+      "url": "/a-faire-autour-de-Nyons/avis-gorges-du-toulourenc/",
+      "title": "Les gorges du Toulourenc",
+      "description": "Lisez les repères et les réserves du guide ; l’accès aux gorges dépend des règles et des conditions locales.",
+      "group": "fraicheur",
+      "seasons": [
+        "ete"
+      ],
+      "image": {
+        "src": "/assets/autour-nyons/9d84c030b64240.webp",
+        "alt": "Gorges du Toulourenc randonnée aquatique",
+        "width": 560,
+        "height": 533,
+        "original_src": "/assets/photos/fiche-9d84c030b642405e36fd.webp"
+      },
+      "original_title": "Baignade au Toulourenc : ce que disent vraiment les avis"
+    },
+    {
+      "url": "/a-faire-autour-de-Nyons/caves-nyons/",
+      "title": "Caves à Nyons et dans les environs",
+      "description": "Des pistes pour découvrir les vins du secteur et préparer une visite auprès des établissements.",
+      "group": "terroir",
+      "seasons": [
+        "printemps",
+        "ete",
+        "automne",
+        "hiver"
+      ],
+      "image": {
+        "src": "/assets/autour-nyons/c77e7dd448d5ee.webp",
+        "alt": "Illustration — Vinsobres en Drôme provençale",
+        "width": 358,
+        "height": 201,
+        "original_src": "/assets/photos/47e9879165e4080a1a2d.webp"
+      },
+      "original_title": "Caves à Nyons et alentours"
+    },
+    {
+      "url": "/a-faire-autour-de-Nyons/condorcet/",
+      "title": "Condorcet",
+      "description": "Un village de la vallée de l’Ennuyé à découvrir entre église, collines et traces de son histoire.",
+      "group": "villages",
+      "seasons": [
+        "printemps",
+        "ete",
+        "automne",
+        "hiver"
+      ],
+      "image": {
+        "src": "/assets/autour-nyons/43bc396ba2c6ec.webp",
+        "alt": "Église de Condorcet au pied des collines",
+        "width": 466,
+        "height": 700,
+        "original_src": "/assets/photos/fiche-43bc396ba2c6ec66d445.webp"
+      },
+      "original_title": "Condorcet"
+    },
+    {
+      "url": "/a-faire-autour-de-Nyons/curnier/",
+      "title": "Curnier, entre deux vallées",
+      "description": "Repérez le village et son patrimoine avant de poursuivre dans la vallée de l’Ennuyé ou de l’Eygues.",
+      "group": "villages",
+      "seasons": [
+        "printemps",
+        "ete",
+        "automne",
+        "hiver"
+      ],
+      "image": {
+        "src": "/assets/autour-nyons/c82ab4a932f4c4.webp",
+        "alt": "Église et clocher de Curnier",
+        "width": 466,
+        "height": 700,
+        "original_src": "/assets/photos/fiche-c82ab4a932f4c4605ec5.webp"
+      },
+      "original_title": "Curnier"
+    },
+    {
+      "url": "/a-faire-autour-de-Nyons/se-baigner-aubres/",
+      "title": "La cascade d’Aubres : les questions à se poser",
+      "description": "Le guide rassemble les repères à lire avant de s’y rendre ; il ne vaut pas autorisation de baignade.",
+      "group": "fraicheur",
+      "seasons": [
+        "ete"
+      ],
+      "image": {
+        "src": "/assets/autour-nyons/7b7b45d6b57fb4.webp",
+        "alt": "Baignade et rafraîchissement sous la cascade d’Aubres, petit coin nature en Drôme provençale.",
+        "width": 560,
+        "height": 681,
+        "original_src": "/assets/photos/fiche-7b7b45d6b57fb4b82f4c.webp"
+      },
+      "original_title": "Est-ce qu’on peut se baigner à Aubres, à la cascade ?"
+    },
+    {
+      "url": "/a-faire-autour-de-Nyons/Baronnies-Provencales/",
+      "title": "Explorer les Baronnies provençales",
+      "description": "Un premier regard sur les paysages, les villages et les possibilités de découverte du territoire.",
+      "group": "nature",
+      "seasons": [
+        "printemps",
+        "ete",
+        "automne"
+      ],
+      "image": {
+        "src": "/assets/autour-nyons/eee5c72d13ef1d.webp",
+        "alt": "Illustration — Explorer les Baronnies Provençales : randonnées, villages et VTT",
+        "width": 318,
+        "height": 179,
+        "original_src": "/assets/photos/bdd978a702c7bcbea99a.webp"
+      },
+      "original_title": "Explorer les Baronnies Provençales : randonnées, villages et VTT"
+    },
+    {
+      "url": "/a-faire-autour-de-Nyons/vautours-remuzat/",
+      "title": "Les vautours autour de Rémuzat",
+      "description": "Préparez l’observation et consultez les informations sur les accès et les parcours avant de marcher.",
+      "group": "nature",
+      "seasons": [
+        "printemps",
+        "ete",
+        "automne"
+      ],
+      "image": {
+        "src": "/assets/autour-nyons/d4bbd1754e0cb8.webp",
+        "alt": "Panneau explicatif des vautours à Rémuzat",
+        "width": 560,
+        "height": 560,
+        "original_src": "/assets/photos/fiche-d4bbd1754e0cb86b54e3.webp"
+      },
+      "original_title": "Falaise des Vautours Rémuzat : rando & huile de Nyons"
+    },
+    {
+      "url": "/a-faire-autour-de-Nyons/Ferme-pedagogique-nyons/",
+      "title": "Au Bonheur des Animaux",
+      "description": "Une piste de sortie à la ferme pédagogique près de La Garde-Adhémar ; vérifiez l’accueil et la réservation.",
+      "group": "famille",
+      "seasons": [
+        "printemps",
+        "ete",
+        "automne",
+        "hiver"
+      ],
+      "image": {
+        "src": "/assets/autour-nyons/7964b617b9a931.webp",
+        "alt": "Illustration — Ferme pédagogique Au Bonheur des Animaux – Sortie nature près de Nyons",
+        "width": 515,
+        "height": 289,
+        "original_src": "/assets/photos/8e656f442b716fab2fd8.webp"
+      },
+      "original_title": "Ferme pédagogique Au Bonheur des Animaux – Sortie nature près de Nyons"
+    },
+    {
+      "url": "/a-faire-autour-de-Nyons/route-lavande/",
+      "title": "La route de la lavande",
+      "description": "Des pistes de circuit entre villages et champs ; la floraison varie selon les lieux et la météo.",
+      "group": "nature",
+      "seasons": [
+        "printemps",
+        "ete",
+        "automne"
+      ],
+      "image": {
+        "src": "/assets/autour-nyons/df302171d1f978.webp",
+        "alt": "Illustration — Itinéraire familial sur la Route de la Lavande en Drôme Provençale : villages perchés et champs en fleurs",
+        "width": 387,
+        "height": 217,
+        "original_src": "/assets/photos/15697605efffb12aa542.webp"
+      },
+      "original_title": "Itinéraire familial sur la Route de la Lavande en Drôme Provençale : villages perchés et champs en fleurs"
+    },
+    {
+      "url": "/a-faire-autour-de-Nyons/Le-Poet-en-Percip/",
+      "title": "Le Poët-en-Percip",
+      "description": "Un village des Baronnies pour découvrir un autre visage du territoire, loin des grands axes.",
+      "group": "villages",
+      "seasons": [
+        "printemps",
+        "ete",
+        "automne",
+        "hiver"
+      ],
+      "image": {
+        "src": "/assets/autour-nyons/64840b80014a07.webp",
+        "alt": "Vue du village du Poët-en-Percip dans les Baronnies provençales, village de montagne de la Drôme.",
+        "width": 398,
+        "height": 388,
+        "original_src": "/assets/photos/85c5ca5f196986e3ed4e.webp"
+      },
+      "original_title": "Le Poët-en-Percip : souvenirs d’un village des Baronnies"
+    },
+    {
+      "url": "/a-faire-autour-de-Nyons/plus-beaux-villages/",
+      "title": "Cinq villages pour commencer",
+      "description": "Une sélection éditoriale pour comparer les ambiances et choisir votre première escapade.",
+      "group": "villages",
+      "seasons": [
+        "printemps",
+        "ete",
+        "automne",
+        "hiver"
+      ],
+      "image": {
+        "src": "/assets/autour-nyons/c6f301dd340e8f.webp",
+        "alt": "Illustration — Les 5 plus beaux villages autour de Nyons selon moi !",
+        "width": 300,
+        "height": 169,
+        "original_src": "/assets/photos/53705e19165002d27332.webp"
+      },
+      "original_title": "Les 5 plus beaux villages autour de Nyons selon moi !"
+    },
+    {
+      "url": "/a-faire-autour-de-Nyons/coucher-soleil/",
+      "title": "Les couchers de soleil autour de Nyons",
+      "description": "Repérez quelques idées de paysages et préparez le retour avant la nuit.",
+      "group": "nature",
+      "seasons": [
+        "printemps",
+        "ete",
+        "automne"
+      ],
+      "image": {
+        "src": "/assets/autour-nyons/550053274c07bd.webp",
+        "alt": "Coucher de soleil sur les collines autour de Nyons",
+        "width": 560,
+        "height": 384,
+        "original_src": "/assets/photos/fiche-550053274c07bde3b5e7.webp"
+      },
+      "original_title": "Les plus beaux coins pour voir le coucher de soleil (autour de Nyons)"
+    },
+    {
+      "url": "/a-faire-autour-de-Nyons/Mirabel-aux-Baronnies/",
+      "title": "Mirabel-aux-Baronnies",
+      "description": "Une fiche pour découvrir le village, son patrimoine et les paysages qui l’entourent.",
+      "group": "villages",
+      "seasons": [
+        "printemps",
+        "ete",
+        "automne",
+        "hiver"
+      ],
+      "image": {
+        "src": "/assets/autour-nyons/64f3190799823a.webp",
+        "alt": "Que voir à Mirabel-aux-Baronnies",
+        "width": 352,
+        "height": 198,
+        "original_src": "/assets/photos/836d156632a2d3c4e38c.webp"
+      },
+      "original_title": "Mirabel-aux-Baronnies"
+    },
+    {
+      "url": "/a-faire-autour-de-Nyons/mirabel-aux-baronnies-vs-nyons/",
+      "title": "Mirabel ou Nyons : deux ambiances",
+      "description": "Comparez une escapade au village et une journée à Nyons, selon ce que vous cherchez.",
+      "group": "villages",
+      "seasons": [
+        "printemps",
+        "ete",
+        "automne",
+        "hiver"
+      ],
+      "image": {
+        "src": "/assets/autour-nyons/7de7fb77d32008.webp",
+        "alt": "Baignade sous le pont roman de Nyons, rivière de l’Eygues, eau claire et galets, personnes se reposant au bord de l’eau en été.",
+        "width": 560,
+        "height": 625,
+        "original_src": "/assets/photos/fiche-7de7fb77d32008a1f0a5.webp"
+      },
+      "original_title": "Mirabel-aux-Baronnies vs Nyons : deux ambiances, deux façons de voyager"
+    },
+    {
+      "url": "/a-faire-autour-de-Nyons/montaulieu/",
+      "title": "Montaulieu et ses ruelles",
+      "description": "Maisons en pierre et passages du village : des repères pour une découverte à votre rythme.",
+      "group": "villages",
+      "seasons": [
+        "printemps",
+        "ete",
+        "automne",
+        "hiver"
+      ],
+      "image": {
+        "src": "/assets/autour-nyons/72213ddf17a955.webp",
+        "alt": "Ruelle pavée entre les maisons en pierre de Montaulieu",
+        "width": 560,
+        "height": 314,
+        "original_src": "/assets/photos/fiche-72213ddf17a955f9cc19.webp"
+      },
+      "original_title": "Montaulieu"
+    },
+    {
+      "url": "/a-faire-autour-de-Nyons/3-endroits-de-baignade/",
+      "title": "La Drôme et les rivières autour de Nyons",
+      "description": "Comparez les lieux décrits et vérifiez les conditions locales avant toute sortie au bord de l’eau.",
+      "group": "fraicheur",
+      "seasons": [
+        "ete"
+      ],
+      "image": {
+        "src": "/assets/autour-nyons/e12056d3a2927d.webp",
+        "alt": "Un coin frais du Lez à La Roche-Saint-Secret, parfait pour se tremper l’été",
+        "width": 560,
+        "height": 373,
+        "original_src": "/assets/photos/fiche-e12056d3a2927d095889.webp"
+      },
+      "original_title": "Nyons et la Drôme : où se baigner en rivière ?"
+    },
+    {
+      "url": "/a-faire-autour-de-Nyons/gorges-du-leoux/",
+      "title": "Les gorges du Léoux",
+      "description": "Des repères sur ce site naturel à lire avant de vérifier les accès et les conditions auprès de la commune.",
+      "group": "fraicheur",
+      "seasons": [
+        "ete"
+      ],
+      "image": null,
+      "original_title": "Où se baigner dans les gorges du Léoux près de Nyons ?"
+    },
+    {
+      "url": "/a-faire-autour-de-Nyons/se-baigner-gorges-ubrieux/",
+      "title": "Les gorges d’Ubrieux",
+      "description": "Consultez la fiche pour préparer une sortie dans le secteur de Buis-les-Baronnies, sans présumer des accès.",
+      "group": "fraicheur",
+      "seasons": [
+        "ete"
+      ],
+      "image": null,
+      "original_title": "Où se baigner dans les gorges d’Ubrieux près de Nyons ?"
+    },
+    {
+      "url": "/a-faire-autour-de-Nyons/voir-les-vautours-baronnies/",
+      "title": "Observer les vautours des Baronnies",
+      "description": "Quels repères regarder et quelles précautions prendre pour une observation respectueuse ?",
+      "group": "nature",
+      "seasons": [
+        "printemps",
+        "ete",
+        "automne"
+      ],
+      "image": {
+        "src": "/assets/autour-nyons/d4bbd1754e0cb8.webp",
+        "alt": "Panneau explicatif des vautours à Rémuzat",
+        "width": 560,
+        "height": 560,
+        "original_src": "/assets/photos/fiche-d4bbd1754e0cb86b54e3.webp"
+      },
+      "original_title": "Où voir les vautours dans les Baronnies : est-ce que ça vaut le coup ?"
+    },
+    {
+      "url": "/a-faire-autour-de-Nyons/parc-aquatique-le-sagittaire-vinsobres/",
+      "title": "Le parc aquatique du Sagittaire",
+      "description": "Une idée estivale à Vinsobres ; confirmez la saison, les conditions d’entrée et les règles des attractions.",
+      "group": "famille",
+      "seasons": [
+        "ete"
+      ],
+      "image": {
+        "src": "/assets/autour-nyons/b159e55c415071.webp",
+        "alt": "Illustration — Parc aquatique le sagittaire vinsobres",
+        "width": 371,
+        "height": 208,
+        "original_src": "/assets/photos/24183fc7fc623077c51a.webp"
+      },
+      "original_title": "Parc aquatique le sagittaire vinsobres"
+    },
+    {
+      "url": "/a-faire-autour-de-Nyons/se-baigner-gorges-saint-may/",
+      "title": "Les gorges de Saint-May",
+      "description": "Le guide aborde les questions d’accès et de baignade ; vérifiez les restrictions en vigueur.",
+      "group": "fraicheur",
+      "seasons": [
+        "ete"
+      ],
+      "image": {
+        "src": "/assets/autour-nyons/cfe212def33763.webp",
+        "alt": "Baigneurs dans la rivière des gorges de Saint-May, avec un chien dans l’eau, par une journée d’été près de Nyons.",
+        "width": 560,
+        "height": 695,
+        "original_src": "/assets/photos/fiche-cfe212def337630e1e9d.webp"
+      },
+      "original_title": "Peut-on se baigner dans les gorges de Saint-May ? Ce qu’on sait vraiment"
+    },
+    {
+      "url": "/a-faire-autour-de-Nyons/Piegon/",
+      "title": "Piégon et la Belle Vendangeuse",
+      "description": "Une découverte autour du village et de cette sculpture liée au paysage viticole.",
+      "group": "patrimoine",
+      "seasons": [
+        "printemps",
+        "ete",
+        "automne",
+        "hiver"
+      ],
+      "image": {
+        "src": "/assets/autour-nyons/186a5824ef7347.webp",
+        "alt": "Détail de la sculpture de la Grande Vendangeuse à Piégon",
+        "width": 560,
+        "height": 417,
+        "original_src": "/assets/photos/fiche-186a5824ef7347338d53.webp"
+      },
+      "original_title": "Piégon"
+    },
+    {
+      "url": "/a-faire-autour-de-Nyons/pilles/",
+      "title": "Les Pilles, le long de l’Eygues",
+      "description": "Préparez un passage dans le village, entre façades, rivière et paysages de la vallée.",
+      "group": "villages",
+      "seasons": [
+        "printemps",
+        "ete",
+        "automne",
+        "hiver"
+      ],
+      "image": {
+        "src": "/assets/autour-nyons/39ac19c0ad1791.webp",
+        "alt": "Illustration — Que faire aux Pilles ?",
+        "width": 560,
+        "height": 470,
+        "original_src": "/assets/photos/ba384333dbf327cb6d89.webp"
+      },
+      "original_title": "Que faire aux Pilles ?"
+    },
+    {
+      "url": "/a-faire-autour-de-Nyons/Que-faire-a-Aubres/",
+      "title": "Aubres, côté village",
+      "description": "Une fiche pour situer le village et ses paysages avant de choisir votre promenade.",
+      "group": "villages",
+      "seasons": [
+        "printemps",
+        "ete",
+        "automne",
+        "hiver"
+      ],
+      "image": {
+        "src": "/assets/autour-nyons/37f831bbac5cf8.webp",
+        "alt": "Cascade entre les rochers et la végétation à Aubres",
+        "width": 466,
+        "height": 700,
+        "original_src": "/assets/photos/fiche-37f831bbac5cf87c3757.webp"
+      },
+      "original_title": "Que faire à Aubres en Drôme provençale ?"
+    },
+    {
+      "url": "/a-faire-autour-de-Nyons/roche-sur-le-buis/",
+      "title": "La Roche-sur-le-Buis",
+      "description": "Un village de caractère et son patrimoine, pour prolonger une découverte du secteur de Buis.",
+      "group": "villages",
+      "seasons": [
+        "printemps",
+        "ete",
+        "automne",
+        "hiver"
+      ],
+      "image": {
+        "src": "/assets/autour-nyons/aff2ce5d72425a.webp",
+        "alt": "Tour en pierre sur le rocher à La Roche-sur-le-Buis",
+        "width": 560,
+        "height": 373,
+        "original_src": "/assets/photos/fiche-aff2ce5d72425ac3beda.webp"
+      },
+      "original_title": "Que voir à La Roche-sur-le-Buis, village de caractère dans la Drôme"
+    },
+    {
+      "url": "/a-faire-autour-de-Nyons/sahune/",
+      "title": "Sahune : vieux village et vallée",
+      "description": "Repérez le patrimoine et les paysages de Sahune avant de composer votre sortie.",
+      "group": "villages",
+      "seasons": [
+        "printemps",
+        "ete",
+        "automne",
+        "hiver"
+      ],
+      "image": {
+        "src": "/assets/autour-nyons/0f5c8f0ed2e3e5.webp",
+        "alt": "Montage de vues du village de Sahune et de sa végétation",
+        "width": 560,
+        "height": 315,
+        "original_src": "/assets/photos/fiche-0f5c8f0ed2e3e50eabd0.webp"
+      },
+      "original_title": "Sahune : entre patrimoine et terroir de la Drôme"
+    },
+    {
+      "url": "/a-faire-autour-de-Nyons/saint-pantaleon-les-vignes/",
+      "title": "Saint-Pantaléon-les-Vignes",
+      "description": "Une halte dans les paysages viticoles, avec les repères du village rassemblés dans la fiche.",
+      "group": "villages",
+      "seasons": [
+        "printemps",
+        "ete",
+        "automne",
+        "hiver"
+      ],
+      "image": {
+        "src": "/assets/autour-nyons/d092c18bdc030c.webp",
+        "alt": "Illustration — Saint Pantaléon Les Vignes",
+        "width": 560,
+        "height": 537,
+        "original_src": "/assets/photos/16a97789485a8edc1380.webp"
+      },
+      "original_title": "Saint Pantaléon Les Vignes"
+    },
+    {
+      "url": "/a-faire-autour-de-Nyons/saint-ferreol-trente-pas/",
+      "title": "Saint-Ferréol-Trente-Pas",
+      "description": "Le village et son environnement, pour préparer une découverte du secteur des Trente-Pas.",
+      "group": "villages",
+      "seasons": [
+        "printemps",
+        "ete",
+        "automne",
+        "hiver"
+      ],
+      "image": {
+        "src": "/assets/autour-nyons/f28e339c899db6.webp",
+        "alt": "Église de Saint-Ferréol-Trente-Pas et son clocher",
+        "width": 465,
+        "height": 310,
+        "original_src": "/assets/photos/fiche-f28e339c899db60fa879.webp"
+      },
+      "original_title": "Saint-Ferréol-Trente-Pas"
+    },
+    {
+      "url": "/a-faire-autour-de-Nyons/sainte-euphemie/",
+      "title": "Sainte-Euphémie-sur-Ouvèze",
+      "description": "Un village de la vallée de l’Ouvèze à découvrir en prenant le temps de regarder son patrimoine.",
+      "group": "villages",
+      "seasons": [
+        "printemps",
+        "ete",
+        "automne",
+        "hiver"
+      ],
+      "image": {
+        "src": "/assets/autour-nyons/b88dd0e4ea7b19.webp",
+        "alt": "Illustration — Sainte-Euphémie-Sur-Ouvèze : guide complet",
+        "width": 560,
+        "height": 315,
+        "original_src": "/assets/photos/ef7c86772530d1904491.webp"
+      },
+      "original_title": "Sainte-Euphémie-Sur-Ouvèze : guide complet"
+    },
+    {
+      "url": "/a-faire-autour-de-Nyons/se-baigner-gorges-de-trente-pas/",
+      "title": "Les gorges de Trente-Pas",
+      "description": "Une fiche pour comprendre le lieu et les limites d’une sortie ; renseignez-vous sur les accès du jour.",
+      "group": "fraicheur",
+      "seasons": [
+        "ete"
+      ],
+      "image": {
+        "src": "/assets/autour-nyons/2e86a8f0a06b8a.webp",
+        "alt": "Route étroite creusée dans la roche aux gorges de Trente-Pas, avec une voiture passant sous une arche naturelle près de Saint-Ferréol-Trente-Pas.",
+        "width": 560,
+        "height": 667,
+        "original_src": "/assets/photos/fiche-2e86a8f0a06b8aac58e0.webp"
+      },
+      "original_title": "Se baigner aux gorges de Trente-Pas : à quoi s’attendre vraiment ?"
+    },
+    {
+      "url": "/a-faire-autour-de-Nyons/marches-provencaux/",
+      "title": "Cinq marchés provençaux à découvrir",
+      "description": "Une sélection de marchés pour trouver une ambiance qui vous plaît, puis vérifier le bon jour.",
+      "group": "terroir",
+      "seasons": [
+        "printemps",
+        "ete",
+        "automne",
+        "hiver"
+      ],
+      "image": {
+        "src": "/assets/autour-nyons/bf87682c593455.webp",
+        "alt": "Illustration — Top 5 des marchés provençaux autour de Nyons à ne pas manquer",
+        "width": 292,
+        "height": 164,
+        "original_src": "/assets/photos/a46fd8914022893e1e1d.webp"
+      },
+      "original_title": "Top 5 des marchés provençaux autour de Nyons à ne pas manquer"
+    },
+    {
+      "url": "/a-faire-autour-de-Nyons/marche-drome/",
+      "title": "La carte des marchés de la Drôme",
+      "description": "La carte et les fiches sourcées couvrent une sélection de communes du nord au sud du département.",
+      "group": "terroir",
+      "seasons": [
+        "printemps",
+        "ete",
+        "automne",
+        "hiver"
+      ],
+      "image": {
+        "src": "/assets/autour-nyons/ef7920dc6be407.webp",
+        "alt": "Illustration — Illustration du guide des marchés de la Drôme",
+        "width": 433,
+        "height": 243,
+        "original_src": "/assets/photos/8a2174291ed11434a6d5.webp"
+      },
+      "original_title": "Tous les marchés de la Drôme : jours, lieux et infos pratiques"
+    },
+    {
+      "url": "/a-faire-autour-de-Nyons/la-combe-juliane/",
+      "title": "La Combe Juliane",
+      "description": "Consultez les repères de la fiche et les règles locales avant d’envisager une sortie dans ce milieu naturel.",
+      "group": "fraicheur",
+      "seasons": [
+        "ete"
+      ],
+      "image": {
+        "src": "/assets/autour-nyons/ae09e3fbf5c4a7.webp",
+        "alt": "Pourquoi se baigner à la Combe Juliane ?",
+        "width": 496,
+        "height": 700,
+        "original_src": "/assets/photos/7da0f6dd2d86a56635cf.webp"
+      },
+      "original_title": "Tu cherches où te baigner dans les Baronnies ? La Combe Juliane"
+    },
+    {
+      "url": "/a-faire-autour-de-Nyons/observatoire-baronnies/",
+      "title": "L’Observatoire des Baronnies",
+      "description": "Une sortie tournée vers le ciel ; renseignez-vous sur les formules, les âges et les réservations.",
+      "group": "famille",
+      "seasons": [
+        "printemps",
+        "ete",
+        "automne",
+        "hiver"
+      ],
+      "image": {
+        "src": "/assets/autour-nyons/bca8f46ba08947.webp",
+        "alt": "Coupole et bâtiments de l’Observatoire des Baronnies au coucher du soleil",
+        "width": 560,
+        "height": 373,
+        "original_src": "/assets/photos/fiche-bca8f46ba089479b9e27.webp"
+      },
+      "original_title": "Une escapade insolite près de Nyons : l’Observatoire des Baronnies Provençales"
+    },
+    {
+      "url": "/a-faire-autour-de-Nyons/village-de-venterol/",
+      "title": "Venterol, ruelles et campanile",
+      "description": "Un guide pour flâner dans le village et repérer ses petites places et ses détails de façade.",
+      "group": "villages",
+      "seasons": [
+        "printemps",
+        "ete",
+        "automne",
+        "hiver"
+      ],
+      "image": {
+        "src": "/assets/autour-nyons/c5f9edf3910018.webp",
+        "alt": "Venterol, un village où les ruelles, les vieilles façades et les petits détails donnent surtout envie de flâner.",
+        "width": 468,
+        "height": 500,
+        "original_src": "/assets/photos/e184473d950028dab9e1.webp"
+      },
+      "original_title": "Venterol : ruelles, campanile et rue du Bout du Monde"
+    },
+    {
+      "url": "/a-faire-autour-de-Nyons/via-ferrata-de-buis-les-baronnies/",
+      "title": "La via ferrata du Saint-Julien",
+      "description": "Une activité équipée à Buis-les-Baronnies ; vérifiez les exigences de taille, de matériel et d’encadrement.",
+      "group": "famille",
+      "seasons": [
+        "printemps",
+        "ete",
+        "automne",
+        "hiver"
+      ],
+      "image": {
+        "src": "/assets/autour-nyons/94b6948b8473fc.webp",
+        "alt": "Panneau d’information de la via ferrata du Saint-Julien à Buis-les-Baronnies",
+        "width": 560,
+        "height": 373,
+        "original_src": "/assets/photos/fiche-94b6948b8473fc18e963.webp"
+      },
+      "original_title": "Via ferrata de Buis-les-Baronnies avis"
+    },
+    {
+      "url": "/a-faire-autour-de-Nyons/vinsobres/",
+      "title": "Vinsobres et son paysage viticole",
+      "description": "Un village et des vues sur les vignobles, pour préparer une découverte du terroir.",
+      "group": "villages",
+      "seasons": [
+        "printemps",
+        "ete",
+        "automne",
+        "hiver"
+      ],
+      "image": {
+        "src": "/assets/autour-nyons/c77e7dd448d5ee.webp",
+        "alt": "Illustration — Vinsobres en Drôme provençale",
+        "width": 358,
+        "height": 201,
+        "original_src": "/assets/photos/47e9879165e4080a1a2d.webp"
+      },
+      "original_title": "Vinsobres en Drôme provençale"
+    },
+    {
+      "url": "/a-faire-autour-de-Nyons/facteur-Cheval/",
+      "title": "Le Palais idéal du facteur Cheval",
+      "description": "Découvrez ce monument d’Hauterives et préparez une sortie plus lointaine, avec les informations du site.",
+      "group": "patrimoine",
+      "seasons": [
+        "printemps",
+        "ete",
+        "automne",
+        "hiver"
+      ],
+      "image": {
+        "src": "/assets/autour-nyons/d493d8f720053c.webp",
+        "alt": "Illustration — Visite du château du facteur Cheval",
+        "width": 560,
+        "height": 481,
+        "original_src": "/assets/photos/4a0c508d0610b39cbc89.webp"
+      },
+      "original_title": "Visite du château du facteur Cheval"
+    },
+    {
+      "url": "/a-faire-autour-de-Nyons/suze-la-rousse/",
+      "title": "Le château de Suze-la-Rousse",
+      "description": "Un château, sa cour et son histoire : consultez les conditions de visite et la programmation.",
+      "group": "patrimoine",
+      "seasons": [
+        "printemps",
+        "ete",
+        "automne",
+        "hiver"
+      ],
+      "image": {
+        "src": "/assets/autour-nyons/b32d117e5701fd.webp",
+        "alt": "Illustration — Visiter le Château de Suze-la-Rousse en Provence",
+        "width": 560,
+        "height": 350,
+        "original_src": "/assets/photos/1a73990dcee437e0e6c6.webp"
+      },
+      "original_title": "Visiter le Château de Suze-la-Rousse en Provence"
+    },
+    {
+      "url": "/a-faire-autour-de-Nyons/poet/",
+      "title": "Le Poët-Laval et son patrimoine",
+      "description": "Une fiche pour découvrir le village et préparer une visite en famille selon les ouvertures.",
+      "group": "patrimoine",
+      "seasons": [
+        "printemps",
+        "ete",
+        "automne",
+        "hiver"
+      ],
+      "image": {
+        "src": "/assets/autour-nyons/33db70e15414f6.webp",
+        "alt": "Illustration — Visiter Le Poët-Laval en famille",
+        "width": 560,
+        "height": 446,
+        "original_src": "/assets/photos/00242a686665c12f32b6.webp"
+      },
+      "original_title": "Visiter Le Poët-Laval en famille"
+    },
+    {
+      "url": "/randonnee-nyons/Villages-autour-de-Nyons/",
+      "title": "Le guide des villages autour de Nyons",
+      "description": "Un autre point d’entrée pour comparer les villages et préparer vos découvertes.",
+      "group": "villages",
+      "seasons": [
+        "printemps",
+        "ete",
+        "automne"
+      ],
+      "image": {
+        "src": "/assets/autour-nyons/63081579433aee.webp",
+        "alt": "Villages perchés autour de Nyons dans les Baronnies provençales, entre vignes, oliviers, montagnes et anciennes maisons en pierre.",
+        "width": 452,
+        "height": 442,
+        "original_src": "/assets/photos/8582aa95cbd49bb9ca52.webp"
+      }
+    },
+    {
+      "url": "/que-faire-nyons/randonnees-autour-de-nyons-carte/",
+      "title": "Randonnées et parkings : la carte",
+      "description": "Repérez les départs et les parkings dans le guide détaillé avant de choisir une marche adaptée.",
+      "group": "nature",
+      "seasons": [
+        "printemps",
+        "ete",
+        "automne"
+      ],
+      "image": {
+        "src": "/assets/autour-nyons/8e21a593ab64a4.webp",
+        "alt": "Carte des randonnées autour de Nyons avec départs GPS et parkings, illustrée par un sac à dos, des chaussures de randonnée et un paysage de la Drôme provençale.",
+        "width": 560,
+        "height": 384,
+        "original_src": "/assets/photos/fiche-8e21a593ab64a4afb485.webp"
+      }
+    }
+  ],
+  "featured": [
+    "/a-faire-autour-de-Nyons/village-de-venterol/",
+    "/a-faire-autour-de-Nyons/voir-les-vautours-baronnies/",
+    "/infos-pratiques-nyons/marche-vaison-la-romaine/",
+    "/a-faire-autour-de-Nyons/se-baigner-au-pas-des-ondes/",
+    "/a-faire-autour-de-Nyons/biscuiterie-provence-saint-maurice-sur-eygues/",
+    "/a-faire-autour-de-Nyons/suze-la-rousse/"
+  ],
+  "original_urls": [
+    "/nyons-carte-interactive/parc-baronnies-provencales/",
+    "/infos-pratiques-nyons/marche-vaison-la-romaine/",
+    "/infos-pratiques-nyons/marches-autour-nyons-50-km/",
+    "/a-faire-autour-de-Nyons/biscuiterie-provence-saint-maurice-sur-eygues/",
+    "/a-faire-autour-de-Nyons/saint-may/",
+    "/a-faire-autour-de-Nyons/distilleries-de-lavande/",
+    "/a-faire-autour-de-Nyons/se-baigner-au-pas-des-ondes/",
+    "/a-faire-autour-de-Nyons/avis-gorges-du-toulourenc/",
+    "/a-faire-autour-de-Nyons/caves-nyons/",
+    "/a-faire-autour-de-Nyons/condorcet/",
+    "/a-faire-autour-de-Nyons/curnier/",
+    "/a-faire-autour-de-Nyons/se-baigner-aubres/",
+    "/a-faire-autour-de-Nyons/Baronnies-Provencales/",
+    "/a-faire-autour-de-Nyons/vautours-remuzat/",
+    "/a-faire-autour-de-Nyons/Ferme-pedagogique-nyons/",
+    "/a-faire-autour-de-Nyons/route-lavande/",
+    "/a-faire-autour-de-Nyons/Le-Poet-en-Percip/",
+    "/a-faire-autour-de-Nyons/plus-beaux-villages/",
+    "/a-faire-autour-de-Nyons/coucher-soleil/",
+    "/a-faire-autour-de-Nyons/Mirabel-aux-Baronnies/",
+    "/a-faire-autour-de-Nyons/mirabel-aux-baronnies-vs-nyons/",
+    "/a-faire-autour-de-Nyons/montaulieu/",
+    "/a-faire-autour-de-Nyons/3-endroits-de-baignade/",
+    "/a-faire-autour-de-Nyons/gorges-du-leoux/",
+    "/a-faire-autour-de-Nyons/se-baigner-gorges-ubrieux/",
+    "/a-faire-autour-de-Nyons/voir-les-vautours-baronnies/",
+    "/a-faire-autour-de-Nyons/parc-aquatique-le-sagittaire-vinsobres/",
+    "/a-faire-autour-de-Nyons/se-baigner-gorges-saint-may/",
+    "/a-faire-autour-de-Nyons/Piegon/",
+    "/a-faire-autour-de-Nyons/pilles/",
+    "/a-faire-autour-de-Nyons/Que-faire-a-Aubres/",
+    "/a-faire-autour-de-Nyons/roche-sur-le-buis/",
+    "/a-faire-autour-de-Nyons/sahune/",
+    "/a-faire-autour-de-Nyons/saint-pantaleon-les-vignes/",
+    "/a-faire-autour-de-Nyons/saint-ferreol-trente-pas/",
+    "/a-faire-autour-de-Nyons/sainte-euphemie/",
+    "/a-faire-autour-de-Nyons/se-baigner-gorges-de-trente-pas/",
+    "/a-faire-autour-de-Nyons/marches-provencaux/",
+    "/a-faire-autour-de-Nyons/marche-drome/",
+    "/a-faire-autour-de-Nyons/la-combe-juliane/",
+    "/a-faire-autour-de-Nyons/observatoire-baronnies/",
+    "/a-faire-autour-de-Nyons/village-de-venterol/",
+    "/a-faire-autour-de-Nyons/via-ferrata-de-buis-les-baronnies/",
+    "/a-faire-autour-de-Nyons/vinsobres/",
+    "/a-faire-autour-de-Nyons/facteur-Cheval/",
+    "/a-faire-autour-de-Nyons/suze-la-rousse/",
+    "/a-faire-autour-de-Nyons/poet/"
+  ],
+  "photo": {
+    "author": "Service communication de la Mairie de Nyons",
+    "source": "https://commons.wikimedia.org/wiki/File:Le_cadre_naturel_de_Nyons.jpg",
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "taken_on": "2012-08-27",
+    "changes": "Redimensionnement et compression WebP ; cadrage d’affichage panoramique en CSS."
+  }
+}

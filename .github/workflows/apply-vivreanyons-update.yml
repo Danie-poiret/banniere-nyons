@@ -22,6 +22,9 @@ jobs:
         run: |
           unzip -o vivreanyons-publication.zip
           rm vivreanyons-publication.zip
+          # Keep the curated portal after a legacy ZIP import.
+          python tools/update_autour_portal.py
+          python tools/update_autour_portal.py --check
           python tools/consolidate_venterol_urls.py
           python tools/consolidate_venterol_urls.py
           python tools/repair_legacy_urls.py
