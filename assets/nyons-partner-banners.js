@@ -2,6 +2,38 @@
 (function installNyonsPartnerCards(){
   function install(){
     if(document.querySelector('[data-nyons-partner-cards]'))return;
+    // Marseille only: replace both Nyons partner cards with the supplied book banner.
+    const marseilleCanonical=document.querySelector('link[rel="canonical"]');
+    const marseillePath=(marseilleCanonical?new URL(marseilleCanonical.href,location.href).pathname:location.pathname);
+    const marseilleRoot='/Provence-Alpes-Cote-dAzur/Bouches-du-Rhone/Marseille/';
+    if(marseillePath===marseilleRoot.slice(0,-1)||marseillePath.startsWith(marseilleRoot)){
+      const marseilleAnchor=document.querySelector('body > .hero,main .hero,main header')||document.querySelector('[data-nyons-partner-slot]')||document.querySelector('main')||document.querySelector('header');
+      if(!marseilleAnchor)return;
+      const banner=document.createElement('aside');
+      banner.className='marseille-book-banner';
+      banner.dataset.nyonsPartnerCards='';
+      banner.setAttribute('data-nosnippet','');
+      banner.setAttribute('aria-label','Livre sur le Marseille d’autrefois — lien partenaire Amazon');
+      const link=document.createElement('a');
+      link.href='https://link.amazon/B022UgJJX';
+      link.target='_blank';
+      link.rel='sponsored noopener noreferrer';
+      link.setAttribute('aria-label','Découvrir le livre sur le Marseille d’autrefois sur Amazon — lien partenaire, nouvel onglet');
+      const photo=document.createElement('img');
+      photo.src='https://www.vivreanyons.fr/assets/marseille-livre-partenaire.webp';
+      photo.alt='Vous vous souvenez de ce Marseille ? Prolongez le voyage avec un livre sur le Marseille d’autrefois. Découvrir le livre sur Amazon. Lien partenaire.';
+      photo.width=2163;photo.height=727;photo.decoding='async';
+      link.append(photo);banner.append(link);
+      const style=document.createElement('style');
+      style.dataset.marseilleBookBannerStyle='';
+      style.textContent='body>.hero:has(+.marseille-book-banner){margin-bottom:0!important}.marseille-book-banner{box-sizing:border-box;width:min(1120px,92%);margin:20px auto 0}main .marseille-book-banner{width:100%;margin-bottom:24px}.marseille-book-banner a{display:block;border-radius:12px;overflow:hidden}.marseille-book-banner img{display:block;width:100%;height:auto}.marseille-book-banner a:focus-visible{outline:3px solid #b34b0b;outline-offset:5px}';
+      document.head.append(style);
+      if(marseilleAnchor.tagName==='MAIN')marseilleAnchor.prepend(banner);
+      else if(marseilleAnchor.matches('[data-nyons-partner-slot]'))marseilleAnchor.replaceWith(banner);
+      else marseilleAnchor.after(banner);
+      document.querySelectorAll('[data-nyons-partner-slot]').forEach(el=>el.remove());
+      return;
+    }
     const slot=document.querySelector('[data-nyons-partner-slot]');
     const legacy=[...document.querySelectorAll('iframe[src*="/banniere-livres/"],img[src*="banniere-livres-drome-ardeche.png"]')].map(el=>el.closest('aside.top,.banner')||el.closest('a.ad-shell')||el).filter((el,index,all)=>all.indexOf(el)===index);
     const heading=document.querySelector('body > .hero,main .hero,main header');
