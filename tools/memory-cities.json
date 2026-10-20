@@ -461,6 +461,7 @@
       "title": "",
       "description": "",
       "existing": true,
+      "unified_card_grid": true,
       "legacy": [
         {
           "path": "Provence-Alpes-Cote-dAzur/Bouches-du-Rhone/Marseille/centre-bourse-marseille-1975-histoire/index.html",
