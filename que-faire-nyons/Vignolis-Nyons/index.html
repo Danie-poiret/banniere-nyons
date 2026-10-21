@@ -66,6 +66,19 @@ body#vignolis-page .ny-table:focus-visible{outline:3px solid #864807;outline-off
 body#vignolis-page .ny-article>.video{margin:1rem 0}
 body#vignolis-page .ny-gallery figcaption{font-size:.86rem}
 @media(max-width:600px){body#vignolis-page .ny-table table{font-size:.875rem}body#vignolis-page .ny-table th,body#vignolis-page .ny-table td{padding:.65rem .5rem}body#vignolis-page .ny-table tbody th{width:36%}}
+
+/* Carte propre à cette page. */
+body#vignolis-page .ny-map{margin:2rem 0;padding:1.2rem;border:1px solid #d4ddc7;border-radius:16px;background:#f5f8ef}
+body#vignolis-page .ny-map h3{margin-top:0}
+body#vignolis-page .ny-map-frame{overflow:hidden;border:1px solid #b8c6ac;border-radius:10px}
+body#vignolis-page .ny-map-frame[hidden]{display:none}
+body#vignolis-page .ny-map iframe{display:block;width:100%;height:360px;border:0}
+body#vignolis-page .ny-map-actions{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+body#vignolis-page .ny-map-actions button{min-height:44px;padding:10px 16px;border:2px solid #416333;border-radius:8px;background:#416333;color:#fff;font:inherit;font-weight:700;cursor:pointer}
+body#vignolis-page .ny-map-actions a{display:inline-flex;align-items:center;flex-wrap:wrap;gap:4px;min-height:44px}
+body#vignolis-page .ny-map :focus-visible{outline:3px solid #a45017;outline-offset:4px}
+body#vignolis-page .ny-map-small{font-size:.9rem;line-height:1.55}
+@media(max-width:600px){body#vignolis-page .ny-map{padding:1rem}body#vignolis-page .ny-map iframe{height:300px}}
 </style></head>
 <body id="vignolis-page" class="vignolis-review">
 <a class="ny-skip" href="#ny-article">Aller à l’article</a>
@@ -203,6 +216,14 @@ body#vignolis-page .ny-gallery figcaption{font-size:.86rem}
 <p>Pour préparer ta venue, consulte <a href="https://www.vignolis.fr/fr/cooperative/magasins/nyons">la fiche officielle du magasin Vignolis Nyons</a>.</p>
 <p>Le parking est pratique lorsque l'on vient acheter plusieurs bouteilles ou des produits un peu lourds. En revanche, les possibilités de stationnement peuvent dépendre de l'affluence.</p>
 <p>La <a href="https://www.vins-rhone-tourisme.fr/fr/visiter-et-deguster/visite-des-domaines/vignolis-cooperative-du-nyonsais">fiche Vins Rhône Tourisme</a> annonce une accessibilité en fauteuil roulant pour l'établissement. Pour une activité guidée particulière ou un besoin précis, mieux vaut néanmoins demander confirmation avant la visite.</p>
+<section class="ny-map" aria-labelledby="carte-vignolis">
+<h3 id="carte-vignolis">Où se trouve Vignolis ?</h3>
+<p>Espace Vignolis, place Olivier-de-Serres, 26110 Nyons.</p>
+<div class="ny-map-frame" id="vignolis-map-frame" hidden><iframe id="vignolis-map" title="Carte : emplacement de l’Espace Vignolis à Nyons" width="760" height="360" loading="lazy" referrerpolicy="no-referrer" data-map-src="https://www.openstreetmap.org/export/embed.html?bbox=5.1273%2C44.3577%2C5.1383%2C44.3637&amp;layer=mapnik&amp;marker=44.3606825%2C5.1327931"></iframe></div>
+<p class="ny-map-actions"><button type="button" id="vignolis-show-map" aria-controls="vignolis-map-frame" aria-expanded="false">Afficher la carte</button> <a href="https://www.google.com/maps/dir/?api=1&amp;destination=44.3606825%2C5.1327931" target="_blank" rel="noopener noreferrer">Itinéraire vers Vignolis <span class="ny-map-small">(nouvel onglet)</span></a></p>
+<p class="ny-map-small" id="vignolis-map-note">La carte OpenStreetMap se charge à ta demande. Tu peux aussi <a href="https://www.openstreetmap.org/?mlat=44.3606825&amp;mlon=5.1327931#map=17/44.3606825/5.1327931" target="_blank" rel="noopener noreferrer">ouvrir le plan dans un nouvel onglet</a>.</p>
+<p class="ny-map-small">Repère vérifié sur <a href="https://www.vignolis.fr/fr/contact">la page de contact officielle de Vignolis</a>.</p>
+</section>
 <h2 id="prolonger-la-sortie-dans-nyons">Prolonger la sortie dans Nyons</h2>
 <p>L'intérêt de Vignolis, c'est aussi de pouvoir compléter la découverte par d'autres endroits qui racontent le même territoire.</p>
 <p>Après avoir vu les anciennes presses et les techniques de fabrication, pourquoi ne pas aller découvrir <a href="https://www.vivreanyons.fr/que-faire-nyons/Scourtinerie-de-Nyons/">la Scourtinerie de Nyons</a> ?</p>
@@ -260,5 +281,5 @@ document.getElementById('ny-next').addEventListener('click',()=>show(index+1));
 box.addEventListener('keydown',event=>{if(event.key==='Tab'){const items=[...box.querySelectorAll('button,a[href]')],first=items[0],last=items[items.length-1];if(event.shiftKey&&document.activeElement===first){event.preventDefault();last.focus();}else if(!event.shiftKey&&document.activeElement===last){event.preventDefault();first.focus();}}if(event.key==='ArrowRight'){event.preventDefault();show(index+1);}if(event.key==='ArrowLeft'){event.preventDefault();show(index-1);}});
 box.addEventListener('click',event=>{if(event.target===box){const r=box.getBoundingClientRect();if(event.clientX<r.left||event.clientX>r.right||event.clientY<r.top||event.clientY>r.bottom)box.close();}});
 box.addEventListener('close',()=>{document.body.classList.remove('ny-gallery-open');if(opener)opener.focus({preventScroll:true});});
-})();</script></body>
+})();</script><script>(()=>{'use strict';const button=document.getElementById('vignolis-show-map'),frame=document.getElementById('vignolis-map'),panel=document.getElementById('vignolis-map-frame');if(!button||!frame||!panel)return;button.addEventListener('click',()=>{const expanded=button.getAttribute('aria-expanded')==='true';if(!expanded&&!frame.hasAttribute('src'))frame.src=frame.dataset.mapSrc;panel.hidden=expanded;button.setAttribute('aria-expanded',String(!expanded));button.textContent=expanded?'Afficher la carte':'Masquer la carte';});})();</script></body>
 </html>
