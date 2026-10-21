@@ -493,6 +493,18 @@
           "summary": ""
         }
       ]
+    },
+    {
+      "id": "bray-dunes",
+      "name": "Bray-Dunes",
+      "path": "Hauts-de-France/Nord/Bray-Dunes",
+      "department": "Nord",
+      "region": "Hauts-de-France",
+      "intro": "Une photographie ancienne, des cafés et les souvenirs des journées à la mer : retrouve ici les carnets de Bray-Dunes et les récits des familles qui y passaient leurs vacances.",
+      "title": "Bray-Dunes autrefois : cafés et souvenirs des vacances",
+      "description": "Bray-Dunes autrefois avec Papy Chris : photographies anciennes, cafés, voitures et souvenirs des vacances familiales sur le littoral du Nord.",
+      "existing": false,
+      "legacy": []
     }
   ],
   "legacy_allowed_paths": [
