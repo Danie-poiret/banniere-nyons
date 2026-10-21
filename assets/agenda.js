@@ -490,3 +490,16 @@ document.addEventListener('DOMContentLoaded',()=>{simplifyPontRomanPhotos();load
   script.src=new URL('memory-photo-viewer.js?v=20261018-v1',shared.src).href;
   document.body.append(script);
 })();
+
+/* Historical discovery only; the agenda implementation above remains unchanged. */
+(function loadMemorySidebar(){
+  if(!document.querySelector('main article:not(.card)')||document.querySelector('script[data-memory-sidebar-loader]'))return;
+  const roots=new Set(['auvergne-rhone-alpes','bourgogne-franche-comte','bretagne','centre-val-de-loire','corse','grand-est','hauts-de-france','ile-de-france','normandie','nouvelle-aquitaine','occitanie','pays-de-la-loire','provence-alpes-cote-dazur','guadeloupe','guyane','la-reunion','martinique','mayotte','histoire-geo']);
+  const shared=document.currentScript;
+  const root=new URL('../',shared.src);
+  const first=location.pathname.slice(root.pathname.length).split('/')[0].toLowerCase();
+  if(!roots.has(first))return;
+  const script=document.createElement('script');script.setAttribute('data-memory-sidebar-loader','');
+  script.src=new URL('memory-sidebar.js?v=20261021-v1',shared.src).href;
+  document.body.append(script);
+})();

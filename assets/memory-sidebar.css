@@ -1,0 +1,13 @@
+/* Scoped to historical recommendations; existing tourism sidebars stay unchanged. */
+[data-memory-history-layout]:not(.feature-layout){display:grid;grid-template-columns:minmax(0,1fr) 250px;column-gap:28px;align-items:start}
+[data-memory-history-layout]:not(.feature-layout)>article{grid-column:1;grid-row:1;min-width:0;width:100%;margin:0}
+[data-memory-history-layout]:not(.feature-layout)>.memory-history-sidebar{grid-column:2;grid-row:1/span 3}
+.memory-history-sidebar .memory-history-title{margin:0 0 12px;font-size:1.05rem;line-height:1.4;color:var(--olive,#425238);letter-spacing:0;text-transform:none}
+.memory-history-sidebar .memory-history-links{list-style:none;margin:0;padding:0}
+.memory-history-sidebar .memory-history-links a,.memory-history-sidebar .memory-history-explore a{display:block;padding:10px 0;color:var(--olive,#425238);font-size:.9rem;line-height:1.5;text-decoration:none;border-bottom:1px solid var(--line,#ddd)}
+.memory-history-sidebar a:hover,.memory-history-sidebar a:focus-visible{text-decoration:underline;color:var(--terra,#805b3e)}
+.memory-history-sidebar .memory-history-place{display:block;font-size:.8rem;font-weight:400;color:var(--muted,#62685e)}
+.memory-history-sidebar .memory-history-explore{margin-top:12px;border-top:2px solid var(--line,#ddd)}
+.memory-history-sidebar .memory-history-explore a:last-child{border-bottom:0}
+@media(max-width:960px){.content.has-sidebar>.memory-history-sidebar,.feature-layout.has-sidebar>.memory-history-sidebar{grid-column:1/-1;grid-row:auto;grid-template-columns:1fr;margin-top:28px}.memory-history-sidebar .memory-history-card{max-width:100%}}
+@media(max-width:960px){[data-memory-history-layout]:not(.feature-layout){grid-template-columns:minmax(0,1fr)}[data-memory-history-layout]:not(.feature-layout)>.memory-history-sidebar{grid-column:1;grid-row:auto;grid-template-columns:1fr;margin-top:28px}}
