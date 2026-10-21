@@ -505,6 +505,18 @@
       "description": "Bray-Dunes autrefois avec Papy Chris : photographies anciennes, cafés, voitures et souvenirs des vacances familiales sur le littoral du Nord.",
       "existing": false,
       "legacy": []
+    },
+    {
+      "id": "paris",
+      "name": "Paris",
+      "path": "Ile-de-France/Paris/Paris",
+      "department": "Paris — département 75",
+      "region": "Île-de-France",
+      "title": "Paris autrefois : magasins, quartiers et souvenirs",
+      "description": "Les carnets de Paris autrefois : Tati Barbès, commerces populaires, sorties en famille et souvenirs des habitants.",
+      "intro": "Un nom de magasin, un sac à carreaux, une promenade avec ses parents… Retrouvez le Paris populaire à travers les souvenirs de ses clients et de ses habitants. Le premier carnet nous emmène chez Tati, à Barbès.",
+      "existing": false,
+      "legacy": []
     }
   ],
   "legacy_allowed_paths": [
@@ -604,6 +616,8 @@
     "Auvergne-Rhone-Alpes/Rhone/index.html",
     "Hauts-de-France/index.html",
     "Provence-Alpes-Cote-dAzur/index.html",
-    "Auvergne-Rhone-Alpes/index.html"
+    "Auvergne-Rhone-Alpes/index.html",
+    "Ile-de-France/index.html",
+    "Ile-de-France/Paris/index.html"
   ]
 }
