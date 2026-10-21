@@ -53,6 +53,8 @@ def objects(value):
 
 def is_nyons_article(path, headline):
     """Only identify the article's subject, never a Nyons mention in its body."""
+    if path.casefold().startswith('/auvergne-rhone-alpes/drome/nyons/'):
+        return True
     if path.casefold().startswith(('/provence-alpes-cote-dazur/', '/auvergne-rhone-alpes/', '/a-faire-autour-de-nyons/', '/restaurants-autour-nyons/')):
         return False
     # A site's name at the end of a title is not the article's location.
