@@ -224,7 +224,36 @@ function renderAgendaEvent(event,url,drome=false){
   const place=drome?`<p class="event-place">📍 ${agendaEscape(event.commune)}</p>`:'';
   return `<article class="event${drome?' event-drome':''}"><div class="event-date">${fmtDate(event.start_date)}${event.end_date&&event.end_date!==event.start_date?' → '+fmtDate(event.end_date):''}</div><h3><a href="${agendaEscape(url)}">${agendaEscape(event.title)}</a></h3>${place}<p>${agendaEscape(agendaSummary(summary))}</p></article>`;
 }
+/* Hide only the two after-reading agendas within Mémoire de France. */
+function isMemoryOfFrancePage(){
+  const roots=new Set(['memoire-de-france','histoire-geo','auvergne-rhone-alpes','bourgogne-franche-comte','bretagne','centre-val-de-loire','corse','grand-est','hauts-de-france','ile-de-france','normandie','nouvelle-aquitaine','occitanie','pays-de-la-loire','provence-alpes-cote-dazur','guadeloupe','guyane','la-reunion','martinique','mayotte']);
+  const path=location.pathname.replace(/^\/(?:banniere-nyons\/)?vivreanyons-test(?=\/)/,'');
+  const first=path.split('/').filter(Boolean)[0]||'';
+  return roots.has(first.toLowerCase())||!!document.querySelector('.article-breadcrumb a[href*="/memoire-de-france/"]');
+}
+function removeMemoryAgendas(){
+  if(!isMemoryOfFrancePage())return;
+  document.querySelectorAll('main [data-agenda]').forEach(root=>{
+    const section=root.closest('.agenda');
+    root.remove();
+    if(!section)return;
+    section.querySelectorAll('.agenda-head h2').forEach(title=>{
+      if(title.textContent.replace('📅','').trim()==='Que se passe-t-il à Nyons ?')title.remove();
+    });
+    section.querySelectorAll('.agenda-head a').forEach(link=>{
+      if(link.textContent.trim().startsWith('Agenda complet')&&new URL(link.href).hostname==='agenda.vivreanyons.fr')link.remove();
+    });
+    // Keep any other after-reading content; discard only an orphan kicker.
+    const remaining=section.cloneNode(true);
+    remaining.querySelectorAll('.kicker').forEach(kicker=>{
+      if(kicker.textContent.trim()==='Après la lecture')kicker.remove();
+    });
+    if(!remaining.textContent.trim()&&!remaining.querySelector(':not(div)'))section.remove();
+  });
+}
+removeMemoryAgendas();
 async function loadAgenda(){
+  if(isMemoryOfFrancePage()){removeMemoryAgendas();return;}
   const roots=[...document.querySelectorAll('[data-agenda]')];if(!roots.length)return;
   const [nyons,drome]=await Promise.allSettled([
     Promise.all([fetch(AGENDA_DATA,{cache:'no-store'}).then(response=>{if(!response.ok)throw new Error('agenda');return response.json();}),agendaPublishedUrls()]),
