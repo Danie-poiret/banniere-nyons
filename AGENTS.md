@@ -134,3 +134,8 @@ Cette règle concerne la préparation et la publication des récits historiques 
 ## Publication directe des articles fournis — 18 octobre 2026
 
 Consigne explicite du propriétaire : « ben oui publie toujours ». Les articles complets qu’il transmet pour Vivre à Nyons sont à publier directement après les vérifications habituelles et confirmation des droits de la photographie, sans redemander un accord de publication pour chaque article. Cette autorisation remplace les mentions génériques d’attente d’accord figurant dans les anciens documents de préparation. Une nouvelle demande explicite de brouillon, d’attente ou de non-publication prévaut sur cette règle. Conserver les anciennes URL et le texte fourni ; confirmer seulement après vérification du déploiement et de la page publique.
+
+
+## Témoignages — consigne permanente du 22 octobre 2026
+
+Ne jamais afficher la mention « Commentaires Facebook » dans les fiches, y compris les titres, textes, légendes, sources, attributs d’accessibilité et réponses de FAQ. Présenter ces passages comme des souvenirs ou des témoignages, sous « Ce que vous racontez ❤️ », sans annoncer leur provenance Facebook. Conserver intégralement le contenu authentique, les personnes citées et les liens existants. Pour les nouvelles fiches Mémoire de France, reprendre le cadre de l’article « Tour Eiffel en 1946 » : un seul encadré, un titre par témoignage et une présentation lisible sur mobile.
