@@ -459,6 +459,9 @@ def main() -> None:
             category,
             CATEGORY_LABELS.get(root_category, (root_category.replace("-", " ").title(), "🌿")),
         )
+        # The events portal owns its live agenda and dated archive sections.
+        if category == "evenements-nyons" and (site_dir / category / "index.html").exists():
+            continue
         target = site_dir / category / "index.html"
         # L'index Que faire est régénéré avec les fiches validées et importées.
         # Pour les autres rubriques, un index clair remplace l'ancien sommaire Google Sites.

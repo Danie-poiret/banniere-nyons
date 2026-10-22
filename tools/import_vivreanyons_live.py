@@ -1236,6 +1236,9 @@ def main() -> None:
 
     for category, cards in category_cards.items():
         label, emoji = label_for(category)
+        # The events portal owns its live agenda and dated archive sections.
+        if category == "evenements-nyons" and (site_dir / category / "index.html").exists():
+            continue
         target = site_dir / category / "index.html"
         target.parent.mkdir(parents=True, exist_ok=True)
         target.write_text(
