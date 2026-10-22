@@ -5,6 +5,8 @@ on:
     paths:
       - tools/update_nyons_direct.py
       - tools/check_nyons_direct.py
+      - tools/update_cinema_guide.py
+      - tools/test_cinema_guide.py
       - assets/nyons-direct.js
       - assets/nyons-direct.css
       - meteo-nyons/index.html
@@ -33,6 +35,10 @@ jobs:
         run: |
           node --check assets/nyons-direct.js
           python -m py_compile tools/update_nyons_direct.py tools/check_nyons_direct.py
+      - name: Actualiser uniquement la fiche cinéma depuis le programme vérifié
+        run: |
+          python tools/update_cinema_guide.py
+          python tools/test_cinema_guide.py
       - name: Récupérer les données officielles partagées
         run: python tools/update_nyons_direct.py
       - name: Contrôler les dates, les ressources et les pannes
@@ -49,7 +55,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add assets/nyons-direct.json
+          git add assets/nyons-direct.json assets/cinema-nyons-data.json assets/cinema-nyons-status.json infos-pratiques-nyons/cinema-nyons/index.html
           if ! git diff --cached --quiet; then
             git commit -m "Actualiser les données officielles de Nyons en direct"
             for attempt in 1 2 3; do
@@ -91,3 +97,5 @@ jobs:
       - name: Confirmer le bloc visible sur la page publiée
         if: github.event_name != 'schedule'
         run: python tools/check_nyons_direct.py --published
+
+
