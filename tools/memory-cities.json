@@ -529,6 +529,18 @@
       "description": "Les carnets de Dunkerque avec Papy Chris : anciennes photographies, poissonnières du Minck et souvenirs des habitants.",
       "existing": false,
       "legacy": []
+    },
+    {
+      "id": "rosendael",
+      "name": "Rosendaël",
+      "path": "Hauts-de-France/Nord/Rosendael",
+      "department": "Nord",
+      "region": "Hauts-de-France",
+      "intro": "Le cinéma Le Régent, la place de l’Europe et les commerces d’autrefois : retrouve ici les récits de Rosendaël et les souvenirs de ses habitants.",
+      "title": "Rosendaël autrefois : le Régent et les souvenirs de quartier",
+      "description": "Les carnets de Rosendaël avec Papy Chris : cinéma Le Régent, cycles Boëls, place de l’Europe et mémoire des habitants du Dunkerquois.",
+      "existing": false,
+      "legacy": []
     }
   ],
   "legacy_allowed_paths": [
