@@ -517,6 +517,18 @@
       "intro": "Un nom de magasin, un sac à carreaux, une promenade avec ses parents… Retrouvez le Paris populaire à travers les souvenirs de ses clients et de ses habitants. Le premier carnet nous emmène chez Tati, à Barbès.",
       "existing": false,
       "legacy": []
+    },
+    {
+      "id": "dunkerque",
+      "name": "Dunkerque",
+      "path": "Hauts-de-France/Nord/Dunkerque",
+      "department": "Nord",
+      "region": "Hauts-de-France",
+      "intro": "La place du Minck, ses poissonnières et les souvenirs du port : retrouve ici les récits de Dunkerque et la mémoire de ses habitants.",
+      "title": "Dunkerque autrefois : le Minck et les souvenirs des habitants",
+      "description": "Les carnets de Dunkerque avec Papy Chris : anciennes photographies, poissonnières du Minck et souvenirs des habitants.",
+      "existing": false,
+      "legacy": []
     }
   ],
   "legacy_allowed_paths": [
