@@ -22,3 +22,34 @@
 .activity-search .activity-meta{display:block;font-size:.82rem;color:#4d5746;margin-bottom:2px}
 .activity-search .activity-more{font-size:.95rem}
 @media(max-width:640px){.activity-search form{grid-template-columns:minmax(0,1fr)}.activity-search .activity-list{grid-template-columns:minmax(0,1fr)}.activity-search form button{justify-self:start}.activity-search{border-radius:12px}}
+
+/* Only this portal uses the additional controls and reading groups. */
+.hero:has([data-activity-search]){padding:24px 0;background:#f7f3e9;color:#30392b}
+.hero:has([data-activity-search]) h1,.hero:has([data-activity-search]) .activity-intro p{color:#30392b}
+.hero:has([data-activity-search])>.inner{max-width:1152px;padding-inline:16px;box-sizing:border-box}
+.hero:has([data-activity-search]) h1{font-size:clamp(1.7rem,3.5vw,2.6rem);line-height:1.2;margin:12px 0 16px}
+.hero .activity-intro p{font-size:1rem;line-height:1.6;max-width:90ch;margin:10px 0}
+.activity-search form{display:block}
+.activity-fields{display:grid;grid-template-columns:minmax(0,2fr) repeat(2,minmax(0,1fr));gap:12px}
+.activity-search .activity-facets{display:flex;flex-wrap:wrap;gap:8px 12px;border:0;padding:8px 0;margin:10px 0}
+.activity-facets legend{font-size:.95rem;font-weight:700;padding:0;margin:0 0 6px}
+.activity-search .activity-facets label{display:flex;align-items:center;gap:8px;margin:0;border:1px solid #b5bdac;border-radius:8px;padding:8px 12px;min-height:44px;cursor:pointer;background:#f6f1e7}
+.activity-search .activity-facets input{width:20px;height:20px;min-height:20px;accent-color:#39452d}
+.activity-facets label:has(:checked){background:#dce8cf;border-color:#39452d}
+.activity-search .activity-selection-note{font-size:.86rem;line-height:1.5;color:#4d5746}
+.activity-search .activity-list li{padding:0;border:0;background:none}
+.activity-search .activity-card{height:100%;padding:16px;box-shadow:none;margin:0;background:#fff;border:1px solid #d9ddcf;border-radius:10px}
+.activity-search .activity-card h3{font-size:1.12rem;line-height:1.4;margin:0 0 8px}
+.activity-search .activity-card p{font-size:.97rem;line-height:1.55}
+.activity-search .activity-card .activity-practical{font-size:.9rem;border-top:1px solid #eee8dd;padding-top:8px;color:#414c37}
+.activity-search .activity-display{font-size:.9rem}
+.activity-afterword{padding:0 4px}
+.activity-reading{margin:24px 0}
+.activity-reading details,.activity-faq details{border:1px solid #d8ddcf;border-radius:10px;background:#fffdf8;padding:12px 16px;margin:12px 0}
+.activity-reading summary,.activity-faq summary{font-weight:700;cursor:pointer;min-height:44px;display:list-item;align-content:center;line-height:1.5}
+.activity-reading li{padding:10px 0;border-bottom:1px solid #eee8dd}
+.activity-reading li p{font-size:.94rem;margin:4px 0}
+.activity-agenda,.activity-faq,.activity-sources{max-width:1120px;margin:24px auto;padding:20px;box-sizing:border-box;line-height:1.65;overflow-wrap:anywhere}
+.activity-agenda{border-left:4px solid #6c7c4d;background:#eef2e6;border-radius:8px}
+.activity-agenda h2,.activity-faq h2,.activity-sources h2{font-size:1.5rem;line-height:1.3;margin-top:0}
+@media(max-width:640px){.activity-fields{grid-template-columns:minmax(0,1fr)}.activity-search .activity-facets{gap:8px}.activity-search .activity-facets label{flex:1 1 40%;padding:8px;font-size:.94rem}.activity-search{margin-top:16px}.hero:has([data-activity-search]){padding-top:16px}.activity-agenda,.activity-faq,.activity-sources{margin:16px 12px}}

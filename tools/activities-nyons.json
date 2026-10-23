@@ -6,8 +6,13 @@
       "sport"
     ],
     "description": "Cours et pratique du tennis ; padel également indiqué dans la fiche de l’office de tourisme. Contacter le club pour les créneaux.",
-    "keywords": "tennis padel paddle raquette cours club",
-    "source": "Drôme Tourisme"
+    "keywords": "tennis padel  raquette cours club",
+    "source": "Drôme Tourisme",
+    "commune": "Nyons",
+    "zone": "nyons",
+    "facets": [],
+    "practical": "76 promenade de la Digue ; pratique et cours selon les créneaux du club.",
+    "checked": "2026-10-23"
   },
   {
     "title": "Pétanque — Nyons Pétanque",
@@ -17,7 +22,12 @@
     ],
     "description": "Le club, son école de pétanque et les informations du boulodrome. Pour les concours datés, consulter le calendrier du club.",
     "keywords": "pétanque petanque boules cochonnet boulodrome jeu provençal",
-    "source": "Site officiel du club"
+    "source": "Site officiel du club",
+    "commune": "Nyons",
+    "zone": "nyons",
+    "facets": [],
+    "practical": "Conditions et disponibilités à vérifier dans la fiche.",
+    "checked": "2026-10-23"
   },
   {
     "title": "Judo — Le Zen",
@@ -27,28 +37,29 @@
     ],
     "description": "Judo en loisir et en compétition à L’Île Verte, 1 avenue Frédéric Mistral. Retrouve le lieu et les coordonnées du club dans notre annuaire.",
     "keywords": "judo judoka judokas dojo arts martiaux tatami le zen île verte",
-    "source": "Vivre à Nyons"
-  },
-  {
-    "title": "Clubs sportifs de Nyons — annuaire et carte",
-    "url": "/nyons-carte-interactive/sport--nyons/#sports-directory-title",
-    "categories": [
-      "sport"
-    ],
-    "description": "Les lieux et contacts de 42 associations : badminton, karaté, aïkido, yoga, Pilates et d’autres disciplines.",
-    "keywords": "annuaire association associations club clubs badminton bad nyons karaté karate shotokan aikido aïkido jodo krav maga hapkido ju jutsu jujutsu self défense autodéfense boxe savate wing tsun yoga pilates iyengar hatha shiatsu handisport ski surf tir sportif arc pêche peche rallye automobile moto trial motocross cross marche nordique cyclotourisme gym gymnastique bien être détente unss sport scolaire",
-    "source": "Vivre à Nyons"
+    "source": "Vivre à Nyons",
+    "commune": "Nyons",
+    "zone": "nyons",
+    "facets": [],
+    "practical": "Conditions et disponibilités à vérifier dans la fiche.",
+    "checked": "2026-10-23"
   },
   {
     "title": "Aquagym et natation — Akwamouv",
     "url": "/que-faire-nyons/Akwamouv-nyons/",
     "categories": [
-      "sport",
-      "famille"
+      "sport"
     ],
     "description": "Aquagym, aquabike, bébés nageurs et cours de natation : préparer sa séance.",
     "keywords": "aquagym aquabike natation piscine bébé nageur enfants eau",
-    "source": "Vivre à Nyons"
+    "source": "Vivre à Nyons",
+    "commune": "Nyons",
+    "zone": "nyons",
+    "facets": [
+      "famille"
+    ],
+    "practical": "Conditions et disponibilités à vérifier dans la fiche.",
+    "checked": "2026-10-23"
   },
   {
     "title": "VTT — Bike Park de Nyons",
@@ -58,51 +69,69 @@
     ],
     "description": "Pistes de descente et enduro sur Garde Grosse, cours et stages de VTT.",
     "keywords": "vtt vélo velo cyclisme bike park enduro descente stages",
-    "source": "Vivre à Nyons"
-  },
-  {
-    "title": "Course à pied et trail autour de Nyons",
-    "url": "/que-faire-nyons/courir-a-nyons/",
-    "categories": [
-      "sport",
-      "balade"
-    ],
-    "description": "Parcours de footing et de trail, avec distances, dénivelés et points de départ.",
-    "keywords": "courir course à pied running jogging footing trail randonnée rando parcours",
-    "source": "Vivre à Nyons"
+    "source": "Vivre à Nyons",
+    "commune": "Nyons",
+    "zone": "nyons",
+    "facets": [],
+    "practical": "Conditions et disponibilités à vérifier dans la fiche.",
+    "checked": "2026-10-23"
   },
   {
     "title": "Bouger sans voiture — équipements sportifs",
     "url": "/que-faire-nyons/bouger-sans-voiture/",
     "categories": [
-      "sport",
-      "famille"
+      "sport"
     ],
     "description": "City stade, basket, skate-park et équipements sportifs : repérer les lieux et leurs conditions d’accès.",
     "keywords": "sport football foot basket basketball skate skatepark gymnase athlétisme volley handball futsal enfants ados",
-    "source": "Vivre à Nyons"
+    "source": "Vivre à Nyons",
+    "commune": "Nyons",
+    "zone": "nyons",
+    "facets": [
+      "famille"
+    ],
+    "practical": "Conditions et disponibilités à vérifier dans la fiche.",
+    "checked": "2026-10-23"
   },
   {
     "title": "Promenade de la Digue — balade facile",
     "url": "/que-faire-nyons/promenade-de-la-digue-nyons/",
     "categories": [
-      "balade",
-      "famille"
+      "balade"
     ],
     "description": "Promenade au bord de l’Eygues, jeux pour enfants et repères pour une sortie avec poussette.",
     "keywords": "balade facile promenade marcher marche famille enfants poussette jeux gratuit rivière",
-    "source": "Vivre à Nyons"
+    "source": "Vivre à Nyons",
+    "commune": "Nyons",
+    "zone": "nyons",
+    "facets": [
+      "famille",
+      "gratuit",
+      "senior",
+      "marche"
+    ],
+    "practical": "Promenade libre et gratuite ; adapte le trajet et la longueur à tes possibilités.",
+    "checked": "2026-10-23"
   },
   {
     "title": "Jardin des Arômes",
     "url": "/que-faire-nyons/Jardin-des-Aromes/",
     "categories": [
-      "balade",
-      "famille"
+      "balade"
     ],
     "description": "Plantes aromatiques et visite en accès libre au bord de l’Eygues.",
     "keywords": "jardin plantes botanique balade facile promenade famille enfants gratuit",
-    "source": "Vivre à Nyons"
+    "source": "Vivre à Nyons",
+    "commune": "Nyons",
+    "zone": "nyons",
+    "facets": [
+      "famille",
+      "gratuit",
+      "senior",
+      "marche"
+    ],
+    "practical": "Visite libre gratuite ; cheminement à choisir selon sa mobilité.",
+    "checked": "2026-10-23"
   },
   {
     "title": "Sentier des Oliviers",
@@ -113,18 +142,15 @@
     ],
     "description": "Un itinéraire à pied pour découvrir les oliviers et les paysages nyonsais.",
     "keywords": "randonnée rando randonnée pédestre sentier balade promenade marche olivier nature",
-    "source": "Vivre à Nyons"
-  },
-  {
-    "title": "Randonnées autour de Nyons — départs et parkings",
-    "url": "/que-faire-nyons/randonnees-autour-de-nyons-carte/",
-    "categories": [
-      "balade",
-      "sport"
+    "source": "Vivre à Nyons",
+    "commune": "Nyons",
+    "zone": "nyons",
+    "facets": [
+      "famille",
+      "marche"
     ],
-    "description": "Choisir une randonnée à partir de la carte des départs et des parkings.",
-    "keywords": "randonnée randonnées rando randonnée pédestre marche sentier nature montagne carte parking",
-    "source": "Vivre à Nyons"
+    "practical": "Boucle documentée de 3,9 km ; adapter le parcours aux capacités des enfants et aux conditions du jour.",
+    "checked": "2026-10-23"
   },
   {
     "title": "Centre historique — visite à pied",
@@ -135,7 +161,14 @@
     ],
     "description": "Un parcours entre arcades, quartier des Forts, tour Randonne, église et pont Roman.",
     "keywords": "centre historique vieille ville visite patrimoine balade promenade église ruelles arcades",
-    "source": "Vivre à Nyons"
+    "source": "Vivre à Nyons",
+    "commune": "Nyons",
+    "zone": "nyons",
+    "facets": [
+      "marche"
+    ],
+    "practical": "Conditions et disponibilités à vérifier dans la fiche.",
+    "checked": "2026-10-23"
   },
   {
     "title": "Église Saint-Vincent",
@@ -145,7 +178,12 @@
     ],
     "description": "Découvrir l’église Saint-Vincent dans le centre ancien de Nyons.",
     "keywords": "église eglise saint vincent patrimoine monument visite religieux",
-    "source": "Vivre à Nyons"
+    "source": "Vivre à Nyons",
+    "commune": "Nyons",
+    "zone": "nyons",
+    "facets": [],
+    "practical": "Conditions et disponibilités à vérifier dans la fiche.",
+    "checked": "2026-10-23"
   },
   {
     "title": "Tour Randonne — Notre-Dame-de-Bon-Secours",
@@ -155,7 +193,12 @@
     ],
     "description": "L’histoire de la tour et de sa chapelle, au-dessus du vieux Nyons.",
     "keywords": "tour randonne chapelle notre dame bon secours patrimoine monument visite",
-    "source": "Vivre à Nyons"
+    "source": "Vivre à Nyons",
+    "commune": "Nyons",
+    "zone": "nyons",
+    "facets": [],
+    "practical": "Conditions et disponibilités à vérifier dans la fiche.",
+    "checked": "2026-10-23"
   },
   {
     "title": "Pont Roman de Nyons",
@@ -166,28 +209,32 @@
     ],
     "description": "Histoire du pont, promenade et photos anciennes au-dessus de l’Eygues.",
     "keywords": "pont roman patrimoine monument histoire balade promenade rivière",
-    "source": "Vivre à Nyons"
+    "source": "Vivre à Nyons",
+    "commune": "Nyons",
+    "zone": "nyons",
+    "facets": [
+      "marche"
+    ],
+    "practical": "Conditions et disponibilités à vérifier dans la fiche.",
+    "checked": "2026-10-23"
   },
   {
     "title": "Cinéma L’Arlequin",
     "url": "/que-faire-nyons/arlequin-nyons-avis/",
     "categories": [
-      "culture",
-      "famille"
+      "culture"
     ],
     "description": "Préparer une sortie au cinéma : salles, réservation et conseils pratiques.",
     "keywords": "cinéma cinema ciné cine film films séance séances arlequin pluie intérieur enfants famille",
-    "source": "Vivre à Nyons"
-  },
-  {
-    "title": "Artistes et artisans d’art à Nyons",
-    "url": "/que-faire-nyons/artistes-artisans-art-nyons/",
-    "categories": [
-      "culture"
+    "source": "Vivre à Nyons",
+    "commune": "Nyons",
+    "zone": "nyons",
+    "facets": [
+      "famille",
+      "pluie"
     ],
-    "description": "Vitrail, photo, céramique, chapeaux et illustration : adresses d’ateliers à découvrir.",
-    "keywords": "art artiste artisan artisanat atelier galerie vitrail photo céramique poterie peinture exposition",
-    "source": "Vivre à Nyons"
+    "practical": "Conditions et disponibilités à vérifier dans la fiche.",
+    "checked": "2026-10-23"
   },
   {
     "title": "Théâtre L’Électron Libre",
@@ -197,39 +244,46 @@
     ],
     "description": "Découvrir la scène locale et les ateliers ; vérifier les dates auprès du théâtre ou dans l’agenda.",
     "keywords": "théâtre theatre spectacle scène ateliers electron libre culture",
-    "source": "Vivre à Nyons"
-  },
-  {
-    "title": "Nyons avec des enfants — idées en famille",
-    "url": "/que-faire-nyons/nyons-avec-des-enfants/",
-    "categories": [
-      "famille"
-    ],
-    "description": "Quinze idées de sorties : jeux, balades, ateliers, activités gratuites et solutions quand il pleut.",
-    "keywords": "activités enfants activité enfant famille familial ados bébé jeux pluie gratuit sorties",
-    "source": "Vivre à Nyons"
+    "source": "Vivre à Nyons",
+    "commune": "Nyons",
+    "zone": "nyons",
+    "facets": [],
+    "practical": "Spectacles et ateliers selon programmation ; réservation et tarifs à confirmer.",
+    "checked": "2026-10-23"
   },
   {
     "title": "Accrobranche — Les Barons Perchés",
     "url": "/que-faire-nyons/les-barons-perches/",
     "categories": [
-      "famille",
       "sport"
     ],
     "description": "Parcours dans les arbres pour enfants et adultes : consulter les conditions avant la sortie.",
     "keywords": "accrobranche arbres aventure enfants famille ados sport loisirs",
-    "source": "Vivre à Nyons"
+    "source": "Vivre à Nyons",
+    "commune": "Nyons",
+    "zone": "nyons",
+    "facets": [
+      "famille"
+    ],
+    "practical": "Conditions et disponibilités à vérifier dans la fiche.",
+    "checked": "2026-10-23"
   },
   {
     "title": "Piscine et parc aquatique Nyonsoleïado",
     "url": "/que-faire-nyons/parc-nyons-aquatique/",
     "categories": [
-      "famille",
       "sport"
     ],
     "description": "Bassins et sortie en famille au parc aquatique ; vérifier l’ouverture saisonnière.",
     "keywords": "piscine nager baignade bassin toboggan parc aquatique nyonsoleiado nyons soleil ado enfants famille été",
-    "source": "Vivre à Nyons"
+    "source": "Vivre à Nyons",
+    "commune": "Nyons",
+    "zone": "nyons",
+    "facets": [
+      "famille"
+    ],
+    "practical": "Ouverture saisonnière ; vérifier la période et les tarifs du jour.",
+    "checked": "2026-10-23"
   },
   {
     "title": "Musée d’Archéologie et d’Histoire",
@@ -240,7 +294,14 @@
     ],
     "description": "Découvrir l’histoire et les collections archéologiques de Nyons.",
     "keywords": "musée musee archéologie archeologie histoire culture visite pluie intérieur",
-    "source": "Vivre à Nyons"
+    "source": "Vivre à Nyons",
+    "commune": "Nyons",
+    "zone": "nyons",
+    "facets": [
+      "pluie"
+    ],
+    "practical": "Conditions et disponibilités à vérifier dans la fiche.",
+    "checked": "2026-10-23"
   },
   {
     "title": "Vignolis — musée de l’Olivier",
@@ -251,7 +312,16 @@
     ],
     "description": "Découvrir l’olive de Nyons et le musée de l’Olivier à Vignolis.",
     "keywords": "vignolis musée musee olivier olive huile dégustation terroir visite pluie intérieur",
-    "source": "Vivre à Nyons"
+    "source": "Vivre à Nyons",
+    "commune": "Nyons",
+    "zone": "nyons",
+    "facets": [
+      "pluie",
+      "gratuit",
+      "senior"
+    ],
+    "practical": "Musée en visite libre gratuite ; moulin et ateliers sur réservation, selon la saison.",
+    "checked": "2026-10-23"
   },
   {
     "title": "Scourtinerie — musée et atelier",
@@ -262,7 +332,16 @@
     ],
     "description": "Musée et atelier de fabrication des scourtins en fibre de coco.",
     "keywords": "scourtinerie scourtin musée musee atelier artisanat visite coco pluie intérieur",
-    "source": "Vivre à Nyons"
+    "source": "Vivre à Nyons",
+    "commune": "Nyons",
+    "zone": "nyons",
+    "facets": [
+      "pluie",
+      "senior",
+      "famille"
+    ],
+    "practical": "Musée à prix libre ; atelier libre gratuit, à l’étage par escalier. Groupes : réserver.",
+    "checked": "2026-10-23"
   },
   {
     "title": "Distillerie Bleu Provence",
@@ -273,7 +352,14 @@
     ],
     "description": "Découverte de la lavande, distillation, visites et ateliers.",
     "keywords": "distillerie lavande huile essentielle atelier visite terroir artisanat",
-    "source": "Vivre à Nyons"
+    "source": "Vivre à Nyons",
+    "commune": "Nyons",
+    "zone": "nyons",
+    "facets": [
+      "pluie"
+    ],
+    "practical": "Conditions et disponibilités à vérifier dans la fiche.",
+    "checked": "2026-10-23"
   },
   {
     "title": "Marché de Nyons le jeudi",
@@ -283,16 +369,622 @@
     ],
     "description": "Horaires et conseils pour profiter du marché et des produits locaux.",
     "keywords": "marché marche provençal jeudi producteurs produits locaux terroir sortie",
-    "source": "Vivre à Nyons"
+    "source": "Vivre à Nyons",
+    "commune": "Nyons",
+    "zone": "nyons",
+    "facets": [],
+    "practical": "Conditions et disponibilités à vérifier dans la fiche.",
+    "checked": "2026-10-23"
   },
   {
-    "title": "Agenda — sorties et rendez-vous datés",
-    "url": "https://agenda.vivreanyons.fr/",
+    "title": "Moulin Richard — visite à Nyons",
+    "url": "/que-faire-nyons/Huilerie-Richard-Nyons/",
+    "description": "Découvrir la fabrication de l’huile d’olive et l’espace du moulin, à distinguer de la boutique Pontias en centre-ville.",
     "categories": [
-      "agenda"
+      "terroir",
+      "culture"
     ],
-    "description": "Les dates des concerts, spectacles, fêtes, expositions et autres rendez-vous à Nyons.",
-    "keywords": "agenda événement événements concert concerts spectacle spectacles fête fêtes exposition expositions ponctuel week end weekend aujourd’hui demain pétanque cinéma théâtre enfants",
-    "source": "Agenda de Vivre à Nyons"
+    "commune": "Nyons",
+    "zone": "nyons",
+    "facets": [
+      "gratuit",
+      "pluie"
+    ],
+    "practical": "69 avenue Frédéric-Mistral. Visite individuelle gratuite annoncée ; groupes dès 10 personnes sur réservation, tarif distinct.",
+    "keywords": "olives olivier moulin huile richard",
+    "source": "Vivre à Nyons",
+    "checked": "2026-10-23"
+  },
+  {
+    "title": "Maison des Huiles et Olives de France",
+    "url": "/que-faire-nyons/Maison-des-Huiles-dolive/",
+    "description": "Une exposition pour comprendre les huiles et olives, avec des ateliers proposés selon le calendrier.",
+    "categories": [
+      "terroir",
+      "culture"
+    ],
+    "commune": "Nyons",
+    "zone": "nyons",
+    "facets": [
+      "pluie"
+    ],
+    "practical": "40 place de la Libération. Exposition payante ; gratuité réservée aux habitants de Nyons sous justificatifs.",
+    "keywords": "olives olivier moulin huile exposition",
+    "source": "Vivre à Nyons",
+    "checked": "2026-10-23"
+  },
+  {
+    "title": "Les Vieux Moulins — musée et presses",
+    "url": "/que-faire-nyons/les-vieux-moulins/",
+    "description": "Observer les anciennes presses et découvrir le travail de l’olive au pied du Pont Roman.",
+    "categories": [
+      "terroir",
+      "culture",
+      "patrimoine"
+    ],
+    "commune": "Nyons",
+    "zone": "nyons",
+    "facets": [
+      "pluie"
+    ],
+    "practical": "Musée payant à partir de 10 ans ; vérifier les horaires et les conditions de visite.",
+    "keywords": "olives olivier huile musée moulin",
+    "source": "Vivre à Nyons",
+    "checked": "2026-10-23"
+  },
+  {
+    "title": "La Savonnerie de Nyons",
+    "url": "/que-faire-nyons/savonnerie-de-nyons/",
+    "description": "Découvrir les savons, le savoir-faire et les espaces de présentation de la savonnerie.",
+    "categories": [
+      "terroir",
+      "culture"
+    ],
+    "commune": "Nyons",
+    "zone": "nyons",
+    "facets": [
+      "pluie"
+    ],
+    "practical": "Vérifier les espaces effectivement ouverts et les conditions de visite auprès de la savonnerie.",
+    "keywords": "savon artisanat atelier musée",
+    "source": "Vivre à Nyons",
+    "checked": "2026-10-23"
+  },
+  {
+    "title": "Vinaigrerie La Para",
+    "url": "/que-faire-nyons/Vinaigrerie-La-Para/",
+    "description": "Découvrir la fabrication artisanale du vinaigre et préparer une visite commentée.",
+    "categories": [
+      "terroir",
+      "culture"
+    ],
+    "commune": "Nyons",
+    "zone": "nyons",
+    "facets": [
+      "pluie"
+    ],
+    "practical": "40 promenade de la Digue. Confirmer le créneau et les conditions directement à la vinaigrerie.",
+    "keywords": "vinaigre artisanat atelier dégustation",
+    "source": "Vivre à Nyons",
+    "checked": "2026-10-23"
+  },
+  {
+    "title": "Domaine Rocheville — accueil au domaine",
+    "url": "/que-faire-nyons/Domaine-Rocheville-Nyons/",
+    "description": "Une halte au domaine pour découvrir ses vins et préparer une dégustation ou une visite.",
+    "categories": [
+      "terroir"
+    ],
+    "commune": "Nyons",
+    "zone": "nyons",
+    "facets": [],
+    "practical": "Accueil et formules à confirmer auprès du domaine avant de venir.",
+    "keywords": "vin vignoble dégustation domaine",
+    "source": "Vivre à Nyons",
+    "checked": "2026-10-23"
+  },
+  {
+    "title": "Balade en 2CV avec chauffeur-guide",
+    "url": "/que-faire-nyons/2cvnyons/",
+    "description": "Explorer les petites routes des Baronnies au départ de Nyons, avec les circuits de 2CV O’Live.",
+    "categories": [
+      "balade"
+    ],
+    "commune": "Nyons",
+    "zone": "nyons",
+    "facets": [],
+    "practical": "Départ annoncé place de la Libération ; circuit, tarif et réservation auprès de l’organisateur.",
+    "keywords": "deudeuche voiture 2cv excursion",
+    "source": "Vivre à Nyons",
+    "checked": "2026-10-23"
+  },
+  {
+    "title": "Nyons Jeep Découverte",
+    "url": "/que-faire-nyons/nyons-jeep-decouverte/",
+    "description": "Préparer une sortie accompagnée en Jeep pour découvrir les paysages autour de Nyons.",
+    "categories": [
+      "balade"
+    ],
+    "commune": "Nyons",
+    "zone": "nyons",
+    "facets": [],
+    "practical": "Circuit, disponibilité, réservation et tarif à confirmer auprès de l’organisateur.",
+    "keywords": "jeep excursion voiture",
+    "source": "Vivre à Nyons",
+    "checked": "2026-10-23"
+  },
+  {
+    "title": "Place des Arcades",
+    "url": "/que-faire-nyons/Place-des-Arcades-Nyons/",
+    "description": "Prendre le temps de regarder les passages couverts et les façades autour de la place du Docteur-Bourdongle.",
+    "categories": [
+      "patrimoine",
+      "balade"
+    ],
+    "commune": "Nyons",
+    "zone": "nyons",
+    "facets": [
+      "marche"
+    ],
+    "practical": "Conditions et disponibilités à vérifier dans la fiche.",
+    "keywords": "arcades place centre historique",
+    "source": "Vivre à Nyons",
+    "checked": "2026-10-23"
+  },
+  {
+    "title": "Place Joseph Buffaven",
+    "url": "/que-faire-nyons/place-buffaven-nyons/",
+    "description": "Retrouver l’ancien Foussat, son lavoir et les souvenirs de ce quartier de Nyons.",
+    "categories": [
+      "patrimoine",
+      "balade"
+    ],
+    "commune": "Nyons",
+    "zone": "nyons",
+    "facets": [
+      "marche"
+    ],
+    "practical": "Conditions et disponibilités à vérifier dans la fiche.",
+    "keywords": "buffaven foussat lavoir place",
+    "source": "Vivre à Nyons",
+    "checked": "2026-10-23"
+  },
+  {
+    "title": "Circuit Barjavel et patrimoine",
+    "url": "/que-faire-nyons/Circuit-Barjavel/",
+    "description": "Un parcours entre patrimoine et lieux liés à René Barjavel, à suivre avec le balisage officiel.",
+    "categories": [
+      "balade",
+      "patrimoine"
+    ],
+    "commune": "Nyons",
+    "zone": "nyons",
+    "facets": [
+      "marche"
+    ],
+    "practical": "Départ : Office de tourisme, place de la Libération. Difficulté : Facile. Ouverture et état du sentier à confirmer.",
+    "keywords": "marcher randonnée rando sentier parcours barjavel",
+    "source": "Fiche documentée et sources municipales",
+    "checked": "2026-10-23"
+  },
+  {
+    "title": "Les Bois de Lumière",
+    "url": "/randonnee-nyons/bois-de-lumiere-nyons/",
+    "description": "Une petite boucle forestière avec huit haltes nature sur le massif de Garde-Grosse.",
+    "categories": [
+      "balade"
+    ],
+    "commune": "Nyons",
+    "zone": "nyons",
+    "facets": [
+      "marche"
+    ],
+    "practical": "Départ : Col de la Croix, près de l’aire de pique-nique. Difficulté : Moyenne (brochure). Ouverture et état du sentier à confirmer.",
+    "keywords": "marcher randonnée rando sentier parcours bois",
+    "source": "Fiche documentée et sources municipales",
+    "checked": "2026-10-23"
+  },
+  {
+    "title": "Le sentier botanique du Devès",
+    "url": "/randonnee-nyons/sentier-botanique-deves-nyons/",
+    "description": "De la botanique et des vues sur le Nyonsais, sur un versant avec du dénivelé et des falaises.",
+    "categories": [
+      "balade"
+    ],
+    "commune": "Nyons",
+    "zone": "nyons",
+    "facets": [
+      "marche"
+    ],
+    "practical": "Départ : EHPAD La Pousterle, rue Pierre-Toesca. Difficulté : Moyenne. Ouverture et état du sentier à confirmer.",
+    "keywords": "marcher randonnée rando sentier parcours deves",
+    "source": "Fiche documentée et sources municipales",
+    "checked": "2026-10-23"
+  },
+  {
+    "title": "Le sentier du vignoble nyonsais",
+    "url": "/randonnee-nyons/sentier-vignoble-nyonsais/",
+    "description": "La petite boucle pédestre du vignoble. Restez sur les chemins et respectez le travail dans les parcelles.",
+    "categories": [
+      "balade"
+    ],
+    "commune": "Nyons",
+    "zone": "nyons",
+    "facets": [
+      "marche"
+    ],
+    "practical": "Départ : Secteur de Varembon, entre Serre de Reynier et D249. Difficulté : Facile. Ouverture et état du sentier à confirmer.",
+    "keywords": "marcher randonnée rando sentier parcours vignoble",
+    "source": "Fiche documentée et sources municipales",
+    "checked": "2026-10-23"
+  },
+  {
+    "title": "Essaillon et Garde-Grosse",
+    "url": "/randonnee-nyons/garde-grosse-nyons/",
+    "description": "Une vraie sortie sportive par les crêtes de l’Essaillon et de Garde-Grosse, à préparer avec de la marge.",
+    "categories": [
+      "balade"
+    ],
+    "commune": "Nyons",
+    "zone": "nyons",
+    "facets": [
+      "marche"
+    ],
+    "practical": "Départ : Point initial du GPX officiel, secteur des hauteurs de Nyons. Difficulté : Très difficile. Ouverture et état du sentier à confirmer.",
+    "keywords": "marcher randonnée rando sentier parcours garde",
+    "source": "Fiche documentée et sources municipales",
+    "checked": "2026-10-23"
+  },
+  {
+    "title": "Découvrir Saint-May",
+    "url": "/a-faire-autour-de-Nyons/saint-may/",
+    "description": "Le village, son cimetière perché et les paysages de la vallée : une fiche pour préparer votre découverte.",
+    "categories": [
+      "patrimoine",
+      "balade"
+    ],
+    "commune": "Saint-May",
+    "zone": "autour",
+    "facets": [
+      "marche"
+    ],
+    "practical": "Promenade dans le village ; relief, accès et stationnement à consulter dans la fiche.",
+    "keywords": "village ruelles promenade",
+    "source": "Vivre à Nyons",
+    "checked": "2026-10-23"
+  },
+  {
+    "title": "Découvrir Condorcet",
+    "url": "/a-faire-autour-de-Nyons/condorcet/",
+    "description": "Un village de la vallée de l’Ennuyé à découvrir entre église, collines et traces de son histoire.",
+    "categories": [
+      "patrimoine",
+      "balade"
+    ],
+    "commune": "Condorcet",
+    "zone": "autour",
+    "facets": [
+      "marche"
+    ],
+    "practical": "Promenade dans le village ; relief, accès et stationnement à consulter dans la fiche.",
+    "keywords": "village ruelles promenade",
+    "source": "Vivre à Nyons",
+    "checked": "2026-10-23"
+  },
+  {
+    "title": "Découvrir Curnier",
+    "url": "/a-faire-autour-de-Nyons/curnier/",
+    "description": "Repérez le village et son patrimoine avant de poursuivre dans la vallée de l’Ennuyé ou de l’Eygues.",
+    "categories": [
+      "patrimoine",
+      "balade"
+    ],
+    "commune": "Curnier",
+    "zone": "autour",
+    "facets": [
+      "marche"
+    ],
+    "practical": "Promenade dans le village ; relief, accès et stationnement à consulter dans la fiche.",
+    "keywords": "village ruelles promenade",
+    "source": "Vivre à Nyons",
+    "checked": "2026-10-23"
+  },
+  {
+    "title": "Découvrir Le Poët-en-Percip",
+    "url": "/a-faire-autour-de-Nyons/Le-Poet-en-Percip/",
+    "description": "Un village des Baronnies pour découvrir un autre visage du territoire, loin des grands axes.",
+    "categories": [
+      "patrimoine",
+      "balade"
+    ],
+    "commune": "Le Poët-en-Percip",
+    "zone": "autour",
+    "facets": [
+      "marche"
+    ],
+    "practical": "Promenade dans le village ; relief, accès et stationnement à consulter dans la fiche.",
+    "keywords": "village ruelles promenade",
+    "source": "Vivre à Nyons",
+    "checked": "2026-10-23"
+  },
+  {
+    "title": "Découvrir Mirabel-aux-Baronnies",
+    "url": "/a-faire-autour-de-Nyons/Mirabel-aux-Baronnies/",
+    "description": "Une fiche pour découvrir le village, son patrimoine et les paysages qui l’entourent.",
+    "categories": [
+      "patrimoine",
+      "balade"
+    ],
+    "commune": "Mirabel-aux-Baronnies",
+    "zone": "autour",
+    "facets": [
+      "marche"
+    ],
+    "practical": "Promenade dans le village ; relief, accès et stationnement à consulter dans la fiche.",
+    "keywords": "village ruelles promenade",
+    "source": "Vivre à Nyons",
+    "checked": "2026-10-23"
+  },
+  {
+    "title": "Découvrir Montaulieu",
+    "url": "/a-faire-autour-de-Nyons/montaulieu/",
+    "description": "Maisons en pierre et passages du village : des repères pour une découverte à votre rythme.",
+    "categories": [
+      "patrimoine",
+      "balade"
+    ],
+    "commune": "Montaulieu",
+    "zone": "autour",
+    "facets": [
+      "marche"
+    ],
+    "practical": "Promenade dans le village ; relief, accès et stationnement à consulter dans la fiche.",
+    "keywords": "village ruelles promenade",
+    "source": "Vivre à Nyons",
+    "checked": "2026-10-23"
+  },
+  {
+    "title": "Découvrir Les Pilles",
+    "url": "/a-faire-autour-de-Nyons/pilles/",
+    "description": "Préparez un passage dans le village, entre façades, rivière et paysages de la vallée.",
+    "categories": [
+      "patrimoine",
+      "balade"
+    ],
+    "commune": "Les Pilles",
+    "zone": "autour",
+    "facets": [
+      "marche"
+    ],
+    "practical": "Promenade dans le village ; relief, accès et stationnement à consulter dans la fiche.",
+    "keywords": "village ruelles promenade",
+    "source": "Vivre à Nyons",
+    "checked": "2026-10-23"
+  },
+  {
+    "title": "Découvrir Aubres",
+    "url": "/a-faire-autour-de-Nyons/Que-faire-a-Aubres/",
+    "description": "Une fiche pour situer le village et ses paysages avant de choisir votre promenade.",
+    "categories": [
+      "patrimoine",
+      "balade"
+    ],
+    "commune": "Aubres",
+    "zone": "autour",
+    "facets": [
+      "marche"
+    ],
+    "practical": "Promenade dans le village ; relief, accès et stationnement à consulter dans la fiche.",
+    "keywords": "village ruelles promenade",
+    "source": "Vivre à Nyons",
+    "checked": "2026-10-23"
+  },
+  {
+    "title": "Découvrir La Roche-sur-le-Buis",
+    "url": "/a-faire-autour-de-Nyons/roche-sur-le-buis/",
+    "description": "Un village de caractère et son patrimoine, pour prolonger une découverte du secteur de Buis.",
+    "categories": [
+      "patrimoine",
+      "balade"
+    ],
+    "commune": "La Roche-sur-le-Buis",
+    "zone": "autour",
+    "facets": [
+      "marche"
+    ],
+    "practical": "Promenade dans le village ; relief, accès et stationnement à consulter dans la fiche.",
+    "keywords": "village ruelles promenade",
+    "source": "Vivre à Nyons",
+    "checked": "2026-10-23"
+  },
+  {
+    "title": "Découvrir Sahune",
+    "url": "/a-faire-autour-de-Nyons/sahune/",
+    "description": "Repérez le patrimoine et les paysages de Sahune avant de composer votre sortie.",
+    "categories": [
+      "patrimoine",
+      "balade"
+    ],
+    "commune": "Sahune",
+    "zone": "autour",
+    "facets": [
+      "marche"
+    ],
+    "practical": "Promenade dans le village ; relief, accès et stationnement à consulter dans la fiche.",
+    "keywords": "village ruelles promenade",
+    "source": "Vivre à Nyons",
+    "checked": "2026-10-23"
+  },
+  {
+    "title": "Découvrir Saint-Pantaléon-les-Vignes",
+    "url": "/a-faire-autour-de-Nyons/saint-pantaleon-les-vignes/",
+    "description": "Une halte dans les paysages viticoles, avec les repères du village rassemblés dans la fiche.",
+    "categories": [
+      "patrimoine",
+      "balade"
+    ],
+    "commune": "Saint-Pantaléon-les-Vignes",
+    "zone": "autour",
+    "facets": [
+      "marche"
+    ],
+    "practical": "Promenade dans le village ; relief, accès et stationnement à consulter dans la fiche.",
+    "keywords": "village ruelles promenade",
+    "source": "Vivre à Nyons",
+    "checked": "2026-10-23"
+  },
+  {
+    "title": "Découvrir Saint-Ferréol-Trente-Pas",
+    "url": "/a-faire-autour-de-Nyons/saint-ferreol-trente-pas/",
+    "description": "Le village et son environnement, pour préparer une découverte du secteur des Trente-Pas.",
+    "categories": [
+      "patrimoine",
+      "balade"
+    ],
+    "commune": "Saint-Ferréol-Trente-Pas",
+    "zone": "autour",
+    "facets": [
+      "marche"
+    ],
+    "practical": "Promenade dans le village ; relief, accès et stationnement à consulter dans la fiche.",
+    "keywords": "village ruelles promenade",
+    "source": "Vivre à Nyons",
+    "checked": "2026-10-23"
+  },
+  {
+    "title": "Découvrir Sainte-Euphémie-sur-Ouvèze",
+    "url": "/a-faire-autour-de-Nyons/sainte-euphemie/",
+    "description": "Un village de la vallée de l’Ouvèze à découvrir en prenant le temps de regarder son patrimoine.",
+    "categories": [
+      "patrimoine",
+      "balade"
+    ],
+    "commune": "Sainte-Euphémie-sur-Ouvèze",
+    "zone": "autour",
+    "facets": [
+      "marche"
+    ],
+    "practical": "Promenade dans le village ; relief, accès et stationnement à consulter dans la fiche.",
+    "keywords": "village ruelles promenade",
+    "source": "Vivre à Nyons",
+    "checked": "2026-10-23"
+  },
+  {
+    "title": "Découvrir Venterol",
+    "url": "/a-faire-autour-de-Nyons/village-de-venterol/",
+    "description": "Un guide pour flâner dans le village et repérer ses petites places et ses détails de façade.",
+    "categories": [
+      "patrimoine",
+      "balade"
+    ],
+    "commune": "Venterol",
+    "zone": "autour",
+    "facets": [
+      "marche"
+    ],
+    "practical": "Promenade dans le village ; relief, accès et stationnement à consulter dans la fiche.",
+    "keywords": "village ruelles promenade",
+    "source": "Vivre à Nyons",
+    "checked": "2026-10-23"
+  },
+  {
+    "title": "Découvrir Vinsobres",
+    "url": "/a-faire-autour-de-Nyons/vinsobres/",
+    "description": "Un village et des vues sur les vignobles, pour préparer une découverte du terroir.",
+    "categories": [
+      "patrimoine",
+      "balade"
+    ],
+    "commune": "Vinsobres",
+    "zone": "autour",
+    "facets": [
+      "marche"
+    ],
+    "practical": "Promenade dans le village ; relief, accès et stationnement à consulter dans la fiche.",
+    "keywords": "village ruelles promenade",
+    "source": "Vivre à Nyons",
+    "checked": "2026-10-23"
+  },
+  {
+    "title": "La Biscuiterie de Provence",
+    "url": "/a-faire-autour-de-Nyons/biscuiterie-provence-saint-maurice-sur-eygues/",
+    "description": "Un musée, des vues sur les ateliers et un parcours ludique à Saint-Maurice-sur-Eygues.",
+    "categories": [
+      "culture",
+      "terroir"
+    ],
+    "commune": "Saint-Maurice-sur-Eygues",
+    "zone": "autour",
+    "facets": [
+      "famille",
+      "pluie"
+    ],
+    "practical": "Conditions d’accès, période et réservation éventuelle à vérifier dans la fiche.",
+    "keywords": "",
+    "source": "Vivre à Nyons",
+    "checked": "2026-10-23"
+  },
+  {
+    "title": "Les vautours autour de Rémuzat",
+    "url": "/a-faire-autour-de-Nyons/vautours-remuzat/",
+    "description": "Préparez l’observation et consultez les informations sur les accès et les parcours avant de marcher.",
+    "categories": [
+      "balade"
+    ],
+    "commune": "Rémuzat",
+    "zone": "autour",
+    "facets": [
+      "marche"
+    ],
+    "practical": "Conditions d’accès, période et réservation éventuelle à vérifier dans la fiche.",
+    "keywords": "",
+    "source": "Vivre à Nyons",
+    "checked": "2026-10-23"
+  },
+  {
+    "title": "L’Observatoire des Baronnies",
+    "url": "/a-faire-autour-de-Nyons/observatoire-baronnies/",
+    "description": "Une sortie tournée vers le ciel ; renseignez-vous sur les formules, les âges et les réservations.",
+    "categories": [
+      "culture"
+    ],
+    "commune": "Moydans",
+    "zone": "autour",
+    "facets": [],
+    "practical": "Conditions d’accès, période et réservation éventuelle à vérifier dans la fiche.",
+    "keywords": "",
+    "source": "Vivre à Nyons",
+    "checked": "2026-10-23"
+  },
+  {
+    "title": "La via ferrata du Saint-Julien",
+    "url": "/a-faire-autour-de-Nyons/via-ferrata-de-buis-les-baronnies/",
+    "description": "Une activité équipée à Buis-les-Baronnies ; vérifiez les exigences de taille, de matériel et d’encadrement.",
+    "categories": [
+      "sport"
+    ],
+    "commune": "Buis-les-Baronnies",
+    "zone": "autour",
+    "facets": [],
+    "practical": "Conditions d’accès, période et réservation éventuelle à vérifier dans la fiche.",
+    "keywords": "",
+    "source": "Vivre à Nyons",
+    "checked": "2026-10-23"
+  },
+  {
+    "title": "Le château de Suze-la-Rousse",
+    "url": "/a-faire-autour-de-Nyons/suze-la-rousse/",
+    "description": "Un château, sa cour et son histoire : consultez les conditions de visite et la programmation.",
+    "categories": [
+      "patrimoine",
+      "culture"
+    ],
+    "commune": "Suze-la-Rousse",
+    "zone": "autour",
+    "facets": [],
+    "practical": "Conditions d’accès, période et réservation éventuelle à vérifier dans la fiche.",
+    "keywords": "",
+    "source": "Vivre à Nyons",
+    "checked": "2026-10-23"
   }
 ]
