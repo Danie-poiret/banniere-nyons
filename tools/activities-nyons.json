@@ -1,32 +1,36 @@
 [
   {
     "title": "Tennis et padel — Tennis Club de Nyons",
-    "url": "https://www.drome-cestmanature.com/fiches/tennis-club-de-nyons/",
+    "url": "/infos-pratiques-nyons/tennis-club-nyons/",
     "categories": [
       "sport"
     ],
-    "description": "Cours et pratique du tennis ; padel également indiqué dans la fiche de l’office de tourisme. Contacter le club pour les créneaux.",
-    "keywords": "tennis padel  raquette cours club",
-    "source": "Drôme Tourisme",
+    "description": "Tennis et padel à Nyons : terrains, cours enfants et adultes, tarifs de la saison, réservations et carte d’accès.",
+    "keywords": "tennis padel raquette raquettes cours club enfant enfants adulte adultes école entrainement entraînement",
+    "source": "Vivre à Nyons — fiche Tennis Club et sources fédérales",
     "commune": "Nyons",
     "zone": "nyons",
-    "facets": [],
-    "practical": "76 promenade de la Digue ; pratique et cours selon les créneaux du club.",
+    "facets": [
+      "famille"
+    ],
+    "practical": "7 rue Draye de Meyne, secteur de la Digue. Réservation Ten’Up, tarifs hors licence et carte dans la fiche.",
     "checked": "2026-10-23"
   },
   {
     "title": "Pétanque — Nyons Pétanque",
-    "url": "https://www.nyons-petanque.com/",
+    "url": "/infos-pratiques-nyons/petanque-nyons/",
     "categories": [
       "sport"
     ],
-    "description": "Le club, son école de pétanque et les informations du boulodrome. Pour les concours datés, consulter le calendrier du club.",
-    "keywords": "pétanque petanque boules cochonnet boulodrome jeu provençal",
-    "source": "Site officiel du club",
+    "description": "Où jouer aux boules à Nyons : place de la Libération, centre régional, école de pétanque et coordonnées du club.",
+    "keywords": "pétanque petanque boules boule cochonnet boulodrome jeu provençal club école enfant enfants",
+    "source": "Vivre à Nyons — fiche pétanque et sources du club",
     "commune": "Nyons",
     "zone": "nyons",
-    "facets": [],
-    "practical": "Conditions et disponibilités à vérifier dans la fiche.",
+    "facets": [
+      "famille"
+    ],
+    "practical": "Place de la Libération et centre régional, 125 rue Félix-Maurent. École dès 6 ans ; accès au centre à confirmer.",
     "checked": "2026-10-23"
   },
   {
