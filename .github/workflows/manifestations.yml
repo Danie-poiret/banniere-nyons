@@ -1,0 +1,48 @@
+name: Actualiser uniquement les manifestations de Nyons
+on:
+  schedule:
+    - cron: '12 * * * *'
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - assets/manifestations.js
+      - assets/manifestations.css
+      - tools/update_manifestations.py
+      - tools/check_manifestations.cjs
+      - .github/workflows/manifestations.yml
+permissions:
+  contents: write
+concurrency:
+  group: nyons-manifestations
+  cancel-in-progress: false
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Vérifier les dates, filtres et doublons
+        run: node tools/check_manifestations.cjs
+      - name: Reprendre les annonces de l’agenda existant dans le HTML
+        run: python tools/update_manifestations.py
+      - name: Publier seulement la page existante
+        run: |
+          git add -- evenements-nyons/manifestations-locales/index.html
+          if git diff --cached --quiet; then exit 0; fi
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git commit -m 'Actualiser les prochaines manifestations à Nyons' -m 'Nyons-Guide-Only: true'
+          for attempt in 1 2 3; do
+            git pull --rebase origin main
+            if git push origin main; then exit 0; fi
+          done
+          exit 1

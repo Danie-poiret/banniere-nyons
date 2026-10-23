@@ -1,0 +1,20 @@
+/* Scoped to the existing manifestations page. */
+.sorties-panel{max-width:1080px;margin:28px auto 40px;padding:28px;background:#fffdf7;border:1px solid #d8cfbf;border-radius:18px;color:#272e22}
+.sorties-panel h2{margin:0 0 12px;font-size:clamp(1.5rem,4vw,2rem);color:#354724}
+.sorties-intro{max-width:72ch;line-height:1.65}.sorties-kicker{font-weight:700;letter-spacing:.08em;text-transform:uppercase;font-size:.8rem;color:#52613e}
+.sorties-nav,.sorties-links{display:flex;flex-wrap:wrap;gap:10px 22px;margin:18px 0}
+.sorties-panel a{text-decoration:underline;text-underline-offset:3px;color:#354724}
+.sorties-panel a:hover{color:#6c371f}.sorties-panel a:focus-visible,.sorties-panel select:focus-visible,.sorties-panel button:focus-visible{outline:3px solid #87501d;outline-offset:4px}
+.sorties-filters{display:flex;flex-wrap:wrap;align-items:end;gap:16px;padding:18px;background:#edf0e6;border-radius:12px}
+.sorties-filters label{display:grid;gap:6px;font-weight:700}.sorties-filters select,.sorties-filters button{font:inherit;min-height:46px;padding:9px 14px;border:1px solid #61704b;border-radius:8px;background:white;color:#27341e;max-width:100%}
+.sorties-filters button{cursor:pointer}.sorties-panel [hidden]{display:none!important}
+.sorties-status,.sorties-source{font-size:.9rem;line-height:1.6;color:#505744}.sorties-status{min-height:1.6em}
+.sorties-list{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.sortie{display:flex;flex-direction:column;border:1px solid #d6dbc9;border-radius:12px;overflow:hidden;background:white;min-width:0}
+.sortie-date{display:flex;flex-direction:column;gap:2px;background:#e9eddf;color:#304122;padding:14px 18px;font-weight:700;line-height:1.5}.sortie-date span{font-size:.95rem;font-weight:400}
+.sortie-body{padding:18px;display:flex;flex-direction:column;align-items:start;flex:1}.sortie h3{font-size:1.15rem;margin:8px 0 12px;line-height:1.4}.sortie p{margin:0 0 12px;line-height:1.6}.sortie-town{font-size:.8rem;text-transform:uppercase;letter-spacing:.06em;font-weight:700;color:#52613e}
+.sortie-price{font-size:.9rem}.sortie-link{margin-top:auto;padding:9px 0;min-height:44px;box-sizing:border-box;font-weight:700}
+.sorties-empty,.sorties-ongoing{padding:20px;border:1px solid #d6dbc9;border-radius:12px;background:#f3f4eb;line-height:1.65}.sorties-ongoing{margin-top:24px}.sorties-ongoing h3{margin-top:0}.sorties-ongoing li{margin:14px 0}
+.sorties-nearby{padding-top:16px;border-top:1px solid #d8cfbf;margin-top:22px;line-height:1.6}
+#sorties-nyons,#sorties-title,#sorties-results,#sorties-alentours,#section-calendrier-des-grandes-manifestations-a-nyons{scroll-margin-top:120px}
+@media(max-width:700px){.sorties-panel{margin:18px 12px 28px;padding:18px}.sorties-list{grid-template-columns:1fr}.sorties-filters{display:grid;grid-template-columns:1fr;padding:14px}.sorties-filters select{width:100%}.sorties-nav a{padding:8px 0}.sorties-links a{padding:8px 0}}
