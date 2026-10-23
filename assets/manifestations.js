@@ -9,6 +9,9 @@
   }
   const add = (day,n) => new Date(Date.parse(day+'T12:00:00Z')+n*86400000).toISOString().slice(0,10);
   const pretty = day => new Intl.DateTimeFormat('fr-FR',{day:'numeric',month:'long',year:'numeric',timeZone:'UTC'}).format(new Date(day+'T12:00:00Z'));
+  // Use the programme's annotation for each occurrence. A film synopsis mentioning
+  // a party, or a film with one special screening, must not admit ordinary shows.
+  const exceptionalSession = s => /festival|avant[ -]premiere|cine[ -](debat|concert)|projection suivie.*(echange|debat)|soiree|halloween/.test(fold(s.version));
   function period(day,key) {
     const dow = new Date(day+'T12:00:00Z').getUTCDay();
     if (key==='today') return [day,day];
@@ -41,9 +44,11 @@
       const price=String(p.price||p.tariff||p.tarifs||prices[url]||'');
       const tags=categories(e);
       if (/^(gratuit[e]?|entree libre|acces libre)([.!;]|$| sur reservation)/.test(fold(price.trim()))) tags.push('free');
+      const sessions=(e.sessions||[]).filter(s=>/^\d{4}-\d{2}-\d{2}$/.test(s.date||'')&&/^([01]\d|2[0-3]):[0-5]\d$/.test(s.time||'')&&(e.kind!=='cinema'||exceptionalSession(s)));
+      if(e.kind==='cinema'&&!sessions.length) return [];
       return [{title:e.title,url,start:e.start_date,end:e.end_date||e.start_date,time:e.start_time||'',endTime:e.end_time||'',kind:e.kind||'event',tags,
         place: e.kind==='cinema'?'Cinéma L’Arlequin':place,address:e.kind==='cinema'?'28 place de la Libération, Nyons':p.address||'',
-        price,age:(e.film||{}).age||'',sessions:(e.sessions||[]).filter(s=>/^\d{4}-\d{2}-\d{2}$/.test(s.date||'')&&/^([01]\d|2[0-3]):[0-5]\d$/.test(s.time||''))}];
+        price,age:(e.film||{}).age||'',sessions}];
     });
   }
   function select(data,now=new Date(),when='all',tag='all') {
@@ -51,7 +56,7 @@
     for(const e of data.events) {
       if(tag!=='all'&&!e.tags.includes(tag)) continue;
       if(e.kind==='cinema') {
-        const s=e.sessions.filter(s=>s.date>=from&&s.date<=to&&(s.date>c.day||(s.date===c.day&&s.time>=c.time))).sort((a,b)=>(a.date+a.time).localeCompare(b.date+b.time))[0];
+        const s=e.sessions.filter(s=>exceptionalSession(s)&&s.date>=from&&s.date<=to&&(s.date>c.day||(s.date===c.day&&s.time>=c.time))).sort((a,b)=>(a.date+a.time).localeCompare(b.date+b.time))[0];
         if(s) upcoming.push({...e,date:s.date,hour:s.time,key:s.date+'T'+s.time});
       } else if(e.start>=c.day && e.start>=from && e.start<=to && (e.start>c.day||!e.time||e.time>=c.time)) {
         upcoming.push({...e,date:e.start,hour:e.time,key:e.start+'T'+(e.time||'23:59')});
@@ -68,7 +73,7 @@
     const range=e.kind!=='cinema'&&e.end!==e.start;
     const time=e.kind==='cinema'?'Prochaine séance : ':'';
     const end=e.kind!=='cinema'&&e.end===e.start&&e.endTime?' – '+e.endTime.replace(':',' h '):'';
-    return `<li class="sortie"><div class="sortie-date"><time datetime="${esc(e.date)}">${esc(pretty(e.date))}</time><span>${esc(time+hour+end)}</span>${range?'<span>Jusqu’au '+esc(pretty(e.end))+'</span>':''}</div><div class="sortie-body"><span class="sortie-town">Nyons${e.kind==='cinema'?' · Cinéma':''}</span><h3><a href="${esc(e.url)}">${esc(e.title)}</a></h3><p>${esc(e.place||(!e.address?'Lieu précis non renseigné':''))}${e.address?'<br>'+esc(e.address):''}</p>${e.age?'<p>'+esc(e.age)+'</p>':''}<p class="sortie-price">${esc(e.price||'Tarif non renseigné — voir la fiche')}</p><a class="sortie-link" href="${esc(e.url)}" aria-label="${esc('Informations pratiques : '+e.title)}">Horaires et détails →</a></div></li>`;
+    return `<li class="sortie"><div class="sortie-date"><time datetime="${esc(e.date)}">${esc(pretty(e.date))}</time><span>${esc(time+hour+end)}</span>${range?'<span>Jusqu’au '+esc(pretty(e.end))+'</span>':''}</div><div class="sortie-body"><span class="sortie-town">Nyons${e.kind==='cinema'?' · Cinéma exceptionnel':''}</span><h3><a href="${esc(e.url)}">${esc(e.title)}</a></h3><p>${esc(e.place||(!e.address?'Lieu précis non renseigné':''))}${e.address?'<br>'+esc(e.address):''}</p>${e.age?'<p>'+esc(e.age)+'</p>':''}<p class="sortie-price">${esc(e.price||'Tarif non renseigné — voir la fiche')}</p><a class="sortie-link" href="${esc(e.url)}" aria-label="${esc('Informations pratiques : '+e.title)}">Horaires et détails →</a></div></li>`;
   }
   function render(result) {
     let html=result.upcoming.length?'<ol class="sorties-list">'+result.upcoming.map(card).join('')+'</ol>':'<p class="sorties-empty">Aucun rendez-vous à venir ne correspond à ce choix. Essayez une autre période ou consultez <a href="https://agenda.vivreanyons.fr/evenements/">tout l’agenda de Nyons</a>.</p>';

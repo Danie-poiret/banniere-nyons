@@ -7,7 +7,8 @@ const raw=[
   row('past','2026-10-22'),row('started','2026-10-23',{start_time:'20:00'}),row('later','2026-10-23',{start_time:'21:00'}),
   row('saturday','2026-10-24',{start_time:'10:00',categories:['Enfance / Jeunesse']}),
   row('sunday','2026-10-25'),row('monday','2026-10-26'),
-  row('film','2026-10-21',{end_date:'2026-10-27',kind:'cinema',sessions:[{date:'2026-10-23',time:'17:00'},{date:'2026-10-24',time:'17:00'},{date:'2026-10-26',time:'19:00'}]}),
+  row('film','2026-10-21',{end_date:'2026-10-27',kind:'cinema',sessions:[{date:'2026-10-23',time:'17:00',version:'Avant-première'},{date:'2026-10-24',time:'15:00',version:'VF'},{date:'2026-10-24',time:'17:00',version:'Projection suivie d’un échange'},{date:'2026-10-26',time:'19:00',version:'Soirée spéciale'}]}),
+  row('ordinary-film','2026-10-24',{kind:'cinema',summary:'Deux amis passent une soirée ensemble.',sessions:[{date:'2026-10-24',time:'16:00',version:'VO sous-titrée'}]}),
   row('ongoing-exposition','2026-10-20',{end_date:'2026-10-25',categories:['Exposition']}),
   row('ended-exposition','2026-10-20',{end_date:'2026-10-23',end_time:'18:00',categories:['Exposition']}),
   row('warning','2026-10-25',{date_warning:'Conflicting dates'}),row('unpublished','2026-10-25'),
@@ -24,6 +25,8 @@ assert(!all.upcoming.some(e=>['past','started','warning','unpublished','elsewher
 assert.equal(all.upcoming.filter(e=>e.title==='saturday').length,1);
 assert.equal(all.ongoing.length,1);
 assert.equal(all.upcoming.find(e=>e.title==='film').date,'2026-10-24');
+assert.equal(all.upcoming.find(e=>e.title==='film').hour,'17:00','Skip the ordinary show before the special show');
+assert(!data.events.some(e=>e.title==='ordinary-film'),'Ordinary cinema must not enter the manifestations snapshot');
 assert.deepEqual(a.select(data,when,'today').upcoming.map(e=>e.title),['later']);
 assert(a.select(data,when,'weekend').upcoming.every(e=>e.date>='2026-10-24'&&e.date<='2026-10-25'));
 assert(!a.select(data,when,'week').upcoming.some(e=>e.title==='monday'));
