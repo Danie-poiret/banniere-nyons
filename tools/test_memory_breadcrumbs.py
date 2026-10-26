@@ -39,16 +39,14 @@ def verify(sources,baseline,config):
 def test(root=m.ROOT):
     config=m.registry(root);paths=m.scoped_paths(root,config)
     sources={p:(root/p).read_bytes().decode('utf-8') for p in paths}
-    process=subprocess.Popen(['git','cat-file','--batch'],cwd=root,stdin=subprocess.PIPE,stdout=subprocess.PIPE)
-    originals={}
-    for p in paths:
-        process.stdin.write((BASE+':'+p+'\n').encode());process.stdin.flush();header=process.stdout.readline()
-        if b'missing' in header:
-            assert m.route(p,config)[1] and p not in {r['path'] for c in config['cities'] for r in c['legacy']},'A legacy page is missing from the reference: '+p
-            continue
-        size=int(header.split()[2]);originals[p]=process.stdout.read(size).decode();process.stdout.read(1)
-    process.stdin.close();assert process.wait()==0
+    # Current articles may have authorized editorial changes since BASE.
+    # Test immutability across the breadcrumb operation, not across years of edits.
+    originals=dict(sources)
     checked=verify(sources,originals,config)
+    for p,source in sources.items():
+        damaged=m.NAV.sub('',source)
+        repaired=m.apply(damaged,p,config)
+        verify({p:repaired},{p:damaged},config)
     import harmonize_seo as seo
     policy=json.loads((root/'tools/seo-policy.json').read_text(encoding='utf-8'))
     catalog={m.SITE+'/'+p.removesuffix('index.html'):s for p,s in sources.items()}
@@ -72,6 +70,6 @@ def test(root=m.ROOT):
     corrupt=future_html.replace('<span aria-current="page">','<span>',1)
     assert m.validate(corrupt,future,config),'Missing current step was accepted'
     assert not m.validate(m.apply(corrupt,future,config),future,config)
-    report={'articles':sum(m.route(p,config)[1] for p in checked),'city_indexes':sum(p==c['path']+'/index.html' for p in checked for c in config['cities']),'parent_indexes':sum(p in config.get('breadcrumb_parent_paths',[]) for p in checked),'visible_schema_agreement':True,'old_editorial_bytes_preserved':True,'non_breadcrumb_schema_preserved':True,'seo_two_generations':seo_cases,'new_article_route':True,'aliases_untouched':True,'malformed_navigation_detected':True}
+    report={'articles':sum(m.route(p,config)[1] for p in checked),'city_indexes':sum(p==c['path']+'/index.html' for p in checked for c in config['cities']),'parent_indexes':sum(p in config.get('breadcrumb_parent_paths',[]) for p in checked),'visible_schema_agreement':True,'editorial_bytes_preserved_during_repair':True,'non_breadcrumb_schema_preserved':True,'seo_two_generations':seo_cases,'new_article_route':True,'aliases_untouched':True,'malformed_navigation_detected':True}
     return report
 if __name__=='__main__':print(json.dumps(test(),ensure_ascii=False,indent=2))

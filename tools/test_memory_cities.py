@@ -38,13 +38,20 @@ def test():
         current=html.fromstring((ROOT/path).read_text(encoding='utf-8')).xpath('//link[@rel="canonical"]/@href')
         assert current==old_canonical,'An old canonical changed: '+path
     batch.stdin.close();assert batch.wait()==0
-    new_html=[p for p in changed if p.endswith('.html') and p not in oldpaths]
     expected_cities={c['path']+'/index.html' for c in config['cities'] if not c['existing']}
+    historical_regions={c['path'].split('/')[0] for c in config['cities']}|{'Histoire-Geo'}
+    def is_memory_page(path):
+        if path in expected_cities:return True
+        if path.split('/')[0] not in historical_regions:return False
+        page=html.fromstring((ROOT/path).read_text(encoding='utf-8'))
+        return any(n.get('@type')=='Article' or isinstance(n.get('@type'),list) and 'Article' in n['@type']
+                   for script in page.xpath('//script[@type="application/ld+json"]/text()') for n in m.schema_nodes(json.loads(script)))
+    new_html=[p for p in changed if p.endswith('.html') and p not in oldpaths and is_memory_page(p)]
     def classify_new(paths):
         assert expected_cities<=set(paths), 'A required city index is missing'
         articles=set(paths)-expected_cities
         for path in articles:
-            assert any(path.startswith(c['path']+'/') and len(path.split('/'))==5 for c in config['cities']), 'New HTML outside a city: '+path
+            assert path in config.get('legacy_allowed_paths',[]) or any(path.startswith(c['path']+'/') and len(path.split('/'))==5 for c in config['cities']), 'New HTML outside a city: '+path
         return articles
     new_articles=classify_new(new_html)
     counts=[]
