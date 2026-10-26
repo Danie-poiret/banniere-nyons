@@ -1,8 +1,15 @@
 /* Branch-only measurements of this page; no deployment or production writes. */
-const fs=require('fs'),path=require('path'),{spawn}=require('child_process'),assert=require('assert/strict'),{pathToFileURL}=require('url');
+const fs=require('fs'),path=require('path'),{spawn,execFileSync}=require('child_process'),assert=require('assert/strict'),{pathToFileURL}=require('url');
 const root=path.resolve(__dirname,'..'),out=path.join(root,'audit-output/autour'),deps=path.join(root,'.audit-tools');fs.mkdirSync(out,{recursive:true});
 const {chromium}=require(path.join(deps,'node_modules/playwright'));
 const wait=ms=>new Promise(r=>setTimeout(r,ms));
+// The curated catalogue and sitemap discovery define the expected guides.
+const catalogue=JSON.parse(execFileSync('python',['-c',
+ "import json;from pathlib import Path;from tools.update_autour_portal import collect;r=Path.cwd();c=json.loads((r/'tools/autour-nyons.json').read_text(encoding='utf-8'));print(json.dumps({'urls':[e['url'] for e in collect(r,c)],'groups':len(c['groups'])}))"
+],{cwd:root,encoding:'utf8'}));
+const expectedGuideCount=catalogue.urls.length;
+assert(expectedGuideCount>0,'Empty expected catalogue');
+
 async function main(){
  const server=spawn('python',['-m','http.server','8766','--bind','127.0.0.1'],{cwd:root,stdio:'ignore'});let browser;
  try{
@@ -14,22 +21,23 @@ async function main(){
    await page.goto(url,{waitUntil:'networkidle'});
    const reject=page.locator('[data-privacy-action="reject"]');if(await reject.isVisible())await reject.click();
    assert((await page.evaluate(()=>document.documentElement.scrollWidth))<=width,'Overflow '+width);
-   assert.equal(await page.locator('[data-autour-card]').count(),49);assert.equal(await page.locator('#autour-category option').count(),7);
+   assert.equal(await page.locator('[data-autour-card]').count(),expectedGuideCount);assert.equal(await page.locator('#autour-category option').count(),catalogue.groups+1);
+   assert.deepEqual(await page.locator('[data-autour-card]').evaluateAll(cards=>cards.map(c=>c.querySelector('a[href]').getAttribute('href')).sort()),[...catalogue.urls].sort(),'Catalogue destinations differ');
    const hero=await page.locator('.ap-hero-visual').boundingBox(),heading=await page.locator('h1').boundingBox();assert(heading.y>=hero.y&&heading.y+heading.height<=hero.y+hero.height,'Hero title clipped');
    await page.screenshot({path:path.join(out,'page-'+width+'.png')});
    await page.locator('#autour-search').fill('piegon');assert.equal(await page.locator('[data-autour-card]:visible').count(),1,'Accent insensitive search');
-   await page.getByRole('button',{name:'Tout afficher',exact:true}).click();assert.equal(await page.locator('[data-autour-card]:visible').count(),49);
+   await page.getByRole('button',{name:'Tout afficher',exact:true}).click();assert.equal(await page.locator('[data-autour-card]:visible').count(),expectedGuideCount);
    await page.locator('#autour-category').selectOption('villages');assert((await page.locator('[data-autour-card]:visible').count())>0);
    assert(await page.locator('[data-autour-card]:visible').evaluateAll(cards=>cards.every(e=>e.dataset.group==='villages')));
    await page.locator('#autour-season').selectOption('hiver');assert(await page.locator('[data-autour-card]:visible').evaluateAll(cards=>cards.every(e=>e.dataset.seasons.includes('hiver'))));
    await page.locator('#autour-search').fill('zzzzzz');assert(await page.locator('#autour-empty').isVisible());
-   await page.getByRole('button',{name:'Tout afficher',exact:true}).click();assert.equal(await page.locator('[data-autour-card]:visible').count(),49);
+   await page.getByRole('button',{name:'Tout afficher',exact:true}).click();assert.equal(await page.locator('[data-autour-card]:visible').count(),expectedGuideCount);
    await page.locator('.ap-faq summary').first().focus();await page.keyboard.press('Enter');assert.equal(await page.locator('.ap-faq details').first().getAttribute('open'),'');
    assert.deepEqual(failures,[],'Browser errors');await context.close();
   }
   const context=await browser.newContext({javaScriptEnabled:false,viewport:{width:390,height:844}}),page=await context.newPage();await page.goto(url);
-  assert.equal(await page.locator('[data-autour-card]:visible').count(),49);assert(!(await page.locator('#autour-filters').isVisible()));await context.close();await browser.close();browser=null;
-  fs.writeFileSync(path.join(out,'functional.json'),JSON.stringify({widths:[320,390,1280],guidesWithoutJS:49,search:true,categories:true,seasons:true,emptyState:true,reset:true,keyboardFAQ:true},null,2));
+  assert.equal(await page.locator('[data-autour-card]:visible').count(),expectedGuideCount);assert(!(await page.locator('#autour-filters').isVisible()));await context.close();await browser.close();browser=null;
+  fs.writeFileSync(path.join(out,'functional.json'),JSON.stringify({widths:[320,390,1280],guidesWithoutJS:expectedGuideCount,search:true,categories:true,seasons:true,emptyState:true,reset:true,keyboardFAQ:true},null,2));
   const lighthouse=(await import(pathToFileURL(require.resolve('lighthouse',{paths:[deps]})).href)).default;
   const {launch}=await import(pathToFileURL(require.resolve('chrome-launcher',{paths:[deps]})).href);const results=[];
   for(const profile of ['mobile','desktop'])for(const version of ['before','after']){
