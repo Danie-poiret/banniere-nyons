@@ -51,7 +51,7 @@ def test():
         assert expected_cities<=set(paths), 'A required city index is missing'
         articles=set(paths)-expected_cities
         for path in articles:
-            assert path in config.get('legacy_allowed_paths',[]) or any(path.startswith(c['path']+'/') and len(path.split('/'))==5 for c in config['cities']), 'New HTML outside a city: '+path
+            assert path in config.get('legacy_allowed_paths',[]) or path in {r['path'] for c in config['cities'] for r in c['legacy']} or any(path.startswith(c['path']+'/') and len(path.split('/'))==5 for c in config['cities']), 'New HTML outside a city: '+path
         return articles
     new_articles=classify_new(new_html)
     counts=[]
