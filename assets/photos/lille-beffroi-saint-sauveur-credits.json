@@ -1,0 +1,32 @@
+{
+  "permission": "L’utilisateur autorise explicitement les trois photographies, y compris la vue récente en couleur, le 27 octobre 2026",
+  "images": [
+    {
+      "path": "/assets/photos/lille-beffroi-1957-antenne.png",
+      "width": 526,
+      "height": 777,
+      "source": "codex-clipboard-9a2afaac-8705-448c-b282-3eaac42e9ccb.png",
+      "author": "Non identifié",
+      "date": "Présentée comme datant de 1957, attribution à confirmer",
+      "modified": false
+    },
+    {
+      "path": "/assets/photos/lille-beffroi-residence-vue-recente.png",
+      "width": 914,
+      "height": 517,
+      "source": "codex-clipboard-29e1069c-b7fa-42e3-aeaf-32373ec2857b.png",
+      "author": "Non identifié",
+      "date": "Date exacte non identifiée",
+      "modified": false
+    },
+    {
+      "path": "/assets/photos/lille-saint-sauveur-commerces-vap.png",
+      "width": 1215,
+      "height": 764,
+      "source": "codex-clipboard-f8292a1b-3d53-4071-bb06-8f9cdb87cc61.png",
+      "author": "Non identifié",
+      "date": "Date exacte non identifiée",
+      "modified": false
+    }
+  ]
+}
