@@ -139,3 +139,11 @@ Consigne explicite du propriétaire : « ben oui publie toujours ». Les article
 ## Témoignages — consigne permanente du 22 octobre 2026
 
 Ne jamais afficher la mention « Commentaires Facebook » dans les fiches, y compris les titres, textes, légendes, sources, attributs d’accessibilité et réponses de FAQ. Présenter ces passages comme des souvenirs ou des témoignages, sous « Ce que vous racontez ❤️ », sans annoncer leur provenance Facebook. Conserver intégralement le contenu authentique, les personnes citées et les liens existants. Pour les nouvelles fiches Mémoire de France, reprendre le cadre de l’article « Tour Eiffel en 1946 » : un seul encadré, un titre par témoignage et une présentation lisible sur mobile.
+
+## Modèle de mise en page Mémoire de France — 27 octobre 2026
+
+Le propriétaire demande d’enregistrer comme modèle permanent l’article de Bray-Dunes : https://www.vivreanyons.fr/Hauts-de-France/Nord/Bray-Dunes/bray-dunes-1960-cafes-souvenirs/ .
+
+Pour les nouveaux récits Mémoire de France et les corrections de mise en page demandées, utiliser ce modèle : photographie principale en tête à l’intérieur de l’article, avant l’introduction ; autres photographies intégrées aux passages correspondants ; texte dans une grande colonne et navigation à droite sur ordinateur ; une seule colonne sur mobile, avec navigation après le récit. Ne pas placer la photographie principale dans une colonne séparée à gauche. Conserver les images originales sans retouche ni recadrage dans l’article, leurs proportions, légendes et possibilité d’agrandissement. Garder les repères historiques après l’introduction, un seul encadré « Ce que vous racontez ❤️ » et les questions / réponses dans l’article. Le style réutilisable est /assets/memory-article.css avec la classe memory-article-page sur body.
+
+Les index de villes gardent leurs cartes regroupées dans une seule grille, avant la navigation de fin de page. Ne pas changer les URL, le texte, les témoignages ou les métadonnées à l’occasion d’une simple correction de mise en page.
