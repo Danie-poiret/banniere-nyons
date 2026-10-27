@@ -1,0 +1,283 @@
+{
+  "seoTitle": "Produits du terroir à Nyons : spécialités et artisans",
+  "title": "Les saveurs du terroir à Nyons",
+  "description": "Olives AOP, fruits, Picodon, miel, biscuits et vins : découvre les spécialités de Nyons, les artisans et les bonnes adresses pour acheter local.",
+  "intro": [
+    "À Nyons, le terroir ne se découvre pas seulement dans les assiettes. Il suffit de faire un tour au marché du jeudi pour comprendre !",
+    "Il y a les olives noires de la Tanche, les abricots lorsqu’arrive la belle saison, le miel de lavande, les fromages de chèvre, les biscuits, les vins et tous ces produits qui racontent notre pays.",
+    "Mais derrière ces bonnes choses, il y a surtout des gens. Des agriculteurs qui se lèvent tôt, des familles qui travaillent la même terre depuis des générations, des artisans qui continuent à fabriquer leurs produits avec patience.",
+    "J’ai eu envie de rassembler ici leurs histoires, les spécialités à découvrir et les bonnes adresses pour acheter près de chez nous.",
+    "Que tu habites Nyons ou que tu viennes passer quelques jours dans les Baronnies, voici de quoi remplir ton panier… et peut-être apprendre deux ou trois choses sur ceux qui le remplissent ! ❤️"
+  ],
+  "groups": [
+    {
+      "id": "olive",
+      "emoji": "🫒",
+      "title": "L’univers de l’olive",
+      "intro": "La Tanche, les huiles AOP, les moulins et les familles d’oléiculteurs. Commence par la collection dédiée, puis suis le sujet qui t’intéresse.",
+      "items": [
+        {
+          "url": "/huile-olive-nyons/",
+          "title": "L’univers de l’olive à Nyons",
+          "description": "La Tanche, les huiles AOP, les moulins et les familles d’oléiculteurs : notre collection réunit 32 articles pour suivre le fil de l’olive."
+        },
+        {
+          "url": "/produits-du-terroir/Huile-olive-de-Nyons/",
+          "title": "Le grand guide de l’huile de Nyons AOP",
+          "description": "Goût, variété Tanche, moulins et conseils d’achat : un premier repère pour comprendre cette huile douce et choisir une bouteille selon ses envies."
+        },
+        {
+          "url": "/produits-du-terroir/la-tanche-nyons/",
+          "title": "La Tanche, l’olive du pays",
+          "description": "Derrière cette petite olive noire se cachent une variété, des gestes et une histoire locale. Découvre ce qui fait sa place dans le Nyonsais."
+        },
+        {
+          "url": "/produits-du-terroir/Olives-de-Nyons/",
+          "title": "Les olives de Nyons AOP",
+          "description": "Olives de table, goût et préparation : des repères pour découvrir la spécialité nyonsaise et savoir ce que l’on met dans son panier au marché."
+        },
+        {
+          "url": "/produits-du-terroir/oliviers-de-nyons/",
+          "title": "Les oliviers, un paysage vivant",
+          "description": "Cultiver un olivier demande de la patience. Cette fiche raconte les arbres, la Tanche et le travail qui accompagne leur présence dans les paysages nyonsais."
+        },
+        {
+          "url": "/produits-du-terroir/huile-olive-nyons-aop-etiquette/",
+          "title": "Ce que garantit l’étiquette AOP",
+          "description": "Une appellation ne se résume pas à quelques lettres sur une bouteille. Retrouve les règles, l’origine et les repères utiles pour comprendre le label."
+        },
+        {
+          "url": "/produits-du-terroir/nyons-aop/",
+          "title": "Le terroir derrière l’AOP Nyons",
+          "description": "Soleil, variété, savoir-faire et tradition : une autre porte d’entrée pour comprendre le lien entre l’huile d’olive, son territoire et ceux qui la produisent."
+        },
+        {
+          "url": "/produits-du-terroir/syndicat-olive-nyons/",
+          "title": "Le Syndicat de l’Olive de Nyons",
+          "description": "Protection de l’origine, archives et mémoire du gel de 1956 : l’enquête de Papy Chris suit le travail collectif mené autour de l’olive nyonsaise."
+        },
+        {
+          "url": "/produits-du-terroir/moulin-jouve-nyons/",
+          "title": "Le Moulin Jouve, une histoire de famille",
+          "description": "À Venterol, près de Nyons, cette fiche présente un moulin familial, ses huiles et son accueil. Une rencontre avec les savoir-faire de l’oléiculture locale."
+        },
+        {
+          "url": "/produits-du-terroir/degustation-huile-olive-nyons/",
+          "title": "Goûter avant de choisir son huile",
+          "description": "Douceur, arômes et sensations en bouche : quelques repères pour comparer les huiles et préparer une dégustation auprès des moulins et producteurs du Nyonsais."
+        },
+        {
+          "url": "/produits-du-terroir/acheter-de-huile-olive-nyons/",
+          "title": "Où acheter son huile d’olive ?",
+          "description": "Moulins, boutiques et marchés : retrouve les différentes façons d’acheter une huile de Nyons, en prenant le temps de regarder son origine et son étiquette."
+        },
+        {
+          "url": "/produits-du-terroir/avis-huile-olive-de-nyons/",
+          "title": "Avis et conseils autour de l’huile",
+          "description": "Les attentes diffèrent selon les visiteurs et les bouteilles. Cette fiche rassemble des repères et des avis pour préparer son achat sans choisir au hasard."
+        }
+      ]
+    },
+    {
+      "id": "fruits-plantes",
+      "emoji": "🍑",
+      "title": "Fruits et plantes du pays",
+      "intro": "Abricots, agrumes, lavande et tilleul : au fil des saisons, le Nyonsais se découvre aussi dans les vergers, les jardins et les récoltes des Baronnies.",
+      "items": [
+        {
+          "url": "/produits-du-terroir/Abricots-de-Nyons/",
+          "title": "Les abricots, le goût de l’été",
+          "description": "Quand arrive la belle saison, les abricots colorent les étals. Découvre ce fruit du pays, ses usages en cuisine et sa place au marché nyonsais.",
+          "image": {
+            "src": "/assets/photos/restored-495ec4a21e95c2a43f40.webp",
+            "alt": "Abricots mûrs et abricot coupé montrant son noyau, au marché de Nyons.",
+            "width": 402,
+            "height": 388,
+            "source": "/que-faire-nyons/Marche-de-Nyons/"
+          }
+        },
+        {
+          "url": "/produits-du-terroir/Agrumes-Nyons/",
+          "title": "Des citrons en pleine terre à Nyons",
+          "description": "Des citronniers peuvent pousser en pleine terre dans certains jardins nyonsais. Une découverte du climat local, des agrumes et des conditions qui les favorisent.",
+          "image": {
+            "src": "/assets/photos/08be4936d22dcae2b2ed.webp",
+            "alt": "Citronnier chargé de citrons cultivé en pleine terre à Nyons dans la Drôme provençale, surnommée le Petit Nice.",
+            "width": 900,
+            "height": 753,
+            "source": "/produits-du-terroir/Agrumes-Nyons/"
+          }
+        },
+        {
+          "url": "/produits-du-terroir/Lavande-de-Nyons/",
+          "title": "La lavande, des champs aux savoir-faire",
+          "description": "Floraison, routes autour de Nyons et distillation : une balade parmi les paysages et les métiers de la lavande, avec des repères pour préparer sa découverte.",
+          "image": {
+            "src": "/assets/photos/lavandes-baronnies-poet-en-percip.jpg",
+            "alt": "Champs de lavande en cours de récolte au Coup d’Huery, au Poët-en-Percip, dans les Baronnies provençales.",
+            "width": 1400,
+            "height": 660,
+            "source": "/produits-du-terroir/Lavande-de-Nyons/"
+          }
+        },
+        {
+          "url": "/produits-du-terroir/le-tilleul-des-baronnies/",
+          "title": "Le tilleul des Baronnies",
+          "description": "Un parfum familier, une récolte et une tradition du pays : cette fiche ouvre la porte de l’histoire du tilleul et de sa place dans les Baronnies."
+        },
+        {
+          "url": "/produits-du-terroir/Nyons-pourquoi-faire-venir-nos-fruits/",
+          "title": "D’où viennent les fruits de nos paniers ?",
+          "description": "Acheter près de chez nous commence parfois par une question sur l’étiquette. Un regard sur la provenance des fruits et la place des producteurs locaux."
+        }
+      ]
+    },
+    {
+      "id": "specialites",
+      "emoji": "🧀",
+      "title": "Les spécialités gourmandes",
+      "intro": "Du Picodon aux tartines de tapenade, du pain aux biscuits, des produits simples et des savoir-faire à découvrir avant de passer à table.",
+      "items": [
+        {
+          "url": "/produits-du-terroir/picodon-fermier/",
+          "title": "Le Picodon fermier, petit fromage de caractère",
+          "description": "Du lait de chèvre au fromage affiné, découvre le Picodon, son histoire et les pistes pour rencontrer des producteurs ou en trouver autour de Nyons."
+        },
+        {
+          "url": "/produits-du-terroir/miel-de-lavande-de-Nyons/",
+          "title": "Le miel de lavande et les apiculteurs",
+          "description": "Ruchers, producteurs, marchés et origine du miel : des repères pour découvrir les saveurs de la lavande et mieux comprendre le travail des apiculteurs du pays."
+        },
+        {
+          "url": "/produits-du-terroir/Meilleur-pain-Nyons/",
+          "title": "Le pain et les boulangeries du coin",
+          "description": "Au levain, au maïs ou en baguette, chacun a ses habitudes. Retrouve les préférences des habitants et quelques pistes pour découvrir les boulangeries autour de Nyons.",
+          "image": {
+            "src": "/assets/photos/e0f9e2bbbf68ee6b100e.webp",
+            "alt": "Sélection de pains artisanaux proposés dans les boulangeries de Nyons et des villages environnants.",
+            "width": 868,
+            "height": 900,
+            "source": "/produits-du-terroir/Meilleur-pain-Nyons/"
+          }
+        },
+        {
+          "url": "/a-faire-autour-de-Nyons/biscuiterie-provence-saint-maurice-sur-eygues/",
+          "title": "La Biscuiterie de Provence, côté atelier",
+          "description": "À Saint-Maurice-sur-Eygues, le parcours découverte présente les ingrédients et le travail de la biscuiterie. Une visite gourmande à prolonger dans la boutique et la halle.",
+          "image": {
+            "src": "/assets/photos/biscuiterie-provence/entree-musee.webp",
+            "alt": "Entrée du musée de la Biscuiterie de Provence à Saint-Maurice-sur-Eygues.",
+            "width": 405,
+            "height": 447,
+            "source": "/a-faire-autour-de-Nyons/biscuiterie-provence-saint-maurice-sur-eygues/"
+          }
+        },
+        {
+          "url": "/produits-du-terroir/tapenade-de-nyons/",
+          "title": "La tapenade, l’heure des tartines",
+          "description": "Olives, câpres et anchois : derrière la tartine de l’apéritif, il y a une recette et une histoire. Retrouve les repères pour découvrir la tapenade."
+        },
+        {
+          "url": "/produits-du-terroir/truffe-du-ricastin/",
+          "title": "La truffe du Tricastin",
+          "description": "Un peu plus loin dans la Drôme, la truffe raconte un autre terroir. Cette fiche invite à découvrir son univers, ses marchés et ses traditions."
+        },
+        {
+          "url": "/produits-du-terroir/huile-olive-nyons-cuisine/",
+          "title": "L’huile de Nyons passe en cuisine",
+          "description": "Cuisson, accords et cinq recettes faciles : quelques idées pour utiliser l’huile d’olive de Nyons à table et prolonger la découverte dans sa propre cuisine."
+        },
+        {
+          "url": "/produits-du-terroir/specialites-culinaires-de-nyons/",
+          "title": "Les plats et spécialités culinaires",
+          "description": "Des produits aux assiettes, retrouve une promenade parmi les préparations associées à Nyons et à la Provence, pour donner des idées au prochain repas."
+        },
+        {
+          "url": "/produits-du-terroir/specialites-de-la-ville-de-nyons/",
+          "title": "Que goûter pendant un séjour à Nyons ?",
+          "description": "Olives, douceurs et produits du terroir : une sélection pour les curieux qui souhaitent découvrir les saveurs du pays et choisir par quoi commencer leur panier."
+        }
+      ]
+    },
+    {
+      "id": "vins-boissons",
+      "emoji": "🍇",
+      "title": "Vins et boissons",
+      "intro": "Vignes, cépages et brasserie : deux chemins pour découvrir les boissons du pays et les personnes qui les élaborent.",
+      "items": [
+        {
+          "url": "/produits-du-terroir/vin-nyons/",
+          "title": "Les vins de Nyons, la vigne et les cépages",
+          "description": "Grenache, Syrah et paysages de vignes : cette fiche présente les vins de Nyons, leurs repères d’appellation et des pistes pour poursuivre la découverte chez les producteurs.",
+          "image": {
+            "src": "/assets/photos/bc2d9e0b2086f9913d6e.webp",
+            "alt": "Gros plan sur des grappes de raisin noir aux grains bleutés, pour découvrir les vins de Nyons.",
+            "width": 339,
+            "height": 190,
+            "source": "/produits-du-terroir/vin-nyons/"
+          }
+        },
+        {
+          "url": "/produits-du-terroir/brasserie-a-nyons/",
+          "title": "La Grihète, brasserie à Nyons",
+          "description": "Le terroir se découvre aussi du côté de la bière. Une présentation de la brasserie nyonsaise et de son univers, à lire avant de préparer une visite."
+        }
+      ]
+    },
+    {
+      "id": "producteurs",
+      "emoji": "🧺",
+      "title": "Où rencontrer les producteurs ?",
+      "intro": "Au marché, dans un magasin collectif ou à la coopérative, le panier devient une bonne occasion de parler des produits et de leur provenance.",
+      "items": [
+        {
+          "url": "/produits-du-terroir/biasse-paysanne-nyons/",
+          "title": "La Biasse Paysanne et ses producteurs",
+          "description": "Un magasin collectif pour retrouver des produits du pays et découvrir ceux qui les fabriquent. La fiche rassemble les producteurs, les renseignements pratiques et les avis."
+        },
+        {
+          "url": "/produits-du-terroir/Cooperative-de-Nyons/",
+          "title": "Vignolis, la coopérative du Nyonsais",
+          "description": "Boutique, produits locaux et Musée de l’Olivier : Vignolis rassemble plusieurs portes d’entrée vers le terroir nyonsais et le travail des producteurs de la coopérative.",
+          "image": {
+            "src": "/assets/photos/660334f84df4e834e65e.webp",
+            "alt": "Espace Vignolis et Coopérative du Nyonsais à Nyons, avec boutique de produits locaux et Musée de l’Olivier.",
+            "width": 594,
+            "height": 473,
+            "source": "/produits-du-terroir/Cooperative-de-Nyons/"
+          }
+        },
+        {
+          "url": "/que-faire-nyons/Marche-de-Nyons/",
+          "title": "Le marché du jeudi, panier à la main",
+          "description": "Fruits, légumes et spécialités provençales se retrouvent dans les rues de Nyons. Prépare ta promenade avec les jours, les accès et les conseils de la fiche.",
+          "image": {
+            "src": "/assets/photos/restored-06434cdc1f7d758097f2.webp",
+            "alt": "Étals de fruits et légumes du marché de Nyons, sous les parasols et les platanes.",
+            "width": 706,
+            "height": 397,
+            "source": "/que-faire-nyons/Marche-de-Nyons/"
+          }
+        },
+        {
+          "url": "/produits-du-terroir/marche-de-la-drome/",
+          "title": "Les marchés de la Drôme",
+          "description": "Chaque marché a ses habitudes et son ambiance. Une invitation à découvrir les rendez-vous de la Drôme et à prendre le temps de comparer les étals."
+        },
+        {
+          "url": "/produits-du-terroir/decouvrir-nyons/",
+          "title": "Découvrir Nyons par son terroir",
+          "description": "Les produits racontent aussi une ville, ses paysages et ses traditions. Cette promenade relie le patrimoine nyonsais aux saveurs et aux histoires de son terroir."
+        }
+      ]
+    }
+  ],
+  "olivePhoto": {
+    "src": "/assets/photos/fiche-fa78394c0ff2d262b23e.webp",
+    "alt": "Oliviers dans une oliveraie de Nyons",
+    "width": 439,
+    "height": 247,
+    "sourcePage": "/evenements-nyons/les-olivades-a-nyons/",
+    "source": "/evenements-nyons/les-olivades-a-nyons/"
+  }
+}
