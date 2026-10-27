@@ -34,5 +34,8 @@
     "/Auvergne-Rhone-Alpes/Rhone/Palais-de-la-Foire-Lyon/",
     "/Auvergne-Rhone-Alpes/Rhone/zidane-minguettes-1991-platini-fernandez/",
     "/Auvergne-Rhone-Alpes/Rhone/gare-lyon-guillotiere-sernam/"
+  ],
+  "included_paths": [
+    "/infos-pratiques-nyons/piscines-autour-de-nyons/"
   ]
 }

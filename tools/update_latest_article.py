@@ -72,6 +72,8 @@ def update(root):
     selection = json.loads(selection_file.read_text(encoding='utf-8')) if selection_file.exists() else {}
     selected_updates = set(selection.get('paths', []))
     excluded_paths = set(selection.get('excluded_paths', []))
+    # Explicit owner selections may cover nearby facilities useful to Nyons residents.
+    included_paths = set(selection.get('included_paths', []))
     alias_file = root / 'tools/duplicate-canonical-map.json'
     secondary_paths = {urlsplit(p['source']).path for p in json.loads(alias_file.read_text(encoding='utf-8'))['pairs']} if alias_file.exists() else set()
     candidates = []
@@ -95,7 +97,7 @@ def update(root):
             if not re.fullmatch(r'\d{4}-\d{2}-\d{2}(?:T.*)?', published):
                 continue
             headline, description = item.get('headline'), item.get('description')
-            if not headline or not description or not is_nyons_article(path, headline):
+            if not headline or not description or not (path in included_paths or is_nyons_article(path, headline)):
                 continue
             images = item.get('image', [])
             images = images if isinstance(images, list) else [images]
