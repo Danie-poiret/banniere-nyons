@@ -1,0 +1,23 @@
+{
+  "permission": "L’utilisateur confirme le 27 octobre 2026 que les deux cartes postales sont autorisées à la publication",
+  "images": [
+    {
+      "width": 1266,
+      "height": 773,
+      "path": "/assets/photos/malo-avenue-kursaal-carte-postale.png",
+      "source": "codex-clipboard-b756b610-661e-402a-958c-f5b5bbd1cbfd.png",
+      "author": "Non identifié",
+      "date": "Non identifiée",
+      "modified": false
+    },
+    {
+      "width": 1080,
+      "height": 603,
+      "path": "/assets/photos/malo-casino-terrasse-carte-postale.png",
+      "source": "codex-clipboard-476619bb-304d-4794-8c07-1531299e661d.png",
+      "author": "Non identifié",
+      "date": "Non identifiée",
+      "modified": false
+    }
+  ]
+}
