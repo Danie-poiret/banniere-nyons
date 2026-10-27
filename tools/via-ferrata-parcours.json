@@ -1,0 +1,54 @@
+{
+  "checked": "2026-10-27",
+  "sources": {
+    "municipality": "https://www.buislesbaronnies.fr/escalade-et-via-ferrata/",
+    "tourism": "https://www.drome-cestmanature.com/fiches/via-ferrata-du-saint-julien/"
+  },
+  "routes": [
+    {
+      "name": "La Pitchouno",
+      "length": "170 m",
+      "level": "PD · Peu difficile",
+      "duration": "30 à 60 min",
+      "approach": "Environ 2 min",
+      "parking": "Ravin de Rieuchaud",
+      "height": "1,25 m ; autres critères à vérifier"
+    },
+    {
+      "name": "La Grise / La Nouvelle (2023)",
+      "length": "300 m",
+      "level": "AD · Assez difficile",
+      "duration": "45 min à 1 h",
+      "approach": "Environ 5 min",
+      "parking": "Ravin de Rieuchaud",
+      "height": "Divergence : 1,35 m (mairie), 1,55 m (Drôme Tourisme)"
+    },
+    {
+      "name": "La Testouriasso · Bleue",
+      "length": "440 m",
+      "level": "D · Difficile",
+      "duration": "1 h 45 à 2 h 15 (mairie)",
+      "approach": "Environ 15 min",
+      "parking": "Ravin de Rieuchaud",
+      "height": "1,55 à 1,60 m (mairie)"
+    },
+    {
+      "name": "La Tihousso · Rouge",
+      "length": "460 m",
+      "level": "D · Difficile ; tyrolienne facultative",
+      "duration": "Environ 2 h ; jusqu’à 2 h 30 selon les fiches",
+      "approach": "Environ 40 min",
+      "parking": "Pin d’Aïs",
+      "height": "Seuil à confirmer, environ 1,55 m selon la fiche départementale"
+    },
+    {
+      "name": "La Roumpo Quièu · Noire",
+      "length": "640 m (mairie) ; 440 m dans un descriptif départemental",
+      "level": "D+ ; variante facultative cotée ED par la mairie",
+      "duration": "2 h à 2 h 30",
+      "approach": "Environ 25 min",
+      "parking": "Font de Ladon",
+      "height": "Seuil à confirmer selon le gestionnaire et les panneaux"
+    }
+  ]
+}
