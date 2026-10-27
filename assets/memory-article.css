@@ -1,1 +1,30 @@
-body.memory-article-page .hero a.badge{color:#fff}body.memory-article-page .feature-layout{display:grid;grid-template-columns:minmax(0,1fr) 280px;gap:32px;align-items:start}body.memory-article-page .feature-story{grid-column:1;min-width:0;overflow-wrap:break-word}body.memory-article-page .right-sidebar{grid-column:2;grid-row:1}body.memory-article-page .page-photo{margin:0 0 2rem}body.memory-article-page .page-photo img{display:block;width:100%;height:auto;object-fit:contain}body.memory-article-page .page-photo a{display:block}body.memory-article-page .page-photo figcaption{font-size:.9rem;line-height:1.6;margin-top:12px}body.memory-article-page .memory-testimonials{padding:clamp(18px,3vw,28px);border:1px solid #d4ddc7;border-left:4px solid #4d5d3a;background:#f8f6ef;border-radius:16px;margin:2rem 0}body.memory-article-page .memory-testimonials h2{margin-top:0}body.memory-article-page .memory-testimonials h3{font-size:1.05rem}body.memory-article-page .researched-faq .qa{border-bottom:1px solid #d4ddc7;padding:12px 0}body.memory-article-page main a:focus-visible{outline:3px solid #a45017;outline-offset:4px}body.memory-article-page [id]{scroll-margin-top:7rem}@media(max-width:900px){body.memory-article-page .feature-layout{grid-template-columns:minmax(0,1fr)}body.memory-article-page .right-sidebar{grid-column:1;grid-row:2}}
+/* Mémoire de France: modèle du temple de Wazemmes. */
+body.memory-article-page .feature-layout.has-sidebar{max-width:1120px!important;display:grid;grid-template-columns:minmax(0,808px) 270px;column-gap:42px;align-items:start}
+body.memory-article-page .feature-layout.has-sidebar>.feature-story{grid-column:1;grid-row:1;min-width:0;overflow-wrap:break-word}
+body.memory-article-page .feature-layout.has-sidebar>.right-sidebar{grid-column:2;grid-row:1/span 2;min-width:0}
+body.memory-article-page .feature-layout.has-sidebar>.agenda{grid-column:1;grid-row:2}
+body.memory-article-page .feature-story p,body.memory-article-page .feature-story li{line-height:1.85}
+body.memory-article-page .feature-story h2{font-size:1.6rem;line-height:1.35;margin-top:38px}
+body.memory-article-page .feature-story h3{font-size:1.2rem;line-height:1.4;margin-top:26px}
+body.memory-article-page .feature-story a{overflow-wrap:anywhere}
+body.memory-article-page .feature-story [id]{scroll-margin-top:110px}
+body.memory-article-page .article-contents{display:none}
+body.memory-article-page .page-photo{max-width:680px;margin:30px auto}
+body.memory-article-page .page-photo img{display:block;width:100%;height:auto;max-height:540px;object-fit:contain;background:#fafaf3}
+body.memory-article-page .page-photo a{display:block;cursor:zoom-in}
+body.memory-article-page .page-photo figcaption{font-size:.9rem;line-height:1.6;margin-top:12px}
+body.memory-article-page .memory-testimonials{padding:24px;border:1px solid #d6ddcf;background:#faf7ef;border-radius:14px;margin:30px 0}
+body.memory-article-page .memory-testimonials h2{margin-top:0}
+body.memory-article-page .memory-testimonials blockquote{font-style:normal;border-left:3px solid #8a643d;margin:14px 0;padding:0 16px}
+body.memory-article-page .researched-faq .qa{border-bottom:1px solid #d4ddc7;padding:12px 0}
+body.memory-article-page main a:focus-visible{outline:3px solid #a45017;outline-offset:4px}
+@media(max-width:960px){
+body.memory-article-page .feature-layout.has-sidebar{grid-template-columns:minmax(0,1fr)}
+body.memory-article-page .feature-layout.has-sidebar>.feature-story,body.memory-article-page .feature-layout.has-sidebar>.agenda,body.memory-article-page .feature-layout.has-sidebar>.right-sidebar{grid-column:1}
+body.memory-article-page .feature-layout.has-sidebar>.right-sidebar{grid-row:3}
+}
+@media(max-width:600px){
+body.memory-article-page .feature-story h2{font-size:1.35rem}
+body.memory-article-page .feature-story h3{font-size:1.15rem}
+body.memory-article-page .memory-testimonials{padding:16px}
+}
