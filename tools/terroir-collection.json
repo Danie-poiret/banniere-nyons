@@ -19,7 +19,7 @@
         {
           "url": "/huile-olive-nyons/",
           "title": "L’univers de l’olive à Nyons",
-          "description": "La Tanche, les huiles AOP, les moulins et les familles d’oléiculteurs : notre collection réunit 32 articles pour suivre le fil de l’olive."
+          "description": "La Tanche, les huiles AOP, les moulins et les familles d’oléiculteurs : notre collection réunit 33 articles pour suivre le fil de l’olive."
         },
         {
           "url": "/produits-du-terroir/Huile-olive-de-Nyons/",
@@ -196,6 +196,19 @@
           "url": "/produits-du-terroir/specialites-de-la-ville-de-nyons/",
           "title": "Que goûter pendant un séjour à Nyons ?",
           "description": "Olives, douceurs et produits du terroir : une sélection pour les curieux qui souhaitent découvrir les saveurs du pays et choisir par quoi commencer leur panier."
+        },
+        {
+          "url": "/produits-du-terroir/affinade-de-nyons/",
+          "title": "Affinade de Nyons : le goût de la Tanche",
+          "description": "Deux ingrédients, des olives noires de Nyons AOP et leur huile : découvre la recette, les différences avec la tapenade et les adresses des mouliniers.",
+          "presentation": "card",
+          "image": {
+            "src": "/assets/photos/affinade-nyons-photo-fournie.png",
+            "alt": "Préparation d’olives noires dans un bocal, avec une cuillère en bois, du pain et de l’huile",
+            "width": 235,
+            "height": 220,
+            "sourcePage": "/produits-du-terroir/affinade-de-nyons/"
+          }
         }
       ]
     },
