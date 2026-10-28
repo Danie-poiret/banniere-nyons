@@ -1,0 +1,26 @@
+name: Vérifier la stabilité des composants communs
+on:
+  pull_request:
+    paths: ['**/*.html', 'assets/agenda.js', 'assets/nyons-partner-banners.js', 'tools/stabilize_layout.cjs', 'tools/layout/**', '.github/workflows/check-stable-layout.yml']
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 6
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 11.25.0
+      - run: pnpm --dir tools/layout install --frozen-lockfile --ignore-scripts
+      - run: node tools/stabilize_layout.cjs
+      - run: node tools/stabilize_layout.cjs --check
+      - run: node tools/test_stabilize_layout.cjs
+      - run: python tools/test_layout_seo.py
+      - run: python tools/check_site_integrity.py
+      - run: node tools/check_homepage.cjs
