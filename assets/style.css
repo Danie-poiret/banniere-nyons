@@ -178,19 +178,22 @@ iframe[data-privacy-category][hidden],.privacy-placeholder[hidden],.privacy-pane
 .video>.privacy-placeholder{position:absolute;inset:0;min-height:0;border-radius:0;overflow:auto;padding:16px}
 .privacy-placeholder button,.privacy-actions button{font:inherit;font-weight:750;border:1px solid var(--olive);border-radius:8px;background:var(--olive);color:#fff;padding:10px 16px;cursor:pointer}
 .privacy-placeholder button:focus-visible,.privacy-actions button:focus-visible,.privacy-manage:focus-visible{outline:3px solid var(--terra);outline-offset:3px}
-.privacy-panel{position:fixed;z-index:100;bottom:16px;left:50%;transform:translateX(-50%);width:min(980px,calc(100% - 32px));max-height:85vh;overflow:auto;background:var(--paper);color:var(--ink);border:1px solid var(--line);border-radius:15px;box-shadow:0 5px 35px rgba(0,0,0,.24);padding:22px 25px;font-size:.95rem;line-height:1.5}
-.privacy-panel h2{margin:0 0 10px;font-size:1.25rem;line-height:1.3;color:var(--olive)}
+.privacy-panel{position:fixed;z-index:100;right:20px;bottom:20px;left:auto;transform:none;width:min(440px,calc(100% - 32px));max-height:85vh;max-height:min(85dvh,calc(100dvh - 40px));overflow:auto;background:var(--paper);color:var(--ink);border:1px solid var(--line);border-top:4px solid var(--olive2);border-radius:15px;box-shadow:0 5px 35px rgba(0,0,0,.24);padding:22px;font-size:.9rem;line-height:1.5}
+.privacy-panel h2{margin:0 32px 10px 0;font-size:1.12rem;line-height:1.3;color:var(--olive)}
+.privacy-close{position:absolute;right:10px;top:10px;display:grid;place-items:center;width:32px;height:32px;padding:0;border:0;border-radius:50%;background:transparent;color:var(--olive);font:24px/1 system-ui,sans-serif;cursor:pointer}
+.privacy-close:hover{background:var(--cream)}
+.privacy-close:focus-visible{outline:3px solid var(--terra);outline-offset:3px}
 .privacy-panel p{margin:0 0 12px}
 .privacy-information{font-size:.88rem}
 .privacy-actions{display:flex;flex-wrap:wrap;gap:10px}
-.privacy-actions>button{flex:1;min-width:130px}
+.privacy-actions>button{flex:1;min-width:0;min-height:44px;padding:10px 6px;font-size:.84rem;line-height:1.3}
 .privacy-options{margin-top:18px;border-top:1px solid var(--line);padding-top:18px}
 .privacy-options label{display:flex;align-items:flex-start;gap:10px;margin:0 0 16px;cursor:pointer;font-size:.92rem}
 .privacy-options input{width:20px;height:20px;flex-shrink:0;margin-top:4px;accent-color:var(--olive)}
 .privacy-options p{font-size:.85rem}
 .privacy-manage{font:inherit;padding:0;background:none;border:0;color:inherit;text-decoration:underline;text-underline-offset:3px;cursor:pointer}
 .privacy-footer{font-size:.85rem;font-weight:400}
-@media(max-width:620px){.privacy-panel{bottom:10px;width:calc(100% - 20px);padding:18px}.privacy-actions>button{min-width:95px;padding:10px 8px}.privacy-placeholder{padding:18px}.video>.privacy-placeholder{padding:10px;gap:7px}.video>.privacy-placeholder p{font-size:.82rem}.privacy-placeholder button{padding:8px 10px}}
+@media(max-width:620px){.privacy-panel{right:12px;bottom:12px;width:calc(100% - 24px);max-height:85vh;max-height:min(85dvh,calc(100dvh - 24px));padding:18px}.privacy-actions>button{min-width:0;padding:10px 6px}.privacy-placeholder{padding:18px}.video>.privacy-placeholder{padding:10px;gap:7px}.video>.privacy-placeholder p{font-size:.82rem}.privacy-placeholder button{padding:8px 10px}}
 
 /* Compact lodging strip above the main navigation, responsive on small screens. */
 .lodging-banner{background:#263a2b;color:#fffdf8;border-bottom:3px solid #d9b671;font-size:.86rem;line-height:1.45}
