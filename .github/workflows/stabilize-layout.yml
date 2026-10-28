@@ -1,0 +1,70 @@
+name: Stabiliser les composants communs avant affichage
+on:
+  push:
+    branches: [main]
+    paths: ['**/*.html', 'sitemap.xml', 'assets/agenda.js', 'assets/nyons-partner-banners.js', 'tools/stabilize_layout.cjs', 'tools/layout/**', '.github/workflows/stabilize-layout.yml']
+  workflow_dispatch:
+  workflow_run:
+    workflows:
+      - Appliquer la mise a jour VivreAnyons
+      - Actualiser uniquement l’accueil de Vivre à Nyons
+      - Actualiser uniquement les cartes du portail immobilier
+      - Compléter le SEO après génération du site
+      - Harmoniser les liens des pages avec le slash final
+      - Autour de Nyons — préparation et catalogue
+      - Actualiser les horaires de bus à Nyons
+      - Actualiser uniquement les manifestations de Nyons
+      - Actualiser et vérifier Nyons en direct
+      - Restaurer les photos originales des fiches
+      - Importer photos Pont Roman
+      - Actualiser et vérifier la météo de Nyons
+    types: [completed]
+    branches: [main]
+permissions:
+  contents: write
+  pages: write
+concurrency:
+  group: stable-shared-layout-main
+  cancel-in-progress: false
+jobs:
+  render:
+    if: github.ref == 'refs/heads/main' && (github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success')
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 11.25.0
+      - run: pnpm --dir tools/layout install --frozen-lockfile --ignore-scripts
+      - name: Préparer les composants après les générateurs, sans écraser leurs changements
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          for attempt in 1 2 3; do
+            git fetch origin main
+            git checkout -B cls-preparation origin/main
+            node tools/stabilize_layout.cjs
+            node tools/stabilize_layout.cjs --check
+            node tools/test_stabilize_layout.cjs
+            python tools/test_layout_seo.py
+            python tools/check_site_integrity.py
+            node tools/check_homepage.cjs
+            git add -- '*.html'
+            if git diff --cached --quiet; then exit 0; fi
+            git commit -m 'Préparer les composants partagés pour stabiliser le CLS'
+            if git push origin HEAD:main; then
+              # A GITHUB_TOKEN push does not start the native Pages build itself.
+              gh api --method POST "repos/$GITHUB_REPOSITORY/pages/builds"
+              exit 0
+            fi
+          done
+          echo 'La branche main a changé pendant la préparation ; aucune écriture forcée.'
+          exit 1

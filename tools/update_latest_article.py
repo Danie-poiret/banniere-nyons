@@ -19,7 +19,9 @@ class Page(HTMLParser):
     def __init__(self, source):
         super().__init__(convert_charrefs=True)
         self.images, self.data, self.capture, self.buffer = [], [], False, []
-        self.feed(source)
+        # Prepared partner cards are site chrome, not candidates for the
+        # photograph and its dimensions on the latest-article card.
+        self.feed(re.sub(r'<!-- nyons-layout-partners:start -->.*?<!-- nyons-layout-partners:end -->', '', source, flags=re.S))
 
     def handle_starttag(self, tag, attrs):
         attrs = dict(attrs)

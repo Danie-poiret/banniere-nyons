@@ -14,6 +14,9 @@ import memory_breadcrumbs as memory_crumbs
 def read_source(file):
     with file.open(encoding='utf8',newline='') as stream:return stream.read()
 def clean(s):return re.sub(r'\s+',' ',html.unescape(re.sub('<[^>]+>',' ',s))).strip()
+def editorial_source(source):
+    """Keep prepared partner chrome out of editorial image/summary selection."""
+    return re.sub(r'<!-- nyons-layout-partners:start -->.*?<!-- nyons-layout-partners:end -->','',source,flags=re.S)
 def nodes(value):
     if isinstance(value,dict):
         yield value
@@ -22,7 +25,7 @@ def nodes(value):
         for child in value:yield from nodes(child)
 class Head(HTMLParser):
     def __init__(self,source):
-        super().__init__();self.meta={};self.canonical=[];self.icons=[];self.title='';self.heading='';self.images=[];self.microtypes=[];self.title_on=False;self.h1_on=False;self.feed(source)
+        super().__init__();self.meta={};self.canonical=[];self.icons=[];self.title='';self.heading='';self.images=[];self.microtypes=[];self.title_on=False;self.h1_on=False;self.feed(editorial_source(source))
     def handle_starttag(self,tag,attrs):
         a=dict(attrs)
         if a.get('itemtype'):self.microtypes.extend(t.rstrip('/').rsplit('/',1)[-1] for t in a['itemtype'].split())
@@ -50,6 +53,7 @@ def page_path(url):
     if not file.is_relative_to(ROOT.resolve()):raise ValueError('Path leaves repository')
     return file
 def excerpt(source,title):
+    source=editorial_source(source)
     m=re.search(r'<article\b[^>]*class=["\'][^"\']*feature-story[^"\']*["\'][^>]*>(.*?)</article>',source,re.S)
     text=m[1] if m else source.split('<main',1)[-1]
     for p in re.findall(r'<p\b[^>]*>(.*?)</p>',text,re.S):
