@@ -32,6 +32,9 @@ function strip(source,a,b){
 }
 function render(original,url){
  let source=strip(strip(original,begin,end),styleBegin,styleEnd);
+ // Authored homepage slots keep the same shared cards beside their subject.
+ // Rebuild their contents from the component so its texts/links stay authoritative.
+ source=source.replace(/(<!-- home-partner-(lezardiere|livres):start -->)[\s\S]*?(<!-- home-partner-\2:end -->)/g,'$1$3');
  const raw=parseDocument(source,{withStartIndices:true,withEndIndices:true});
  const header=selectOne('body > header',raw.children),main=selectOne('main',raw.children);
  const hero=selectOne('body > .hero,main .hero,main header',raw.children);
@@ -67,7 +70,20 @@ function render(original,url){
  for(const node of obsolete)if(![...obsolete].some(p=>p!==node&&p.startIndex<node.startIndex&&p.endIndex>=node.endIndex))replace(node,'');
  const slot=selectOne('[data-nyons-partner-slot]',raw.children);
  const insertAt=hero?hero.endIndex+1:slot?slot.startIndex:obsolete.size?[...obsolete][0].startIndex:source.indexOf('>',main.startIndex)+1;
- patches.push({start:insertAt,end:insertAt,text:begin+(cards?cards.outerHTML:'')+end});
+ const homeSlots=selectAll('[data-home-partner-slot]',raw.children);
+ if(homeSlots.length){
+  if(homeSlots.length!==2||!cards)throw Error('Incomplete homepage partner slots');
+  for(const slot of homeSlots){
+   const key=slot.attribs['data-home-partner-slot'];
+   const card=cards.querySelector('[data-nyons-partner="'+key+'"]');
+   if(!card)throw Error('Missing shared partner card: '+key);
+   // The live component's existing guard also prevents reinsertion above the hero.
+   card.setAttribute('data-nyons-partner-cards','');
+   const at=source.indexOf('>',slot.startIndex)+1;
+   patches.push({start:at,end:slot.endIndex-5,text:'<!-- home-partner-'+key+':start -->'+card.outerHTML+'<!-- home-partner-'+key+':end -->'});
+  }
+ }
+ patches.push({start:insertAt,end:insertAt,text:begin+(!homeSlots.length&&cards?cards.outerHTML:'')+end});
  const head=selectOne('head',raw.children);
  patches.push({start:head.endIndex-6,end:head.endIndex-6,text:styleBegin+styles.map(s=>s.outerHTML).join('')+styleEnd});
  // Reverse offsets preserve every other byte, including article HTML and SEO.

@@ -26,4 +26,14 @@ for(const nested of [false,true]){
  assert.equal(render(result,'https://www.vivreanyons.fr/carte/'),result);
  assert.equal(result.replace(/<!-- nyons-layout-partners:start -->[\s\S]*?<!-- nyons-layout-partners:end -->/, '').match(/<main>[\s\S]*?<\/main>/)[0],source.match(/<main>[\s\S]*?<\/main>/)[0]);
 }
-console.log('Layout variants, legacy banner replacement, unchanged articles/JSON-LD and idempotence: OK');
+const home=fixture('/').replace('<main>','<main><div data-home-partner-slot="lezardiere"><!-- home-partner-lezardiere:start --><!-- home-partner-lezardiere:end --></div><div data-home-partner-slot="livres"><!-- home-partner-livres:start --><!-- home-partner-livres:end --></div>');
+const placed=render(home,'https://www.vivreanyons.fr/');
+assert.equal(render(placed,'https://www.vivreanyons.fr/'),placed);
+for(const key of ['lezardiere','livres']){
+ const inside=placed.match(new RegExp('<!-- home-partner-'+key+':start -->([\\s\\S]*?)<!-- home-partner-'+key+':end -->'))[1];
+ assert(inside.includes('data-nyons-partner="'+key+'"'));
+ assert(inside.includes('data-nyons-partner-cards=""'));
+ assert.equal((placed.match(new RegExp('data-nyons-partner="'+key+'"','g'))||[]).length,1);
+}
+assert(placed.includes('<!-- nyons-layout-partners:start --><!-- nyons-layout-partners:end -->'));
+console.log('Layout variants, homepage slots, legacy banner replacement, unchanged articles/JSON-LD and idempotence: OK');

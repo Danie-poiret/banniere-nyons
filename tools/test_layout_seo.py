@@ -1,10 +1,22 @@
 """The CLS preparation must not change editorial image or summary selection."""
 import unittest
-from harmonize_seo import Head, excerpt, optimize
+from harmonize_seo import Head, excerpt, optimize, card_items
 from update_latest_article import Page
 
 
 class LayoutSEO(unittest.TestCase):
+    def test_homepage_schema_order_survives_visual_reordering(self):
+        site='https://www.vivreanyons.fr/'
+        latest='<!-- HOME_LATEST_START --><article class="home-latest-card"><a href="/article/">Article</a></article><!-- HOME_LATEST_END -->'
+        season='<!-- HOME_SEASON_START --><article class="home-season-card"><a href="/saison/">Saison</a></article><!-- HOME_SEASON_END -->'
+        catalog={site+'article/':'<title>Article local</title>',site+'saison/':'<title>Idée de saison</title>'}
+        before=card_items(latest+season,site,catalog)
+        after=card_items(season+latest,site,catalog)
+        self.assertEqual(after,before)
+        self.assertEqual([x['item']['url'] for x in after],[site+'article/',site+'saison/'])
+        # Other collections retain their original DOM-driven selection order.
+        self.assertNotEqual(card_items(season+latest,site+'rubrique/',catalog),before)
+
     def test_partner_cards_do_not_change_editorial_analysis(self):
         url='https://www.vivreanyons.fr/exemple/'
         source='''<!doctype html><html><head><title>Histoire de Nyons</title>
