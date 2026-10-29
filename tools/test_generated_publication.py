@@ -184,6 +184,15 @@ class SeoScopeTests(Workspace):
         self.assertEqual(self.text('one'), one)
         self.assertIn('og:title', self.text('two'))
 
+    def test_prepared_layout_styles_do_not_cause_repeated_seo_rewrites(self):
+        self.run_seo('--url', self.urls[0], '--apply')
+        prepared = self.text('one').replace('</head>',
+            '<!-- nyons-layout-styles:start --><style>.partner{display:grid}</style>'
+            '<!-- nyons-layout-styles:end --></head>')
+        (self.repo / 'one/index.html').write_text(prepared, encoding='utf8')
+        self.run_seo('--url', self.urls[0], '--check')
+        self.assertEqual(self.text('one'), prepared)
+
     def test_global_selection_is_unchanged(self):
         self.run_seo('--all', '--apply')
         for slug in ('one', 'two'):

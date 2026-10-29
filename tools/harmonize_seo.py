@@ -142,7 +142,11 @@ def optimize(source,url,config,catalog):
         if photo:item['image']=urljoin(url,photo['src'])
         graph.append(item);changes.append(item['@type'])
     if graph:additions.append('<script '+MARKER+' type="application/ld+json">'+json.dumps({'@context':'https://schema.org','@graph':graph},ensure_ascii=False).replace('</',r'<\/')+'</script>')
-    if additions:source=source.replace('</head>',''.join(additions)+'</head>',1)
+    if additions:
+        # Prepared layout styles stay last in head; do not move SEO back after them.
+        marker='<!-- nyons-layout-styles:start -->'
+        anchor=marker if marker in source.split('</head>',1)[0] else '</head>'
+        source=source.replace(anchor,''.join(additions)+anchor,1)
     assert Head(source).meta.get('description',[])==p.meta.get('description',[]), 'Description changed'
     assert source.split('</head>',1)[1]==original.split('</head>',1)[1], 'Body changed'
     assert Head(source).canonical==p.canonical, 'URL changed'
