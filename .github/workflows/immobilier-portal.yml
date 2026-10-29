@@ -7,6 +7,8 @@ on:
       - sitemap.xml
       - tools/update_immobilier_portal.py
       - tools/immobilier-portal.json
+      - tools/harmonize_seo.py
+      - tools/publish_generated_pages.py
       - .github/workflows/immobilier-portal.yml
   workflow_dispatch:
 permissions:
@@ -24,24 +26,6 @@ jobs:
       - uses: actions/checkout@v4
         with:
           ref: main
-      - name: Regrouper les articles immobiliers réellement publiés
-        run: |
-          python tools/update_immobilier_portal.py
-          python tools/update_immobilier_portal.py --check
-      - name: Compléter le SEO www après génération, avant publication
-        run: |
-          python tools/harmonize_seo.py --all --apply --stage
-          python tools/harmonize_seo.py --all --check
-      - name: Publier seulement les cartes du portail existant
-        run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add infos-pratiques-nyons/immobilier-nyons/index.html
-          if ! git diff --cached --quiet; then
-            git commit -m "Actualiser les guides du portail immobilier"
-            for attempt in 1 2 3; do
-              git pull --rebase origin main
-              if git push origin main; then exit 0; fi
-            done
-            exit 1
-          fi
+      - name: Préparer et publier uniquement le portail depuis la dernière version
+        run: python tools/publish_generated_pages.py immobilier
+

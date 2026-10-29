@@ -148,15 +148,19 @@ def optimize(source,url,config,catalog):
     assert Head(source).canonical==p.canonical, 'URL changed'
     return source,crumb_changes+changes
 def main():
-    parser=argparse.ArgumentParser();parser.add_argument('--apply',action='store_true');parser.add_argument('--stage',action='store_true');parser.add_argument('--check',action='store_true');parser.add_argument('--all',action='store_true');args=parser.parse_args()
+    parser=argparse.ArgumentParser();parser.add_argument('--apply',action='store_true');parser.add_argument('--stage',action='store_true');parser.add_argument('--check',action='store_true')
+    scope=parser.add_mutually_exclusive_group()
+    scope.add_argument('--all',action='store_true')
+    scope.add_argument('--url',action='append',dest='urls',help='Optimize only this published canonical URL; repeat to select more than one.')
+    args=parser.parse_args()
     config=json.loads((ROOT/'tools/seo-policy.json').read_text(encoding='utf8'))
     if args.all and config.get('scope')!='global-approved':raise SystemExit('Global deployment is locked pending explicit approval.')
     if args.all:
         from consolidate_duplicate_urls import install as consolidate_duplicates
         consolidate_duplicates(ROOT,check=args.check or not args.apply,stage=args.stage)
     urls=[n.text for n in ET.parse(ROOT/'sitemap.xml').findall('.//{http://www.sitemaps.org/schemas/sitemap/0.9}loc')]
-    selected=urls if args.all else config['pilot_urls']
-    if any(u not in urls for u in selected):raise ValueError('A pilot URL is not published')
+    selected=urls if args.all else list(dict.fromkeys(args.urls or config['pilot_urls']))
+    if any(u not in urls for u in selected):raise ValueError('A selected URL is not published')
     paths=[str(page_path(u)) for u in urls]
     if os.name=='nt' and len(set(p.casefold() for p in paths))!=len(paths):raise SystemExit('Case-sensitive URL aliases require Linux or exact Git blob processing.')
     catalog={u:read_source(page_path(u)) for u in urls}
@@ -175,3 +179,4 @@ def main():
                 if args.stage:subprocess.run(['git','add','--',str(file.relative_to(ROOT))],cwd=ROOT,check=True)
     print(json.dumps(report,ensure_ascii=False,indent=2))
 if __name__=='__main__':main()
+
