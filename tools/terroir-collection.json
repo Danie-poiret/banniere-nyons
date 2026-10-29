@@ -85,6 +85,18 @@
       "intro": "Abricots, agrumes, lavande et tilleul : au fil des saisons, le Nyonsais se découvre aussi dans les vergers, les jardins et les récoltes des Baronnies.",
       "items": [
         {
+          "url": "/univers-lavande-nyons/",
+          "title": "L’univers de la lavande à Nyons",
+          "description": "Neuf guides réunis dans cinq familles : floraison, routes, distilleries, histoire et miel. Une collection pour choisir une sortie et retrouver les articles détaillés.",
+          "image": {
+            "src": "/assets/photos/lavandes-baronnies-poet-en-percip.jpg",
+            "width": 1400,
+            "height": 660,
+            "alt": "Champs de lavande en cours de récolte au Coup d’Huery, au Poët-en-Percip, dans les Baronnies provençales.",
+            "sourcePage": "/produits-du-terroir/Lavande-de-Nyons/"
+          }
+        },
+        {
           "url": "/produits-du-terroir/Abricots-de-Nyons/",
           "title": "Les abricots, le goût de l’été",
           "description": "Quand arrive la belle saison, les abricots colorent les étals. Découvre ce fruit du pays, ses usages en cuisine et sa place au marché nyonsais.",
