@@ -1,0 +1,22 @@
+name: Vérifier les publications automatiques concurrentes
+on:
+  pull_request:
+    paths:
+      - tools/publish_generated_pages.py
+      - tools/harmonize_seo.py
+      - tools/test_generated_publication.py
+      - .github/workflows/immobilier-portal.yml
+      - .github/workflows/seo-centralise.yml
+      - .github/workflows/generated-pages-check.yml
+permissions:
+  contents: read
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m unittest discover -s tools -p test_generated_publication.py

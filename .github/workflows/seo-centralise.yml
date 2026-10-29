@@ -3,7 +3,7 @@ on:
   workflow_dispatch:
   push:
     branches: [main]
-    paths: ['**/*.html', 'sitemap.xml', 'tools/harmonize_seo.py', 'tools/seo-policy.json', 'tools/consolidate_duplicate_urls.py', 'tools/duplicate-canonical-map.json', '.github/workflows/seo-centralise.yml']
+    paths: ['**/*.html', 'sitemap.xml', 'tools/harmonize_seo.py', 'tools/publish_generated_pages.py', 'tools/seo-policy.json', 'tools/consolidate_duplicate_urls.py', 'tools/duplicate-canonical-map.json', '.github/workflows/seo-centralise.yml']
   workflow_run:
     workflows: ['Appliquer la mise a jour VivreAnyons', 'Actualiser uniquement l’accueil de Vivre à Nyons', 'Actualiser uniquement les cartes du portail immobilier']
     types: [completed]
@@ -26,14 +26,6 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
-      - name: Compléter uniquement les pages www du sitemap
-        run: python tools/harmonize_seo.py --all --apply --stage
-      - name: Vérifier la seconde exécution sans modification
-        run: python tools/harmonize_seo.py --all --check
-      - name: Publier uniquement les compléments techniques préparés
-        run: |
-          if git diff --cached --quiet; then exit 0; fi
-          git config user.name 'github-actions[bot]'
-          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git commit -m 'Compléter les métadonnées SEO après génération'
-          git push origin HEAD:main
+      - name: Compléter, vérifier et publier depuis la dernière version
+        run: python tools/publish_generated_pages.py seo
+
