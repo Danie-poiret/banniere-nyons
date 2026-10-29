@@ -1,0 +1,478 @@
+{
+  "path": "/univers-lavande-nyons/",
+  "title": "L’univers de la lavande à Nyons",
+  "seoTitle": "Lavande autour de Nyons : routes, visites et guides",
+  "description": "Explore l’univers de la lavande autour de Nyons : floraison, routes, distilleries, histoire et miel. Neuf guides existants et des tableaux pour préparer ta visite.",
+  "published": "2026-10-29",
+  "modified": "2026-10-29",
+  "hero": {
+    "src": "/assets/photos/lavandes-baronnies-poet-en-percip.jpg",
+    "width": 1400,
+    "height": 660,
+    "alt": "Champs de lavande en cours de récolte au Coup d’Huery, au Poët-en-Percip, dans les Baronnies provençales.",
+    "sourcePage": "/produits-du-terroir/Lavande-de-Nyons/"
+  },
+  "heroCaption": "Lavandes au Poët-en-Percip, dans les Baronnies, le 16 juillet 2014. Photo : Torsade de Pointes, CC0. Ce champ n’est pas dans la commune de Nyons.",
+  "intro": [
+    "Un champ qui se colore, une cuve qui chauffe, un bouquet rapporté dans le sac… La lavande se découvre de bien des façons autour de Nyons. Et derrière le parfum, il y a des producteurs, des gestes et toute une histoire du pays.",
+    "J’ai rassemblé ici nos guides déjà publiés pour t’aider à choisir une promenade, une visite ou une lecture. Inutile de tout faire dans la même journée : prends le chemin qui te plaît, les autres seront encore là demain.",
+    "Cette collection organise les articles ; le grand guide de la lavande garde ses recherches, ses archives et ses explications détaillées. Les photographies et les récits anciens restent à leur place."
+  ],
+  "groups": [
+    {
+      "id": "voir-la-lavande",
+      "number": "01",
+      "title": "Où et quand voir la lavande ?",
+      "intro": "Commence par la saison, puis choisis le paysage ou une petite promenade en ville. Une date ne garantit jamais qu’un champ précis soit encore en fleurs.",
+      "items": [
+        {
+          "url": "/produits-du-terroir/Lavande-de-Nyons/",
+          "title": "Le grand guide de la lavande de Nyons",
+          "description": "Floraison, carte, lavande vraie ou lavandin, archives et chiffres de la filière : le guide de référence pour approfondir la découverte.",
+          "image": {
+            "src": "/assets/photos/lavandes-baronnies-poet-en-percip.jpg",
+            "width": 1400,
+            "height": 660,
+            "alt": "Champs de lavande en cours de récolte au Coup d’Huery, au Poët-en-Percip, dans les Baronnies provençales.",
+            "sourcePage": "/produits-du-terroir/Lavande-de-Nyons/"
+          },
+          "imageLabel": ""
+        },
+        {
+          "url": "/infos-pratiques-nyons/lavande-et-les-oliviers/",
+          "title": "Lavande et oliviers : choisir sa période",
+          "description": "Les deux plantes n’ont pas le même calendrier. Cette fiche aide à penser la saison, avec des repères à ajuster selon l’altitude et la météo.",
+          "image": {
+            "src": "/assets/photos/fiche-ad48eb11ca9b51ade487.webp",
+            "width": 960,
+            "height": 1280,
+            "alt": "Bouquets de lavande séchée dans des pots bleus sur le rebord d’une fenêtre en pierre.",
+            "sourcePage": "/que-faire-nyons/Distillerie-Bleu-Provence-Nyons/"
+          },
+          "imageLabel": "Bouquets séchés dans la fiche Bleu Provence."
+        },
+        {
+          "url": "/que-faire-nyons/Jardin-des-Aromes/",
+          "title": "Une pause au Jardin des Arômes",
+          "description": "Une promenade au bord de l’Eygues pour observer les plantes aromatiques. Une visite de jardin, différente de la découverte d’un champ agricole.",
+          "image": {
+            "src": "/assets/photos/7c725584a58e38bf9388.webp",
+            "width": 556,
+            "height": 312,
+            "alt": "Massifs fleuris et végétation au Jardin des Arômes à Nyons",
+            "sourcePage": "/que-faire-nyons/Jardin-des-Aromes/"
+          },
+          "imageLabel": ""
+        }
+      ],
+      "tables": [
+        "calendrier",
+        "chiffres"
+      ]
+    },
+    {
+      "id": "routes-et-villages",
+      "number": "02",
+      "title": "Routes, villages et balades",
+      "intro": "Autour de Nyons, les lavandes partagent le paysage avec les oliviers, les vignes et les villages. Prépare les étapes et reste sur les accès autorisés.",
+      "items": [
+        {
+          "url": "/a-faire-autour-de-Nyons/route-lavande/",
+          "title": "La route de la lavande depuis Nyons",
+          "description": "Un ancien récit d’escapade entre villages et paysages. Pour organiser le trajet actuel, compare les étapes et l’itinéraire touristique officiel ci-dessous.",
+          "image": {
+            "src": "/assets/photos/lavandes-oliviers-vinsobres.jpg",
+            "width": 1200,
+            "height": 800,
+            "alt": "Rangs de lavandes hors floraison et oliviers à Vinsobres, devant les collines.",
+            "sourcePage": "/produits-du-terroir/Lavande-de-Nyons/"
+          },
+          "imageLabel": "Vinsobres, lavandes hors floraison et oliviers, le 8 mars 2014."
+        },
+        {
+          "url": "/a-faire-autour-de-Nyons/village-de-venterol/",
+          "title": "Flâner dans les ruelles de Venterol",
+          "description": "Campanile, petites rues et patrimoine du village : une halte à combiner avec les paysages agricoles, sans promettre de champs fleuris à chaque passage.",
+          "image": {
+            "src": "/assets/photos/e184473d950028dab9e1.webp",
+            "width": 468,
+            "height": 500,
+            "alt": "Venterol, un village où les ruelles, les vieilles façades et les petits détails donnent surtout envie de flâner.",
+            "sourcePage": "/a-faire-autour-de-Nyons/village-de-venterol/"
+          },
+          "imageLabel": ""
+        }
+      ],
+      "tables": [
+        "trajets"
+      ]
+    },
+    {
+      "id": "distilleries-producteurs",
+      "number": "03",
+      "title": "Distilleries et producteurs",
+      "intro": "Le parfum prend une autre dimension quand on comprend la récolte et la distillation. Une boutique, un espace découverte et un atelier n’ont pas forcément les mêmes conditions d’accès.",
+      "items": [
+        {
+          "url": "/que-faire-nyons/Distillerie-Bleu-Provence-Nyons/",
+          "title": "Bleu Provence, le savoir-faire à Nyons",
+          "description": "Adresse, découverte, ateliers et histoire de la distillerie sur la promenade de la Digue. Vérifie le programme si tu veux voir une distillation en activité.",
+          "image": {
+            "src": "/assets/photos/fiche-59c5cf0f3046d15f1101.webp",
+            "width": 661,
+            "height": 371,
+            "alt": "Cuve ouverte remplie de plantes et vapeur à la Distillerie Bleu Provence à Nyons.",
+            "sourcePage": "/que-faire-nyons/Distillerie-Bleu-Provence-Nyons/"
+          },
+          "imageLabel": ""
+        },
+        {
+          "url": "/a-faire-autour-de-Nyons/distilleries-de-lavande/",
+          "title": "Quatre distilleries à comparer en famille",
+          "description": "Bleu Provence, Ho ! Bouquet de Lavande, le Vallon des Lavandes et Aroma’Plantes : le récit existant pour découvrir leurs différences.",
+          "image": {
+            "src": "/assets/photos/fiche-470ea3e88964b0edf8ba.webp",
+            "width": 960,
+            "height": 1280,
+            "alt": "Bouteilles et produits gourmands sur les étagères en bois de la boutique Bleu Provence.",
+            "sourcePage": "/que-faire-nyons/Distillerie-Bleu-Provence-Nyons/"
+          },
+          "imageLabel": "Boutique de Bleu Provence à Nyons ; cette photo ne représente pas les quatre lieux."
+        }
+      ],
+      "tables": [
+        "distilleries"
+      ]
+    },
+    {
+      "id": "histoire-traditions",
+      "number": "04",
+      "title": "Histoire et traditions",
+      "intro": "Alambics, récolte et construction mécanique : la lavande fait aussi partie de la mémoire industrielle du Nyonsais. Le grand guide raconte également les anciennes distilleries des fermes de Venterol.",
+      "items": [
+        {
+          "url": "/Histoire-Geo/felix-eysseric-nyons/",
+          "title": "Félix Eysséric, des alambics aux inventions",
+          "description": "La fiche historique présente cet inventeur installé à Nyons et le lien de ses machines avec les activités agricoles et la distillation.",
+          "image": {
+            "src": "/assets/photos/d8854b6b4c17d28007b8.webp",
+            "width": 480,
+            "height": 360,
+            "alt": "FÉLIX EYSSÉRIC : L’AVENTURE INDUSTRIELLE OUBLIÉE DE NYONS",
+            "sourcePage": "/Histoire-Geo/felix-eysseric-nyons/"
+          },
+          "imageLabel": "Visuel de la monoroue repris de la fiche historique de Félix Eysséric."
+        }
+      ],
+      "tables": [
+        "fetes"
+      ]
+    },
+    {
+      "id": "miel-parfums-produits",
+      "number": "05",
+      "title": "Miel, parfums et produits de lavande",
+      "intro": "Un pot de miel, un bouquet ou un produit parfumé ne se choisissent pas de la même façon. Demande l’origine, la composition et les conditions de fabrication au producteur.",
+      "items": [
+        {
+          "url": "/produits-du-terroir/miel-de-lavande-de-Nyons/",
+          "title": "Miel de lavande : producteurs et bonnes questions",
+          "description": "Adresses, origine, prix relevés et histoire de l’apiculture : la fiche détaillée aide à choisir son pot et à préparer une rencontre avec les producteurs.",
+          "image": {
+            "src": "/assets/photos/lavandes-baronnies-poet-en-percip.jpg",
+            "width": 1400,
+            "height": 660,
+            "alt": "Champs de lavande en cours de récolte au Coup d’Huery, au Poët-en-Percip, dans les Baronnies provençales.",
+            "sourcePage": "/produits-du-terroir/Lavande-de-Nyons/"
+          },
+          "imageLabel": "Paysage de lavandes au Poët-en-Percip, habitat mellifère ; pas une photo d’un rucher de Nyons."
+        }
+      ],
+      "paragraph": "Pour les bouquets, les huiles essentielles, les savons et les parfums, retrouve les produits et les ateliers sur le <a href=\"https://distillerie-bleu-provence.com/\" target=\"_blank\" rel=\"noopener noreferrer\">site de Bleu Provence</a>. Lis l’étiquette : lavande vraie et lavandin sont deux produits distincts ; les propriétés et les usages d’un produit ne se déduisent pas de son seul parfum."
+    }
+  ],
+  "tables": {
+    "objectif": {
+      "id": "selon-votre-objectif",
+      "title": "Selon votre objectif",
+      "caption": "Par où commencer ?",
+      "headers": [
+        "Ton envie",
+        "La bonne porte d’entrée",
+        "Le détail utile"
+      ],
+      "rows": [
+        [
+          "Photographier les paysages",
+          "<a href=\"#voir-la-lavande\">Floraison et grand guide</a>",
+          "Vérifier la floraison locale et les récoltes ; photographier depuis les accès publics."
+        ],
+        [
+          "Visiter un lieu de savoir-faire",
+          "<a href=\"#distilleries-producteurs\">Distilleries</a>",
+          "Choisir entre découverte libre, visite commentée et atelier réservé."
+        ],
+        [
+          "Marcher et découvrir un village",
+          "<a href=\"#routes-et-villages\">Routes et villages</a>",
+          "Adapter la distance à la chaleur, au relief et à la durée disponible."
+        ],
+        [
+          "Acheter du miel ou un produit parfumé",
+          "<a href=\"#miel-parfums-produits\">Producteurs et produits</a>",
+          "Comparer l’origine et la composition ; un achat en Provence ne garantit pas une production à Nyons."
+        ],
+        [
+          "Venir en famille",
+          "<a href=\"#distilleries\">Comparatif des visites</a>",
+          "Vérifier l’âge accepté et le créneau des ateliers avant de réserver."
+        ],
+        [
+          "Comprendre l’histoire locale",
+          "<a href=\"#histoire-traditions\">Félix Eysséric et les traditions</a>",
+          "Lire les récits existants, puis poursuivre les archives dans le grand guide."
+        ]
+      ]
+    },
+    "calendrier": {
+      "id": "lavande-mois-par-mois",
+      "title": "🌸 La lavande mois par mois",
+      "caption": "Un calendrier indicatif, pas une promesse de floraison",
+      "headers": [
+        "Mois",
+        "Ce qu’on peut attendre",
+        "Une idée de découverte"
+      ],
+      "rows": [
+        [
+          "Janvier",
+          "Pas de grands champs violets dans le cycle habituel.",
+          "Histoire, produits et visites dont l’ouverture est confirmée."
+        ],
+        [
+          "Février",
+          "Végétation hivernale, sans floraison agricole habituelle.",
+          "Découvrir les métiers et préparer une sortie."
+        ],
+        [
+          "Mars",
+          "Reprise de végétation selon les secteurs.",
+          "Villages et paysages de début de printemps."
+        ],
+        [
+          "Avril",
+          "Les plantations se développent ; les champs violets sont encore à attendre.",
+          "Promenade dans les villages et découverte des plantes."
+        ],
+        [
+          "Mai",
+          "La lavande n’a généralement pas atteint sa pleine floraison.",
+          "Jardin des Arômes et distilleries."
+        ],
+        [
+          "Juin",
+          "Les premières floraisons arrivent selon la variété, l’exposition et l’altitude.",
+          "Demander l’état des champs avant de choisir sa route."
+        ],
+        [
+          "Juillet",
+          "Période majeure de floraison puis de récolte ; les secteurs élevés sont souvent plus tardifs.",
+          "Photographies et visites, en tenant compte des coupes."
+        ],
+        [
+          "Août",
+          "De nombreuses parcelles sont déjà récoltées ; les dernières floraisons dépendent du secteur.",
+          "Distilleries, fêtes annoncées et paysages d’altitude, sans garantie."
+        ],
+        [
+          "Septembre",
+          "La grande floraison estivale est habituellement terminée.",
+          "Produits, archives et promenades."
+        ],
+        [
+          "Octobre",
+          "Les paysages ont leur aspect d’automne.",
+          "Villages, savoir-faire et jardin selon la météo."
+        ],
+        [
+          "Novembre",
+          "Pas de floraison estivale à attendre.",
+          "Lecture, patrimoine et visites ouvertes."
+        ],
+        [
+          "Décembre",
+          "Pas de grands champs violets dans le cycle habituel.",
+          "Produits et traditions du pays."
+        ]
+      ],
+      "note": "L’altitude, la météo, les variétés et les récoltes décalent les dates. Le Pays de Sault fleurit habituellement à partir de juillet. Il faut confirmer l’état d’une parcelle auprès des acteurs locaux.",
+      "sourceHtml": "<a href=\"https://www.provenceguide.com/patrimoines-naturels/mont-ventoux/le-pays-de-sault/provence-4598882-1.html\" target=\"_blank\" rel=\"noopener noreferrer\">Office de tourisme : le Pays de Sault</a> ; calendrier détaillé et sources dans le grand guide de cette collection."
+    },
+    "chiffres": {
+      "id": "lavande-en-chiffres",
+      "title": "📊 La lavande en chiffres",
+      "caption": "Des repères datés, avec leur territoire",
+      "headers": [
+        "Repère",
+        "Valeur",
+        "Ce que le chiffre signifie / source"
+      ],
+      "rows": [
+        [
+          "Lavande — France métropolitaine",
+          "6 982 ha en 2025",
+          "Surfaces déclarées à la PAC : <a href=\"https://www.franceagrimer.fr/sites/default/files/2026-02/Note_conjoncture_PPAM_fevrier_2026.pdf\" target=\"_blank\" rel=\"noopener noreferrer\">FranceAgriMer, février 2026, p. 1</a>. Ce ne sont pas les surfaces de Nyons."
+        ],
+        [
+          "Lavandin — France métropolitaine",
+          "18 166 ha en 2025",
+          "Même périmètre PAC ; −8,6 % par rapport à 2024, selon FranceAgriMer."
+        ],
+        [
+          "Lavande + lavandin — France métropolitaine",
+          "25 148 ha en 2025",
+          "Somme des deux cultures ; aucun chiffre communal n’est déduit de ces données."
+        ],
+        [
+          "Distillation à Nyons",
+          "Depuis 1939",
+          "Repère historique annoncé par <a href=\"https://distillerie-bleu-provence.com/\" target=\"_blank\" rel=\"noopener noreferrer\">Bleu Provence</a>."
+        ],
+        [
+          "Jardin des Arômes",
+          "Créé en 1983 ; plus de 180 espèces",
+          "Ensemble des plantes du jardin, pas 180 variétés de lavande : <a href=\"https://www.nyons.com/vivre-nyons/habitat-et-environnement/parcs-et-jardins/\" target=\"_blank\" rel=\"noopener noreferrer\">Ville de Nyons</a>."
+        ]
+      ]
+    },
+    "trajets": {
+      "id": "depuis-nyons",
+      "title": "🚗 Depuis Nyons : préparer les trajets",
+      "caption": "Distances routières estimées depuis Bleu Provence, promenade de la Digue",
+      "headers": [
+        "Destination",
+        "Distance / conduite indicative",
+        "Pour préparer la sortie"
+      ],
+      "rows": [
+        [
+          "Venterol — repère au centre du village",
+          "≈ 5,6 km · ≈ 5 min",
+          "<a href=\"https://www.google.com/maps/dir/?api=1&origin=44.359267%2C5.141215&destination=44.390787%2C5.098118&travelmode=driving\" target=\"_blank\" rel=\"noopener noreferrer\">Calculer l’itinéraire</a>"
+        ],
+        [
+          "Vinsobres — repère au bourg",
+          "≈ 10 km · ≈ 10 min",
+          "<a href=\"https://www.google.com/maps/dir/?api=1&origin=44.359267%2C5.141215&destination=44.331411%2C5.0591&travelmode=driving\" target=\"_blank\" rel=\"noopener noreferrer\">Calculer l’itinéraire</a>"
+        ],
+        [
+          "Aroma’Plantes à Sault",
+          "≈ 56,9 km · ≈ 60 min",
+          "<a href=\"https://www.google.com/maps/dir/?api=1&origin=44.359267%2C5.141215&destination=44.102129%2C5.397007&travelmode=driving\" target=\"_blank\" rel=\"noopener noreferrer\">Calculer l’itinéraire</a>"
+        ],
+        [
+          "Vallon des Lavandes à Sault",
+          "≈ 53,5 km · ≈ 55 min",
+          "<a href=\"https://www.google.com/maps/dir/?api=1&origin=44.359267%2C5.141215&destination=44.108242%2C5.411614&travelmode=driving\" target=\"_blank\" rel=\"noopener noreferrer\">Calculer l’itinéraire</a>"
+        ]
+      ],
+      "note": "Estimations OSRM/OpenStreetMap calculées le 29 octobre 2026, à partir de la Distillerie Bleu Provence. Arrondies, hors circulation, pauses et stationnement ; elles ne remplacent pas le calcul du trajet pour ton départ.",
+      "sourceHtml": "<a href=\"https://router.project-osrm.org/table/v1/driving/5.141215,44.359267;5.098118,44.390787;5.0591,44.331411;5.397007,44.102129;5.411614,44.108242?sources=0&annotations=distance,duration\" target=\"_blank\" rel=\"noopener noreferrer\">Calcul routier OSRM à partir des coordonnées des lieux</a>. Le circuit touristique officiel « Le pays de l’olive… et des lavandes », au départ de Nyons, annonce <a href=\"https://www.drome-cestmanature.com/fiches/le-pays-de-lolive-et-des-lavandes-itineraire-n10/\" target=\"_blank\" rel=\"noopener noreferrer\">142 km</a> : c’est une boucle distincte, pas la somme des étapes ci-dessus."
+    },
+    "distilleries": {
+      "id": "distilleries",
+      "title": "🏭 Comparatif des distilleries",
+      "caption": "Renseignements consultés le 29 octobre 2026",
+      "headers": [
+        "Lieu et adresse",
+        "Ce qu’on peut découvrir",
+        "Tarif et réservation"
+      ],
+      "rows": [
+        [
+          "Bleu Provence — 58 promenade de la Digue, 26110 Nyons",
+          "Distillation selon le planning ; espace découverte et ateliers.",
+          "Espace découverte annoncé gratuit par <a href=\"https://www.vaison-ventoux-provence.com/offres/distillerie-bleu-provence-nyons-fr-6168143/\" target=\"_blank\" rel=\"noopener noreferrer\">l’office de tourisme</a>. Prix et âge des ateliers à vérifier sur le site du lieu ; réservation selon l’activité."
+        ],
+        [
+          "Aroma’Plantes — route du Mont Ventoux, 84390 Sault",
+          "Distillerie, Lavandoscope, sentier, plantothèque et ateliers.",
+          "Accès libre aux espaces cités sur <a href=\"https://www.distillerie-aromaplantes.com/en/practical-information/\" target=\"_blank\" rel=\"noopener noreferrer\">la page officielle</a>. Visite guidée et ateliers : tarif et créneau à confirmer. Fermeture annoncée les 1er janvier et 25 décembre."
+        ],
+        [
+          "Vallon des Lavandes — 965 route du Vallon, 84390 Sault",
+          "Visite traditionnelle annoncée d’environ 1 h.",
+          "Gratuit selon <a href=\"https://www.provenceguide.com/activites/mont-ventoux/visite-de-la-distillerie-traditionnelle-du-vallon-des-lavandes/provence-597736-1.html\" target=\"_blank\" rel=\"noopener noreferrer\">la fiche touristique 2026</a>. Hors juillet-août, rendez-vous de visite sur réservation. Calendrier 2027 à confirmer."
+        ],
+        [
+          "Ho ! Bouquet de Lavande — 450 route des Lavandes, 26570 Ferrassières",
+          "Exploitation et sentiers botaniques.",
+          "Le <a href=\"https://www.drome-tourism.com/fiches/sentier-botanique-des-lavandes/\" target=\"_blank\" rel=\"noopener noreferrer\">sentier botanique</a> est annoncé en accès libre ; la fiche disponible date de 2021. Tarifs, horaires et visites de l’exploitation non revérifiés : confirmer auprès de l’office de tourisme."
+        ]
+      ],
+      "note": "Les anciens récits restent des souvenirs de visite. Une gratuité annoncée pour un espace ou un sentier ne s’étend pas automatiquement aux ateliers ni à toutes les visites."
+    },
+    "fetes": {
+      "id": "fetes-lavande",
+      "title": "🎉 Fêtes de la lavande",
+      "caption": "Distinguer les éditions passées et les prochains programmes",
+      "headers": [
+        "Rendez-vous",
+        "Date vérifiée / statut",
+        "Ce qu’il faut consulter"
+      ],
+      "rows": [
+        [
+          "Ferrassières — fête de la lavande",
+          "Dimanche 5 juillet 2026 : édition passée.",
+          "La date figure sur <a href=\"https://fete-lavande.com/\" target=\"_blank\" rel=\"noopener noreferrer\">le site de l’organisateur</a>. Programme de la prochaine édition non vérifié ; ne pas reconduire les anciens horaires ou tarifs."
+        ],
+        [
+          "Sault — fête de la lavande",
+          "Rendez-vous traditionnel du 15 août.",
+          "La <a href=\"https://www.provenceguide.com/fetes-et-manifestations/mont-ventoux/fete-de-la-lavande/provence-4599124-1.html\" target=\"_blank\" rel=\"noopener noreferrer\">fiche touristique</a> présente animations et marché, mais son jour de semaine ne permet pas d’identifier une édition actuelle avec certitude. Date complète et programme de la prochaine édition à confirmer."
+        ]
+      ],
+      "note": "Consultation du 29 octobre 2026. Aucun programme 2027 n’est annoncé ici comme confirmé ; les fêtes ne garantissent pas que les champs voisins soient encore en fleurs."
+    }
+  },
+  "faq": [
+    {
+      "q": "Quelle différence entre cette collection et le grand guide de la lavande ?",
+      "a": "Cette page sert de sommaire vers neuf articles existants. Le grand guide conserve ses explications, sa carte, ses archives et ses recherches détaillées."
+    },
+    {
+      "q": "Quand voir les lavandes autour de Nyons ?",
+      "a": "Juin et juillet donnent les principaux repères, avec des décalages selon l’altitude, la météo et les récoltes. Une date ne garantit pas la floraison d’un champ précis."
+    },
+    {
+      "q": "Que découvrir hors de la saison des champs violets ?",
+      "a": "Les villages, le Jardin des Arômes et les lieux de savoir-faire offrent d’autres pistes. Vérifie les ouvertures et les créneaux des visites avant de venir."
+    },
+    {
+      "q": "Peut-on entrer dans les champs pour prendre des photos ?",
+      "a": "Les cultures sont des exploitations agricoles. Reste sur les accès autorisés et demande l’accord du propriétaire avant d’entrer ou de cueillir."
+    },
+    {
+      "q": "Les visites de distilleries sont-elles toutes gratuites ?",
+      "a": "Non. L’accès libre à une boutique, un espace découverte ou un sentier ne remplace pas une visite guidée ou un atelier. Compare la formule et la réservation."
+    },
+    {
+      "q": "Les dates des prochaines fêtes sont-elles confirmées ?",
+      "a": "Seules les dates explicitement sourcées sont indiquées, avec leur année et leur statut. Les programmes de 2027 ne sont pas présentés ici comme confirmés."
+    }
+  ],
+  "sources": {
+    "flower": "https://www.provenceguide.com/patrimoines-naturels/mont-ventoux/le-pays-de-sault/provence-4598882-1.html",
+    "bleu": "https://distillerie-bleu-provence.com/",
+    "garden": "https://www.nyons.com/vivre-nyons/habitat-et-environnement/parcs-et-jardins/",
+    "ppam": "https://www.franceagrimer.fr/sites/default/files/2026-02/Note_conjoncture_PPAM_fevrier_2026.pdf",
+    "circuit": "https://www.drome-cestmanature.com/fiches/le-pays-de-lolive-et-des-lavandes-itineraire-n10/",
+    "aroma": "https://www.distillerie-aromaplantes.com/en/practical-information/",
+    "vallon": "https://www.provenceguide.com/activites/mont-ventoux/visite-de-la-distillerie-traditionnelle-du-vallon-des-lavandes/provence-597736-1.html",
+    "ho": "https://www.drome-tourism.com/fiches/sentier-botanique-des-lavandes/",
+    "ferrassieres": "https://fete-lavande.com/",
+    "sault": "https://www.provenceguide.com/fetes-et-manifestations/mont-ventoux/fete-de-la-lavande/provence-4599124-1.html",
+    "bleuFree": "https://www.vaison-ventoux-provence.com/offres/distillerie-bleu-provence-nyons-fr-6168143/"
+  }
+}
