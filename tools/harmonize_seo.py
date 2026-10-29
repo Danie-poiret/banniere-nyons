@@ -62,6 +62,16 @@ def excerpt(source,title):
             return p if len(p)<=160 else p[:157].rsplit(' ',1)[0].rstrip(' ,;:')+'…'
     return title
 def card_items(source,url,catalog):
+    # Preserve the homepage's established SEO order independently of its layout.
+    if url == SITE + '/' and '<!-- HOME_LATEST_START -->' in source:
+        ordered = []
+        for name in ('HOME_LATEST', 'HOME_SEASON'):
+            pattern = r'<!-- ' + name + r'_START -->.*?<!-- ' + name + r'_END -->'
+            match = re.search(pattern, source, re.S)
+            if match:
+                ordered.append(match[0])
+                source = source[:match.start()] + source[match.end():]
+        source = ''.join(ordered) + source
     result=[];seen=set()
     for block in re.findall(r'<article\b[^>]*class=["\'][^"\']*\bcard\b[^"\']*["\'][^>]*>(.*?)</article>',source,re.S):
         links=re.findall(r'<a\b[^>]*href=["\']([^"\']+)["\']',block)

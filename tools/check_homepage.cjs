@@ -23,3 +23,14 @@ assert(page.includes('<title>Vivre à Nyons : guide local, sorties et bonnes adr
 assert(page.includes('href="https://www.vivreanyons.fr/"'));
 assert(!page.includes('data-agenda>'));assert.equal((page.match(/data-nyons-lodging\b/g)||[]).length,1);
 console.log('Homepage dates, events, banner, metadata and weather: OK');
+// Reading order and authored placements must survive every automated refresh.
+const sections=['nyons-presentation','aujourdhui-nyons','decouvrir-nyons','univers-olive-accueil','univers-lavande-accueil','environs-nyons','preparer-sejour','data-home-season','vie-quotidienne','histoire-memoire','derniers-articles','chiffres-nyons','rubriques'];
+let previous=-1;
+for(const id of sections){const at=page.indexOf(id==='data-home-season'?id:'id="'+id+'"');assert(at>previous,'Homepage order: '+id);previous=at;}
+assert.equal((page.match(/data-nyons-partner="lezardiere"/g)||[]).length,1);
+assert.equal((page.match(/data-nyons-partner="livres"/g)||[]).length,1);
+assert(page.indexOf('id="preparer-sejour"')<page.indexOf('data-nyons-partner="lezardiere"'));
+assert(page.indexOf('data-nyons-partner="lezardiere"')<page.indexOf('data-home-season'));
+assert(page.indexOf('id="histoire-memoire"')<page.indexOf('data-nyons-partner="livres"'));
+assert(page.indexOf('data-nyons-partner="livres"')<page.indexOf('id="derniers-articles"'));
+console.log('Homepage hierarchy and contextual partner placements: OK');
