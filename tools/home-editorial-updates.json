@@ -23,7 +23,8 @@
     "/ou-dormir-a-nyons/chambres-charmes-nyons/",
     "/produits-du-terroir/miel-de-lavande-de-Nyons/",
     "/produits-du-terroir/huile-olive-nyons-aop-etiquette/",
-    "/infos-pratiques-nyons/Pique-nique-autour-de-Nyons/"
+    "/infos-pratiques-nyons/Pique-nique-autour-de-Nyons/",
+    "/a-faire-autour-de-Nyons/distilleries-de-lavande/"
   ],
   "excluded_paths": [
     "/Provence-Alpes-Cote-dAzur/Vaucluse/dames-de-france-avignon/",
@@ -36,6 +37,7 @@
     "/Auvergne-Rhone-Alpes/Rhone/gare-lyon-guillotiere-sernam/"
   ],
   "included_paths": [
-    "/infos-pratiques-nyons/piscines-autour-de-nyons/"
+    "/infos-pratiques-nyons/piscines-autour-de-nyons/",
+    "/a-faire-autour-de-Nyons/distilleries-de-lavande/"
   ]
 }
