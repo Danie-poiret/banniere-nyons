@@ -95,7 +95,7 @@ def update(root):
             published = item.get('datePublished', '')
             selected_update = path in selected_updates
             if selected_update:
-                published = item.get('dateModified', '')
+                published = item.get('dateModified', '') or selection.get('update_dates', {}).get(path, '')
             if not re.fullmatch(r'\d{4}-\d{2}-\d{2}(?:T.*)?', published):
                 continue
             headline, description = item.get('headline'), item.get('description')

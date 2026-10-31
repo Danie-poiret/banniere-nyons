@@ -24,7 +24,8 @@
     "/produits-du-terroir/miel-de-lavande-de-Nyons/",
     "/produits-du-terroir/huile-olive-nyons-aop-etiquette/",
     "/infos-pratiques-nyons/Pique-nique-autour-de-Nyons/",
-    "/a-faire-autour-de-Nyons/distilleries-de-lavande/"
+    "/a-faire-autour-de-Nyons/distilleries-de-lavande/",
+    "/infos-pratiques-nyons/mediatheque-nyons/"
   ],
   "excluded_paths": [
     "/Provence-Alpes-Cote-dAzur/Vaucluse/dames-de-france-avignon/",
@@ -41,5 +42,8 @@
     "/a-faire-autour-de-Nyons/distilleries-de-lavande/",
     "/a-faire-autour-de-Nyons/thermes-montbrun-les-bains/",
     "/infos-pratiques-nyons/marche-noel-medieval-taulignan/"
-  ]
+  ],
+  "update_dates": {
+    "/infos-pratiques-nyons/mediatheque-nyons/": "2026-10-31"
+  }
 }
