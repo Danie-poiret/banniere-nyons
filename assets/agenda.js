@@ -3,6 +3,21 @@
   const script=document.currentScript;
   const siteRoot=script?new URL('../',script.src):new URL('/',location.href);
   document.querySelectorAll('aside.right-sidebar').forEach(sidebar=>{
+    const labels=[
+      ['que-faire-nyons/Vieilles-ruelles-de-Nyons/','Vieux Nyons'],
+      ['que-faire-nyons/Tour-Randonne/','Tour Randonne Nyons'],
+      ['que-faire-nyons/Pont-Roman-de-Nyons/','Pont Roman Nyons'],
+      ['que-faire-nyons/parc-aquatique-nyons/','Piscine Nyons']
+    ];
+    const links=[...sidebar.querySelectorAll('a[href]')];
+    labels.forEach(([path,label])=>{
+      links.filter(link=>new URL(link.href).pathname.endsWith('/'+path)).forEach(link=>{link.textContent=label;});
+    });
+    const culture=sidebar.querySelector('nav.side-links[aria-label="Culture"]');
+    if(culture){
+      const ordered=labels.slice(0,3).map(([path])=>[...culture.querySelectorAll('a[href]')].find(link=>new URL(link.href).pathname.endsWith('/'+path))).filter(Boolean);
+      culture.prepend(...ordered);
+    }
     const hasLink=path=>[...sidebar.querySelectorAll('a[href]')].some(link=>new URL(link.href).pathname.endsWith('/'+path));
     const addLink=(nav,label,path)=>{
       if(!nav||hasLink(path))return;
@@ -12,7 +27,7 @@
       nav.append(link);
     };
     let outdoors=sidebar.querySelector('nav.side-links[aria-label="Plein air"]');
-    if(outdoors)addLink(outdoors,'Piscine de Nyons','que-faire-nyons/parc-aquatique-nyons/');
+    if(outdoors)addLink(outdoors,'Piscine Nyons','que-faire-nyons/parc-aquatique-nyons/');
     const reusePath='infos-pratiques-nyons/ressourceries-de-nyons/';
     if(hasLink(reusePath))return;
     let practical=sidebar.querySelector('nav.side-links[aria-label="Infos pratiques"]');
