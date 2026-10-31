@@ -7,7 +7,8 @@
       ['que-faire-nyons/Vieilles-ruelles-de-Nyons/','Vieux Nyons'],
       ['que-faire-nyons/Tour-Randonne/','Tour Randonne Nyons'],
       ['que-faire-nyons/Pont-Roman-de-Nyons/','Pont Roman Nyons'],
-      ['que-faire-nyons/parc-aquatique-nyons/','Piscine Nyons']
+      ['que-faire-nyons/parc-aquatique-nyons/','Piscine Nyons'],
+      ['restaurants-de-nyons/','Restaurants Nyons']
     ];
     const links=[...sidebar.querySelectorAll('a[href]')];
     labels.forEach(([path,label])=>{
