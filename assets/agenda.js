@@ -13,14 +13,14 @@
     ];
     const links=[...sidebar.querySelectorAll('a[href]')];
     labels.forEach(([path,label])=>{
-      links.filter(link=>new URL(link.href).pathname.endsWith('/'+path)).forEach(link=>{link.textContent=label;});
+      links.filter(link=>new URL(link.href,siteRoot).pathname.endsWith('/'+path)).forEach(link=>{link.textContent=label;});
     });
     const culture=sidebar.querySelector('nav.side-links[aria-label="Culture"]');
     if(culture){
-      const ordered=labels.slice(0,3).map(([path])=>[...culture.querySelectorAll('a[href]')].find(link=>new URL(link.href).pathname.endsWith('/'+path))).filter(Boolean);
-      culture.prepend(...ordered);
+      const ordered=labels.slice(0,3).map(([path])=>[...culture.querySelectorAll('a[href]')].find(link=>new URL(link.href,siteRoot).pathname.endsWith('/'+path))).filter(Boolean);
+      ordered.reverse().forEach(link=>culture.prepend(link));
     }
-    const hasLink=path=>[...sidebar.querySelectorAll('a[href]')].some(link=>new URL(link.href).pathname.endsWith('/'+path));
+    const hasLink=path=>[...sidebar.querySelectorAll('a[href]')].some(link=>new URL(link.href,siteRoot).pathname.endsWith('/'+path));
     const addLink=(nav,label,path)=>{
       if(!nav||hasLink(path))return;
       const link=document.createElement('a');
@@ -107,6 +107,119 @@
     links.slice(1).forEach(item=>item.remove());
   });
 })();
+
+/* Related-link topic classifier:start */
+function nyonsRelatedTopics(route,title){
+  const normalize=s=>s.normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase();
+  const subject=normalize(route+' '+title),parts=route.split('/').filter(Boolean);
+  const region=/^\/(?:Hauts-de-France|Provence-Alpes-Cote-dAzur|Auvergne-Rhone-Alpes|Ile-de-France)\//.test(route);
+  if(region||route.startsWith('/Histoire-Geo/')&&!subject.includes('nyons')||route.startsWith('/memoire-de-france/')){
+    const topics=region?['region:'+parts.slice(0,2).join('/'),'memoire']:['memoire'];
+    if(region&&parts.length>=4)topics.push('ville:'+normalize(parts[2]));
+    return topics;
+  }
+  if(!subject.includes('nyons'))return [];
+  const tags=new Set();
+  const rules=[
+    ['reemploi',/ressourcer|recycl|fabrique|triade|fourmis|occasion|brocante|vide.grenier/],
+    ['sante',/sante|dentist|pharma|medecin|infirm|soin|therm/],
+    ['animaux',/veterin|animaux|chien|chat/],
+    ['pratique',/infos-pratiques|sante|questions-utiles|portail|installer|commerce/],
+    ['repas',/restaurant|pizz|bistrot|brasserie-de-la-place|bel-hambourg|manger/],
+    ['baignade',/baign|piscine|aquatique|cascade|gorges|sagittaire|nyonsoleiado/],
+    ['nature',/a-faire-autour|randon|balade|village|gorges|cascade|parc|baronnies/],
+    ['famille',/famille|enfant|cantine|ecole|camping|aquatique|week.end/],
+    ['sejour',/ou-dormir|camping|heberg|hotel|gite|sejour/],
+    ['sport',/petanque|boulodrome|sport|velo|tennis/],
+    ['terroir',/produits-du-terroir|olive|lavande|savonner|bivouak|biere|marche/],
+    ['visite',/que-faire|histoire-geo|patrimoine|pont|tour-randonne|ruelle|village/],
+    ['sorties',/evenements|cinema|arlequin|week.end|corso|spectacle|concert/]
+  ];
+  rules.forEach(([tag,rx])=>{if(rx.test(subject))tags.add(tag);});
+  if(tags.has('sport')||tags.has('visite')||tags.has('terroir')||tags.has('repas'))tags.add('sorties');
+  // A place name such as "Bulles d'Olive" must not turn lodging into a food topic.
+  if(route.startsWith('/ou-dormir-a-nyons/')){tags.clear();tags.add('sejour');tags.add('famille');}
+  if(route.startsWith('/restaurants-de-nyons/')){tags.clear();tags.add('repas');tags.add('sorties');}
+  if(route.startsWith('/produits-du-terroir/')){tags.clear();tags.add('terroir');tags.add('sorties');}
+  if(route.startsWith('/evenements-nyons/')){const sport=tags.has('sport');tags.clear();tags.add('sorties');if(sport)tags.add('sport');}
+  if(tags.size>1&&!tags.has('sante')&&!tags.has('animaux')&&!tags.has('reemploi')&&!tags.has('famille'))tags.delete('pratique');
+  if(!tags.size)tags.add('visite');
+  return ['reemploi','animaux','sante','repas','baignade','sejour','sport','terroir','nature','famille','sorties','visite','pratique'].filter(t=>tags.has(t));
+}
+/* Related-link topic classifier:end */
+/* Three contextual internal links, stable for each article. */
+(function installNyonsRelatedLinks(){
+  const canonical=document.querySelector('link[rel="canonical"]');
+  if(!canonical)return;
+  const current=new URL(canonical.href,location.href);
+  if(current.hostname!=='www.vivreanyons.fr')return;
+  const route=current.pathname;
+  const heading=document.querySelector('h1');
+  const tags=new Set(nyonsRelatedTopics(route,heading?heading.textContent:''));
+  if(!tags.size)return;
+  const preferred=[
+    ['infos-pratiques-nyons/cinema-nyons/','sorties,famille',['Le programme du cinéma de Nyons','Films et séances à L’Arlequin','Les horaires du cinéma L’Arlequin']],
+    ['que-faire-nyons/parc-aquatique-nyons/','baignade,famille',['La piscine Nyonsoleïado à Nyons','Nyonsoleïado : horaires et tarifs','Préparer une sortie à la piscine de Nyons']],
+    ['que-faire-nyons/Marche-de-Nyons/','terroir,visite',['Préparer sa visite au marché de Nyons','Le marché de Nyons, jeudi et dimanche','Jours et conseils pour le marché de Nyons']],
+    ['infos-pratiques-nyons/petanque-nyons/','sorties,sport',['Où jouer à la pétanque à Nyons','Pétanque à Nyons : terrains et club','Les lieux de pétanque à Nyons']],
+    ['a-faire-autour-de-Nyons/se-baigner-aubres/','nature,baignade',['Découvrir la cascade d’Aubres','La cascade d’Aubres : accès et précautions','Préparer une balade à la cascade d’Aubres']],
+    ['infos-pratiques-nyons/ressourceries-de-nyons/','reemploi,pratique',['Les ressourceries de Nyons','Donner ou acheter d’occasion à Nyons','Adresses du réemploi à Nyons']],
+    ['infos-pratiques-nyons/fabrique-nyons/','reemploi,pratique',['La Fabrique à Nyons : dons et boutique','Chiner à La Fabrique de Nyons','Horaires et adresses de La Fabrique']],
+    ['evenements-nyons/corso-nyons/','sorties,visite',['Découvrir le Corso fleuri de Nyons','L’histoire et les chars du Corso de Nyons','Le Corso de Nyons, fête et souvenirs']],
+    ['infos-pratiques-nyons/veterinaire-nyons/','animaux,pratique',['Trouver un vétérinaire à Nyons','La fiche du vétérinaire de Nyons','Vétérinaire à Nyons : soins et contacts']],
+    ['a-faire-autour-de-Nyons/avis-gorges-du-toulourenc/','nature,baignade',['Les gorges du Toulourenc : accès et précautions','Préparer une sortie dans le Toulourenc','Avis et conseils sur les gorges du Toulourenc']],
+    ['a-faire-autour-de-Nyons/parc-aquatique-le-sagittaire-vinsobres/','baignade,famille',['Le Sagittaire à Vinsobres : tarifs et accès','Préparer une journée au parc du Sagittaire','Notre guide du parc aquatique Le Sagittaire']],
+    ['que-faire-nyons/que-faire-a-nyons-ce-week-end/','sorties,famille',['Que faire à Nyons ce week-end ?','Des idées de sorties pour le week-end à Nyons','Choisir sa sortie du week-end à Nyons']],
+    ['a-faire-autour-de-Nyons/Mirabel-aux-Baronnies/','nature,visite',['Visiter Mirabel-aux-Baronnies','Les ruelles et le patrimoine de Mirabel','Découvrir Mirabel-aux-Baronnies près de Nyons']],
+    ['infos-pratiques-nyons/portail-famille-nyons/','famille,pratique',['Le Portail Famille de Nyons','Cantine et inscriptions sur le Portail Famille','Utiliser le Portail Famille à Nyons']],
+    ['restaurants-de-nyons/le-bistrotteur-nyons/','repas,sorties',['Le Bistrotteur à Nyons','Découvrir la table du Bistrotteur','Le Bistrotteur : terrasse et réservation']],
+    ['infos-pratiques-nyons/dentistes-nyons/','sante,pratique',['Trouver un dentiste à Nyons','Dentistes à Nyons : adresses et rendez-vous','Les contacts des dentistes de Nyons']],
+    ['que-faire-nyons/savonnerie-de-nyons/','terroir,visite',['Visiter la Savonnerie de Nyons','La Savonnerie de Nyons : boutique et horaires','Découvrir les savons fabriqués à Nyons']],
+    ['restaurants-de-nyons/Restaurant-Le-Bel-Hambourg-Nyons/','repas,sorties',['Le Bel Hambourg à Nyons','Découvrir le restaurant Le Bel Hambourg','Le Bel Hambourg : notre fiche pratique']],
+    ['restaurants-de-nyons/pizza-nyons/','repas,famille',['Où manger une pizza à Nyons','Les pizzerias de Nyons','Choisir une pizza à Nyons']],
+    ['que-faire-nyons/choisir-un-camping-nyons/','sejour,famille',['Choisir un camping à Nyons','Les campings de Nyons et des environs','Préparer son séjour en camping près de Nyons']],
+    ['evenements-nyons/8-jours-de-petanque-de-Nyons/','sport,sorties',['Les 8 Jours de pétanque de Nyons','Programme et informations sur les 8 Jours de Nyons','Le rendez-vous des 8 Jours de pétanque']],
+    ['infos-pratiques-nyons/triade-nyons/','reemploi,pratique',['La Triade à Nyons : horaires et dons','Chiner à La Triade de Nyons','Donner des objets à La Triade']],
+    ['infos-pratiques-nyons/fourmis-nyons/','reemploi,pratique',['Les Fourmis, ressourcerie à Nyons','Horaires et dons aux Fourmis de Nyons','Découvrir la boutique des Fourmis']],
+    ['infos-pratiques-nyons/bivouak-nyons/','terroir,sorties',['Découvrir Bivouak à Nyons','Les bières artisanales de Bivouak','Bivouak à Nyons : dégustation et soirées']],
+    ['a-faire-autour-de-Nyons/montaulieu/','nature,visite',['Visiter le village de Montaulieu','Montaulieu : vieilles pierres et balades','Découvrir Montaulieu près de Nyons']],
+    ['infos-pratiques-nyons/pharmacie-de-garde-nyons/','sante,pratique',['Trouver la pharmacie de garde à Nyons','Pharmacie de garde : les contacts à Nyons','Vérifier la pharmacie de garde à Nyons']],
+    ['evenements-nyons/Brocantes--Vides-greniers-Nyons/','reemploi,sorties',['Les brocantes et vide-greniers de Nyons','Chiner dans les brocantes autour de Nyons','Brocantes à Nyons : dates et rendez-vous']],
+    ['sante-nyons/','sante,pratique',['Les services de santé à Nyons','Santé à Nyons : contacts et renseignements','Se repérer parmi les services de santé de Nyons']],
+    ['produits-du-terroir/brasserie-a-nyons/','terroir,sorties',['Les brasseries artisanales de Nyons','Découvrir les bières brassées à Nyons','Brasseries à Nyons : les adresses à connaître']],
+    ['infos-pratiques-nyons/pharmacie-nyons/','sante,pratique',['Les pharmacies de Nyons','Pharmacies à Nyons : adresses et contacts','Retrouver les coordonnées des pharmacies de Nyons']]
+  ];
+  const prepared=typeof NYONS_RELATED_CATALOG!=='undefined';
+  const catalog=prepared?NYONS_RELATED_CATALOG.map(e=>{
+    const custom=preferred.find(p=>p[0]===e[0]);return custom?[e[0],e[1],custom[2],e[3]]:e;
+  }):preferred;
+  const hash=s=>{let h=2166136261;for(let i=0;i<s.length;i++){h^=s.charCodeAt(i);h=Math.imul(h,16777619);}return h>>>0;};
+  const pathOf=a=>{try{return new URL(a.href,canonical.href).pathname;}catch{return '';}};
+  const editorial=new Set([...document.querySelectorAll('main article a[href]')].filter(a=>!a.closest('aside')).map(pathOf));
+  document.querySelectorAll('aside.right-sidebar').forEach(sidebar=>{
+    if(!prepared&&sidebar.querySelector('[data-nyons-related-links]'))return;
+    sidebar.querySelectorAll('[data-nyons-related-links]').forEach(e=>e.remove());
+    const existing=new Set([...sidebar.querySelectorAll('a[href]')].map(pathOf));
+    const candidates=catalog.map(([path,groups,labels])=>{
+      const url='/'+path,matched=groups.split(',').filter(t=>tags.has(t)).reduce((n,t)=>n+(t==='pratique'?25:t==='memoire'?15:t.startsWith('ville:')?200:100),0);
+      const useful=preferred.some(e=>e[0]===path);
+      return {url,labels,related:matched>0,score:matched+(useful?25:0)+(editorial.has(url)?-20:0),tie:hash(route+'|'+url)};
+    }).filter(e=>e.related&&e.url!==route&&!existing.has(e.url));
+    candidates.sort((a,b)=>b.score-a.score||a.tie-b.tie);
+    const entry=catalog.find(e=>'/'+e[0]===route);
+    const peers=entry?catalog.filter(e=>e[3]!==false&&e[1].split(',')[0]===entry[1].split(',')[0]).sort((a,b)=>a[0].localeCompare(b[0])):[];
+    const index=peers.findIndex(e=>'/'+e[0]===route),next=index>=0&&peers.length>1?peers[(index+1)%peers.length]:null;
+    const bridge=next&&candidates.find(e=>e.url==='/'+next[0]);
+    const chosen=(bridge?[bridge,...candidates.filter(e=>e!==bridge)]:candidates).slice(0,3);
+    if(chosen.length!==3)return;
+    const card=document.createElement('section');card.className='side-card';card.setAttribute('data-nyons-related-links','');
+    const title=document.createElement('div');title.className='side-title';title.textContent='À découvrir aussi';card.append(title);
+    const nav=document.createElement('nav');nav.className='side-links';nav.setAttribute('aria-label','À découvrir aussi');
+    chosen.forEach(e=>{const a=document.createElement('a');a.setAttribute('href',e.url);a.textContent=e.labels[hash(route+'|label|'+e.url)%e.labels.length];nav.append(a);});
+    card.append(nav);sidebar.append(card);
+  });
+})();
+
 
 /* Shared contact and social links requested by the site owner. */
 (function installNyonsContact(){

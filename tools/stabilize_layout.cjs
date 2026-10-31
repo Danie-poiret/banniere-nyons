@@ -20,9 +20,35 @@ function between(start,end){
  if(a<0||b<0)throw Error('Shared component boundary changed: '+start);
  return shared.slice(a,b);
 }
+const sideNavigation=between('(function installNyonsSidebarLinks()', '/* Home link label shared by every page. */');
 const navigation=between('(function labelNyonsHome()', '/* Shared contact and social links');
 const contact=between('(function installNyonsContact()', '  const footer=document.querySelector')+'})();';
 const lodging=between('(function installNyonsLodging()', '/* Keep every existing navigation link');
+const topicContext=vm.createContext({});
+vm.runInContext(between('/* Related-link topic classifier:start */','/* Related-link topic classifier:end */'),topicContext);
+function buildRelatedCatalog(rootDir=root){
+ const sitemap=path.join(rootDir,'sitemap.xml');
+ if(!fs.existsSync(sitemap))return undefined;
+ const urls=[...fs.readFileSync(sitemap,'utf8').matchAll(/<loc>(https:\/\/www\.vivreanyons\.fr\/[^<]*)<\/loc>/g)].map(m=>m[1]);
+ const aliasFile=path.join(rootDir,'tools/duplicate-canonical-map.json');
+ const aliases=fs.existsSync(aliasFile)?new Set(JSON.parse(fs.readFileSync(aliasFile,'utf8')).pairs.map(e=>new URL(e.source).pathname)):new Set();
+ const result=[],textOf=node=>node?.type==='text'?node.data:(node?.children||[]).map(textOf).join('');
+ for(const url of new Set(urls)){
+  const route=new URL(url).pathname,file=path.resolve(rootDir,'.'+decodeURIComponent(route),'index.html');
+  if(aliases.has(route))continue;
+  if(!route.endsWith('/')||!file.startsWith(path.resolve(rootDir)+path.sep)||!fs.existsSync(file))continue;
+  const source=fs.readFileSync(file,'utf8'),raw=parseDocument(source);
+  if(selectOne('link[rel="canonical"]',raw.children)?.attribs.href!==url)continue;
+  if(/noindex/i.test(selectOne('meta[name="robots"]',raw.children)?.attribs.content||''))continue;
+  const title=textOf(selectOne('h1',raw.children)).replace(/\s+/g,' ').trim();if(!title)continue;
+  const groups=Array.from(topicContext.nyonsRelatedTopics(route,title));if(!groups.length)continue;
+  const label=title.length>110?title.slice(0,109).replace(/\s+\S*$/,'')+'…':title;
+  const renders=!!selectOne('aside.right-sidebar',raw.children)&&!!selectOne('body > header',raw.children)&&!!selectOne('header .navlinks',raw.children)&&!!selectOne('main',raw.children)&&source.includes('/assets/agenda.js');
+  result.push([route.slice(1),groups.join(','),[label],renders,url]);
+ }
+ return result;
+}
+const defaultRelatedCatalog=buildRelatedCatalog();
 const begin='<!-- nyons-layout-partners:start -->',end='<!-- nyons-layout-partners:end -->';
 const styleBegin='<!-- nyons-layout-styles:start -->',styleEnd='<!-- nyons-layout-styles:end -->';
 function strip(source,a,b){
@@ -30,7 +56,7 @@ function strip(source,a,b){
  const finish=source.indexOf(b,start);if(finish<0)throw Error('Unclosed layout marker');
  return source.slice(0,start)+source.slice(finish+b.length);
 }
-function render(original,url){
+function render(original,url,relatedCatalog=defaultRelatedCatalog){
  let source=strip(strip(original,begin,end),styleBegin,styleEnd);
  // Authored homepage slots keep the same shared cards beside their subject.
  // Rebuild their contents from the component so its texts/links stay authoritative.
@@ -43,8 +69,8 @@ function render(original,url){
  const {document}=parseHTML(source);
  const canonical=document.querySelector('link[rel="canonical"]');
  if(!canonical||canonical.href!==url)return original;
- const context=vm.createContext({document,URL,location:new URL(url)});
- vm.runInContext(navigation+contact+lodging+partners,context,{timeout:5000});
+ const context=vm.createContext({document,URL,location:new URL(url),NYONS_RELATED_CATALOG:relatedCatalog});
+ vm.runInContext(sideNavigation+navigation+contact+lodging+partners,context,{timeout:5000});
  const cards=document.querySelector('[data-nyons-partner-cards]');
  const styles=[...document.querySelectorAll('style[data-nyons-partner-style],style[data-marseille-book-banner-style]')];
  // The accommodation's own fiche intentionally has no partner cards.
@@ -52,6 +78,12 @@ function render(original,url){
  const patches=[];
  const replace=(node,text)=>patches.push({start:node.startIndex,end:node.endIndex+1,text});
  replace(header,document.querySelector('body > header').outerHTML);
+ // Prepare the shared right-hand navigation, including its existing dynamic links.
+ const rawSidebars=selectAll('aside.right-sidebar',raw.children);
+ const renderedSidebars=[...document.querySelectorAll('aside.right-sidebar')];
+ if(rawSidebars.length!==renderedSidebars.length)throw Error('Sidebar parser mismatch: '+url);
+ rawSidebars.forEach((sidebar,index)=>replace(sidebar,renderedSidebars[index].outerHTML));
+
  const originalLodging=selectOne('body > [data-nyons-lodging]',raw.children);
  if(!originalLodging){
   const banner=document.querySelector('body > [data-nyons-lodging]');
@@ -67,7 +99,7 @@ function render(original,url){
   }
   obsolete.add(wrapper);
  }
- for(const node of obsolete)if(![...obsolete].some(p=>p!==node&&p.startIndex<node.startIndex&&p.endIndex>=node.endIndex))replace(node,'');
+ for(const node of obsolete)if(!rawSidebars.some(s=>s.startIndex<=node.startIndex&&s.endIndex>=node.endIndex)&&![...obsolete].some(p=>p!==node&&p.startIndex<node.startIndex&&p.endIndex>=node.endIndex))replace(node,'');
  const slot=selectOne('[data-nyons-partner-slot]',raw.children);
  const insertAt=hero?hero.endIndex+1:slot?slot.startIndex:obsolete.size?[...obsolete][0].startIndex:source.indexOf('>',main.startIndex)+1;
  const homeSlots=selectAll('[data-home-partner-slot]',raw.children);
@@ -130,4 +162,5 @@ function main(){
  console.log(JSON.stringify({eligible,changed:changed.length,files:changed}));
  if(check&&changed.length)process.exitCode=1;
 }
-module.exports={render};if(require.main===module)main();
+module.exports={render,buildRelatedCatalog};if(require.main===module)main();
+

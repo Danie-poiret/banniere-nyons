@@ -37,3 +37,4 @@ for(const key of ['lezardiere','livres']){
 }
 assert(placed.includes('<!-- nyons-layout-partners:start --><!-- nyons-layout-partners:end -->'));
 console.log('Layout variants, homepage slots, legacy banner replacement, unchanged articles/JSON-LD and idempotence: OK');
+require('./test_sidebar_related.cjs');
