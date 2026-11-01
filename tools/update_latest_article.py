@@ -86,6 +86,9 @@ def update(root):
         file = Path(directory) / 'index.html'
         page = Page(file.read_text(encoding='utf-8'))
         path = '/' + file.parent.relative_to(root).as_posix() + '/'
+        # Mémoire de France stories stay in their own sections, even if explicitly selected.
+        if path.startswith(('/Provence-Alpes-Cote-dAzur/', '/Auvergne-Rhone-Alpes/', '/Hauts-de-France/', '/Ile-de-France/')):
+            continue
         if path in secondary_paths or path in excluded_paths:
             continue
         for item in objects(page.data):

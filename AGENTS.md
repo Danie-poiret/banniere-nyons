@@ -157,3 +157,8 @@ La référence la plus récente pour le positionnement est https://www.vivreanyo
 Consigne explicite du propriétaire : « Publie ce texte tel quel avec mes photos autorisées, sans nouvelle recherche ni réécriture. Fais seulement les contrôles indispensables et ajoute-le à l’accueil. »
 
 Conserver le texte et les photos fournis, sans réécriture ni recherche complémentaire non demandée. Limiter les vérifications à celles indispensables à la publication : intégrité du texte, images et liens, fonctionnement et affichage ordinateur/mobile. Publier directement et ajouter l’article à l’accueil au moyen du générateur existant ; cette demande explicite d’ajout à l’accueil prévaut sur l’ancienne restriction aux seuls sujets de Nyons pour les articles ainsi fournis. Ne pas redemander une autorisation des photos lorsque le propriétaire les a déjà déclarées autorisées. Limiter le temps passé à ce travail nécessaire, sans multiplier les contrôles déjà concluants. Exception explicite : lorsqu’il confie une mission supplémentaire (recherche, réécriture, carte, tableau, liens ou autre ajout), la réaliser également dans le périmètre demandé. Toute demande ultérieure de brouillon, d’attente ou d’exclusion d’une photo reste prioritaire.
+
+
+## Accueil — exclusion de Mémoire de France — 1er novembre 2026
+
+Consigne explicite du propriétaire : ne pas mettre les articles de Mémoire de France sur l’accueil. Ils restent dans leurs rubriques et index de villes. Cette consigne remplace l’ajout automatique à l’accueil prévu le 30 octobre pour ces récits. Ne pas les ajouter aux included_paths du générateur d’accueil.
