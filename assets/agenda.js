@@ -385,17 +385,20 @@ removeMemoryAgendas();
 async function loadAgenda(){
   if(isMemoryOfFrancePage()){removeMemoryAgendas();return;}
   const roots=[...document.querySelectorAll('[data-agenda]')];if(!roots.length)return;
+  const compactAgenda=!document.body.classList.contains('home-page')&&!['/','/index.html','/vivreanyons-test/','/banniere-nyons/vivreanyons-test/'].includes(location.pathname);
   const [nyons,drome]=await Promise.allSettled([
     Promise.all([fetch(AGENDA_DATA,{cache:'no-store'}).then(response=>{if(!response.ok)throw new Error('agenda');return response.json();}),agendaPublishedUrls()]),
-    loadDromeEvents()
+    compactAgenda?Promise.resolve([]):loadDromeEvents()
   ]);
   roots.forEach(root=>{
     let content='';
     if(nyons.status==='fulfilled'){
       const [data,published]=nyons.value;
-      const events=selectAgendaEvents(data.events);
+      const selected=selectAgendaEvents(data.events);
+      const events=compactAgenda?selected.slice(0,3):selected;
       content=events.map(event=>renderAgendaEvent(event,agendaEventUrl(event,published))).join('')||'<p>Aucun événement à venir pour le moment.</p>';
     }else content='<p>Les prochains événements sont disponibles sur <a href="https://agenda.vivreanyons.fr/">agenda.vivreanyons.fr</a>.</p>';
+    if(compactAgenda){root.innerHTML=content;return;}
     content+='<h3 class="agenda-drome-heading">À découvrir près de Nyons <a href="https://drome.vivreanyons.fr/evenements/">Agenda Drôme →</a></h3>';
     if(drome.status==='fulfilled'){
       const events=selectDromeEvents(drome.value);
