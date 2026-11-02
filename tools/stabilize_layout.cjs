@@ -123,7 +123,7 @@ function render(original,url,relatedCatalog=defaultRelatedCatalog){
  patches.sort((a,b)=>b.start-a.start||b.end-a.end);
  for(const patch of patches)source=source.slice(0,patch.start)+patch.text+source.slice(patch.end);
  // Refresh the shared script when the cinema navigation labels change.
- source=source.replace(/(<script\b[^>]*\bsrc=["'])([^"']*assets\/agenda\.js)(?:\?[^"']*)?(["'])/g,'$1$2?v=20261102-banner-visible$3');
+ source=source.replace(/(<script\b[^>]*\bsrc=["'])([^"']*assets\/agenda\.js)(?:\?[^"']*)?(["'])/g,'$1$2?v=20261102-spacing-v2$3');
  return source;
 }
 function main(){
