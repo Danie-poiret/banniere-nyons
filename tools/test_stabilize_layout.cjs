@@ -12,8 +12,9 @@ for(const route of ['/que-faire-nyons/exemple/','/ou-dormir-a-nyons/exemple/','/
  assert.equal((result.match(/data-nyons-lodging=""/g)||[]).length,1);
  if(route.includes('/La-Lezardiere/'))assert(!result.includes('data-nyons-partner-cards=""'));
  else assert.equal((result.match(/data-nyons-partner-cards=""/g)||[]).length,1);
- if(route.includes('/Marseille/'))assert(result.includes('marseille-book-banner'));
- if(route==='/ou-dormir-a-nyons/exemple/')assert(result.includes('nyons-partner-cards--stay'));
+ assert(!result.includes('class="marseille-book-banner"'));
+ assert(!/<aside[^>]*data-nyons-partner="livres"/.test(result));
+ if(route==='/ou-dormir-a-nyons/exemple/')assert(result.includes('data-nyons-partner="lezardiere"'));
 }
 const legacy=fixture('/exemple/','<aside class="top"><iframe src="/banniere-livres/"></iframe></aside>');
 assert(!render(legacy,'https://www.vivreanyons.fr/exemple/').includes('<iframe'));
@@ -29,11 +30,11 @@ for(const nested of [false,true]){
 const home=fixture('/').replace('<main>','<main><div data-home-partner-slot="lezardiere"><!-- home-partner-lezardiere:start --><!-- home-partner-lezardiere:end --></div><div data-home-partner-slot="livres"><!-- home-partner-livres:start --><!-- home-partner-livres:end --></div>');
 const placed=render(home,'https://www.vivreanyons.fr/');
 assert.equal(render(placed,'https://www.vivreanyons.fr/'),placed);
-for(const key of ['lezardiere','livres']){
+for(const key of ['lezardiere']){
  const inside=placed.match(new RegExp('<!-- home-partner-'+key+':start -->([\\s\\S]*?)<!-- home-partner-'+key+':end -->'))[1];
  assert(inside.includes('data-nyons-partner="'+key+'"'));
  assert(inside.includes('data-nyons-partner-cards=""'));
- assert.equal((placed.match(new RegExp('data-nyons-partner="'+key+'"','g'))||[]).length,1);
+ assert.equal((placed.match(new RegExp('<aside[^>]*data-nyons-partner="'+key+'"','g'))||[]).length,1);
 }
 assert(placed.includes('<!-- nyons-layout-partners:start --><!-- nyons-layout-partners:end -->'));
 console.log('Layout variants, homepage slots, legacy banner replacement, unchanged articles/JSON-LD and idempotence: OK');

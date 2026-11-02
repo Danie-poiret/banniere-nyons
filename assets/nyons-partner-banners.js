@@ -1,63 +1,22 @@
-/* Two shared partner cards below the heading, with La Lézardière first. */
+/* Shared La Lezardiere banner. Amazon book advertisements are disabled site-wide. */
 (function installNyonsPartnerCards(){
-  function install(){
-    if(document.querySelector('[data-nyons-partner-cards]'))return;
-    // Marseille only: replace both Nyons partner cards with the supplied book banner.
-    const marseilleCanonical=document.querySelector('link[rel="canonical"]');
-    const marseillePath=(marseilleCanonical?new URL(marseilleCanonical.href,location.href).pathname:location.pathname);
-    const marseilleRoot='/Provence-Alpes-Cote-dAzur/Bouches-du-Rhone/Marseille/';
-    if(marseillePath===marseilleRoot.slice(0,-1)||marseillePath.startsWith(marseilleRoot)){
-      const marseilleAnchor=document.querySelector('body > .hero,main .hero,main header')||document.querySelector('[data-nyons-partner-slot]')||document.querySelector('main')||document.querySelector('header');
-      if(!marseilleAnchor)return;
-      const banner=document.createElement('aside');
-      banner.className='marseille-book-banner';
-      banner.dataset.nyonsPartnerCards='';
-      banner.setAttribute('data-nosnippet','');
-      banner.setAttribute('aria-label','Livre sur le Marseille d’autrefois — lien partenaire Amazon');
-      const link=document.createElement('a');
-      link.href='https://link.amazon/B022UgJJX';
-      link.target='_blank';
-      link.rel='sponsored noopener noreferrer';
-      link.setAttribute('aria-label','Découvrir le livre sur le Marseille d’autrefois sur Amazon — lien partenaire, nouvel onglet');
-      const photo=document.createElement('img');
-      photo.src='https://www.vivreanyons.fr/assets/marseille-livre-partenaire.webp';
-      photo.alt='Vous vous souvenez de ce Marseille ? Prolongez le voyage avec un livre sur le Marseille d’autrefois. Découvrir le livre sur Amazon. Lien partenaire.';
-      photo.width=2163;photo.height=727;photo.decoding='async';
-      link.append(photo);banner.append(link);
-      const style=document.createElement('style');
-      style.dataset.marseilleBookBannerStyle='';
-      style.textContent='body>.hero:has(+.marseille-book-banner){margin-bottom:0!important}.marseille-book-banner{box-sizing:border-box;width:min(1120px,92%);margin:20px auto 0}main .marseille-book-banner{width:100%;margin-bottom:24px}.marseille-book-banner a{display:block;border-radius:12px;overflow:hidden}.marseille-book-banner img{display:block;width:100%;height:auto}.marseille-book-banner a:focus-visible{outline:3px solid #b34b0b;outline-offset:5px}';
-      document.head.append(style);
-      if(marseilleAnchor.tagName==='MAIN')marseilleAnchor.prepend(banner);
-      else if(marseilleAnchor.matches('[data-nyons-partner-slot]'))marseilleAnchor.replaceWith(banner);
-      else marseilleAnchor.after(banner);
-      document.querySelectorAll('[data-nyons-partner-slot]').forEach(el=>el.remove());
-      return;
-    }
-    const slot=document.querySelector('[data-nyons-partner-slot]');
-    const legacy=[...document.querySelectorAll('iframe[src*="/banniere-livres/"],img[src*="banniere-livres-drome-ardeche.png"]')].map(el=>el.closest('aside.top,.banner')||el.closest('a.ad-shell')||el).filter((el,index,all)=>all.indexOf(el)===index);
-    const heading=document.querySelector('body > .hero,main .hero,main header');
-    const anchor=heading||slot||legacy[0]||document.querySelector('body > .hero')||document.querySelector('main header,main .hero')||document.querySelector('main')||document.querySelector('header');if(!anchor)return;
-    const canonical=document.querySelector('link[rel="canonical"]');
-    const path=(canonical?new URL(canonical.href,location.href).pathname:location.pathname).toLowerCase();
-    const isStayFiche=path==='/ou-dormir-a-nyons'||path.startsWith('/ou-dormir-a-nyons/');
-    const omitLodging=path.includes('/la-lezardiere/')||path.includes('/demande-sejour-lezardiere/')||!!document.querySelector('[data-lezardiere-api]');
-    const group=document.createElement('div');group.className='nyons-partner-cards'+(isStayFiche?' nyons-partner-cards--stay':'');group.dataset.nyonsPartnerCards='';group.setAttribute('data-nosnippet','');
-    const items=[];
-    if(!omitLodging)items.push({key:'lezardiere',label:'La Lézardière, adresse partenaire à Nyons',photo:'https://www.vivreanyons.fr/assets/lezardiere/mini-villa.webp',alt:'La villa de La Lézardière et son jardin à Nyons',title:isStayFiche?'☀️ ET SI TU POSAIS TES VALISES À LA LÉZARDIÈRE ?':'☀️ UN SÉJOUR À NYONS ?',copy:isStayFiche?'Tu prépares un séjour à Nyons ? Papy Chris te propose de découvrir cette villa et son jardin. Indique tes dates, le nombre de voyageurs et tes envies : Chris regarde ta demande pour préparer la mise en relation.':'Papy Chris te recommande de découvrir La Lézardière !',href:'https://www.vivreanyons.fr/demande-sejour-lezardiere/',cta:isStayFiche?'Je demande pour mes dates →':'Demander les disponibilités →',note:isStayFiche?'Adresse partenaire de Vivre à Nyons · Demande de disponibilités':'Adresse partenaire de Vivre à Nyons'});
-    if(!isStayFiche)items.push({key:'livres',label:'Sélection de vieux livres sur Nyons',photo:'https://www.vivreanyons.fr/assets/nyons-livres-mini.webp',alt:'Livres sur Nyons dans le visuel de la sélection de Papy Chris',title:'📚 VIEUX LIVRES SUR NYONS',copy:'Histoire, souvenirs, cartes postales anciennes… Découvre la sélection de Papy Chris.',href:'https://amzn.to/3VzucHH',cta:'Voir ma sélection de livres →',note:'La sélection de Papy Chris sur Amazon.fr'});
-    if(!items.length){if(slot)slot.remove();legacy.forEach(el=>el.remove());return;}
-    items.forEach(item=>{
-      const card=document.createElement('aside');card.className='nyons-partner-card';card.dataset.nyonsPartner=item.key;card.setAttribute('aria-label',item.label);
-      const photo=document.createElement('img');photo.src=item.photo;photo.alt=item.alt;photo.width=isStayFiche?176:88;photo.height=isStayFiche?176:88;photo.loading='lazy';photo.decoding='async';
-      const copy=document.createElement('div');copy.className='nyons-partner-copy';const p=document.createElement('p');const title=document.createElement('strong');title.textContent=item.title;p.append(title,document.createTextNode(' '+item.copy));
-      const link=document.createElement('a');link.href=item.href;link.textContent=item.cta;link.rel='sponsored';if(item.key==='livres'){link.target='_blank';link.rel+=' noopener noreferrer';}
-      const note=document.createElement('span');note.textContent=item.note;copy.append(p,link,note);card.append(photo,copy);group.append(card);
-    });
-    const style=document.createElement('style');style.dataset.nyonsPartnerStyle='';
-    style.textContent='body>.hero:has(+.nyons-partner-cards){margin-bottom:0!important}.nyons-partner-cards{box-sizing:border-box;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));grid-auto-rows:1fr;gap:18px;width:min(1120px,92%);margin:16px auto 0}main .nyons-partner-cards{width:100%;margin-bottom:24px}.nyons-partner-card{box-sizing:border-box;display:flex;align-items:center;gap:16px;min-width:0;min-height:150px;padding:18px;background:#f3f1e5;border:1px solid #dedecb;border-left:4px solid #768b5b;border-radius:12px;color:#344f38;font-family:system-ui,sans-serif}.nyons-partner-card>img{display:block;flex:0 0 88px;width:88px;height:88px;object-fit:cover;border-radius:9px}.nyons-partner-copy{min-width:0}.nyons-partner-copy p{margin:0 0 7px;font-size:14px;line-height:1.5}.nyons-partner-copy a{display:inline-block;color:#295646;font-size:14px;font-weight:750;text-decoration:underline;text-underline-offset:4px;padding:5px 0}.nyons-partner-copy a:focus-visible{outline:3px solid #668360;outline-offset:4px;border-radius:3px}.nyons-partner-copy span{display:block;margin-top:4px;font-size:11px;color:#63705d}@media(max-width:760px){.nyons-partner-cards{grid-template-columns:1fr;gap:14px}.nyons-partner-card{min-height:176px;padding:16px 14px;gap:14px}}';
-    if(isStayFiche)style.textContent+='.nyons-partner-cards--stay{grid-template-columns:1fr;grid-auto-rows:auto;margin-top:16px}.nyons-partner-cards--stay .nyons-partner-card{min-height:230px;gap:28px;padding:26px 30px;border-left-width:5px;border-radius:16px;background:linear-gradient(120deg,#f5f3e7,#edf1e4);box-shadow:0 5px 18px rgba(52,79,56,.06)}.nyons-partner-cards--stay .nyons-partner-card>img{flex:0 0 176px;width:176px;height:176px;border-radius:12px}.nyons-partner-cards--stay .nyons-partner-copy p{font-size:17px;line-height:1.6;margin-bottom:16px;max-width:760px}.nyons-partner-cards--stay .nyons-partner-copy strong{display:block;font-size:24px;line-height:1.3;margin-bottom:10px;color:#344f38}.nyons-partner-cards--stay .nyons-partner-copy a{box-sizing:border-box;background:#295646;color:#fff;border-radius:9px;padding:13px 22px;font-size:17px;line-height:1.4;font-weight:800;text-decoration:none;box-shadow:0 3px 9px rgba(41,86,70,.14);transition:background-color .15s}.nyons-partner-cards--stay .nyons-partner-copy a:hover{background:#1f4437}.nyons-partner-cards--stay .nyons-partner-copy span{margin-top:10px;font-size:12px;line-height:1.5}@media(max-width:760px){.nyons-partner-cards--stay .nyons-partner-card{gap:18px;padding:22px;min-height:0}.nyons-partner-cards--stay .nyons-partner-card>img{flex-basis:130px;width:130px;height:130px}.nyons-partner-cards--stay .nyons-partner-copy strong{font-size:21px}.nyons-partner-cards--stay .nyons-partner-copy p{font-size:16px}}@media(max-width:520px){.nyons-partner-cards--stay .nyons-partner-card{flex-direction:column;align-items:stretch;gap:16px;padding:20px}.nyons-partner-cards--stay .nyons-partner-card>img{flex-basis:auto;align-self:center;width:176px;height:130px;object-position:50% 55%}.nyons-partner-cards--stay .nyons-partner-copy a{display:block;width:100%;text-align:center;padding:13px 15px;font-size:16px}.nyons-partner-cards--stay .nyons-partner-copy span{text-align:center}}';
-    document.head.append(style);if(heading){heading.after(group);if(slot)slot.remove();}else if(slot){slot.replaceWith(group);}else if(legacy.length){anchor.before(group);}else if(anchor.tagName==='MAIN'){anchor.prepend(group);}else{anchor.after(group);}legacy.forEach(el=>el.remove());
-  }
-  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',install,{once:true});else install();
+function install(){
+document.querySelectorAll('[data-nyons-partner="livres"],.marseille-book-banner,[data-home-partner-slot="livres"]').forEach(el=>el.remove());
+document.querySelectorAll('iframe[src*="/banniere-livres/"],img[src*="banniere-livres-drome-ardeche.png"]').forEach(el=>(el.closest('aside.top,.banner,a.ad-shell')||el).remove());
+const css='.nyons-partner-cards{box-sizing:border-box;display:block;width:min(1120px,92%);margin:22px auto}.nyons-partner-cards:empty{display:none}main .nyons-partner-cards{width:100%}.nyons-partner-card[data-nyons-partner="lezardiere"]{box-sizing:border-box;display:flex;align-items:center;gap:30px;width:100%;min-height:190px;padding:22px 28px;background:linear-gradient(110deg,#f8f5e8 0%,#edf2e4 100%);border:1px solid #d5ddc4;border-left:5px solid #718650;border-radius:18px;box-shadow:0 8px 24px rgba(42,65,39,.08);color:#304a32;font-family:system-ui,sans-serif}.nyons-partner-card[data-nyons-partner="lezardiere"]>img{display:block;flex:0 0 210px;width:210px;height:145px;object-fit:cover;border-radius:12px}.nyons-partner-copy{min-width:0;flex:1}.nyons-partner-copy p{margin:0 0 14px;font-size:16px;line-height:1.65}.nyons-partner-copy strong{display:block;margin-bottom:6px;font-size:21px;line-height:1.35;letter-spacing:.015em}.nyons-partner-copy a{display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:11px 20px;background:#365b3d;color:#fff;border-radius:9px;text-decoration:none;font-size:15px;font-weight:750;box-shadow:0 3px 8px rgba(42,65,39,.12)}.nyons-partner-copy a:hover{background:#25472d}.nyons-partner-copy a:focus-visible{outline:3px solid #bd793d;outline-offset:4px}.nyons-partner-copy span{display:block;margin-top:9px;font-size:11px;line-height:1.5;color:#66755e}[data-nyons-partner="livres"],.marseille-book-banner{display:none!important}@media(max-width:760px){.nyons-partner-card[data-nyons-partner="lezardiere"]{gap:20px;padding:20px;min-height:0}.nyons-partner-card[data-nyons-partner="lezardiere"]>img{flex-basis:150px;width:150px;height:150px}.nyons-partner-copy strong{font-size:19px}}@media(max-width:520px){.nyons-partner-card[data-nyons-partner="lezardiere"]{flex-direction:column;align-items:stretch;gap:16px;padding:17px}.nyons-partner-card[data-nyons-partner="lezardiere"]>img{flex-basis:auto;width:100%;height:170px}.nyons-partner-copy a{display:flex;width:100%;box-sizing:border-box}.nyons-partner-copy span{text-align:center}}';
+let style=document.querySelector('style[data-nyons-partner-style]');if(!style){style=document.createElement('style');style.dataset.nyonsPartnerStyle='';document.head.append(style);}style.textContent=css;
+if(document.querySelector('[data-nyons-partner-cards]'))return;
+const canonical=document.querySelector('link[rel="canonical"]');const path=canonical?new URL(canonical.href,location.href).pathname:location.pathname;
+const normalizedPath=path.toLowerCase();
+const slots=[...document.querySelectorAll('[data-nyons-partner-slot]')];
+if(normalizedPath.includes('/la-lezardiere/')||normalizedPath.includes('/demande-sejour-lezardiere/')||document.querySelector('[data-lezardiere-api]')){slots.forEach(el=>el.remove());return;}
+const heading=document.querySelector('body > .hero,main .hero,main header');const anchor=heading||slots[0]||document.querySelector('main')||document.querySelector('header');if(!anchor)return;
+const group=document.createElement('div');group.className='nyons-partner-cards';group.dataset.nyonsPartnerCards='';group.setAttribute('data-nosnippet','');
+const card=document.createElement('aside');card.className='nyons-partner-card';card.dataset.nyonsPartner='lezardiere';card.setAttribute('aria-label','La Lézardière, adresse partenaire à Nyons');
+const photo=document.createElement('img');photo.src='https://www.vivreanyons.fr/assets/lezardiere/mini-villa.webp';photo.alt='La villa de La Lézardière et son jardin à Nyons';photo.width=210;photo.height=145;photo.loading='lazy';photo.decoding='async';
+const copy=document.createElement('div');copy.className='nyons-partner-copy';const p=document.createElement('p');const title=document.createElement('strong');title.textContent='☀️ UN SÉJOUR À NYONS ?';p.append(title,document.createTextNode('Papy Chris te recommande de découvrir La Lézardière !'));
+const link=document.createElement('a');link.href='https://www.vivreanyons.fr/demande-sejour-lezardiere/';link.textContent='Demander les disponibilités →';link.rel='sponsored';const note=document.createElement('span');note.textContent='Adresse partenaire de Vivre à Nyons';copy.append(p,link,note);card.append(photo,copy);group.append(card);
+if(heading)heading.after(group);else if(slots[0])slots[0].replaceWith(group);else if(anchor.tagName==='MAIN')anchor.prepend(group);else anchor.after(group);slots.forEach(el=>el.remove());
+}
+if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',install,{once:true});else install();
 })();

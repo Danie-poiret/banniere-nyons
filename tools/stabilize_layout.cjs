@@ -104,9 +104,10 @@ function render(original,url,relatedCatalog=defaultRelatedCatalog){
  const insertAt=hero?hero.endIndex+1:slot?slot.startIndex:obsolete.size?[...obsolete][0].startIndex:source.indexOf('>',main.startIndex)+1;
  const homeSlots=selectAll('[data-home-partner-slot]',raw.children);
  if(homeSlots.length){
-  if(homeSlots.length!==2||!cards)throw Error('Incomplete homepage partner slots');
+  if(!cards)throw Error('Incomplete homepage partner slots');
   for(const slot of homeSlots){
    const key=slot.attribs['data-home-partner-slot'];
+   if(key==='livres'){replace(slot,'');continue;}
    const card=cards.querySelector('[data-nyons-partner="'+key+'"]');
    if(!card)throw Error('Missing shared partner card: '+key);
    // The live component's existing guard also prevents reinsertion above the hero.
