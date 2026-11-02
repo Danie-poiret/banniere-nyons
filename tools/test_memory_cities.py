@@ -17,7 +17,7 @@ def test():
     before=inventory();runs=[]
     for i in (1,2):
         changes,records=m.plan(ROOT);runs.append({'generation':i,'changes':sorted(changes)})
-        assert not changes,'Committed city indexes differ from generator plan'
+        assert not changes,'Committed city indexes differ from generator plan: '+', '.join(sorted(changes))
     assert inventory()==before
     nav={
         'memoire-de-france/index.html','Auvergne-Rhone-Alpes/index.html','Auvergne-Rhone-Alpes/Drome/index.html','Auvergne-Rhone-Alpes/Rhone/index.html',
