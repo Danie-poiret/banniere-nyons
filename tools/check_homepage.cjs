@@ -27,12 +27,12 @@ console.log('Homepage dates, events, banner, metadata and weather: OK');
 const sections=['nyons-key-figures','nyons-presentation','aujourdhui-nyons','decouvrir-nyons','univers-olive-accueil','univers-lavande-accueil','environs-nyons','preparer-sejour','data-home-season','vie-quotidienne','histoire-memoire','derniers-articles','chiffres-nyons','rubriques'];
 let previous=-1;
 for(const id of sections){const at=page.indexOf(id==='data-home-season'?id:'id="'+id+'"');assert(at>previous,'Homepage order: '+id);previous=at;}
-assert.equal((page.match(/data-nyons-partner="lezardiere"/g)||[]).length,1);
-assert.equal((page.match(/data-nyons-partner="livres"/g)||[]).length,1);
-assert(page.indexOf('id="preparer-sejour"')<page.indexOf('data-nyons-partner="lezardiere"'));
-assert(page.indexOf('data-nyons-partner="lezardiere"')<page.indexOf('data-home-season'));
-assert(page.indexOf('id="histoire-memoire"')<page.indexOf('data-nyons-partner="livres"'));
-assert(page.indexOf('data-nyons-partner="livres"')<page.indexOf('id="derniers-articles"'));
-console.log('Homepage hierarchy and contextual partner placements: OK');
+const partnerCards=[...page.matchAll(/<aside\b[^>]*data-nyons-partner="lezardiere"[^>]*>/g)];
+assert.equal(partnerCards.length,1,'One La Lezardiere card required');
+assert(!/<aside\b[^>]*data-nyons-partner="livres"[^>]*>/.test(page),'Amazon book card must stay removed');
+const partnerAt=partnerCards[0].index;
+assert(page.indexOf('<section class="hero"')<partnerAt,'Partner follows homepage heading');
+assert(partnerAt<page.indexOf('<main>'),'Partner is visible before homepage content');
+console.log('Homepage hierarchy and single La Lezardiere banner below heading: OK');
 
 assert(page.indexOf('id="nyons-key-figures"')<page.indexOf('class="home-jumps"'),'Key figures must precede homepage shortcuts');
