@@ -359,6 +359,7 @@ function isMemoryOfFrancePage(){
   const roots=new Set(['memoire-de-france','histoire-geo','auvergne-rhone-alpes','bourgogne-franche-comte','bretagne','centre-val-de-loire','corse','grand-est','hauts-de-france','ile-de-france','normandie','nouvelle-aquitaine','occitanie','pays-de-la-loire','provence-alpes-cote-dazur','guadeloupe','guyane','la-reunion','martinique','mayotte']);
   const path=location.pathname.replace(/^\/(?:banniere-nyons\/)?vivreanyons-test(?=\/)/,'');
   const first=path.split('/').filter(Boolean)[0]||'';
+  if(first.toLowerCase()==='histoire-geo'&&/\bnyons\b/i.test((document.querySelector('h1')?.textContent||'')+' '+path.replaceAll('-',' ')))return false;
   return roots.has(first.toLowerCase())||!!document.querySelector('.article-breadcrumb a[href*="/memoire-de-france/"]');
 }
 function removeMemoryAgendas(){
