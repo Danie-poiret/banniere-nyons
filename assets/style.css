@@ -252,4 +252,4 @@ iframe[data-privacy-category][hidden],.privacy-placeholder[hidden],.privacy-pane
 }
 
 /* Keep the shared partner banner close to the page heading. */
-body>.hero:has(+.nyons-partner-cards){margin-bottom:0!important}
+body>.hero:has(+.nyons-partner-cards),body>.hero:has(+[data-home-partner-slot="lezardiere"]){margin-bottom:0!important}
