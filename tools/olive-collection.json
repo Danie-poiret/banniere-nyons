@@ -2,9 +2,9 @@
   "path": "/huile-olive-nyons/",
   "title": "L’univers de l’olive à Nyons",
   "seoTitle": "Huile d’olive de Nyons : guides, moulins et visites",
-  "description": "Explore l’univers de l’olive à Nyons : 34 articles sur l’AOP, la Tanche, les moulins familiaux, les visites, les recettes et les fêtes du Nyonsais.",
+  "description": "Explore l’univers de l’olive à Nyons : 36 articles sur l’AOP, la Tanche, les moulins familiaux, les visites, les recettes et les fêtes du Nyonsais.",
   "published": "2026-10-27",
-  "modified": "2026-10-29",
+  "modified": "2026-11-02",
   "hero": {
     "src": "/assets/photos/fiche-fa78394c0ff2d262b23e.webp",
     "alt": "Oliviers dans une oliveraie de Nyons",
@@ -91,6 +91,18 @@
             "width": 692,
             "height": 900,
             "sourcePage": "/questions-utiles-nyons/questions-huile-olive-de-nyons/"
+          }
+        },
+        {
+          "url": "/produits-du-terroir/terroir-olive-nyons/",
+          "title": "Le terroir de l’olive de Nyons",
+          "description": "Soleil, montagnes, sols et histoire : comprendre le pays de la Tanche.",
+          "presentation": "card",
+          "image": {
+            "src": "/assets/photos/syndicat-olive-nyons/huile-et-olives.webp",
+            "alt": "Huile et olives de Nyons",
+            "width": 453,
+            "height": 378
           }
         }
       ]
@@ -428,6 +440,18 @@
             "width": 235,
             "height": 220,
             "sourcePage": "/produits-du-terroir/affinade-de-nyons/"
+          }
+        },
+        {
+          "url": "/produits-du-terroir/preparation-olives-nyons/",
+          "title": "Saumure, sel et secrets d’autrefois",
+          "description": "Les trois préparations de la Tanche et les gestes provençaux décrits en 1909.",
+          "presentation": "card",
+          "image": {
+            "src": "/assets/photos/preparation-olives-nyons/olives-noires-1.png",
+            "alt": "Olives noires dans une coupelle sur une table",
+            "width": 270,
+            "height": 361
           }
         }
       ]
