@@ -162,3 +162,14 @@ Conserver le texte et les photos fournis, sans réécriture ni recherche complé
 ## Accueil — exclusion de Mémoire de France — 1er novembre 2026
 
 Consigne explicite du propriétaire : ne pas mettre les articles de Mémoire de France sur l’accueil. Ils restent dans leurs rubriques et index de villes. Cette consigne remplace l’ajout automatique à l’accueil prévu le 30 octobre pour ces récits. Ne pas les ajouter aux included_paths du générateur d’accueil.
+
+
+## Publication ciblée des récits validés — 2 novembre 2026
+
+À la demande du propriétaire, simplifier les publications de Mémoire de France : pour une ville déjà créée, utiliser `tools/add_memory_article.py CITY SLUG HTML --plan-only`, puis la même commande sans `--plan-only`. Ce chemin ciblé remplace, pour ce cas précis, l’ancien passage systématique par le générateur de toutes les villes.
+
+Réutiliser la copie de travail existante et synchroniser uniquement les fichiers utiles depuis GitHub, avec leur casse exacte : registre des villes, index de la ville, index de ses parents et sitemap. Ne pas refaire un clone complet pour chaque article. Le script vérifie les canonicals des index et refuse une copie locale incorrecte, un doublon ou une nouvelle ville.
+
+Conserver le texte validé et les photos originales. Contrôler le nouveau récit sur ordinateur et téléphone, la photo, ses liens internes et sa présence dans la ville. Ne pas relancer tous les tests de toutes les villes pour une simple publication déjà préparée. Les audits globaux restent dans le contrôle automatique et pour une modification du classement ou du générateur global.
+
+Publier ensemble le récit, la photo et les seuls index modifiés, avec `Memory-Cities-Only: true`. Confirmer après ouverture de l’URL publique et contrôle de la photo complète. Ne pas changer l’accueil principal lors d’un simple ajout dans Mémoire de France, sauf demande explicite.

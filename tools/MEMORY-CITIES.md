@@ -45,3 +45,17 @@ ne publie rien et ne remplace pas les règles de validation de la branche.
 La préparation du nettoyage (PR n° 1) reste séparée. Le déploiement de ces pages
 de ville nécessite de résoudre le risque des workflows existants capables de
 réécrire l'accueil principal lors d'un push de pages ou du sitemap.
+
+
+## Ajout rapide dans une ville existante
+
+Pour un récit relu et validé, utiliser désormais le chemin ciblé :
+
+```sh
+python tools/add_memory_article.py avignon nouveau-recit /chemin/article-prepare.html --plan-only
+python tools/add_memory_article.py avignon nouveau-recit /chemin/article-prepare.html
+```
+
+Il ne parcourt pas les autres villes : il ajoute le récit et sa carte, actualise le nombre de récits dans la ville et ses parents, puis ajoute l’URL au sitemap. Six fichiers texte au maximum sont concernés ; l’accueil principal et les autres récits restent inchangés. Le script ne publie pas sur GitHub.
+
+Réutiliser la copie locale et récupérer les versions actuelles des seuls fichiers nécessaires via leurs chemins exacts. Vérifier le récit, sa photo, ses liens et sa carte dans la ville. Réserver le générateur global et ses audits complets aux nouvelles villes, aux réorganisations et aux contrôles automatiques.
