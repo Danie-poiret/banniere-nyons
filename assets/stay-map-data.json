@@ -364,6 +364,20 @@
       "warning": "Sur les hauteurs, escaliers. Petit bassin pour les pieds ; pas de piscine de baignade. Animaux non admis.",
       "precision": "adresse",
       "source": "https://lemasdecesar-nyons.fr/"
+    },
+    {
+      "id": "la-pastorale",
+      "number": 26,
+      "name": "La Pastorale",
+      "address": "138 promenade de la Digue, 26110 Nyons",
+      "lat": 44.357027,
+      "lon": 5.134086,
+      "kind": "chambre",
+      "url": "/ou-dormir-a-nyons/la-pastorale/",
+      "info": "Chambres d’hôtes près de l’Eygues, piscine sur créneaux, jardin et terrasses.",
+      "warning": "Capacité actuelle et accès à confirmer auprès des hôtes.",
+      "precision": "Repère de l’Office de tourisme",
+      "source": "https://www.drome-cestmanature.com/fiches/la-pastorale/"
     }
   ]
 }
