@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-12",
+  "updated": "2026-11-03",
   "sources": [
     {
       "name": "IGN / Base Adresse Nationale",
@@ -350,6 +350,20 @@
       "warning": "",
       "precision": "adresse",
       "source": "https://data.geopf.fr/geocodage/search?q=1005+route+des+Rieux%2C+26110+Nyons&index=address&limit=3&autocomplete=0"
+    },
+    {
+      "id": "le-mas-de-cesar",
+      "number": 25,
+      "name": "Le Mas de César",
+      "address": "870 route de Rieux, 26110 Nyons",
+      "lat": 44.354886,
+      "lon": 5.149709,
+      "kind": "chambre",
+      "url": "/ou-dormir-a-nyons/le-mas-de-cesar/",
+      "info": "Gîte entier pour six personnes ou deux chambres d’hôtes pour quatre personnes.",
+      "warning": "Sur les hauteurs, escaliers. Petit bassin pour les pieds ; pas de piscine de baignade. Animaux non admis.",
+      "precision": "adresse",
+      "source": "https://lemasdecesar-nyons.fr/"
     }
   ]
 }
