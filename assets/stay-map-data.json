@@ -378,6 +378,20 @@
       "warning": "Capacité actuelle et accès à confirmer auprès des hôtes.",
       "precision": "Repère de l’Office de tourisme",
       "source": "https://www.drome-cestmanature.com/fiches/la-pastorale/"
+    },
+    {
+      "id": "maison-antaram",
+      "number": 27,
+      "name": "La Maison d’Antaram",
+      "address": "40 rue Camille-Bréchet, 26110 Nyons",
+      "lat": 44.355576,
+      "lon": 5.131315,
+      "kind": "chambre",
+      "url": "/ou-dormir-a-nyons/maison-antaram/",
+      "info": "Deux chambres, jardin, piscine saisonnière et table d’hôtes sur réservation.",
+      "warning": "Piscine de juin à fin septembre ; accueil et disponibilités à confirmer.",
+      "precision": "adresse",
+      "source": "https://www.drome-cestmanature.com/fiches/la-maison-dantaram/"
     }
   ]
 }
