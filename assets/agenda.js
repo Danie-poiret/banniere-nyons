@@ -1,3 +1,18 @@
+
+/* Hotel guide in accommodation fact-sheet menus, including future sheets. */
+(function installNyonsHotelGuideLink(){
+  if(!/\/ou-dormir-a-nyons\/[^/]+\/(?:index\.html)?$/.test(location.pathname))return;
+  const path='/ou-dormir-a-nyons/meilleurs-hotels-Nyons/';
+  document.querySelectorAll('aside.right-sidebar').forEach(sidebar=>{
+    const existing=[...sidebar.querySelectorAll('a[href]')].find(link=>new URL(link.href,location.href).pathname===path);
+    if(existing){existing.textContent='Hôtels Nyons';return;}
+    const card=document.createElement('section');card.className='side-card';card.setAttribute('data-nyons-stay-links','');
+    const title=document.createElement('div');title.className='side-title';title.textContent='Où dormir à Nyons';
+    const nav=document.createElement('nav');nav.className='side-links';nav.setAttribute('aria-label','Où dormir à Nyons');
+    const link=document.createElement('a');link.href=path;link.textContent='Hôtels Nyons';
+    nav.append(link);card.append(title,nav);sidebar.prepend(card);
+  });
+})();
 /* Shared right-hand menus: swimming pool and reuse guide. */
 (function installNyonsSidebarLinks(){
   const script=document.currentScript;
