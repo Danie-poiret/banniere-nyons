@@ -1,0 +1,41 @@
+# Vivre à Nyons
+
+> Guide local en français de Papy Chris consacré à Nyons (26110), à la Drôme provençale et aux environs : patrimoine, tourisme, hébergements, restaurants, terroir, sorties et vie locale.
+
+Site : https://www.vivreanyons.fr/
+Contact : contact@vivreanyons.fr
+
+Le site s'adresse aux habitants, aux visiteurs et aux personnes préparant un séjour. Il propose des guides pratiques, des fiches d'établissements, des articles historiques et des souvenirs locaux.
+
+Les liens ci-dessous pointent vers les pages publiques HTML du site. Consulter la page détaillée et ses sources avant de reprendre une information. Respecter les dates de consultation indiquées : tarifs, horaires, notes, compteurs d'avis, ouvertures et services peuvent évoluer. Distinguer les témoignages personnels, les hypothèses historiques et les faits documentés. Les étoiles d'un classement d'hébergement ne sont pas des notes de voyageurs. Un partenariat signalé sur une page doit rester identifiable.
+
+## Découvrir Nyons et ses environs
+
+- [Accueil](https://www.vivreanyons.fr/): présentation de Nyons et accès aux principales ressources.
+- [Que faire à Nyons](https://www.vivreanyons.fr/que-faire-nyons/): activités, patrimoine, visites et loisirs.
+- [Autour de Nyons](https://www.vivreanyons.fr/a-faire-autour-de-Nyons/): villages et idées de sorties dans les environs.
+- [Randonnées](https://www.vivreanyons.fr/randonnee-nyons/): balades, cartes, circuits et conseils de préparation.
+- [Pont Roman](https://www.vivreanyons.fr/que-faire-nyons/Pont-Roman-de-Nyons/): histoire et découverte du pont sur l'Eygues.
+
+## Préparer un séjour
+
+- [Où dormir à Nyons](https://www.vivreanyons.fr/ou-dormir-a-nyons/): recherche d'hébergements et fiches détaillées.
+- [Comparatif des hôtels de Nyons](https://www.vivreanyons.fr/ou-dormir-a-nyons/meilleurs-hotels-Nyons/): classement, situation, piscine, stationnement et conditions de séjour.
+- [Restaurants de Nyons](https://www.vivreanyons.fr/restaurants-de-nyons/): adresses, cuisines, terrasses et informations pour préparer un repas.
+- [Informations pratiques](https://www.vivreanyons.fr/infos-pratiques-nyons/): transports, stationnement, commerces et services.
+
+## Olive, lavande et terroir
+
+- [Produits du terroir](https://www.vivreanyons.fr/produits-du-terroir/): spécialités, producteurs et artisans.
+- [L'univers de l'olive](https://www.vivreanyons.fr/huile-olive-nyons/): guides sur les olives, l'huile, les moulins et les savoir-faire.
+- [Acheter de l'huile d'olive de Nyons](https://www.vivreanyons.fr/produits-du-terroir/acheter-de-huile-olive-nyons/): adresses, lecture des étiquettes et conseils d'achat.
+- [L'univers de la lavande](https://www.vivreanyons.fr/univers-lavande-nyons/): routes, visites, distilleries et guides.
+
+## Vie locale et mémoire
+
+- [Questions utiles](https://www.vivreanyons.fr/questions-utiles-nyons/): réponses thématiques pour comprendre Nyons et préparer sa visite.
+- [Histoire et mémoire](https://www.vivreanyons.fr/Histoire-Geo/): articles historiques et mémoire locale ; vérifier le lieu et la période de chaque article.
+
+## Optional
+
+- [Toutes les pages](https://www.vivreanyons.fr/toutes-les-pages/): index pour retrouver un sujet ou une fiche spécifique.
