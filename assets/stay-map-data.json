@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-03",
+  "updated": "2026-11-04",
   "sources": [
     {
       "name": "IGN / Base Adresse Nationale",
@@ -392,6 +392,34 @@
       "warning": "Piscine de juin à fin septembre ; accueil et disponibilités à confirmer.",
       "precision": "adresse",
       "source": "https://www.drome-cestmanature.com/fiches/la-maison-dantaram/"
+    },
+    {
+      "id": "les-ecureuils-nyons",
+      "number": 28,
+      "name": "Les Écureuils",
+      "address": "840 chemin du Serre Rouge, 26110 Nyons",
+      "lat": 44.3380067,
+      "lon": 5.0975032,
+      "kind": "chambre",
+      "url": "/ou-dormir-a-nyons/les-ecureuils-nyons/",
+      "info": "Chambres et gîte d’étape, grand jardin, petit-déjeuner compris.",
+      "warning": "Sanitaires communs ou privatifs selon la chambre ; accès et disponibilités à confirmer.",
+      "precision": "établissement",
+      "source": "https://www.google.com/maps/place/LES+ECUREUILS/data=!4m2!3m1!1s0x12ca81ef3f025085:0x41a0b853c813cba0"
+    },
+    {
+      "id": "pause-provencale-nyons",
+      "number": 29,
+      "name": "Pause Provençale",
+      "address": "31 rue des Souchères, 26110 Nyons",
+      "lat": 44.3610317,
+      "lon": 5.1268999,
+      "kind": "chambre",
+      "url": "/ou-dormir-a-nyons/pause-provencale-nyons/",
+      "info": "Deux chambres pour cinq personnes ou gîte Zarafa pour deux, jardin et piscine.",
+      "warning": "Sanitaires partagés dans les chambres ; privatifs dans Zarafa. Deux voitures en enfilade.",
+      "precision": "établissement",
+      "source": "https://www.google.com/maps/place/Pause+Proven%C3%A7ale/data=!4m2!3m1!1s0x12ca836449eb7cfd:0x95fcb1be19e1f159"
     }
   ]
 }
