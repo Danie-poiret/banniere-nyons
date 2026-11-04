@@ -11,6 +11,7 @@ SITE='https://www.vivreanyons.fr'
 ROOT=Path(__file__).resolve().parents[1]
 MARKER='data-nyons-seo-auto="v1"'
 import memory_breadcrumbs as memory_crumbs
+from editorial_identity import harmonize as harmonize_editorial_identity
 def read_source(file):
     with file.open(encoding='utf8',newline='') as stream:return stream.read()
 def clean(s):return re.sub(r'\s+',' ',html.unescape(re.sub('<[^>]+>',' ',s))).strip()
@@ -157,6 +158,10 @@ def optimize(source,url,config,catalog):
         marker='<!-- nyons-layout-styles:start -->'
         anchor=marker if marker in source.split('</head>',1)[0] else '</head>'
         source=source.replace(anchor,''.join(additions)+anchor,1)
+    with_identity = harmonize_editorial_identity(source)
+    if with_identity != source:
+        changes.append('editorial_identity')
+    source = with_identity
     assert Head(source).meta.get('description',[])==p.meta.get('description',[]), 'Description changed'
     assert source.split('</head>',1)[1]==original.split('</head>',1)[1], 'Body changed'
     assert Head(source).canonical==p.canonical, 'URL changed'
