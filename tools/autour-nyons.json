@@ -972,6 +972,19 @@
         "height": 384,
         "original_src": "/assets/photos/fiche-8e21a593ab64a4afb485.webp"
       }
+    },
+    {
+      "url": "/a-faire-autour-de-Nyons/cascades-autour-de-nyons/",
+      "title": "Cascades autour de Nyons : balade, accès et coins de fraîcheur",
+      "description": "Cascades autour de Nyons : Aubres, secteur de Sahune et autres coins d’eau. Balades, accès, stationnement, débit et précautions avant de partir.",
+      "group": "fraicheur",
+      "seasons": [],
+      "image": {
+        "src": "/assets/photos/cascades-autour-nyons-1.png",
+        "alt": "Petite chute d’eau le long de rochers moussus, au-dessus d’un bassin naturel.",
+        "width": 342,
+        "height": 507
+      }
     }
   ],
   "featured": [
