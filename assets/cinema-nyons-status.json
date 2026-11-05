@@ -1,7 +1,9 @@
 {
-  "checked_at": "2026-11-05T02:48:53.572069+01:00",
+  "checked_at": "2026-11-05T12:30:16.814552+01:00",
   "source": "https://raw.githubusercontent.com/Danie-poiret/agenda-nyons/main/cinema-programme.json",
-  "errors": [],
-  "official_pdf": "https://documents.monnaie-services.com/site_file/EMS0177/6abbf866f630a0cb74999e5985b43391.pdf",
+  "errors": [
+    "Nouveau PDF détecté : transcription et comparaison requises dans la source cinéma existante."
+  ],
+  "official_pdf": "https://documents.monnaie-services.com/site_file/EMS0177/eaf421579189c927242d43f455be6556.pdf",
   "period_end": "2026-11-10"
 }
