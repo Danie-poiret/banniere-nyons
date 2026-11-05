@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-04",
+  "updated": "2026-11-05",
   "sources": [
     {
       "name": "IGN / Base Adresse Nationale",
@@ -420,6 +420,20 @@
       "warning": "Sanitaires partagés dans les chambres ; privatifs dans Zarafa. Deux voitures en enfilade.",
       "precision": "établissement",
       "source": "https://www.google.com/maps/place/Pause+Proven%C3%A7ale/data=!4m2!3m1!1s0x12ca836449eb7cfd:0x95fcb1be19e1f159"
+    },
+    {
+      "id": "dodo-etc-condorcet",
+      "number": 30,
+      "name": "Dodo Etc.",
+      "address": "Chemin des Grands Chênes, 26110 Condorcet",
+      "lat": 44.4049974,
+      "lon": 5.1978103,
+      "kind": "chambre",
+      "url": "/ou-dormir-a-nyons/dodo-etc-condorcet/",
+      "info": "Quatre chambres et trois gîtes, piscine extérieure et spa sur réservation.",
+      "warning": "Animaux non acceptés. Conditions particulières pour les enfants et l’accès au spa.",
+      "precision": "établissement",
+      "source": "https://www.google.com/maps/place/DODO+etc/data=!4m2!3m1!1s0x12ca8511b561742d:0x5a0608399019816b"
     }
   ]
 }
