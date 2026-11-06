@@ -932,6 +932,21 @@
       }
     },
     {
+      "path": "Provence-Alpes-Cote-dAzur/Bouches-du-Rhone/Marseille/samaritaine-marseille-trolleybus-souvenirs-vieux-port/index.html",
+      "city_id": "marseille",
+      "city": "Marseille",
+      "department": "Bouches-du-Rhône",
+      "datePublished": "2026-11-06",
+      "title": "Marseille : La Samaritaine, les trolleybus et les souvenirs du Vieux-Port",
+      "summary": "La Samaritaine à Marseille : terrasse du Vieux-Port, trolleybus, jouets Alcalay et souvenirs des sorties en famille autour de la brasserie.",
+      "image": {
+        "src": "/assets/photos/samaritaine-marseille-vieux-port-trolleybus.png",
+        "alt": "La Samaritaine à Marseille, avec ses balcons arrondis, sa terrasse, les enseignes Ricard, un trolleybus et des voitures devant le Vieux-Port.",
+        "width": "1001",
+        "height": "1572"
+      }
+    },
+    {
       "path": "Provence-Alpes-Cote-dAzur/Bouches-du-Rhone/Marseille/vieux-port-marseille-vers-1970/index.html",
       "city_id": "marseille",
       "city": "Marseille",
