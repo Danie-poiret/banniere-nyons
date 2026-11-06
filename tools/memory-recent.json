@@ -1022,6 +1022,21 @@
       }
     },
     {
+      "path": "Provence-Alpes-Cote-dAzur/Vaucluse/Avignon/bar-americain-avignon-autrefois/index.html",
+      "city_id": "avignon",
+      "city": "Avignon",
+      "department": "Vaucluse",
+      "datePublished": "2026-11-02",
+      "title": "L’Américain à Avignon : souvenirs du célèbre café",
+      "summary": "Le Bar Américain à Avignon, ses habitués, Claude Caramel, les lycéens, les rendez-vous du dimanche et les souvenirs de la rue de la République.",
+      "image": {
+        "src": "/assets/photos/bar-americain-avignon-autrefois.png",
+        "alt": "Ancienne photographie de la rue de la République à Avignon, avec le Bar Américain et sa terrasse à droite de l'ancienne chapelle des Jésuites, aujourd'hui musée lapidaire.",
+        "width": "1024",
+        "height": "1536"
+      }
+    },
+    {
       "path": "Provence-Alpes-Cote-dAzur/Vaucluse/Avignon/quartier-balance-avignon-autrefois/index.html",
       "city_id": "avignon",
       "city": "Avignon",
