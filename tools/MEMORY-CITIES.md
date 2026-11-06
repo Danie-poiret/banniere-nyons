@@ -56,6 +56,42 @@ python tools/add_memory_article.py avignon nouveau-recit /chemin/article-prepare
 python tools/add_memory_article.py avignon nouveau-recit /chemin/article-prepare.html
 ```
 
-Il ne parcourt pas les autres villes : il ajoute le récit et sa carte, actualise le nombre de récits dans la ville et ses parents, puis ajoute l’URL au sitemap. Six fichiers texte au maximum sont concernés ; l’accueil principal et les autres récits restent inchangés. Le script ne publie pas sur GitHub.
+Il ne parcourt pas les autres villes : il ajoute le récit et sa carte, actualise le nombre de récits dans la ville et ses parents, le catalogue des récits et les six dernières histoires de Mémoire de France, puis ajoute l’URL au sitemap. Sept fichiers texte au maximum sont concernés ; l’accueil principal et les autres récits restent inchangés. Le script ne publie pas sur GitHub.
 
 Réutiliser la copie locale et récupérer les versions actuelles des seuls fichiers nécessaires via leurs chemins exacts. Vérifier le récit, sa photo, ses liens et sa carte dans la ville. Réserver le générateur global et ses audits complets aux nouvelles villes, aux réorganisations et aux contrôles automatiques.
+
+## Dernières histoires : publication et contrôle
+
+Le catalogue `tools/memory-recent.json` est une donnée générée, pas une seconde
+liste à entretenir manuellement. L'ajout ciblé actualise l'entrée du récit et le
+bloc HTML `memory-recent` du portail dans la même opération. Récupérer aussi ce
+catalogue dans une copie locale ciblée. Sans catalogue, la première génération
+exige tous les articles pour le reconstruire ; ne pas l'initialiser depuis une
+copie partielle.
+
+Le tri utilise uniquement la vraie `datePublished`, puis l'ordre d'ajout au
+sitemap pour départager les publications du même jour. Une correction de
+`dateModified` ne fait pas remonter un ancien récit. Les articles sans date
+documentée restent dans leur ville mais pas dans les dernières histoires. La
+sélection éditoriale « Les histoires à découvrir » reste inchangée.
+
+Pour corriger un récit existant et ses cartes sans créer de doublon :
+
+```sh
+python tools/add_memory_article.py marseille slug-existant /chemin/article-corrige.html --refresh --plan-only
+python tools/add_memory_article.py marseille slug-existant /chemin/article-corrige.html --refresh
+```
+
+La date de publication d'origine doit être conservée. Pour une réparation du
+catalogue depuis une copie complète de Mémoire de France :
+
+```sh
+python tools/memory_recent.py --rebuild
+python tools/memory_recent.py --check
+python -m unittest discover -s tools -p test_memory_recent.py
+```
+
+Le contrôle compare les métadonnées réelles des articles au catalogue et au bloc
+HTML. Il échoue si les dernières histoires sont restées figées. Publier tous les
+fichiers annoncés par le plan ensemble, avec `Memory-Cities-Only: true`, puis
+vérifier l'URL de l'article, sa ville et le portail après le déploiement.
