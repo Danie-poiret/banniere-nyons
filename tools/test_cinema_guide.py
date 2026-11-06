@@ -15,6 +15,17 @@ class CinemaGuideTests(unittest.TestCase):
             {'title':'Quelques mots d’amour','description':'Fixture de régression de la transcription.','duration':'','sessions':[{'date':'2026-10-28','time':'11:00','version':'VF'},{'date':'2026-11-03','time':'14:30','version':'VF'},{'date':'2026-11-03','time':'16:30','version':'VF'},{'date':'2026-11-03','time':'18:30','version':'VF'}]}
         ]}
 
+    def test_compact_cards_keep_programme_and_agenda_link_without_synopsis(self):
+        data=copy.deepcopy(self.data)
+        film=data['films'][0]
+        film.update(duration='1 h 42',poster='/assets/posters/controle.jpg')
+        now=datetime(2026,10,23,18,0,tzinfo=guide.TZ)
+        page=guide.render(data,now)
+        self.assertNotIn(film['description'],page)
+        self.assertNotIn(data['films'][1]['description'],page)
+        for value in [film['title'],'1 h 42','https://agenda.vivreanyons.fr/assets/posters/controle.jpg',guide.film_url(film),'Détails du film et séances →','2026-10-23T19:00:00+02:00','2026-10-23T20:00:00+02:00']:
+            self.assertIn(value,page)
+
     def test_same_day_expired_sessions_are_removed(self):
         now=datetime(2026,10,23,19,30,tzinfo=guide.TZ)
         films=guide.future_films(self.data,now)

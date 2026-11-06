@@ -97,7 +97,7 @@ def render(data, now):
         if poster.startswith('/'):
             poster = 'https://agenda.vivreanyons.fr' + poster
         last = stamp(sessions[-1]).isoformat()
-        out.append('<section class="cg-film" data-last-session="' + last + '"><div class="cg-film-top"><img src="' + E(poster, quote=True) + '" alt="' + E(f.get('poster_alt', 'Affiche de ' + f['title']), quote=True) + '" width="120" height="174" loading="lazy" decoding="async"><div><h3>' + E(f['title']) + '</h3><p class="cg-next"><strong>Prochaine séance : <time datetime="' + stamp(first).isoformat() + '">' + when(first) + '</time></strong></p><p>' + E(f.get('duration') or 'Durée non précisée dans le programme') + (' · ' + E(f['age']) if f.get('age') else '') + '</p></div></div><p>' + E(f['description']) + '</p>')
+        out.append('<section class="cg-film" data-last-session="' + last + '"><div class="cg-film-top"><img src="' + E(poster, quote=True) + '" alt="' + E(f.get('poster_alt', 'Affiche de ' + f['title']), quote=True) + '" width="120" height="174" loading="lazy" decoding="async"><div><h3>' + E(f['title']) + '</h3><p class="cg-next"><strong>Prochaine séance : <time datetime="' + stamp(first).isoformat() + '">' + when(first) + '</time></strong></p><p>' + E(f.get('duration') or 'Durée non précisée dans le programme') + (' · ' + E(f['age']) if f.get('age') else '') + '</p></div></div>')
         out.append('<details><summary>Les ' + str(len(sessions)) + ' séances à venir · versions et horaires</summary><ul class="cg-times">')
         for s in sessions:
             out.append('<li data-session="' + stamp(s).isoformat() + '"><time datetime="' + stamp(s).isoformat() + '">' + when(s) + '</time> · ' + E(s['version']) + (' · ' + E(str(s['price'])) + ' €' if s.get('price') else '') + '</li>')
@@ -106,7 +106,7 @@ def render(data, now):
             out.append('<p class="cg-note">' + E(' '.join(f[k] for k in ('special_note', 'price_note') if f.get(k))) + '</p>')
         if f.get('poster_credit'):
             out.append('<p class="cg-note">' + E(f['poster_credit']) + '</p>')
-        out.append('<div class="cg-actions"><a href="' + film_url(f) + '">Fiche complète du film</a><a href="' + OFFICIAL + '">🎟️ Séances et réservation sur le site officiel</a></div></section>')
+        out.append('<div class="cg-actions"><a href="' + film_url(f) + '">Détails du film et séances →</a><a href="' + OFFICIAL + '">🎟️ Séances et réservation sur le site officiel</a></div></section>')
     out.append('</div></section>')
     out.append('<section id="prochaines-seances"><h2>📅 Les séances des prochains jours</h2><p>Heures locales à Nyons, y compris après le changement d’heure du 25 octobre. Deux films peuvent commencer ensemble : L’Arlequin possède deux salles.</p>')
     all_sessions = sorted(((s, f) for f, sessions in films for s in sessions), key=lambda pair: (stamp(pair[0]), pair[1]['title']))
