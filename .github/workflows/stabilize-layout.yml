@@ -24,12 +24,14 @@ permissions:
   contents: write
   pages: write
   actions: read
-concurrency:
-  group: stable-shared-layout-main
-  cancel-in-progress: false
 jobs:
   render:
     if: github.ref == 'refs/heads/main' && (github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success')
+    # Skipped upstream runs must not enter the concurrency queue and replace a
+    # pending real publication. Only jobs that will actually render are queued.
+    concurrency:
+      group: stable-shared-layout-main
+      cancel-in-progress: false
     runs-on: ubuntu-latest
     timeout-minutes: 12
     steps:

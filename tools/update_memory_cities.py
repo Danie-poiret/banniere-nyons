@@ -9,6 +9,7 @@ from urllib.parse import urlsplit, unquote
 import xml.etree.ElementTree as ET
 from lxml import html as dom
 import memory_breadcrumbs as memory_crumbs
+import memory_recent
 
 SITE='https://www.vivreanyons.fr'
 ROOT=Path(__file__).resolve().parents[1]
@@ -215,6 +216,7 @@ def plan(root,config=None,extra=None):
     if additions:
         assert '</urlset>' in sitemap
         changes['sitemap.xml']=sitemap.replace('</urlset>',additions+'</urlset>',1)
+    changes.update(memory_recent.plan(root,config,{**extra,**changes},rebuild=True))
     return changes,records
 
 def prepare_article(root,config,city_id,slug,source,definition=None):

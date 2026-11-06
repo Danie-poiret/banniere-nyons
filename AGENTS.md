@@ -173,3 +173,21 @@ Réutiliser la copie de travail existante et synchroniser uniquement les fichier
 Conserver le texte validé et les photos originales. Contrôler le nouveau récit sur ordinateur et téléphone, la photo, ses liens internes et sa présence dans la ville. Ne pas relancer tous les tests de toutes les villes pour une simple publication déjà préparée. Les audits globaux restent dans le contrôle automatique et pour une modification du classement ou du générateur global.
 
 Publier ensemble le récit, la photo et les seuls index modifiés, avec `Memory-Cities-Only: true`. Confirmer après ouverture de l’URL publique et contrôle de la photo complète. Ne pas changer l’accueil principal lors d’un simple ajout dans Mémoire de France, sauf demande explicite.
+
+## Listes de Mémoire de France — correction du 6 novembre 2026
+
+L'ajout ciblé met désormais à jour les dernières histoires du portail dans la
+même opération que la carte de ville, les compteurs et le sitemap. Récupérer
+aussi `tools/memory-recent.json` et `tools/memory_recent.py` dans une copie locale
+ciblée. Publier tous les fichiers annoncés par le plan, catalogue compris ; ne
+pas entretenir manuellement une deuxième sélection de récits récents.
+
+La sélection « Les histoires à découvrir » reste éditoriale. Les dernières
+histoires utilisent les vraies dates de publication, jamais la date de
+modification. Pour corriger un récit existant et ses cartes, le même outil
+accepte `--refresh`, en conservant sa datePublished originale et son URL.
+
+Avant de confirmer, contrôler la présence dans la ville et, pour un récit parmi
+les six plus récents, dans le portail Mémoire de France. Le contrôle automatique
+`tools/memory_recent.py --check` doit rester stable. Détails et commandes dans
+`tools/MEMORY-CITIES.md`.
