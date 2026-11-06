@@ -422,6 +422,21 @@
       }
     },
     {
+      "path": "Hauts-de-France/Nord/Lille/quai-du-wault-lille-autrefois/index.html",
+      "city_id": "lille",
+      "city": "Lille",
+      "department": "Nord",
+      "datePublished": "2026-11-06",
+      "title": "Lille autrefois : le quai du Wault et ses péniches",
+      "summary": "Découvrez le quai du Wault à Lille autrefois, ses péniches, son usine au charbon, la tour EDF et les souvenirs des habitants.",
+      "image": {
+        "src": "/assets/photos/quai-du-wault-lille-autrefois.png",
+        "alt": "Ancienne vue du quai du Wault à Lille avec plusieurs péniches amarrées, des charrettes, des façades et la cheminée fumante de l'usine électrique.",
+        "width": "1280",
+        "height": "831"
+      }
+    },
+    {
       "path": "Hauts-de-France/Nord/Lille/rue-de-la-vignette-saint-sauveur/index.html",
       "city_id": "lille",
       "city": "Lille",
