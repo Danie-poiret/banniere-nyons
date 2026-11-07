@@ -227,6 +227,21 @@
       }
     },
     {
+      "path": "Hauts-de-France/Nord/Dunkerque/hitler-dunkerque-26-juin-1940/index.html",
+      "city_id": "dunkerque",
+      "city": "Dunkerque",
+      "department": "Nord",
+      "datePublished": "2026-11-07",
+      "title": "Dunkerque, 26 juin 1940 : Hitler sur un pont encore non identifié",
+      "summary": "Le 26 juin 1940, Hitler traverse Dunkerque. Quel pont apparaît sur cette photographie ? Les archives, les souvenirs des habitants et l'histoire de Wormhout.",
+      "image": {
+        "src": "/assets/photos/hitler-dunkerque-26-juin-1940.png",
+        "alt": "Adolf Hitler entouré d'officiers allemands et de responsables nazis près de véhicules militaires, devant deux arches de pont métallique, lors de son déplacement à Dunkerque le 26 juin 1940.",
+        "width": "602",
+        "height": "372"
+      }
+    },
+    {
       "path": "Hauts-de-France/Nord/Dunkerque/marche-place-jean-bart-autrefois/index.html",
       "city_id": "dunkerque",
       "city": "Dunkerque",
