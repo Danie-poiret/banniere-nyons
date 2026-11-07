@@ -25,7 +25,8 @@
     "/produits-du-terroir/huile-olive-nyons-aop-etiquette/",
     "/infos-pratiques-nyons/Pique-nique-autour-de-Nyons/",
     "/a-faire-autour-de-Nyons/distilleries-de-lavande/",
-    "/infos-pratiques-nyons/mediatheque-nyons/"
+    "/infos-pratiques-nyons/mediatheque-nyons/",
+    "/produits-du-terroir/brasserie-a-nyons/"
   ],
   "excluded_paths": [
     "/Provence-Alpes-Cote-dAzur/Vaucluse/dames-de-france-avignon/",
@@ -48,6 +49,7 @@
     "/produits-du-terroir/croquettes-de-vinsobres/"
   ],
   "update_dates": {
-    "/infos-pratiques-nyons/mediatheque-nyons/": "2026-10-31"
+    "/infos-pratiques-nyons/mediatheque-nyons/": "2026-10-31",
+    "/produits-du-terroir/brasserie-a-nyons/": "2026-11-07"
   }
 }
