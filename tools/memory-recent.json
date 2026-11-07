@@ -212,6 +212,21 @@
       }
     },
     {
+      "path": "Hauts-de-France/Nord/Dunkerque/bains-dunkerquois-piscine-souvenirs/index.html",
+      "city_id": "dunkerque",
+      "city": "Dunkerque",
+      "department": "Nord",
+      "datePublished": "2026-11-07",
+      "title": "Les Bains dunkerquois : la piscine des premières brasses et des souvenirs",
+      "summary": "Les Bains dunkerquois autrefois : carte postale, premières brasses, piscine avec l’école, souvenirs de puddingue et histoire du bâtiment patrimonial.",
+      "image": {
+        "src": "/assets/photos/bains-dunkerquois-carte-postale.png",
+        "alt": "Carte postale ancienne des Bains dunkerquois, avec leur dôme, leur cheminée, des bateaux amarrés au premier plan et une église à deux flèches à l’arrière-plan.",
+        "width": "947",
+        "height": "581"
+      }
+    },
+    {
       "path": "Hauts-de-France/Nord/Dunkerque/carnaval-dunkerque-annees-1970/index.html",
       "city_id": "dunkerque",
       "city": "Dunkerque",
