@@ -1157,6 +1157,21 @@
       }
     },
     {
+      "path": "Provence-Alpes-Cote-dAzur/Vaucluse/Avignon/cinema-capitole-avignon-souvenirs/index.html",
+      "city_id": "avignon",
+      "city": "Avignon",
+      "department": "Vaucluse",
+      "datePublished": "2026-11-07",
+      "title": "Avignon : qui se souvient des dimanches au Capitole ?",
+      "summary": "Le Capitole à Avignon : réservations du dimanche, Disney, bar à l’entracte, Snack du Midi et souvenirs des familles avant La Scala Provence.",
+      "image": {
+        "src": "/assets/photos/capitole-avignon-evocation-fournie.png",
+        "alt": "Image fournie évoquant le Capitole à Avignon, avec son enseigne, une affiche Mademoiselle de Paris et des spectateurs devant l’entrée ; origine et caractère documentaire non établis.",
+        "width": "1491",
+        "height": "1055"
+      }
+    },
+    {
       "path": "Provence-Alpes-Cote-dAzur/Vaucluse/Avignon/quartier-balance-avignon-autrefois/index.html",
       "city_id": "avignon",
       "city": "Avignon",
