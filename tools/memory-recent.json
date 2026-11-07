@@ -332,6 +332,21 @@
       }
     },
     {
+      "path": "Hauts-de-France/Nord/Lille/femmes-pantheres-lille-nord/index.html",
+      "city_id": "lille",
+      "city": "Lille",
+      "department": "Nord",
+      "datePublished": "2026-11-07",
+      "title": "Les femmes panthères de Lille et du Nord",
+      "summary": "Pascaline et Esmeralda, les femmes panthères de Lille et du Nord : rue de Béthune, Braderie, carnavals, Cannes et souvenirs des habitants.",
+      "image": {
+        "src": "/assets/photos/femmes-pantheres-lille-nord.png",
+        "alt": "Deux femmes en vêtements à motifs félins, associées au duo des femmes panthères, tenant des petits félins dans leurs bras ; un homme se tient derrière elles.",
+        "width": "786",
+        "height": "645"
+      }
+    },
+    {
       "path": "Hauts-de-France/Nord/Lille/gare-lille-vers-1925-tramways-souvenirs/index.html",
       "city_id": "lille",
       "city": "Lille",
