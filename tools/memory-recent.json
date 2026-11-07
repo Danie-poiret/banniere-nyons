@@ -242,6 +242,21 @@
       }
     },
     {
+      "path": "Hauts-de-France/Nord/Dunkerque/ilots-bleus-dunkerque-plage-chalets-autrefois/index.html",
+      "city_id": "dunkerque",
+      "city": "Dunkerque",
+      "department": "Nord",
+      "datePublished": "2026-11-07",
+      "title": "Dunkerque autrefois : les Îlots Bleus et les chalets près de la plage",
+      "summary": "Les Îlots Bleus à Dunkerque sur une vue aérienne ancienne : plage, chalets, logements provisoires et souvenirs des habitants près de la digue des Alliés.",
+      "image": {
+        "src": "/assets/photos/ilots-bleus-dunkerque-plage-chalets.png",
+        "alt": "Vue aérienne ancienne de la plage et des Îlots Bleus à Dunkerque, avec les immeubles en front de mer, des rangées de logements provisoires et un canal à droite.",
+        "width": "1920",
+        "height": "1322"
+      }
+    },
+    {
       "path": "Hauts-de-France/Nord/Dunkerque/marche-place-jean-bart-autrefois/index.html",
       "city_id": "dunkerque",
       "city": "Dunkerque",
