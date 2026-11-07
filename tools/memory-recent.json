@@ -77,6 +77,21 @@
       }
     },
     {
+      "path": "Auvergne-Rhone-Alpes/Rhone/Lyon/fresque-des-lyonnais-souvenirs-quai-saint-vincent/index.html",
+      "city_id": "lyon",
+      "city": "Lyon",
+      "department": "Rhône",
+      "datePublished": "2026-11-07",
+      "title": "La Fresque des Lyonnais : la station-service et les souvenirs du quartier",
+      "summary": "La Fresque des Lyonnais, son ancienne station-service, les jeux des enfants et les souvenirs du quai Saint-Vincent, avec une vue nocturne de Lyon.",
+      "image": {
+        "src": "/assets/photos/fresque-des-lyonnais-vue-nocturne.png",
+        "alt": "Vue nocturne de la Fresque des Lyonnais au quai Saint-Vincent, avec la Saône et la colline de Fourvière éclairée en arrière-plan.",
+        "width": "862",
+        "height": "520"
+      }
+    },
+    {
       "path": "Auvergne-Rhone-Alpes/Rhone/Lyon/traboules-lyon-croix-rousse-cour-des-voraces/index.html",
       "city_id": "lyon",
       "city": "Lyon",
