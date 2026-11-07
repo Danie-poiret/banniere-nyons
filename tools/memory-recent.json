@@ -302,6 +302,21 @@
       }
     },
     {
+      "path": "Hauts-de-France/Nord/Dunkerque/place-jean-bart-dunkerque-commerces-autobus-autrefois/index.html",
+      "city_id": "dunkerque",
+      "city": "Dunkerque",
+      "department": "Nord",
+      "datePublished": "2026-11-07",
+      "title": "Dunkerque autrefois : la place Jean-Bart, ses commerces et ses autobus",
+      "summary": "La place Jean-Bart à Dunkerque sur une vue ancienne : L’Impeccable, Monsieur Goujon, l’arrêt de la Civette, les commerces et les souvenirs d’enfance.",
+      "image": {
+        "src": "/assets/photos/place-jean-bart-dunkerque-commerces-autobus.png",
+        "alt": "Vue ancienne en couleurs de la place Jean-Bart à Dunkerque, avec la statue, des voitures en stationnement, un autobus et les commerces dont L’Impeccable.",
+        "width": "843",
+        "height": "536"
+      }
+    },
+    {
       "path": "Hauts-de-France/Nord/Lille/anciens-abattoirs-rue-saint-sebastien/index.html",
       "city_id": "lille",
       "city": "Lille",
