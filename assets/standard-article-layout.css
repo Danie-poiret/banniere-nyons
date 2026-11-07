@@ -1,0 +1,23 @@
+/* Fiches courantes de Nyons : modèle de la page Pharmacie de garde. */
+body.standard-article-page{font-size:16px;line-height:1.65}
+body.standard-article-page>main{max-width:none!important;width:auto!important;margin:0!important;padding:36px 20px!important;display:block!important}
+body.standard-article-page main>.site-standard-layout.feature-layout.has-sidebar{max-width:1120px!important;display:grid!important;grid-template-columns:minmax(220px,27%) minmax(0,1fr) 250px!important;column-gap:28px!important;row-gap:0!important;align-items:start!important;margin:0 auto!important;padding:0!important}
+body.standard-article-page .site-standard-layout>.feature-media{grid-column:1!important;grid-row:1!important;min-width:0;margin:0!important}
+body.standard-article-page .site-standard-layout>.feature-story{grid-column:2!important;grid-row:1!important;min-width:0;width:100%!important;padding:0!important;margin:0!important;border:0!important;border-radius:0!important;background:transparent!important;font-size:16px!important;line-height:1.65!important}
+body.standard-article-page .site-standard-layout>.right-sidebar{grid-column:3!important;grid-row:1/span 3!important;min-width:0;width:100%!important;margin:0!important;position:static!important;font-size:16px;line-height:1.65}
+body.standard-article-page .site-standard-layout>.agenda,body.standard-article-page .site-standard-layout>.faq,body.standard-article-page .site-standard-layout>.note{grid-column:1/3!important;grid-row:auto!important}
+body.standard-article-page>.hero .inner{max-width:1050px!important}
+body.standard-article-page>.hero h1{font-size:clamp(2rem,4.5vw,4rem)!important;line-height:1.05!important}
+body.standard-article-page>.hero p{max-width:none!important}
+body.standard-article-page .feature-media figure{max-width:100%!important;width:100%!important;margin:0 0 22px!important}
+body.standard-article-page .feature-media figure img{display:block!important;width:100%!important;max-width:100%!important;height:auto!important;max-height:none!important;object-fit:contain!important;margin:0!important}
+body.standard-article-page .feature-media figcaption{font-size:.9rem;line-height:1.6;margin-top:10px}
+body.standard-article-page .feature-story table{border-collapse:collapse!important;width:100%!important;font-size:.95rem!important;line-height:1.65!important;background:#fff!important}
+body.standard-article-page .feature-story table th,body.standard-article-page .feature-story table td{font-size:inherit!important;line-height:inherit!important;text-align:left!important;vertical-align:top!important;padding:12px 10px!important;border:1px solid #d7e2cd!important;overflow-wrap:break-word!important}
+body.standard-article-page .feature-story table thead,body.standard-article-page .feature-story table thead th{background:#405b30!important;color:#fff!important;font-weight:700!important}
+body.standard-article-page .feature-story table tbody>tr>:first-child{font-weight:500!important;background:#f7f8f3!important}
+body.standard-article-page .feature-story table caption{text-align:left;font-size:.85rem!important;line-height:1.65;padding:0 0 10px!important;background:transparent!important}
+body.standard-article-page .feature-story [class$="-table"],body.standard-article-page .feature-story [class$="-table-wrap"],body.standard-article-page .feature-story .croquettes-summary-table{max-width:100%;overflow-x:auto;border:0!important;border-radius:0!important;margin:18px 0!important}
+@media(max-width:960px){body.standard-article-page main>.site-standard-layout.feature-layout.has-sidebar{grid-template-columns:minmax(220px,34%) minmax(0,1fr)!important}body.standard-article-page .site-standard-layout>.right-sidebar,body.standard-article-page .site-standard-layout>.faq,body.standard-article-page .site-standard-layout>.note,body.standard-article-page .site-standard-layout>.agenda{grid-column:1/-1!important;grid-row:auto!important}body.standard-article-page .site-standard-layout>.right-sidebar{margin-top:34px!important}}
+@media(max-width:860px){body.standard-article-page main>.site-standard-layout.feature-layout.has-sidebar{grid-template-columns:1fr!important}body.standard-article-page .site-standard-layout>.feature-media{grid-column:1!important;grid-row:1!important}body.standard-article-page .site-standard-layout>.feature-story{grid-column:1!important;grid-row:2!important;margin-top:22px!important}body.standard-article-page .site-standard-layout>.right-sidebar{grid-column:1!important;grid-row:3!important}body.standard-article-page .feature-media figure img{width:100%!important;height:auto!important}}
+@media(max-width:600px){body.standard-article-page .feature-story table th,body.standard-article-page .feature-story table td{padding:10px 8px!important}}
