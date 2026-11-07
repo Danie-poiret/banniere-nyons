@@ -77,6 +77,21 @@
       }
     },
     {
+      "path": "Auvergne-Rhone-Alpes/Rhone/Lyon/traboules-lyon-croix-rousse-cour-des-voraces/index.html",
+      "city_id": "lyon",
+      "city": "Lyon",
+      "department": "Rhône",
+      "datePublished": "2026-11-07",
+      "title": "Les traboules de Lyon : Croix-Rousse, cour des Voraces et souvenirs",
+      "summary": "Traboules de Lyon et Croix-Rousse : cour des Voraces, passages, souvenirs des habitants et repères pour une visite respectueuse des lieux.",
+      "image": {
+        "src": "/assets/photos/traboules-lyon-cour-voraces.png",
+        "alt": "Escalier monumental de la cour des Voraces à Lyon, avec ses volées diagonales et ses galeries éclairées dans des tons chauds.",
+        "width": "1008",
+        "height": "1218"
+      }
+    },
+    {
       "path": "Auvergne-Rhone-Alpes/Rhone/Palais-de-la-Foire-Lyon/index.html",
       "city_id": "lyon",
       "city": "Lyon",
