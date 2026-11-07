@@ -191,3 +191,24 @@ Avant de confirmer, contrôler la présence dans la ville et, pour un récit par
 les six plus récents, dans le portail Mémoire de France. Le contrôle automatique
 `tools/memory_recent.py --check` doit rester stable. Détails et commandes dans
 `tools/MEMORY-CITIES.md`.
+
+
+## Modèle permanent des fiches courantes — 7 novembre 2026
+
+À la demande explicite du propriétaire (« enregistre modele »), la référence des fiches locales courantes et des articles affichés dans les derniers articles de l’accueil est :
+https://www.vivreanyons.fr/infos-pratiques-nyons/pharmacie-de-garde-nyons/
+
+Réutiliser le style partagé `/assets/standard-article-layout.css?v=20261107-pharmacie`, avec `standard-article-page` sur body et `wrap has-sidebar feature-layout site-standard-layout` sur le conteneur principal. Ne pas recréer une variante de mise en page pour chaque fiche.
+
+- Sur ordinateur : photographies à gauche dans `aside.feature-media`, article au centre dans `article.feature-story`, menu à droite dans `aside.right-sidebar`.
+- Largeur du conteneur : 1 120 px au maximum ; grille `minmax(220px,27%) minmax(0,1fr) 250px`, avec 28 px entre les colonnes. À 1 440 px d’écran, cela donne environ 302 / 512 / 250 px.
+- Conserver le grand titre dans le bandeau `.hero`, au-dessus du contenu. Le style partagé règle les titres, le texte et les tableaux.
+- Sur mobile : une seule colonne de 350 px dans une fenêtre de 390 px, sans débordement de la page ; conserver le comportement de défilement interne des grands tableaux.
+- Conserver les proportions des images : largeur adaptée à leur colonne et hauteur automatique, sans déformation ni recadrage.
+- Tableaux : texte de 0,95 rem, interligne de 1,65, en-têtes vert foncé et texte blanc, bordures fines et cellules lisibles. Tableau récapitulatif en haut de l’article ; carte et itinéraire lorsqu’ils sont demandés.
+- Garder les textes, les photographies, les liens et les métadonnées de la fiche. Une correction de présentation ne change pas sa date de publication ni son URL.
+- Conserver un seul bandeau partenaire, encadré par les marqueurs `nyons-layout-partners:start` et `nyons-layout-partners:end`, après le bandeau de titre et avant main.
+- Le bloc Article rédigé pour une fiche doit rester hors du marqueur `data-nyons-seo-auto` : ce marqueur appartient au générateur et peut être reconstruit. Préserver les dates documentées et la sélection « Mis à jour » de l’accueil.
+- Avant de confirmer : vérifier uniquement les pages modifiées, une fois sur ordinateur et mobile, puis leur version publiée. Ne pas lancer un audit général ou refaire les recherches pour appliquer ce modèle.
+
+Ce modèle est déjà appliqué à La Grihète, aux Croquettes de Vinsobres, aux Opticiens, au guide des chambres d’hôtes, à Dodo Etc. et à L’Électron Libre. Les récits de Mémoire de France conservent leur modèle spécifique déjà enregistré.
