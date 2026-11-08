@@ -83,12 +83,12 @@
       "department": "Rhône",
       "datePublished": "2026-11-07",
       "title": "La Fresque des Lyonnais : la station-service et les souvenirs du quartier",
-      "summary": "La Fresque des Lyonnais, son ancienne station-service, les jeux des enfants et les souvenirs du quai Saint-Vincent, avec une vue nocturne de Lyon.",
+      "summary": "La Fresque des Lyonnais, son ancienne station-service, les jeux des enfants et les souvenirs du quai Saint-Vincent, avec une vue de jour de sa façade peinte.",
       "image": {
-        "src": "/assets/photos/fresque-des-lyonnais-vue-nocturne.png",
-        "alt": "Vue nocturne de la Fresque des Lyonnais au quai Saint-Vincent, avec la Saône et la colline de Fourvière éclairée en arrière-plan.",
-        "width": "862",
-        "height": "520"
+        "src": "/assets/photos/fresque-des-lyonnais-vue-de-jour.png",
+        "alt": "Vue de jour de la Fresque des Lyonnais au quai Saint-Vincent, avec ses personnages peints sur la façade et les commerces au rez-de-chaussée.",
+        "width": "402",
+        "height": "588"
       }
     },
     {
