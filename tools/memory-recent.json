@@ -92,6 +92,21 @@
       }
     },
     {
+      "path": "Auvergne-Rhone-Alpes/Rhone/Lyon/opera-lyon-grand-theatre/index.html",
+      "city_id": "lyon",
+      "city": "Lyon",
+      "department": "Rhône",
+      "datePublished": "2026-11-08",
+      "title": "Opéra de Lyon : histoire du Grand Théâtre et souvenirs",
+      "summary": "Découvrez l'ancien Grand Théâtre de Lyon, ses boutiques sous les arcades, les souvenirs des danseuses et sa transformation par Jean Nouvel en 1993.",
+      "image": {
+        "src": "/assets/photos/opera-lyon-grand-theatre-carte-postale.png",
+        "alt": "Ancienne carte postale du Grand Théâtre de Lyon, place de la Comédie, avant sa rénovation par Jean Nouvel",
+        "width": "781",
+        "height": "511"
+      }
+    },
+    {
       "path": "Auvergne-Rhone-Alpes/Rhone/Lyon/traboules-lyon-croix-rousse-cour-des-voraces/index.html",
       "city_id": "lyon",
       "city": "Lyon",
