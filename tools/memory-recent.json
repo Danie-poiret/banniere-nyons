@@ -752,6 +752,21 @@
       }
     },
     {
+      "path": "Hauts-de-France/Nord/Roubaix/cafe-dubus-grande-rue/index.html",
+      "city_id": "roubaix",
+      "city": "Roubaix",
+      "department": "Nord",
+      "datePublished": "2026-11-09",
+      "title": "Café Dubus à Roubaix : souvenirs de la Grande Rue",
+      "summary": "Découvrez le café Dubus au 181 Grande Rue à Roubaix, probablement dans les années 1920, ses anciens habitants et les souvenirs du quartier.",
+      "image": {
+        "src": "/assets/photos/cafe-dubus-181-grande-rue-roubaix.png",
+        "alt": "Ancienne photographie du café A. Dubus au 181 Grande Rue à Roubaix, avec clients, bicyclettes et automobile",
+        "width": "1625",
+        "height": "1034"
+      }
+    },
+    {
       "path": "Hauts-de-France/Nord/Roubaix/gare-roubaix-annees-1960/index.html",
       "city_id": "roubaix",
       "city": "Roubaix",
