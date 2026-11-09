@@ -546,6 +546,18 @@
       "description": "Les carnets de Rosendaël avec Papy Chris : cinéma Le Régent, cycles Boëls, place de l’Europe et mémoire des habitants du Dunkerquois.",
       "existing": false,
       "legacy": []
+    },
+    {
+      "id": "roubaix",
+      "name": "Roubaix",
+      "path": "Hauts-de-France/Nord/Roubaix",
+      "department": "Nord",
+      "region": "Hauts-de-France",
+      "intro": "Les anciennes photographies et les souvenirs des Roubaisiens nous ramènent aux Halles, aux commerces et à la vie des quartiers de Roubaix. Ce carnet commence par deux scènes de marché et les histoires des habitants.",
+      "title": "Roubaix autrefois : les Halles et les souvenirs des habitants",
+      "description": "Roubaix autrefois : les anciennes Halles, les commerçants, les cafés et les souvenirs des habitants à travers des photographies et des récits.",
+      "existing": false,
+      "legacy": []
     }
   ],
   "legacy_allowed_paths": [

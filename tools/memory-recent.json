@@ -752,6 +752,21 @@
       }
     },
     {
+      "path": "Hauts-de-France/Nord/Roubaix/halles-roubaix-commercants-souvenirs/index.html",
+      "city_id": "roubaix",
+      "city": "Roubaix",
+      "department": "Nord",
+      "datePublished": "2026-11-09",
+      "title": "Les Halles de Roubaix : commerçants et souvenirs",
+      "summary": "Les anciennes Halles de Roubaix, leurs commerçants, les cafés du Lido et Chez Marceaux, les Halles Flipo et les souvenirs des habitants.",
+      "image": {
+        "src": "/assets/photos/halles-roubaix-commercante-balance.png",
+        "alt": "Une cliente devant le comptoir et la balance d’une commerçante dans un ancien marché de Roubaix",
+        "width": "590",
+        "height": "377"
+      }
+    },
+    {
       "path": "Histoire-Geo/cafes-nyons-autrefois/index.html",
       "city_id": "nyons",
       "city": "Nyons",
