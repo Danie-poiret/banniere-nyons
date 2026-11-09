@@ -632,6 +632,21 @@
       }
     },
     {
+      "path": "Hauts-de-France/Nord/Lille/square-bois-blancs-lille/index.html",
+      "city_id": "lille",
+      "city": "Lille",
+      "department": "Nord",
+      "datePublished": "2026-11-09",
+      "title": "Lille : le square des Bois-Blancs et ses souvenirs",
+      "summary": "Le square des Bois-Blancs à Lille autrefois : rue Guillaume-Tell, école, usine Vynckier, Aviateurs, cinéma et souvenirs des anciens habitants.",
+      "image": {
+        "src": "/assets/photos/square-bois-blancs-lille-carte-postale.png",
+        "alt": "Enfants et femmes réunis sur un banc du square des Bois-Blancs à Lille, sur une ancienne carte postale",
+        "width": "960",
+        "height": "619"
+      }
+    },
+    {
       "path": "Hauts-de-France/Nord/Lille/temple-disparu-wazemmes/index.html",
       "city_id": "lille",
       "city": "Lille",
