@@ -1202,6 +1202,21 @@
       }
     },
     {
+      "path": "Provence-Alpes-Cote-dAzur/Vaucluse/Avignon/farandoles-pont-avignon/index.html",
+      "city_id": "avignon",
+      "city": "Avignon",
+      "department": "Vaucluse",
+      "datePublished": "2026-11-09",
+      "title": "Avignon : les farandoles et les danseurs des années 1960",
+      "summary": "À Avignon, retrouvez les farandoles des années 1960, les groupes folkloriques, les danseurs identifiés et les souvenirs des anciens.",
+      "image": {
+        "src": "/assets/photos/farandoles-pont-avignon-annees-1960.png",
+        "alt": "Cinq danseurs en costumes comtadins au bord du Rhône devant le pont Saint-Bénézet à Avignon, vers 1960",
+        "width": "1448",
+        "height": "1086"
+      }
+    },
+    {
       "path": "Provence-Alpes-Cote-dAzur/Vaucluse/Avignon/quartier-balance-avignon-autrefois/index.html",
       "city_id": "avignon",
       "city": "Avignon",
