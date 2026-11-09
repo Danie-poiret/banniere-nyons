@@ -467,6 +467,21 @@
       }
     },
     {
+      "path": "Hauts-de-France/Nord/Lille/hospice-comtesse-lille/index.html",
+      "city_id": "lille",
+      "city": "Lille",
+      "department": "Nord",
+      "datePublished": "2026-11-09",
+      "title": "Hospice Comtesse à Lille : histoire et souvenirs",
+      "summary": "L'Hospice Comtesse à Lille depuis 1237 : ancienne carte postale, souvenirs des habitants, grandes salles, visites familiales et histoire du musée.",
+      "image": {
+        "src": "/assets/photos/hospice-comtesse-lille-entree-carte-postale.png",
+        "alt": "Ancienne entrée de l'Hospice Comtesse à Lille avec des habitants, des enfants et des bicyclettes devant le portail",
+        "width": "729",
+        "height": "460"
+      }
+    },
+    {
       "path": "Hauts-de-France/Nord/Lille/jardin-enfants-pataugeoire-citadelle-lille/index.html",
       "city_id": "lille",
       "city": "Lille",
