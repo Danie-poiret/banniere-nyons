@@ -752,6 +752,21 @@
       }
     },
     {
+      "path": "Hauts-de-France/Nord/Roubaix/gare-roubaix-annees-1960/index.html",
+      "city_id": "roubaix",
+      "city": "Roubaix",
+      "department": "Nord",
+      "datePublished": "2026-11-09",
+      "title": "Gare de Roubaix : les souvenirs des années 1960",
+      "summary": "Retrouvez la gare de Roubaix vers 1960, les autobus Chausson, les voitures anciennes, le Coq Hardi et les souvenirs des habitants.",
+      "image": {
+        "src": "/assets/photos/gare-roubaix-autobus-chausson-vers-1960.png",
+        "alt": "Gare de Roubaix vers 1960 avec deux autobus Chausson, des voitures anciennes et la grande façade à horloge",
+        "width": "1396",
+        "height": "973"
+      }
+    },
+    {
       "path": "Hauts-de-France/Nord/Roubaix/halles-roubaix-commercants-souvenirs/index.html",
       "city_id": "roubaix",
       "city": "Roubaix",
