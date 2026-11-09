@@ -782,6 +782,21 @@
       }
     },
     {
+      "path": "Hauts-de-France/Nord/Roubaix/place-liberte-roubaix-autrefois/index.html",
+      "city_id": "roubaix",
+      "city": "Roubaix",
+      "department": "Nord",
+      "datePublished": "2026-11-09",
+      "title": "Roubaix : la place de la Liberté dans les années 1980",
+      "summary": "Roubaix dans les années 1980 : Le Broutteux, la place de la Liberté, ses anciens commerces, sa fontaine et les souvenirs des habitants.",
+      "image": {
+        "src": "/assets/photos/place-liberte-roubaix-carte-postale-mage.png",
+        "alt": "Carte postale de la place de la Liberté à Roubaix dans les années 1980 avec Le Broutteux et la Banque de France",
+        "width": "1600",
+        "height": "1079"
+      }
+    },
+    {
       "path": "Histoire-Geo/cafes-nyons-autrefois/index.html",
       "city_id": "nyons",
       "city": "Nyons",
