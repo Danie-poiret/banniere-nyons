@@ -1247,6 +1247,21 @@
       }
     },
     {
+      "path": "Provence-Alpes-Cote-dAzur/Vaucluse/Carpentras/marche-aux-oiseaux-carpentras/index.html",
+      "city_id": "carpentras",
+      "city": "Carpentras",
+      "department": "Vaucluse",
+      "datePublished": "2026-11-09",
+      "title": "Carpentras : le marché aux oiseaux des années 1960",
+      "summary": "À Carpentras, retrouvez le marché aux oiseaux des années 1960, les gabis, les anciens commerces et les souvenirs des habitants.",
+      "image": {
+        "src": "/assets/photos/marche-aux-oiseaux-carpentras-vers-1965.png",
+        "alt": "Marché aux oiseaux à Carpentras vers 1965, hommes réunis autour de cages dans une rue",
+        "width": "509",
+        "height": "739"
+      }
+    },
+    {
       "path": "Provence-Alpes-Cote-dAzur/Vaucluse/Carpentras/marche-carpentras-place-sainte-marthe-autrefois/index.html",
       "city_id": "carpentras",
       "city": "Carpentras",
