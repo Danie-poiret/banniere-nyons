@@ -1367,6 +1367,21 @@
       }
     },
     {
+      "path": "Provence-Alpes-Cote-dAzur/Vaucluse/Avignon/dominion-hotel-avignon-securite-sociale/index.html",
+      "city_id": "avignon",
+      "city": "Avignon",
+      "department": "Vaucluse",
+      "datePublished": "2026-11-10",
+      "title": "Avignon : le Dominion, de l'hôtel de luxe à la Sécurité sociale",
+      "summary": "L'histoire du Dominion à Avignon : hôtel de luxe en 1925, Occupation, bombardements, Sécurité sociale, appartements et souvenirs des habitants.",
+      "image": {
+        "src": "/assets/photos/dominion-hotel-avignon-carte-postale-1925.png",
+        "alt": "Carte postale ancienne du Dominion Hôtel à Avignon, boulevard Raspail, annonçant son inauguration le 1er janvier 1925",
+        "width": "1550",
+        "height": "1014"
+      }
+    },
+    {
       "path": "Provence-Alpes-Cote-dAzur/Vaucluse/Avignon/farandoles-pont-avignon/index.html",
       "city_id": "avignon",
       "city": "Avignon",
