@@ -767,6 +767,21 @@
       }
     },
     {
+      "path": "Hauts-de-France/Nord/Maubeuge/maubeuge-annees-1960-commerces/index.html",
+      "city_id": "maubeuge",
+      "city": "Maubeuge",
+      "department": "Nord",
+      "datePublished": "2026-11-10",
+      "title": "Maubeuge dans les années 1960 : les commerces et les souvenirs du centre-ville",
+      "summary": "Retour dans le Maubeuge des années 1960 : Renault Dauphine, anciens magasins, souvenirs des habitants et reconstruction de la ville.",
+      "image": {
+        "src": "/assets/photos/maubeuge-annees-1960-commerces-la-cigogne.png",
+        "alt": "Vue ancienne d’une rue commerçante attribuée à Maubeuge vers 1960, avec voitures, commerces et immeubles reconstruits",
+        "width": "1102",
+        "height": "761"
+      }
+    },
+    {
       "path": "Hauts-de-France/Nord/Rosendael/place-europe-cinema-regent/index.html",
       "city_id": "rosendael",
       "city": "Rosendaël",

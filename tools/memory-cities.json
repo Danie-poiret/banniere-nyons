@@ -558,6 +558,18 @@
       "description": "Roubaix autrefois : les anciennes Halles, les commerçants, les cafés et les souvenirs des habitants à travers des photographies et des récits.",
       "existing": false,
       "legacy": []
+    },
+    {
+      "id": "maubeuge",
+      "name": "Maubeuge",
+      "path": "Hauts-de-France/Nord/Maubeuge",
+      "department": "Nord",
+      "region": "Hauts-de-France",
+      "intro": "Les anciennes photographies et les souvenirs des Maubeugeois nous ramènent aux commerces du centre-ville, aux voitures des années 1960 et à la reconstruction de Maubeuge.",
+      "title": "Maubeuge autrefois : commerces et souvenirs",
+      "description": "Maubeuge autrefois : photographies anciennes, anciens magasins, reconstruction et souvenirs des habitants du centre-ville.",
+      "existing": false,
+      "legacy": []
     }
   ],
   "legacy_allowed_paths": [
