@@ -1022,6 +1022,21 @@
       }
     },
     {
+      "path": "Histoire-Geo/rond-point-nyons-hotel-colombet-autrefois/index.html",
+      "city_id": "nyons",
+      "city": "Nyons",
+      "department": "Drôme",
+      "datePublished": "2026-11-10",
+      "title": "Nyons autrefois : le rond-point, l’Hôtel Colombet et les cafés de notre jeunesse",
+      "summary": "Le rond-point de Nyons autrefois : Hôtel Colombet, Café de la Tour, Café des Autobus, glaces de Monsieur Clary et souvenirs des anciens.",
+      "image": {
+        "src": "/assets/photos/rond-point-nyons-hotel-colombet-autrefois.png",
+        "alt": "Ancienne carte postale du rond-point de Nyons avec l'Hôtel Colombet, le pavillon du tourisme et les terrasses de cafés",
+        "width": "1051",
+        "height": "743"
+      }
+    },
+    {
       "path": "Ile-de-France/Paris/Paris/beaubourg-paris-chantier-annees-1970/index.html",
       "city_id": "paris",
       "city": "Paris",
