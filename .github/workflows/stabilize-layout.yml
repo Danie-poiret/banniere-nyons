@@ -2,7 +2,7 @@ name: Stabiliser les composants communs avant affichage
 on:
   push:
     branches: [main]
-    paths: ['**/*.html', 'sitemap.xml', 'assets/agenda.js', 'assets/nyons-partner-banners.js', 'tools/stabilize_layout.cjs', 'tools/layout/**', '.github/workflows/stabilize-layout.yml']
+    paths: ['**/*.html', 'sitemap.xml', 'assets/agenda.js', 'assets/nyons-partner-banners.js', 'tools/stabilize_layout.cjs', 'tools/layout/**', 'tools/wait_for_layout_writers.py', 'tools/test_wait_for_layout_writers.py', '.github/workflows/stabilize-layout.yml']
   workflow_dispatch:
   workflow_run:
     workflows:
@@ -45,26 +45,15 @@ jobs:
         with:
           version: 11.25.0
       - run: pnpm --dir tools/layout install --frozen-lockfile --ignore-scripts
+      - name: Vérifier la coordination des générateurs
+        run: python tools/test_wait_for_layout_writers.py
       - name: Attendre la fin des générateurs existants
+        id: writers
         env:
           GH_TOKEN: ${{ github.token }}
-        run: |
-          quiet=0
-          for attempt in $(seq 1 60); do
-            active=$(gh api "repos/$GITHUB_REPOSITORY/actions/runs?branch=main&per_page=100" --jq '
-              ["Appliquer la mise a jour VivreAnyons", "Actualiser uniquement l’accueil de Vivre à Nyons", "Actualiser uniquement les cartes du portail immobilier", "Compléter le SEO après génération du site", "Harmoniser les liens des pages avec le slash final", "Autour de Nyons — préparation et catalogue", "Actualiser les horaires de bus à Nyons", "Actualiser uniquement les manifestations de Nyons", "Actualiser et vérifier Nyons en direct", "Restaurer les photos originales des fiches", "Importer photos Pont Roman", "Actualiser et vérifier la météo de Nyons"] as $writers |
-              [.workflow_runs[] | select(.status != "completed") | select(.name as $name | $writers | index($name))] | length')
-            if [ "$active" = 0 ]; then
-              quiet=$((quiet + 1))
-              if [ "$quiet" -ge 2 ]; then exit 0; fi
-            else
-              quiet=0
-            fi
-            sleep 5
-          done
-          echo 'Un générateur est encore actif ; la préparation reprendra après sa fin.'
-          exit 1
+        run: python tools/wait_for_layout_writers.py
       - name: Préparer les composants après les générateurs, sans écraser leurs changements
+        if: steps.writers.outputs.ready == 'true'
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
