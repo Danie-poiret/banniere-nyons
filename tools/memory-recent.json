@@ -587,6 +587,21 @@
       }
     },
     {
+      "path": "Hauts-de-France/Nord/Lille/rang-beauregard-place-theatre-commerces/index.html",
+      "city_id": "lille",
+      "city": "Lille",
+      "department": "Nord",
+      "datePublished": "2026-11-10",
+      "title": "Lille autrefois : le Rang de Beauregard et ses commerces de la place du Théâtre",
+      "summary": "Découvrez le Rang de Beauregard à Lille, ses anciennes boutiques, Théry-Laloy, la bijouterie Wulveryck, Morel et les souvenirs de la place du Théâtre.",
+      "image": {
+        "src": "/assets/photos/rang-beauregard-place-theatre-lille-commerces.png",
+        "alt": "Ancienne photographie des commerces du Rang de Beauregard, place du Théâtre à Lille, avec les enseignes Wulveryck et Théry-Laloy",
+        "width": "1140",
+        "height": "823"
+      }
+    },
+    {
       "path": "Hauts-de-France/Nord/Lille/rue-de-la-vignette-saint-sauveur/index.html",
       "city_id": "lille",
       "city": "Lille",
