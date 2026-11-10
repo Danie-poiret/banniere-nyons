@@ -1382,6 +1382,21 @@
       }
     },
     {
+      "path": "Provence-Alpes-Cote-dAzur/Vaucluse/Avignon/quartier-balance-avant-demolition/index.html",
+      "city_id": "avignon",
+      "city": "Avignon",
+      "department": "Vaucluse",
+      "datePublished": "2026-11-10",
+      "title": "Avignon autrefois : le quartier de la Balance, fallait-il vraiment tout démolir ?",
+      "summary": "Le quartier de la Balance à Avignon avant les démolitions : souvenirs des habitants, logements insalubres, relogements et patrimoine disparu.",
+      "image": {
+        "src": "/assets/photos/quartier-balance-avignon-avant-demolition.png",
+        "alt": "Vue ancienne des toitures du quartier de la Balance à Avignon, avec le Rhône et Villeneuve-lès-Avignon à l'arrière-plan",
+        "width": "824",
+        "height": "796"
+      }
+    },
+    {
       "path": "Provence-Alpes-Cote-dAzur/Vaucluse/Avignon/quartier-balance-avignon-autrefois/index.html",
       "city_id": "avignon",
       "city": "Avignon",
