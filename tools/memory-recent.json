@@ -602,6 +602,21 @@
       }
     },
     {
+      "path": "Hauts-de-France/Nord/Lille/rue-nationale-occupation-allemande-1914-1918/index.html",
+      "city_id": "lille",
+      "city": "Lille",
+      "department": "Nord",
+      "datePublished": "2026-11-10",
+      "title": "Lille pendant la Première Guerre mondiale : la rue Nationale sous l’occupation allemande",
+      "summary": "Découvrez la rue Nationale à Lille pendant la Première Guerre mondiale : soldats allemands, commerces, tramways et vie quotidienne sous l'occupation.",
+      "image": {
+        "src": "/assets/photos/lille-rue-nationale-occupation-1914-1918.png",
+        "alt": "Rue Nationale à Lille pendant l'occupation allemande de 1914-1918, avec soldats, passants, rails de tramway et panneau en allemand",
+        "width": "1137",
+        "height": "744"
+      }
+    },
+    {
       "path": "Hauts-de-France/Nord/Lille/rue-nationale-printemps-lille-annees-1970/index.html",
       "city_id": "lille",
       "city": "Lille",
