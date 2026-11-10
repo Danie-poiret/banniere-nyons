@@ -1052,6 +1052,21 @@
       }
     },
     {
+      "path": "Histoire-Geo/rue-nationale-nyons-commerces-superga/index.html",
+      "city_id": "nyons",
+      "city": "Nyons",
+      "department": "Drôme",
+      "datePublished": "2026-11-10",
+      "title": "Nyons autrefois : les commerces de la rue Nationale et les surprises-parties de la Superga",
+      "summary": "Retrouvez l'ancienne rue Nationale de Nyons, ses commerces, les familles du quartier et les surprises-parties de la Superga.",
+      "image": {
+        "src": "/assets/photos/rue-nationale-nyons-commerces-autrefois.png",
+        "alt": "Ancienne carte postale en noir et blanc de la rue Nationale à Nyons, aujourd'hui rue des Déportés",
+        "width": "400",
+        "height": "636"
+      }
+    },
+    {
       "path": "Ile-de-France/Paris/Paris/beaubourg-paris-chantier-annees-1970/index.html",
       "city_id": "paris",
       "city": "Paris",

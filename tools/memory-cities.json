@@ -405,6 +405,10 @@
         {
           "path": "Histoire-Geo/rond-point-nyons-hotel-colombet-autrefois/index.html",
           "summary": "Le rond-point de Nyons autrefois : Hôtel Colombet, Café de la Tour, Café des Autobus, glaces de Monsieur Clary et souvenirs des anciens."
+        },
+        {
+          "path": "Histoire-Geo/rue-nationale-nyons-commerces-superga/index.html",
+          "summary": "Retrouvez l'ancienne rue Nationale de Nyons, ses commerces, les familles du quartier et les surprises-parties de la Superga."
         }
       ]
     },
@@ -668,7 +672,8 @@
     "Provence-Alpes-Cote-dAzur/Vaucluse/rue-republique-cavaillon-souvenirs/index.html",
     "Provence-Alpes-Cote-dAzur/index.html",
     "Histoire-Geo/pont-europe-nyons/index.html",
-    "Histoire-Geo/rond-point-nyons-hotel-colombet-autrefois/index.html"
+    "Histoire-Geo/rond-point-nyons-hotel-colombet-autrefois/index.html",
+    "Histoire-Geo/rue-nationale-nyons-commerces-superga/index.html"
   ],
   "breadcrumb_parent_paths": [
     "Provence-Alpes-Cote-dAzur/Vaucluse/index.html",
