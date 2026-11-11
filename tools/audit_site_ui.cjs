@@ -4,12 +4,14 @@ const assert=require('assert/strict');
 const root=path.resolve(__dirname,'..'),out=path.join(root,'audit-output');fs.mkdirSync(out,{recursive:true});
 const {chromium}=require(path.join(root,'.audit-tools/node_modules/playwright'));
 const sleep=ms=>new Promise(r=>setTimeout(r,ms));
+// Use the runner's existing Chrome for both responsive checks and Lighthouse.
+const chromePath=process.env.CHROME_PATH||chromium.executablePath();
 async function main(){
  const server=spawn('python',['-m','http.server','8765','--bind','127.0.0.1'],{cwd:root,stdio:'ignore'});
  let browser;
  try{
   for(let i=0;i<30;i++){try{await fetch('http://127.0.0.1:8765/');break;}catch{await sleep(200);}}
-  browser=await chromium.launch({headless:true});const checks=[];
+  browser=await chromium.launch({headless:true,executablePath:chromePath});const checks=[];
   for(const slug of ['', 'sante-nyons/infirmiere-domicile-nyons/', 'que-faire-nyons/les-vieux-moulins/']){
    for(const width of [320,390,1280]){
     const context=await browser.newContext({viewport:{width,height:844},deviceScaleFactor:1});const page=await context.newPage();
@@ -55,7 +57,7 @@ async function main(){
  for(const [name,url,profile] of jobs){
   // The disposable Actions worker has no user browser profile; match Playwright's CI launch.
   const chromeFlags=['--headless=new','--disable-dev-shm-usage'];if(process.env.GITHUB_ACTIONS==='true')chromeFlags.push('--no-sandbox');
-  const chrome=await launch({chromePath:chromium.executablePath(),chromeFlags});
+  const chrome=await launch({chromePath,chromeFlags});
   try{
    const flags={port:chrome.port,output:['json','html'],onlyCategories:['performance'],logLevel:'error'};
    if(profile==='desktop'){flags.formFactor='desktop';flags.screenEmulation={mobile:false,width:1350,height:940,deviceScaleFactor:1,disabled:false};flags.throttling={rttMs:40,throughputKbps:10240,cpuSlowdownMultiplier:1};}

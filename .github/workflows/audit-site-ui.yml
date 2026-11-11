@@ -12,17 +12,24 @@ permissions:
   contents: read
 jobs:
   browser-audit:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     timeout-minutes: 15
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
           node-version: '24'
-      - name: Installer les outils de mesure
+      - name: Repérer le navigateur déjà installé
         run: |
-          npm install --prefix .audit-tools --no-save playwright lighthouse chrome-launcher
-          .audit-tools/node_modules/.bin/playwright install --with-deps chromium
+          chrome_path="$(command -v google-chrome || command -v google-chrome-stable)"
+          test -x "$chrome_path"
+          "$chrome_path" --version
+          echo "CHROME_PATH=$chrome_path" >> "$GITHUB_ENV"
+      - name: Installer les outils de mesure
+        timeout-minutes: 3
+        env:
+          PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD: '1'
+        run: npm install --prefix .audit-tools --no-save --no-audit --no-fund playwright lighthouse chrome-launcher
       - name: Vérifier le menu et mesurer les pages publiques
         run: node tools/audit_site_ui.cjs
       - uses: actions/upload-artifact@v4
