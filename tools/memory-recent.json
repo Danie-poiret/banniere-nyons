@@ -347,6 +347,21 @@
       }
     },
     {
+      "path": "Hauts-de-France/Nord/Lille/aeroport-lille-lesquin-annees-1970-souvenirs/index.html",
+      "city_id": "lille",
+      "city": "Lille",
+      "department": "Nord",
+      "datePublished": "2026-11-11",
+      "title": "Lille-Lesquin autrefois : quand on allait à l'aéroport en famille pour regarder décoller les avions",
+      "summary": "Retrouvez l'aéroport de Lille-Lesquin autrefois : l'ancienne aérogare, les avions vus depuis le toit, le restaurant, le Concorde et les souvenirs des familles.",
+      "image": {
+        "src": "/assets/photos/aeroport-lille-lesquin-annees-1970-souvenirs.png",
+        "alt": "Ancienne aérogare de Lille-Lesquin dans les années 1970, avec tour de contrôle vitrée, voitures anciennes sur le parking et avions près des pistes",
+        "width": "1600",
+        "height": "1111"
+      }
+    },
+    {
       "path": "Hauts-de-France/Nord/Lille/anciens-abattoirs-rue-saint-sebastien/index.html",
       "city_id": "lille",
       "city": "Lille",
