@@ -1277,6 +1277,21 @@
       }
     },
     {
+      "path": "Provence-Alpes-Cote-dAzur/Bouches-du-Rhone/Marseille/vieux-port-marseille-1890-dockers/index.html",
+      "city_id": "marseille",
+      "city": "Marseille",
+      "department": "Bouches-du-Rhône",
+      "datePublished": "2026-11-11",
+      "title": "Marseille vers 1890 : le Vieux-Port, ses dockers, ses bateaux et les souvenirs des familles",
+      "summary": "Le Vieux-Port de Marseille vers 1890 : grands voiliers, tonneaux, dockers italiens, charrettes et souvenirs des familles marseillaises.",
+      "image": {
+        "src": "/assets/photos/vieux-port-marseille-1890-dockers.png",
+        "alt": "Vue ancienne du Vieux-Port de Marseille vers 1890 avec voiliers, tonneaux, charrettes et marchandises sur les quais",
+        "width": "1448",
+        "height": "1086"
+      }
+    },
+    {
       "path": "Provence-Alpes-Cote-dAzur/Bouches-du-Rhone/Marseille/vieux-port-marseille-vers-1970/index.html",
       "city_id": "marseille",
       "city": "Marseille",
