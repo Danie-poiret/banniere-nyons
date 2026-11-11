@@ -407,6 +407,21 @@
       }
     },
     {
+      "path": "Hauts-de-France/Nord/Lille/cinema-splendid-mont-de-terre/index.html",
+      "city_id": "lille",
+      "city": "Lille",
+      "department": "Nord",
+      "datePublished": "2026-11-11",
+      "title": "Lille autrefois : le Splendid, le cinéma du Mont-de-Terre et les séances de minuit",
+      "summary": "Retrouvez le Splendid de Lille autrefois : son balcon, ses films Disney, ses séances de minuit et les souvenirs de l'ancien cinéma devenu salle de concerts.",
+      "image": {
+        "src": "/assets/photos/cinema-splendid-mont-de-terre-carte-postale.png",
+        "alt": "Ancienne façade du cinéma Splendid à Lille, place du Mont-de-Terre, avec enseigne, grandes portes vitrées et affiches de films",
+        "width": "2048",
+        "height": "1378"
+      }
+    },
+    {
       "path": "Hauts-de-France/Nord/Lille/femmes-pantheres-lille-nord/index.html",
       "city_id": "lille",
       "city": "Lille",
