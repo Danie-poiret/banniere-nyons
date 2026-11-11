@@ -452,6 +452,21 @@
       }
     },
     {
+      "path": "Hauts-de-France/Nord/Lille/cite-hospitaliere-lille-1953-souvenirs-chu/index.html",
+      "city_id": "lille",
+      "city": "Lille",
+      "department": "Nord",
+      "datePublished": "2026-11-11",
+      "title": "Lille autrefois : la Cité hospitalière en 1953, les infirmières, les patients et les souvenirs du CHU",
+      "summary": "Découvrez la Cité hospitalière de Lille en 1953, sa construction depuis 1934, l'hôpital Huriez et les souvenirs des infirmières, salariés et patients.",
+      "image": {
+        "src": "/assets/photos/cite-hospitaliere-lille-1953-souvenirs-chu-carte-postale.png",
+        "alt": "Vue aérienne ancienne de la Cité hospitalière de Lille vers 1953, avec les grandes ailes en étoile, les bâtiments en gradins et la cour d'entrée",
+        "width": "1078",
+        "height": "766"
+      }
+    },
+    {
       "path": "Hauts-de-France/Nord/Lille/femmes-pantheres-lille-nord/index.html",
       "city_id": "lille",
       "city": "Lille",
