@@ -1262,6 +1262,21 @@
       }
     },
     {
+      "path": "Provence-Alpes-Cote-dAzur/Bouches-du-Rhone/Marseille/saint-loup-place-octroi-tramway-marseille/index.html",
+      "city_id": "marseille",
+      "city": "Marseille",
+      "department": "Bouches-du-Rhône",
+      "datePublished": "2026-11-11",
+      "title": "Marseille autrefois : Saint-Loup, la place de l’Octroi, son tramway et les anciens cafés",
+      "summary": "Découvrez Saint-Loup autrefois : la place de l'Octroi, son tramway, ses cafés, les anciennes taxes et les souvenirs des Marseillais.",
+      "image": {
+        "src": "/assets/photos/saint-loup-place-octroi-tramway-marseille.png",
+        "alt": "Ancienne carte postale de la place de l'Octroi à Saint-Loup, Marseille, avec tramway électrique, platanes, enfants et maisons",
+        "width": "1610",
+        "height": "1025"
+      }
+    },
+    {
       "path": "Provence-Alpes-Cote-dAzur/Bouches-du-Rhone/Marseille/samaritaine-marseille-trolleybus-souvenirs-vieux-port/index.html",
       "city_id": "marseille",
       "city": "Marseille",
