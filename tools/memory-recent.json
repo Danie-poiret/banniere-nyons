@@ -377,6 +377,21 @@
       }
     },
     {
+      "path": "Hauts-de-France/Nord/Lille/bataille-lille-1940-honneurs-soldats-francais/index.html",
+      "city_id": "lille",
+      "city": "Lille",
+      "department": "Nord",
+      "datePublished": "2026-11-11",
+      "title": "Lille, 1er juin 1940 : le défilé des soldats français vaincus et les honneurs militaires",
+      "summary": "Le 1er juin 1940, les défenseurs de Lille défilent devant les Allemands. Découvrez la bataille, le général Molinié, les tirailleurs et les souvenirs des familles.",
+      "image": {
+        "src": "/assets/photos/bataille-lille-1940-honneurs-soldats-francais-carte-postale.png",
+        "alt": "Soldats français casqués marchant devant des civils à Lille en juin 1940, rue Faidherbe, près de l'église Saint-Maurice",
+        "width": "1380",
+        "height": "2048"
+      }
+    },
+    {
       "path": "Hauts-de-France/Nord/Lille/bazar-wazemmes-lille-rue-gambetta/index.html",
       "city_id": "lille",
       "city": "Lille",
