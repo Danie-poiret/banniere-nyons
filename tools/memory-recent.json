@@ -392,6 +392,21 @@
       }
     },
     {
+      "path": "Hauts-de-France/Nord/Lille/caserne-vandamme-lille-souvenirs-militaires/index.html",
+      "city_id": "lille",
+      "city": "Lille",
+      "department": "Nord",
+      "datePublished": "2026-11-11",
+      "title": "Lille autrefois : la caserne Vandamme, ses soldats et les souvenirs du service militaire",
+      "summary": "Découvrez l'histoire de la caserne Vandamme à Lille, du 16e bataillon de chasseurs au 43e RICCA, avec les souvenirs des appelés de 1975 à 1987.",
+      "image": {
+        "src": "/assets/photos/caserne-vandamme-lille-souvenirs-militaires-carte-postale.png",
+        "alt": "Lille autrefois, caserne Vandamme rue Lydéric, grand portail avec militaires, bicyclette, guérite et bâtiments historiques",
+        "width": "931",
+        "height": "589"
+      }
+    },
+    {
       "path": "Hauts-de-France/Nord/Lille/cinema-mondial-wazemmes-place-verte/index.html",
       "city_id": "lille",
       "city": "Lille",
