@@ -578,6 +578,19 @@
       "description": "Maubeuge autrefois : photographies anciennes, anciens magasins, reconstruction et souvenirs des habitants du centre-ville.",
       "existing": false,
       "legacy": []
+    },
+    {
+      "id": "boulogne-sur-mer",
+      "name": "Boulogne-sur-Mer",
+      "path": "Hauts-de-France/Pas-de-Calais/Boulogne-sur-Mer",
+      "department": "Pas-de-Calais",
+      "region": "Hauts-de-France",
+      "intro": "Les Galeries de Paris, les Nouvelles Galeries, leurs vitrines et les souvenirs des Boulonnais : retrouvez ici les anciennes photographies et la mémoire des commerces de Boulogne-sur-Mer.",
+      "title": "Boulogne-sur-Mer autrefois : commerces et souvenirs",
+      "description": "Retrouvez Boulogne-sur-Mer autrefois : photographies anciennes, Nouvelles Galeries, commerces et souvenirs des habitants.",
+      "existing": false,
+      "legacy": [],
+      "unified_card_grid": true
     }
   ],
   "legacy_allowed_paths": [
@@ -682,6 +695,7 @@
     "Provence-Alpes-Cote-dAzur/index.html",
     "Auvergne-Rhone-Alpes/index.html",
     "Ile-de-France/index.html",
-    "Ile-de-France/Paris/index.html"
+    "Ile-de-France/Paris/index.html",
+    "Hauts-de-France/Pas-de-Calais/index.html"
   ]
 }

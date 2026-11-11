@@ -932,6 +932,21 @@
       }
     },
     {
+      "path": "Hauts-de-France/Pas-de-Calais/Boulogne-sur-Mer/nouvelles-galeries-boulogne-sur-mer/index.html",
+      "city_id": "boulogne-sur-mer",
+      "city": "Boulogne-sur-Mer",
+      "department": "Pas-de-Calais",
+      "datePublished": "2026-11-11",
+      "title": "Boulogne-sur-Mer autrefois : les Nouvelles Galeries, l'escalator et les souvenirs d'enfance",
+      "summary": "Retrouvez les Nouvelles Galeries de Boulogne-sur-Mer : l'escalator, les bonbons, les jouets de Noël, les anciens employés et l'histoire du magasin.",
+      "image": {
+        "src": "/assets/photos/nouvelles-galeries-boulogne-sur-mer.png",
+        "alt": "Ancienne façade des Galeries de Paris à Boulogne-sur-Mer avec vitrines, mannequins et passants devant le grand magasin",
+        "width": "800",
+        "height": "439"
+      }
+    },
+    {
       "path": "Histoire-Geo/cafes-nyons-autrefois/index.html",
       "city_id": "nyons",
       "city": "Nyons",
