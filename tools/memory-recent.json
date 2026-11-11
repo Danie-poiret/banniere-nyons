@@ -557,6 +557,21 @@
       }
     },
     {
+      "path": "Hauts-de-France/Nord/Lille/place-gare-rue-faidherbe-avant-1914/index.html",
+      "city_id": "lille",
+      "city": "Lille",
+      "department": "Nord",
+      "datePublished": "2026-11-11",
+      "title": "Lille autrefois : la place de la Gare, ses cafés et ses chocolats avant 1914",
+      "summary": "Découvrez Lille autrefois : la place de la Gare, la rue Faidherbe, les chocolats Delespaul-Havez, les anciens cafés et les souvenirs des Lillois.",
+      "image": {
+        "src": "/assets/photos/place-gare-rue-faidherbe-avant-1914-carte-postale.png",
+        "alt": "Lille, place de la Gare et rue Faidherbe avant 1914, avec voitures à cheval, Bar Chagnot, kiosque chocolat Delespaul-Havez et clocher Saint-Maurice",
+        "width": "935",
+        "height": "582"
+      }
+    },
+    {
       "path": "Hauts-de-France/Nord/Lille/pyramide-place-rihour-metro-val-1983/index.html",
       "city_id": "lille",
       "city": "Lille",
