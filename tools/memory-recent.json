@@ -572,6 +572,21 @@
       }
     },
     {
+      "path": "Hauts-de-France/Nord/Lille/quai-basse-deule-chat-barre/index.html",
+      "city_id": "lille",
+      "city": "Lille",
+      "department": "Nord",
+      "datePublished": "2026-11-11",
+      "title": "Lille autrefois : le quai de la Basse-Deûle, les estaminets et le canal disparu",
+      "summary": "Découvrez le quai de la Basse-Deûle à Lille avant son comblement : estaminet du Chat Barré, ouvriers, commerces, Descamps et avenue du Peuple-Belge.",
+      "image": {
+        "src": "/assets/photos/quai-basse-deule-chat-barre-carte-postale.png",
+        "alt": "Ancienne photographie du quai de la Basse-Deûle à Lille avec maisons, commerces, canal et estaminet avant son comblement",
+        "width": "893",
+        "height": "640"
+      }
+    },
+    {
       "path": "Hauts-de-France/Nord/Lille/quai-du-wault-lille-autrefois/index.html",
       "city_id": "lille",
       "city": "Lille",
