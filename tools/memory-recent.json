@@ -377,6 +377,21 @@
       }
     },
     {
+      "path": "Hauts-de-France/Nord/Dunkerque/remorqueurs-europe-brave-ferry-saint-germain/index.html",
+      "city_id": "dunkerque",
+      "city": "Dunkerque",
+      "department": "Nord",
+      "datePublished": "2026-11-12",
+      "title": "Dunkerque autrefois : les remorqueurs Europe et Brave, le ferry Saint-Germain et les souvenirs du port",
+      "summary": "Deux époques du port de Dunkerque : les remorqueurs Europe et Brave, le ferry Saint-Germain et les souvenirs des marins et des familles.",
+      "image": {
+        "src": "/assets/photos/dunkerque-remorqueur-europe-vapeur.png",
+        "alt": "Ancienne carte postale du port de Dunkerque montrant un remorqueur à vapeur devant un grand navire et plusieurs cargos dans les bassins",
+        "width": "1600",
+        "height": "995"
+      }
+    },
+    {
       "path": "Hauts-de-France/Nord/Lille/aeroport-lille-lesquin-annees-1970-souvenirs/index.html",
       "city_id": "lille",
       "city": "Lille",
