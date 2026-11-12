@@ -6,6 +6,8 @@ on:
       - 'a-faire-autour-de-Nyons/**'
       - 'assets/autour-nyons/**'
       - 'tools/*autour*'
+      - 'tools/publish_generated_pages.py'
+      - 'tools/test_generated_publication.py'
       - 'tools/templates/autour-nyons.html.tpl'
       - 'sitemap.xml'
       - '.github/workflows/autour-nyons.yml'
@@ -14,6 +16,8 @@ on:
       - 'a-faire-autour-de-Nyons/**'
       - 'assets/autour-nyons/**'
       - 'tools/*autour*'
+      - 'tools/publish_generated_pages.py'
+      - 'tools/test_generated_publication.py'
       - 'tools/templates/autour-nyons.html.tpl'
       - '.github/workflows/autour-nyons.yml'
 permissions:
@@ -31,6 +35,9 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
+      - name: Vérifier les publications concurrentes
+        working-directory: tools
+        run: python -m unittest test_generated_publication.PublicationTests
       - name: Génération stable, conservation et futurs articles
         run: |
           python tools/update_autour_portal.py
@@ -75,14 +82,6 @@ jobs:
         with:
           ref: main
       - name: Actualiser uniquement le portail existant
-        run: |
-          python tools/update_autour_portal.py
-          python tools/update_autour_portal.py --check
-          if ! git diff --quiet -- a-faire-autour-de-Nyons/index.html; then
-            git config user.name 'github-actions[bot]'
-            git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-            git add -- a-faire-autour-de-Nyons/index.html
-            git commit -m "Actualiser les sorties autour de Nyons" -m "Autour-Portal-Only: true"
-            git push
-          fi
+        run: python tools/publish_generated_pages.py autour
+
 

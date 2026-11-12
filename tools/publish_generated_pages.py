@@ -10,6 +10,7 @@ import sys
 
 PORTAL = 'infos-pratiques-nyons/immobilier-nyons/index.html'
 PORTAL_URL = 'https://www.vivreanyons.fr/infos-pratiques-nyons/immobilier-nyons/'
+AUTOUR_PORTAL = 'a-faire-autour-de-Nyons/index.html'
 
 
 def git(root, *args, check=True, capture=False):
@@ -25,7 +26,10 @@ def clean_checkout(root):
 def prepare(root, mode):
     def python(*args):
         subprocess.run([sys.executable, *args], cwd=root, check=True)
-    if mode == 'immobilier':
+    if mode == 'autour':
+        python('tools/update_autour_portal.py')
+        python('tools/update_autour_portal.py', '--check')
+    elif mode == 'immobilier':
         python('tools/update_immobilier_portal.py')
         python('tools/update_immobilier_portal.py', '--check')
         python('tools/harmonize_seo.py', '--url', PORTAL_URL, '--apply')
@@ -37,7 +41,7 @@ def prepare(root, mode):
 
 def publish(root, mode, attempts=3):
     root = Path(root).resolve()
-    if mode not in ('immobilier', 'seo'):
+    if mode not in ('immobilier', 'seo', 'autour'):
         raise ValueError('Unknown publication mode')
     clean_checkout(root)
     git(root, 'config', 'user.name', 'github-actions[bot]')
@@ -49,11 +53,12 @@ def publish(root, mode, attempts=3):
         git(root, 'checkout', '-B', 'main', 'origin/main')
         print(f'{mode}: prepare from current main, attempt {attempt}/{attempts}', flush=True)
         prepare(root, mode)
-        if mode == 'immobilier':
+        if mode in ('immobilier', 'autour'):
+            target = AUTOUR_PORTAL if mode == 'autour' else PORTAL
             changed = git(root, 'diff', '--name-only', '-z', 'HEAD', capture=True).stdout
-            if set(changed.rstrip('\0').split('\0')) - {'', PORTAL}:
-                raise RuntimeError('Immobilier generation changed a file outside its portal.')
-            git(root, 'add', '--', PORTAL)
+            if set(changed.rstrip('\0').split('\0')) - {'', target}:
+                raise RuntimeError(f'{mode} generation changed a file outside its portal.')
+            git(root, 'add', '--', target)
         elif git(root, 'diff', '--quiet', check=False).returncode:
             raise RuntimeError('SEO generation left unstaged changes; nothing will be published.')
         difference = git(root, 'diff', '--cached', '--quiet', check=False).returncode
@@ -62,9 +67,11 @@ def publish(root, mode, attempts=3):
             return False
         if difference != 1:
             raise RuntimeError('Unable to inspect generated changes.')
-        message = ('Actualiser les guides du portail immobilier' if mode == 'immobilier'
-                   else 'Compléter les métadonnées SEO après génération')
-        git(root, 'commit', '-m', message)
+        message = {'immobilier': 'Actualiser les guides du portail immobilier',
+                   'seo': 'Compléter les métadonnées SEO après génération',
+                   'autour': 'Actualiser les sorties autour de Nyons'}[mode]
+        trailer = ('-m', 'Autour-Portal-Only: true') if mode == 'autour' else ()
+        git(root, 'commit', '-m', message, *trailer)
         if git(root, 'push', 'origin', 'HEAD:main', check=False).returncode == 0:
             return True
         print('Publication refused; fetching and regenerating rather than rebasing HTML.', flush=True)
@@ -73,7 +80,8 @@ def publish(root, mode, attempts=3):
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('mode', choices=('immobilier', 'seo'))
+    parser.add_argument('mode', choices=('immobilier', 'seo', 'autour'))
     parser.add_argument('--root', type=Path, default=Path(__file__).resolve().parents[1])
     args = parser.parse_args()
     publish(args.root, args.mode)
+

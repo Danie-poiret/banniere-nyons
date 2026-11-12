@@ -38,7 +38,7 @@ class Workspace(unittest.TestCase):
         self.assertTrue(self.root.is_relative_to(self.base.resolve()))
         self.temp.cleanup()
 
-    def fixture(self, name):
+    def fixture(self, name, portal=publication.PORTAL):
         folder = self.root / name
         folder.mkdir()
         remote, publisher, editor = folder / 'remote.git', folder / 'publisher', folder / 'editor'
@@ -48,7 +48,7 @@ class Workspace(unittest.TestCase):
         git(publisher, 'config', 'user.email', 'fixture@example.invalid')
         git(publisher, 'config', 'core.autocrlf', 'false')
         git(publisher, 'config', 'core.longpaths', 'true')
-        target = publisher / publication.PORTAL
+        target = publisher / portal
         target.parent.mkdir(parents=True)
         target.write_text('OWNER=original\nGEN=0\n', encoding='utf8')
         (publisher / 'index.html').write_text('Original home', encoding='utf8')
@@ -69,15 +69,16 @@ class Workspace(unittest.TestCase):
 
 
 class PublicationTests(Workspace):
-    def test_concurrent_same_page_and_home_edits_survive_in_both_modes(self):
-        for mode in ('immobilier', 'seo'):
+    def test_concurrent_same_page_and_home_edits_survive_in_all_modes(self):
+        for mode in ('immobilier', 'seo', 'autour'):
             with self.subTest(mode=mode):
-                remote, publisher, editor = self.fixture(mode)
+                portal = publication.AUTOUR_PORTAL if mode == 'autour' else publication.PORTAL
+                remote, publisher, editor = self.fixture(mode, portal)
                 calls = []
 
                 def prepare(root, selected_mode):
                     calls.append(selected_mode)
-                    target = root / publication.PORTAL
+                    target = root / portal
                     text = re.sub(r'GEN=\d+', 'GEN=' + (root / 'data.txt').read_text(),
                                   target.read_text())
                     target.write_text(text, encoding='utf8')
@@ -85,7 +86,7 @@ class PublicationTests(Workspace):
                         git(root, 'add', publication.PORTAL)
                     if len(calls) == 1:
                         # A real second clone publishes after our fetch, before our push.
-                        (editor / publication.PORTAL).write_text('OWNER=editor\nGEN=0\n', encoding='utf8')
+                        (editor / portal).write_text('OWNER=editor\nGEN=0\n', encoding='utf8')
                         (editor / 'index.html').write_text('New home from editor', encoding='utf8')
                         (editor / 'data.txt').write_text('2', encoding='utf8')
                         git(editor, 'add', '.')
@@ -94,9 +95,35 @@ class PublicationTests(Workspace):
 
                 self.assertTrue(self.quiet_publish(publisher, mode, prepare))
                 self.assertEqual(calls, [mode, mode])
-                self.assertEqual(git(remote, 'show', 'main:' + publication.PORTAL), 'OWNER=editor\nGEN=2')
+                self.assertEqual(git(remote, 'show', 'main:' + portal), 'OWNER=editor\nGEN=2')
                 self.assertEqual(git(remote, 'show', 'main:index.html'), 'New home from editor')
-                self.assertEqual(git(remote, 'diff-tree', '--no-commit-id', '--name-only', '-r', 'main'), publication.PORTAL)
+                self.assertEqual(git(remote, 'diff-tree', '--no-commit-id', '--name-only', '-r', 'main'), portal)
+                if mode == 'autour':
+                    self.assertIn('Autour-Portal-Only: true', git(remote, 'log', '-1', '--format=%B'))
+
+    def test_autour_runs_its_generator_and_check_without_global_seo(self):
+        with patch.object(publication.subprocess, 'run') as run:
+            publication.prepare(self.root, 'autour')
+        self.assertEqual([call.args[0][1:] for call in run.call_args_list], [
+            ['tools/update_autour_portal.py'],
+            ['tools/update_autour_portal.py', '--check'],
+        ])
+
+    def test_autour_no_change_does_not_create_a_commit(self):
+        remote, publisher, _ = self.fixture('autour-noop', publication.AUTOUR_PORTAL)
+        before = git(remote, 'rev-parse', 'main')
+        self.assertFalse(self.quiet_publish(publisher, 'autour', lambda root, mode: None))
+        self.assertEqual(git(remote, 'rev-parse', 'main'), before)
+
+    def test_autour_refuses_changes_outside_its_portal(self):
+        remote, publisher, _ = self.fixture('autour-scope', publication.AUTOUR_PORTAL)
+        before = git(remote, 'rev-parse', 'main')
+        def prepare(root, mode):
+            (root / 'index.html').write_text('Unexpected home change', encoding='utf8')
+            (root / publication.AUTOUR_PORTAL).write_text('Changed portal', encoding='utf8')
+        with self.assertRaisesRegex(RuntimeError, 'outside its portal'):
+            self.quiet_publish(publisher, 'autour', prepare)
+        self.assertEqual(git(remote, 'rev-parse', 'main'), before)
 
     def test_no_change_does_not_create_a_commit(self):
         remote, publisher, _ = self.fixture('noop')
@@ -211,3 +238,4 @@ class SeoScopeTests(Workspace):
 
 if __name__ == '__main__':
     unittest.main()
+
