@@ -332,6 +332,21 @@
       }
     },
     {
+      "path": "Hauts-de-France/Nord/Dunkerque/nouvelles-galeries-provisoires-rue-albert-1er/index.html",
+      "city_id": "dunkerque",
+      "city": "Dunkerque",
+      "department": "Nord",
+      "datePublished": "2026-11-12",
+      "title": "Dunkerque autrefois : les Nouvelles Galeries provisoires de la rue Albert-Ier et les souvenirs des habitants",
+      "summary": "Retrouvez les Nouvelles Galeries provisoires de Dunkerque, rue Albert-Ier, les commerces d'autrefois et les souvenirs des habitants après la guerre.",
+      "image": {
+        "src": "/assets/photos/nouvelles-galeries-provisoires-dunkerque.png",
+        "alt": "Ancienne façade des Nouvelles Galeries provisoires rue Albert-Ier à Dunkerque, avec deux vitrines et l'enseigne Entrée libre",
+        "width": "960",
+        "height": "612"
+      }
+    },
+    {
       "path": "Hauts-de-France/Nord/Dunkerque/place-jean-bart-dunkerque-commerces-autobus-autrefois/index.html",
       "city_id": "dunkerque",
       "city": "Dunkerque",
