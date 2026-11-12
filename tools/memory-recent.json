@@ -722,6 +722,21 @@
       }
     },
     {
+      "path": "Hauts-de-France/Nord/Lille/rue-nationale-lille-annees-1970-printemps-souvenirs/index.html",
+      "city_id": "lille",
+      "city": "Lille",
+      "department": "Nord",
+      "datePublished": "2026-11-12",
+      "title": "Lille, rue Nationale dans les années 1970 : le Printemps, le Prisunic et les souvenirs des Lillois",
+      "summary": "Retrouvez la rue Nationale à Lille dans les années 1970 : le Printemps, Prisunic, les Nouvelles Galeries, les anciennes voitures et les souvenirs des Lillois.",
+      "image": {
+        "src": "/assets/photos/rue-nationale-lille-annees-1970.png",
+        "alt": "Rue Nationale à Lille dans les années 1970, avec les magasins Printemps, la Société Générale, les voitures anciennes et le beffroi de la Chambre de commerce",
+        "width": "960",
+        "height": "667"
+      }
+    },
+    {
       "path": "Hauts-de-France/Nord/Lille/rue-nationale-occupation-allemande-1914-1918/index.html",
       "city_id": "lille",
       "city": "Lille",
