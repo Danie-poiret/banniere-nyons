@@ -272,6 +272,21 @@
       }
     },
     {
+      "path": "Hauts-de-France/Nord/Dunkerque/execution-dunkerque-1905-van-den-bogaert-swartewagher/index.html",
+      "city_id": "dunkerque",
+      "city": "Dunkerque",
+      "department": "Nord",
+      "datePublished": "2026-11-12",
+      "title": "Dunkerque, 5 août 1905 : deux condamnés à mort, un crime sur une péniche et une exécution qui a marqué la ville",
+      "summary": "Dunkerque, 5 août 1905 : l'histoire de Van den Bogaert et Swartewagher, condamnés pour l'assassinat d'une batelière à bord de La Flèche.",
+      "image": {
+        "src": "/assets/photos/dunkerque-1905-van-den-bogaert-swartewagher.png",
+        "alt": "Portrait ancien de Van den Bogaert et Swartewagher, condamnés à mort à Douai en mai 1905 et exécutés à Dunkerque en août 1905",
+        "width": "960",
+        "height": "652"
+      }
+    },
+    {
       "path": "Hauts-de-France/Nord/Dunkerque/hitler-dunkerque-26-juin-1940/index.html",
       "city_id": "dunkerque",
       "city": "Dunkerque",
