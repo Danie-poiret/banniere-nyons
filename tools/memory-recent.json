@@ -1532,6 +1532,21 @@
       }
     },
     {
+      "path": "Provence-Alpes-Cote-dAzur/Vaucluse/Avignon/alcazar-avignon-incendie-1874/index.html",
+      "city_id": "avignon",
+      "city": "Avignon",
+      "department": "Vaucluse",
+      "datePublished": "2026-11-13",
+      "title": "Avignon : l'Alcazar d'été, ses spectacles et le terrible incendie de 1874",
+      "summary": "Découvrez l'Alcazar d'été près de la gare d'Avignon, ses spectacles, ses anciens tarifs, l'incendie de 1874 et les souvenirs des habitants.",
+      "image": {
+        "src": "/assets/photos/avignon-alcazar-ete-carte-postale.png",
+        "alt": "Ancienne carte postale de l'Alcazar d'été à Avignon, avec restaurant, façade à arcades et affiches de spectacles près de la gare.",
+        "width": "1124",
+        "height": "724"
+      }
+    },
+    {
       "path": "Provence-Alpes-Cote-dAzur/Vaucluse/Avignon/anciennes-halles-rue-petite-meuse/index.html",
       "city_id": "avignon",
       "city": "Avignon",
