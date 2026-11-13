@@ -1427,6 +1427,21 @@
       }
     },
     {
+      "path": "Provence-Alpes-Cote-dAzur/Bouches-du-Rhone/Marseille/la-plaine-marseille-autrefois-souvenirs/index.html",
+      "city_id": "marseille",
+      "city": "Marseille",
+      "department": "Bouches-du-Rhône",
+      "datePublished": "2026-11-13",
+      "title": "Marseille autrefois : la Plaine, ses petits ânes, son Guignol et les souvenirs d'un quartier qu'on n'a jamais oublié",
+      "summary": "Retrouvez la Plaine à Marseille autrefois : ses anciens bassins, les petits ânes, Guignol, les marchés, les cinémas et les souvenirs des habitants.",
+      "image": {
+        "src": "/assets/photos/marseille-la-plaine-vue-aerienne.png",
+        "alt": "Vue aérienne ancienne de la place Jean-Jaurès à Marseille, appelée la Plaine, avec ses rangées d'arbres, son espace central circulaire et les immeubles du quartier.",
+        "width": "1079",
+        "height": "778"
+      }
+    },
+    {
       "path": "Provence-Alpes-Cote-dAzur/Bouches-du-Rhone/Marseille/marche-prado-marseille-1931/index.html",
       "city_id": "marseille",
       "city": "Marseille",
