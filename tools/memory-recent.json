@@ -47,6 +47,21 @@
       }
     },
     {
+      "path": "Auvergne-Rhone-Alpes/Drome/Valence/gainsbourg-valence-1987-cafes-gare-souvenirs/index.html",
+      "city_id": "valence",
+      "city": "Valence",
+      "department": "Drôme",
+      "datePublished": "2026-11-13",
+      "title": "Valence en 1987 : Serge Gainsbourg, les policiers et les souvenirs des anciens cafés de la gare",
+      "summary": "En avril 1987, Serge Gainsbourg passe à Valence. Retrouvez sa rencontre avec les policiers, le Régina, le Continental et les souvenirs des anciens bars de la gare.",
+      "image": {
+        "src": "/assets/photos/gainsbourg-valence-1987-cafes-gare.png",
+        "alt": "Serge Gainsbourg discutant avec deux policiers dans une voiture devant le Régina et les anciens cafés de la gare de Valence, avril 1987",
+        "width": "1563",
+        "height": "1006"
+      }
+    },
+    {
       "path": "Auvergne-Rhone-Alpes/Drome/Valence/petit-train-parc-jouvet-valence/index.html",
       "city_id": "valence",
       "city": "Valence",
