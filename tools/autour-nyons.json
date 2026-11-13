@@ -1003,6 +1003,24 @@
         "width": 621,
         "height": 435
       }
+    },
+    {
+      "url": "/a-faire-autour-de-Nyons/chateau-aulan/",
+      "title": "Château d'Aulan : histoire, visite, tarifs et gorges",
+      "description": "Découvrez le château d'Aulan dans la Drôme : histoire de la famille Suarez, visites guidées, tarifs 2026, Jean Giono et randonnées dans les gorges.",
+      "group": "patrimoine",
+      "seasons": [
+        "printemps",
+        "ete",
+        "automne",
+        "hiver"
+      ],
+      "image": {
+        "src": "/assets/photos/chateau-aulan-tour.png",
+        "alt": "Château d'Aulan sur son éperon rocheux dominant les gorges du Toulourenc dans la Drôme",
+        "width": 696,
+        "height": 628
+      }
     }
   ],
   "featured": [
