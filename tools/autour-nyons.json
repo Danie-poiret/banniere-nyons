@@ -985,6 +985,24 @@
         "width": 342,
         "height": 507
       }
+    },
+    {
+      "url": "/a-faire-autour-de-Nyons/musee-soie-taulignan/",
+      "title": "Musée de la Soie de Taulignan : visite, machines et tarifs",
+      "description": "Découvrez le Musée de la Soie de Taulignan : machines anciennes en fonctionnement, histoire de la soie, tarifs 2026 et sentier des moulinages.",
+      "group": "patrimoine",
+      "seasons": [
+        "printemps",
+        "ete",
+        "automne",
+        "hiver"
+      ],
+      "image": {
+        "src": "/assets/photos/musee-soie-taulignan-entree.png",
+        "alt": "Entrée du Musée de la Soie de Taulignan sous les platanes",
+        "width": 621,
+        "height": 435
+      }
     }
   ],
   "featured": [
