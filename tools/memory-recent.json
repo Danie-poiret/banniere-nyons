@@ -1652,6 +1652,21 @@
       }
     },
     {
+      "path": "Provence-Alpes-Cote-dAzur/Vaucluse/Avignon/la-balance-familles-commerces-souvenirs-1950-1960/index.html",
+      "city_id": "avignon",
+      "city": "Avignon",
+      "department": "Vaucluse",
+      "datePublished": "2026-11-13",
+      "title": "Avignon : la Balance, le quartier populaire, ses familles et les souvenirs des années 1950-1960",
+      "summary": "Retrouvez la Balance à Avignon avant sa transformation : familles, anciens commerces, rue du Limas, école des Ortolans et souvenirs des années 1950-1960.",
+      "image": {
+        "src": "/assets/photos/avignon-balance-familles-montage.png",
+        "alt": "À gauche : Femme portant un bébé et petite fille pieds nus devant une ancienne fontaine du quartier de la Balance à Avignon. À droite : Ancienne rue du quartier de la Balance à Avignon avec façades dégradées, linge aux fenêtres et habitants devant les maisons.",
+        "width": "1619",
+        "height": "971"
+      }
+    },
+    {
       "path": "Provence-Alpes-Cote-dAzur/Vaucluse/Avignon/quartier-balance-avant-demolition/index.html",
       "city_id": "avignon",
       "city": "Avignon",
