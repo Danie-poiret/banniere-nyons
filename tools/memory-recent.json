@@ -1442,6 +1442,21 @@
       }
     },
     {
+      "path": "Provence-Alpes-Cote-dAzur/Bouches-du-Rhone/Marseille/quartier-saint-jean-panier-marseille-1943-souvenirs/index.html",
+      "city_id": "marseille",
+      "city": "Marseille",
+      "department": "Bouches-du-Rhône",
+      "datePublished": "2026-11-13",
+      "title": "Marseille autrefois : le linge aux fenêtres, les familles du vieux quartier Saint-Jean et les souvenirs de 1943",
+      "summary": "Le vieux Marseille, le linge aux fenêtres, les familles du Panier et du quartier Saint-Jean, l'évacuation de janvier 1943 et les souvenirs des habitants.",
+      "image": {
+        "src": "/assets/photos/marseille-saint-jean-panier-linge-fenetres.png",
+        "alt": "Ancienne rue populaire de Marseille avec linge suspendu aux fenêtres, enfants devant les maisons et escaliers entre les immeubles, lieu exact à identifier",
+        "width": "1168",
+        "height": "1801"
+      }
+    },
+    {
       "path": "Provence-Alpes-Cote-dAzur/Bouches-du-Rhone/Marseille/saint-loup-place-octroi-tramway-marseille/index.html",
       "city_id": "marseille",
       "city": "Marseille",
