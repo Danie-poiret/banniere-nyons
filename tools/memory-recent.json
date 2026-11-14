@@ -122,6 +122,21 @@
       }
     },
     {
+      "path": "Auvergne-Rhone-Alpes/Rhone/Lyon/gros-caillou-croix-rousse-histoire/index.html",
+      "city_id": "lyon",
+      "city": "Lyon",
+      "department": "Rhône",
+      "datePublished": "2026-11-14",
+      "title": "Lyon : le Gros Caillou de la Croix-Rousse, son ancien socle et les souvenirs des habitants",
+      "summary": "Découvrez l'histoire du Gros Caillou à Lyon, découvert en 1890, son origine glaciaire, son ancien socle et les souvenirs des Croix-Roussiens.",
+      "image": {
+        "src": "/assets/photos/lyon-gros-caillou-croix-rousse-er-135.png",
+        "alt": "Ancienne carte postale du Gros Caillou à Lyon Croix-Rousse avec trois enfants, deux adultes et son ancien socle",
+        "width": "1363",
+        "height": "900"
+      }
+    },
+    {
       "path": "Auvergne-Rhone-Alpes/Rhone/Lyon/halles-cordeliers-lyon-autrefois/index.html",
       "city_id": "lyon",
       "city": "Lyon",
