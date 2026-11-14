@@ -1277,6 +1277,21 @@
       }
     },
     {
+      "path": "Hauts-de-France/Nord/Roubaix/planche-trouee-rue-longues-haies/index.html",
+      "city_id": "roubaix",
+      "city": "Roubaix",
+      "department": "Nord",
+      "datePublished": "2026-11-14",
+      "title": "Roubaix : la Planche Trouée, le vieux cabaret et cette rue des Longues-Haies qu'on n'a jamais oubliée",
+      "summary": "Découvrez le vieux cabaret de la Planche Trouée à Roubaix, la rue des Longues-Haies, ses courées, ses estaminets et son histoire depuis 1794.",
+      "image": {
+        "src": "/assets/photos/roubaix-planche-trouee-carte-postale-35.png",
+        "alt": "Ancien cabaret de la Planche Trouée à Roubaix, rue de Lannoy et rue des Longues-Haies, avec passants et rails de tramway",
+        "width": "1280",
+        "height": "873"
+      }
+    },
+    {
       "path": "Hauts-de-France/Nord/Roubaix/roubaix-2000-demolition-rue-de-lannoy/index.html",
       "city_id": "roubaix",
       "city": "Roubaix",
