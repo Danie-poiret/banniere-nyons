@@ -137,6 +137,21 @@
       }
     },
     {
+      "path": "Auvergne-Rhone-Alpes/Rhone/Lyon/place-cordeliers-lyon-autrefois/index.html",
+      "city_id": "lyon",
+      "city": "Lyon",
+      "department": "Rhône",
+      "datePublished": "2026-11-14",
+      "title": "Lyon : la place des Cordeliers autrefois, quand les tramways, les chevaux et les piétons se croisaient",
+      "summary": "Découvrez la place des Cordeliers à Lyon vers 1900 : tramways, chevaux, Palais de la Bourse, Saint-Bonaventure, anciens commerces et souvenirs.",
+      "image": {
+        "src": "/assets/photos/lyon-place-cordeliers-1900-er-181.png",
+        "alt": "Place des Cordeliers à Lyon vers 1900, tramways, voitures à cheval, Palais de la Bourse et église Saint-Bonaventure",
+        "width": "1625",
+        "height": "1067"
+      }
+    },
+    {
       "path": "Auvergne-Rhone-Alpes/Rhone/Lyon/traboules-lyon-croix-rousse-cour-des-voraces/index.html",
       "city_id": "lyon",
       "city": "Lyon",
