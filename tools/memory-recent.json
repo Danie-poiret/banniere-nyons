@@ -1487,6 +1487,21 @@
       }
     },
     {
+      "path": "Provence-Alpes-Cote-dAzur/Bouches-du-Rhone/Marseille/quai-des-belges-marseille-annees-1950-souvenirs/index.html",
+      "city_id": "marseille",
+      "city": "Marseille",
+      "department": "Bouches-du-Rhône",
+      "datePublished": "2026-11-14",
+      "title": "Marseille autrefois : le quai des Belges, les trolleybus et les souvenirs du Vieux-Port des années 1950",
+      "summary": "Revivez le quai des Belges à Marseille dans les années 1950 : trolleybus, hôtel Beauvau, Cintra, anciens commerces et souvenirs du Vieux-Port.",
+      "image": {
+        "src": "/assets/photos/marseille-quai-des-belges-annees-1950.png",
+        "alt": "Marseille, quai des Belges au début des années 1950, voitures anciennes, trolleybus, piétons et façades devant le Vieux-Port",
+        "width": "1831",
+        "height": "1262"
+      }
+    },
+    {
       "path": "Provence-Alpes-Cote-dAzur/Bouches-du-Rhone/Marseille/quartier-saint-jean-panier-marseille-1943-souvenirs/index.html",
       "city_id": "marseille",
       "city": "Marseille",
