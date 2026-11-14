@@ -377,6 +377,21 @@
       }
     },
     {
+      "path": "Hauts-de-France/Nord/Dunkerque/place-emile-bollaert-dunkerque-autrefois/index.html",
+      "city_id": "dunkerque",
+      "city": "Dunkerque",
+      "department": "Nord",
+      "datePublished": "2026-11-14",
+      "title": "Dunkerque autrefois : la place Émile-Bollaert, le Gruber, les baraques à frites et les souvenirs du parc de la Marine",
+      "summary": "Retrouvez la place Émile-Bollaert à Dunkerque dans les années 1960 : le Gruber, le Saint-Sébastien, les baraques à frites et le parc de la Marine.",
+      "image": {
+        "src": "/assets/photos/dunkerque-place-emile-bollaert.png",
+        "alt": "Place Émile-Bollaert à Dunkerque dans les années 1960, ancien parking, voitures, immeubles de briques et beffroi de Saint-Éloi",
+        "width": "1920",
+        "height": "1316"
+      }
+    },
+    {
       "path": "Hauts-de-France/Nord/Dunkerque/place-jean-bart-dunkerque-commerces-autobus-autrefois/index.html",
       "city_id": "dunkerque",
       "city": "Dunkerque",
