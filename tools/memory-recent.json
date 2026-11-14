@@ -677,6 +677,21 @@
       }
     },
     {
+      "path": "Hauts-de-France/Nord/Lille/les-biscottes-lille-sud-1984-souvenirs/index.html",
+      "city_id": "lille",
+      "city": "Lille",
+      "department": "Nord",
+      "datePublished": "2026-11-14",
+      "title": "Lille-Sud en 1984 : les Biscottes, les rues du Rhône et du Rhin, et les souvenirs d'un quartier disparu",
+      "summary": "Retrouvez les Biscottes à Lille-Sud en 1984 : les grandes barres, l'Atrium, les rues du Rhône et du Rhin, leur démolition et les souvenirs des anciens habitants.",
+      "image": {
+        "src": "/assets/photos/lille-sud-biscottes-1984-archives-mel.png",
+        "alt": "Vue aérienne du quartier des Biscottes à Lille-Sud en 1984, immeubles, jardins, parkings et rues de la Résidence Sud",
+        "width": "880",
+        "height": "566"
+      }
+    },
+    {
       "path": "Hauts-de-France/Nord/Lille/marche-fleurs-grand-echo-nord-lille-autrefois/index.html",
       "city_id": "lille",
       "city": "Lille",
