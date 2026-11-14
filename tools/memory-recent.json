@@ -527,6 +527,21 @@
       }
     },
     {
+      "path": "Hauts-de-France/Nord/Lille/boulevard-strasbourg-marcel-bertrand-souvenirs/index.html",
+      "city_id": "lille",
+      "city": "Lille",
+      "department": "Nord",
+      "datePublished": "2026-11-14",
+      "title": "Lille autrefois : le boulevard de Strasbourg, la tour Marcel-Bertrand et tous ces souvenirs qui n'ont pas disparu",
+      "summary": "Retrouvez le groupe Marcel-Bertrand à Lille : la tour de 62 mètres, les anciennes barres du boulevard de Strasbourg, les bus TCC et les souvenirs des habitants.",
+      "image": {
+        "src": "/assets/photos/lille-residence-marcel-bertrand.png",
+        "alt": "Ancienne résidence Marcel-Bertrand à Lille, longue façade d'immeuble, balcons, habitants et grande tour en arrière-plan.",
+        "width": "1206",
+        "height": "830"
+      }
+    },
+    {
       "path": "Hauts-de-France/Nord/Lille/caserne-vandamme-lille-souvenirs-militaires/index.html",
       "city_id": "lille",
       "city": "Lille",
