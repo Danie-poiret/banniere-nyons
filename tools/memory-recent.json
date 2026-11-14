@@ -92,6 +92,21 @@
       }
     },
     {
+      "path": "Auvergne-Rhone-Alpes/Rhone/Lyon/anciens-tramways-lyon-train-bleu/index.html",
+      "city_id": "lyon",
+      "city": "Lyon",
+      "department": "Rhône",
+      "datePublished": "2026-11-14",
+      "title": "Lyon : au temps des anciens tramways, du Train Bleu et des souvenirs des années 50",
+      "summary": "Retrouvez les tramways de Lyon dans les années 50, le Train Bleu vers Neuville, les baladeuses, les Cordeliers et les souvenirs des Lyonnais.",
+      "image": {
+        "src": "/assets/photos/lyon-ancien-tramway-remorque-scooter.png",
+        "alt": "Ancien tramway lyonnais avec remorque, voyageurs et scooter sur une chaussée pavée.",
+        "width": "974",
+        "height": "645"
+      }
+    },
+    {
       "path": "Auvergne-Rhone-Alpes/Rhone/Lyon/fresque-des-lyonnais-souvenirs-quai-saint-vincent/index.html",
       "city_id": "lyon",
       "city": "Lyon",
