@@ -1307,6 +1307,21 @@
       }
     },
     {
+      "path": "Hauts-de-France/Nord/Roubaix/roubaix-2000-magasins-cinema-souvenirs/index.html",
+      "city_id": "roubaix",
+      "city": "Roubaix",
+      "department": "Nord",
+      "datePublished": "2026-11-14",
+      "title": "Roubaix : quand la rue de Lannoy et Roubaix 2000 faisaient encore vivre tout un quartier",
+      "summary": "Souvenirs de Roubaix 2000 et de la rue de Lannoy : le Temple du disque, le cinéma, La Fourchette, les magasins et l'Os à moelle.",
+      "image": {
+        "src": "/assets/photos/roubaix-2000-magasins-rue-lannoy.png",
+        "alt": "Rue de Lannoy à Roubaix autrefois, à proximité du centre commercial Roubaix 2000 et de l'immeuble H13 surnommé l'Os à moelle",
+        "width": "480",
+        "height": "340"
+      }
+    },
+    {
       "path": "Hauts-de-France/Nord/Roubaix/usine-velours-motte-bossut-avenue-motte/index.html",
       "city_id": "roubaix",
       "city": "Roubaix",
