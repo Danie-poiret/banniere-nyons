@@ -752,6 +752,21 @@
       }
     },
     {
+      "path": "Hauts-de-France/Nord/Lille/place-antoine-tacq-tramways-annees-60/index.html",
+      "city_id": "lille",
+      "city": "Lille",
+      "department": "Nord",
+      "datePublished": "2026-11-14",
+      "title": "Lille autrefois : la place Antoine-Tacq, les derniers tramways et les voitures des années 60",
+      "summary": "À Lille, retrouvez la place Antoine-Tacq vers 1963-1965, les tramways B et H, les anciennes voitures et les souvenirs des habitants.",
+      "image": {
+        "src": "/assets/photos/lille-place-antoine-tacq-tramways.png",
+        "alt": "Place Antoine-Tacq à Lille vers 1963-1965, tramways B et H, voitures anciennes et façades de la rue d'Isly",
+        "width": "1024",
+        "height": "676"
+      }
+    },
+    {
       "path": "Hauts-de-France/Nord/Lille/place-gare-lille-tramways-photographie-ancienne/index.html",
       "city_id": "lille",
       "city": "Lille",
