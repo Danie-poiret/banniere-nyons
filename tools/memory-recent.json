@@ -1922,6 +1922,21 @@
       }
     },
     {
+      "path": "Provence-Alpes-Cote-dAzur/Vaucluse/Avignon/avignon-rotondes-cheminots-souvenirs-1944/index.html",
+      "city_id": "avignon",
+      "city": "Avignon",
+      "department": "Vaucluse",
+      "datePublished": "2026-11-14",
+      "title": "Avignon : les Rotondes, les cités des cheminots et les souvenirs d'un quartier qui a tant changé",
+      "summary": "Les Rotondes d'Avignon autrefois : cités SNCF, chemin Saint-Geniès, école, bombardement du 27 mai 1944 et souvenirs des habitants.",
+      "image": {
+        "src": "/assets/photos/avignon-rotondes-cites-cheminotes-vue-aerienne.png",
+        "alt": "Vue aérienne ancienne d'Avignon avec la rotonde SNCF, l'église du Sacré-Cœur, les cités cheminotes et les champs",
+        "width": "2048",
+        "height": "1461"
+      }
+    },
+    {
       "path": "Provence-Alpes-Cote-dAzur/Vaucluse/Avignon/bar-americain-avignon-autrefois/index.html",
       "city_id": "avignon",
       "city": "Avignon",
