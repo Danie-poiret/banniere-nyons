@@ -872,6 +872,21 @@
       }
     },
     {
+      "path": "Hauts-de-France/Nord/Lille/rue-de-la-clef-quincaillerie-souvenirs/index.html",
+      "city_id": "lille",
+      "city": "Lille",
+      "department": "Nord",
+      "datePublished": "2026-11-14",
+      "title": "Lille : la rue de la Clef et cette ancienne quincaillerie dont on se souvient encore",
+      "summary": "Retrouvez l'histoire de la rue de la Clef à Lille, ses anciennes quincailleries, ses commerçants, Trénois-Descamps, Belot et les souvenirs des habitants.",
+      "image": {
+        "src": "/assets/photos/lille-rue-clef-quincaillerie-charlet-leduc.png",
+        "alt": "Ancienne rue de la Clef à Lille, ses commerces et ses façades historiques",
+        "width": "562",
+        "height": "362"
+      }
+    },
+    {
       "path": "Hauts-de-France/Nord/Lille/rue-de-la-vignette-saint-sauveur/index.html",
       "city_id": "lille",
       "city": "Lille",
