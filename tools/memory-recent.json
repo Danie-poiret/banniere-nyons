@@ -1217,6 +1217,21 @@
       }
     },
     {
+      "path": "Hauts-de-France/Nord/Roubaix/cite-nouveau-roubaix-hbm-souvenirs/index.html",
+      "city_id": "roubaix",
+      "city": "Roubaix",
+      "department": "Nord",
+      "datePublished": "2026-11-14",
+      "title": "Roubaix : la cité du Nouveau Roubaix, ses immeubles et les souvenirs des familles des années 50 et 60",
+      "summary": "Découvrez l'histoire de la cité du Nouveau Roubaix, ses immeubles HBM, ses écoles, ses commerces et les souvenirs des familles des années 50 et 60.",
+      "image": {
+        "src": "/assets/photos/roubaix-cite-nouveau-roubaix-hbm.png",
+        "alt": "Vue aérienne ancienne de la cité du Nouveau Roubaix, boulevard de Fourmies, avenue Alfred-Motte et immeubles autour des cours intérieures",
+        "width": "1753",
+        "height": "1213"
+      }
+    },
+    {
       "path": "Hauts-de-France/Nord/Roubaix/gare-roubaix-annees-1960/index.html",
       "city_id": "roubaix",
       "city": "Roubaix",
