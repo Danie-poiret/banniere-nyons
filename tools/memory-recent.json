@@ -1787,6 +1787,21 @@
       }
     },
     {
+      "path": "Provence-Alpes-Cote-dAzur/Vaucluse/Cavaillon/fontaine-etoile-place-gambetta-souvenirs/index.html",
+      "city_id": "cavaillon",
+      "city": "Cavaillon",
+      "department": "Vaucluse",
+      "datePublished": "2026-11-14",
+      "title": "Cavaillon autrefois : la fontaine de l'Étoile, les cafés et les souvenirs de la place Gambetta",
+      "summary": "Retrouvez l'ancienne fontaine de l'Étoile à Cavaillon : histoire de la place Gambetta, cafés, commerces et souvenirs des habitants.",
+      "image": {
+        "src": "/assets/photos/cavaillon-fontaine-etoile-place-gambetta.png",
+        "alt": "Ancienne fontaine de l'Étoile sur la place Gambetta à Cavaillon, avec voitures, camions, commerces et cycliste",
+        "width": "1008",
+        "height": "686"
+      }
+    },
+    {
       "path": "Provence-Alpes-Cote-dAzur/Vaucluse/Cavaillon/grand-hotel-moderne-cavaillon/index.html",
       "city_id": "cavaillon",
       "city": "Cavaillon",
