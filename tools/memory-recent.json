@@ -257,6 +257,21 @@
       }
     },
     {
+      "path": "Hauts-de-France/Nord/Dunkerque/ancien-hotel-de-ville-dunkerque-1896/index.html",
+      "city_id": "dunkerque",
+      "city": "Dunkerque",
+      "department": "Nord",
+      "datePublished": "2026-11-14",
+      "title": "Dunkerque autrefois : l'ancien hôtel de ville détruit en 1896 et les souvenirs d'un monument disparu",
+      "summary": "Découvrez l'ancien hôtel de ville de Dunkerque, ses quatre colonnes, sa tour, son ancienne prison et les raisons de sa démolition en 1896.",
+      "image": {
+        "src": "/assets/photos/dunkerque-ancien-hotel-ville-1896.png",
+        "alt": "Ancien hôtel de ville de Dunkerque avant sa démolition en 1896, façade à quatre colonnes et tour",
+        "width": "1536",
+        "height": "1089"
+      }
+    },
+    {
       "path": "Hauts-de-France/Nord/Dunkerque/bains-dunkerquois-piscine-souvenirs/index.html",
       "city_id": "dunkerque",
       "city": "Dunkerque",
