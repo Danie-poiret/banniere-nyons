@@ -1277,6 +1277,21 @@
       }
     },
     {
+      "path": "Hauts-de-France/Nord/Roubaix/usine-velours-motte-bossut-avenue-motte/index.html",
+      "city_id": "roubaix",
+      "city": "Roubaix",
+      "department": "Nord",
+      "datePublished": "2026-11-14",
+      "title": "Roubaix : l'ancienne usine de velours Motte-Bossut, là où tant de familles ont travaillé",
+      "summary": "L'histoire de l'usine de velours Motte-Bossut à Roubaix : les ouvriers, la teinture, les ateliers, la fermeture en 1982 et L'Usine en 1984.",
+      "image": {
+        "src": "/assets/photos/roubaix-usine-velours-motte-bossut-avenue-motte.png",
+        "alt": "Ancienne usine de velours Motte-Bossut avenue Alfred-Motte à Roubaix, avec les enseignes Sporvel et Tissus La Tour",
+        "width": "548",
+        "height": "320"
+      }
+    },
+    {
       "path": "Hauts-de-France/Pas-de-Calais/Boulogne-sur-Mer/nouvelles-galeries-boulogne-sur-mer/index.html",
       "city_id": "boulogne-sur-mer",
       "city": "Boulogne-sur-Mer",
