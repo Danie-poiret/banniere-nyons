@@ -647,6 +647,21 @@
       }
     },
     {
+      "path": "Hauts-de-France/Nord/Lille/grand-place-lille-voitures-annees-60/index.html",
+      "city_id": "lille",
+      "city": "Lille",
+      "department": "Nord",
+      "datePublished": "2026-11-14",
+      "title": "Lille : quand la Grand-Place était un immense parking !",
+      "summary": "Découvrez la Grand-Place de Lille dans les années 1960 : voitures, marché aux fleurs, arrêts de bus, anciennes enseignes et souvenirs des Lillois.",
+      "image": {
+        "src": "/assets/photos/lille-grand-place-voitures-annees-60-iris.png",
+        "alt": "Grand-Place de Lille dans les années 1960, voitures garées autour de la Déesse, Vieille Bourse et marché aux fleurs",
+        "width": "947",
+        "height": "653"
+      }
+    },
+    {
       "path": "Hauts-de-France/Nord/Lille/hippodrome-lillois-cirque-oublie-lille/index.html",
       "city_id": "lille",
       "city": "Lille",
