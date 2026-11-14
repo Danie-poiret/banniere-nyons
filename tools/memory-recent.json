@@ -122,6 +122,21 @@
       }
     },
     {
+      "path": "Auvergne-Rhone-Alpes/Rhone/Lyon/halles-cordeliers-lyon-autrefois/index.html",
+      "city_id": "lyon",
+      "city": "Lyon",
+      "department": "Rhône",
+      "datePublished": "2026-11-14",
+      "title": "Lyon : les anciennes Halles des Cordeliers, les huîtres, les escargots et les souvenirs d'un marché disparu",
+      "summary": "Découvrez les anciennes Halles des Cordeliers à Lyon, démolies en 1971 : huîtres, escargots, petits restaurants et souvenirs des Lyonnais.",
+      "image": {
+        "src": "/assets/photos/lyon-anciennes-halles-cordeliers-mf11.png",
+        "alt": "Anciennes Halles des Cordeliers à Lyon, grande façade métallique et verrières avant leur démolition en 1971",
+        "width": "800",
+        "height": "520"
+      }
+    },
+    {
       "path": "Auvergne-Rhone-Alpes/Rhone/Lyon/opera-lyon-grand-theatre/index.html",
       "city_id": "lyon",
       "city": "Lyon",
