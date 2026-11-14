@@ -1367,6 +1367,21 @@
       }
     },
     {
+      "path": "Provence-Alpes-Cote-dAzur/Bouches-du-Rhone/Marseille/baraquements-bidonvilles-marseille-souvenirs-familles/index.html",
+      "city_id": "marseille",
+      "city": "Marseille",
+      "department": "Bouches-du-Rhône",
+      "datePublished": "2026-11-14",
+      "title": "Marseille autrefois : les baraquements, les bidonvilles et les souvenirs des familles",
+      "summary": "Les souvenirs des baraquements et des bidonvilles de Marseille : Campagne Picon, Font-Vert, Timone, Canet et récits de familles.",
+      "image": {
+        "src": "/assets/photos/marseille-baraquements-bidonvilles-souvenirs.png",
+        "alt": "Ancienne photographie de constructions précaires en bois et en tôle à Marseille, avec linge suspendu et passages entre les habitations, lieu exact non identifié",
+        "width": "2048",
+        "height": "1532"
+      }
+    },
+    {
       "path": "Provence-Alpes-Cote-dAzur/Bouches-du-Rhone/Marseille/canebiere-grand-cafe-du-commerce-autrefois/index.html",
       "city_id": "marseille",
       "city": "Marseille",
