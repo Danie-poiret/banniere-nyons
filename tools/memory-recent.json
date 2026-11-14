@@ -1202,6 +1202,21 @@
       }
     },
     {
+      "path": "Hauts-de-France/Nord/Roubaix/28-heures-roubaix-epeule-petit-louis/index.html",
+      "city_id": "roubaix",
+      "city": "Roubaix",
+      "department": "Nord",
+      "datePublished": "2026-11-14",
+      "title": "Roubaix : les 28 Heures de l'Épeule, P'tit Louis et ces fêtes qui faisaient vivre tout un quartier",
+      "summary": "Revivez les 28 Heures de Roubaix depuis 1954 : P'tit Louis, les marcheurs, les fanfares, les commerces et les souvenirs de la rue de l'Épeule.",
+      "image": {
+        "src": "/assets/photos/roubaix-28-heures-epeule-dossard-3.png",
+        "alt": "Ancienne course des 28 Heures de Roubaix, marcheur portant le dossard 3 devant la foule dans le quartier de l'Épeule",
+        "width": "630",
+        "height": "503"
+      }
+    },
+    {
       "path": "Hauts-de-France/Nord/Roubaix/cafe-dubus-grande-rue/index.html",
       "city_id": "roubaix",
       "city": "Roubaix",
