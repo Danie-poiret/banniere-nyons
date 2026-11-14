@@ -317,6 +317,21 @@
       }
     },
     {
+      "path": "Hauts-de-France/Nord/Dunkerque/gare-dunkerque-autrefois-richelieu-parking-souvenirs/index.html",
+      "city_id": "dunkerque",
+      "city": "Dunkerque",
+      "department": "Nord",
+      "datePublished": "2026-11-14",
+      "title": "Dunkerque autrefois : la gare, le Richelieu, les anciens bus et les souvenirs de la place",
+      "summary": "Retrouvez la gare de Dunkerque autrefois : le restaurant Le Richelieu, les anciens bus, le grand parking, les cheminots et les souvenirs des années 1960-1970.",
+      "image": {
+        "src": "/assets/photos/dunkerque-gare-richelieu-parking.png",
+        "alt": "Place de la Gare à Dunkerque dans les années 1960-1970, ancien parking, voitures, autobus et gare vitrée",
+        "width": "736",
+        "height": "460"
+      }
+    },
+    {
       "path": "Hauts-de-France/Nord/Dunkerque/hitler-dunkerque-26-juin-1940/index.html",
       "city_id": "dunkerque",
       "city": "Dunkerque",
