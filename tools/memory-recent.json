@@ -662,6 +662,21 @@
       }
     },
     {
+      "path": "Hauts-de-France/Nord/Lille/de-gaulle-lille-1959-place-rihour-43e-ri/index.html",
+      "city_id": "lille",
+      "city": "Lille",
+      "department": "Nord",
+      "datePublished": "2026-11-15",
+      "title": "Lille en 1959 : le général de Gaulle passe les militaires en revue place Rihour",
+      "summary": "Lille en 1959 : la visite du général de Gaulle place Rihour, le 43e RI, la guerre d'Algérie et les souvenirs des habitants.",
+      "image": {
+        "src": "/assets/photos/lille-de-gaulle-1959-place-rihour-43e-ri.png",
+        "alt": "Revue militaire de 1959 place Rihour à Lille, lors de la visite du général de Gaulle, devant les soldats et les spectateurs",
+        "width": "1169",
+        "height": "1118"
+      }
+    },
+    {
       "path": "Hauts-de-France/Nord/Lille/femmes-pantheres-lille-nord/index.html",
       "city_id": "lille",
       "city": "Lille",
