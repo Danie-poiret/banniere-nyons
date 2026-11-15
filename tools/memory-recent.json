@@ -2207,6 +2207,21 @@
       }
     },
     {
+      "path": "Provence-Alpes-Cote-dAzur/Vaucluse/Cavaillon/usine-guende-canal-saint-julien/index.html",
+      "city_id": "cavaillon",
+      "city": "Cavaillon",
+      "department": "Vaucluse",
+      "datePublished": "2026-11-15",
+      "title": "Cavaillon : l'usine Guende, les soldats de 1915 et les souvenirs du canal Saint-Julien",
+      "summary": "Découvrez l'ancienne usine Guende à Cavaillon vers 1915, les soldats, les ouvrières de la soie, les chardons Chenel et les souvenirs du canal Saint-Julien.",
+      "image": {
+        "src": "/assets/photos/cavaillon-usine-guende-canal-saint-julien.png",
+        "alt": "Ancienne filature Guende à Cavaillon vers 1915, avec des soldats devant les bâtiments et le canal Saint-Julien bordé de platanes",
+        "width": "583",
+        "height": "776"
+      }
+    },
+    {
       "path": "Provence-Alpes-Cote-dAzur/Vaucluse/Epicerie-Parisienne-Avignon/index.html",
       "city_id": "avignon",
       "city": "Avignon",
