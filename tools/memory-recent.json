@@ -677,6 +677,21 @@
       }
     },
     {
+      "path": "Hauts-de-France/Nord/Lille/dernier-tramway-1966-boulevard-carnot/index.html",
+      "city_id": "lille",
+      "city": "Lille",
+      "department": "Nord",
+      "datePublished": "2026-11-15",
+      "title": "Lille en 1966 : le dernier voyage des tramways et les souvenirs du boulevard Carnot",
+      "summary": "Lille, janvier 1966 : le voyage d'adieu des tramways, la motrice 433, le garage Peugeot SIAN et les souvenirs du boulevard Carnot.",
+      "image": {
+        "src": "/assets/photos/lille-dernier-tramway-1966-boulevard-carnot.png",
+        "alt": "Tramway électrique 433 de l'ELRT lors du voyage spécial FACS en janvier 1966 boulevard Carnot à Lille, devant le garage Peugeot",
+        "width": "1487",
+        "height": "1013"
+      }
+    },
+    {
       "path": "Hauts-de-France/Nord/Lille/femmes-pantheres-lille-nord/index.html",
       "city_id": "lille",
       "city": "Lille",
