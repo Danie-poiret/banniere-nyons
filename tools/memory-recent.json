@@ -2057,6 +2057,21 @@
       }
     },
     {
+      "path": "Provence-Alpes-Cote-dAzur/Vaucluse/Avignon/vieux-toits-palais-des-papes-balance/index.html",
+      "city_id": "avignon",
+      "city": "Avignon",
+      "department": "Vaucluse",
+      "datePublished": "2026-11-15",
+      "title": "Avignon autrefois : les vieux toits du Palais des Papes et les souvenirs de la Balance",
+      "summary": "Découvrez les vieux toits d'Avignon au pied du Palais des Papes, le quartier de la Balance, ses familles, ses commerces et les souvenirs des habitants.",
+      "image": {
+        "src": "/assets/photos/avignon-vieux-toits-palais-des-papes-balance.png",
+        "alt": "Vue ancienne des toits d'Avignon avec les petites maisons, les cheminées et le Palais des Papes en arrière-plan",
+        "width": "920",
+        "height": "701"
+      }
+    },
+    {
       "path": "Provence-Alpes-Cote-dAzur/Vaucluse/Avignon/vox-le-club-place-horloge-avignon-souvenirs/index.html",
       "city_id": "avignon",
       "city": "Avignon",
