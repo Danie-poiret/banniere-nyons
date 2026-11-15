@@ -2012,6 +2012,21 @@
       }
     },
     {
+      "path": "Provence-Alpes-Cote-dAzur/Vaucluse/Avignon/manifestation-14-juillet-1942-dressoir-cigale/index.html",
+      "city_id": "avignon",
+      "city": "Avignon",
+      "department": "Vaucluse",
+      "datePublished": "2026-11-15",
+      "title": "Avignon, 14 juillet 1942 : la foule dans la rue de la République et les souvenirs des anciens commerces",
+      "summary": "Avignon, le 14 juillet 1942 : la manifestation contre Vichy, les magasins Dressoir et La Cigale, et les souvenirs des habitants.",
+      "image": {
+        "src": "/assets/photos/avignon-manifestation-14-juillet-1942-dressoir-cigale.png",
+        "alt": "Foule rassemblée à Avignon le 14 juillet 1942 devant le magasin Dressoir et la parfumerie La Cigale",
+        "width": "800",
+        "height": "600"
+      }
+    },
+    {
       "path": "Provence-Alpes-Cote-dAzur/Vaucluse/Avignon/quartier-balance-avant-demolition/index.html",
       "city_id": "avignon",
       "city": "Avignon",
