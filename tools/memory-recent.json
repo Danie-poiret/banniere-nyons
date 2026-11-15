@@ -692,6 +692,21 @@
       }
     },
     {
+      "path": "Hauts-de-France/Nord/Lille/foire-internationale-lille-patinoire-concerts-souvenirs/index.html",
+      "city_id": "lille",
+      "city": "Lille",
+      "department": "Nord",
+      "datePublished": "2026-11-15",
+      "title": "Lille autrefois : la Foire internationale, la patinoire et ces concerts que personne n'a oubliés",
+      "summary": "Souvenirs de l'ancienne Foire internationale de Lille : la patinoire, les salons, le parking Javary, AC/DC en 1979 et Bob Marley en 1980.",
+      "image": {
+        "src": "/assets/photos/lille-foire-internationale-patinoire-concerts.png",
+        "alt": "Deux vues anciennes de la Foire internationale de Lille : façade du Grand Palais et vue aérienne du parking Javary et des halls d'exposition",
+        "width": "763",
+        "height": "718"
+      }
+    },
+    {
       "path": "Hauts-de-France/Nord/Lille/gare-lille-vers-1925-tramways-souvenirs/index.html",
       "city_id": "lille",
       "city": "Lille",
