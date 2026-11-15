@@ -887,6 +887,21 @@
       }
     },
     {
+      "path": "Hauts-de-France/Nord/Lille/place-du-theatre-ancien-theatre-lequeux/index.html",
+      "city_id": "lille",
+      "city": "Lille",
+      "department": "Nord",
+      "datePublished": "2026-11-15",
+      "title": "Lille autrefois : la place du Théâtre, ses anciens commerces et le théâtre disparu",
+      "summary": "Retrouvez la place du Théâtre à Lille autrefois, ses anciens commerces, le théâtre Lequeux détruit en 1903 et la construction de l'Opéra.",
+      "image": {
+        "src": "/assets/photos/lille-place-theatre-ancien-theatre-lequeux.png",
+        "alt": "Ancienne photographie du centre de Lille, secteur de la place du Théâtre, avec un cycliste, des automobiles, des rails et des façades monumentales",
+        "width": "2048",
+        "height": "1352"
+      }
+    },
+    {
       "path": "Hauts-de-France/Nord/Lille/place-gare-lille-tramways-photographie-ancienne/index.html",
       "city_id": "lille",
       "city": "Lille",
