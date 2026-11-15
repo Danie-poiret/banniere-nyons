@@ -2057,6 +2057,21 @@
       }
     },
     {
+      "path": "Provence-Alpes-Cote-dAzur/Vaucluse/Avignon/vox-le-club-place-horloge-avignon-souvenirs/index.html",
+      "city_id": "avignon",
+      "city": "Avignon",
+      "department": "Vaucluse",
+      "datePublished": "2026-11-15",
+      "title": "Avignon : Le Club, le Vox et les souvenirs des terrasses de la place de l'Horloge",
+      "summary": "Découvrez l'ancien Club, le cinéma Vox et les terrasses de la place de l'Horloge à Avignon, avec les souvenirs des serveurs et des habitués.",
+      "image": {
+        "src": "/assets/photos/avignon-vox-le-club-place-horloge.png",
+        "alt": "Ancienne terrasse du Club place de l'Horloge à Avignon, avec deux hommes assis devant le cinéma Vox 1 et Vox 2",
+        "width": "927",
+        "height": "617"
+      }
+    },
+    {
       "path": "Provence-Alpes-Cote-dAzur/Vaucluse/Carpentras/fontaine-lices-monteux-souvenirs/index.html",
       "city_id": "carpentras",
       "city": "Carpentras",
