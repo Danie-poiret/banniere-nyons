@@ -2057,6 +2057,21 @@
       }
     },
     {
+      "path": "Provence-Alpes-Cote-dAzur/Vaucluse/Carpentras/fontaine-lices-monteux-souvenirs/index.html",
+      "city_id": "carpentras",
+      "city": "Carpentras",
+      "department": "Vaucluse",
+      "datePublished": "2026-11-15",
+      "title": "Carpentras : la fontaine des Lices-Monteux, les vieux remparts et les souvenirs d'un quartier",
+      "summary": "Découvrez l'ancienne fontaine des Lices-Monteux à Carpentras, déplacée en 1930, ses remparts, ses commerçants et les souvenirs des habitants.",
+      "image": {
+        "src": "/assets/photos/carpentras-fontaine-lices-monteux-avant-1930.png",
+        "alt": "Ancienne fontaine des Lices-Monteux à Carpentras avec deux femmes, une petite fille et les remparts médiévaux",
+        "width": "824",
+        "height": "640"
+      }
+    },
+    {
       "path": "Provence-Alpes-Cote-dAzur/Vaucluse/Carpentras/marche-allees-platanes-autrefois/index.html",
       "city_id": "carpentras",
       "city": "Carpentras",
