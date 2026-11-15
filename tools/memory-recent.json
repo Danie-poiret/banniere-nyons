@@ -2297,6 +2297,21 @@
       }
     },
     {
+      "path": "Provence-Alpes-Cote-dAzur/Vaucluse/Valreas/hopital-jules-niel-maternite-jardin-souvenirs/index.html",
+      "city_id": "valreas",
+      "city": "Valréas",
+      "department": "Vaucluse",
+      "datePublished": "2026-11-15",
+      "title": "Valréas autrefois : la maternité Jules-Niel, son jardin disparu et les souvenirs de plusieurs générations",
+      "summary": "L'histoire de l'hôpital Jules-Niel à Valréas : sa maternité, son jardin disparu, les anciens médecins et les souvenirs de plusieurs générations.",
+      "image": {
+        "src": "/assets/photos/valreas-hopital-jules-niel-maternite-jardin.png",
+        "alt": "Cinq anciennes vues de l'hôpital-hospice Jules-Niel à Valréas, avec ses bâtiments, son entrée et son jardin fleuri",
+        "width": "760",
+        "height": "757"
+      }
+    },
+    {
       "path": "Provence-Alpes-Cote-dAzur/Vaucluse/Valreas/place-aristide-briand-autrefois/index.html",
       "city_id": "valreas",
       "city": "Valréas",
