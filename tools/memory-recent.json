@@ -1007,6 +1007,21 @@
       }
     },
     {
+      "path": "Hauts-de-France/Nord/Lille/rue-nationale-lille-1950-traction-commerces/index.html",
+      "city_id": "lille",
+      "city": "Lille",
+      "department": "Nord",
+      "datePublished": "2026-11-15",
+      "title": "Lille autrefois : la rue Nationale, la Traction noire et ces commerces que l'on n'a pas oubliés",
+      "summary": "Retrouvez la rue Nationale à Lille vers 1950-1960 : la Traction Avant, l'Agence Havas, le magasin de tissus René et les souvenirs des habitants.",
+      "image": {
+        "src": "/assets/photos/lille-rue-nationale-1950-traction-commerces.png",
+        "alt": "Rue Nationale à Lille vers 1950-1960, avec une Citroën Traction Avant, des passants et le beffroi de la Chambre de commerce",
+        "width": "591",
+        "height": "612"
+      }
+    },
+    {
       "path": "Hauts-de-France/Nord/Lille/rue-nationale-lille-annees-1970-printemps-souvenirs/index.html",
       "city_id": "lille",
       "city": "Lille",
