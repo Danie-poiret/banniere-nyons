@@ -1021,6 +1021,24 @@
         "width": 696,
         "height": 628
       }
+    },
+    {
+      "url": "/a-faire-autour-de-Nyons/saint-maurice-sur-eygues/",
+      "title": "Saint-Maurice-sur-Eygues : visites, vins et randonnées",
+      "description": "Découvrez Saint-Maurice-sur-Eygues près de Nyons : patrimoine, vignobles, biscuiterie, randonnées, restaurants et conseils de visite.",
+      "group": "villages",
+      "seasons": [
+        "printemps",
+        "ete",
+        "automne",
+        "hiver"
+      ],
+      "image": {
+        "src": "/assets/photos/saint-maurice-sur-eygues-mairie.png",
+        "alt": "Vue du village de Saint-Maurice-sur-Eygues et de ses maisons en Drôme provençale",
+        "width": 301,
+        "height": 226
+      }
     }
   ],
   "featured": [
