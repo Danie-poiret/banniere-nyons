@@ -1127,6 +1127,21 @@
       }
     },
     {
+      "path": "Hauts-de-France/Nord/Lille/theatre-sebastopol-lille-1903-operettes-souvenirs/index.html",
+      "city_id": "lille",
+      "city": "Lille",
+      "department": "Nord",
+      "datePublished": "2026-11-16",
+      "title": "Lille : le Théâtre Sébastopol, construit en 100 jours et 120 ans de souvenirs",
+      "summary": "L’histoire du Théâtre Sébastopol à Lille depuis 1903 : sa construction en cent jours, les opérettes, les artistes et les souvenirs des Lillois.",
+      "image": {
+        "src": "/assets/photos/lille-theatre-sebastopol-provisoire.png",
+        "alt": "Ancienne carte postale du Théâtre Sébastopol à Lille, nommé Théâtre provisoire, avec sa façade, ses escaliers et des passants",
+        "width": "915",
+        "height": "578"
+      }
+    },
+    {
       "path": "Hauts-de-France/Nord/Lille/tramway-505-lille-place-du-theatre/index.html",
       "city_id": "lille",
       "city": "Lille",
