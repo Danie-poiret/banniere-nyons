@@ -28,7 +28,8 @@
     "/infos-pratiques-nyons/mediatheque-nyons/",
     "/produits-du-terroir/brasserie-a-nyons/",
     "/a-faire-autour-de-Nyons/suze-la-rousse/",
-    "/a-faire-autour-de-Nyons/thermes-montbrun-les-bains/"
+    "/a-faire-autour-de-Nyons/thermes-montbrun-les-bains/",
+    "/a-faire-autour-de-Nyons/saint-ferreol-trente-pas/"
   ],
   "excluded_paths": [
     "/Provence-Alpes-Cote-dAzur/Vaucluse/dames-de-france-avignon/",
@@ -53,11 +54,13 @@
     "/evenements-nyons/marches-noel-nyons-autour-decembre-2026/",
     "/a-faire-autour-de-Nyons/musee-soie-taulignan/",
     "/a-faire-autour-de-Nyons/chateau-aulan/",
-    "/a-faire-autour-de-Nyons/suze-la-rousse/"
+    "/a-faire-autour-de-Nyons/suze-la-rousse/",
+    "/a-faire-autour-de-Nyons/saint-ferreol-trente-pas/"
   ],
   "update_dates": {
     "/infos-pratiques-nyons/mediatheque-nyons/": "2026-10-31",
     "/produits-du-terroir/brasserie-a-nyons/": "2026-11-07",
-    "/a-faire-autour-de-Nyons/thermes-montbrun-les-bains/": "2026-11-16"
+    "/a-faire-autour-de-Nyons/thermes-montbrun-les-bains/": "2026-11-16",
+    "/a-faire-autour-de-Nyons/saint-ferreol-trente-pas/": "2026-11-16"
   }
 }
