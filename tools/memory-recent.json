@@ -617,6 +617,21 @@
       }
     },
     {
+      "path": "Hauts-de-France/Nord/Lille/chocolaterie-delespaul-havez-carambar/index.html",
+      "city_id": "lille",
+      "city": "Lille",
+      "department": "Nord",
+      "datePublished": "2026-11-17",
+      "title": "Lille : Delespaul-Havez, les Carambar, les points DH et les familles de la chocolaterie",
+      "summary": "Découvrez Delespaul-Havez à Lille : l'histoire de la chocolaterie, des Carambar, des points DH et des familles qui travaillaient à l'usine.",
+      "image": {
+        "src": "/assets/photos/lille-delespaul-havez-usine.png",
+        "alt": "Ancienne vue aérienne de la grande usine Delespaul-Havez, avec ses bâtiments industriels, ateliers et cheminées.",
+        "width": "2048",
+        "height": "1006"
+      }
+    },
+    {
       "path": "Hauts-de-France/Nord/Lille/cinema-mondial-wazemmes-place-verte/index.html",
       "city_id": "lille",
       "city": "Lille",
