@@ -990,5 +990,22 @@
     "keywords": "",
     "source": "Vivre à Nyons",
     "checked": "2026-10-23"
+  },
+  {
+    "title": "Loto à Nyons — dates et traditions",
+    "url": "/lotos-nyons/",
+    "categories": [
+      "culture"
+    ],
+    "description": "Retrouvez les prochains lotos à Nyons, les associations organisatrices, les règles du quine, les lieux et l'histoire de ce jeu populaire.",
+    "keywords": "loto lotos quine cartons associations maison pays jeu tradition",
+    "source": "Vivre à Nyons — agenda local et associations citées",
+    "commune": "Nyons",
+    "zone": "nyons",
+    "facets": [
+      "pluie"
+    ],
+    "practical": "Dates selon les associations. Calendrier automatiquement repris de l’agenda ; tarifs et conditions dans chaque annonce.",
+    "checked": "2026-11-17"
   }
 ]
