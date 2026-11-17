@@ -932,6 +932,21 @@
       }
     },
     {
+      "path": "Hauts-de-France/Nord/Lille/prisunic-rue-gambetta-lille/index.html",
+      "city_id": "lille",
+      "city": "Lille",
+      "department": "Nord",
+      "datePublished": "2026-11-17",
+      "title": "Lille : le Prisunic de la rue Gambetta, ses caissières et les souvenirs d'une époque",
+      "summary": "Retrouvez l'ancien Prisunic de la rue Gambetta à Lille, ses caissières, les employés des années 1970 et 1980 et les souvenirs des Lillois.",
+      "image": {
+        "src": "/assets/photos/lille-prisunic-rue-gambetta.png",
+        "alt": "Ancienne façade du magasin Prisunic rue Gambetta à Lille, avec ses vitrines et son enseigne rouge",
+        "width": "927",
+        "height": "665"
+      }
+    },
+    {
       "path": "Hauts-de-France/Nord/Lille/pyramide-place-rihour-metro-val-1983/index.html",
       "city_id": "lille",
       "city": "Lille",
