@@ -1039,6 +1039,23 @@
         "width": 301,
         "height": 226
       }
+    },
+    {
+      "url": "/a-faire-autour-de-Nyons/musee-cartonnage-imprimerie-valreas/",
+      "title": "Musée du Cartonnage à Valréas : visite, tarifs et accès",
+      "description": "Découvrez le Musée du Cartonnage et de l’Imprimerie à Valréas : collections, horaires, tarifs 2026, accessibilité et itinéraire depuis Nyons.",
+      "group": "patrimoine",
+      "seasons": [
+        "printemps",
+        "ete",
+        "automne"
+      ],
+      "image": {
+        "src": "/assets/photos/musee-cartonnage-valreas-facade.png",
+        "alt": "Entrée du Musée du Cartonnage et de l’Imprimerie à Valréas, avenue du Maréchal-Foch",
+        "width": 545,
+        "height": 462
+      }
     }
   ],
   "featured": [
