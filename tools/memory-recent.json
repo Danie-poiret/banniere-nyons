@@ -2072,6 +2072,21 @@
       }
     },
     {
+      "path": "Provence-Alpes-Cote-dAzur/Vaucluse/Avignon/barthelasse-ancienne-terrasse-bac-traille/index.html",
+      "city_id": "avignon",
+      "city": "Avignon",
+      "department": "Vaucluse",
+      "datePublished": "2026-11-17",
+      "title": "Avignon : la mystérieuse terrasse de la Barthelasse, Zize et le vieux bac à traille",
+      "summary": "Une ancienne photo de la Barthelasse à Avignon fait revivre Zize, sa ferme, les coiffes d'Arlésiennes et les traversées du Rhône en bac à traille.",
+      "image": {
+        "src": "/assets/photos/avignon-barthelasse-terrasse-ancienne.png",
+        "alt": "Ancienne photographie d'une femme en costume provençal sur une terrasse de la Barthelasse, face au Rhône et au Rocher des Doms à Avignon.",
+        "width": "1315",
+        "height": "782"
+      }
+    },
+    {
       "path": "Provence-Alpes-Cote-dAzur/Vaucluse/Avignon/cinema-capitole-avignon-souvenirs/index.html",
       "city_id": "avignon",
       "city": "Avignon",
