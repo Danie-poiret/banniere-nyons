@@ -1427,6 +1427,21 @@
       }
     },
     {
+      "path": "Hauts-de-France/Nord/Rosendael/maison-blanchon-tente-verte-maraichers/index.html",
+      "city_id": "rosendael",
+      "city": "Rosendaël",
+      "department": "Nord",
+      "datePublished": "2026-11-18",
+      "title": "Rosendaël : la maison des Blanchon à la Tente Verte, les maraîchers et les souvenirs d'un quartier",
+      "summary": "À Rosendaël, l'ancienne maison Blanchon rappelle les maraîchers de la Tente Verte, les tournées de légumes, René, Pierrot et les souvenirs du quartier.",
+      "image": {
+        "src": "/assets/photos/rosendael-maison-blanchon-tente-verte.png",
+        "alt": "Ancienne maison de Pierre Blanchon rue de Téteghem à Rosendaël, avec un grand bâtiment de plusieurs étages en arrière-plan, quartier de la Tente Verte.",
+        "width": "1472",
+        "height": "785"
+      }
+    },
+    {
       "path": "Hauts-de-France/Nord/Rosendael/place-europe-cinema-regent/index.html",
       "city_id": "rosendael",
       "city": "Rosendaël",
