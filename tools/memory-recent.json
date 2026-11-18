@@ -2087,6 +2087,21 @@
       }
     },
     {
+      "path": "Provence-Alpes-Cote-dAzur/Vaucluse/Avignon/anciennes-halles-place-pie-commercants/index.html",
+      "city_id": "avignon",
+      "city": "Avignon",
+      "department": "Vaucluse",
+      "datePublished": "2026-11-18",
+      "title": "Avignon : les anciennes Halles de la place Pie, les commerçants et les souvenirs qu'on n'a jamais oubliés",
+      "summary": "Retrouvez les anciennes Halles d'Avignon, la famille Bourgue, les fromagers, les tripiers, les petits commerces et les souvenirs de la place Pie.",
+      "image": {
+        "src": "/assets/photos/avignon-anciennes-halles-place-pie-lux.png",
+        "alt": "Anciennes Halles métalliques de la place Pie à Avignon, avec leur horloge, leurs verrières, les publicités peintes sur la façade et les étals installés sous les auvents.",
+        "width": "1056",
+        "height": "718"
+      }
+    },
+    {
       "path": "Provence-Alpes-Cote-dAzur/Vaucluse/Avignon/anciennes-halles-rue-petite-meuse/index.html",
       "city_id": "avignon",
       "city": "Avignon",
