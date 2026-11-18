@@ -1397,6 +1397,21 @@
       }
     },
     {
+      "path": "Hauts-de-France/Nord/Rosendael/quartier-excentric-villa-ma-coquille/index.html",
+      "city_id": "rosendael",
+      "city": "Rosendaël",
+      "department": "Nord",
+      "datePublished": "2026-11-18",
+      "title": "Rosendaël : la villa Ma Coquille et le quartier Excentric, ces maisons étonnantes que les Dunkerquois n'ont pas oubliées",
+      "summary": "Découvrez le quartier Excentric de Rosendaël, les 35 maisons de François Reynaert, la villa Ma Coquille, l'ancien dancing et les souvenirs des habitants.",
+      "image": {
+        "src": "/assets/photos/rosendael-quartier-excentric-villa-ma-coquille.png",
+        "alt": "Villa Ma Coquille dans le quartier Excentric de Rosendaël, avec sa façade courbe en béton, son balcon arrondi et ses fenêtres",
+        "width": "1115",
+        "height": "844"
+      }
+    },
+    {
       "path": "Hauts-de-France/Nord/Roubaix/28-heures-roubaix-epeule-petit-louis/index.html",
       "city_id": "roubaix",
       "city": "Roubaix",
