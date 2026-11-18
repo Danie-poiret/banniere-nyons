@@ -2462,6 +2462,21 @@
       }
     },
     {
+      "path": "Provence-Alpes-Cote-dAzur/Vaucluse/Valreas/cafe-valreassien-cafe-de-paris/index.html",
+      "city_id": "valreas",
+      "city": "Valréas",
+      "department": "Vaucluse",
+      "datePublished": "2026-11-18",
+      "title": "Valréas : le Café Valréassien, le Café de Paris et les commerces disparus de la route de Nyons",
+      "summary": "Retrouvez le Café Valréassien, le Café de Paris des Lascour, le magasin Marre et la menuiserie Grosjean à travers les souvenirs des habitants.",
+      "image": {
+        "src": "/assets/photos/valreas-cafe-valreassien-literie-marre.png",
+        "alt": "Ancien Café Valréassien à Valréas, avec son enseigne, le magasin Literie Générale, une automobile et plusieurs personnes devant les commerces.",
+        "width": "1080",
+        "height": "713"
+      }
+    },
+    {
       "path": "Provence-Alpes-Cote-dAzur/Vaucluse/Valreas/hopital-jules-niel-maternite-jardin-souvenirs/index.html",
       "city_id": "valreas",
       "city": "Valréas",
