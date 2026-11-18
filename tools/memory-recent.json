@@ -527,6 +527,21 @@
       }
     },
     {
+      "path": "Hauts-de-France/Nord/Lille/ancien-stade-henri-jooris/index.html",
+      "city_id": "lille",
+      "city": "Lille",
+      "department": "Nord",
+      "datePublished": "2026-11-18",
+      "title": "Lille : l'ancien stade Henri-Jooris, les tribunes qui tremblaient et les matchs qu'on n'a jamais oubliés",
+      "summary": "Retrouvez l'ancien stade Henri-Jooris de Lille : les Populaires, les tribunes en bois, le derby de 1946, le barrage contre Bastia et sa disparition en 1975.",
+      "image": {
+        "src": "/assets/photos/lille-stade-henri-jooris-vue-aerienne.png",
+        "alt": "Vue aérienne de l'ancien stade Henri-Jooris à Lille pendant un match du LOSC, avec les tribunes remplies, les voitures des supporters et le canal de la Deûle en arrière-plan.",
+        "width": "1688",
+        "height": "1163"
+      }
+    },
+    {
       "path": "Hauts-de-France/Nord/Lille/ancien-zoo-bois-de-boulogne-lille/index.html",
       "city_id": "lille",
       "city": "Lille",
