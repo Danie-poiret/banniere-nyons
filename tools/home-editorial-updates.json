@@ -30,7 +30,8 @@
     "/a-faire-autour-de-Nyons/suze-la-rousse/",
     "/a-faire-autour-de-Nyons/thermes-montbrun-les-bains/",
     "/a-faire-autour-de-Nyons/saint-ferreol-trente-pas/",
-    "/a-faire-autour-de-Nyons/roche-sur-le-buis/"
+    "/a-faire-autour-de-Nyons/roche-sur-le-buis/",
+    "/a-faire-autour-de-Nyons/biscuiterie-provence-saint-maurice-sur-eygues/"
   ],
   "excluded_paths": [
     "/Provence-Alpes-Cote-dAzur/Vaucluse/dames-de-france-avignon/",
@@ -59,13 +60,15 @@
     "/a-faire-autour-de-Nyons/saint-ferreol-trente-pas/",
     "/a-faire-autour-de-Nyons/saint-maurice-sur-eygues/",
     "/a-faire-autour-de-Nyons/roche-sur-le-buis/",
-    "/a-faire-autour-de-Nyons/musee-cartonnage-imprimerie-valreas/"
+    "/a-faire-autour-de-Nyons/musee-cartonnage-imprimerie-valreas/",
+    "/a-faire-autour-de-Nyons/biscuiterie-provence-saint-maurice-sur-eygues/"
   ],
   "update_dates": {
     "/infos-pratiques-nyons/mediatheque-nyons/": "2026-10-31",
     "/produits-du-terroir/brasserie-a-nyons/": "2026-11-07",
     "/a-faire-autour-de-Nyons/thermes-montbrun-les-bains/": "2026-11-16",
     "/a-faire-autour-de-Nyons/saint-ferreol-trente-pas/": "2026-11-16",
-    "/a-faire-autour-de-Nyons/roche-sur-le-buis/": "2026-11-16"
+    "/a-faire-autour-de-Nyons/roche-sur-le-buis/": "2026-11-16",
+    "/a-faire-autour-de-Nyons/biscuiterie-provence-saint-maurice-sur-eygues/": "2026-11-18"
   }
 }
