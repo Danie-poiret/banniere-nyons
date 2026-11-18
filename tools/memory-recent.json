@@ -347,6 +347,21 @@
       }
     },
     {
+      "path": "Hauts-de-France/Nord/Dunkerque/boulevard-sainte-barbe-dunkerque-autrefois/index.html",
+      "city_id": "dunkerque",
+      "city": "Dunkerque",
+      "department": "Nord",
+      "datePublished": "2026-11-18",
+      "title": "Dunkerque : le boulevard Sainte-Barbe autrefois, les commerces disparus et les baraquements de la place Jean-Bart",
+      "summary": "Retrouvez le boulevard Sainte-Barbe à Dunkerque dans les années 1950, la porte de Berry, les commerces disparus et les baraquements de la place Jean-Bart.",
+      "image": {
+        "src": "/assets/photos/dunkerque-boulevard-sainte-barbe-reconstruction.png",
+        "alt": "Vue ancienne du boulevard Sainte-Barbe à Dunkerque, avec ses commerces, des automobiles, un cycliste et la porte de la Marine au fond.",
+        "width": "1848",
+        "height": "926"
+      }
+    },
+    {
       "path": "Hauts-de-France/Nord/Dunkerque/carnaval-dunkerque-annees-1970/index.html",
       "city_id": "dunkerque",
       "city": "Dunkerque",
