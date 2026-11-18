@@ -1397,6 +1397,21 @@
       }
     },
     {
+      "path": "Hauts-de-France/Nord/Malo-les-Bains/plage-autrefois-ponts-bois-cabines/index.html",
+      "city_id": "malo-les-bains",
+      "city": "Malo-les-Bains",
+      "department": "Nord",
+      "datePublished": "2026-11-18",
+      "title": "Malo-les-Bains : quand on traversait la plage sur des ponts de bois pour aller jusqu'à la mer",
+      "summary": "Découvrez la plage de Malo-les-Bains vers 1900, avec ses ponts de bois, ses cabines sur roues, ses baigneurs et l'ancien casino.",
+      "image": {
+        "src": "/assets/photos/malo-les-bains-plage-ponts-bois-cabines.png",
+        "alt": "Ancienne plage de Malo-les-Bains avec des passerelles de bois traversant les mares, des cabines de bain sur roues, des promeneurs en costumes anciens et le casino en arrière-plan.",
+        "width": "1280",
+        "height": "816"
+      }
+    },
+    {
       "path": "Hauts-de-France/Nord/Maubeuge/maubeuge-annees-1960-commerces/index.html",
       "city_id": "maubeuge",
       "city": "Maubeuge",
