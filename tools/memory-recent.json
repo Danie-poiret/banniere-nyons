@@ -767,6 +767,21 @@
       }
     },
     {
+      "path": "Hauts-de-France/Nord/Lille/fourrures-kretzschmar-lille/index.html",
+      "city_id": "lille",
+      "city": "Lille",
+      "department": "Nord",
+      "datePublished": "2026-11-18",
+      "title": "Lille : Kretzschmar, la maison de fourrures que les Lillois n'ont pas oubliée",
+      "summary": "Découvrez l'histoire des fourrures Kretzschmar à Lille, de Jean Cortier aux anciens magasins, avec les souvenirs des clientes et la fermeture de 2015.",
+      "image": {
+        "src": "/assets/photos/lille-fourrures-kretzschmar-devanture.png",
+        "alt": "Ancienne devanture du magasin de fourrures Kretzschmar à Lille, avec ses vitrines, son store rayé et plusieurs personnes devant l'entrée.",
+        "width": "718",
+        "height": "455"
+      }
+    },
+    {
       "path": "Hauts-de-France/Nord/Lille/gare-lille-vers-1925-tramways-souvenirs/index.html",
       "city_id": "lille",
       "city": "Lille",
