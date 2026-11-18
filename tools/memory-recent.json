@@ -1307,6 +1307,21 @@
       }
     },
     {
+      "path": "Hauts-de-France/Nord/Malo-les-Bains/ancienne-ecole-avenue-de-la-mer/index.html",
+      "city_id": "malo-les-bains",
+      "city": "Malo-les-Bains",
+      "department": "Nord",
+      "datePublished": "2026-11-18",
+      "title": "Malo-les-Bains : l'ancienne école de l'avenue de la Mer, le bol de lait, les bonbons et les souvenirs de toute une génération",
+      "summary": "Retrouvez l'ancienne école des filles de Malo-les-Bains, inaugurée en 1932 : institutrices, bol de lait, marchand de bonbons et souvenirs des élèves.",
+      "image": {
+        "src": "/assets/photos/malo-les-bains-ancienne-ecole-avenue-mer.png",
+        "alt": "Ancienne carte postale de l'école des filles de l'avenue de la Mer à Malo-les-Bains, avec sa façade en briques, son entrée à colonnes et un château d'eau à l'arrière-plan.",
+        "width": "1604",
+        "height": "1020"
+      }
+    },
+    {
       "path": "Hauts-de-France/Nord/Malo-les-Bains/avenue-de-la-mer-malo-les-bains-1958/index.html",
       "city_id": "malo-les-bains",
       "city": "Malo-les-Bains",
