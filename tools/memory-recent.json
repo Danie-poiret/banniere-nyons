@@ -527,6 +527,21 @@
       }
     },
     {
+      "path": "Hauts-de-France/Nord/Lille/ancien-cafe-jean-rue-faidherbe/index.html",
+      "city_id": "lille",
+      "city": "Lille",
+      "department": "Nord",
+      "datePublished": "2026-11-18",
+      "title": "Lille : le Café Jean, ce grand café de la rue Faidherbe où les Lillois aimaient se retrouver",
+      "summary": "Retrouvez l'histoire du Café Jean à Lille, rue Faidherbe : les bombardements de 1914, le Carlton, les soirées dansantes et les souvenirs des Lillois.",
+      "image": {
+        "src": "/assets/photos/lille-cafe-jean-rue-faidherbe.png",
+        "alt": "Ancienne photographie du Café Jean à Lille, à l'angle de la rue Faidherbe et de la rue de Paris, avec ses grands stores et des passants devant la terrasse.",
+        "width": "922",
+        "height": "614"
+      }
+    },
+    {
       "path": "Hauts-de-France/Nord/Lille/ancien-stade-henri-jooris/index.html",
       "city_id": "lille",
       "city": "Lille",
