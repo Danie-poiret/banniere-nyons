@@ -527,6 +527,21 @@
       }
     },
     {
+      "path": "Hauts-de-France/Nord/Lille/ancien-zoo-bois-de-boulogne-lille/index.html",
+      "city_id": "lille",
+      "city": "Lille",
+      "department": "Nord",
+      "datePublished": "2026-11-18",
+      "title": "Lille : l'ancien zoo du Bois de Boulogne, les cacahuètes, le petit train et ces cages qu'on n'a pas oubliées",
+      "summary": "Retrouvez l’ancien zoo du Bois de Boulogne à Lille : ses volières de 1953, le petit train, les animaux et les souvenirs des familles lilloises.",
+      "image": {
+        "src": "/assets/photos/lille-ancien-zoo-bois-de-boulogne.png",
+        "alt": "Ancienne allée du zoo du Bois de Boulogne à Lille, avec deux rangées de volières grillagées, des arceaux métalliques et un visiteur devant les cages.",
+        "width": "843",
+        "height": "529"
+      }
+    },
+    {
       "path": "Hauts-de-France/Nord/Lille/anciens-abattoirs-rue-saint-sebastien/index.html",
       "city_id": "lille",
       "city": "Lille",
