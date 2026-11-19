@@ -107,6 +107,21 @@
       }
     },
     {
+      "path": "Auvergne-Rhone-Alpes/Rhone/Lyon/cirque-rancy-cours-de-verdun-autrefois/index.html",
+      "city_id": "lyon",
+      "city": "Lyon",
+      "department": "Rhône",
+      "datePublished": "2026-11-19",
+      "title": "Lyon : le cirque Rancy cours de Verdun, les souvenirs d'enfance et cette lionne qui s'était échappée",
+      "summary": "Retrouvez le cirque Rancy à Lyon, cours de Verdun, les souvenirs des familles, les spectacles des années 1960 et l'histoire de la célèbre dynastie.",
+      "image": {
+        "src": "/assets/photos/cirque-rancy-cours-de-verdun-autrefois.png",
+        "alt": "Ancienne photographie du cirque Rancy cours de Verdun à Lyon, avec le grand chapiteau, les familles sortant du spectacle, les roulottes et les arbres de Perrache.",
+        "width": "2048",
+        "height": "2044"
+      }
+    },
+    {
       "path": "Auvergne-Rhone-Alpes/Rhone/Lyon/fresque-des-lyonnais-souvenirs-quai-saint-vincent/index.html",
       "city_id": "lyon",
       "city": "Lyon",
