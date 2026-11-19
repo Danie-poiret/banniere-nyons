@@ -527,6 +527,21 @@
       }
     },
     {
+      "path": "Hauts-de-France/Nord/Dunkerque/usinor-dunkerque-hauts-fourneaux-autrefois/index.html",
+      "city_id": "dunkerque",
+      "city": "Dunkerque",
+      "department": "Nord",
+      "datePublished": "2026-11-19",
+      "title": "Dunkerque : Usinor dans les années 1960, les hauts-fourneaux et les souvenirs de ceux qui y travaillaient",
+      "summary": "Découvrez Usinor Dunkerque vers 1968, les hauts-fourneaux HF2 et HF3, les roues-pelles, les anciens métiers et les souvenirs des ouvriers.",
+      "image": {
+        "src": "/assets/photos/dunkerque-usinor-hauts-fourneaux-1968.png",
+        "alt": "Ancienne photographie d'Usinor à Dunkerque vers 1968, avec les hauts-fourneaux HF2 et HF3, les convoyeurs, les roues-pelles et les stocks de matières premières.",
+        "width": "2048",
+        "height": "1536"
+      }
+    },
+    {
       "path": "Hauts-de-France/Nord/Lille/aeroport-lille-lesquin-annees-1970-souvenirs/index.html",
       "city_id": "lille",
       "city": "Lille",
