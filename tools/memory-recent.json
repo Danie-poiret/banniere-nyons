@@ -2432,6 +2432,21 @@
       }
     },
     {
+      "path": "Provence-Alpes-Cote-dAzur/Vaucluse/Avignon/marche-vieux-fers-place-carmes-avignon/index.html",
+      "city_id": "avignon",
+      "city": "Avignon",
+      "department": "Vaucluse",
+      "datePublished": "2026-11-19",
+      "title": "Avignon : le marché aux vieux fers de la place des Carmes, la fontaine disparue et les souvenirs des habitants",
+      "summary": "Découvrez la place des Carmes à Avignon vers 1920, son marché aux vieux fers, sa fontaine de 1889, ses commerces et les souvenirs des habitants.",
+      "image": {
+        "src": "/assets/photos/avignon-marche-vieux-fers-place-carmes.png",
+        "alt": "Ancien marché aux vieux fers de la place des Carmes à Avignon vers 1920, avec marchands, bicyclettes, charrettes, platanes et fontaine aujourd'hui disparue.",
+        "width": "1120",
+        "height": "704"
+      }
+    },
+    {
       "path": "Provence-Alpes-Cote-dAzur/Vaucluse/Avignon/quartier-balance-avant-demolition/index.html",
       "city_id": "avignon",
       "city": "Avignon",
