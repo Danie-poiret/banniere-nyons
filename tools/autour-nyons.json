@@ -1056,6 +1056,23 @@
         "width": 545,
         "height": 462
       }
+    },
+    {
+      "url": "/a-faire-autour-de-Nyons/chateau-de-simiane-valreas/",
+      "title": "Château de Simiane à Valréas : histoire, visite gratuite et patrimoine",
+      "description": "Découvrez le château de Simiane à Valréas : son histoire, Pauline de Simiane, les salles à visiter, les horaires 2026 et les monuments autour.",
+      "group": "patrimoine",
+      "seasons": [
+        "printemps",
+        "ete",
+        "automne"
+      ],
+      "image": {
+        "src": "/assets/photos/chateau-simiane-valreas-cour-honneur.png",
+        "alt": "Château de Simiane à Valréas, avec sa cour d'honneur, ses galeries à arcades et sa façade classique du XVIIe siècle.",
+        "width": 451,
+        "height": 320
+      }
     }
   ],
   "featured": [
