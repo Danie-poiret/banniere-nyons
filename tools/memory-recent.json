@@ -332,6 +332,21 @@
       }
     },
     {
+      "path": "Hauts-de-France/Nord/Dunkerque/aubettes-dunkerque-place-du-minck-autrefois/index.html",
+      "city_id": "dunkerque",
+      "city": "Dunkerque",
+      "department": "Nord",
+      "datePublished": "2026-11-19",
+      "title": "Dunkerque : les aubettes du Minck dans les années 1980, le poisson frais et les souvenirs des familles",
+      "summary": "À Dunkerque, retrouvez les anciennes aubettes de la place du Minck dans les années 1980, les poissonniers, les souvenirs et leur démolition en 2004.",
+      "image": {
+        "src": "/assets/photos/dunkerque-aubettes-minck-annees-1980.png",
+        "alt": "Dunkerque dans les années 1980, clients devant un comptoir de vente de poisson aux anciennes aubettes de la place du Minck, avec des bateaux de pêche en arrière-plan.",
+        "width": "2048",
+        "height": "1539"
+      }
+    },
+    {
       "path": "Hauts-de-France/Nord/Dunkerque/bains-dunkerquois-piscine-souvenirs/index.html",
       "city_id": "dunkerque",
       "city": "Dunkerque",
