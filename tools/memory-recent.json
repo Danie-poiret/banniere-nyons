@@ -122,6 +122,21 @@
       }
     },
     {
+      "path": "Auvergne-Rhone-Alpes/Rhone/Lyon/cours-de-verdun-perrache-autrefois/index.html",
+      "city_id": "lyon",
+      "city": "Lyon",
+      "department": "Rhône",
+      "datePublished": "2026-11-19",
+      "title": "Lyon : le cours de Verdun avant le centre d’échanges de Perrache, un quartier que les Lyonnais n'ont pas oublié",
+      "summary": "Retrouvez le cours de Verdun à Lyon avant 1972, l'ancienne gare de Perrache, les jardins, les gares routières et les souvenirs des Lyonnais.",
+      "image": {
+        "src": "/assets/photos/lyon-cours-de-verdun-perrache-autrefois.png",
+        "alt": "Vue aérienne ancienne de Lyon-Perrache avant 1972, avec la gare ferroviaire, les arbres du cours de Verdun, les anciennes installations routières et les immeubles de Lyon.",
+        "width": "1580",
+        "height": "1131"
+      }
+    },
+    {
       "path": "Auvergne-Rhone-Alpes/Rhone/Lyon/fresque-des-lyonnais-souvenirs-quai-saint-vincent/index.html",
       "city_id": "lyon",
       "city": "Lyon",
