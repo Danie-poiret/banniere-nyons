@@ -392,6 +392,21 @@
       }
     },
     {
+      "path": "Hauts-de-France/Nord/Dunkerque/dunkerque-vue-aerienne-avant-1940/index.html",
+      "city_id": "dunkerque",
+      "city": "Dunkerque",
+      "department": "Nord",
+      "datePublished": "2026-11-19",
+      "title": "Dunkerque avant 1940 : une incroyable vue aérienne de la ville et de ses quartiers disparus",
+      "summary": "Découvrez Dunkerque avant 1940 dans une vue aérienne : beffrois, église Saint-Martin, rue du Sud, anciens canaux, port et souvenirs des habitants.",
+      "image": {
+        "src": "/assets/photos/dunkerque-vue-aerienne-avant-1940.png",
+        "alt": "Vue aérienne en noir et blanc du centre de Dunkerque avant 1940, avec l'église Saint-Martin, les beffrois, les maisons anciennes, les canaux et les installations du port.",
+        "width": "2048",
+        "height": "1547"
+      }
+    },
+    {
       "path": "Hauts-de-France/Nord/Dunkerque/execution-dunkerque-1905-van-den-bogaert-swartewagher/index.html",
       "city_id": "dunkerque",
       "city": "Dunkerque",
