@@ -2642,6 +2642,21 @@
       }
     },
     {
+      "path": "Provence-Alpes-Cote-dAzur/Vaucluse/Orange/legion-etrangere-rue-caristie-1967/index.html",
+      "city_id": "orange",
+      "city": "Orange",
+      "department": "Vaucluse",
+      "datePublished": "2026-11-19",
+      "title": "Orange en 1967 : les képis blancs dans la rue Caristie, les anciens commerces et les souvenirs des Orangeois",
+      "summary": "Retrouvez Orange en 1967, le défilé des légionnaires rue Caristie, les commerces Abel, Toulouse, Blaise et les souvenirs du 1er REC.",
+      "image": {
+        "src": "/assets/photos/orange-legion-rue-caristie-1967.png",
+        "alt": "Orange en 1967, défilé du 1er Régiment étranger de cavalerie dans la rue Caristie, avec les légionnaires en képis blancs, les spectateurs aux balcons et les anciennes boutiques Reynard et Burotech.",
+        "width": "2048",
+        "height": "2048"
+      }
+    },
+    {
       "path": "Provence-Alpes-Cote-dAzur/Vaucluse/Valreas/cafe-valreassien-cafe-de-paris/index.html",
       "city_id": "valreas",
       "city": "Valréas",
