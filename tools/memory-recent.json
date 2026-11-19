@@ -122,6 +122,21 @@
       }
     },
     {
+      "path": "Auvergne-Rhone-Alpes/Rhone/Lyon/construction-tour-credit-lyonnais-crayon/index.html",
+      "city_id": "lyon",
+      "city": "Lyon",
+      "department": "Rhône",
+      "datePublished": "2026-11-19",
+      "title": "Lyon : la construction du Crayon à la Part-Dieu, les ouvriers et les souvenirs d'un chantier gigantesque",
+      "summary": "Retrouvez la construction du Crayon à Lyon, la tour du Crédit Lyonnais, la première pierre du 5 juin 1974 et les souvenirs des ouvriers de la Part-Dieu.",
+      "image": {
+        "src": "/assets/photos/lyon-construction-tour-credit-lyonnais-crayon.png",
+        "alt": "Construction de la tour du Crédit Lyonnais à Lyon dans les années 1970, avec deux grues, les échafaudages, les colonnes en béton et l'enseigne Crédit Lyonnais.",
+        "width": "650",
+        "height": "754"
+      }
+    },
+    {
       "path": "Auvergne-Rhone-Alpes/Rhone/Lyon/cours-de-verdun-perrache-autrefois/index.html",
       "city_id": "lyon",
       "city": "Lyon",
