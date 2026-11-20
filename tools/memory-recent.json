@@ -2702,6 +2702,21 @@
       }
     },
     {
+      "path": "Provence-Alpes-Cote-dAzur/Vaucluse/Carpentras/ancienne-usine-platrieres-velodrome-moulin/index.html",
+      "city_id": "carpentras",
+      "city": "Carpentras",
+      "department": "Vaucluse",
+      "datePublished": "2026-11-20",
+      "title": "Carpentras : le vélodrome Moulin, les Plâtrières et cette cheminée où les enfants grimpaient",
+      "summary": "Une photo aérienne de Carpentras révèle l'ancienne usine des Plâtrières, le vélodrome Moulin, l'aqueduc et les souvenirs des habitants avant le lycée Fabre.",
+      "image": {
+        "src": "/assets/photos/carpentras-platrieres-velodrome-moulin-meyer.png",
+        "alt": "Photographie aérienne ancienne de Carpentras par Firmin Meyer montrant l'aqueduc sur l'Auzon, le vélodrome Moulin, l'usine des Plâtrières de Vaucluse et les maisons du quartier avant la construction du lycée Jean-Henri Fabre.",
+        "width": "1406",
+        "height": "1060"
+      }
+    },
+    {
       "path": "Provence-Alpes-Cote-dAzur/Vaucluse/Carpentras/fontaine-lices-monteux-souvenirs/index.html",
       "city_id": "carpentras",
       "city": "Carpentras",
