@@ -2822,6 +2822,21 @@
       }
     },
     {
+      "path": "Provence-Alpes-Cote-dAzur/Vaucluse/Cavaillon/porte-du-moulin-hotel-dieu-souvenirs/index.html",
+      "city_id": "cavaillon",
+      "city": "Cavaillon",
+      "department": "Vaucluse",
+      "datePublished": "2026-11-20",
+      "title": "Cavaillon : la Porte du Moulin, l'ancien Hôtel-Dieu et les souvenirs des chevaux dans la Grand-Rue",
+      "summary": "Deux photos de Cavaillon racontent la Porte du Moulin, l'ancien Hôtel-Dieu, les chevaux chargés de raisin, l'école Castil-Blaze et les souvenirs des habitants.",
+      "image": {
+        "src": "/assets/photos/cavaillon-porte-moulin-hotel-dieu-attelage.png",
+        "alt": "Ancienne photographie de Cavaillon montrant un cheval tirant une charrette devant la Porte du Moulin, surmontée de la statue de la Vierge, et la chapelle de l'ancien Hôtel-Dieu.",
+        "width": "1068",
+        "height": "826"
+      }
+    },
+    {
       "path": "Provence-Alpes-Cote-dAzur/Vaucluse/Cavaillon/usine-guende-canal-saint-julien/index.html",
       "city_id": "cavaillon",
       "city": "Cavaillon",
