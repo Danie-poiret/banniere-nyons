@@ -767,6 +767,21 @@
       }
     },
     {
+      "path": "Hauts-de-France/Nord/Lille/brasserie-andre-rue-bethune-histoire/index.html",
+      "city_id": "lille",
+      "city": "Lille",
+      "department": "Nord",
+      "datePublished": "2026-11-20",
+      "title": "Lille : la Brasserie André, ces repas de famille qu'on n'a jamais oubliés depuis 1924",
+      "summary": "Découvrez l'histoire de la Brasserie André à Lille depuis 1924, son décor Decoene, ses anciens serveurs, ses spécialités et les souvenirs des Lillois.",
+      "image": {
+        "src": "/assets/photos/lille-brasserie-andre-facade-ancienne.png",
+        "alt": "Ancienne façade de la Brasserie André, rue de Béthune à Lille, avec balcons en fer forgé, grilles décoratives, jardinières et publicité Findlater's Port.",
+        "width": "1140",
+        "height": "1020"
+      }
+    },
+    {
       "path": "Hauts-de-France/Nord/Lille/caserne-vandamme-lille-souvenirs-militaires/index.html",
       "city_id": "lille",
       "city": "Lille",
