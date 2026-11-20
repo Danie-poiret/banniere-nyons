@@ -2102,6 +2102,21 @@
       }
     },
     {
+      "path": "Provence-Alpes-Cote-dAzur/Bouches-du-Rhone/Marseille/bonneveine-champ-de-courses-borely-souvenirs/index.html",
+      "city_id": "marseille",
+      "city": "Marseille",
+      "department": "Bouches-du-Rhône",
+      "datePublished": "2026-11-20",
+      "title": "Marseille : Bonneveine, le champ de courses de Borély et les souvenirs du bar Au Clair de Lune",
+      "summary": "Découvrez Bonneveine et l'hippodrome Borély vers 1900 : tramways, calèches, ancien Casino de la Plage et souvenirs du bar Au Clair de Lune.",
+      "image": {
+        "src": "/assets/photos/marseille-bonneveine-champ-courses-borely.png",
+        "alt": "Ancienne carte postale de Marseille vers 1900 montrant la promenade de la Plage à Bonneveine, devant l'hippodrome Borély, avec tramway électrique, nombreuses calèches, chevaux, spectateurs et collines peu construites.",
+        "width": "2001",
+        "height": "1217"
+      }
+    },
+    {
       "path": "Provence-Alpes-Cote-dAzur/Bouches-du-Rhone/Marseille/canebiere-grand-cafe-du-commerce-autrefois/index.html",
       "city_id": "marseille",
       "city": "Marseille",
