@@ -782,6 +782,21 @@
       }
     },
     {
+      "path": "Hauts-de-France/Nord/Lille/cafes-meo-premiere-boutique-1928/index.html",
+      "city_id": "lille",
+      "city": "Lille",
+      "department": "Nord",
+      "datePublished": "2026-11-20",
+      "title": "Lille en 1928 : les frères Méo vendaient des poulets avant de devenir les rois du café !",
+      "summary": "Découvrez les débuts des Cafés Méo à Lille en 1928. Avant de vendre du café, les frères Meauxsoone tenaient une épicerie de volailles rue Saint-André.",
+      "image": {
+        "src": "/assets/photos/lille-cafes-meo-premiere-epicerie-1928.png",
+        "alt": "Lille en 1928, Jules Meauxsoone devant la première épicerie des futurs Cafés Méo, rue Saint-André, avec une vitrine remplie de volailles suspendues et trois personnes devant le magasin.",
+        "width": "743",
+        "height": "473"
+      }
+    },
+    {
       "path": "Hauts-de-France/Nord/Lille/caserne-vandamme-lille-souvenirs-militaires/index.html",
       "city_id": "lille",
       "city": "Lille",
