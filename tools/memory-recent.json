@@ -2162,6 +2162,21 @@
       }
     },
     {
+      "path": "Provence-Alpes-Cote-dAzur/Bouches-du-Rhone/Marseille/dames-de-france-marseille-souvenirs/index.html",
+      "city_id": "marseille",
+      "city": "Marseille",
+      "department": "Bouches-du-Rhône",
+      "datePublished": "2026-11-20",
+      "title": "Marseille : Aux Dames de France, les vitrines de Noël, les liftiers et les souvenirs de la rue Saint-Ferréol",
+      "summary": "Marseille, rue Saint-Ferréol : retrouvez les Dames de France, leurs vitrines de Noël, leurs ascenseurs avec liftiers, leurs anciens employés et les souvenirs des familles.",
+      "image": {
+        "src": "/assets/photos/marseille-dames-france-vitrines-noel.png",
+        "alt": "Ancienne photographie de nuit du grand magasin Aux Dames de France à Marseille, avec son enseigne lumineuse, ses vitrines décorées et des voitures stationnées devant le bâtiment.",
+        "width": "1220",
+        "height": "822"
+      }
+    },
+    {
       "path": "Provence-Alpes-Cote-dAzur/Bouches-du-Rhone/Marseille/david-terrasses-bord-mer-avant-plages-prado/index.html",
       "city_id": "marseille",
       "city": "Marseille",
