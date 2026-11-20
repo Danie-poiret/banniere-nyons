@@ -917,6 +917,21 @@
       }
     },
     {
+      "path": "Hauts-de-France/Nord/Lille/fives-rue-pierre-legrand-tramway-commerces/index.html",
+      "city_id": "lille",
+      "city": "Lille",
+      "department": "Nord",
+      "datePublished": "2026-11-20",
+      "title": "Lille-Fives : la rue Pierre-Legrand, ses anciens commerces, le tramway G et les souvenirs d'un quartier populaire",
+      "summary": "Retrouvez la rue Pierre-Legrand à Fives autrefois : tramway G, ancienne mairie, dancing Fiviana, commerces disparus et souvenirs des habitants de Lille.",
+      "image": {
+        "src": "/assets/photos/lille-fives-rue-pierre-legrand-tramway-g.png",
+        "alt": "Ancienne carte postale de Lille-Fives montrant la rue Pierre-Legrand dans les années 1920, avec tramway G portant une publicité Bijoux FIX, commerces, passants et ancienne mairie au fond.",
+        "width": "1125",
+        "height": "697"
+      }
+    },
+    {
       "path": "Hauts-de-France/Nord/Lille/foire-internationale-lille-patinoire-concerts-souvenirs/index.html",
       "city_id": "lille",
       "city": "Lille",
