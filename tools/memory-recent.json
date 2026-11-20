@@ -2117,6 +2117,21 @@
       }
     },
     {
+      "path": "Provence-Alpes-Cote-dAzur/Bouches-du-Rhone/Marseille/canebiere-annees-1960-magasins-souvenirs/index.html",
+      "city_id": "marseille",
+      "city": "Marseille",
+      "department": "Bouches-du-Rhône",
+      "datePublished": "2026-11-20",
+      "title": "Marseille : la Canebière des années 1960, ses grands magasins, ses trolleybus et les souvenirs des Marseillais",
+      "summary": "La Canebière de Marseille vers 1965 : anciens magasins, hôtel Bristol, agence Air France, Cinéac, trolleybus Vétra et souvenirs des Marseillais.",
+      "image": {
+        "src": "/assets/photos/marseille-canebiere-annees-1960-trolleybus.png",
+        "alt": "Vue ancienne en couleur de la Canebière à Marseille, probablement vers 1963-1965, montrant les voitures, un trolleybus, l'hôtel Bristol, l'agence Air France et les commerces, avec les deux clochers des Réformés à l'arrière-plan.",
+        "width": "862",
+        "height": "582"
+      }
+    },
+    {
       "path": "Provence-Alpes-Cote-dAzur/Bouches-du-Rhone/Marseille/canebiere-grand-cafe-du-commerce-autrefois/index.html",
       "city_id": "marseille",
       "city": "Marseille",
