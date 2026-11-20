@@ -1052,6 +1052,21 @@
       }
     },
     {
+      "path": "Hauts-de-France/Nord/Lille/la-chicoree-place-rihour-ginette-souvenirs/index.html",
+      "city_id": "lille",
+      "city": "Lille",
+      "department": "Nord",
+      "datePublished": "2026-11-20",
+      "title": "Lille : La Chicorée, les nuits blanches, la soupe à l'oignon et les souvenirs de Ginette",
+      "summary": "Retrouvez l'histoire de La Chicorée à Lille, place Rihour : Ginette Becker, les soupes à l'oignon à 5 heures du matin, les artistes et les souvenirs des habitués.",
+      "image": {
+        "src": "/assets/photos/lille-la-chicoree-place-rihour-ancienne.png",
+        "alt": "Lille, place Rihour dans les années 1910, ancienne vue des immeubles et commerces avec passants traversant la chaussée, près de l'emplacement historique de la brasserie La Chicorée.",
+        "width": "742",
+        "height": "390"
+      }
+    },
+    {
       "path": "Hauts-de-France/Nord/Lille/les-biscottes-lille-sud-1984-souvenirs/index.html",
       "city_id": "lille",
       "city": "Lille",
