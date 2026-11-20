@@ -2537,6 +2537,21 @@
       }
     },
     {
+      "path": "Provence-Alpes-Cote-dAzur/Vaucluse/Avignon/place-belle-croix-petite-italie-carreterie/index.html",
+      "city_id": "avignon",
+      "city": "Avignon",
+      "department": "Vaucluse",
+      "datePublished": "2026-11-20",
+      "title": "Avignon : la place Belle-Croix, la Petite Italie et tous ces commerces que les habitants n'ont pas oubliés",
+      "summary": "Retrouvez la place Belle-Croix à Avignon : Petite Italie, anciens commerces de la Carreterie, cinéma Roxy, pharmacie Dulcy, pompiers et souvenirs des habitants.",
+      "image": {
+        "src": "/assets/photos/avignon-place-belle-croix-carte-postale.png",
+        "alt": "Ancienne carte postale de la place Belle-Croix à Avignon, au croisement des rues Carreterie et des Infirmières, montrant la croix monumentale, des publicités peintes, des commerces, des habitants et des voitures à cheval.",
+        "width": "1220",
+        "height": "748"
+      }
+    },
+    {
       "path": "Provence-Alpes-Cote-dAzur/Vaucluse/Avignon/quartier-balance-avant-demolition/index.html",
       "city_id": "avignon",
       "city": "Avignon",
