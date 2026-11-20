@@ -737,6 +737,21 @@
       }
     },
     {
+      "path": "Hauts-de-France/Nord/Lille/bidule-rue-de-bethune-anciens-commerces/index.html",
+      "city_id": "lille",
+      "city": "Lille",
+      "department": "Nord",
+      "datePublished": "2026-11-20",
+      "title": "Lille : chez Bidule, rue de Béthune, quand on faisait les magasins avant d'aller au cinéma",
+      "summary": "À Lille, retrouvez la rue de Béthune avant 1974 : Bidule, Gribouille, le Caméo, l'hôtel du Commerce, les boutiques disparues et les souvenirs des Lillois.",
+      "image": {
+        "src": "/assets/photos/lille-bidule-rue-de-bethune-avant-1974.png",
+        "alt": "Lille, ancienne photographie de la rue de Béthune avant sa piétonnisation, avec voitures, passants, magasin Bidule, hôtel du Commerce, cinémas et enseignes des commerces.",
+        "width": "664",
+        "height": "738"
+      }
+    },
+    {
       "path": "Hauts-de-France/Nord/Lille/boulevard-strasbourg-marcel-bertrand-souvenirs/index.html",
       "city_id": "lille",
       "city": "Lille",
