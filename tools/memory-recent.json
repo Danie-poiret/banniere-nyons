@@ -2402,6 +2402,21 @@
       }
     },
     {
+      "path": "Provence-Alpes-Cote-dAzur/Vaucluse/Avignon/avignon-1856-gare-canal-cours-bonaparte/index.html",
+      "city_id": "avignon",
+      "city": "Avignon",
+      "department": "Vaucluse",
+      "datePublished": "2026-11-20",
+      "title": "Avignon en 1856 : la gare, le canal disparu et la naissance du cours Bonaparte",
+      "summary": "Découvrez Avignon en 1856 sur une photographie d'Édouard Baldus : l'ancienne gare, le canal disparu, la percée Bonaparte et la porte de la République.",
+      "image": {
+        "src": "/assets/photos/avignon-1856-gare-cours-bonaparte-baldus.png",
+        "alt": "Photographie d'Avignon en 1856 par Édouard Baldus, prise depuis la gare vers le centre-ville, montrant les grilles, les jeunes plantations, les anciens bâtiments et l'ouverture pratiquée dans les remparts avant la construction de la porte de la République.",
+        "width": "2048",
+        "height": "1429"
+      }
+    },
+    {
       "path": "Provence-Alpes-Cote-dAzur/Vaucluse/Avignon/avignon-champfleury-accordeoniste-1966/index.html",
       "city_id": "avignon",
       "city": "Avignon",
