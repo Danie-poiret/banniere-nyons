@@ -1502,6 +1502,21 @@
       }
     },
     {
+      "path": "Hauts-de-France/Nord/Lille/tramway-telb-porte-de-paris-suze-reina/index.html",
+      "city_id": "lille",
+      "city": "Lille",
+      "department": "Nord",
+      "datePublished": "2026-11-21",
+      "title": "Lille : le tramway devant la Porte de Paris, les publicités Suze et Reina et les souvenirs des anciennes lignes",
+      "summary": "Lille autrefois : un tramway TELB devant la Porte de Paris, les publicités Suze et Reina, les lignes F et I barré et les souvenirs des habitants.",
+      "image": {
+        "src": "/assets/photos/lille-tramway-telb-porte-paris-suze-reina.png",
+        "alt": "Ancienne photographie en noir et blanc d'un tramway électrique de Lille devant la Porte de Paris, avec publicité Suze sur le toit, réclame Lion Noir, café à l'angle et beffroi de l'hôtel de ville à l'arrière-plan.",
+        "width": "1179",
+        "height": "810"
+      }
+    },
+    {
       "path": "Hauts-de-France/Nord/Lille/vega-store-lille-lem-discotheque/index.html",
       "city_id": "lille",
       "city": "Lille",
