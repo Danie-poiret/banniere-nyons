@@ -677,6 +677,21 @@
       }
     },
     {
+      "path": "Hauts-de-France/Nord/Lille/anciennes-halles-solferino-marche-nuit-souvenirs/index.html",
+      "city_id": "lille",
+      "city": "Lille",
+      "department": "Nord",
+      "datePublished": "2026-11-21",
+      "title": "Lille : les anciennes Halles de Solférino, le marché de nuit et les bouchers qu'on n'a pas oubliés",
+      "summary": "Découvrez les anciennes Halles centrales de Lille : marché de nuit, grossistes, boucheries Delestré et Charlet, souvenirs des commerçants et transformation en Match.",
+      "image": {
+        "src": "/assets/photos/lille-halles-solferino-marche-voitures.png",
+        "alt": "Ancienne photographie des Halles centrales de Lille, rue Solférino, probablement dans les années 1970, montrant la grande halle métallique, de nombreuses voitures stationnées, un camion Sénéchal Viandes en gros et le clocher du Sacré-Cœur à l'arrière-plan.",
+        "width": "987",
+        "height": "554"
+      }
+    },
+    {
       "path": "Hauts-de-France/Nord/Lille/anciens-abattoirs-rue-saint-sebastien/index.html",
       "city_id": "lille",
       "city": "Lille",
