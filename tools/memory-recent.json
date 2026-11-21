@@ -152,6 +152,21 @@
       }
     },
     {
+      "path": "Auvergne-Rhone-Alpes/Rhone/Lyon/depot-de-cuire-caluire-trolleybus/index.html",
+      "city_id": "lyon",
+      "city": "Lyon",
+      "department": "Rhône",
+      "datePublished": "2026-11-21",
+      "title": "Lyon : le dépôt de Cuire, ses anciens trolleybus et les souvenirs des conducteurs",
+      "summary": "Découvrez l'ancien dépôt de Cuire à Caluire-et-Cuire, les trolleybus des lignes 6, 13 et 33, les souvenirs des conducteurs et l'histoire de la rue Coste.",
+      "image": {
+        "src": "/assets/photos/lyon-depot-cuire-trolleybus-ligne-33.png",
+        "alt": "Ancien dépôt de Cuire rue Coste à Caluire-et-Cuire, avec un trolleybus de la ligne 33, les hangars, l'horloge centrale et les fils électriques aériens.",
+        "width": "2048",
+        "height": "1500"
+      }
+    },
+    {
       "path": "Auvergne-Rhone-Alpes/Rhone/Lyon/fresque-des-lyonnais-souvenirs-quai-saint-vincent/index.html",
       "city_id": "lyon",
       "city": "Lyon",
