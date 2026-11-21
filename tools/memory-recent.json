@@ -1322,6 +1322,21 @@
       }
     },
     {
+      "path": "Hauts-de-France/Nord/Lille/rue-de-la-barre-ecole-charlemagne-rue-des-bouchers/index.html",
+      "city_id": "lille",
+      "city": "Lille",
+      "department": "Nord",
+      "datePublished": "2026-11-21",
+      "title": "Lille : la rue de la Barre autrefois, l'école Charlemagne, les anciens commerces et les souvenirs du Vieux-Lille",
+      "summary": "La rue de la Barre à Lille autrefois : école Charlemagne, salon de coiffure de la rue des Bouchers, couvent des Madelonnettes et souvenirs du Vieux-Lille.",
+      "image": {
+        "src": "/assets/photos/lille-rue-barre-rue-bouchers-charlemagne.png",
+        "alt": "Ancienne photographie de la rue de la Barre à Lille, près de la rue des Bouchers et de la rue Esquermoise, montrant les pavés, les boutiques, les fenêtres des anciennes maisons et un grand immeuble à balcons au fond.",
+        "width": "709",
+        "height": "846"
+      }
+    },
+    {
       "path": "Hauts-de-France/Nord/Lille/rue-de-la-clef-quincaillerie-souvenirs/index.html",
       "city_id": "lille",
       "city": "Lille",
