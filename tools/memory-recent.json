@@ -977,6 +977,21 @@
       }
     },
     {
+      "path": "Hauts-de-France/Nord/Lille/gaumont-rue-de-bethune-huit-cinemas-souvenirs/index.html",
+      "city_id": "lille",
+      "city": "Lille",
+      "department": "Nord",
+      "datePublished": "2026-11-21",
+      "title": "Lille : le Gaumont de la rue de Béthune, ses huit cinémas et les souvenirs des années 1970-1980",
+      "summary": "À Lille, retrouvez le Gaumont de la rue de Béthune, ses huit salles, les films des années 1970, les ouvreuses, le Paon d'Or et les souvenirs des Lillois.",
+      "image": {
+        "src": "/assets/photos/lille-gaumont-rue-bethune-huit-cinemas.png",
+        "alt": "Ancienne photographie en couleur du cinéma Gaumont à Lille, rue de Béthune, vers 1978, montrant sa grande enseigne verticale, son logo en forme de marguerite, l'inscription « 8 Cinémas » et les affiches des films à l'entrée.",
+        "width": "646",
+        "height": "765"
+      }
+    },
+    {
       "path": "Hauts-de-France/Nord/Lille/grand-place-lille-tramways-furet-du-nord/index.html",
       "city_id": "lille",
       "city": "Lille",
