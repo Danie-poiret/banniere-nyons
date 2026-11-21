@@ -2612,6 +2612,21 @@
       }
     },
     {
+      "path": "Provence-Alpes-Cote-dAzur/Vaucluse/Avignon/cinema-palladium-rio-avignon-souvenirs/index.html",
+      "city_id": "avignon",
+      "city": "Avignon",
+      "department": "Vaucluse",
+      "datePublished": "2026-11-21",
+      "title": "Avignon : le Palladium, devenu le Rio, ses ouvreuses et les souvenirs du cinéma de la rue de la République",
+      "summary": "Le Palladium d'Avignon, ouvert en 1928 puis devenu le Rio : retrouvez ses films, ses ouvreuses, la famille Pezet et les souvenirs de la rue de la République.",
+      "image": {
+        "src": "/assets/photos/avignon-cinema-palladium-rio-facade.png",
+        "alt": "Ancienne photographie du cinéma Palladium à Avignon, rue de la République, probablement vers 1928, montrant une foule de spectateurs devant l'entrée, des hommes en costume et chapeau, des femmes en robe, et plusieurs personnes aux fenêtres de l'étage.",
+        "width": "868",
+        "height": "834"
+      }
+    },
+    {
       "path": "Provence-Alpes-Cote-dAzur/Vaucluse/Avignon/compagnie-brandebourg-avignon-1944/index.html",
       "city_id": "avignon",
       "city": "Avignon",
