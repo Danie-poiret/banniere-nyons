@@ -212,6 +212,21 @@
       }
     },
     {
+      "path": "Auvergne-Rhone-Alpes/Rhone/Lyon/place-antonin-poncet-parking-annees-1970-charite/index.html",
+      "city_id": "lyon",
+      "city": "Lyon",
+      "department": "Rhône",
+      "datePublished": "2026-11-21",
+      "title": "Lyon : la place Antonin-Poncet dans les années 1970, son parking disparu, le cinéma Royal et les enfants de la Charité",
+      "summary": "La place Antonin-Poncet à Lyon dans les années 1970 : ancien parking, cinéma Royal, hôpital de la Charité, souvenirs des Lyonnais et transformations de 1993.",
+      "image": {
+        "src": "/assets/photos/lyon-place-antonin-poncet-parking-annees-1970-charite.png",
+        "alt": "Ancienne photographie en couleur de la place Antonin-Poncet à Lyon vers 1972-1975, montrant un grand parking rempli de voitures, le clocher de l'ancien hôpital de la Charité, le cinéma Royal, les immeubles de Bellecour et la basilique de Fourvière à l'arrière-plan.",
+        "width": "1597",
+        "height": "1131"
+      }
+    },
+    {
       "path": "Auvergne-Rhone-Alpes/Rhone/Lyon/place-cordeliers-lyon-autrefois/index.html",
       "city_id": "lyon",
       "city": "Lyon",
