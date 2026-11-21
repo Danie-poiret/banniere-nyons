@@ -1322,6 +1322,21 @@
       }
     },
     {
+      "path": "Hauts-de-France/Nord/Lille/restaurant-aux-moules-rue-bethune-ancien-cinema/index.html",
+      "city_id": "lille",
+      "city": "Lille",
+      "department": "Nord",
+      "datePublished": "2026-11-21",
+      "title": "Lille : Aux Moules, l'ancien cinéma de la rue de Béthune et ces montagnes de coquilles qu'on n'a jamais oubliées",
+      "summary": "Découvrez l'histoire du restaurant Aux Moules à Lille, son ancien cinéma, ses montagnes de coquilles pendant la braderie et les souvenirs des employés et habitués.",
+      "image": {
+        "src": "/assets/photos/lille-aux-moules-ancien-cinema-rue-bethune.png",
+        "alt": "Ancienne carte postale de Lille montrant une foule rue de Béthune, un attelage, des bicyclettes, des passants et un café-cinéma portant les inscriptions CINÉMA, BOCK et EXCELSIOR, à l'angle de la rue des Molfonds.",
+        "width": "733",
+        "height": "558"
+      }
+    },
+    {
       "path": "Hauts-de-France/Nord/Lille/rue-de-la-barre-ecole-charlemagne-rue-des-bouchers/index.html",
       "city_id": "lille",
       "city": "Lille",
