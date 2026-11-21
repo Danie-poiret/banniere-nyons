@@ -1307,6 +1307,21 @@
       }
     },
     {
+      "path": "Hauts-de-France/Nord/Lille/rue-faidherbe-lille-bombardement-octobre-1914/index.html",
+      "city_id": "lille",
+      "city": "Lille",
+      "department": "Nord",
+      "datePublished": "2026-11-21",
+      "title": "Lille, octobre 1914 : la rue Faidherbe en ruines, le bombardement et les souvenirs d'une ville dévastée",
+      "summary": "Lille en octobre 1914 : la rue Faidherbe dévastée, les bombardements allemands, l'Opéra, la Chambre de commerce et les souvenirs des familles.",
+      "image": {
+        "src": "/assets/photos/lille-rue-faidherbe-bombardement-octobre-1914.png",
+        "alt": "Carte postale ancienne montrant les ruines de la rue Faidherbe à Lille après les bombardements allemands d'octobre 1914, avec les façades détruites, le beffroi de la Chambre de commerce et le nouvel Opéra à l'arrière-plan.",
+        "width": "991",
+        "height": "642"
+      }
+    },
+    {
       "path": "Hauts-de-France/Nord/Lille/rue-nationale-lille-1950-traction-commerces/index.html",
       "city_id": "lille",
       "city": "Lille",
