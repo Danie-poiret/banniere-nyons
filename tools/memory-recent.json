@@ -1232,6 +1232,21 @@
       }
     },
     {
+      "path": "Hauts-de-France/Nord/Lille/place-theatre-rue-manneliers-lille-1910/index.html",
+      "city_id": "lille",
+      "city": "Lille",
+      "department": "Nord",
+      "datePublished": "2026-11-21",
+      "title": "Lille en 1910 : la place du Théâtre, ses tramways sans perche et la rue des Manneliers",
+      "summary": "Lille en 1910 : découvrez la place du Théâtre, les anciens tramways sans perche, la rue des Manneliers, le rang du Beauregard et le palais Rihour.",
+      "image": {
+        "src": "/assets/photos/lille-place-theatre-rue-manneliers-1910.png",
+        "alt": "Carte postale ancienne de Lille, oblitérée en 1910, montrant la place du Théâtre, un tramway électrique sans perche visible, les massifs fleuris, une voiture à cheval et les façades du rang du Beauregard devant la rue des Manneliers.",
+        "width": "1200",
+        "height": "752"
+      }
+    },
+    {
       "path": "Hauts-de-France/Nord/Lille/prisunic-rue-gambetta-lille/index.html",
       "city_id": "lille",
       "city": "Lille",
