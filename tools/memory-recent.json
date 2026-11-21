@@ -2792,6 +2792,21 @@
       }
     },
     {
+      "path": "Provence-Alpes-Cote-dAzur/Vaucluse/Avignon/rue-carreterie-clocher-augustins-commerces-souvenirs/index.html",
+      "city_id": "avignon",
+      "city": "Avignon",
+      "department": "Vaucluse",
+      "datePublished": "2026-11-21",
+      "title": "Avignon : les enfants de la Carreterie, le clocher penché et ces anciens commerces qu'on n'a pas oubliés",
+      "summary": "Découvrez la rue Carreterie à Avignon, son clocher penché, la pharmacie Dulcy, les cycles Bayle, les anciens commerces et les souvenirs du quartier italien.",
+      "image": {
+        "src": "/assets/photos/avignon-rue-infirmieres-carmes-carte-postale.png",
+        "alt": "Ancienne carte postale de la rue des Infirmières à Avignon, près de la place des Carmes, montrant des enfants, des passants, une voiture à bras, des maisons anciennes et des boutiques.",
+        "width": "1000",
+        "height": "620"
+      }
+    },
+    {
       "path": "Provence-Alpes-Cote-dAzur/Vaucluse/Avignon/vieux-toits-palais-des-papes-balance/index.html",
       "city_id": "avignon",
       "city": "Avignon",
