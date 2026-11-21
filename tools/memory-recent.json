@@ -1037,6 +1037,21 @@
       }
     },
     {
+      "path": "Hauts-de-France/Nord/Lille/huitriere-rue-chats-bossus-histoire-souvenirs/index.html",
+      "city_id": "lille",
+      "city": "Lille",
+      "department": "Nord",
+      "datePublished": "2026-11-21",
+      "title": "Lille : L'Huîtrière, ses décors Art déco, ses crêpes Suzette et les souvenirs de la rue des Chats-Bossus",
+      "summary": "Lille, rue des Chats-Bossus : retrouvez L'Huîtrière, ses mosaïques Art déco, la famille Proye, les crêpes Suzette et les souvenirs des anciens clients.",
+      "image": {
+        "src": "/assets/photos/lille-huitriere-rue-chats-bossus-facade.png",
+        "alt": "Ancienne photographie de L'Huîtrière à Lille, rue des Chats-Bossus, présentée comme datant de 1940-1941, avec sa façade Art déco ornée de mosaïques marines, ses vitrines, plusieurs adultes, des enfants et une bicyclette.",
+        "width": "1179",
+        "height": "828"
+      }
+    },
+    {
       "path": "Hauts-de-France/Nord/Lille/jardin-enfants-pataugeoire-citadelle-lille/index.html",
       "city_id": "lille",
       "city": "Lille",
