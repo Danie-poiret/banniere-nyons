@@ -167,6 +167,21 @@
       }
     },
     {
+      "path": "Auvergne-Rhone-Alpes/Rhone/Lyon/duchere-plateau-erables-1985/index.html",
+      "city_id": "lyon",
+      "city": "Lyon",
+      "department": "Rhône",
+      "datePublished": "2026-11-22",
+      "title": "Lyon : la barre des Érables à la Duchère en 1985… qui se souvient de tous ces voisins ?",
+      "summary": "Retrouvez le Plateau de la Duchère à Lyon en 1985, la barre des Érables, les anciens immeubles, les écoles, les familles et les souvenirs des habitants.",
+      "image": {
+        "src": "/assets/photos/lyon-duchere-plateau-erables-1985.png",
+        "alt": "Le Plateau de la Duchère à Lyon en 1985, avec la grande barre des Érables à droite, un immeuble voisin à gauche, une route en virage et un panneau indiquant le Château, le Plateau et la Sauvegarde.",
+        "width": "1002",
+        "height": "687"
+      }
+    },
+    {
       "path": "Auvergne-Rhone-Alpes/Rhone/Lyon/fresque-des-lyonnais-souvenirs-quai-saint-vincent/index.html",
       "city_id": "lyon",
       "city": "Lyon",
