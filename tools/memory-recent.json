@@ -1652,6 +1652,21 @@
       }
     },
     {
+      "path": "Hauts-de-France/Nord/Lille/vieille-aventure-wazemmes-loterie-1905/index.html",
+      "city_id": "lille",
+      "city": "Lille",
+      "department": "Nord",
+      "datePublished": "2026-11-22",
+      "title": "Lille : en 1905, une famille pauvre de Wazemmes gagne un million de francs… et tout le quartier vient la voir !",
+      "summary": "En 1905, Georges Messing et sa sœur gagnent un million de francs à Lille. Découvrez la Vieille-Aventure, son théâtre de marionnettes et l'histoire de Wazemmes.",
+      "image": {
+        "src": "/assets/photos/lille-vieille-aventure-wazemmes-loterie-1905.png",
+        "alt": "Lille en 1905, habitants rassemblés dans l'allée pavée de la Vieille-Aventure à Wazemmes, devant le domicile de Georges Messing et de la famille Gelper, gagnants d'un million de francs à la loterie.",
+        "width": "660",
+        "height": "1039"
+      }
+    },
+    {
       "path": "Hauts-de-France/Nord/Lille/vieux-lille-1975-vie-populaire/index.html",
       "city_id": "lille",
       "city": "Lille",
