@@ -2042,6 +2042,21 @@
       }
     },
     {
+      "path": "Hauts-de-France/Nord/Tourcoing/rue-de-lille-pietonne-anciens-commerces/index.html",
+      "city_id": "tourcoing",
+      "city": "Tourcoing",
+      "department": "Nord",
+      "datePublished": "2026-11-22",
+      "title": "Tourcoing : où sont passés tous les commerces de la rue de Lille ?",
+      "summary": "Retrouvez la rue de Lille piétonne à Tourcoing, Locatel, le Disco Club, Utility, Seasley et les souvenirs des anciens commerces des années 1970-1980.",
+      "image": {
+        "src": "/assets/photos/tourcoing-rue-lille-pietonne-locatel-commerces.png",
+        "alt": "Ancienne carte postale en couleur de la rue de Lille piétonne à Tourcoing, avec les enseignes Locatel et Georges, des magasins, des passants, des bacs à fleurs et des décorations suspendues au-dessus de la rue.",
+        "width": "704",
+        "height": "487"
+      }
+    },
+    {
       "path": "Hauts-de-France/Pas-de-Calais/Boulogne-sur-Mer/nouvelles-galeries-boulogne-sur-mer/index.html",
       "city_id": "boulogne-sur-mer",
       "city": "Boulogne-sur-Mer",
