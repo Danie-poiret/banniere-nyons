@@ -272,6 +272,21 @@
       }
     },
     {
+      "path": "Auvergne-Rhone-Alpes/Rhone/Lyon/quartier-mermoz-lyon-annees-1960/index.html",
+      "city_id": "lyon",
+      "city": "Lyon",
+      "department": "Rhône",
+      "datePublished": "2026-11-22",
+      "title": "Lyon : cette photo du quartier Mermoz ne date probablement pas des années 80… voici pourquoi !",
+      "summary": "Découvrez le quartier Mermoz à Lyon avant l'autopont de 1973 : anciennes tours, piscine, écoles, commerces et souvenirs des habitants de Mermoz Nord et Sud.",
+      "image": {
+        "src": "/assets/photos/lyon-quartier-mermoz-vue-aerienne-annees-1960.png",
+        "alt": "Vue aérienne ancienne du quartier Mermoz à Lyon dans les années 1960, montrant les tours de Mermoz Nord, les barres d'immeubles de Mermoz Sud, les cours, les espaces verts et les voies de circulation avant la construction de l'autopont.",
+        "width": "1385",
+        "height": "981"
+      }
+    },
+    {
       "path": "Auvergne-Rhone-Alpes/Rhone/Lyon/traboules-lyon-croix-rousse-cour-des-voraces/index.html",
       "city_id": "lyon",
       "city": "Lyon",
