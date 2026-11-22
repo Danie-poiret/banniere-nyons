@@ -212,6 +212,21 @@
       }
     },
     {
+      "path": "Auvergne-Rhone-Alpes/Rhone/Lyon/illuminations-8-decembre-noel-autrefois/index.html",
+      "city_id": "lyon",
+      "city": "Lyon",
+      "department": "Rhône",
+      "datePublished": "2026-11-22",
+      "title": "Lyon : quand le 8 décembre illuminait les fenêtres, les vitrines et toute la rue de la République !",
+      "summary": "Retrouvez les illuminations du 8 décembre à Lyon dans les années 1960-1970 : le sapin des Terreaux, la rue de la République, les vitrines de Noël et les souvenirs des Lyonnais.",
+      "image": {
+        "src": "/assets/photos/lyon-sapin-noel-terreaux-illuminations-anciennes.png",
+        "alt": "Grand sapin de Noël illuminé place des Terreaux à Lyon dans les années 1960-1970, devant l'Hôtel de Ville éclairé, avec son horloge et son dôme.",
+        "width": "843",
+        "height": "818"
+      }
+    },
+    {
       "path": "Auvergne-Rhone-Alpes/Rhone/Lyon/opera-lyon-grand-theatre/index.html",
       "city_id": "lyon",
       "city": "Lyon",
