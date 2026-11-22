@@ -1952,6 +1952,21 @@
       }
     },
     {
+      "path": "Hauts-de-France/Nord/Tourcoing/chateau-du-bailly-tourcoing-1870/index.html",
+      "city_id": "tourcoing",
+      "city": "Tourcoing",
+      "department": "Nord",
+      "datePublished": "2026-11-22",
+      "title": "Tourcoing : le château du Bailly, ce monument disparu en 1877 que presque personne n'a connu",
+      "summary": "Découvrez le château du Bailly à Tourcoing vers 1870, son histoire médiévale, ses anciens fossés et sa disparition en 1877, près de Saint-Christophe.",
+      "image": {
+        "src": "/assets/photos/tourcoing-chateau-bailly-vers-1870.png",
+        "alt": "Ancienne photographie du château du Bailly à Tourcoing vers 1870, montrant sa façade nord, sa tourelle, ses bâtiments en briques et le mur bordant l'église Saint-Christophe.",
+        "width": "955",
+        "height": "746"
+      }
+    },
+    {
       "path": "Hauts-de-France/Pas-de-Calais/Boulogne-sur-Mer/nouvelles-galeries-boulogne-sur-mer/index.html",
       "city_id": "boulogne-sur-mer",
       "city": "Boulogne-sur-Mer",

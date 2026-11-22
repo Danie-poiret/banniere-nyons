@@ -591,6 +591,19 @@
       "existing": false,
       "legacy": [],
       "unified_card_grid": true
+    },
+    {
+      "id": "tourcoing",
+      "name": "Tourcoing",
+      "path": "Hauts-de-France/Nord/Tourcoing",
+      "department": "Nord",
+      "region": "Hauts-de-France",
+      "intro": "Retrouvez Tourcoing à travers ses photographies anciennes, ses bâtiments disparus et les souvenirs du centre-ville. Le château du Bailly ouvre ces récits consacrés au patrimoine et à la vie des Tourquennois.",
+      "title": "Tourcoing autrefois : patrimoine, quartiers et souvenirs",
+      "description": "Découvrez Tourcoing autrefois : le château du Bailly, le centre ancien, les bâtiments disparus et les souvenirs des habitants, avec leurs photographies anciennes.",
+      "existing": false,
+      "legacy": [],
+      "unified_card_grid": true
     }
   ],
   "legacy_allowed_paths": [
