@@ -1172,6 +1172,21 @@
       }
     },
     {
+      "path": "Hauts-de-France/Nord/Lille/manufrance-rue-nationale-magasin-souvenirs/index.html",
+      "city_id": "lille",
+      "city": "Lille",
+      "department": "Nord",
+      "datePublished": "2026-11-22",
+      "title": "Lille : Manufrance, ce grand magasin de la rue Nationale… comment un tel géant a-t-il pu disparaître ?",
+      "summary": "Retrouvez Manufrance à Lille, son grand magasin du 122 rue Nationale, les vélos Hirondelle, les catalogues et l'histoire de sa faillite en 1985.",
+      "image": {
+        "src": "/assets/photos/lille-e-pourrez-place-sebastopol-cycles-svelte.png",
+        "alt": "Ancienne devanture d'E. Pourrez, constructeur de cycles au 8 place Sébastopol à Lille, avec les vélos Svelte exposés dans les vitrines, les publicités Dunlop et l'atelier de réparation.",
+        "width": "850",
+        "height": "552"
+      }
+    },
+    {
       "path": "Hauts-de-France/Nord/Lille/marche-fleurs-grand-echo-nord-lille-autrefois/index.html",
       "city_id": "lille",
       "city": "Lille",
