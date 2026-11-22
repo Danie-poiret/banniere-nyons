@@ -287,6 +287,21 @@
       }
     },
     {
+      "path": "Auvergne-Rhone-Alpes/Rhone/Lyon/plus-ancienne-photo-lyon-1840-pont-change/index.html",
+      "city_id": "lyon",
+      "city": "Lyon",
+      "department": "Rhône",
+      "datePublished": "2026-11-22",
+      "title": "Lyon : cette photographie de 1840 montre un pont disparu et une ville qu'on ne reconnaît presque plus !",
+      "summary": "Découvrez la photographie de Lyon vers 1840 par Félix Richard : le pont du Change disparu, les Pentes de la Croix-Rousse et les immeubles des canuts.",
+      "image": {
+        "src": "/assets/photos/lyon-1840-pont-change-felix-richard.png",
+        "alt": "Daguerréotype de Lyon vers 1840 attribué à Félix Richard, montrant l'ancien pont de pierre du Change sur la Saône, les bâtiments bordant ses arches, les immeubles des Pentes de la Croix-Rousse et l'église Saint-Bruno-des-Chartreux.",
+        "width": "900",
+        "height": "506"
+      }
+    },
+    {
       "path": "Auvergne-Rhone-Alpes/Rhone/Lyon/pont-lafayette-fourviere-annees-1960/index.html",
       "city_id": "lyon",
       "city": "Lyon",
