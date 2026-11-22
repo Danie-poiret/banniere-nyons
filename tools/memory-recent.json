@@ -1967,6 +1967,21 @@
       }
     },
     {
+      "path": "Hauts-de-France/Nord/Tourcoing/gare-tourcoing-ancienne-verriere-cheminots/index.html",
+      "city_id": "tourcoing",
+      "city": "Tourcoing",
+      "department": "Nord",
+      "datePublished": "2026-11-22",
+      "title": "Tourcoing : pourquoi a-t-on fait disparaître l'immense verrière de la gare ?",
+      "summary": "Découvrez la gare de Tourcoing en 1905 avec son immense verrière, les locomotives à vapeur, les souvenirs des cheminots et le film avec Belmondo.",
+      "image": {
+        "src": "/assets/photos/tourcoing-gare-ancienne-verriere-locomotive.png",
+        "alt": "Ancienne carte postale de l'intérieur de la gare de Tourcoing, avec sa grande verrière métallique couvrant les voies, une locomotive à vapeur, des quais et une passerelle.",
+        "width": "744",
+        "height": "468"
+      }
+    },
+    {
       "path": "Hauts-de-France/Pas-de-Calais/Boulogne-sur-Mer/nouvelles-galeries-boulogne-sur-mer/index.html",
       "city_id": "boulogne-sur-mer",
       "city": "Boulogne-sur-Mer",
