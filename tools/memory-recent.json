@@ -1982,6 +1982,21 @@
       }
     },
     {
+      "path": "Hauts-de-France/Nord/Tourcoing/cinema-abc-central-cine-rue-nationale/index.html",
+      "city_id": "tourcoing",
+      "city": "Tourcoing",
+      "department": "Nord",
+      "datePublished": "2026-11-22",
+      "title": "Tourcoing : qui se souvient du cinéma ABC, de ses trois salles et de toutes ces soirées rue Nationale ?",
+      "summary": "Retrouvez le cinéma ABC rue Nationale à Tourcoing, ses trois salles, l'ancien Central Ciné, les Arcades et les souvenirs des spectateurs.",
+      "image": {
+        "src": "/assets/photos/tourcoing-cinema-abc-central-rue-nationale.png",
+        "alt": "Ancien cinéma ABC au 31 rue Nationale à Tourcoing, avec sa grande enseigne verticale ABC, l'inscription trois salles trois films, l'agence immobilière Abrinor et les voitures stationnées dans la rue.",
+        "width": "520",
+        "height": "720"
+      }
+    },
+    {
       "path": "Hauts-de-France/Nord/Tourcoing/gare-tourcoing-ancienne-verriere-cheminots/index.html",
       "city_id": "tourcoing",
       "city": "Tourcoing",
@@ -1994,6 +2009,21 @@
         "alt": "Ancienne carte postale de l'intérieur de la gare de Tourcoing, avec sa grande verrière métallique couvrant les voies, une locomotive à vapeur, des quais et une passerelle.",
         "width": "744",
         "height": "468"
+      }
+    },
+    {
+      "path": "Hauts-de-France/Nord/Tourcoing/place-victoire-tourcoing-tramway-516-bus-1973/index.html",
+      "city_id": "tourcoing",
+      "city": "Tourcoing",
+      "department": "Nord",
+      "datePublished": "2026-11-22",
+      "title": "Tourcoing : en 1973, le tramway et les autobus partageaient encore la place de la Victoire… qu'est-ce qui a changé ?",
+      "summary": "Retrouvez la place de la Victoire à Tourcoing le 31 mars 1973, avec le tramway 516, l'autobus 12, les anciens commerces et les souvenirs des habitants.",
+      "image": {
+        "src": "/assets/photos/tourcoing-place-victoire-tramway-516-bus-1973.png",
+        "alt": "Place de la Victoire à Tourcoing le 31 mars 1973, avec un tramway Mongy numéro 516, un autobus de la ligne 12 portant une publicité Hourez, les rails dans les pavés, les voitures et les anciens commerces.",
+        "width": "1024",
+        "height": "725"
       }
     },
     {
