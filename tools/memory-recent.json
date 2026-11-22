@@ -287,6 +287,21 @@
       }
     },
     {
+      "path": "Auvergne-Rhone-Alpes/Rhone/Lyon/pont-lafayette-fourviere-annees-1960/index.html",
+      "city_id": "lyon",
+      "city": "Lyon",
+      "department": "Rhône",
+      "datePublished": "2026-11-22",
+      "title": "Lyon : cette photo du pont Lafayette est-elle vraiment des années 70 ? Regardez les détails !",
+      "summary": "Découvrez une ancienne photographie du pont Lafayette à Lyon, avec Fourvière, les Galeries Lafayette des Cordeliers et l'histoire du pont détruit en 1944.",
+      "image": {
+        "src": "/assets/photos/lyon-pont-lafayette-fourviere-annees-1960.png",
+        "alt": "Ancienne vue du pont Lafayette à Lyon avec les voitures traversant le Rhône, les quais aménagés, les immeubles des Cordeliers, la basilique de Fourvière et la tour métallique en arrière-plan.",
+        "width": "1367",
+        "height": "1000"
+      }
+    },
+    {
       "path": "Auvergne-Rhone-Alpes/Rhone/Lyon/quartier-mermoz-lyon-annees-1960/index.html",
       "city_id": "lyon",
       "city": "Lyon",
