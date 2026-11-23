@@ -1532,6 +1532,21 @@
       }
     },
     {
+      "path": "Hauts-de-France/Nord/Lille/porte-d-arras-metro-aerien-construction-souvenirs/index.html",
+      "city_id": "lille",
+      "city": "Lille",
+      "department": "Nord",
+      "datePublished": "2026-11-23",
+      "title": "Lille : cette immense voie de béton a remplacé le train de ceinture… Qui reconnaît encore la porte d'Arras d'autrefois ?",
+      "summary": "Découvrez la porte d'Arras à Lille avant le métro : train de ceinture, viaduc des années 1980, résidence Marcel-Bertrand et souvenirs des habitants.",
+      "image": {
+        "src": "/assets/photos/lille-porte-arras-metro-viaduc-construction.png",
+        "alt": "Photographie couleur du viaduc de la future ligne 2 du métro de Lille en construction vers 1987-1988, porte d'Arras, avec piliers en béton, chantier, immeubles en briques rouges et boulevard de Strasbourg.",
+        "width": "1200",
+        "height": "799"
+      }
+    },
+    {
       "path": "Hauts-de-France/Nord/Lille/prisunic-rue-gambetta-lille/index.html",
       "city_id": "lille",
       "city": "Lille",
