@@ -1097,6 +1097,21 @@
       }
     },
     {
+      "path": "Hauts-de-France/Nord/Lille/cite-administrative-lille-histoire-reconversion/index.html",
+      "city_id": "lille",
+      "city": "Lille",
+      "department": "Nord",
+      "datePublished": "2026-11-23",
+      "title": "Lille : la Cité administrative, cette immense tour que certains veulent voir disparaître… et qui va accueillir 660 logements !",
+      "summary": "Découvrez l'histoire de la Cité administrative de Lille, les souvenirs des anciens employés et son projet de reconversion en 660 logements d'ici 2030.",
+      "image": {
+        "src": "/assets/photos/lille-cite-administrative-voies-ferrees.png",
+        "alt": "Ancienne Cité administrative de Lille, grand immeuble rouge et blanc de 76 mètres de haut, photographié depuis les voies ferrées près de la rue Javary, avec les caténaires et les rails au premier plan.",
+        "width": "463",
+        "height": "600"
+      }
+    },
+    {
       "path": "Hauts-de-France/Nord/Lille/cite-hospitaliere-lille-1953-souvenirs-chu/index.html",
       "city_id": "lille",
       "city": "Lille",
