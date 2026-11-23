@@ -212,6 +212,21 @@
       }
     },
     {
+      "path": "Auvergne-Rhone-Alpes/Rhone/Lyon/gorge-de-loup-lyon-histoire-origine-nom/index.html",
+      "city_id": "lyon",
+      "city": "Lyon",
+      "department": "Rhône",
+      "datePublished": "2026-11-23",
+      "title": "Lyon : Gorge de Loup autrefois, ce vieux quartier de Vaise dont le nom intrigue depuis cinq siècles",
+      "summary": "Découvrez Gorge de Loup autrefois à Lyon : origine du nom en 1493, anciennes usines, chemin des Vacques, histoire de Vaise et souvenirs des habitants.",
+      "image": {
+        "src": "/assets/photos/lyon-gorge-de-loup-vaise-usines-autrefois.png",
+        "alt": "Vue ancienne du quartier de Gorge de Loup à Lyon, avec maisons, toitures industrielles, longues façades d'usine, cheminées et collines boisées en arrière-plan.",
+        "width": "2048",
+        "height": "1313"
+      }
+    },
+    {
       "path": "Auvergne-Rhone-Alpes/Rhone/Lyon/gros-caillou-croix-rousse-histoire/index.html",
       "city_id": "lyon",
       "city": "Lyon",
