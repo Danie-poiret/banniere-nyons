@@ -107,6 +107,21 @@
       }
     },
     {
+      "path": "Auvergne-Rhone-Alpes/Rhone/Lyon/carrefour-brotteaux-brasserie-du-parc-astoria/index.html",
+      "city_id": "lyon",
+      "city": "Lyon",
+      "department": "Rhône",
+      "datePublished": "2026-11-23",
+      "title": "Lyon : ce carrefour des Brotteaux vers 1910, quand la Brasserie du Parc dominait encore le cours Vitton",
+      "summary": "Découvrez le carrefour des Brotteaux à Lyon vers 1910, l'ancienne Brasserie du Parc, le cinéma Astoria et les souvenirs des habitants du cours Vitton.",
+      "image": {
+        "src": "/assets/photos/lyon-carrefour-brotteaux-brasserie-parc-1910.png",
+        "alt": "Ancienne photographie du carrefour des Brotteaux à Lyon vers 1910, avec la Brasserie du Parc à gauche, les larges chaussées, les arbres et les immeubles du 6e arrondissement.",
+        "width": "1454",
+        "height": "865"
+      }
+    },
+    {
       "path": "Auvergne-Rhone-Alpes/Rhone/Lyon/cirque-rancy-cours-de-verdun-autrefois/index.html",
       "city_id": "lyon",
       "city": "Lyon",
