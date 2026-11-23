@@ -197,6 +197,21 @@
       }
     },
     {
+      "path": "Auvergne-Rhone-Alpes/Rhone/Lyon/foire-lyon-quai-achille-lignon-souvenirs/index.html",
+      "city_id": "lyon",
+      "city": "Lyon",
+      "department": "Rhône",
+      "datePublished": "2026-11-23",
+      "title": "Lyon : la Foire du quai Achille-Lignon, quand on rentrait avec des sacs remplis de souvenirs",
+      "summary": "Retrouvez l'ancienne Foire de Lyon, ses buvards, ses machines, ses dégustations, le Luna Park et les souvenirs du quai Achille-Lignon avant 1985.",
+      "image": {
+        "src": "/assets/photos/lyon-foire-quai-achille-lignon-vue-aerienne.png",
+        "alt": "Vue aérienne de l'ancienne Foire de Lyon quai Achille-Lignon, avec les pavillons d'exposition, les stands extérieurs, le Rhône à gauche et le parc de la Tête d'Or à droite.",
+        "width": "960",
+        "height": "640"
+      }
+    },
+    {
       "path": "Auvergne-Rhone-Alpes/Rhone/Lyon/fresque-des-lyonnais-souvenirs-quai-saint-vincent/index.html",
       "city_id": "lyon",
       "city": "Lyon",
