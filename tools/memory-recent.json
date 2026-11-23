@@ -107,6 +107,21 @@
       }
     },
     {
+      "path": "Auvergne-Rhone-Alpes/Rhone/Lyon/brasserie-du-tonneau-lyon-rue-republique/index.html",
+      "city_id": "lyon",
+      "city": "Lyon",
+      "department": "Rhône",
+      "datePublished": "2026-11-23",
+      "title": "Lyon : la Brasserie du Tonneau, ce grand café de la rue de la République que les anciens n'ont pas oublié",
+      "summary": "Découvrez l'ancienne Brasserie du Tonneau, au 66 rue de la République à Lyon, sa cave, ses habitués, le Café de la Paix et sa disparition en 1982.",
+      "image": {
+        "src": "/assets/photos/lyon-brasserie-tonneau-rue-republique-autrefois.png",
+        "alt": "Carte postale ancienne de la Brasserie du Tonneau au 66 rue de la République à Lyon, avec ses grandes vitrines, ses stores, sa terrasse, les immeubles anciens et la chaussée pavée.",
+        "width": "729",
+        "height": "459"
+      }
+    },
+    {
       "path": "Auvergne-Rhone-Alpes/Rhone/Lyon/carrefour-brotteaux-brasserie-du-parc-astoria/index.html",
       "city_id": "lyon",
       "city": "Lyon",
