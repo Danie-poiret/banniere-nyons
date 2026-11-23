@@ -122,6 +122,21 @@
       }
     },
     {
+      "path": "Auvergne-Rhone-Alpes/Rhone/Lyon/cables-de-lyon-gerland-usine-histoire/index.html",
+      "city_id": "lyon",
+      "city": "Lyon",
+      "department": "Rhône",
+      "datePublished": "2026-11-23",
+      "title": "Lyon : les Câbles de Lyon à Gerland, cette immense usine où tant de familles ont travaillé",
+      "summary": "Découvrez l'ancienne usine des Câbles de Lyon à Gerland, ses ateliers, les souvenirs des ouvriers et sa transformation en quartier moderne.",
+      "image": {
+        "src": "/assets/photos/lyon-cables-gerland-usines-vue-aerienne.png",
+        "alt": "Carte postale ancienne montrant une vue aérienne de l'immense usine des Câbles de Lyon à Gerland, avec ses ateliers, ses grandes halles industrielles, ses cheminées et les habitations environnantes.",
+        "width": "781",
+        "height": "502"
+      }
+    },
+    {
       "path": "Auvergne-Rhone-Alpes/Rhone/Lyon/carrefour-brotteaux-brasserie-du-parc-astoria/index.html",
       "city_id": "lyon",
       "city": "Lyon",
