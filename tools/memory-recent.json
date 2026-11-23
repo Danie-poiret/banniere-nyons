@@ -1502,6 +1502,21 @@
       }
     },
     {
+      "path": "Hauts-de-France/Nord/Lille/pont-neuf-lille-canal-basse-deule-tramway/index.html",
+      "city_id": "lille",
+      "city": "Lille",
+      "department": "Nord",
+      "datePublished": "2026-11-23",
+      "title": "Lille : le Pont-Neuf et son canal disparu, quand les tramways passaient au-dessus de la Deûle",
+      "summary": "Découvrez l'ancien Pont-Neuf de Lille, ses six arches, les tramways, le canal de la Basse-Deûle disparu et l'histoire du Pont Maudit.",
+      "image": {
+        "src": "/assets/photos/lille-pont-neuf-canal-basse-deule-tramway.png",
+        "alt": "Ancienne carte postale du Pont-Neuf à Lille, montrant un tramway traversant le pont à six arches au-dessus du canal de la Basse-Deûle, avec les rails du tramway longeant les quais pavés.",
+        "width": "2048",
+        "height": "1224"
+      }
+    },
+    {
       "path": "Hauts-de-France/Nord/Lille/prisunic-rue-gambetta-lille/index.html",
       "city_id": "lille",
       "city": "Lille",
