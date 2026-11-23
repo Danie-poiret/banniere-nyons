@@ -422,6 +422,21 @@
       }
     },
     {
+      "path": "Auvergne-Rhone-Alpes/Rhone/Lyon/rue-arbre-sec-lyon-histoire-souvenirs/index.html",
+      "city_id": "lyon",
+      "city": "Lyon",
+      "department": "Rhône",
+      "datePublished": "2026-11-23",
+      "title": "Lyon : la rue de l’Arbre-Sec autrefois, ses vieux cafés, ses restaurants et les souvenirs d'un quartier",
+      "summary": "Découvrez la rue de l'Arbre-Sec à Lyon autrefois, l'origine de son nom, La Poule au Pot, le Hot Club, Le Garet et les souvenirs des habitants.",
+      "image": {
+        "src": "/assets/photos/lyon-rue-arbre-sec-plaque-rue.png",
+        "alt": "Plaque portant l'inscription « 1er Arrt — Rue de l'Arbre Sec », fixée sur un mur à Lyon.",
+        "width": "916",
+        "height": "642"
+      }
+    },
+    {
       "path": "Auvergne-Rhone-Alpes/Rhone/Lyon/traboules-lyon-croix-rousse-cour-des-voraces/index.html",
       "city_id": "lyon",
       "city": "Lyon",
