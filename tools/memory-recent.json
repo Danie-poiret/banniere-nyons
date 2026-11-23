@@ -3257,6 +3257,21 @@
       }
     },
     {
+      "path": "Provence-Alpes-Cote-dAzur/Vaucluse/Avignon/rue-vieux-sextier-place-pie-commerces-autrefois/index.html",
+      "city_id": "avignon",
+      "city": "Avignon",
+      "department": "Vaucluse",
+      "datePublished": "2026-11-23",
+      "title": "Avignon : la rue du Vieux-Sextier autrefois, ses boutiques, ses toiles d'ombrage et les commerces disparus de la place Pie",
+      "summary": "Retrouvez la rue du Vieux-Sextier à Avignon autrefois : boutiques, toiles d'ombrage, marché de la place Pie, tableaux de Grivolas et commerces disparus.",
+      "image": {
+        "src": "/assets/photos/avignon-rue-vieux-sextier-place-pie-commerces.png",
+        "alt": "Carte postale ancienne de la rue du Vieux-Sextier à Avignon, vue depuis la place Pie, avec boutiques de vêtements, chapeaux exposés, grands stores rayés, passants et publicité murale Oxygénée verte Cusenier.",
+        "width": "1306",
+        "height": "787"
+      }
+    },
+    {
       "path": "Provence-Alpes-Cote-dAzur/Vaucluse/Avignon/vieux-toits-palais-des-papes-balance/index.html",
       "city_id": "avignon",
       "city": "Avignon",
