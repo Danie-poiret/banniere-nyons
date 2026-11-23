@@ -2792,6 +2792,21 @@
       }
     },
     {
+      "path": "Provence-Alpes-Cote-dAzur/Bouches-du-Rhone/Marseille/reformes-marseille-autrefois-tramways-souvenirs/index.html",
+      "city_id": "marseille",
+      "city": "Marseille",
+      "department": "Bouches-du-Rhône",
+      "datePublished": "2026-11-23",
+      "title": "Marseille : les Réformés autrefois, le Taxi Bar, les tramways et les souvenirs du haut de la Canebière",
+      "summary": "Découvrez les Réformés à Marseille autrefois : église Saint-Vincent-de-Paul, Taxi Bar, tramways, commerces du Chapitre et souvenirs des habitants.",
+      "image": {
+        "src": "/assets/photos/marseille-reformes-canebiere-tramway-autrefois.png",
+        "alt": "Ancienne photographie des Réformés à Marseille, avec les deux grandes flèches de l'église Saint-Vincent-de-Paul, les rails du tramway, une motrice, une automobile et les arbres du cours du Chapitre.",
+        "width": "1220",
+        "height": "2026"
+      }
+    },
+    {
       "path": "Provence-Alpes-Cote-dAzur/Bouches-du-Rhone/Marseille/saint-loup-place-octroi-tramway-marseille/index.html",
       "city_id": "marseille",
       "city": "Marseille",
