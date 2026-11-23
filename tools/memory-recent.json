@@ -1742,6 +1742,21 @@
       }
     },
     {
+      "path": "Hauts-de-France/Nord/Lille/rue-royale-banque-france-pensionnat-sacre-coeur/index.html",
+      "city_id": "lille",
+      "city": "Lille",
+      "department": "Nord",
+      "datePublished": "2026-11-23",
+      "title": "Lille : la rue Royale en 1905 et ce grand jardin du Sacré-Cœur que les anciennes élèves n'ont jamais oublié",
+      "summary": "Découvrez la rue Royale à Lille en 1905, la Banque de France, l'ancien pensionnat du Sacré-Cœur, son jardin et les souvenirs des élèves.",
+      "image": {
+        "src": "/assets/photos/lille-rue-royale-banque-france-sacre-coeur-1905.png",
+        "alt": "Carte postale ancienne de la rue Royale à Lille en 1905, montrant les façades de la Banque de France, l'ancien couvent du Sacré-Cœur, les rails du tramway, des passants et des voitures attelées.",
+        "width": "2048",
+        "height": "1255"
+      }
+    },
+    {
       "path": "Hauts-de-France/Nord/Lille/square-bois-blancs-lille/index.html",
       "city_id": "lille",
       "city": "Lille",
