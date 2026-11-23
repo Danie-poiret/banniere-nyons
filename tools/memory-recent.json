@@ -3497,6 +3497,21 @@
       }
     },
     {
+      "path": "Provence-Alpes-Cote-dAzur/Vaucluse/Valreas/grotte-piedvaurias-valreas-histoire-souvenirs/index.html",
+      "city_id": "valreas",
+      "city": "Valréas",
+      "department": "Vaucluse",
+      "datePublished": "2026-11-23",
+      "title": "Valréas : la grotte de Piedvaurias, cette source où les enfants allaient boire autrefois",
+      "summary": "Découvrez la grotte de Piedvaurias à Valréas, son ancienne source, les souvenirs d'enfance, la chapelle et le moulin de 1646.",
+      "image": {
+        "src": "/assets/photos/valreas-grotte-piedvaurias-carte-postale.png",
+        "alt": "Ancienne carte postale de la grotte de Piedvaurias à Valréas, montrant plusieurs personnes sur une construction en pierres, deux jeunes filles devant l'ouverture et de grands arbres autour du jardin.",
+        "width": "1090",
+        "height": "718"
+      }
+    },
+    {
       "path": "Provence-Alpes-Cote-dAzur/Vaucluse/Valreas/hopital-jules-niel-maternite-jardin-souvenirs/index.html",
       "city_id": "valreas",
       "city": "Valréas",
