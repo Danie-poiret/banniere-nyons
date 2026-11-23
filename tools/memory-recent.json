@@ -272,6 +272,21 @@
       }
     },
     {
+      "path": "Auvergne-Rhone-Alpes/Rhone/Lyon/parc-tete-dor-zoo-animaux-autrefois/index.html",
+      "city_id": "lyon",
+      "city": "Lyon",
+      "department": "Rhône",
+      "datePublished": "2026-11-23",
+      "title": "Lyon : le parc de la Tête d’Or autrefois, quand les enfants découvraient les animaux derrière les grilles",
+      "summary": "Retrouvez l’ancien zoo du parc de la Tête d’Or à Lyon : cages aux ours, crocodiles, promenades en dromadaire, vélodrome et souvenirs des habitants.",
+      "image": {
+        "src": "/assets/photos/lyon-parc-tete-dor-zoo-animaux-autrefois.png",
+        "alt": "Carte postale ancienne du parc de la Tête d’Or à Lyon, montrant de nombreux visiteurs en costume et chapeau devant les grilles d'un enclos animalier, sous de grands arbres.",
+        "width": "941",
+        "height": "600"
+      }
+    },
+    {
       "path": "Auvergne-Rhone-Alpes/Rhone/Lyon/place-antonin-poncet-parking-annees-1970-charite/index.html",
       "city_id": "lyon",
       "city": "Lyon",
