@@ -2612,6 +2612,21 @@
       }
     },
     {
+      "path": "Ile-de-France/Paris/Paris/rue-faubourg-du-temple-paris-tramway-souvenirs/index.html",
+      "city_id": "paris",
+      "city": "Paris",
+      "department": "Paris — département 75",
+      "datePublished": "2026-11-24",
+      "title": "Paris : la rue du Faubourg-du-Temple était-elle plus vivante avant ? Tramway, cafés et Mardi gras d'autrefois",
+      "summary": "Retrouvez la rue du Faubourg-du-Temple à Paris au début du XXe siècle : tramway de Belleville, anciens cafés, carnaval de la Courtille et souvenirs des habitants.",
+      "image": {
+        "src": "/assets/photos/paris-rue-faubourg-du-temple-tramway.png",
+        "alt": "Carte postale ancienne de la rue du Faubourg-du-Temple à Paris au début du XXe siècle, avec un tramway sur les pavés, des passants, une grande horloge commerciale à gauche et un café-bar à droite.",
+        "width": "1062",
+        "height": "678"
+      }
+    },
+    {
       "path": "Ile-de-France/Paris/Paris/rue-soufflot-quartier-latin-1950/index.html",
       "city_id": "paris",
       "city": "Paris",
