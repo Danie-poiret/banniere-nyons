@@ -2627,6 +2627,21 @@
       }
     },
     {
+      "path": "Ile-de-France/Paris/Paris/rue-lepic-montmartre-marche-quatre-saisons-souvenirs/index.html",
+      "city_id": "paris",
+      "city": "Paris",
+      "department": "Paris — département 75",
+      "datePublished": "2026-11-24",
+      "title": "Paris : où disparaissaient les marchands des quatre-saisons de la rue Lepic ? Ce Montmartre que les anciens n'ont pas oublié",
+      "summary": "Découvrez le marché de la rue Lepic à Paris, ses marchands des quatre-saisons, leurs charrettes, les anciens commerces et les souvenirs des habitants de Montmartre.",
+      "image": {
+        "src": "/assets/photos/paris-rue-lepic-marche-bouillon-moulin-rouge.png",
+        "alt": "Ancienne carte postale de la rue Lepic à Montmartre, montrant un marché très animé avec ses marchands, ses paniers de fruits et légumes, le Bouillon du Moulin Rouge et une voiture à cheval.",
+        "width": "836",
+        "height": "540"
+      }
+    },
+    {
       "path": "Ile-de-France/Paris/Paris/rue-soufflot-quartier-latin-1950/index.html",
       "city_id": "paris",
       "city": "Paris",
