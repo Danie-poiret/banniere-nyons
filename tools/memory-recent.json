@@ -2717,6 +2717,21 @@
       }
     },
     {
+      "path": "Provence-Alpes-Cote-dAzur/Bouches-du-Rhone/Marseille/cafe-parisien-marseille-petanque-histoire-souvenirs/index.html",
+      "city_id": "marseille",
+      "city": "Marseille",
+      "department": "Bouches-du-Rhône",
+      "datePublished": "2026-11-24",
+      "title": "Café Parisien Marseille : histoire et pétanque au sous-sol",
+      "summary": "Découvrez l'histoire du Café Parisien à Marseille, ses décors de 1900, son terrain de pétanque souterrain et les souvenirs de ses anciens habitués.",
+      "image": {
+        "src": "/assets/photos/cafe-parisien-slavia-marseille-1977.png",
+        "alt": "Deux photographies du Café Parisien à Marseille en 1977, montrant son intérieur avec ses colonnes sculptées, ses arches, son comptoir et ses clients, ainsi que sa façade portant l'enseigne Slavia – Café Parisien, place Sadi-Carnot.",
+        "width": "2048",
+        "height": "768"
+      }
+    },
+    {
       "path": "Provence-Alpes-Cote-dAzur/Bouches-du-Rhone/Marseille/canebiere-annees-1960-magasins-souvenirs/index.html",
       "city_id": "marseille",
       "city": "Marseille",
