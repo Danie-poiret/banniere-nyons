@@ -3107,6 +3107,21 @@
       }
     },
     {
+      "path": "Provence-Alpes-Cote-dAzur/Vaucluse/Avignon/avignon-1978-marche-monclar-commerces-souvenirs/index.html",
+      "city_id": "avignon",
+      "city": "Avignon",
+      "department": "Vaucluse",
+      "datePublished": "2026-11-24",
+      "title": "Avignon en 1978 : le marché de Monclar, le Terrain Barré, l'Athénée et les anciens commerces du quartier",
+      "summary": "Retrouvez le marché de Monclar en 1978 à Avignon, le Terrain Barré, l'Athénée, le Suma, l'usine Rozemblit et les souvenirs des habitants.",
+      "image": {
+        "src": "/assets/photos/avignon-1978-marche-monclar-place-rameau.png",
+        "alt": "Marché de Monclar à Avignon en avril 1978, avec ses étals de fruits et légumes, ses camionnettes et les anciens immeubles de la place Jean-Philippe-Rameau.",
+        "width": "1202",
+        "height": "795"
+      }
+    },
+    {
       "path": "Provence-Alpes-Cote-dAzur/Vaucluse/Avignon/avignon-1980-anciennes-fermes-lavarin-monclar/index.html",
       "city_id": "avignon",
       "city": "Avignon",
