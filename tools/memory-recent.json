@@ -3197,6 +3197,21 @@
       }
     },
     {
+      "path": "Provence-Alpes-Cote-dAzur/Vaucluse/Avignon/eglise-saint-ruf-avignon-souvenirs/index.html",
+      "city_id": "avignon",
+      "city": "Avignon",
+      "department": "Vaucluse",
+      "datePublished": "2026-11-24",
+      "title": "Avignon : l'église Saint-Ruf, son clocher jamais construit et les souvenirs du curé Firmin",
+      "summary": "Découvrez l'église Saint-Ruf d'Avignon, son clocher jamais construit, le curé Firmin, l'abbé Marcel et les souvenirs du patronage des années 1950.",
+      "image": {
+        "src": "/assets/photos/avignon-eglise-saint-ruf-sortie-messe-ancienne-carte-postale.png",
+        "alt": "Ancienne carte postale de l'église Saint-Ruf à Avignon montrant les familles réunies devant sa façade à la sortie de la messe.",
+        "width": "1172",
+        "height": "759"
+      }
+    },
+    {
       "path": "Provence-Alpes-Cote-dAzur/Vaucluse/Avignon/farandoles-pont-avignon/index.html",
       "city_id": "avignon",
       "city": "Avignon",
