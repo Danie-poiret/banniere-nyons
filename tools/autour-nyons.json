@@ -1073,6 +1073,24 @@
         "width": 451,
         "height": 320
       }
+    },
+    {
+      "url": "/a-faire-autour-de-Nyons/richerenches/",
+      "title": "Richerenches, le pays de la truffe noire et des Templiers",
+      "description": "Découvrez Richerenches depuis Nyons : marché aux truffes 2026-2027, Templiers, musée, restaurants, hébergements et carte de l’itinéraire.",
+      "group": "terroir",
+      "seasons": [
+        "printemps",
+        "ete",
+        "automne",
+        "hiver"
+      ],
+      "image": {
+        "src": "/assets/photos/richerenches-eglise.png",
+        "alt": "Chevet en pierre et clocher de l’église de Richerenches sous le ciel bleu.",
+        "width": 266,
+        "height": 428
+      }
     }
   ],
   "featured": [
