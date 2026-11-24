@@ -2537,6 +2537,21 @@
       }
     },
     {
+      "path": "Ile-de-France/Paris/Paris/a-la-mere-de-famille-paris-histoire-souvenirs/index.html",
+      "city_id": "paris",
+      "city": "Paris",
+      "department": "Paris — département 75",
+      "datePublished": "2026-11-24",
+      "title": "Paris : les bonbons de notre enfance dans une boutique de 1761… mais sont-ils devenus un luxe ?",
+      "summary": "Découvrez l'histoire de la chocolaterie À la Mère de Famille à Paris, fondée en 1761, sa devanture historique, ses confiseries et les souvenirs des anciens clients.",
+      "image": {
+        "src": "/assets/photos/paris-a-la-mere-de-famille-devanture.png",
+        "alt": "Photographie ancienne en couleur de la chocolaterie À la Mère de Famille, au 35 rue du Faubourg-Montmartre à Paris, montrant sa devanture verte et dorée, ses vitrines de confiseries et les publicités pour les biscuits LU.",
+        "width": "791",
+        "height": "546"
+      }
+    },
+    {
       "path": "Ile-de-France/Paris/Paris/beaubourg-paris-chantier-annees-1970/index.html",
       "city_id": "paris",
       "city": "Paris",
