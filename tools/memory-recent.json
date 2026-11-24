@@ -932,6 +932,21 @@
       }
     },
     {
+      "path": "Hauts-de-France/Nord/Lille/arsenal-boulevard-belfort-lille-wallaert-souvenirs/index.html",
+      "city_id": "lille",
+      "city": "Lille",
+      "department": "Nord",
+      "datePublished": "2026-11-24",
+      "title": "Lille : avant l'hôpital Saint-Vincent-de-Paul, il y avait l'arsenal du boulevard de Belfort… Qui reconnaît encore ce quartier ?",
+      "summary": "Retrouvez l'ancien arsenal du boulevard de Belfort à Lille, l'usine Wallaert, la cité Kellermann et les souvenirs du quartier avant l'hôpital Saint-Vincent.",
+      "image": {
+        "src": "/assets/photos/lille-ancien-arsenal-boulevard-belfort-usine-wallaert.png",
+        "alt": "Ancienne photographie de l'arsenal du boulevard de Belfort à Lille, avec son mur de briques, ses bâtiments militaires, l'usine Wallaert et les feux de circulation du carrefour.",
+        "width": "1068",
+        "height": "793"
+      }
+    },
+    {
       "path": "Hauts-de-France/Nord/Lille/bains-lillois-piscine-autrefois/index.html",
       "city_id": "lille",
       "city": "Lille",
