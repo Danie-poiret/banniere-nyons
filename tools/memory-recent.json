@@ -3467,6 +3467,21 @@
       }
     },
     {
+      "path": "Provence-Alpes-Cote-dAzur/Vaucluse/Carpentras/couvent-dominicains-lycee-victor-hugo-carpentras/index.html",
+      "city_id": "carpentras",
+      "city": "Carpentras",
+      "department": "Vaucluse",
+      "datePublished": "2026-11-24",
+      "title": "Carpentras autrefois : du clocher des Dominicains au lycée Victor-Hugo, une vue de la ville qui n'existe plus",
+      "summary": "Découvrez Carpentras depuis l'ancien couvent des Dominicains, l'histoire du lycée Victor-Hugo et les souvenirs des élèves pendant l'Occupation.",
+      "image": {
+        "src": "/assets/photos/carpentras-autrefois-vue-clocher-couvent-dominicains.png",
+        "alt": "Ancienne vue de Carpentras depuis le clocher du couvent des Dominicains, avec l'Hôtel-Dieu, les toitures, les jardins et une cheminée d'usine.",
+        "width": "1617",
+        "height": "988"
+      }
+    },
+    {
       "path": "Provence-Alpes-Cote-dAzur/Vaucluse/Carpentras/fontaine-lices-monteux-souvenirs/index.html",
       "city_id": "carpentras",
       "city": "Carpentras",
