@@ -3107,6 +3107,21 @@
       }
     },
     {
+      "path": "Provence-Alpes-Cote-dAzur/Vaucluse/Avignon/avignon-1980-anciennes-fermes-lavarin-monclar/index.html",
+      "city_id": "avignon",
+      "city": "Avignon",
+      "department": "Vaucluse",
+      "datePublished": "2026-11-24",
+      "title": "Avignon en 1980 : les dernières fermes du Lavarin, les laitiers de Monclar et les vaches au pied des immeubles",
+      "summary": "Retrouvez les anciennes fermes d'Avignon, les laitiers de Monclar, les vaches du Lavarin et les souvenirs des habitants avant l'urbanisation.",
+      "image": {
+        "src": "/assets/photos/avignon-1980-ferme-lavarin-residence-muriers-maurice-costa.png",
+        "alt": "Ancienne ferme du quartier du Lavarin à Avignon en 1980, avec une vache, un tracteur, un hangar agricole et la résidence Les Mûriers en arrière-plan.",
+        "width": "1215",
+        "height": "790"
+      }
+    },
+    {
       "path": "Provence-Alpes-Cote-dAzur/Vaucluse/Avignon/avignon-champfleury-accordeoniste-1966/index.html",
       "city_id": "avignon",
       "city": "Avignon",
