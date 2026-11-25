@@ -662,6 +662,21 @@
       }
     },
     {
+      "path": "Hauts-de-France/Nord/Dunkerque/dunkerque-rue-clemenceau-tramway-beffroi-autrefois/index.html",
+      "city_id": "dunkerque",
+      "city": "Dunkerque",
+      "department": "Nord",
+      "datePublished": "2026-11-25",
+      "title": "Dunkerque autrefois : la rue Clemenceau, ses tramways et ces magnifiques façades que la guerre nous a fait perdre",
+      "summary": "Retrouvez la rue Clemenceau de Dunkerque avant-guerre, ses tramways, ses commerces, son beffroi et les souvenirs des habitants avant la reconstruction.",
+      "image": {
+        "src": "/assets/photos/dunkerque-rue-clemenceau-tramway-24-beffroi.png",
+        "alt": "Ancienne carte postale en couleurs de la rue Clemenceau à Dunkerque avec le tramway numéro 24, les commerces, les anciennes façades et le beffroi de l'hôtel de ville avant la Seconde Guerre mondiale.",
+        "width": "1060",
+        "height": "1610"
+      }
+    },
+    {
       "path": "Hauts-de-France/Nord/Dunkerque/dunkerque-vue-aerienne-avant-1940/index.html",
       "city_id": "dunkerque",
       "city": "Dunkerque",
