@@ -1091,6 +1091,24 @@
         "width": 266,
         "height": 428
       }
+    },
+    {
+      "url": "/a-faire-autour-de-Nyons/sainte-jalle/",
+      "title": "Sainte-Jalle, un village médiéval au cœur de la vallée de l'Ennuyé",
+      "description": "Découvrez Sainte-Jalle depuis Nyons : village médiéval, Notre-Dame-de-Beauvert, marché du vendredi, randonnées, restaurants et carte de l’itinéraire.",
+      "group": "villages",
+      "seasons": [
+        "printemps",
+        "ete",
+        "automne",
+        "hiver"
+      ],
+      "image": {
+        "src": "/assets/photos/sainte-jalle-village-clocher.png",
+        "alt": "Ruelle en pierre de Sainte-Jalle avec des maisons, de la végétation et un clocher.",
+        "width": 257,
+        "height": 337
+      }
     }
   ],
   "featured": [
