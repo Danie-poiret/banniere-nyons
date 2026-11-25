@@ -3092,6 +3092,21 @@
       }
     },
     {
+      "path": "Provence-Alpes-Cote-dAzur/Vaucluse/Avignon/auberge-pont-saint-benezet-famille-casse-avignon/index.html",
+      "city_id": "avignon",
+      "city": "Avignon",
+      "department": "Vaucluse",
+      "datePublished": "2026-11-25",
+      "title": "Avignon : l'Auberge du Pont Saint-Bénézet, la famille Cassé et ses fameux pieds et paquets",
+      "summary": "Retrouvez l'ancienne Auberge du Pont Saint-Bénézet à Avignon, la famille Cassé, ses pieds et paquets et les souvenirs des habitants du quai de la Ligne.",
+      "image": {
+        "src": "/assets/photos/avignon-auberge-pont-saint-benezet-famille-casse-quai-ligne-1960.png",
+        "alt": "Auberge du Pont Saint-Bénézet à Avignon vers 1960, quai de la Ligne, terrasse sous les platanes, publicité bière Phénix et repas touristes à 600 francs.",
+        "width": "1031",
+        "height": "710"
+      }
+    },
+    {
       "path": "Provence-Alpes-Cote-dAzur/Vaucluse/Avignon/aux-elegants-avignon-place-carnot/index.html",
       "city_id": "avignon",
       "city": "Avignon",
