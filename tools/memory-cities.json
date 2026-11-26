@@ -604,6 +604,19 @@
       "existing": false,
       "legacy": [],
       "unified_card_grid": true
+    },
+    {
+      "id": "valenciennes",
+      "name": "Valenciennes",
+      "path": "Hauts-de-France/Nord/Valenciennes",
+      "department": "Nord",
+      "region": "Hauts-de-France",
+      "title": "Valenciennes autrefois : anciens commerces, rues et souvenirs des habitants",
+      "description": "Valenciennes autrefois : Minifix, Prilux, Jour de Fête, les anciens commerces, les rues et les souvenirs des habitants.",
+      "intro": "Minifix, Prilux, Jour de Fête, les anciens tramways, les cafés de la place d'Armes et ces commerces où plusieurs générations de Valenciennois ont fait leurs courses.\n\nEn retrouvant vos anciennes photographies et vos souvenirs, j'aimerais raconter l'histoire de Valenciennes, de ses quartiers, de ses entreprises et des familles qui y vivaient.",
+      "existing": false,
+      "legacy": [],
+      "unified_card_grid": true
     }
   ],
   "legacy_allowed_paths": [

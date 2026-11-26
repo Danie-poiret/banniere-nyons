@@ -2402,6 +2402,21 @@
       }
     },
     {
+      "path": "Hauts-de-France/Nord/Valenciennes/place-armes-minifix-prilux-jour-de-fete-souvenirs/index.html",
+      "city_id": "valenciennes",
+      "city": "Valenciennes",
+      "department": "Nord",
+      "datePublished": "2026-11-26",
+      "title": "Valenciennes autrefois : Minifix, Prilux, Jour de Fête et les souvenirs de la place d'Armes",
+      "summary": "Retrouvez Valenciennes dans les années 1960 : Minifix, Prilux, Jour de Fête, les anciens commerces de la place d'Armes et les souvenirs des habitants.",
+      "image": {
+        "src": "/assets/photos/valenciennes-place-armes-minifix-prilux-annees-1960.png",
+        "alt": "Carte postale de la place d'Armes de Valenciennes dans les années 1960, avec les magasins Minifix et Prilux, les voitures anciennes et les rails du tramway.",
+        "width": "884",
+        "height": "598"
+      }
+    },
+    {
       "path": "Hauts-de-France/Pas-de-Calais/Boulogne-sur-Mer/ancien-casino-boulogne-sur-mer-piscine-jardins-souvenirs/index.html",
       "city_id": "boulogne-sur-mer",
       "city": "Boulogne-sur-Mer",
@@ -3847,7 +3862,7 @@
       "city": "Cavaillon",
       "department": "Vaucluse",
       "datePublished": "2026-11-26",
-      "title": "Cavaillon : laplace du Clos, le marché aux melons et les souvenirs des anciens expéditeurs",
+      "title": "Cavaillon : la place du Clos, le marché aux melons et les souvenirs des anciens expéditeurs",
       "summary": "Retrouvez l'ancien marché aux melons de Cavaillon, les portefaix du Clos, la maison Bouffard, les cafés disparus et les souvenirs des anciens habitants.",
       "image": {
         "src": "/assets/photos/cavaillon-place-du-clos-marche-melons-arc-romain-1950.png",
