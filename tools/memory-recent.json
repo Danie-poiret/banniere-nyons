@@ -1697,6 +1697,21 @@
       }
     },
     {
+      "path": "Hauts-de-France/Nord/Lille/rue-de-douai-tabac-flint-commerces-souvenirs/index.html",
+      "city_id": "lille",
+      "city": "Lille",
+      "department": "Nord",
+      "datePublished": "2026-11-26",
+      "title": "Lille : la rue de Douai autrefois, le tabac Le Flint, les farces et attrapes et les souvenirs de Moulins",
+      "summary": "Retrouvez la rue de Douai à Lille-Moulins, le tabac Le Flint, les anciens estaminets, le tramway et les souvenirs des habitants des années 1960 et 1970.",
+      "image": {
+        "src": "/assets/photos/lille-moulins-rue-de-douai-tabac-le-flint-tramway-autrefois.png",
+        "alt": "Ancienne carte postale de la rue de Douai à Lille-Moulins, débit de tabac Le Flint, estaminets, rails du tramway et habitants au début du XXe siècle.",
+        "width": "1625",
+        "height": "1010"
+      }
+    },
+    {
       "path": "Hauts-de-France/Nord/Lille/rue-de-la-barre-ecole-charlemagne-rue-des-bouchers/index.html",
       "city_id": "lille",
       "city": "Lille",
@@ -3787,7 +3802,7 @@
       "city": "Cavaillon",
       "department": "Vaucluse",
       "datePublished": "2026-11-26",
-      "title": "Cavaillon : la place du Clos, le marché aux melons et les souvenirs des anciens expéditeurs",
+      "title": "Cavaillon : laplace du Clos, le marché aux melons et les souvenirs des anciens expéditeurs",
       "summary": "Retrouvez l'ancien marché aux melons de Cavaillon, les portefaix du Clos, la maison Bouffard, les cafés disparus et les souvenirs des anciens habitants.",
       "image": {
         "src": "/assets/photos/cavaillon-place-du-clos-marche-melons-arc-romain-1950.png",
