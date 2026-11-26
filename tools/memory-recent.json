@@ -1562,6 +1562,21 @@
       }
     },
     {
+      "path": "Hauts-de-France/Nord/Lille/place-vanhoenacker-cinema-union-commerces-souvenirs/index.html",
+      "city_id": "lille",
+      "city": "Lille",
+      "department": "Nord",
+      "datePublished": "2026-11-26",
+      "title": "Lille : la place Vanhoenacker, le cinéma L'Union, les ducasses et ces petits commerces qu'on n'a jamais oubliés",
+      "summary": "Retrouvez la place Vanhoenacker à Lille, la coopérative L'Union, son cinéma disparu, les ducasses, les anciens commerces et les souvenirs de Lille-Moulins.",
+      "image": {
+        "src": "/assets/photos/lille-moulins-place-vanhoenacker-cooperative-union-cinema-autrefois.png",
+        "alt": "Ancienne carte postale de la place Vanhoenacker à Lille-Moulins, rails du tramway, enfants et façade de la coopérative L'Union de Lille au début du XXe siècle.",
+        "width": "1131",
+        "height": "720"
+      }
+    },
+    {
       "path": "Hauts-de-France/Nord/Lille/pont-neuf-lille-canal-basse-deule-tramway/index.html",
       "city_id": "lille",
       "city": "Lille",
