@@ -3617,6 +3617,21 @@
       }
     },
     {
+      "path": "Provence-Alpes-Cote-dAzur/Vaucluse/Avignon/rich-tavern-regina-marcy-rue-viala/index.html",
+      "city_id": "avignon",
+      "city": "Avignon",
+      "department": "Vaucluse",
+      "datePublished": "2026-11-26",
+      "title": "Avignon : le Rich Tavern, le Régina, la chemiserie Marcy et les souvenirs de la rue Viala",
+      "summary": "Retrouvez le Rich Tavern d'Avignon, le Régina, la chemiserie Marcy, les anciens serveurs et les souvenirs des cafés et des commerces de la rue Viala.",
+      "image": {
+        "src": "/assets/photos/avignon-rich-tavern-regina-rue-viala-autrefois.png",
+        "alt": "Carte postale ancienne du restaurant Rich Tavern rue Viala à Avignon, avec sa terrasse, ses serveurs en tablier blanc, ses platanes et la Préfecture.",
+        "width": "1586",
+        "height": "992"
+      }
+    },
+    {
       "path": "Provence-Alpes-Cote-dAzur/Vaucluse/Avignon/rue-carreterie-clocher-augustins-commerces-souvenirs/index.html",
       "city_id": "avignon",
       "city": "Avignon",
