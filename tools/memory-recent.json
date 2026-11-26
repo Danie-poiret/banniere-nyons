@@ -1352,6 +1352,21 @@
       }
     },
     {
+      "path": "Hauts-de-France/Nord/Lille/jardin-des-plantes-lycee-diderot-baggio-souvenirs/index.html",
+      "city_id": "lille",
+      "city": "Lille",
+      "department": "Nord",
+      "datePublished": "2026-11-26",
+      "title": "Lille : quand le Jardin des Plantes était encore relié au lycée Diderot-Baggio, avant le périphérique",
+      "summary": "Retrouvez le Jardin des Plantes de Lille avant le périphérique, l'Institut Diderot, le lycée Baggio, Franklin et les souvenirs des anciens élèves lillois.",
+      "image": {
+        "src": "/assets/photos/lille-jardin-des-plantes-lycee-diderot-baggio-avant-peripherique.png",
+        "alt": "Vue aérienne ancienne du Jardin des Plantes de Lille et de l'Institut Diderot, actuel lycée César-Baggio, avant la construction du périphérique.",
+        "width": "790",
+        "height": "487"
+      }
+    },
+    {
       "path": "Hauts-de-France/Nord/Lille/jardin-enfants-pataugeoire-citadelle-lille/index.html",
       "city_id": "lille",
       "city": "Lille",
