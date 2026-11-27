@@ -3482,6 +3482,21 @@
       }
     },
     {
+      "path": "Provence-Alpes-Cote-dAzur/Vaucluse/Avignon/inondations-1910-corps-saints-7eme-genie-souvenirs/index.html",
+      "city_id": "avignon",
+      "city": "Avignon",
+      "department": "Vaucluse",
+      "datePublished": "2026-11-27",
+      "title": "Avignon sous les eaux en 1910 : la place des Corps-Saints, une lettre à Marceau et les souvenirs du 7ᵉ Génie",
+      "summary": "Retrouvez les inondations d'Avignon en 1910, une lettre à Marceau, la pâtisserie Walter et les souvenirs des habitants secourus par le 7ᵉ Génie.",
+      "image": {
+        "src": "/assets/photos/avignon-place-corps-saints-inondations-decembre-1910-f-beau.png",
+        "alt": "Carte postale de la place des Corps-Saints à Avignon pendant les inondations de décembre 1910, avec une charrette, le Restaurant des Colonies et les habitants.",
+        "width": "1024",
+        "height": "621"
+      }
+    },
+    {
       "path": "Provence-Alpes-Cote-dAzur/Vaucluse/Avignon/jeux-boules-remparts-saint-lazare-anciens-cafes/index.html",
       "city_id": "avignon",
       "city": "Avignon",
