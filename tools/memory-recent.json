@@ -1532,6 +1532,21 @@
       }
     },
     {
+      "path": "Hauts-de-France/Nord/Lille/place-du-concert-usine-vrau-conservatoire-souvenirs/index.html",
+      "city_id": "lille",
+      "city": "Lille",
+      "department": "Nord",
+      "datePublished": "2026-11-27",
+      "title": "Lille : la place du Concert, les bobines de fil au Chinois, le café Chez Gilles et les souvenirs des anciennes écoles du Vieux-Lille",
+      "summary": "Retrouvez la place du Concert à Lille, l'usine Vrau, le fil au Chinois, le Conservatoire et les souvenirs des anciens élèves et habitants du Vieux-Lille.",
+      "image": {
+        "src": "/assets/photos/lille-place-du-concert-usine-vrau-kiosque-conservatoire.png",
+        "alt": "Ancienne vue de la place du Concert à Lille avec le Conservatoire, le kiosque à musique, la statue du maire André et la cheminée de l'usine Vrau.",
+        "width": "668",
+        "height": "415"
+      }
+    },
+    {
       "path": "Hauts-de-France/Nord/Lille/place-du-theatre-ancien-theatre-lequeux/index.html",
       "city_id": "lille",
       "city": "Lille",
