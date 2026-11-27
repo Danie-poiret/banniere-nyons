@@ -1022,6 +1022,21 @@
       }
     },
     {
+      "path": "Hauts-de-France/Nord/Lille/boulevard-liberte-tramway-hippomobile-republique/index.html",
+      "city_id": "lille",
+      "city": "Lille",
+      "department": "Nord",
+      "datePublished": "2026-11-27",
+      "title": "Lille : quand les chevaux tiraient encore les tramways boulevard de la Liberté, devant la place de la République",
+      "summary": "Découvrez les anciens tramways à chevaux de Lille, le boulevard de la Liberté vers 1902, la place de la République et les souvenirs des habitants.",
+      "image": {
+        "src": "/assets/photos/lille-boulevard-liberte-place-republique-tramway-cheval-1902.png",
+        "alt": "Ancienne carte postale du boulevard de la Liberté à Lille avec un tramway tiré par un cheval blanc, la préfecture et les piétons de la place de la République.",
+        "width": "1024",
+        "height": "657"
+      }
+    },
+    {
       "path": "Hauts-de-France/Nord/Lille/boulevard-strasbourg-marcel-bertrand-souvenirs/index.html",
       "city_id": "lille",
       "city": "Lille",
