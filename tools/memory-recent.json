@@ -1187,6 +1187,21 @@
       }
     },
     {
+      "path": "Hauts-de-France/Nord/Lille/faculte-medecine-catho-rue-port-jardin-botanique/index.html",
+      "city_id": "lille",
+      "city": "Lille",
+      "department": "Nord",
+      "datePublished": "2026-11-27",
+      "title": "Lille : la faculté de médecine de la Catho en 1907, son jardin botanique et les souvenirs des étudiants de la rue du Port",
+      "summary": "Retrouvez la faculté catholique de médecine de Lille en 1907, son jardin botanique, les anciens étudiants et les commerces du quartier Vauban.",
+      "image": {
+        "src": "/assets/photos/lille-faculte-medecine-catholique-rue-port-jardin-botanique-1907.png",
+        "alt": "Carte postale ancienne de la Faculté catholique de médecine de Lille en 1907, avec sa façade néogothique, le jardin botanique et une cheminée d'usine.",
+        "width": "816",
+        "height": "528"
+      }
+    },
+    {
       "path": "Hauts-de-France/Nord/Lille/femmes-pantheres-lille-nord/index.html",
       "city_id": "lille",
       "city": "Lille",
