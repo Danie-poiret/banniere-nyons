@@ -3242,13 +3242,28 @@
       }
     },
     {
+      "path": "Provence-Alpes-Cote-dAzur/Bouches-du-Rhone/Marseille/samaritaine-manufrance-mambo-maxi-souvenirs/index.html",
+      "city_id": "marseille",
+      "city": "Marseille",
+      "department": "Bouches-du-Rhône",
+      "datePublished": "2026-11-28",
+      "title": "Marseille : un verre à La Samaritaine, Manufrance, le Mambo et les soirées au Maxi",
+      "summary": "Un café à La Samaritaine, Manufrance rue de la République, les dimanches au Mambo et les soirées au Maxi : les souvenirs des Marseillais.",
+      "image": {
+        "src": "/assets/photos/samaritaine-marseille-vieux-port-trolleybus.png",
+        "alt": "La Samaritaine à Marseille, avec ses balcons arrondis, sa terrasse, les enseignes Ricard, un trolleybus et des voitures devant le Vieux-Port.",
+        "width": "1001",
+        "height": "1572"
+      }
+    },
+    {
       "path": "Provence-Alpes-Cote-dAzur/Bouches-du-Rhone/Marseille/samaritaine-marseille-trolleybus-souvenirs-vieux-port/index.html",
       "city_id": "marseille",
       "city": "Marseille",
       "department": "Bouches-du-Rhône",
       "datePublished": "2026-11-06",
-      "title": "Marseille : La Samaritaine, Manufrance, le Mambo, le Maxi et les souvenirs du Vieux-Port",
-      "summary": "La Samaritaine, les jouets Alcalay, Manufrance, le Mambo et le Maxi : retrouvez les anciens commerces et les souvenirs des Marseillais autour du Vieux-Port.",
+      "title": "Marseille : La Samaritaine, les trolleybus et les souvenirs du Vieux-Port",
+      "summary": "La Samaritaine à Marseille : terrasse du Vieux-Port, trolleybus, jouets Alcalay et souvenirs des sorties en famille autour de la brasserie.",
       "image": {
         "src": "/assets/photos/samaritaine-marseille-vieux-port-trolleybus.png",
         "alt": "La Samaritaine à Marseille, avec ses balcons arrondis, sa terrasse, les enseignes Ricard, un trolleybus et des voitures devant le Vieux-Port.",
