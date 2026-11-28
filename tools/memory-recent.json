@@ -1037,6 +1037,21 @@
       }
     },
     {
+      "path": "Hauts-de-France/Nord/Lille/boulevard-strasbourg-anciens-blocs-coop-arsenal-souvenirs/index.html",
+      "city_id": "lille",
+      "city": "Lille",
+      "department": "Nord",
+      "datePublished": "2026-11-28",
+      "title": "Lille : boulevard de Strasbourg, les anciens blocs Marcel-Bertrand, la Coop et cette enfance que les habitants n'ont jamais oubliée",
+      "summary": "Retrouvez les anciens blocs Marcel-Bertrand à Lille, le magasin Coop, l'arsenal militaire, les trains et les souvenirs d'enfance du boulevard de Strasbourg.",
+      "image": {
+        "src": "/assets/photos/lille-boulevard-strasbourg-marcel-bertrand-vue-aerienne-ancienne.png",
+        "alt": "Vue aérienne ancienne des immeubles Marcel-Bertrand boulevard de Strasbourg à Lille, avec les espaces de jeux, le périphérique et les voies ferrées.",
+        "width": "1015",
+        "height": "816"
+      }
+    },
+    {
       "path": "Hauts-de-France/Nord/Lille/boulevard-strasbourg-marcel-bertrand-souvenirs/index.html",
       "city_id": "lille",
       "city": "Lille",
