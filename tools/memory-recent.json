@@ -1112,6 +1112,21 @@
       }
     },
     {
+      "path": "Hauts-de-France/Nord/Lille/chapellerie-benjamin-lille-centenaire-chapeaux-mariages-souvenirs/index.html",
+      "city_id": "lille",
+      "city": "Lille",
+      "department": "Nord",
+      "datePublished": "2026-11-28",
+      "title": "Lille : 100 ans de chapeaux chez Benjamin, cette chapellerie de la rue de Béthune où plusieurs générations de Lilloises ont préparé leur mariage",
+      "summary": "Découvrez les 100 ans de la chapellerie Benjamin à Lille, son histoire familiale depuis 1926 et les souvenirs des mariages et commerces de la rue de Béthune.",
+      "image": {
+        "src": "/assets/photos/lille-chapellerie-benjamin-ancienne-devanture-centenaire.png",
+        "alt": "Ancienne devanture de la chapellerie Benjamin à Lille, avec ses chapeaux exposés en vitrine et ses portes aux ferronneries décoratives ; montage comparatif de la devanture et de l’intérieur portant les mentions 1926 et 2024.",
+        "width": "779",
+        "height": "518"
+      }
+    },
+    {
       "path": "Hauts-de-France/Nord/Lille/chocolaterie-delespaul-havez-carambar/index.html",
       "city_id": "lille",
       "city": "Lille",
