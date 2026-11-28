@@ -1412,6 +1412,21 @@
       }
     },
     {
+      "path": "Hauts-de-France/Nord/Lille/la-botte-chantilly-lille-chaussures-famille-roos-souvenirs/index.html",
+      "city_id": "lille",
+      "city": "Lille",
+      "department": "Nord",
+      "datePublished": "2026-11-28",
+      "title": "Lille : La Botte Chantilly, Monsieur Paul, les chaussures à 65 francs et cette étrange machine à rayons X dont les anciens se souviennent encore",
+      "summary": "Retrouvez l'histoire de La Botte Chantilly à Lille depuis 1890, Monsieur Paul, la famille Roos et les souvenirs des anciens clients.",
+      "image": {
+        "src": "/assets/photos/lille-la-botte-chantilly-publicite-ancienne-chaussures-65-francs.png",
+        "alt": "Ancienne publicité de La Botte Chantilly, rue Grande-Chaussée à Lille, présentant des chaussures pour hommes à 65 et 89 francs.",
+        "width": "512",
+        "height": "695"
+      }
+    },
+    {
       "path": "Hauts-de-France/Nord/Lille/la-chicoree-place-rihour-ginette-souvenirs/index.html",
       "city_id": "lille",
       "city": "Lille",
@@ -2864,7 +2879,7 @@
         "alt": "Ancienne photographie de constructions précaires en bois et en tôle à Marseille, avec linge suspendu et passages entre les habitations, lieu exact non identifié",
         "width": "2048",
         "height": "1532"
-      }
+}
     },
     {
       "path": "Provence-Alpes-Cote-dAzur/Bouches-du-Rhone/Marseille/bonneveine-champ-de-courses-borely-souvenirs/index.html",
