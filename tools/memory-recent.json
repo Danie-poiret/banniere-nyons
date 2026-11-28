@@ -1622,6 +1622,21 @@
       }
     },
     {
+      "path": "Hauts-de-France/Nord/Lille/place-louise-bettignies-bon-bouillon-cinema-capri-souvenirs/index.html",
+      "city_id": "lille",
+      "city": "Lille",
+      "department": "Nord",
+      "datePublished": "2026-11-28",
+      "title": "Lille : la place Louise-de-Bettignies, le Bon Bouillon, le cinéma Capri et ce Vieux-Lille populaire que les anciens n'ont jamais oublié",
+      "summary": "Retrouvez la place Louise-de-Bettignies à Lille, la maison du Bon Bouillon de 1636, les cinémas Capri et Pax et les souvenirs des habitants du Vieux-Lille.",
+      "image": {
+        "src": "/assets/photos/lille-place-louise-bettignies-maison-gilles-de-la-boe-ancienne.png",
+        "alt": "Ancienne photographie de la maison de Gilles de la Boë à Lille, place Saint-Martin, avec la devanture Calderoni, une publicité Singer, une charrette à bras et l'ancien Palais de Justice.",
+        "width": "1195",
+        "height": "826"
+      }
+    },
+    {
       "path": "Hauts-de-France/Nord/Lille/place-strasbourg-monument-testelin-sacre-coeur-boulangerie-paul/index.html",
       "city_id": "lille",
       "city": "Lille",
@@ -2636,7 +2651,7 @@
       "summary": "Freddy Tondeur, reporter, explorateur et Grand Maître des Chevaliers de l'Olivier : son histoire à Nyons, ses voyages et les souvenirs de ceux qui l'ont connu.",
       "image": {
         "src": "/assets/photos/freddy-tondeur-georges-blanc-nyons-2007.webp",
-        "alt": "Deux hommes portant des médailles sur une photographie légendée Freddy Tondeur et Georges Blanc, prise à Nyons le 22 décembre 2007.",
+        "alt": "Deux hommesportant des médailles sur une photographie légendée Freddy Tondeur et Georges Blanc, prise à Nyons le 22 décembre 2007.",
         "width": "1649",
         "height": "1759"
       }
