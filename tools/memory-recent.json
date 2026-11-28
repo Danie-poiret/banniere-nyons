@@ -1757,6 +1757,21 @@
       }
     },
     {
+      "path": "Hauts-de-France/Nord/Lille/rue-colbert-decock-commerces-wazemmes-souvenirs/index.html",
+      "city_id": "lille",
+      "city": "Lille",
+      "department": "Nord",
+      "datePublished": "2026-11-28",
+      "title": "Lille : la rue Colbert autrefois, les bonnes frites du Parisien, les établissements Decock et les souvenirs de Wazemmes",
+      "summary": "Retrouvez la rue Colbert à Lille dans les années 1920, les établissements Decock, les anciens cafés, le tramway et les souvenirs de Wazemmes.",
+      "image": {
+        "src": "/assets/photos/lille-rue-colbert-gambetta-bar-de-la-paix-1920.png",
+        "alt": "Ancienne carte postale de la rue Colbert à Lille-Wazemmes avec le Bar de la Paix, les rails du tramway et les automobiles des années 1920.",
+        "width": "1048",
+        "height": "641"
+      }
+    },
+    {
       "path": "Hauts-de-France/Nord/Lille/rue-de-douai-tabac-flint-commerces-souvenirs/index.html",
       "city_id": "lille",
       "city": "Lille",
@@ -2737,7 +2752,7 @@
       "city": "Paris",
       "department": "Paris — département 75",
       "datePublished": "2026-10-21",
-      "title": "Paris : Beaubourg et les souvenirs des années 1970",
+      "title": "Paris: Beaubourg et les souvenirs des années 1970",
       "summary": "Paris, Beaubourg dans les années 1970 : retrouvez le chantier du Centre Pompidou, les vieux immeubles, les commerces et les souvenirs des habitants du quartier.",
       "image": {
         "src": "/assets/photos/beaubourg-paris-chantier-annees-1970.webp",
@@ -2879,7 +2894,7 @@
         "alt": "Ancienne photographie de constructions précaires en bois et en tôle à Marseille, avec linge suspendu et passages entre les habitations, lieu exact non identifié",
         "width": "2048",
         "height": "1532"
-}
+      }
     },
     {
       "path": "Provence-Alpes-Cote-dAzur/Bouches-du-Rhone/Marseille/bonneveine-champ-de-courses-borely-souvenirs/index.html",
