@@ -1622,6 +1622,21 @@
       }
     },
     {
+      "path": "Hauts-de-France/Nord/Lille/place-strasbourg-monument-testelin-sacre-coeur-boulangerie-paul/index.html",
+      "city_id": "lille",
+      "city": "Lille",
+      "department": "Nord",
+      "datePublished": "2026-11-28",
+      "title": "Lille : la place de Strasbourg, son monument disparu, le clocher inachevé du Sacré-Cœur et l'histoire de la toute première boulangerie Paul",
+      "summary": "Découvrez la place de Strasbourg à Lille autrefois, son monument Testelin disparu, les tramways, le Sacré-Cœur et l'histoire de la première boulangerie Paul.",
+      "image": {
+        "src": "/assets/photos/lille-place-strasbourg-monument-testelin-tramways-sacre-coeur.png",
+        "alt": "Ancienne carte postale de la place de Strasbourg à Lille avec le monument Achille Testelin, les tramways électriques et le clocher inachevé du Sacré-Cœur.",
+        "width": "1024",
+        "height": "662"
+      }
+    },
+    {
       "path": "Hauts-de-France/Nord/Lille/place-theatre-rue-manneliers-lille-1910/index.html",
       "city_id": "lille",
       "city": "Lille",
